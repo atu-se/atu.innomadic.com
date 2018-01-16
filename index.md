@@ -1,3 +1,3 @@
 # Courses
-* [Formal Theory and Logic](wiki/Formal-Theory-and-Languages-(January-2018))
-* [Advanced Software Engineering](wiki/Advanced-Software-Engineering-(January-2018))
+* [Formal Theory and Logic](ase-jan-2018.md)
+* [Advanced Software Engineering](ftl-jan-2018.md)
