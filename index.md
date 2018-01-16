@@ -1,3 +1,3 @@
-# Courses
-* [Formal Theory and Logic](ase-jan-2018.md)
-* [Advanced Software Engineering](ftl-jan-2018.md)
+# A few courses...
+* [Advanced Software Engineering](ase-jan-2018.md)
+* [Formal Theory and Logic](ftl-jan-2018.md)
