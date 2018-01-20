@@ -4,7 +4,7 @@
 [Software Engineering, Edition 9 (Sommerville)](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/)
 
 # Week 2
-Assignment 2:  Create an account at github.com .  Create a new project called "assignment2".  Email your professor with a link to your repository. (Deadline: Monday, January 22 @ 4:30pm.)
+* Assignment 2:  Create an account at github.com .  Create a new project called "assignment2".  Email your professor with a link to your repository. (Deadline: Monday, January 22 @ 4:30pm.)
 
 # Week 1
 * [Chapter 16 Lecture Notes](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch16.pptx)
