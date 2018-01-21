@@ -1,4 +1,7 @@
-# Welcome to Advanced Software Engineering
+# Advanced Software Engineering
+
+## Syllabus
+[Draft](syllabus.md)
 
 # Textbooks
 [Software Engineering, Edition 9 (Sommerville)](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/)
