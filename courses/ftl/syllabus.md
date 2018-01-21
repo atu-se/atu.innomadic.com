@@ -43,8 +43,10 @@ Students should have an understanding of material from Discrete Mathematics cour
 ## Course Requirements
 
 ### Required reading
-* [*An Introduction to Automata Theory & Formal Language* (Pandey)](https://www.amazon.com/Introduction-Automata-Theory-Formal/dp/8188458473/)
 * [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf)
+
+### Lecture Textbook
+* [*An Introduction to Automata Theory & Formal Language* (Pandey)](https://www.amazon.com/Introduction-Automata-Theory-Formal/dp/8188458473/)
 
 ### Supplemental readings
 Supplemental reading and other materials will be linked on the [course website](https://atu-se.github.io/courses/ftl/).  Students are responsible for regularly checking the course website for updates.
