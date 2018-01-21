@@ -7,8 +7,8 @@
 [Software Engineering, Edition 9 (Sommerville)](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/)
 
 # Week 2
-* Assignment 3: Complete [this tutorial on the use of github](https://guides.github.com/activities/hello-world/).
-* Assignment 2:  Create an account at github.com .  Create a new repository called "assignment2".  Email your professor with a link to your repository. (Deadline: Monday, January 22 @ 4:30pm.)
+* Assignment 3: Complete [this tutorial on the use of github](https://guides.github.com/activities/hello-world/). (Deadline: Tuesday at 6:45pm.)
+* Assignment 2:  Create an account at github.com .  Create a new repository called "assignment2".  Email your professor with a link to your repository. (Deadline: Monday, January 22 @ 4:45pm.)
 
 # Week 1
 * [Chapter 16 Lecture Notes](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch16.pptx)
