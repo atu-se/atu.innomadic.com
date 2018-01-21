@@ -9,6 +9,8 @@
 # Week 2
 * Assignment 3: Complete [this tutorial on the use of github](https://guides.github.com/activities/hello-world/). (Deadline: Tuesday at 6:45pm.)
 * Assignment 2:  Create an account at github.com .  Create a new repository called "assignment2".  Email your professor with a link to your repository. (Deadline: Monday, January 22 @ 4:45pm.)
+* [Chapter 17 Lecture Notes - CBSE](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch17.pptx)
+* **Update**: [Assignment 1 : Code Reuse Memo](ase-jan-2018-assignment2.md) Deadline has been extended to Monday @ 4:30 pm on January 22.
 
 # Week 1
 * [Chapter 16 Lecture Notes](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch16.pptx)
