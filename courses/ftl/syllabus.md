@@ -47,7 +47,7 @@ Students should have an understanding of material from Discrete Mathematics cour
 * [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf)
 
 ### Supplemental readings
-Supplemental reading and other materials will be linked on the course website at: https://atu-se.github.io/courses/ftl/ .  Students are responsible for regularly checking the course website for updates.
+Supplemental reading and other materials will be linked on the [course website](https://atu-se.github.io/courses/ftl/).  Students are responsible for regularly checking the course website for updates.
 
 
 

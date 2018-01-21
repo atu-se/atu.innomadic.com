@@ -46,7 +46,7 @@ Students should have an understanding of material from the introductory Software
 [Software Engineering, Edition 9 (Sommerville)](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/)
 
 ### Supplemental readings
-Supplemental reading and other materials will be linked on the course website at: https://atu-se.github.io/courses/ase/ .  Students are responsible for regularly checking the course website for updates.
+Supplemental reading and other materials will be linked on the [course website](https://atu-se.github.io/courses/ase/).  Students are responsible for regularly checking the course website for updates.
 
 
 
