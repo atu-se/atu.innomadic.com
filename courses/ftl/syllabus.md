@@ -18,10 +18,17 @@ Year 3 / Semester 8
 Provided in Lecture
 
 ## Rationale
-
+This course aims to develop the theoretical foundations of computer science through study of mathematical and abstract models of computers and the theory of formal languages. It also, introduces some fundamental concepts in automata theory and formal languages including grammar, finite automaton, regular expression, formal language, pushdown automaton, and Turing machine. Not only do they form basic models of computation, they are also the foundation of many branches of computer science, e.g. compilers, software engineering, concurrent systems, etc.
 
 
 ## Course Aims
+* Introduce concepts in automata theory and theory of computation
+*	Study the central concepts of automata theory
+*	Acquire insights into the relationship among formal languages, formal grammars, and automata.
+*	Identify different formal language classes and their relationships
+*	Design grammars and recognizers for different formal languages
+*	Prove or disprove theorems in automata theory using its properties
+*	Familiar with thinking analytically and intuitively for problem solving situations in related areas of theory in computer science.
 
 
 
