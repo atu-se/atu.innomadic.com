@@ -7,9 +7,11 @@
 [Software Engineering, Edition 9 (Sommerville)](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/)
 
 # Week 2
+* **Announcement: On Tuesday, January 23rd, there will be a quiz covering material from Chapter 16 on software re-use.**
+* Supplemental Reading: [Dependency Injection and Inversion of Control - Martin Fowler](https://martinfowler.com/articles/injection.html)
 * Supplemental Exercise: [tryGit](https://try.github.io)
 * Supplemental Reading: [Git Handbook](https://guides.github.com/introduction/git-handbook/)
-* Reading 3: Read Textbook Chapter 17 by Sunday at 6:30 a.m.
+* Reading 3: Read Textbook Chapter 17 by Sunday, January 28th at 6:30 p.m.
 * Assignment 3: Complete [this tutorial on the use of github](https://guides.github.com/activities/hello-world/). (Deadline: Tuesday at 6:45pm.)
 * Assignment 2:  Create an account at github.com .  Create a new repository called "assignment2".  Email your professor with a link to your repository. (Deadline: Monday, January 22 @ 4:45pm.)
 * [Chapter 17 Lecture Notes - CBSE](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch17.pptx)

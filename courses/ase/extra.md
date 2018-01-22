@@ -1,7 +1,24 @@
+
 # overview
 * https://functionalcs.github.io/curriculum/#sec-1
 * https://github.com/ossu/computer-science
 
+# software re-use
+# Software Re-use benefits
+
+* Increased dependability
+* Reduced process risk
+* Effective use of specialists
+* Standards compliance
+* Accelerated development
+
+# Software Re-use problems
+* Increased maintenance costs
+* Lack of tool support
+* Not-invented-here syndrome
+* Creating, maintaining, and using a component library
+* Finding, understanding, and adapting reusable components
+* 
 # REST
 
 * [Richardson Maturity Model] (https://www.martinfowler.com/articles/richardsonMaturityModel.html)
