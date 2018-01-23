@@ -1,6 +1,6 @@
 # Formal Theory and Language
 
-## Syllabus 
+## Syllabus
 [Draft](syllabus.md)
 
 ## Textbooks
@@ -11,6 +11,7 @@
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
 # Week 2
+* [Pigeon-Hole Principle Lecture Slides](http://www-bcf.usc.edu/~pengshi/math149/talk_pigeonhole.pdf)
 * Assigned Reading 2: Theory of Computation Chapter 2 by Wednesday, January 24 @ 10:30 a.m.
 
 # Week 1
