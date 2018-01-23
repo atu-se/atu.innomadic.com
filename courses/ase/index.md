@@ -7,6 +7,7 @@
 [Software Engineering, Edition 9 (Sommerville)](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/)
 
 # Week 2
+* [Github Lecture Slides](https://www.cc.gatech.edu/~simpkins/teaching/gatech/cs2340/slides/git-basics.pdf)
 * **Announcement: On Tuesday, January 23rd, there will be a quiz covering material from Chapter 16 on software re-use.**
 * Supplemental Reading: [Dependency Injection and Inversion of Control - Martin Fowler](https://martinfowler.com/articles/injection.html)
 * Supplemental Exercise: [tryGit](https://try.github.io)
