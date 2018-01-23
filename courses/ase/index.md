@@ -6,6 +6,13 @@
 # Textbooks
 [Software Engineering, Edition 9 (Sommerville)](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/)
 
+# Discussion Group
+[Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
+
+# Week 3
+* Reading 4: Reach Chapter 18 of the textbook by Sunday, February 4 @ 4:30p.m.
+* [Chapter 18 Lecture Slides](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch18.pptx)
+
 # Week 2
 * [Github Lecture Slides](https://www.cc.gatech.edu/~simpkins/teaching/gatech/cs2340/slides/git-basics.pdf)
 * **Announcement: On Tuesday, January 23rd, there will be a quiz covering material from Chapter 16 on software re-use.**
