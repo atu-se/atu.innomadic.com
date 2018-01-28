@@ -10,6 +10,7 @@
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
 
 # Week 3
+* **Announcement: Quiz on Chapter 17 - Tuesday, January 30**
 * Reading 4: Read Chapter 18 of the textbook by Sunday, February 4 @ 4:30p.m.
 * [Chapter 18 Lecture Slides](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch18.pptx)
 
