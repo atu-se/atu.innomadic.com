@@ -1,7 +1,7 @@
 # Formal Theory and Language
 
 ## Syllabus
-[Draft](syllabus.md)
+[Draft](Syllabus.md)
 
 ## Textbooks
 * [*An Introduction to Automata Theory & Formal Language* (Pandey)](https://www.amazon.com/Introduction-Automata-Theory-Formal/dp/8188458473/)
@@ -9,6 +9,13 @@
 
 ## Supplemental Reading
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
+
+# Week 3
+* **There will be a quiz on Tuesday, January 30**.  The material will include:
+  - Definition of finite automaton
+  - Creating a transition table from a finite automaton
+  - Creating a finite automaton from a transition table
+
 
 # Week 2
 * [Pigeon-Hole Principle Lecture Slides](http://www-bcf.usc.edu/~pengshi/math149/talk_pigeonhole.pdf)
