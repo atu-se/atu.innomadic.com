@@ -10,6 +10,9 @@
 ## Supplemental Reading
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
+# Week 4
+* [Formal Definition of Computation Slides (Review)](https://www3.cs.stonybrook.edu/~cse350/slides/automata3.pdf)
+* 
 # Week 3
 * Assigned Reading 3: Review Theory of Computation pp 31-51
 * **There will be a quiz on Tuesday, January 30**.  The material will include:

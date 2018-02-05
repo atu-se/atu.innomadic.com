@@ -9,6 +9,18 @@
 # Discussion Group
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
 
+# Week 4
+* n-tiered architecture:  practical overview
+  [n-tier Application Architecture Slides](https://www.slideshare.net/Manojksh/ntier-application-architecture)
+  - [Choose Your Tech Stack](https://svsg.co/how-to-choose-your-tech-stack/)
+  - [Stack Overflow Developer Survey 2017](https://insights.stackoverflow.com/survey/2017#technology)
+  - [Wikipedia: Solution Stack](https://en.wikipedia.org/wiki/Solution_stack)
+  - [Choosing the Right Software Stack](https://www.upwork.com/hiring/development/choosing-the-right-software-stack-for-your-website/)
+  - [Wikipedia:LAMP Software Bundle](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29)
+* **Announcement: Quiz on Chapter 18 - Tuesday, February 7**
+* Reading 5: Read Chapter 19 of the textbook by Sunday, February 11 @ 6:30p.m.
+
+
 # Week 3
 * **Announcement: Quiz on Chapter 17 - Tuesday, January 30**
 * Reading 4: Read Chapter 18 of the textbook by Sunday, February 4 @ 4:30p.m.
