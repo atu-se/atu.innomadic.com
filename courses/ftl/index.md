@@ -4,10 +4,12 @@
 [Syllabus](Syllabus.md)
 
 ## Textbooks
+
 * [*An Introduction to Automata Theory & Formal Language* (Pandey)](https://www.amazon.com/Introduction-Automata-Theory-Formal/dp/8188458473/) (Print edition only)
 * [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf) (PDF download)
 
 ## Supplemental Reading
+
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
 # Week 4
