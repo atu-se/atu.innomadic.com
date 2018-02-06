@@ -1,19 +1,26 @@
 # Formal Theory and Language
 
 ## Syllabus
-[Draft](Syllabus.md)
+[Syllabus](Syllabus.md)
 
 ## Textbooks
-* [*An Introduction to Automata Theory & Formal Language* (Pandey)](https://www.amazon.com/Introduction-Automata-Theory-Formal/dp/8188458473/)
-* [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf)
+* [*An Introduction to Automata Theory & Formal Language* (Pandey)](https://www.amazon.com/Introduction-Automata-Theory-Formal/dp/8188458473/) (Print edition only)
+* [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf) (PDF download)
 
 ## Supplemental Reading
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
 # Week 4
+
 * [Formal Definition of Computation Slides (Review)](https://www3.cs.stonybrook.edu/~cse350/slides/automata3.pdf)
-* 
+* [Regular Operations](https://www3.cs.stonybrook.edu/~cse350/slides/automata4.pdf)
+* Supplemental Review
+  - [Finite Automata: Informal](https://www3.cs.stonybrook.edu/~cse350/slides/automata1.pdf)
+  - [Formal Definition of Finite Automaton](https://www3.cs.stonybrook.edu/~cse350/slides/automata2.pdf)
+  - [Finite Automata: Informal](https://www3.cs.stonybrook.edu/~cse350/slides/automata1.pdf)
+
 # Week 3
+
 * Assigned Reading 3: Review Theory of Computation pp 31-51
 * **There will be a quiz on Tuesday, January 30**.  The material will include:
   - Definition of finite automaton
