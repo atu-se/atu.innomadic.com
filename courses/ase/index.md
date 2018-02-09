@@ -10,6 +10,7 @@
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
 
 # Week 4
+* [ReST vs. Web Services (starting at pp. 36)](http://www.jopera.org/files/soa-amsterdam-restws-pautasso-talk.pdf)
 * n-tiered architecture:  practical overview
   [n-tier Application Architecture Slides](https://www.slideshare.net/Manojksh/ntier-application-architecture)
   - [Choose Your Tech Stack](https://svsg.co/how-to-choose-your-tech-stack/)
