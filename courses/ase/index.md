@@ -1,13 +1,18 @@
 # Advanced Software Engineering
 
 ## Syllabus
-[Draft](syllabus.md)
+[Syllabus](syllabus.md)
 
 # Textbooks
 [Software Engineering, Edition 9 (Sommerville)](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/)
 
 # Discussion Group
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
+
+# Week 5
+* [Chapter 19 Lecture Slides](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch19.pptx)
+* Reading 6: Read Chapter 20 of textbook by Sunday, February 18.
+* Ask your instructor for a review of your grades to date if you have not seen them already.
 
 # Week 4
 * [ReST vs. Web Services (starting at pp. 36)](http://www.jopera.org/files/soa-amsterdam-restws-pautasso-talk.pdf)
