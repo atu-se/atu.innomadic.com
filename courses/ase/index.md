@@ -10,6 +10,8 @@
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
 
 # Week 5
+* **Announcement: Quiz on Chapter 19 - Sunday, February 18**
+* [Chapter 20 Lecture](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch20.pptx)
 * [Chapter 19 Lecture Slides](https://ifs.host.cs.st-andrews.ac.uk/Books/SE9/Presentations/PPTX/Ch19.pptx)
 * Reading 6: Read Chapter 20 of textbook by Sunday, February 18.
 * Ask your instructor for a review of your grades to date if you have not seen them already.
