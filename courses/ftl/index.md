@@ -12,6 +12,14 @@
 
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
+# Week 5
+
+* [Stoneybrook: Nondeterminism](https://www3.cs.stonybrook.edu/~cse350/slides/automata5.pdf)
+* [Supplemental Reading -- Stoneybrook: Formal Definition of a Nondeterministic Finite Automaton](https://www3.cs.stonybrook.edu/~cse350/slides/automata6.pdf)
+* [Supplemental Reading -- Stoneybrook: Formal Definition of a Nondeterministic Finite Automaton](https://www3.cs.stonybrook.edu/~cse350/slides/automata7.pdf)
+* [Set Operations Review](https://www.slideshare.net/bilalamjad1/set-operations?from_action=save)
+
+
 # Week 4
 * [Stoneybrook: The Regular Operations](https://www3.cs.stonybrook.edu/~cse350/slides/automata4.pdf)
 * [Stoneybrook: Formal Definition of Computation Slides (Review)](https://www3.cs.stonybrook.edu/~cse350/slides/automata3.pdf)
