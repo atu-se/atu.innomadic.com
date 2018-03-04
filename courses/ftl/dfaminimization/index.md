@@ -79,16 +79,16 @@ and
 
 for all w ∈ Σ <sup>* </sup>
 
-*Note: δ<sub> * </sub> denotes the extended transition function.*
+*Note: δ<sup> * </sup> denotes the extended transition function.*
 
 # Distinguishable States
 Two states *q1* and *q2* of a DFA are distinguishable if:
 
- δ<sub> * </sub> (q1,w) ∈ F
+ δ<sup> * </sup> (q1,w) ∈ F
 
 and
 
- δ<sub> * </sub> (q2,w) ∉ F
+ δ<sup> * </sup> (q2,w) ∉ F
 
 or vice a versa
 
