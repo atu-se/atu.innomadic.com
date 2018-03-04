@@ -13,27 +13,9 @@ In DFA minimization, it's import to be aware of three kinds of states.
 # Dead States
 
 
-```python
-deadstate = DFA(
-    states={'q0', 'q1'},
-    input_symbols={'0', '1'},
-    transitions={
-        'q0': {'0': 'q0', '1': 'q1'},
-        'q1': {'0': 'q1', '1': 'q1'}
-    },
-    initial_state='q0',
-    final_states={'q0'}
-)
-
-image=generate_dfa_image(deadstate, "Dead State")
-image
-```
-
-
-
+Consider this FA:
 
 ![svg](output_2_0.svg)
-
 
 
 As you can see, state q1 is a dead state.
@@ -41,27 +23,6 @@ As you can see, state q1 is a dead state.
 # Inaccessible States
 
 A second type of state is the inaccessible state.  These are states which can never be reached **from the start state**.
-
-
-```python
-inaccessible_state = DFA(
-    states={'q0', 'q1', 'q2', 'q3'},
-    input_symbols={'0', '1'},
-    transitions={
-        'q0': {'0': 'q0', '1': 'q1'},
-        'q1': {'0': 'q0', '1': 'q2'},
-        'q2': {'0': 'q0', '1': 'q2'},
-        'q3': {'0': 'q2', '1': 'q2'}
-    },
-    initial_state='q0',
-    final_states={'q2'}
-)
-
-image=generate_dfa_image(inaccessible_state, "DFA with inaccessible state.")
-image
-```
-
-
 
 
 ![svg](output_5_0.svg)
@@ -119,8 +80,6 @@ dftest_1 = DFA(
 image=generate_dfa_image(dftest_1, "A Non-Minimal DFA")
 image
 ```
-
-
 
 
 ![svg](output_8_0.svg)
