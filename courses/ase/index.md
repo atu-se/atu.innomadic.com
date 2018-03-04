@@ -11,6 +11,7 @@
 
 # Week 8
 * Announcement:  [Project](project.md)
+* Note:  everyone (or a representative from each team) should register an account with [Python Anywhere](https://www.pythonanywhere.com/) to use for testing their project.
 
 # Week 6
 * **Announcement: Quiz on Chapter 19 - Tuesday, February 27**
