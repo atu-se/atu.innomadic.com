@@ -106,7 +106,17 @@ If you choose NodeJS, you must use [ExpressJS](https://expressjs.com/).
 
 You should use either [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.org/) and document how to configure it.  
 
-You should include a table called tblreports which will include, at a minimum, an id number, location, description, and photo.
+You should include a table called reports which will include the following fields:
+* id int
+* timestamp timestamp
+* description text
+* latitude decimal (10,8)
+* longitude decimal (11,8)
+* photo longblob
+
+### Client
+
+This web application is most suitable for mobile phones.  You app should support the stock Android and iPhone browsers.  It should also work in desktop browsers like Firefox and Chrome, but the user interface should function well in a mobile touchscreen platform.
 
 ### Mapping Service
 
@@ -124,7 +134,7 @@ Use the [HTML5 Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API
 * All code should be published to a [GitHub](github.com) repository and shared with your teacher
 
 ### Deployment
-* You will need to be able to demonstrate your application running either on your local computer, or preferably via the internet.  You may find a free host such as https://www.pythonanywhere.com that can host the application and database.
+* You will need to be able to demonstrate your application running either on your local computer, or preferably via the internet.  You may find a free host such as [PythonAnywhere](https://www.pythonanywhere.com) that can host the application and database.
 
 ### Documentation
 You should have a README file which documents how to install, configure, and operate the application and database server.
@@ -139,7 +149,7 @@ The grading will this project will be divided into five assessments.  Each will 
 2. Extend creation of RPR with photo and profanity filtering
 3. RPR Table View
 4. RPR Map View
-5. Team Feature Choice
+5. Team Feature Choice (Choose 1)
   - RPR Up-voting
   - Simple Administrator Privileges (Login, Logout, Delete Entry)
 6. Documentation
