@@ -14,7 +14,7 @@
 
 # Week 8
 
-* * [DFA Minimization Lecture Notes](dfaminimization)
+* [DFA Minimization Lecture Notes](dfaminimization)
 
 # Week 7
 

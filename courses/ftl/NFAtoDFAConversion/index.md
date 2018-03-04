@@ -1,12 +1,3 @@
-
-
-```python
-from automata.fa.nfa import NFA
-from automata.fa.dfa import DFA
-from graphviz import Digraph
-from faimages import *
-```
-
 ## Converting an NFA to a DFA
 
 Given the following NFA:
@@ -29,9 +20,6 @@ conversion_nfa1 = NFA(
 image=generate_nfa_image(conversion_nfa1, "NFA 1")
 image
 ```
-
-
-
 
 ![svg](output_2_0.svg)
 
@@ -66,7 +54,7 @@ Is this NFA really equal?  We can run a few tests...
 def the_comparison(the_string):    
     print(list(conversion_nfa1.validate_input(the_string, step=True)))
     print(list(converted_dfa.validate_input(the_string, step=True)))
-    
+
 
 the_comparison("aa")
 #the_comparison("bbaba")
@@ -88,11 +76,10 @@ image
 ```
 
 
-
-
 ![svg](output_8_0.svg)
 
 
+The script did a fine job of converting that NFA to a DFA, but how could we convert it on our own?
 
 # NFA to DFA Conversion Algorithm
 
