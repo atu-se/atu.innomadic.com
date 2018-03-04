@@ -1,12 +1,3 @@
-
-
-```python
-from automata.fa.nfa import NFA
-from automata.fa.dfa import DFA
-from graphviz import Digraph
-from faimages import *
-```
-
 # DFA Minimization
 
 DFAs that are generated from regular expressions or NFAs are not necessarily minimal.
@@ -80,24 +71,24 @@ image
 # Indistinguishable States
 Two states *q1* and *q2* of a DFA are called indistinguishable if:
 
-$δ^*$ (q1,w) ∈ F ⇒ $δ^*$(q2,w) ∈ F
+δ<sup> * </sup> (q1,w) ∈ F ⇒ δ<sup> * </sup>(q2,w) ∈ F
 
 and
 
-$δ^*$(q1,w) ∉ F ⇒ $δ^*$(q2,w) ∉ F
+δ<sup> * </sup>(q1,w) ∉ F ⇒ δ<sup> * </sup>(q2,w) ∉ F
 
 for all w ∈ Σ <sup>* </sup>
 
-*Note: $δ^*$ denotes the extended transition function.*
+*Note: δ<sub> * </sub> denotes the extended transition function.*
 
 # Distinguishable States
 Two states *q1* and *q2* of a DFA are distinguishable if:
 
- $δ^*$ (q1,w) ∈ F 
+ δ<sub> * </sub> (q1,w) ∈ F
 
 and
 
- $δ^*$ (q2,w) ∉ F
+ δ<sub> * </sub> (q2,w) ∉ F
 
 or vice a versa
 
@@ -145,7 +136,7 @@ image
 4. If any pair of transition in the *non-final* table transits to the same states for each symbol in Σ, then remove one of the states.  If any of the transitions result in that removed state, replace its label with the label of the duplicate that you are keeping.
 5. Repeat step 4 on the rest of set 1 until you have eliminated all duplicates.
 6. Repeat steps 5 and 6 for the *final* table.
-7. Combine the final and non-final tables. 
+7. Combine the final and non-final tables.
 
 Let's try to apply this algorithm to the DFA above.
 
@@ -238,7 +229,7 @@ Now let us examine the table that starts with final states:
 
 It is minimal.
 
-> Step 7. Combine the final and non-final tables. 
+> Step 7. Combine the final and non-final tables.
 
 So if we combine the two minimized states above we get:
 
@@ -276,5 +267,3 @@ image
 
 
 ![svg](output_11_0.svg)
-
-
