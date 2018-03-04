@@ -24,15 +24,13 @@ Town Councilman Abdi is up for re-election.  He is worried that he will not be r
 
 Asia's son Nux is a naughty boy.  When he saw his mom using the application, he decided to cause some mischief.  He opened the application and creates a RPR with foul language in English and Somali. When the page reloaded, though, he finds that his foul language has been replaced by a sequence of asterisks (e.g. "*****"", thwarting his mischief.
 
-### Reviewing Road Problem Reports
-
-# Non-Goals
+## Non-Goals
 
 * There is no login required to use the application (except if the team chooses to implement an administrator)
 * Editing RPRs
 * This is not a native mobile application -- it is a *web application*.
 
-# Screens
+## Screens
 
 Each screen should have a menu with the following buttons prominently displayed:
 - Home
@@ -143,8 +141,8 @@ The grading will this project will be divided into five assessments.  Each will 
 
 1. Create Basic RPR with location and description
 2. Extend creation of RPR with photo and profanity filtering
-3. RPR Table View
-4. RPR Map View
+3. RPR Table View and Detail View (Except for Maps)
+4. RPR Map View and adding Map to Detail View
 5. Documentation
 
 The majority of the grade for each assignment will come from the functionality of the app, but some consideration will be given to usability and style.
