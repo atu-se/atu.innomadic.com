@@ -56,12 +56,14 @@ The home screen should display a google map below the menu, showing your city an
 
 
 ## Listing Screen
+
 This screen should have a table with the following columns:
-|                                      | Description                                        | Popularity<sup>*</sup>                          |
-|--------------------------------------|----------------------------------------------------|-------------------------------------|---|
-| [View Details](http://linktodetails) | There is a huge pile of rocks in front of my house | 7 - [Vote Up](http://linktovoteup) |
+
+|                                      | Description                                           | Popularity<sup>*</sup>             |   
+|--------------------------------------|-------------------------------------------------------|------------------------------------|
+| [View Details](http://linktodetails) | There is a huge pile of rocks in front of my house    | 7 - [Vote Up](http://linktovoteup) |
 | [View Details](http://linktodetails) | There is a pothole in the middle of this intersection | 4 - [Vote Up](http://linktovoteup) |
-| [View Details](http://linktodetails) | This section of road needs to be paved | 0 - [Vote Up](http://linktovoteup) |
+| [View Details](http://linktodetails) | This section of road needs to be paved                | 0 - [Vote Up](http://linktovoteup) |
 
 <sup> * </sup> This feature is an optional team choice.
 
