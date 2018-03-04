@@ -12,6 +12,12 @@
 
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
+# Week 7
+
+* [DFA Minimization Lecture Notes](dfaminimization)
+
+# Week 6
+
 # Week 5
 
 * [Stoneybrook: Nondeterminism](https://www3.cs.stonybrook.edu/~cse350/slides/automata5.pdf)
