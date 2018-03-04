@@ -12,9 +12,13 @@
 
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
+# Week 8
+
+* * [DFA Minimization Lecture Notes](dfaminimization)
+
 # Week 7
 
-* [DFA Minimization Lecture Notes](dfaminimization)
+* [NFA Conversion to DFA Lecture Notes](NFAtoDFAConversion)
 
 # Week 6
 
