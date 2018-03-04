@@ -1,4 +1,8 @@
-You team is responsible for developing a web-based mobile application for receiving, and reporting Road Problems Reports (RPRs), and measuring the desirabilities of the repair of these road problems in your city.
+Last Updated: 4-March-2018
+
+# Project Overview
+
+Your team is responsible for developing a web-based mobile application for receiving, and reporting Road Problems Reports (RPRs), and measuring the desirabilities of the repair of these road problems in your city.
 
 # Functional Specification
 
@@ -40,7 +44,7 @@ There is a huge pile of rocks and that sits in the middle of Asia's street.  It 
 
 # Screens
 
-Each screen should have a menu with the following buttons:
+Each screen should have a menu with the following buttons prominently displayed:
 - Home
 - Listing
 - Create Report
@@ -50,9 +54,6 @@ Each screen should have a menu with the following buttons:
 
 The home screen should display a google map below the menu, showing your city and a view of the current database entries.
 
-## Create Report
-
-Choosing this option should prompt the user to take or choose a picture, and then to enter description of the Road Problem.
 
 ## Listing Screen
 This screen should have a table with the following columns:
@@ -64,9 +65,13 @@ This screen should have a table with the following columns:
 
 <sup> * </sup> This feature is an optional team choice.
 
+## Create Report
+
+Choosing this option should prompt the user to take or choose a picture, and then to enter description of the Road Problem.
+
 #  Technical Specification
 
-## Technologies
+## Technology Overview
 To build the RPR web application, you will use a variety of technologies:
 - Distributed Systems (n-tier)
   - Thin Client (Web Browser)
@@ -138,5 +143,9 @@ The grading will this project will be divided into five assessments.  Each will 
 6. Documentation
 
 The majority of the grade for each assignment will come from the functionality of the app, but some consideration will be given to usability and style.
+
+You will have in-class check-ins to present your progress, and occasionally you will have time in class to work as a team, but the majority of your work should be outside of lecture hours.
+
+Due date:  To Be Announced
 
 **Note: Your teacher reserves the right to adjust the scoring/assignment as the project unfolds.  You will receive advanced notice if this happens.**

@@ -9,6 +9,9 @@
 # Discussion Group
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
 
+# Week 8
+* Announcement:  [Project](project.md)
+
 # Week 6
 * **Announcement: Quiz on Chapter 19 - Tuesday, February 27**
 
