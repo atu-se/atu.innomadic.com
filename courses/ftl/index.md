@@ -1,7 +1,7 @@
 # Formal Theory and Language
 
 ## Syllabus
-[Syllabus](Syllabus.md)
+[Syllabus](syllabus.md)
 
 ## Textbooks
 
@@ -13,7 +13,10 @@
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
 # Week 8
-
+* Announcement:  Quiz on Wednesday, March 7, covering these topics (See lecture notes below and in ):
+  - Regular Expressions (review textbook pp 52-59)
+  - NFA to DFA Conversion (review textbook 41-47 and lecture notes below)
+  - DFA Minimization (review textbook 41-47 and lecture notes below)
 * [DFA Minimization Lecture Notes](dfaminimization)
 
 # Week 7
@@ -33,7 +36,7 @@
 # Week 4
 * [Stoneybrook: The Regular Operations](https://www3.cs.stonybrook.edu/~cse350/slides/automata4.pdf)
 * [Stoneybrook: Formal Definition of Computation Slides (Review)](https://www3.cs.stonybrook.edu/~cse350/slides/automata3.pdf)
-* [Stoneybrook: Regular Operations](https://www3.cs.stonybrook.edu/~cse350/slides/automata4.pdf)
+
 * Supplemental Review
   - [Stoneybrook: Finite Automata: Informal](https://www3.cs.stonybrook.edu/~cse350/slides/automata1.pdf)
   - [Stoneybrook: Formal Definition of Finite Automaton](https://www3.cs.stonybrook.edu/~cse350/slides/automata2.pdf)
