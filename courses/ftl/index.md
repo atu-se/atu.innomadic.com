@@ -14,9 +14,9 @@
 
 # Week 8
 * Announcement:  Quiz on Wednesday, March 7, covering these topics (See lecture notes below and in ):
-  - Regular Expressions (review textbook pp 52-59)
+  - Regular Expressions (review textbook pp 52-59).  Be prepared to list example strings given a regular expression, and be prepared to draw a DFA given a regular expression.
   - NFA to DFA Conversion (review textbook 41-47 and lecture notes below)
-  - DFA Minimization (review textbook 41-47 and lecture notes below)
+  - ~~DFA Minimization (review textbook 41-47 and lecture notes below)~~ Note: I have decided to remove DFA minimization from the quiz.  Study the other topics well!
 * [DFA Minimization Lecture Notes](dfaminimization)
 
 # Week 7
