@@ -91,11 +91,15 @@ q <sub>1 </sub> = (ab ∪ ba)<sup> * </sup>
 Construct a regular expression corresponding to the the following state diagrams.
 
 1.
+
 ![Regex to DFA Exercise 1](figure4-12.png)
 
 
-
+---
 2.
+
 ![Regex to DFA Exercise 2](figure4-13.png)
+
 # Sources
+
 * *An Introduction to Automata Theory and Formal Language, pp. 102-103*
