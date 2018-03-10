@@ -104,8 +104,8 @@ q0.
 
 >2. For this state, record the output of the transition function for each symbol in Σ.  If the resulting output has not been marked before, put an asterisk beside it.  These new sets of states will become the new states of our DFA.
 
-δ(q0,a) = {q0,q1} <sup> * </sup>
-δ(q0,b) = {q0}
+* δ(q0,a) = {q0,q1} <sup> * </sup>
+* δ(q0,b) = {q0}
 
 >3. For each new state marked with an asterisk (*), repeat step 2.  If there is more than one item in the input state, then create the result by taking a union of the individual transitions.  When you have recorded the transition function for all marked states, you may proceed to step 4.
 

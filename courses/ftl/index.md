@@ -12,6 +12,8 @@
 
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
+# Week 9
+* [DFA to Regular Expression Conversion Using Arden's Theorem](ardenstheorem)
 # Week 8
 * Announcement:  Quiz on Wednesday, March 7, covering these topics (See lecture notes below and in ):
   - Regular Expressions (review textbook pp 52-59).  Be prepared to list example strings given a regular expression, and be prepared to draw a DFA given a regular expression.
