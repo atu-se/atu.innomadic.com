@@ -13,17 +13,26 @@ How is this true?  Substitute the value of R into the right-hand side of the ori
 
 then
 
-> R = Q ∪ (Q ∪ (Q ∪ RP)P)P = Q ∪ QP ∪ RP<sup>2</sup> ∪ RP<sup>3</sup>
+> R = Q ∪ (Q ∪ (Q ∪ RP)P)P = Q ∪ QP ∪ QP<sup>2</sup> ∪ RP<sup>3</sup>
 
 Do you see the pattern?
 
-> R = Q ∪ QP ∪ RP<sup>2</sup> ∪ RP<sup>3</sup> ∪ RP<sup>4</sup> ...
+> R = Q ∪ QP ∪ QP<sup>2</sup> ∪ QP<sup>3</sup> ∪ RP<sup>4</sup> ...
 
-This pattern is equal to:
+> R = Q(ϵ ∪ P ∪ P<sup>2</sup> ∪ P<sup>3</sup> ∪ P<sup>4</sup> ∪ ...  )
+
+What is (ϵ ∪ P ∪ P<sup>2</sup> ∪ P<sup>3</sup> ∪ P<sup>4</sup> ∪ ...  ) ?
+P <sup> * </sup>  = {ϵ ∪ P ∪ P<sup>2</sup> ∪ P<sup>3</sup> ∪ P<sup>4</sup> ∪ ...  }
+
+Therefore,
+
+> R = Q(ϵ ∪ P ∪ P<sup>2</sup> ∪ P<sup>3</sup> ∪ P<sup>4</sup> ∪ ...  )
+>
+is equal to:
 
 > R = QP<sup> * </sup>.
 
-So this is Arden's Theorem:
+And this is Arden's Theorem:
 
 > R = Q ∪ RP
 
@@ -39,7 +48,7 @@ is equivalent to
   - There is one start states
 * States q<sub>0</sub> to q<sub>n</sub>
 * q<sub>i</sub> is a final states
-* w<sub>ij</sub> denotes the regular expression reprsenting the set of labels of edges from q<sub>i</sub> to q<sub>j</sub>.  We can create set of equations, with each equation being the union of the transitions to the state for which we are forming the equation.  For the starting state, the empty string (ϵ) will also be added.  The equations are designed as follows, with q<sub>1</sub> being treated as a start state:
+* w<sub>ij</sub> denotes the regular expression representing the set of labels of edges from q<sub>i</sub> to q<sub>j</sub>.  We can create set of equations, with each equation being the union of the transitions to the state for which we are forming the equation.  For the starting state, the empty string (ϵ) will also be added.  The equations are designed as follows, with q<sub>1</sub> being treated as a start state:
 
 q <sub>1 </sub> = q<sub>1</sub>w<sub>11</sub> ∪ q<sub>2</sub>w<sub>21</sub> ∪ ... ∪ q<sub>n</sub>w<sub>n1</sub> ∪ ϵ
 
