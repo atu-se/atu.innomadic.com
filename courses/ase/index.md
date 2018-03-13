@@ -9,7 +9,12 @@
 # Discussion Group
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
 
+# Week 10
+
+* [Aspect-Oriented Programming & Python Decorators](Aspect-Oriented Programming & Python Decorators.md)
+
 # Week 9
+
 * [In-Class Geolocation Project Demo](projectdemo.html)
 * Idea:  If you prefer, you may begin writing your application using sqlite, but then [migrate the data via a json file as featured here](https://stackoverflow.com/questions/3034910/whats-the-best-way-to-migrate-a-django-db-from-sqlite-to-mysql).
 * [Writing your first Django app](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
@@ -17,7 +22,7 @@
   - [Embed API](https://developers.google.com/maps/documentation/embed/?authuser=1)
   - [Static Maps API](https://developers.google.com/maps/documentation/static-maps/?authuser=1)
   - [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/?authuser=1)
-  
+
 
 # Week 8
 * Announcement:  [Project](project.md)
