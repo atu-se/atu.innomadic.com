@@ -155,6 +155,8 @@ This is the type of scenario that **aspect-oriented programming** (AOP) was crea
 
 ![AOP Diagram](aspect-oriented-programming/aop-term-diagram.png)
 
+
+
 # Python Decorators
 
 So let's look at Python decorators and see how they can be used
@@ -244,3 +246,4 @@ test_calculator(4,4)
 * [Python 3 Patterns, Recipes and Idioms](http://python-3-patterns-idioms-test.readthedocs.io/en/latest/PythonDecorators.html)
 * [Flask Decorators](http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/#login-required-decorator)    
 * [Python Course](https://www.python-course.eu/python3_decorators.php)
+* [Graphic Reference (original link down)](https://stackoverflow.com/questions/15447397/spring-aop-whats-the-difference-between-joinpoint-and-pointcut)
