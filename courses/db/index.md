@@ -12,6 +12,18 @@ Syllabus - TBA
 
 # Week 3
 * Reading 2: Read Chapter 3
+* Downloads for practical learning
+  - [Python 3](https://www.python.org/downloads/release/python-364/)
+  - Use [pip](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing) to install the following packages:
+    - jupyter
+    - sql-magic
+
+  Hint:
+  >pip install jupyter
+  >
+  >pip install sql-magic
+
+
 
 # Week 2
 
