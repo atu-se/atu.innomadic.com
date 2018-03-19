@@ -9,6 +9,10 @@
 # Discussion Group
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
 
+# Week 11
+
+* [First Django App Tutorial - Polling](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
+
 # Week 10
 
 * [Aspect-Oriented Programming & Python Decorators](Aspect-Oriented Programming & Python Decorators.md)
