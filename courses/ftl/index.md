@@ -12,6 +12,9 @@
 
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
+# Week 10
+[Stonybrook: Context-Free Grammar Lecture 1](lectures/cfg1.pdf)
+
 # Week 9
 * [DFA to Regular Expression Conversion Using Arden's Theorem](ardenstheorem)
 # Week 8
