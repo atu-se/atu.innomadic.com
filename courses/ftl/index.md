@@ -12,8 +12,23 @@
 
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
+# Week 12
+## Sunday
+* Turing Machines
+
+## Tuesday
+* Turing Machines
+
+## Wednesday
+* Final Review
+
+# Week 11
+## Wednesday
+* [Push-down Automata (Stonybrook)](lectures/pda1.pdf)
+
 # Week 10
-[Stonybrook: Context-Free Grammar Lecture 1](lectures/cfg1.pdf)
+* [Stonybrook: Context-Free Grammar Lecture 1](lectures/cfg1.pdf)
+* Supplemental Exercise:  Review/work on exercises at the end of chapter 3 of textbook.
 
 # Week 9
 * [DFA to Regular Expression Conversion Using Arden's Theorem](ardenstheorem)
