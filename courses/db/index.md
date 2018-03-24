@@ -14,6 +14,7 @@ Syllabus - TBA
 # Week 3
 * [Exercise 1](assignments/exercise1) - Due Tuesday March 27 @ 9:00 a.m.
   * Note: The grades/marks on assignments sent after 9:00 a.m. on Tuesday will be reduced by 10% on the first day, and subsequent days late will receive additional penalties.
+* Reading 2: Read Chapters 4-6
 
 # Week 2
 
