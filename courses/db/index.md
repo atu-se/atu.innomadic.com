@@ -10,7 +10,13 @@ Syllabus - TBA
 ## Supplemental Reading
 * [*Database Systems: The Complete Book* - Garcia-Molina, Ullman, Widom](https://www.amazon.co.uk/Database-Systems-Complete-Hector-Garcia-Molina/dp/0131873253/ref=sr_1_1?s=books&ie=UTF8&qid=1521443367&sr=1-1&keywords=ullman+database)
 
+
 # Week 3
+* [Exercise 1](assignments/exercise1) - Due Tuesday March 27 @ 9:00 a.m.
+  * Note: The grades/marks on assignments sent after 9:00 a.m. on Tuesday will be reduced by 10% on the first day, and subsequent days late will receive additional penalties.
+
+# Week 2
+
 * Reading 2: Read Chapter 3
 * Downloads for practical learning
   - [Python 3](https://www.python.org/downloads/release/python-364/)
@@ -22,11 +28,6 @@ Syllabus - TBA
   >pip install jupyter
   >
   >pip install sql-magic
-
-
-
-# Week 2
-
 * * **Announcement**: There will be a quiz on chapters 1-3 on the following dates:
   - Saturday, March 24 @ 10:30 a.m. (Morning Section)
   - Sunday, March 25 @ 6:30 p.m. (Evening Section)
