@@ -12,13 +12,14 @@ Syllabus - TBA
 
 
 # Week 3
+
 * [Exercise 1](assessments/exercise1) - Due Tuesday March 27 @ 9:00 a.m.
   * Note: The grades/marks on assignments sent after 9:00 a.m. on Tuesday will be reduced by 10% on the first day, and subsequent days late will receive additional penalties.
 * Reading 3: Read Chapters 4-6
-* Install sqlite on your computer.  If possible bring your computer to class on Sunday morning/Tuesday afternoon, with sqlite, Python3, jupyter, and sql-magic installed.
+* Install sqlite on your computer.  If possible bring your computer to class on Wednesday morning/Tuesday afternoon, with sqlite, Python3, jupyter, and sql-magic installed.
 
 # Week 2
-
+* [Lecture 4a](lectures/Chapter4a.pdf)
 * Reading 2: Read Chapter 3
 * Downloads for practical learning
   - [Python 3](https://www.python.org/downloads/release/python-364/)
