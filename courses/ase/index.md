@@ -9,6 +9,12 @@
 # Discussion Group
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
 
+# Week 12
+
+* [Django API Tutorial - Building an API for the Polls Application](http://books.agiliq.com/projects/django-api-polls-tutorial/en/latest/)
+* Announcement: Study guide for the final exam is forthcoming.
+* Reminder:
+
 # Week 11
 
 * [First Django App Tutorial - Polling](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
@@ -31,6 +37,7 @@
 # Week 8
 * Announcement:  [Project](project.md)
 * Note:  everyone (or a representative from each team) should register an account with [Python Anywhere](https://www.pythonanywhere.com/) to use for testing their project.
+* [Here are some ideas for extending your project](https://atu-se.github.io/courses/ase/projectoverflow) in the future after this course is complete.
 
 # Week 6
 * **Announcement: Quiz on Chapter 19 - Tuesday, February 27**
