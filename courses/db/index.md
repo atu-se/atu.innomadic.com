@@ -13,8 +13,10 @@ Syllabus - TBA
 
 # Week 3
 
-* [Exercise 1](assessments/exercise1) - Due Tuesday March 27 @ 9:00 a.m.
-  * Note: The grades/marks on assignments sent after 9:00 a.m. on Tuesday will be reduced by 10% on the first day, and subsequent days late will receive additional penalties.
+* [Exercise 1](assessments/exercise1)
+  * *Morning Section*: Due Tuesday March 27 @ 9:00 a.m.
+  * *Evening Section*: Due Tuesday March 27 @ 12:00 p.m.
+  * Note: The grades/marks on assignments sent after their due date on Tuesday will be reduced by 10% on the first day, and subsequent days late will receive additional penalties.
 * Reading 3: Read Chapters 4-6
 * Install sqlite on your computer.  If possible bring your computer to class on Wednesday morning/Tuesday afternoon, with sqlite, Python3, jupyter, and sql-magic installed.
 

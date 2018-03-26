@@ -30,5 +30,7 @@ Design and draw an ER diagram that captures the information about the university
 * When creating identifier numbers, use a descriptive name such as "professor_id".
 * Use lower-case for all attribute names.  Separate words with underscores.  e.g. use "professor_id" instead of "professorid".
 * You may the diagram neatly by hand, or you may use an application such as Microsoft Word or another tools to help you draw the diagram.
-* Email a PDF or a JPG of your assignment by Tuesday, March 27 @ 9:00 a.m.
+* Email a PDF or a JPG of your assignment by
+  * Morning Section: Tuesday, March 27 @ 9:00 a.m.
+  * Evening Section: Tuesday, March 27 @ 12:00 p.m.
 * The grades/marks on assignments sent after 9:00 a.m. on Tuesday will be reduced by 10% on the first day, and subsequent days late will receive additional penalties.
