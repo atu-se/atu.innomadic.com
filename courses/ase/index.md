@@ -10,7 +10,7 @@
 [Github Discussion Group](https://github.com/orgs/atu-se/teams/advanced-software-engineering)
 
 # Week 12
-
+* The final exam will cover chapters 19-21.  Use the [study guide](final_exam_study_guide) to help you prepare.
 * [Django API Tutorial - Building an API for the Polls Application](http://books.agiliq.com/projects/django-api-polls-tutorial/en/latest/)
 * Announcement: Study guide for the final exam is forthcoming.
 * Reminder:
