@@ -13,11 +13,13 @@
 * [Book of Proof](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 
 # Week 12
-## Sunday
-* Turing Machines
 
 ## Tuesday
 * Turing Machines
+  - [Lecture 1](lectures/turing1.pdf) - All
+  - [Lecture 2](lectures/turing2.pdf) - pp 10-14
+  - [Lecture 3](lectures/turing3.pdf) - pp 6-7, 47-49
+  - [Lecture 4](lectures/turing4.pdf) - 7-8, 15, 19
 
 ## Wednesday
 * Final Review
