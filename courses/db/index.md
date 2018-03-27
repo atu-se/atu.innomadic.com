@@ -12,7 +12,7 @@ Syllabus - TBA
 
 
 # Week 3
-
+* [Practical 1](practical1)
 * [Exercise 1](assessments/exercise1)
   * *Morning Section*: Due Tuesday March 27 @ 9:00 a.m.
   * *Evening Section*: Due Tuesday March 27 @ 12:00 p.m.
