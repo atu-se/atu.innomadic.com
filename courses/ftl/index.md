@@ -20,6 +20,7 @@
   - [Lecture 2](lectures/turing2.pdf) - pp 10-14
   - [Lecture 3](lectures/turing3.pdf) - pp 6-7, 47-49
   - [Lecture 4](lectures/turing4.pdf) - 7-8, 15, 19
+  - Read Chapter 7 of your textbook!  Don't worry about the proofs, but be familiar with how to match up automata with classes of languages and also the tools that we use to generate them.
 
 ## Wednesday
 * Final Review
