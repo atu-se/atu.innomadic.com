@@ -15,7 +15,7 @@
 # Week 12
 
 ## Wednesday
-* [Final Exam Review](final_exam_study_guide)
+* [Final Exam Review](final_exam_study_guides)
 
 
 ## Tuesday
