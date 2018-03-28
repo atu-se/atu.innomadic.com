@@ -14,6 +14,10 @@
 
 # Week 12
 
+## Wednesday
+* [Final Exam Review](final_exam_study_guide)
+
+
 ## Tuesday
 * Turing Machines
   - [Lecture 1](lectures/turing1.pdf) - All
@@ -22,8 +26,7 @@
   - [Lecture 4](lectures/turing4.pdf) - 7-8, 15, 19
   - Read Chapter 7 of your textbook!  Don't worry about the proofs, but be familiar with how to match up automata with classes of languages and also the tools that we use to generate them.
 
-## Wednesday
-* Final Review
+
 
 # Week 11
 ## Wednesday
