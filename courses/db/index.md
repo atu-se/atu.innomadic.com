@@ -10,11 +10,14 @@ Syllabus - TBA
 ## Supplemental Reading
 * [*Database Systems: The Complete Book* - Garcia-Molina, Ullman, Widom](https://www.amazon.co.uk/Database-Systems-Complete-Hector-Garcia-Molina/dp/0131873253/ref=sr_1_1?s=books&ie=UTF8&qid=1521443367&sr=1-1&keywords=ullman+database)
 
+## Software Required
+* [Setup Instructions](exercises/setup)
+
 # Week 4
-* [Exercise 2](exercises/exercise2)
+* [Exercise 1](exercises/exercise1)
 
 # Week 3
-* [Exercise 1](assignments/exercise1)
+* [Assignment 1](assignments/assignment1)
   * *Morning Section*: Due Tuesday March 27 @ 9:00 a.m.
   * *Evening Section*: Due Tuesday March 27 @ 12:00 p.m.
   * Note: The grades/marks on assignments sent after their due date on Tuesday will be reduced by 10% on the first day, and subsequent days late will receive additional penalties.

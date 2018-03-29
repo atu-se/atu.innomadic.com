@@ -1,6 +1,6 @@
-# Exercise 1
+# Assignment 1
 
-For exercise #1 you may work individually or in pairs.  Although you may discuss the problem set in general, you may *not* copy another person or group's work.  Consequences for those caught cheating will be harsh.  When you submit your assignment, clearly identify whether you are working alone or as a pair, and list the full name of the team member(s).
+For Assignment #1 you may work individually or in pairs.  Although you may discuss the problem set in general, you may *not* copy another person or group's work.  Consequences for those caught cheating will be harsh.  When you submit your assignment, clearly identify whether you are working alone or as a pair, and list the full name of the team member(s).
 
 ## Specification
 
