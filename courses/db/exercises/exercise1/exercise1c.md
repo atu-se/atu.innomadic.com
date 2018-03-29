@@ -1532,3 +1532,4 @@ Now I have a few tasks for you to do.
 3. Create a new album. Use your new ArtistId to create the album. Take note of the AlbumId.
 4. Create a new track.  Use the newly created Artist, Album, and Genre.  There are other fields that have constraints on them.  Use .schema tracks to see the schema of tracks.
 5. Continue exploring exercise1.db
+6. Review [Assignment 1](../../../assessments/assignment1).  Can you create a table or two from your Entity Model relationships?
