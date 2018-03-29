@@ -1,2 +1,3 @@
-* (exercise1.md)
-* (exercise2.md)
+* (setup.md) 
+* (exercise1)
+* (exercise2)

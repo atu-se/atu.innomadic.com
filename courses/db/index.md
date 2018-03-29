@@ -12,8 +12,9 @@ Syllabus - TBA
 
 
 # Week 3
+* [Exercise 2](exercises/exercise2)
 * [Practical 1](practical1)
-* [Exercise 1](assessments/exercise1)
+* [Exercise 1](exercises/exercise1)
   * *Morning Section*: Due Tuesday March 27 @ 9:00 a.m.
   * *Evening Section*: Due Tuesday March 27 @ 12:00 p.m.
   * Note: The grades/marks on assignments sent after their due date on Tuesday will be reduced by 10% on the first day, and subsequent days late will receive additional penalties.
