@@ -1212,7 +1212,3 @@ Your results should look something like this:
         <td>Philip Glass Ensemble</td>
     </tr>
 </table>
-
-
-
-Time for [Exercise 2c](exercise2c).

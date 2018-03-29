@@ -84,4 +84,4 @@ sqlite>.help
 
 Try it out.  Can you find the command to list the names and files of attached databases?
 
-When you've completed this, move on to [Exercise 2b](exercise2b).
+When you've completed this, move on to [Exercise 1b](exercise1b).
