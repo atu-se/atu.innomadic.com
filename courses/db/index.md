@@ -15,6 +15,8 @@ Syllabus - TBA
 
 # Week 4
 * [Exercise 1](exercises/exercise1)
+  - This week we'll be working on these practical exercises to get you started in SQL
+  - The only tools you should need are sqlite, but try to continue setting up other tools [as described here](exercises/setup).
 
 # Week 3
 * [Assignment 1](assignments/assignment1)
