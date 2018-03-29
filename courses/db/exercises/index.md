@@ -1,2 +1,2 @@
-* [exercise1.md]
-* [exercise2.md]
+* (exercise1.md)
+* (exercise2.md)
