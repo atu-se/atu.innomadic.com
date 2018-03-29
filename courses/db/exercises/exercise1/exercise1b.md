@@ -1,4 +1,3 @@
-[Exercise 2c](exercise2c).
 # Introduction
 
 For this exercise, you will need to [download this database file](). It is a database with music data.
@@ -1212,3 +1211,5 @@ Your results should look something like this:
         <td>Philip Glass Ensemble</td>
     </tr>
 </table>
+
+When you've completed this, move on to [Exercise 1c](exercise1c).
