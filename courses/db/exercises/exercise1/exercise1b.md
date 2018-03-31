@@ -1,11 +1,11 @@
 # Introduction
 
-For this exercise, you will need to [download this database file](). It is a database with music data.
+For this exercise, you will need to [download this database file](exercise1.db). It is a database with music data.
 
 1. You should create a folder somewhere on your computer to manage exercises.  Maybe Documents/database_class.  
 2. Then for each exercise you can create a separate folder, like exercise2.  
-3. Place exercise2.db into the exercise2.db folder.  
-4. Make a copy of exercise2.db.  Call it *exercise2_original.db*.  Then if you need to refer back to the original database, you will have it readily available.
+3. Place exercise1.db into the exercise1 folder.  
+4. Make a copy of exercise1.db.  Call it *exercise1_original.db*.  Then if you need to refer back to the original database, you will have it readily available.
 
 # 1. Opening an Existing Database
 
@@ -14,24 +14,24 @@ There are two ways to open an existing database.
 ## A) From the Command Prompt
 
 1. Open your command prompt.
-2. Navigate to your *exercise2* folder.  If you've followed my suggestions, you may enter a commands like this:
+2. Navigate to your *exercise1* folder.  If you've followed my suggestions, you may enter a commands like this:
 
 ```shell
-$>cd Documents/databases/exercise2
-exercise2$>
+$>cd Documents/databases/exercise1
+exercise1$>
 ```
 
 3. When you have successfully reached the folder, do a directory listing.  If you've found the right folder, you should see your new database files, looking something like this:
 
 ```shell
-exercise2$>            dir
-exercise1.db exercise2.db
+exercise1$>            dir
+exercise1.db exercise1_original.db
 ```
 
 4. Now open the database with this command:
 
 ```shell
-exercise2$>sqlite3 exercise1.db
+exercise1$>sqlite3 exercise1.db
 SQLite version 3.19.3 2017-06-27 16:48:08
 Enter ".help" for usage hints.
 sqlite>
