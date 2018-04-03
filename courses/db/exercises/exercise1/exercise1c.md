@@ -1,20 +1,4 @@
-
-
-```python
-%load_ext sql
-```
-
-
-```python
-%sql sqlite:///exercise1.db
-```
-
-
-
-
-    'Connected: None@exercise1.db'
-
-
+# Introduction
 
 Open sqlite and exercise1.db
 
@@ -52,6 +36,12 @@ What if you want to save the result of a query to a file?
 sqlite>.output albums.txt
 sqlite>SELECT title FROM albums;
 ```
+When you are finished, you have to switch the output back to the shell, with this command:
+
+```sqlite
+sqlite>.output stdout
+```
+
 
 # 2. Select
 
