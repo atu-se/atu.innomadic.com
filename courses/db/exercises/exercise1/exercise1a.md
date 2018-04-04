@@ -19,6 +19,8 @@ Open the command prompt.  You can find this in the start menu.  For quickest acc
 
 The command prompt should open up.  
 
+**Important Style Comment**
+
 In this tutorial I will identify the command prompt commands in this way:
 
 ```shell
@@ -31,17 +33,47 @@ and I will identify the sqlite shell in this way:
 sqlite>
 ```
 
-The commands that you will type will be shown after the ">".
+or sometimes
+
+```python
+%sql
+```
+
+You should **not** type the *$>*, *sqlite>* or the *%sql*.  Clear?
+
+The commands that you will type will be shown after the *$>*, *sqlite>* or the *%sql*.
 
 The command prompt will allow you to issue command-line commands to Windows, while the sqlite shell will allow you to run SQL queries and other related functions.
 
-Try entering this in the command prompt:
+Try entering these in the command prompt:
+
+```shell
+$>cwd
+```
+
+What does the output tell you?
 
 ```shell
 $>dir
 ```
 
-What is the output? It should show you the contents of the folder in whic you are located.
+What does the output tell you?
+
+What is the output? It should show you the contents of the folder in which you are located.
+
+Choose one of the folders from the list.  Let's use *Documents* as an example.
+
+Now enter this command:
+
+```shell
+$>dir cd Documents
+```
+
+What happened?
+
+Try to master these three commands:  *cwd*, *cd*, and *dir*.
+
+
 
 # 2. Opening and Closing the sqlite Shell
 Now, open sqlite from the command like this:
