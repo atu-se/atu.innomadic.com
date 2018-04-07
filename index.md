@@ -2,6 +2,7 @@
 
 # Year 3
 * [Formal Theory and Language](courses/ftl/)
+* [Introduction to Compilers](courses/compilers/)
 
 # Year 2
 * [Advanced Software Engineering](courses/ase/)
