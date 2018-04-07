@@ -9,3 +9,4 @@
   - [Handout: Introduction to Flex](handouts/050 Flex In A Nutshell.pdf)
 * Supplemental Reading
   - [Handout: Lexical Analysis](handouts/040 Lexical Analysis.pdf)
+* Please prepare your computer for practical exercises by installing [Flex and Bison](https://sourceforge.net/projects/winflexbison/files/win_flex_bison3-latest.zip/download).
