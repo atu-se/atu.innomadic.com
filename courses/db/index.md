@@ -13,6 +13,9 @@ Syllabus - TBA
 ## Software Required
 * [Setup Instructions](exercises/setup)
 
+# 8-April-2018
+* Today we reviewed and continued [Lecture 4a]((lectures/Chapter4a.pdf)).
+
 # Week 4
 * [Exercise 1](exercises/exercise1)
   - This week we'll be working on these practical exercises to get you started in SQL
