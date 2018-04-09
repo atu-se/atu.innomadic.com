@@ -15,6 +15,7 @@ Syllabus - TBA
 
 # 9-Apr-2018
 * Today we examine [Chapter 5](lectures/Chapter5.pdf)
+* Here is [the Jupyter notebook](lectures/Chapter5.ipynb) used in class
 * Check out the [SQLite data types](https://www.sqlite.org/datatype3.html) and the [date and time functions](https://www.sqlite.org/lang_datefunc.html).  How would you store a date in the database?
 
 # 8-Apr-2018
