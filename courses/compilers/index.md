@@ -1,6 +1,11 @@
 *Lectures Adapted from Stanford Compilers*
 
-7-Apr-2018
+# 9-Apr-2018
+* Practical Exercises
+  - [Exercise 1](exercises/exercise1/sample1.lex)
+  - [Exercise 2](exercises/exercise2/sample2.lex)
+
+# 7-Apr-2018
 * [Lecture 1 - Introduction](lectures/Slides00.pdf)
 * [Lecture 2 - Introduction](lectures/Slides01.pdf)
 * Assigned Reading:
