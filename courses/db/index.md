@@ -15,8 +15,8 @@ Syllabus - TBA
 
 # 10-Apr-2018
 
-* Announcing [Assessment 2](assessments/assessment2), due 18-Apr.
-* Results on [Assessment 1](assessments/assessment1) were very poor.  If you would like to resubmit this assignment by 18-Apr, you may do so and additional credit will be considered.  Send your file with the following format for the name: firstname_secondname_thirdname_(morning|evening).pdf  (Choose morning or evening as is appropriate for you.) You may work alone or in pairs, but the pairs must be documented in your email to me.
+* Announcing [Assessment 2](assessments/assignment2), due 18-Apr.
+* Results on [Assessment 1](assessments/assessment1) were very poor.  If you would like to resubmit this assignment by 18-Apr, you may do so and additional credit will be considered.  Send your file with the following format for the name: firstname_secondname_thirdname_(morning/evening).pdf  (Choose morning or evening as is appropriate for you.) You may work alone or in pairs, but the pairs must be documented in your email to me.
 
 
 # 9-Apr-2018
