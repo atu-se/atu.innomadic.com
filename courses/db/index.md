@@ -13,6 +13,12 @@ Syllabus - TBA
 ## Software Required
 * [Setup Instructions](exercises/setup)
 
+# 10-Apr-2018
+
+* Announcing [Assessment 2](assessments/assessment2), due 18-Apr.
+* Results on [Assessment 1](assessments/assessment1) were very poor.  If you would like to resubmit this assignment by 18-Apr, you may do so and additional credit will be considered.  Send your file with the following format for the name: firstname_secondname_thirdname_(morning|evening).pdf  (Choose morning or evening as is appropriate for you.) You may work alone or in pairs, but the pairs must be documented in your email to me.
+
+
 # 9-Apr-2018
 * Today we examine [Chapter 5](lectures/Chapter5.pdf)
 * Here is [the Jupyter notebook](lectures/Chapter5.ipynb) used in class
@@ -28,7 +34,7 @@ Syllabus - TBA
   - The only tools you should need are sqlite, but try to continue setting up other tools [as described here](exercises/setup).
 
 # Week 3
-* [Assignment 1](assignments/assignment1)
+* [Assessment 1](assessments/assessment1)
   * *Morning Section*: Due Tuesday March 27 @ 9:00 a.m.
   * *Evening Section*: Due Tuesday March 27 @ 12:00 p.m.
   * Note: The grades/marks on assignments sent after their due date on Tuesday will be reduced by 10% on the first day, and subsequent days late will receive additional penalties.
