@@ -13,6 +13,10 @@ Syllabus - TBA
 ## Software Required
 * [Setup Instructions](exercises/setup)
 
+# 11-Apr-2018
+
+* [The first three chapters of the midterm exam review guide](assessments/midterm_review_guide) are posted.
+
 # 10-Apr-2018
 
 * Announcing [Assessment 2](assessments/assignment2), due 18-Apr.
