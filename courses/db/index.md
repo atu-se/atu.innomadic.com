@@ -15,7 +15,7 @@ Syllabus - TBA
 
 # 11-Apr-2018
 
-* [The first three chapters of the midterm exam review guide](assessments/midterm_review_guide) are posted.
+* [The first three chapters of the midterm exam review guide](assessments/mid_term_review_guide) are posted.
 
 # 10-Apr-2018
 
