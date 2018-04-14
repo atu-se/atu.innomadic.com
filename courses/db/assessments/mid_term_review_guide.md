@@ -1,3 +1,8 @@
+# OverviewThe
+
+The midterm will cover chapters 1-4.  The test will include topics like: introductory material on databases, the relational model, entity relationship model, basic SQL queries, relational algebra, and tuple relational calculus.  In Chapter 4, Domain Relational Calculus will be excluded from the mid-term, but Relational Algebra and Tuple Relational Calculus will be included. You will also benefit if you study your previous quiz.
+
+
 # Chapter 1
 * What benefits to DBMSs provide?
 * What are the three different levels of abstraction?  What do each of them mean?
@@ -19,7 +24,7 @@
     - Attributes
   - How is an entity relationship model used?
   - Diagramming
-    - Be able to properly *diagram*, *identify*, and *interpet* the basic concepts of the ER Model (attributes, entities, relationships)
+    - Be able to properly *diagram*, *identify*, and *interpret* the basic concepts of the ER Model (attributes, entities, relationships)
     - Be able *identify* and *interpret* the following details from an entity relationship model:
       - Weak entities/relationships
       - Total vs. partial participation
@@ -61,7 +66,4 @@ WHERE T.gender='female';
 
 # Chapter 4
 * Is a Query Language of equivalent power with programming languages?  If not, which are more powerful?
-* ... to be continued
-
-# Chapter 5
-* to be continued
+* Be able to translate a query statement in plain English into a relational algebra query and a tuple relational calculus query.
