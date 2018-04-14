@@ -13,6 +13,13 @@ Syllabus - TBA
 ## Software Required
 * [Setup Instructions](exercises/setup)
 
+# 14-Apr-2018
+
+* Announcing [Assessment 3](assessment/assignment3).  Due May 1.
+* Check out [SQL Zoo](http://sqlzoo.net/) for small SQL tasks that will help you learn.
+* Check out [SQL Fiddle](http://sqlfiddle.com/) for a web-based sandbox to enter sql commands.
+
+
 # 11-Apr-2018
 
 * [The first three chapters of the midterm exam review guide](assessments/mid_term_review_guide) are posted.
