@@ -16,7 +16,7 @@ Tentative Schedule
 # 15-Apr-2018
 
 * Today:  mid-term review
-* Announcing [assignment 3](assignment/assignment3).  Due May 1.
+* Announcing [assignment 3](assignments/assignment3).  Due May 1.
 * Check out [SQL Zoo](http://sqlzoo.net/) for small SQL tasks that will help you learn.
 * Check out [SQL Fiddle](http://sqlfiddle.com/) for a web-based sandbox to enter sql commands.
 
