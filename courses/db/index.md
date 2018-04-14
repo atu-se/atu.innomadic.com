@@ -1,7 +1,7 @@
 # Introduction to Databases
 
-## Syllabus
-Syllabus - TBA
+## Schedule
+Tentative Schedule
 
 ## Textbooks
 
@@ -13,8 +13,9 @@ Syllabus - TBA
 ## Software Required
 * [Setup Instructions](exercises/setup)
 
-# 14-Apr-2018
+# 15-Apr-2018
 
+* Today:  mid-term review
 * Announcing [Assessment 3](assessment/assignment3).  Due May 1.
 * Check out [SQL Zoo](http://sqlzoo.net/) for small SQL tasks that will help you learn.
 * Check out [SQL Fiddle](http://sqlfiddle.com/) for a web-based sandbox to enter sql commands.
