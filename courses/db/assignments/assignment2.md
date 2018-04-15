@@ -4,7 +4,7 @@ This is a solo work assignment.  You should produce your own original work.  If 
 
 Reproduce the following Entity Relationship model in Yed:
 
-![Entity Relationship Diagram](assessment2.png)
+![Entity Relationship Diagram](assignment2.png)
 
 Make these two changes to your diagram from mine:
 * Choose a different layout style
