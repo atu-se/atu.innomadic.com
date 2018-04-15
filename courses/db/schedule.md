@@ -16,13 +16,15 @@
 * Foreign Keys
 * Practical Lab: Access 3
   - Assignment 3 Due
+- Chapter
 
 # May 5-9
 * Chapter 7.1, 7.5-7.7
 * Chapter 8
-* Quiz 2 (Chapters 5, 8)
+* Quiz 2 (Chapters 5, 7)
 
 # May 12-16
+* Chapter 8
 * Practical Lab: Final Project
 
 # May 19-23
@@ -30,7 +32,8 @@
 
 # May 26-30
 * Chapter 12
-* Quiz 3 (Chapter 12)
+* Chapter 12
+* Quiz 3 (Chapter 8, 12)
 
 # June 2-6
 * Final Exam week
