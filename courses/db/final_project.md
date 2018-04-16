@@ -1,24 +1,107 @@
-# Design a Database
+# Final Project
 
-Design a database that for students and faculty to check out books from the university library.
+## Overview
 
-Basic information about the
+For this project you work (alone | in pairs) to design a university database.  You will track student enrollment by class and department.  The database will require an authenticated login.  
 
-There are different limits for the number of books a student and teacher can check out. Also, the number of days will be distinct in the case of students and teachers for issue any book.  Each book will have different ID. Also, each book of the same name and same author (but the number of copies) will have different ID. Entry of all the book will be done, who issue that book and when and also duration. Detail of Fine(when the book is not returned at a time) is also stored.
+## Design Requirements
+
+* Entity Relationship diagram
+  - Designed in Yed
+  - Include the following features:
+    - Entities
+    - Relationships
+    - 1:1 Relationship Notation (Arrows)
+    - Total Participation Notation (Bold lines)
+* SQLite database
+  - Create a SQL database including
+    - All relations and fields
+    - Proper designation of constraints such as:
+      - Primary keys
+      - Unique fields
+      - Foreign keys
+      - Non-null fields
+    - Include sample data as designated below.
+
+## Data Description
+
+It should include the following information.  All fields are required, unless otherwise noted.
+
+* Departments
+  - Name
+* Students
+  - Name
+  - Phone Number
+  - Admission Date
+  - Birthdate
+  - Student ID (Unique)
+  - Gender (Optional)
+* Classes
+  * Starting Year
+  * Class (Freshman, Junior, Senior)
+  * Room Number (Optional)
+* System Users
+  - Username
+  - Password
+
+## Sample Data
+
+Include the following sample data:
+* All of Abaarso's current departments
+* Three classes
+* At least four students in each class
+* At least seven students in Software Engineering
+* AT least seven students in International Relations & Development
+* At least two system users
+
+## Access Application Scenarios
+
+You should support the following scenarios:
+* Login
+* Data View
+* Updating
+* Data Creation
+* Data Deletion
+* Search
+* Queries/Reports
+  - Show all students in a particular department
+  - Show all students in a particular class
+  - Show one student's detailed information
+
+The following screens:
+* Login
+* Create/Delete
+* Search
+* Home
 
 # Grading
 
-* 10% Entity Relationship Diagram
+## Overview of Marks
+
+| Component              | Marks |
+|------------------------|-------|
+| ER Diagram in Yed      | 6%    |
+| SQLite Database        | 10%   |
+| Access Tables/Data     | 8%    |
+| Access Forms           | 8%    |
+| Access Queries/Reports | 8%    |
+| *Total Marks*          | 40%   |
+
+
+## Rubric
+
+* Entity Relationship Diagram
   - Proper Notation
     - Entities, Relationships
-    - Including any 1:1
+    - Including any 1:1 relationships
     - Total Participation
-* 10% sqlite database schema
-  - Proper primary and foreign keys
-  - Some basic test data
-* 10% Access database schema/instance
-  - Feature-Complete
-  - Some Sample Data
-* 10% Access front-end interface
-  - Feature-Complete
-  - Ease of Use
+* SQL Database Design
+  - Correct relations and fields
+  - Correct integrity constraints (primary keys, foreign keys, unique, etc.)
+  - Test Data
+* Access Database Application
+  - Schemas/Instance (Is the table design accurate? Do you have sample data?)
+  - Forms (Do you have all forms working?)
+  - Queries/Reports
+
+# You will work
