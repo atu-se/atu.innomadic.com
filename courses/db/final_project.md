@@ -2,7 +2,7 @@
 
 ## Overview
 
-For this project you work (alone | in pairs) to design a university database.  You will track student enrollment by class and department.  The database will require an authenticated login.  
+For this project you work alone to design a university database.  You will track student enrollment by class and department.  The database will require an authenticated login.  
 
 ## Design Requirements
 
@@ -103,5 +103,3 @@ The following screens:
   - Schemas/Instance (Is the table design accurate? Do you have sample data?)
   - Forms (Do you have all forms working?)
   - Queries/Reports
-
-# You will work
