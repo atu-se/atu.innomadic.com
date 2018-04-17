@@ -2,7 +2,7 @@
 
 # Scenario
 
-You are the branch manager for an Indobirta Location.  You have a business idea that you want to share with the Board of Directors of Indobirta.  Write a one page Systems Request, with yourself as the project sponsor.  
+You are the branch manager for an Indobirta Location.  You have a business idea that you want to share with the Board of Directors of Indobirta.  Write a one page Systems Request to install a digital movie kiosk at each Indobirta.  It will allow customers to copy movies to a flash drive, while charging them a set fee per movie or television show.  You will need to give some basic requirements for the system and justify the project.  List yourself ast the project sponsor.
 
 Include all of these fields:
 - Project Sponsor
