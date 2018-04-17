@@ -1,5 +1,9 @@
 *Lectures Adapted from Stanford Compilers*
 
+# 16-Apr-2018
+
+* [Lecture 3 - Syntax Analysis](lectures/Slides02.pdf)
+
 # 9-Apr-2018
 * Practical Exercises
   - Today we continued in lecture 2 linked below
@@ -9,7 +13,7 @@
 
 # 7-Apr-2018
 * [Lecture 1 - Introduction](lectures/Slides00.pdf)
-* [Lecture 2 - Introduction](lectures/Slides01.pdf)
+* [Lecture 2 - Lexical Analysis](lectures/Slides01.pdf)
 * Assigned Reading:
   - Engineering a Compiler - Chapters 1-2
   - Compilers: Principles, Techniques, and Tools - Chapter 3
