@@ -2,9 +2,7 @@
 
 This is a solo assignment.  You should not share your work with other students or use their work.  
 
-Create a database that follows this entity relationship diagram:
-
-https://creately.com/diagram/example/h7cw0wrb1/+E-R+Diagram+of+Library+Management+System
+Create a database that follows this entity relationship diagram](https://creately.com/diagram/example/h7cw0wrb1/+E-R+Diagram+of+Library+Management+System)
 
 # Specifications
 
