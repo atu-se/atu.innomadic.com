@@ -1,4 +1,5 @@
-# OverviewThe
+# Overview
+
 *Update* the mid-term will now only cover chapters 1-3.
 
 The midterm will cover chapters 1-3.  The test will include topics like: introductory material on databases, the relational model, entity relationship model, basic SQL queries, relational algebra, and tuple relational calculus.  In Chapter 4, Domain Relational Calculus will be excluded from the mid-term, but Relational Algebra and Tuple Relational Calculus will be included. You will also benefit if you study your previous quiz.
