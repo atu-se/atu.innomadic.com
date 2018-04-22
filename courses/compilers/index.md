@@ -8,6 +8,7 @@
 * Reading Assignment:
   - Engineering a Compiler - Chapters 3
   - Compilers: Principles, Techniques, and Tools - Chapter 1, Chapter 4.1-4.3
+* Today's [Practical Lab 1](exercises/exercise1)
 
 # 16-Apr-2018
 
