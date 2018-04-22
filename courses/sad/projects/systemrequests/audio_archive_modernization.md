@@ -4,9 +4,8 @@
 
 ## Project Sponsor
 
-* Name:
-* Department:
-* Organization:
+* Name: Nick
+* Organization: Cultural Center
 
 ## Business Need
 

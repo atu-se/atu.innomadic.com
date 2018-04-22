@@ -4,10 +4,9 @@
 
 ## Project Sponsor
 
-* Name: Ahmed Bashe
+* Name: Ahmed B.
 * Department: Administration
-* Organization: Abaarso Tech University
-* E-mail:
+* Organization: ATU
 
 ## Business Need
 

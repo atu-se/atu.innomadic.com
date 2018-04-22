@@ -6,7 +6,7 @@
 
 * Name: Nick
 * Department: Software Engineering
-* Organization: Abaarso Tech University
+* Organization: ATU
 
 ## Business Need
 
@@ -22,6 +22,7 @@ We would like an information system that will provide the following capabilities
 * The server should operate securely and receive updates.  
 * The server should be inaccessible outside of the network.
 * General file sharing should be read-only for students.
+* The system should not be connected to the Campus Internet Wifi Connection.
 
 # Expected Value
 

@@ -6,7 +6,7 @@
 
 * Name: Nick
 * Department: Software Engineering
-* Organization: Abaarso Tech University
+* Organization: ATU
 
 ## Business Need
 
