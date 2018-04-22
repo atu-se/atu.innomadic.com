@@ -1,5 +1,14 @@
 *Lectures Adapted from Stanford Compilers*
 
+# 22-Apr-2018
+* Announcement:  Quiz tomorrow on Lexical Analysis and Syntax Analysis
+  - Including all lecture material:
+    - Engineering a Compiler - Chapters 1-2
+    - Compilers: Principles, Techniques, and Tools - Chapter 3
+* Reading Assignment:
+  - Engineering a Compiler - Chapters 3
+  - Compilers: Principles, Techniques, and Tools - Chapter 1, Chapter 4.1-4.3
+
 # 16-Apr-2018
 
 * [Lecture 3 - Syntax Analysis](lectures/Slides02.pdf)
