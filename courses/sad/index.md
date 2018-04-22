@@ -1,8 +1,13 @@
 # 21-Apr-2018
 * Assignment 3 - Feasibility Assessment Presentation
+  - Due April 28 @ 4:30 p.m.
+  - Group Project
   - In your new groups, prepare a 3-5 minute presentation of the feasibility study of the digital movie kiosk from assignments 1&2.  You should include a visual aid, like a Powerpoint.  Come prepared to present the study to the class.
+
 * Assignment 4 - Project Feasibility Study - Written draft.  
-  - Each of you have been assigned to a group project.  Read the project descriptions and write a 1st draft of a feasability study using the outline provided previously or the examples in the textbook.  Include Technical, Economic, and Organizational.  The project descriptions are below.
+  - Due April 28 @ 11:59 pm
+  - Group Project ()
+  - Each of you have been assigned to a group project.  *Read the project descriptions and write a 1st draft of a feasability study using the outline provided previously or the examples in the textbook.*  Include Technical, Economic, and Organizational.  The project descriptions are below.
 * Project descriptions
   1. [University Server](projects/systemrequests/university_server)
   2. [Library Management System](projects/systemrequests/library_management_system)
