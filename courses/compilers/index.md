@@ -1,6 +1,21 @@
 *Lectures Adapted from Stanford Compilers*
 
+# 23-Apr-2018
+
+* *Announcement*: There will be a quiz covering the introductory lessons to parsing (lectures through 22-Apr-2018).  You should study *Engineering a Compiler* chapter 3.
+* *New Assignments*:  Complete Exercise 1 and Exercise 2.  These are graded solo assignments, though you may consult with your peers for help.  The source files which are found in the git repository for the class.  Use the instructions for cloning the git [repository here](exercises/exercise1).  You may complete the exercise by showing your instructor your working output with the modifications listed below:
+  * Exercise 1: Modify the flex specification file (exercise1.l) so that when the user inputs *teacher*, the program will output *nick*.  When the user inputs *for*, the program will output *keyword*
+  * Exercise 2: Modify the flex specification file (exercise2.l) so that it also counts the number of a's in the user input and prints them in the summary after the user enters *Control+D* to close the application.  It should still print out the number of lines and number of characters.
+  * To do these exercises you will become familiar with some aspects of:
+    - the Linux shell
+    - an SSH client (Putty)
+    - the *nano* text editor
+    - *gcc*
+    - *flex*
+  * Do you want to run these exercises on your own computer?  The easiest method may be installing Linux or, perhaps better, running a Linux virtual machine.  You will want to install flex, gcc, and bison, if they are not already available.
+
 # 22-Apr-2018
+
 * Announcement:  Quiz tomorrow on Lexical Analysis and Syntax Analysis
   - Including all lecture material:
     - Engineering a Compiler - Chapters 1-2
