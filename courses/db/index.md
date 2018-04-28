@@ -13,6 +13,11 @@ Tentative Schedule
 ## Software Required
 * [Setup Instructions](exercises/setup)
 
+# 28-Apr-2018
+
+* Read Field Guide to Human-Centered Design pp 29-44, 65
+* Read Textbook Chapter 3
+
 # 15-Apr-2018
 
 * Today:  mid-term review
