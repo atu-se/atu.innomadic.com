@@ -1,3 +1,8 @@
+# 28-Apr-2018
+
+* Read Field Guide to Human-Centered Design pp. 29-44, 65
+* Read Textbook Chapter 3
+
 # 21-Apr-2018
 * Assignment 3 - Feasibility Assessment Presentation
   - Due April 28 @ 4:30 p.m.
