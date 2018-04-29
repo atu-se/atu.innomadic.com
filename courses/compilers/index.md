@@ -1,5 +1,9 @@
 *Lectures Adapted from Stanford Compilers*
 
+# 29-Apr-2018
+
+* * [Lecture 4 - Top Down Parsing](lectures/Slides03.pdf)
+
 # 23-Apr-2018
 
 * *Announcement*: There will be a quiz covering the introductory lessons to parsing (lectures through 22-Apr-2018).  You should study *Engineering a Compiler* chapter 3.
