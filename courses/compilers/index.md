@@ -2,7 +2,8 @@
 
 # 29-Apr-2018
 
-* * [Lecture 4 - Top Down Parsing](lectures/Slides03.pdf)
+* Announcing:  Quiz tomorrow (30-Apr-2018) on Parsing.  Review Chapter 3
+* [Lecture 4 - Top Down Parsing](lectures/Slides03.pdf)
 
 # 23-Apr-2018
 
