@@ -1,5 +1,5 @@
 # 29-Apr-2018
-
+* [Chapter 3](lectures/ch3.pptx)
 * Announcement - Quiz #2 on May 6
   - Covering Chapters 3-4
 * Assignment 5 - Interview Preparation
