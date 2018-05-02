@@ -16,6 +16,8 @@
 ## Software Required
 * [Setup Instructions](exercises/setup)
 
+# 2-May-2018
+* [Final Project](final_project) Announced. Read specification carefully.
 # 15-Apr-2018
 
 * Today:  mid-term review
