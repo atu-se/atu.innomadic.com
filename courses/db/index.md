@@ -17,7 +17,9 @@
 * [Setup Instructions](exercises/setup)
 
 # 2-May-2018
-* [Final Project](final_project) Announced. Read specification carefully.
+
+* [Final Project](final_project) Announced. Read specification carefully. Due June 5 @ 11:59 p.m.
+
 # 15-Apr-2018
 
 * Today:  mid-term review

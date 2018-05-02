@@ -1,5 +1,7 @@
 # Final Project
 
+Due June 5 @ 11:59 p.m.
+
 ## Overview
 
 For this project you work alone to design a university database.  You will track student enrollment by class and department.  The database will require an authenticated login.  
