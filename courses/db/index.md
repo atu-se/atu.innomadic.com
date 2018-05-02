@@ -1,7 +1,10 @@
 # Introduction to Databases
 
-## Schedule
-Tentative Schedule
+## Grading
+* 10% Attendance
+* 30% Midterm Exam
+* 40% Final Project
+* 20% Other assignments, quizes, etc.
 
 ## Textbooks
 

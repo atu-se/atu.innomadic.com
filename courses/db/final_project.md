@@ -70,9 +70,10 @@ You should support the following scenarios:
 
 The following screens:
 * Login
-* Create/Delete
-* Search
 * Home
+* Create/Delete
+* Search/Update
+* Queries/Reports
 
 # Grading
 
