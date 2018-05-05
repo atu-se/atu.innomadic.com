@@ -1,3 +1,8 @@
+# 5-May-2018
+
+* Interview the two people assigned to you for your project
+* Email the detailed notes from your interview by Saturday, May 12 @ 11:59 p.m.
+
 # 29-Apr-2018
 * [Chapter 3](lectures/ch3.pptx)
 * Announcement - Quiz #2 on May 6
