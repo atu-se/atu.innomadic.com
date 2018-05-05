@@ -1,5 +1,18 @@
 *Lectures Adapted from Stanford Compilers*
 
+# 31-Apr-2018
+
+* *New Assignment* Exercise 3
+  - Login to your shell account and update the compilers git repository:
+    > cd compilers
+    > git pull
+  - Next, compile the flex specification file using make.  Type:
+    > make
+  - Notice that make will update the appropriate files when they are changed
+  - Modify the flex specification file to add a new keyword to the language it recognizes.
+  - Show the result to your teacher when you are finished
+
+
 # 29-Apr-2018
 
 * Announcing:  Quiz tomorrow (30-Apr-2018) on Parsing.  Review Chapter 3
