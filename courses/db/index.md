@@ -16,6 +16,11 @@
 ## Software Required
 * [Setup Instructions](exercises/setup)
 
+# 5-May-2018
+
+* Announcing:  Quiz #2 on Wednesday May 8 (Evening) / Thursday May 9 (Morning) covering chapters 4-5
+
+
 # 2-May-2018
 
 * [Final Project](final_project) Announced. Read specification carefully. Due June 5 @ 11:59 p.m.
