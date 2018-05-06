@@ -13,12 +13,12 @@ Your final project is replacing your final exam.  It will include final versions
 5. Survey Preparation
 6. Interview Notes
 7. Use Cases
-  1. These should be all the use cases that you have determined after your surveys
-  2. Use cases should include the following categories:
-    1. Description
-    2. Priority
-    3. Preconditions
-    4. Trigger
+  * These should be all the use cases that you have determined after your surveys
+  * Use cases should include the following categories:
+    - Description
+    - Priority
+    - Preconditions
+    - Trigger
 8. Technical Implementation Proposal
   1. Proposing tools and technology that you recommend using for this project.
   2. Include at least one half of a page.
