@@ -1,3 +1,16 @@
+# 6-May-2018
+* [Final Project](final_project) due via email @ 17-May @ 11:59 p.m.
+* Assignment 7 - Peer Review
+  - Each *individual* should send me an email with the following:
+    - A list of the individuals on your team
+    - Divide 100% across the members of your team to indicate your view of their contribution to your project this semester.
+    - e.g.
+      - Nick: 30%
+      - Amina: 40%
+      - Yusuf: 30%
+  - Due 19-May @ 11:59p.m.
+  - Do *not* send until after your final project submission
+
 # 5-May-2018
 
 * Interview the two people assigned to you for your project
