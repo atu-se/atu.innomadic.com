@@ -18,7 +18,7 @@
 
 # 5-May-2018
 
-* Announcing:  Quiz #2 on Wednesday May 8 (Evening) / Thursday May 9 (Morning) covering chapters 4-5
+* Announcing:  Quiz #2 on Tuesday May 8 (Evening) / Sunday May 6 (Morning) covering chapters 4-5
 
 
 # 2-May-2018
