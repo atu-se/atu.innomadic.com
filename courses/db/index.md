@@ -4,7 +4,7 @@
 * 10% Attendance
 * 30% Midterm Exam
 * 40% Final Project
-* 20% Other assignments, quizes, etc.
+* 20% Other assignments, quizzes, etc.
 
 ## Textbooks
 

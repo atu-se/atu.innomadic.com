@@ -1,5 +1,10 @@
 *Lectures Adapted from Stanford Compilers*
 
+# Grading
+* 50% Final Exam
+* 40% Assessments (Homework, Quizzes, Exercises, etc.)
+* 10% Attendance
+
 # 31-Apr-2018
 
 * *New Assignment* Exercise 3

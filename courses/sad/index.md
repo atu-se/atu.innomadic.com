@@ -1,3 +1,10 @@
+# Grading
+
+* 50% Final Project
+* 40% Asssessments (Assignments, Quizzes, etc.)
+* 10% Attendance
+
+
 # 6-May-2018
 * [Final Project](final_project) due via email @ 17-May @ 11:59 p.m.
 * Assignment 7 - Peer Review
