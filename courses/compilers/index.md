@@ -5,6 +5,19 @@
 * 40% Assessments (Homework, Quizzes, Exercises, etc.)
 * 10% Attendance
 
+# 7-May-2018
+
+* Final Exam Study Guide
+  * Review these slides:
+    - [Overview](lectures/Slides00.pdf)
+    * [Lexical Analysis](lectures/Slides01.pdf)
+    * [Syntax Analysis](lectures/Slides02.pdf)
+    * [Top Down Parsing - Through Slide 230](lectures/Slides03.pdf)
+  - Review quizzes
+  - Review all class notes
+  - Review *Engineering a Compiler* textbook, chapters 1, 2, and sections 3.1-3.3)
+  - Study hard
+
 # 31-Apr-2018
 
 * *New Assignment* Exercise 3
