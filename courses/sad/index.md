@@ -1,7 +1,7 @@
 # Grading
 
 * 50% Final Project
-* 40% Asssessments (Assignments, Quizzes, etc.)
+* 40% Assessments (Assignments, Quizzes, etc.)
 * 10% Attendance
 
 
