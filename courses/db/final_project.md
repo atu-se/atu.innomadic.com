@@ -1,6 +1,6 @@
 # Final Project
 
-Due June 5 @ 11:59 p.m.
+* See front page for deadline information, which has been updated.
 
 ## Overview
 

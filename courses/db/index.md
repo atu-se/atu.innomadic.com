@@ -17,7 +17,7 @@
 * [Setup Instructions](exercises/setup)
 
 # 9-May-2018
-* **Important update:  for your final project, there is a change to the submission deadlines.**
+* **Important update:  for your [final project](final_project), there is a change to the submission deadlines.**
   * The SQLite database and the Entity-Relationship Diagram must be submitted by 1-June
   * The rest of the project (the Access Database) is due 7-July
 
