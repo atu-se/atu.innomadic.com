@@ -16,6 +16,11 @@
 ## Software Required
 * [Setup Instructions](exercises/setup)
 
+# 9-May-2018
+* **Important update:  for your final project, there is a change to the submission deadlines.**
+  * The SQLite database and the Entity-Relationship Diagram must be submitted by 1-June
+  * The rest of the project (the Access Database) is due 7-July
+
 # 5-May-2018
 
 * Announcing:  Quiz #2 on Tuesday May 8 (Evening) / Sunday May 6 (Morning) covering chapters 4-5

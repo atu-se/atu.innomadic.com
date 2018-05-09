@@ -1,6 +1,8 @@
 # Final Project
 
-Your final project is replacing your final exam.  It will include final versions of previous assignments in the class, in addition to some new work.  You should submit a single document with the following sections:
+**Important update: There have been some changes to the grading and due date for this project.  It now accounts for 20% of your grade.  However, it is not replacing your final or mid-term exam.  There will still be a mid-term and final exam of some kind.  The due date has also been extended (see the front page for the updated due date).**
+
+This project is work 20% of your total grade.  It will include final versions of previous assignments in the class, in addition to some new work.  You should submit a single document with the following sections:
 
 1. Cover Page
   * Project name

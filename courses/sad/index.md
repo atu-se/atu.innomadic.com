@@ -1,12 +1,16 @@
+**Important update.  The grading schedule and project due dates have changed.  Please read below carefully.**
+
 # Grading
 
-* 50% Final Project
-* 40% Assessments (Assignments, Quizzes, etc.)
 * 10% Attendance
+* 20% Project
+* 20% Continuous Assessments
+* 20% Midterm Exam
+* 30% Final Exam
 
 
 # 6-May-2018
-* [Final Project](final_project) due via email @ 17-May @ 11:59 p.m.
+* [Project](final_project) due via email @ 28-May @ 11:59 p.m.
 * Assignment 7 - Peer Review
   - Each *individual* should send me an email with the following:
     - A list of the individuals on your team
@@ -15,8 +19,8 @@
       - Nick: 30%
       - Amina: 40%
       - Yusuf: 30%
-  - Due 19-May @ 11:59p.m.
-  - Do *not* send until after your final project submission
+  - Due 29-May @ 11:59p.m.
+  - Do *not* send until after your project submission
 
 # 5-May-2018
 
