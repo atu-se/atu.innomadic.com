@@ -5,7 +5,7 @@
 
 ## Textbook
 
-* [*Introduction to the Theory of Computation **3rd Edition** * (Sipser)](https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X)
+* *[Introduction to the Theory of Computation **3rd Edition**  (Sipser)](https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X)*
 
 ## Supplemental Reading
 
