@@ -12,7 +12,9 @@ Year 3 / Semester 8
 
 ## Class Meeting Times
 
-To be annonced
+* Monday 4:30-6, 6:30-8
+* Wednesday 6:30-8
+
 
 ## Instructor Contact Information
 
@@ -76,7 +78,7 @@ Late assignments will be received reduced credit at the teacher's discretion.
 
 ## Academic Integrity
 
-You are encouraged to study together and to discuss information and concepts covered in lecture and the sections with other students. You can give "consulting" help to or receive "consulting" help from such students. However, this permissible cooperation should never involve one student having possession of a copy of all or part of work done by someone else, in the form of an e-mail, an e-mail attachment file, a flash drive, or a hard copy.
+You are encouraged to study together and to discuss information and concepts covered in lecture and the sections with other students. You can give "consulting" help to or receive "consulting" help from such students. However, this permissible cooperation should never involve one student having possession of a copy of all or part of work done by someone else, in the form of an e-mail, an e-mail attachment file, a flash drive, or a hard copy.  The only exception to this is assignments that are clearly described as group-work, and the expectations for that group work will be documented for those assignments.
 
 Should copying occur, both the student who copied work from another student and the student who gave material to be copied may receive a zero for the assignment. Penalty for violation of this Code can also be extended to include failure of the course and University disciplinary action.
 

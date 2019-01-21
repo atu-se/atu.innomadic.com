@@ -14,4 +14,11 @@
 
 
 # Lecture 1
-* Introduction
+
+* Introduction to Finite Automata
+* Pretest
+* Required reading: Chapter 0.1 -- 1.2
+* Required [Homework #1](homework/homework1.md) due Wednesday 23-Jan-2019.
+  * Show your effort
+  * Follow group work requirements carefully
+  * If you don't make sure that you understand group work, your grades will suffer in quizzes and exams
