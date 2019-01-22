@@ -13,12 +13,21 @@
 * [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf)
 
 
-# Lecture 1
+# Class Update 22-Jan
+* The results of the pretest covering material from Discrete Math were poor.  Please review chapter 0 carefully.  Study up on these topics:
+  * Interpreting a formal description of a set. e.g The set {1, 3, 5, 7, ...} is: the set of all odd, positive integers.
+  * Be able to read an information description of a set and write a formal description.
+  * Be familiar with the symbols used for Natural numbers, Integers, Rational numbers, etc.
+  * Be able to identify subsets and understand the notation
+  * Be able to do set intersection, set union, cross-product, and power sets.
+  * Understand the domain and range of functions
+# Lecture 1 - 21-Jan
 
-* Introduction to Finite Automata
+* [Lecture Slides: Introduction to Finite Automata](lectures/Lecture1.pdf)
 * Pretest
 * Required reading: Chapter 0.1 -- 1.2
-* Required [Homework #1](homework/homework1.md) due Wednesday 23-Jan-2019.
+* Required [Homework #1](homework/homework1.md) due Wednesday 23-Jan.
   * Show your effort
   * Follow group work requirements carefully
   * If you don't make sure that you understand group work, your grades will suffer in quizzes and exams
+  * This homework will be graded!
