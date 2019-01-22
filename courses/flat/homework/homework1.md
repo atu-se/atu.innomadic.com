@@ -15,6 +15,8 @@ _______________________________________________________
 
 ~~Do Exercise 1.4 a, c, e, g~~ *(Note: Number 4 has been removed from your assignment.)*
 
-* Do Exercise 1.5 a, c, e, g
+*Note:  for exercise 1.5, remember our exercise from class in which we complemented a machine by switching the accept states. Design the machine that accepts the complement, then make the reject states into accept states.  Make the accept states into reject states.*
+
+* Do Exercise 1.5 a, c, ~~e~~, g (Note: Number 4 has been removed from your assignment.)*
 
 * Do Exercise 1.6 a, c, e, g, i, k, m
