@@ -13,7 +13,7 @@ _______________________________________________________
 
 3. Exercise 1.3
 
-4. Do Exercise 1.4 a, c, e, g
+~~4. Do Exercise 1.4 a, c, e, g~~ *(Note: Number 4 has been removed from your assignment.)*
 
 5. Do Exercise 1.5 a, c, e, g
 
