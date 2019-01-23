@@ -6,7 +6,7 @@ Below I have highlighted definitions, terms, theorems, corollaries, etc. from ou
 A finite automaton is a 5-tuple (Q, Σ, δ, q0, F ), where
 1. Q is a finite set called the states,
 2. Σ is a finite set called the alphabet,
-3. δ : Q × Σ−→ Q is the transition function,1 4. q~0~ ∈ Q is the start state, and
+3. δ : Q × Σ−→ Q is the transition function,1 4. q<sub>0</sub> ∈ Q is the start state, and
 5. F ⊆ Q is the set of accept states.
 
 # Definition 1.16: Regular Language
@@ -15,26 +15,29 @@ A language is called a regular language if some finite automaton recognizes it.
 # Definition 1.23: Regular Operations
 Let A and B be languages. We define the regular operations union,
 concatenation, and star as follows:
-* Union: A∪B = { x| x∈A or x∈B}
-* Concatenation: A◦B = { xy | x∈A and y∈B }
-* Star: A* ={x~1~x~2~...x~k~ | k≥0 and each x~i~ ∈A }
+
+| Operation     | Definition                                                                           |
+|---------------|--------------------------------------------------------------------------------------|
+| Union         | A∪B = { x\| x∈A or x∈B}                                                              |
+| Concatenation | A◦B = { xy \| x∈A and y∈B }                                                          |
+| Star          | A* ={x<sub>1</sub>x<sub>2</sub>...x<sub>k</sub> \| k≥0 and each x<sub>i </sub> ∈ A } |
 
 
 # Theorem 1.25
 The class of regular languages is closed under the union operation.
-In other words, if A~1~ and A~2~ are regular languages, so is A~1~ ∪ A~2~.
+In other words, if A<sub>1</sub> and A<sub>2</sub> are regular languages, so is A<sub>1</sub> ∪ A<sub>2</sub>.
 
 
 # Theorem 1.26
 The class of regular languages is closed under the concatenation operation.
-In other words, if A~1~ and A~2~ are regular languages then so is A~1~ ◦ A~2~.
+In other words, if A<sub>1</sub> and A<sub>2</sub> are regular languages then so is A<sub>1</sub> ◦ A<sub>2</sub>.
 
 # Definition 1.37: Nondeterministic Finite Automaton
 A nondeterministic finite automaton is a 5-tuple (Q,Σ,δ,q0,F),
 where
 1. Q is a finite set of states,
 2. Σ is a finite alphabet,
-3. δ : Q × Σ~ε~ −→ P (Q) is the transition function, 4. q~0~ ∈ Q is the start state, and
+3. δ : Q × Σ<sub>ε</sub> −→ P (Q) is the transition function, 4. q<sub>0</sub> ∈ Q is the start state, and
 5. F ⊆ Q is the set of accept states.
 
 
@@ -59,8 +62,8 @@ Say that R is a regular expression if R is
 1. *a* for some *a* in the alphabet Σ,
 2. ε,
 3. ∅,
-4. (R~1~ ∪ R~2~), where R~1~ and R~2~ are regular expressions,
-5. (R~1~ ◦ R~2~), where R~1~ and R~2~ are regular expressions, or
-6. (R~1~∗), where R~1~ is a regular expression.
+4. (R<sub>1</sub> ∪ R<sub>2</sub>), where R<sub>1</sub> and R<sub>2</sub> are regular expressions,
+5. (R<sub>1</sub> ◦ R<sub>2</sub>), where R<sub>1</sub> and R<sub>2</sub> are regular expressions, or
+6. (R<sub>1</sub>∗), where R<sub>1</sub> is a regular expression.
 
-In items 1 and 2, the regular expressions *a* and ε represent the languages {*a*} and {ε}, respectively. In item 3, the regular expression ∅ represents the empty language. In items 4, 5, and 6, the expressions represent the languages obtained by taking the union or concatenation of the languages R~1~ and R~2~, or the star of the language R~1~, respectively.
+In items 1 and 2, the regular expressions *a* and ε represent the languages {*a*} and {ε}, respectively. In item 3, the regular expression ∅ represents the empty language. In items 4, 5, and 6, the expressions represent the languages obtained by taking the union or concatenation of the languages R<sub>1</sub> and R<sub>2</sub>, or the star of the language R<sub>1</sub>, respectively.
