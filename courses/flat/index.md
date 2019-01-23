@@ -12,6 +12,9 @@
 * [*Book of Proof*](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 * [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf)
 
+## Definitions and Theorems
+
+I have created a [summary page of important definitions, theorems, etc.](definitions_and_theorems.md) from our textbook for your convenience.  You should know these well.
 
 # Lecture 2 - 23-Jan
 
@@ -20,7 +23,7 @@
 * [Homework #2](homework/homework2.md) has been posted.  It is due Monday, 28-Jan.
 * Required reading: 1.3-1.4.  After this you should have completed reading Chapter 0 and Chapter 1.
 * Lecture #2: Non-deterministic Finite Automata
-*
+* I have created a [summary page of important definitions, theorems, etc.](definitions_and_theorems.md) from our textbook for your convenience.  You should learn these well.
 
 # Class Update 22-Jan
 
