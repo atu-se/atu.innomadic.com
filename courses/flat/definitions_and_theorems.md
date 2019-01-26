@@ -3,10 +3,10 @@
 Below I have highlighted definitions, terms, theorems, corollaries, etc. from our textbook for your convenience.  You should know all of these terms very well.
 
 # Definition 1.5: Finite Automaton
-A finite automaton is a 5-tuple (Q, Σ, δ, q0, F ), where
+A finite automaton is a 5-tuple (Q, Σ, δ, q<sub>0</sub>, F ), where
 1. Q is a finite set called the states,
 2. Σ is a finite set called the alphabet,
-3. δ : Q × Σ−→ Q is the transition function,1 4. q<sub>0</sub> ∈ Q is the start state, and
+3. δ : Q × Σ → Q is the transition function,1 4. q<sub>0</sub> ∈ Q is the start state, and
 5. F ⊆ Q is the set of accept states.
 
 # Definition 1.16: Regular Language
@@ -18,8 +18,8 @@ concatenation, and star as follows:
 
 | Operation     | Definition                                                                           |
 |---------------|--------------------------------------------------------------------------------------|
-| Union         | A∪B = { x\| x∈A or x∈B}                                                              |
-| Concatenation | A◦B = { xy \| x∈A and y∈B }                                                          |
+| Union         | A∪B = { x\| x ∈ A or x ∈ B}                                                              |
+| Concatenation | A◦B = { xy \| x ∈ A and y ∈ B }                                                          |
 | Star          | A* ={x<sub>1</sub>x<sub>2</sub>...x<sub>k</sub> \| k≥0 and each x<sub>i </sub> ∈ A } |
 
 
@@ -37,7 +37,7 @@ A nondeterministic finite automaton is a 5-tuple (Q,Σ,δ,q0,F),
 where
 1. Q is a finite set of states,
 2. Σ is a finite alphabet,
-3. δ : Q × Σ<sub>ε</sub> −→ P (Q) is the transition function, 4. q<sub>0</sub> ∈ Q is the start state, and
+3. δ : Q × Σ<sub>ε</sub> → P (Q) is the transition function, 4. q<sub>0</sub> ∈ Q is the start state, and
 5. F ⊆ Q is the set of accept states.
 
 
