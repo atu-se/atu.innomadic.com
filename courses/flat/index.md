@@ -23,6 +23,12 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | [Homework 2](homework/homework2.md) | Wednesday, 30-Jan           |
 | [Homework 1](homework/homework1.md) | Postponed to Monday, 28-Jan |
 
+## Lectures
+
+| Topic                                                       | Reading Assignment |
+|-------------------------------------------------------------|--------------------|
+| 2. Non-deterministics Finite Automata                       | 1.3-1.4            |
+| 1. [Introduction to Finite Automata](lectures/Lecture1.pdf) | 0.1-1.2            |
 
 ## Updates
 

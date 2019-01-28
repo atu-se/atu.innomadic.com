@@ -71,7 +71,7 @@ Supplemental reading and other materials will be linked on the [course website](
 * 10% Attendance
 * 40% Final
 * 30% Mid-Term
-* 20% Assignments: Quizzes, Homework, etc.
+* 20% Quizzes, Homework, etc.
 
 Late assignments will be received reduced credit at the teacher's discretion.
 
