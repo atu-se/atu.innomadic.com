@@ -98,7 +98,9 @@ Lecture    | Topic                                            | Assigned Reading
 7 | The Pumping Lemma | 2.3
 8 | Turing Machines | 3.1
 9 | Variants of Turing Machines | 3.2
-
+  | Review  |  
 Depending upon time, we may cover:
-* Decidable Languages
-* The Halting Problem
+* 10 Decidable Languages (4.1)
+* 11 The Halting Problem 5.1
+* 12 Reductions (5.1-5.2)
+* 13 Mapping Reductions (5.3)
