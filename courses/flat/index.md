@@ -18,24 +18,28 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Assignments
 
-| Assignment                          | Due Date                    |
-|-------------------------------------|-----------------------------|
-| [Homework 2](homework/homework2.md) | Wednesday, 30-Jan           |
-| [Homework 1](homework/homework1.md) | Postponed to Monday, 28-Jan |
+| Assignment                          | Due Date                       |
+|-------------------------------------|--------------------------------|
+| [Homework 2](homework/homework2.md) | Monday, 30-Jan                 |
+| [Homework 1](homework/homework1.md) | Postponed to Wednesday, 4-Feb |
 
 ## Lectures
 
-| Topic                                                       | Reading Assignment |
-|-------------------------------------------------------------|--------------------|
-| 2. Non-deterministics Finite Automata                       | 1.3-1.4            |
-| 1. [Introduction to Finite Automata](lectures/Lecture1.pdf) | 0.1-1.2            |
+| Topic                                                          | Reading Assignment |
+|----------------------------------------------------------------|--------------------|
+| 2. [Non-deterministics Finite Automata](lectures/Lecture2.pdf) | 1.3-1.4            |
+| 1. [Introduction to Finite Automata](lectures/Lecture1.pdf)    | 0.1-1.2            |
 
 ## Updates
 
 ### Lecture 2 28-Jan
 
-* Homework #1 is due today Postponed
-* [Homework #2](homework/homework2.md) has been posted.
+* [Lecture #2 Slides: Non-deterministic Finite Automata](lectures/Lecture2.pdf)
+* Homework #1 is due today
+  - I have postponed this again as noted in the Assignments table above
+  - Every student should have his/her own paper
+  - Group size should be a maximum of three people
+* [Homework #2](homework/homework2.md) has been posted
 * Required reading: 1.3-1.4.  After this you should have completed reading Chapter 0 and Chapter 1.
 
 
