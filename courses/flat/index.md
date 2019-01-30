@@ -20,8 +20,8 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 | Assignment                          | Due Date                       |
 |-------------------------------------|--------------------------------|
-| [Homework 2](homework/homework2.md) | Monday, 30-Jan                 |
-| [Homework 1](homework/homework1.md) | Postponed to Wednesday, 4-Feb |
+| [Homework 2](homework/homework2.md) | Postponed to Wednesday, 4-Feb  |
+| [Homework 1](homework/homework1.md) | Monday, 30-Jan                 |
 
 ## Lectures
 

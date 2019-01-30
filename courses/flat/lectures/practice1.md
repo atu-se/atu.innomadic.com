@@ -1,5 +1,5 @@
 ---
-title: Formal Theory and Language
+title: Formal Languages and Automata Theory
 ---
 
 # DFA Practice
