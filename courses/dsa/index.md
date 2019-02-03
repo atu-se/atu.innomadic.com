@@ -23,3 +23,9 @@
 ## Updates
 
 ### Lecture 1 3-Feb
+* Assigned Reading: Chapter 18
+* Practice #1:
+  - Checkpoints:
+    - 18.4
+    - 18.7
+    - 18.8
