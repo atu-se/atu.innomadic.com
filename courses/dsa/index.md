@@ -5,12 +5,13 @@
 
 ## Textbook
 
-* *[Introduction to the Theory of Computation -- 3rd Edition (Sipser)](https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X)*
+* Introduction to Java Programming, 10th Edition (Liang)
 
-## Supplemental Reading
+## Meeting Times
 
-* [*Book of Proof*](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
-* [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf)
+* Saturday @ 8:30 a.m.
+* Sunday @ 10:30 a.m.
+* Wednesday @ 8:30 a.m.
 
 
 ## Lectures
