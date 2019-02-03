@@ -23,9 +23,3 @@
 ## Updates
 
 ### Lecture 1 3-Feb
-
-* [Lecture #2 Slides: Non-deterministic Finite Automata](lectures/Lecture2.pdf)
-* Practice #1:
-  - 18.4
-  - 18.7
-  - 18.8
