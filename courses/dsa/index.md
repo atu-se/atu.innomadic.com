@@ -1,4 +1,4 @@
-# Formal Languages and Automata Theory
+# Data Structures and Algorithms
 
 ## Syllabus
 [Syllabus](syllabus.md)
