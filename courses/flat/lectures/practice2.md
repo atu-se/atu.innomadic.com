@@ -6,11 +6,11 @@ export_on_save:
   pandoc: true
 output:
   custom_document:
-    path: "./practice2.html"
+    path: "./practice2-html.html"
     pandoc_args: ["-t", "revealjs", "-V",  "revealjs-url=../../../presentation/revealjs", "--standalone"]
 ---
 
-# NFA Practice
+# NFA Practice  
 
 Design an NFA for each of the languages below.  For each language, $\Sigma$ = {a, b}.
 
@@ -40,7 +40,7 @@ digraph finite_state_machine {
 }
 ```
 
-# NFA Practice 
+# NFA Practice
 
 8. Identify the language in the following NFA:
 
