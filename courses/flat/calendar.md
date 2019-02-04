@@ -8,11 +8,11 @@
 | 28-Jan | 1c                |
 | 28-Jan | 2                 |
 | 30-Jan | 2b                |
+| 4-Feb  | 2c                |
 | 4-Feb  | 3                 |
-| 4-Feb  | 4                 |
-| 6-Feb  | 4b                |
+| 6-Feb  | 4 (Quiz)          |
 | 11-Feb | 5                 |
-| 11-Feb | 5b (Quiz?)        |
+| 11-Feb | 5b                |
 | 13-Feb | 6                 |
 | 18-Feb | 6b                |
 | 18-Feb | Mid-term Review   |

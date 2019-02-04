@@ -20,6 +20,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 | Assignment                          | Due Date                       |
 |-------------------------------------|--------------------------------|
+| [Homework 3](homework/homework3.md) | 11-Feb                         |
 | [Homework 2](homework/homework2.md) | Postponed to Wednesday, 4-Feb  |
 | [Homework 1](homework/homework1.md) | Monday, 30-Jan                 |
 
@@ -32,6 +33,13 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 1. [Introduction to Finite Automata](lectures/Lecture1.pdf)    | 0.1-1.2            |
 
 ## Updates
+
+### Lecture 3 4-Feb
+* Homework #2 is due today
+* Homework #3 is assigned today
+* Lecture #3: Regular Expressions
+* Tuesday 6-February there will be a quiz covering Lectures 1 and 2, FAs, DFAs, NFAs.
+
 
 ### Lecture 2 28-Jan
 
