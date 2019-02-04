@@ -27,7 +27,8 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 | Topic                                                          | Reading Assignment |
 |----------------------------------------------------------------|--------------------|
-| 2. [Non-deterministics Finite Automata](lectures/Lecture2.pdf) | 1.3-1.4            |
+| 3. [Regular Expressions](lectures/Lecture3.pdf)  |  2.2-2.2 |
+| 2. [Non-deterministic Finite Automata](lectures/Lecture2.pdf) | 1.3-1.4            |
 | 1. [Introduction to Finite Automata](lectures/Lecture1.pdf)    | 0.1-1.2            |
 
 ## Updates

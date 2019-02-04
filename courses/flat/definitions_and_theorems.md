@@ -6,9 +6,15 @@ Below I have highlighted definitions, terms, theorems, corollaries, etc. from ou
 
 ## Definition 1.5: Finite Automaton
 A finite automaton is a 5-tuple (Q, Σ, δ, q<sub>0</sub>, F ), where
+
 1. Q is a finite set called the states,
+
 2. Σ is a finite set called the alphabet,
-3. δ : Q × Σ → Q is the transition function,1 4. q<sub>0</sub> ∈ Q is the start state, and
+
+3. δ : Q × Σ → Q is the transition function,1
+
+4. q<sub>0</sub> ∈ Q is the start state, and
+
 5. F ⊆ Q is the set of accept states.
 
 ## Definition 1.16: Regular Language
