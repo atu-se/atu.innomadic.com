@@ -1,5 +1,4 @@
 # 2019
 
-# Year 3
-
+* [Data Structures and Algorithms](courses/dsa)
 * [Formal Languages and Automata Theory](courses/flat/)
