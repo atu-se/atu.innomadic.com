@@ -87,18 +87,19 @@ During examinations, you must do your own work. Talking or discussion is not per
 
 ## Tentative Course Schedule
 
-Lecture    | Topic                                            | Assigned Reading     |   
------------|-----------------------------------------------------|----------|---|
-1  | Introduction, Finite Automata                      |  0-1.1
-2 | Non-deterministic Finite Automata | 1.2
-3 | Regular Expressions | 1.3
-4 | Non-regular languages | 1.4
-5 | Context-Free Languages | 2.1
-6 | Pushdown Automata | 2.2
-7 | The Pumping Lemma | 2.3
-8 | Turing Machines | 3.1
-9 | Variants of Turing Machines | 3.2
-  | Review  |  
+Lecture | Topic                             | Assigned Reading |
+--------|-----------------------------------|------------------|
+1       | Introduction, Finite Automata     | 0-1.1            |
+2       | Non-deterministic Finite Automata | 1.2              |
+3       | Regular Expressions               | 1.3              |
+4       | Non-regular languages             | 1.4              |
+5       | Context-Free Languages            | 2.1              |
+6       | Pushdown Automata                 | 2.2              |
+7       | The Pumping Lemma                 | 2.3              |
+8       | Turing Machines                   | 3.1              |
+9       | Variants of Turing Machines       | 3.2              |
+        | Review                            |                  |
+
 Depending upon time, we may cover:
 * 10 Decidable Languages (4.1)
 * 11 The Halting Problem 5.1
