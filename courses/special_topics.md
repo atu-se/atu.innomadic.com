@@ -18,3 +18,18 @@
   4. Visual Source Safe
   4. Mercurial
   5. Git
+8. Demonstrate git
+  1. init
+  2. status
+  2. add
+  3. commit
+  4. log
+9. [Demonstrate Github](https://guides.github.com/activities/hello-world/)
+  1. Create repository
+  2. Make change and commit
+  3. pull
+  4. Edit
+  5. add
+  6. commit
+  7. push
+  8. Review changes on Github.
