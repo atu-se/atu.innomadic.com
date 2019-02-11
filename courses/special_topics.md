@@ -3,6 +3,7 @@
 ## Programming Technologies Survey
 
 [Stack Overflow Developer Survey](https://insights.stackoverflow.com/survey/2018)
+
 ## Version Control Systems
 
 1. [Sample Slides](https://www.slideshare.net/kmstechnology/git-version-control-system-18818156?next_slideshow=1)
@@ -18,12 +19,9 @@
   4. Visual Source Safe
   4. Mercurial
   5. Git
-8. Demonstrate git
-  1. init
-  2. status
-  2. add
-  3. commit
-  4. log
+
+## Github Introduction
+
 9. [Demonstrate Github](https://guides.github.com/activities/hello-world/)
   1. Create repository
   2. Make change and commit
@@ -33,3 +31,12 @@
   6. commit
   7. push
   8. Review changes on Github.
+
+## Git Introduction
+
+8. Demonstrate git
+  1. init
+  2. status
+  2. add
+  3. commit
+  4. log
