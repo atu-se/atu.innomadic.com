@@ -10,11 +10,11 @@
 | 30-Jan | 2b                |
 | 4-Feb  | 2c                |
 | 4-Feb  | 3                 |
-| 6-Feb  | 4 (Quiz)          |
-| 11-Feb | 5                 |
-| 11-Feb | 5b                |
-| 13-Feb | 6                 |
-| 18-Feb | 6b                |
+| 6-Feb  | 3b (Quiz)         |
+| 11-Feb | 4                 |
+| 11-Feb | 4                |
+| 13-Feb | 5                 |
+| 18-Feb | 5                |
 | 18-Feb | Mid-term Review   |
 | 20-Feb | Mid-term Exam     |
 | 25-Feb | 7                 |

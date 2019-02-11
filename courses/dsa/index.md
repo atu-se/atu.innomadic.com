@@ -7,9 +7,18 @@
 
 | Topic                                                          | Reading Assignment |
 |----------------------------------------------------------------|--------------------|
+| 2. Generics   | Chapter 19  |
 | 1. Recursion [Notes](lectures/lecture1.pdf)   | Chapter 18            |
 
 ## Updates
+
+### Lecture 2 9-Feb
+
+* Lecture 2 - Generics
+* Practice #3
+  - Choose 19.2 or 19.7 (pp.758-759).
+  - Prepare for Wednesday
+
 
 ### Lecture 1b 6-Feb
 * Lecture 1: Updated lecture 1 notes
