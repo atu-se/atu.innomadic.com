@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2019-02-13" />
+  <title>Formal Languages &amp; Automata Theory</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Formal Languages &amp; Automata Theory</h1>
+<p class="subtitle">Pumping Lemma Notes</p>
+<p class="date">February 13, 2019</p>
+</header>
+<h1 id="pumping-lemma-notes">Pumping Lemma Notes</h1>
+<h2 id="a-template-for-using-the-pumping-lemma-to-prove-a-language-a-is-not-regular">A Template for Using the Pumping Lemma to prove a language <em>A</em> is not regular.</h2>
+<p>Let A be a language.</p>
+<ol type="1">
+<li>Assume a is regular.</li>
+<li>Let p be the pumping length from the pumping lemma</li>
+<li>Choose a string s to be ____________ ^*^</li>
+<li>Because s is a member of A, the pumping lemma guarantees these three properties:
+<ol type="1">
+<li>s can be broken into three parts x,y, and z such that xy<sup>i</sup>z is in A</li>
+<li>|xy| &lt;= p</li>
+<li>|y| &gt; 0</li>
+</ol></li>
+<li>Choose a value for i, _____.</li>
+<li>Consider all of the valid possible divisions of s into x,y, and z. If you choose well in step 3 and if the language is not regular, you will be able to demonstrate that there is no possible way to divide s into x, y, and z while still maintaining the properties the Pumping Lemma prescribes, then you can show that there is a logical contradiction.</li>
+<li>If you have shown that each possible division of s into x, y, and z meeting all three conditions of the Pumping Lemma results in a contradiction, you can conclude that the language is not regular.</li>
+</ol>
+<p>*. This is your choice and could make or break your proof. You may have to choose another string to properly prove that a non-regular language is not regular.</p>
+</body>
+</html>
