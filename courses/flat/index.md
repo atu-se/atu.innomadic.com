@@ -26,11 +26,12 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Lectures
 
-| Topic                                                          | Reading Assignment |
+| Topic                                                          | Reading |
 |----------------------------------------------------------------|--------------------|
-| 3. [Regular Expressions](lectures/Lecture3.pdf)  |  2.2-2.2 |
-| 2. [Non-deterministic Finite Automata](lectures/Lecture2.pdf) | 1.3-1.4            |
-| 1. [Introduction to Finite Automata](lectures/Lecture1.pdf)    | 0.1-1.2            |
+| 4. [Non-Regular Languages](lectures/Lecture4.pdf)   | 1.4  |
+| 3. [Regular Expressions](lectures/Lecture3.pdf)  |  1.3 |
+| 2. [Non-deterministic Finite Automata](lectures/Lecture2.pdf) | 1.2            |
+| 1. [Introduction to Finite Automata](lectures/Lecture1.pdf)    | 0.1-1.1              |
 
 ## Updates
 
@@ -39,6 +40,9 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 * A draft of the [midterm review](../misc/midterm_review) is posted.  
 * Lecture #4: Non-Regular Languages
 * Note:  there was an update to the slides from Lecture 3
+* On 13-February,
+* Homework #3 was due today.  It will be considered for partial credit if turned in on 13-Feb.
+* Recommended Series of [Videos on the Pumping Lemma](https://www.youtube.com/watch?v=sqkcpQw-78A&index=19&list=PL601FC994BDD963E4)
 
 ### Lecture 3 4-Feb
 
