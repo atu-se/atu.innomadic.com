@@ -37,12 +37,12 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ### Update 12-Feb
 
-* I've uploaded a [template for using the pumping lemma](../misc/pumping_lemma)
-* Check out these exercises for regular expressions: [Practice #3](practice3-html)
+* I've uploaded a [template for using the pumping lemma](misc/pumping_lemma)
+* Check out these exercises for regular expressions: [Practice #3](lectures/practice3-html)
 
 ### Lecture 4 11-Feb
 
-* A draft of the [midterm review](../misc/midterm_review) is posted.  
+* A draft of the [midterm review](misc/midterm_review) is posted.  
 * Lecture #4: Non-Regular Languages
 * Note:  there was an update to the slides from Lecture 3
 * On 13-February,
