@@ -19,8 +19,4 @@ Let A be a language.
 
 
 
-
-
-
-
 *. This is your choice and could make or break your proof.  You may have to choose another string to properly prove that a non-regular language is not regular.
