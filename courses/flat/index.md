@@ -34,7 +34,14 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Updates
 
+### Lecture 4 11-Feb
+
+* A draft of the [midterm review](../misc/midterm_review) is posted.  
+* Lecture #4: Non-Regular Languages
+* Note:  there was an update to the slides from Lecture 3
+
 ### Lecture 3 4-Feb
+
 * Homework #2 is due Wednesday
 * Homework #3 is assigned today
 * Lecture #3: Regular Expressions

@@ -59,6 +59,7 @@
     - $\in$
     - $\notin$
     - $\Sigma$
+    - \|w|
   - 1.1
     - Definition 1.5 - finite automaton
     - Definition 1.16 - regular language
@@ -112,12 +113,16 @@
       - $\Sigma$
       - $\epsilon$
       - $\emptyset$
+      - L(R)
+      -
       -
 ## Some study tips
 
 * Reread Chapters 0 and 1
 * Study past homework
+* Study practice exercises
 * Study quizzes
+* Work additional problems from textbook
 * Review all notation
 * Review all theorems, definitions, corollaries, lemmas
 * Study lectures and notes
