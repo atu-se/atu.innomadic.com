@@ -35,6 +35,11 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Updates
 
+### Update 12-Feb
+
+* I've uploaded a [template for using the pumping lemma](../misc/pumping_lemma)
+* Check out these exercises for regular expressions: [Practice #3](practice3-html)
+
 ### Lecture 4 11-Feb
 
 * A draft of the [midterm review](../misc/midterm_review) is posted.  
