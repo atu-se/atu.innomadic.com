@@ -16,11 +16,11 @@ output:
 
 *Give one string that is in the language and one that is not:*
 
-1.  `a*b*`
-2.  `a(ba)*b`
-3.  `a* + b*`
-4.  `(b + aaa)*`
-5.  `aba+bab`
+1.  a*b*
+2.  a(ba)*b
+3.  a* $\cup$ b*
+4.  (b $\cup$ aaa)*`
+5.  aba $\cup$ bab
 
 *Write a regular expression*
 
