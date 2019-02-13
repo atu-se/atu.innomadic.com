@@ -7,7 +7,7 @@ export_on_save:
 output:
   custom_document:
     path: "./practice2-html.html"
-    pandoc_args: ["-t", "revealjs", "-V",  "revealjs-url=../../../presentation/revealjs", "--standalone"]
+    pandoc_args: ["-t", "revealjs", "-V",  "revealjs-url=../../../presentation/reveal.js", "--standalone"]
 ---
 
 # NFA Practice  

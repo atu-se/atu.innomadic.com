@@ -7,7 +7,7 @@ export_on_save:
 output:
   custom_document:
     path: "lecture3b.html"
-    pandoc_args: ["-t", "revealjs", "-V",  "revealjs-url=../../../presentation/revealjs", "--standalone", "--slide-level=1"]
+    pandoc_args: ["-t", "revealjs", "-V",  "revealjs-url=../../../presentation/reveal.js", "--standalone", "--slide-level=1"]
 ---
 
 # (ab ∪ a)
