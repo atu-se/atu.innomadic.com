@@ -12,6 +12,12 @@
 
 ## Updates
 
+### Lecture 2b 13-Feb
+
+* Today we completed the lecture on Chapter 19: Generics
+* The lecture slides have been posted in the Lectures section above
+* Please read Chapter 20 in your textbook
+
 ### Lecture 2 9-Feb
 
 * Lecture 2 - Generics
