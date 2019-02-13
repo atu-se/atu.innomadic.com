@@ -7,8 +7,8 @@
 
 | Topic                                                          | Reading Assignment |
 |----------------------------------------------------------------|--------------------|
-| 2. Generics   | Chapter 19  |
-| 1. Recursion [Notes](lectures/lecture1.pdf)   | Chapter 18            |
+| 2. Generics(lectures/lecture2)   | Chapter 19  |
+| 1. Recursion(lectures/lecture1)   | Chapter 18            |
 
 ## Updates
 

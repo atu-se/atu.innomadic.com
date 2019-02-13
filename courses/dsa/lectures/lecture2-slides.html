@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-02-06">
+  <title>DSA Lecture</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">DSA Lecture</h1>
+  <p class="subtitle">2. Generics</p>
+  <p class="date">February 6, 2019</p>
+</section>
+
+<section id="review" class="title-slide slide level1"><h1>Review</h1></section>
+<section><section id="practice-exercises" class="title-slide slide level1"><h1>Practice Exercises</h1></section><section id="a-tale-of-two-factorials" class="slide level2">
+<h2>A Tale of Two Factorials</h2>
+<ul>
+<li>Factorial</li>
+<li>Tail Recursive Factorial</li>
+<li>What makes the second one tail-recursive?</li>
+</ul>
+</section></section>
+<section><section id="generics" class="title-slide slide level1"><h1>Generics</h1></section><section id="objectives" class="slide level2">
+<h2>Objectives</h2>
+<ol type="1">
+<li>To describe the benefits of generics (§19.2).</li>
+<li>To use generic classes and interfaces (§19.2).</li>
+<li>To define generic classes and interfaces (§19.3).</li>
+<li>To explain why generic types can improve reliability and readability (§19.3).</li>
+<li>To define and use generic methods and bounded generic types (§19.4).</li>
+</ol>
+</section><section id="objectives-1" class="slide level2">
+<h2>Objectives</h2>
+<ol start="6" type="1">
+<li>To develop a generic sort method to sort an array of Comparable objects (§19.5).</li>
+<li>To use raw types for backward compatibility (§19.6).</li>
+<li>To explain why wildcard generic types are necessary (§19.7).</li>
+<li>To describe generic type erasure and list certain restrictions and limitations on generic types caused by type erasure (§19.8).</li>
+<li>To design and implement generic matrix classes (§19.9).</li>
+</ol>
+</section><section id="introduction-191" class="slide level2">
+<h2>Introduction (19.1)</h2>
+<ul>
+<li>Generics enable you to detect errors at compile time rather than at runtime.</li>
+<li>The motivation for using Java generics is to detect errors at compile time.</li>
+</ul>
+</section></section>
+<section><section id="motivations-and-benefits-192" class="title-slide slide level1"><h1>Motivations and Benefits (19.2)</h1></section><section id="comparable" class="slide level2">
+<h2>Comparable</h2>
+<h3 id="previously">Previously</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">package</span><span class="im"> java.lang;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">public</span> <span class="kw">interface</span> <span class="bu">Comparable</span> {       </a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compareTo</span>(<span class="bu">Object</span> o)</a>
+<a class="sourceLine" id="cb1-4" title="4">}</a></code></pre></div>
+<h3 id="comparable-1">Comparable</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">package</span><span class="im"> java.lang;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">public</span> <span class="kw">interface</span> <span class="bu">Comparable</span>&lt;T&gt; {    </a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compareTo</span>(T o)</a>
+<a class="sourceLine" id="cb2-4" title="4">}</a></code></pre></div>
+</section><section id="comparable-2" class="slide level2">
+<h2>Comparable</h2>
+<h3 id="previously-1">Previously</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="bu">Comparable</span> c = <span class="kw">new</span> <span class="bu">Date</span>();</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(c.<span class="fu">compareTo</span>(<span class="st">&quot;red&quot;</span>));</a></code></pre></div>
+<h3 id="now-with-generics">Now with Generics</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="bu">Comparable</span>&lt;<span class="bu">Date</span>&gt; c = <span class="kw">new</span> <span class="bu">Date</span>();</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(c.<span class="fu">compareTo</span>(<span class="st">&quot;red&quot;</span>));</a></code></pre></div>
+</section><section id="arraylist" class="slide level2">
+<h2>ArrayList</h2>
+<ul>
+<li>Since JDK 1.5, ArrayList is a generic class.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</a></code></pre></div>
+<ul>
+<li>What happens if you try to add an integer to this ArrayList?</li>
+</ul>
+</section></section>
+<section><section id="generic-classes-and-interfaces-193" class="title-slide slide level1"><h1>Generic Classes and Interfaces (19.3)</h1></section><section id="generic-classes-and-interfaces" class="slide level2">
+<h2>Generic Classes and Interfaces</h2>
+<ul>
+<li>A generic type can be defined for a class or interface.</li>
+<li>A concrete type must be specified when using the class to create an object or using the class or interface to declare a reference variable.</li>
+</ul>
+</section><section id="casting" class="slide level2">
+<h2>Casting</h2>
+<h3 id="previously-2">Previously</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="bu">String</span> s = (<span class="bu">String</span>)(list.<span class="fu">get</span>(<span class="dv">0</span>));</a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="co">// Casting needed prior to JDK 1.5</span></a></code></pre></div>
+<h3 id="now-with-generics-1">Now with Generics</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1"><span class="bu">String</span> s = list.<span class="fu">get</span>(<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co">// No casting is needed</span></a></code></pre></div>
+</section><section id="example-generic-stack" class="slide level2">
+<h2>Example: Generic Stack</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">public</span> <span class="kw">class</span> GenericStack&lt;E&gt; {</a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="kw">private</span> java.<span class="fu">util</span>.<span class="fu">ArrayList</span>&lt;E&gt; list = <span class="kw">new</span> java.<span class="fu">util</span>.<span class="fu">ArrayList</span>&lt;&gt;();</a>
+<a class="sourceLine" id="cb8-3" title="3">  </a>
+<a class="sourceLine" id="cb8-4" title="4">  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getSize</span>() {</a>
+<a class="sourceLine" id="cb8-5" title="5">    <span class="kw">return</span> list.<span class="fu">size</span>();</a>
+<a class="sourceLine" id="cb8-6" title="6">  }</a>
+<a class="sourceLine" id="cb8-7" title="7">  </a>
+<a class="sourceLine" id="cb8-8" title="8">  <span class="kw">public</span> E <span class="fu">peek</span>() {</a>
+<a class="sourceLine" id="cb8-9" title="9">    <span class="kw">return</span> list.<span class="fu">get</span>(<span class="fu">getSize</span>() - <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb8-10" title="10">  }</a>
+<a class="sourceLine" id="cb8-11" title="11">  </a>
+<a class="sourceLine" id="cb8-12" title="12">  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">push</span>(E o) {</a>
+<a class="sourceLine" id="cb8-13" title="13">    list.<span class="fu">add</span>(o);</a>
+<a class="sourceLine" id="cb8-14" title="14">  }</a></code></pre></div>
+</section><section id="example-generic-stack-1" class="slide level2">
+<h2>Example: Generic Stack</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1">  <span class="kw">public</span> E <span class="fu">pop</span>() {</a>
+<a class="sourceLine" id="cb9-2" title="2">    E o = list.<span class="fu">get</span>(<span class="fu">getSize</span>() - <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb9-3" title="3">    list.<span class="fu">remove</span>(<span class="fu">getSize</span>() - <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb9-4" title="4">    <span class="kw">return</span> o;</a>
+<a class="sourceLine" id="cb9-5" title="5">  }</a>
+<a class="sourceLine" id="cb9-6" title="6">  </a>
+<a class="sourceLine" id="cb9-7" title="7">  <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">isEmpty</span>() {</a>
+<a class="sourceLine" id="cb9-8" title="8">    <span class="kw">return</span> list.<span class="fu">isEmpty</span>();</a>
+<a class="sourceLine" id="cb9-9" title="9">  }</a>
+<a class="sourceLine" id="cb9-10" title="10">  </a>
+<a class="sourceLine" id="cb9-11" title="11">  <span class="at">@Override</span></a>
+<a class="sourceLine" id="cb9-12" title="12">  <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span>() {</a>
+<a class="sourceLine" id="cb9-13" title="13">    <span class="kw">return</span> <span class="st">&quot;stack: &quot;</span> + list.<span class="fu">toString</span>();</a>
+<a class="sourceLine" id="cb9-14" title="14">  }</a>
+<a class="sourceLine" id="cb9-15" title="15">}</a></code></pre></div>
+</section><section id="example-generic-stack-2" class="slide level2">
+<h2>Example: Generic Stack</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1">GenericStack&lt;<span class="bu">String</span>&gt; stack1 = <span class="kw">new</span> GenericStack&lt;&gt;();</a>
+<a class="sourceLine" id="cb10-2" title="2">stack1.<span class="fu">push</span>(<span class="st">&quot;London&quot;</span>);</a>
+<a class="sourceLine" id="cb10-3" title="3">stack1.<span class="fu">push</span>(<span class="st">&quot;Paris&quot;</span>);</a>
+<a class="sourceLine" id="cb10-4" title="4">stack1.<span class="fu">push</span>(<span class="st">&quot;Berlin&quot;</span>);</a></code></pre></div>
+</section><section id="example-generic-stack-3" class="slide level2">
+<h2>Example: Generic Stack</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1">GenericStack&lt;<span class="bu">Integer</span>&gt; stack2 = <span class="kw">new</span> GenericStack&lt;&gt;();</a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="co">// can use = new GenericStack&lt;&gt;();</span></a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="co">// or      = new GenericStack&lt;Integer&gt;();</span></a>
+<a class="sourceLine" id="cb11-4" title="4">stack2.<span class="fu">push</span>(<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="co">// autoboxing 1 to new Integer(1)</span></a>
+<a class="sourceLine" id="cb11-6" title="6">stack2.<span class="fu">push</span>(<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb11-7" title="7">stack2.<span class="fu">push</span>(<span class="dv">3</span>);</a></code></pre></div>
+</section><section id="benefits" class="slide level2">
+<h2>Benefits</h2>
+<ul>
+<li>Instead of using a generic type, you could simply make the type element Object, which can accommodate any object type.</li>
+<li>However, using generic types can improve software reliability and readability, because certain errors can be detected at compile time rather than at runtime.</li>
+<li>For example, because stack1 is declared GenericStack<String>, only strings can be added to the stack.</li>
+<li>It would be a compile error if you attempted to add an integer to stack1</li>
+</ul>
+</section></section>
+<section><section id="generic-methods-194" class="title-slide slide level1"><h1>Generic Methods (19.4)</h1></section><section id="generic-methods" class="slide level2">
+<h2>Generic Methods</h2>
+<ul>
+<li>A generic type can be defined for a static method.</li>
+</ul>
+</section><section id="example-generic-methods" class="slide level2">
+<h2>Example: Generic Methods</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">public</span> <span class="kw">class</span> GenericMethodDemo {</a>
+<a class="sourceLine" id="cb12-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args ) {</a>
+<a class="sourceLine" id="cb12-3" title="3">    <span class="bu">Integer</span>[] integers = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb12-4" title="4">    <span class="bu">String</span>[] strings = {<span class="st">&quot;London&quot;</span>, <span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Austin&quot;</span>};</a>
+<a class="sourceLine" id="cb12-5" title="5">    GenericMethodDemo.&lt;<span class="bu">Integer</span>&gt;<span class="fu">print</span>(integers);</a>
+<a class="sourceLine" id="cb12-6" title="6">    GenericMethodDemo.&lt;<span class="bu">String</span>&gt;<span class="fu">print</span>(strings);</a>
+<a class="sourceLine" id="cb12-7" title="7">  }</a></code></pre></div>
+</section><section id="example-generic-methods-1" class="slide level2">
+<h2>Example: Generic Methods</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> &lt;E&gt; <span class="dt">void</span> <span class="fu">print</span>(E[] list) {</a>
+<a class="sourceLine" id="cb13-2" title="2">    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">length</span>; i++)</a>
+<a class="sourceLine" id="cb13-3" title="3">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(list[i] + <span class="st">&quot; &quot;</span>);</a>
+<a class="sourceLine" id="cb13-4" title="4">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb13-5" title="5">  }</a>
+<a class="sourceLine" id="cb13-6" title="6">}</a></code></pre></div>
+</section><section id="example-method-declaration" class="slide level2">
+<h2>Example: Method Declaration</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">public</span> <span class="dt">static</span> &lt;E&gt; <span class="dt">void</span> <span class="fu">print</span>(E[] list) {</a>
+<a class="sourceLine" id="cb14-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">length</span>; i++)</a>
+<a class="sourceLine" id="cb14-3" title="3">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(list[i] + <span class="st">&quot; &quot;</span>);</a>
+<a class="sourceLine" id="cb14-4" title="4">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb14-5" title="5">}</a></code></pre></div>
+</section><section id="example-method-invocation" class="slide level2">
+<h2>Example: Method Invocation</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1">    GenericMethodDemo.&lt;<span class="bu">Integer</span>&gt;<span class="fu">print</span>(integers);</a>
+<a class="sourceLine" id="cb15-2" title="2">    GenericMethodDemo.&lt;<span class="bu">String</span>&gt;<span class="fu">print</span>(strings);</a>
+<a class="sourceLine" id="cb15-3" title="3">    <span class="co">//or, alternatively</span></a>
+<a class="sourceLine" id="cb15-4" title="4">    <span class="fu">print</span>(integers);</a>
+<a class="sourceLine" id="cb15-5" title="5">    <span class="fu">print</span>(strings);</a>
+<a class="sourceLine" id="cb15-6" title="6">    <span class="co">//the compiler figures out the types in the above method</span></a></code></pre></div>
+</section><section id="bounded-vs-unbounded" class="slide level2">
+<h2>Bounded vs. Unbounded</h2>
+<ul>
+<li>A generic type can be specified as a subtype of another type.</li>
+<li>An unbounded generic type <code>&lt;E&gt;</code> is the same as <code>&lt;E extends Object&gt;</code>.</li>
+</ul>
+</section><section id="example-bounded-type" class="slide level2">
+<h2>Example: Bounded Type</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">import</span><span class="im"> chapter13.Circle;</span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="kw">import</span><span class="im"> chapter13.GeometricObject;</span></a>
+<a class="sourceLine" id="cb16-3" title="3"><span class="kw">import</span><span class="im"> chapter13.Rectangle;</span></a>
+<a class="sourceLine" id="cb16-4" title="4">  </a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="kw">public</span> <span class="kw">class</span> BoundedTypeDemo {</a>
+<a class="sourceLine" id="cb16-6" title="6">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args ) {</a>
+<a class="sourceLine" id="cb16-7" title="7">    <span class="bu">Rectangle</span> rectangle = <span class="kw">new</span> <span class="bu">Rectangle</span>(<span class="dv">2</span>, <span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb16-8" title="8">    Circle circle = <span class="kw">new</span> <span class="fu">Circle</span>(<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb16-9" title="9">  </a>
+<a class="sourceLine" id="cb16-10" title="10">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Same area? &quot;</span> +</a>
+<a class="sourceLine" id="cb16-11" title="11">      <span class="fu">equalArea</span>(rectangle, circle));</a>
+<a class="sourceLine" id="cb16-12" title="12">  }</a></code></pre></div>
+</section><section id="example-bounded-type-1" class="slide level2">
+<h2>Example: Bounded Type</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb17-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> &lt;E <span class="kw">extends</span> GeometricObject&gt; <span class="dt">boolean</span> <span class="fu">equalArea</span>(</a>
+<a class="sourceLine" id="cb17-2" title="2">      E object1, E object2) {</a>
+<a class="sourceLine" id="cb17-3" title="3">    <span class="kw">return</span> object1.<span class="fu">getArea</span>() == object2.<span class="fu">getArea</span>();</a>
+<a class="sourceLine" id="cb17-4" title="4">  }</a>
+<a class="sourceLine" id="cb17-5" title="5">}</a></code></pre></div>
+</section><section id="syntax-note" class="slide level2">
+<h2>Syntax Note</h2>
+<ul>
+<li>To define a generic type for a class, place it after the class name, such as <code>GenericStack&lt;E&gt;</code>.</li>
+<li>To define a generic type for a method, place the generic type before the method return type, such as <code>&lt;E&gt; void max(E o1, E o2)</code>.</li>
+</ul>
+</section></section>
+<section id="demo-generic-sort" class="title-slide slide level1"><h1>Demo: Generic Sort</h1></section>
+<section><section id="practice-exercises-1" class="title-slide slide level1"><h1>Practice Exercises</h1></section><section id="practice-3" class="slide level2">
+<h2>Practice #3</h2>
+<p>Choose and do one of the following two programming exercises:</p>
+<ol type="1">
+<li>Programming Exercise 19.2 on page 758.</li>
+<li>Programming Exercise 19.7 on page 758.</li>
+</ol>
+</section></section>
+<section><section id="raw-types-196" class="title-slide slide level1"><h1>Raw Types (19.6)</h1></section><section id="raw-types-and-backwards-compatibility" class="slide level2">
+<h2>Raw Types and Backwards Compatibility</h2>
+<ul>
+<li>A generic class or interface used without specifying a concrete type, called a <em>raw type</em>, enables backward compatibility with earlier versions of Java,</li>
+</ul>
+</section><section id="raw-types-and-backwards-compatibility-1" class="slide level2">
+<h2>Raw Types and Backwards Compatibility</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1">GenericStack stack = <span class="kw">new</span> <span class="fu">GenericStack</span>(); <span class="co">// raw type</span></a></code></pre></div>
+<ul>
+<li>this is equivalent to…</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1">GenericStack&lt;<span class="bu">Object</span>&gt; stack = <span class="kw">new</span> GenericStack&lt;<span class="bu">Object</span>&gt;();</a></code></pre></div>
+</section><section id="unsafe-raw-type" class="slide level2">
+<h2>Unsafe Raw Type</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Max {</a>
+<a class="sourceLine" id="cb20-2" title="2">  <span class="co">/**</span> Return the maximum between two objects <span class="co">*/</span></a>
+<a class="sourceLine" id="cb20-3" title="3">  <span class="kw">public</span> <span class="dt">static</span> <span class="bu">Comparable</span> <span class="fu">max</span>(<span class="bu">Comparable</span> o1, <span class="bu">Comparable</span> o2) {</a>
+<a class="sourceLine" id="cb20-4" title="4">    <span class="kw">if</span> (o1.<span class="fu">compareTo</span>(o2) &gt; <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb20-5" title="5">      <span class="kw">return</span> o1;</a>
+<a class="sourceLine" id="cb20-6" title="6">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb20-7" title="7">      <span class="kw">return</span> o2;</a>
+<a class="sourceLine" id="cb20-8" title="8">  }</a>
+<a class="sourceLine" id="cb20-9" title="9">}</a></code></pre></div>
+</section><section id="safer-generic" class="slide level2">
+<h2>Safer Generic</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">public</span> <span class="kw">class</span> MaxUsingGenericType {</a>
+<a class="sourceLine" id="cb21-2" title="2">  <span class="co">/**</span> Return the maximum between two objects <span class="co">*/</span></a>
+<a class="sourceLine" id="cb21-3" title="3">  <span class="kw">public</span> <span class="dt">static</span> &lt;E <span class="kw">extends</span> <span class="bu">Comparable</span>&lt;E&gt;&gt; E <span class="fu">max</span>(E o1, E o2) {</a>
+<a class="sourceLine" id="cb21-4" title="4">    <span class="kw">if</span> (o1.<span class="fu">compareTo</span>(o2) &gt; <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb21-5" title="5">      <span class="kw">return</span> o1;</a>
+<a class="sourceLine" id="cb21-6" title="6">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb21-7" title="7">      <span class="kw">return</span> o2;</a>
+<a class="sourceLine" id="cb21-8" title="8">  }</a>
+<a class="sourceLine" id="cb21-9" title="9">}</a></code></pre></div>
+</section></section>
+<section><section id="wildcard-generic-types-197" class="title-slide slide level1"><h1>Wildcard Generic Types (19.7)</h1></section><section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">public</span> <span class="kw">class</span> WildCardNeedDemo {</a>
+<a class="sourceLine" id="cb22-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args ) {</a>
+<a class="sourceLine" id="cb22-3" title="3">     GenericStack&lt;<span class="bu">Integer</span>&gt; intStack = <span class="kw">new</span> GenericStack&lt;&gt;();</a>
+<a class="sourceLine" id="cb22-4" title="4">     intStack.<span class="fu">push</span>(<span class="dv">1</span>); <span class="co">// 1 is autoboxed into new Integer(1)</span></a>
+<a class="sourceLine" id="cb22-5" title="5">     intStack.<span class="fu">push</span>(<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb22-6" title="6">     intStack.<span class="fu">push</span>(-<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb22-7" title="7">     <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;The max number is &quot;</span> + <span class="fu">max</span>(intStack));</a>
+<a class="sourceLine" id="cb22-8" title="8">     <span class="co">//This will produce an error</span></a>
+<a class="sourceLine" id="cb22-9" title="9">  }</a></code></pre></div>
+</section><section id="example-1" class="slide level2">
+<h2>Example</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" title="1"><span class="co">/**</span> Find the maximum in a stack of numbers <span class="co">*/</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">max</span>(GenericStack&lt;<span class="bu">Number</span>&gt; stack) {</a>
+<a class="sourceLine" id="cb23-3" title="3">   <span class="dt">double</span> max = stack.<span class="fu">pop</span>().<span class="fu">doubleValue</span>(); <span class="co">// initialize max</span></a>
+<a class="sourceLine" id="cb23-4" title="4">   <span class="kw">while</span> (!stack.<span class="fu">isEmpty</span>()) {</a>
+<a class="sourceLine" id="cb23-5" title="5">     <span class="dt">double</span> value = stack.<span class="fu">pop</span>().<span class="fu">doubleValue</span>();</a>
+<a class="sourceLine" id="cb23-6" title="6">     <span class="kw">if</span> (value &gt; max)</a>
+<a class="sourceLine" id="cb23-7" title="7">       max = value;</a>
+<a class="sourceLine" id="cb23-8" title="8">   }</a>
+<a class="sourceLine" id="cb23-9" title="9">   <span class="kw">return</span> max;</a>
+<a class="sourceLine" id="cb23-10" title="10">}</a>
+<a class="sourceLine" id="cb23-11" title="11">}</a></code></pre></div>
+</section><section id="motivation-for-wildcards" class="slide level2">
+<h2>Motivation for Wildcards</h2>
+<ul>
+<li>The program above has a compile error in line 8 because intStack is not an instance of GenericStack<Number>.</li>
+<li>Thus, you cannot invoke max(intStack).</li>
+<li>The fact is that Integer is a subtype of Number, but GenericStack<Integer> is not a subtype of GenericStack<Number>.</li>
+<li>To circumvent this problem, use wildcard generic types.</li>
+</ul>
+</section><section id="wildcard-forms" class="slide level2">
+<h2>Wildcard Forms</h2>
+<p>A wildcard generic type has three forms.</p>
+<ul>
+<li>The first form, <code>?</code>, called a <em>non bounded wildcard</em>, is the same as <code>? extends Object</code>.</li>
+<li>The second form, <code>? extends T</code>, called a <em>bounded wildcard</em>, represents <code>T</code> or a subtype of <code>T</code>.</li>
+<li>The third form, <code>? super T</code>, called a <em>lower-bound wildcard</em>, denotes <code>T</code> or a supertype of <code>T</code>.</li>
+</ul>
+</section><section id="previous-example" class="slide level2">
+<h2>Previous Example</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" title="1"><span class="co">/**</span> Find the maximum in a stack of numbers <span class="co">*/</span></a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">max</span>(GenericStack&lt;<span class="bu">Number</span>&gt; stack) {</a>
+<a class="sourceLine" id="cb24-3" title="3">   <span class="dt">double</span> max = stack.<span class="fu">pop</span>().<span class="fu">doubleValue</span>(); <span class="co">// initialize max</span></a>
+<a class="sourceLine" id="cb24-4" title="4">   <span class="kw">while</span> (!stack.<span class="fu">isEmpty</span>()) {</a>
+<a class="sourceLine" id="cb24-5" title="5">     <span class="dt">double</span> value = stack.<span class="fu">pop</span>().<span class="fu">doubleValue</span>();</a>
+<a class="sourceLine" id="cb24-6" title="6">     <span class="kw">if</span> (value &gt; max)</a>
+<a class="sourceLine" id="cb24-7" title="7">       max = value;</a>
+<a class="sourceLine" id="cb24-8" title="8">   }</a>
+<a class="sourceLine" id="cb24-9" title="9">   <span class="kw">return</span> max;</a>
+<a class="sourceLine" id="cb24-10" title="10">}</a>
+<a class="sourceLine" id="cb24-11" title="11">}</a></code></pre></div>
+</section><section id="adjustment" class="slide level2">
+<h2>Adjustment</h2>
+<h3 id="old">Old</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">max</span>(GenericStack&lt;<span class="bu">Number</span>&gt; stack)</a></code></pre></div>
+<h3 id="new">New</h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">max</span>(GenericStack&lt;? <span class="kw">extends</span> <span class="bu">Number</span>&gt; stack)</a></code></pre></div>
+</section><section id="corrected-bounded-wildcard" class="slide level2">
+<h2>Corrected: Bounded Wildcard</h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb27-1" title="1"><span class="co">/**</span> Find the maximum in a stack of numbers <span class="co">*/</span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">double</span> <span class="fu">max</span>(GenericStack&lt;? <span class="kw">extends</span> <span class="bu">Number</span>&gt; stack) {</a>
+<a class="sourceLine" id="cb27-3" title="3">   <span class="dt">double</span> max = stack.<span class="fu">pop</span>().<span class="fu">doubleValue</span>(); <span class="co">// initialize max</span></a>
+<a class="sourceLine" id="cb27-4" title="4">   <span class="kw">while</span> (!stack.<span class="fu">isEmpty</span>()) {</a>
+<a class="sourceLine" id="cb27-5" title="5">     <span class="dt">double</span> value = stack.<span class="fu">pop</span>().<span class="fu">doubleValue</span>();</a>
+<a class="sourceLine" id="cb27-6" title="6">     <span class="kw">if</span> (value &gt; max)</a>
+<a class="sourceLine" id="cb27-7" title="7">       max = value;</a>
+<a class="sourceLine" id="cb27-8" title="8">   }</a>
+<a class="sourceLine" id="cb27-9" title="9">   <span class="kw">return</span> max;</a>
+<a class="sourceLine" id="cb27-10" title="10">}</a>
+<a class="sourceLine" id="cb27-11" title="11">}</a></code></pre></div>
+</section><section id="example-unbounded-wildcard" class="slide level2">
+<h2>Example: Unbounded Wildcard</h2>
+<ul>
+<li>The following example shows an example of using the <code>?</code> wildcard in the print method that prints objects in a stack and empties the stack.</li>
+<li><code>&lt;?&gt;</code> is a wildcard that represents any object type. It is equivalent to <code>&lt;? extends Object&gt;</code></li>
+</ul>
+</section><section id="example-unbounded-wildcard-1" class="slide level2">
+<h2>Example: Unbounded Wildcard</h2>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">public</span> <span class="kw">class</span> AnyWildCardDemo {</a>
+<a class="sourceLine" id="cb28-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args ) {</a>
+<a class="sourceLine" id="cb28-3" title="3">     GenericStack&lt;<span class="bu">Integer</span>&gt; intStack = <span class="kw">new</span> GenericStack&lt;&gt;();</a>
+<a class="sourceLine" id="cb28-4" title="4">     intStack.<span class="fu">push</span>(<span class="dv">1</span>); <span class="co">// 1 is autoboxed into new Integer(1)</span></a>
+<a class="sourceLine" id="cb28-5" title="5">     intStack.<span class="fu">push</span>(<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb28-6" title="6">     intStack.<span class="fu">push</span>(-<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb28-7" title="7">     <span class="fu">print</span>(intStack);</a>
+<a class="sourceLine" id="cb28-8" title="8">  }</a></code></pre></div>
+</section><section id="example-unbounded-wildcard-2" class="slide level2">
+<h2>Example: Unbounded Wildcard</h2>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb29-1" title="1">  <span class="co">/**</span> Print objects and empties the stack <span class="co">*/</span></a>
+<a class="sourceLine" id="cb29-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">print</span>(GenericStack&lt;?&gt; stack) {</a>
+<a class="sourceLine" id="cb29-3" title="3">    <span class="kw">while</span> (!stack.<span class="fu">isEmpty</span>()) {</a>
+<a class="sourceLine" id="cb29-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(stack.<span class="fu">pop</span>() + <span class="st">&quot; &quot;</span>);</a>
+<a class="sourceLine" id="cb29-5" title="5">    }</a>
+<a class="sourceLine" id="cb29-6" title="6">  }</a>
+<a class="sourceLine" id="cb29-7" title="7">}</a></code></pre></div>
+</section><section id="example-unbounded-wildcard-3" class="slide level2">
+<h2>Example: Unbounded Wildcard</h2>
+<ul>
+<li>What happens if you replace <code>GenericStack&lt;?&gt;</code> with <code>GenericStack&lt;Object&gt;</code>?</li>
+<li>If you do that, it would be wrong to invoke <code>print(intStack)</code>, because <code>intStack</code> is not an instance of <code>GenericStack&lt;Object&gt;</code>.</li>
+<li>Note that <code>GenericStack&lt;Integer&gt;</code> is not a subtype of <code>GenericStack&lt;Object&gt;</code>, even though <code>Integer</code> is a subtype of <code>Object</code>.</li>
+</ul>
+</section><section id="super" class="slide level2">
+<h2>Super</h2>
+<ul>
+<li>When is the wildcard <code>&lt;? super T&gt;</code> needed?</li>
+<li>Consider this example…</li>
+</ul>
+</section><section id="example-lower-bound-wildcard" class="slide level2">
+<h2>Example: Lower Bound Wildcard</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">public</span> <span class="kw">class</span> SuperWildCardDemo {</a>
+<a class="sourceLine" id="cb30-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb30-3" title="3">    GenericStack&lt;<span class="bu">String</span>&gt; stack1 = <span class="kw">new</span> GenericStack&lt;<span class="bu">String</span>&gt;();</a>
+<a class="sourceLine" id="cb30-4" title="4">    GenericStack&lt;<span class="bu">Object</span>&gt; stack2 = <span class="kw">new</span> GenericStack&lt;<span class="bu">Object</span>&gt;();</a>
+<a class="sourceLine" id="cb30-5" title="5">    stack2.<span class="fu">push</span>(<span class="st">&quot;Java&quot;</span>);</a>
+<a class="sourceLine" id="cb30-6" title="6">    stack2.<span class="fu">push</span>(<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb30-7" title="7">    stack1.<span class="fu">push</span>(<span class="st">&quot;Sun&quot;</span>);</a>
+<a class="sourceLine" id="cb30-8" title="8">    <span class="fu">add</span>(stack1, stack2);</a>
+<a class="sourceLine" id="cb30-9" title="9">    AnyWildCardDemo.<span class="fu">print</span>(stack2);</a>
+<a class="sourceLine" id="cb30-10" title="10">  }</a></code></pre></div>
+</section><section id="example-lower-bound-wildcard-1" class="slide level2">
+<h2>Example: Lower Bound Wildcard</h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb31-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> &lt;T&gt; <span class="dt">void</span> <span class="fu">add</span>(GenericStack&lt;T&gt; stack1,</a>
+<a class="sourceLine" id="cb31-2" title="2">      GenericStack&lt;? <span class="kw">super</span> T&gt; stack2) {</a>
+<a class="sourceLine" id="cb31-3" title="3">    <span class="kw">while</span> (!stack1.<span class="fu">isEmpty</span>())</a>
+<a class="sourceLine" id="cb31-4" title="4">      stack2.<span class="fu">push</span>(stack1.<span class="fu">pop</span>());</a>
+<a class="sourceLine" id="cb31-5" title="5">  }</a>
+<a class="sourceLine" id="cb31-6" title="6">}</a></code></pre></div>
+</section><section id="example-lower-bound-wildcard-2" class="slide level2">
+<h2>Example: Lower Bound Wildcard</h2>
+<ul>
+<li><code>GenericStack&lt;? super T&gt;</code> is used to declare <code>stack2</code> in line 13.</li>
+<li>If <code>&lt;? super T&gt;</code> is replaced by <code>&lt;T&gt;</code>, a compile error will occur on <code>add(stack1, stack2)</code> in line 8,</li>
+<li><code>stack1</code>’s type is <code>GenericStack&lt;String&gt;</code> and <code>stack2</code>’s type is <code>GenericStack&lt;Object&gt;</code>.</li>
+<li><code>&lt;? super T&gt;</code> represents type <code>T</code> or a supertype of <code>T</code>. <code>Object</code> is a supertype of <code>String</code>.</li>
+</ul>
+</section><section id="super-vs-extends" class="slide level2">
+<h2>Super vs. Extends?</h2>
+<ul>
+<li>The Bounded (<em>extends</em>) and Lower Bound (<em>super</em>) types are similar</li>
+<li>Use the following acronym to help you remember when to use <em>extends</em> vs. <em>super</em>: PECS
+<ul>
+<li><strong>P</strong>roducer <strong>E</strong>xtends</li>
+<li><strong>C</strong>onsumer <strong>S</strong>uper</li>
+</ul></li>
+</ul>
+</section><section id="super-vs-extends-1" class="slide level2">
+<h2>Super vs. Extends?</h2>
+<ul>
+<li>PECS: “Producer Extends, Consumer Super”.</li>
+<li>“Producer Extends” - If you need a <code>List</code> to produce T values (you want to read <code>T</code>s from the list), you need to declare it with <code>? extends T</code></li>
+<li>e.g. <code>List&lt;? extends Integer&gt;</code></li>
+<li>But you cannot add to this list</li>
+</ul>
+</section><section id="super-vs-extends-2" class="slide level2">
+<h2>Super vs. Extends?</h2>
+<ul>
+<li>PECS: “Producer Extends, Consumer Super”.</li>
+<li>“Consumer Super” - If you need a <code>List</code> to consume <code>T</code> values (you want to write <code>T</code>s into the list), you need to declare it with <code>? super T</code>,</li>
+<li>e.g. <code>List&lt;? super Integer&gt;</code>.</li>
+<li>But there are no guarantees what type of object you may read from this list.</li>
+</ul>
+</section><section id="super-vs-extends-3" class="slide level2">
+<h2>Super vs. Extends?</h2>
+<ul>
+<li>If you need to both read from and write to a list, you need to declare it exactly with no wildcards, e.g. List<Integer>.</li>
+<li><a href="https://stackoverflow.com/questions/4343202/difference-between-super-t-and-extends-t-in-java">See this excellent explanation on Stackoverflow</a>.</li>
+</ul>
+</section></section>
+<section><section id="erasure-and-restrictions-on-generics-198" class="title-slide slide level1"><h1>Erasure and Restrictions on Generics (19.8)</h1></section><section id="erasure" class="slide level2">
+<h2>Erasure</h2>
+<ul>
+<li>The information on generics is used by the compiler but is not available at runtime.</li>
+<li>This is called type erasure.</li>
+<li>This approach enables the generic code to be backward compatible with the legacy code that uses raw types.</li>
+<li>Once the compiler confirms that a generic type is used safely, it converts the generic type to a raw type.</li>
+</ul>
+</section><section id="erasure-1" class="slide level2">
+<h2>Erasure</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb32-1" title="1"><span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; list = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</a>
+<a class="sourceLine" id="cb32-2" title="2">list.<span class="fu">add</span>(<span class="st">&quot;Oklahoma&quot;</span>);</a>
+<a class="sourceLine" id="cb32-3" title="3"><span class="bu">String</span> state = list.<span class="fu">get</span>(<span class="dv">0</span>);</a></code></pre></div>
+<p>is changed by the compiler into this:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb33-1" title="1"><span class="bu">ArrayList</span> list = <span class="kw">new</span> <span class="bu">ArrayList</span>();</a>
+<a class="sourceLine" id="cb33-2" title="2">list.<span class="fu">add</span>(<span class="st">&quot;Oklahoma&quot;</span>);</a>
+<a class="sourceLine" id="cb33-3" title="3"><span class="bu">String</span> state = (<span class="bu">String</span>)(list.<span class="fu">get</span>(<span class="dv">0</span>));</a></code></pre></div>
+</section><section id="erasure-2" class="slide level2">
+<h2>Erasure</h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb34-1" title="1"><span class="kw">public</span> <span class="dt">static</span> &lt;E&gt; <span class="dt">void</span> <span class="fu">print</span>(E[] list) {</a>
+<a class="sourceLine" id="cb34-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">length</span>; i++)</a>
+<a class="sourceLine" id="cb34-3" title="3">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(list[i] + <span class="st">&quot; &quot;</span>);</a>
+<a class="sourceLine" id="cb34-4" title="4">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb34-5" title="5">}</a></code></pre></div>
+<p>is changed by the compiler into this:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">print</span>(<span class="bu">Object</span>[] list) {</a>
+<a class="sourceLine" id="cb35-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">length</span>; i++)</a>
+<a class="sourceLine" id="cb35-3" title="3">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(list[i] + <span class="st">&quot; &quot;</span>);</a>
+<a class="sourceLine" id="cb35-4" title="4">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>();</a>
+<a class="sourceLine" id="cb35-5" title="5">}</a></code></pre></div>
+</section><section id="erasure-3" class="slide level2">
+<h2>Erasure</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">public</span> <span class="dt">static</span> &lt;E <span class="kw">extends</span> GeometricObject&gt; <span class="dt">boolean</span></a>
+<a class="sourceLine" id="cb36-2" title="2"><span class="fu">equalArea</span>( E object1, E object2) {</a>
+<a class="sourceLine" id="cb36-3" title="3">  <span class="kw">return</span> object1.<span class="fu">getArea</span>() == object2.<span class="fu">getArea</span>();</a>
+<a class="sourceLine" id="cb36-4" title="4">}</a></code></pre></div>
+<p>is changed by the compiler into this:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">boolean</span> <span class="fu">equalArea</span>(</a>
+<a class="sourceLine" id="cb37-2" title="2">GeometricObject object1, GeometricObject object2) {</a>
+<a class="sourceLine" id="cb37-3" title="3">  <span class="kw">return</span> object1.<span class="fu">getArea</span>() == object2.<span class="fu">getArea</span>();</a>
+<a class="sourceLine" id="cb37-4" title="4">}</a></code></pre></div>
+</section><section id="restrictions-on-generics" class="slide level2">
+<h2>Restrictions on Generics</h2>
+<ol type="1">
+<li>Restriction: Cannot Use new E()</li>
+<li>Restriction: Cannot Use new E[]</li>
+<li>Restriction: A Generic Type Parameter of a Class Is Not Allowed in a Static Context</li>
+<li>Restriction: Exception Classes Cannot Be Generic</li>
+</ol>
+</section><section id="restrictions-on-generics-1" class="slide level2">
+<h2>Restrictions on Generics</h2>
+<h3 id="restriction-1-cannot-use-new-e">Restriction 1: Cannot Use new E()</h3>
+<p>You cannot create an instance using a generic type parameter. For example, the following statement is wrong:</p>
+<p><code>E object = new E();</code></p>
+<p>The reason is that new E() is executed at runtime, but the generic type E is not available at runtime.</p>
+</section><section id="restrictions-on-generics-2" class="slide level2">
+<h2>Restrictions on Generics</h2>
+<h3 id="restriction-2-cannot-use-new-e">Restriction 2: Cannot Use new E[]</h3>
+<p>You cannot create an array using a generic type parameter. For example, this statement is wrong:</p>
+<p><code>E[] elements = new E[capacity];</code></p>
+<p>You can work around this in this manner, but it will result in an unavoidable compiler warning:</p>
+<p><code>E[] elements = (E[])new Object[capacity];</code></p>
+</section><section id="restrictions-on-generics-3" class="slide level2">
+<h2>Restrictions on Generics</h2>
+<h3 id="restriction-3-a-generic-type-parameter-of-a-class-is-not-allowed-in-a-static-context">Restriction 3: A Generic Type Parameter of a Class Is Not Allowed in a Static Context</h3>
+<p>Since all instances of a generic class have the same runtime class, the static variables and methods of a generic class are shared by all its instances. Therefore, it is illegal to refer to a generic type parameter for a class in a static method, field, or initializer.</p>
+</section><section id="restrictions-on-generics-4" class="slide level2">
+<h2>Restrictions on Generics</h2>
+<h3 id="restriction-3-a-generic-type-parameter-of-a-class-is-not-allowed-in-a-static-context-1">Restriction 3: A Generic Type Parameter of a Class Is Not Allowed in a Static Context</h3>
+<p>For example, the following code is illegal:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Test&lt;E&gt; {</a>
+<a class="sourceLine" id="cb38-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">m</span>(E o1) { <span class="co">// Illegal }</span></a>
+<a class="sourceLine" id="cb38-3" title="3">    <span class="kw">public</span> <span class="dt">static</span> E o1; <span class="co">// Illegal</span></a>
+<a class="sourceLine" id="cb38-4" title="4">    <span class="dt">static</span> {</a>
+<a class="sourceLine" id="cb38-5" title="5">          E o2; <span class="co">// Illegal</span></a>
+<a class="sourceLine" id="cb38-6" title="6">    }</a>
+<a class="sourceLine" id="cb38-7" title="7">}</a></code></pre></div>
+</section><section id="restrictions-on-generics-5" class="slide level2">
+<h2>Restrictions on Generics</h2>
+<h3 id="restriction-4-exception-classes-cannot-be-generic">Restriction 4: Exception Classes Cannot Be Generic</h3>
+<p>A generic class may not extend <code>java.lang.Throwable</code>, so the following class declaration would be illegal:</p>
+<p><code>public class MyException&lt;T&gt; extends Exception { }</code></p>
+</section><section id="restrictions-on-generics-6" class="slide level2">
+<h2>Restrictions on Generics</h2>
+<h3 id="restriction-4-exception-classes-cannot-be-generic-1">Restriction 4: Exception Classes Cannot Be Generic</h3>
+<p>The JVM has to check the exception thrown from the try clause ()<code>catch (MyException&lt;T&gt; ex)</code>) to see if it matches the type specified in a catch clause. This is impossible, because the type information is not present at runtime.</p>
+</section></section>
+<section><section id="summary" class="title-slide slide level1"><h1>Summary</h1></section><section id="summary-1" class="slide level2">
+<h2>Summary</h2>
+<ol type="1">
+<li>Generics give you the capability to parameterize types. You can define a class or a method with generic types, which the compiler replaces with concrete types.</li>
+<li>The key benefit of generics is to enable errors to be detected at compile time rather than at runtime.</li>
+</ol>
+</section><section id="summary-2" class="slide level2">
+<h2>Summary</h2>
+<ol start="3" type="1">
+<li>A generic class or method permits you to specify allowable types of objects that the class or method can work with. If you attempt to use a class or method with an incompatible object, the compiler will detect the error.</li>
+<li>A generic type defined in a class, interface, or a static method is called a formal generic type, which can be replaced later with an actual concrete type. Replacing a generic type is called a generic instantiation.</li>
+</ol>
+</section><section id="summary-3" class="slide level2">
+<h2>Summary</h2>
+<ol start="5" type="1">
+<li>A generic class such as ArrayList used without a type parameter is called a raw type. Use of raw types is allowed for backward compatibility with the earlier versions of Java.</li>
+</ol>
+</section><section id="summary-4" class="slide level2">
+<h2>Summary</h2>
+<ol start="6" type="1">
+<li>A wildcard generic type has three forms: <code>?</code> and <code>? extends T</code>, and <code>? super T</code>, where <code>T</code> is a generic type.
+<ol type="1">
+<li>The first form, <code>?</code>, called an unbounded wildcard, is the same as <code>? extends Object</code>.</li>
+<li>The second form, <code>? extends T</code>, called a bounded wildcard, represents <code>T</code> or a subtype of <code>T</code>.</li>
+<li>The third form, <code>? super T</code>, called a lower-bound wildcard, denotes <code>T</code> or a supertype of <code>T</code>.</li>
+</ol></li>
+</ol>
+</section><section id="summary-5" class="slide level2">
+<h2>Summary</h2>
+<ol start="7" type="1">
+<li>Generics are implemented using an approach called type erasure. The compiler uses the generic type information to compile the code but erases it afterward, so the generic information is not available at runtime. This approach enables the generic code to be backward compatible with the legacy code that uses raw types.</li>
+<li>You cannot create an instance using a generic type parameter.</li>
+</ol>
+</section><section id="summary-6" class="slide level2">
+<h2>Summary</h2>
+<ol start="9" type="1">
+<li>You cannot create an array using a generic type parameter.</li>
+<li>You cannot use a generic type parameter of a class in a static context.</li>
+<li>Generic type parameters cannot be used in exception classes.</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
