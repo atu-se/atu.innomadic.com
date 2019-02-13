@@ -89,9 +89,3 @@ digraph finite_state_machine {
 11.  `(001)*(1+e)`
 12.  `(01*0 + e + 00)`
 13.  `(001)*(1+e)(01*0 + e + 00)`
-
-*Short Answer*
-
-14. How long does a string in the following language have to be before we are guaranteed to have a loop?
-15. Is the set of all strings that are palindromes regular? Why or why not?
-16. Show that the set of all strings of zeros that have length that is a perfect cube can not be described by a regular expression.

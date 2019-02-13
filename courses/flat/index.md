@@ -35,6 +35,11 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Updates
 
+### Lecture 4b 13-Feb
+
+* [Practice #4](lectures/practice4-html) on the Pumping Lemma
+
+
 ### Update 12-Feb
 
 * I've uploaded a [template for using the pumping lemma](misc/pumping_lemma-html)

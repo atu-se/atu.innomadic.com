@@ -1,0 +1,21 @@
+<h1 id="pumping-lemma-practice">Pumping Lemma Practice</h1>
+<p>In our previous lecture we learned how to use the Pumping Lemma to prove that a language is not regular.</p>
+<p>In this exercise, I am going to provide an outline of the proof, and I will assist you by choosing the string (step 4) and the value for i (step 5). This means that all you have to do is identify why it is a contradiction.</p>
+<p>Work in a group to complete the proof by demonstrating that all possible divisions of xy<sup>i</sup>z result in contradictions.</p>
+<hr />
+<p>Let A = { ww | w <span class="math inline">∈</span> {0,1}<sup>*</sup> }</p>
+<ol type="1">
+<li>Assume A is regular.</li>
+<li>Let p be the pumping length from the pumping lemma</li>
+<li>Choose a string s: __<strong>0<sup>p</sup>10<sup>p</sup>1_</strong></li>
+<li>Because s is a member of A, the pumping lemma guarantees these three properties:
+<ol type="1">
+<li>s can be broken into three parts x,y, and z such that xy<sup>i</sup>z is in A</li>
+<li>|xy| &lt;= p</li>
+<li>|y| &gt; 0</li>
+</ol></li>
+<li>Choose a value for i: <strong>_2_</strong>.</li>
+<li>Consider all of the valid possible divisions of s into x,y, and z. If you choose well in step 3 and if the language is not regular, you will be able to demonstrate that there is no possible way to divide s into x, y, and z while still maintaining the properties the Pumping Lemma prescribes, then you can show that there is a logical contradiction.</li>
+<li>If you have shown that each possible division of s into x, y, and z meeting all three conditions of the Pumping Lemma results in a contradiction, you can conclude that the language is not regular.</li>
+</ol>
+<p>NOTE: The choices in step 4 and step 5 are choices you would normally make as part if your effort to prove that a language is non-regular. There is no algorithm to tell you what to choose. This is your choice and could make or break your proof. You may have to choose another string to properly prove that a non-regular language is not regular. In today’s exercise, I have supplied you with these values.</p>
