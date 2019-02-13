@@ -26,12 +26,12 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Lectures
 
-| Topic                                                          | Reading |
-|----------------------------------------------------------------|--------------------|
-| 4. [Non-Regular Languages](lectures/Lecture4.pdf)   | 1.4  |
-| 3. [Regular Expressions](lectures/Lecture3.pdf)  |  1.3 |
-| 2. [Non-deterministic Finite Automata](lectures/Lecture2.pdf) | 1.2            |
-| 1. [Introduction to Finite Automata](lectures/Lecture1.pdf)    | 0.1-1.1              |
+| Topic                                                          | Reading | Practice |
+|----------------------------------------------------------------|--------------------|---|
+| 4. [Non-Regular Languages](lectures/Lecture4.pdf)   | 1.4  | [Practice 4](lectures/practice4-html.html) |
+| 3. [Regular Expressions](lectures/Lecture3.pdf)  |  1.3 |  [Practice 3](lectures/practice3-html.html) |
+| 2. [Non-deterministic Finite Automata](lectures/Lecture2.pdf) | 1.2            |  [Practice 4](lectures/practice2-html.html) |
+| 1. [Introduction to Finite Automata](lectures/Lecture1.pdf)    | 0.1-1.1              | [Practice 4](lectures/practice1) |
 
 ## Updates
 
