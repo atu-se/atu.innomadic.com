@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-02-02">
+  <title>DSA Lecture</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">DSA Lecture</h1>
+  <p class="subtitle">1. Recursion</p>
+  <p class="date">February 2, 2019</p>
+</section>
+
+<section><section id="course-information" class="title-slide slide level1"><h1>Course Information</h1></section><section id="essentials" class="slide level2">
+<h2>Essentials</h2>
+<ul>
+<li>Data Structures and Algorithms (DSA)</li>
+<li>Course Website - <a href="http://atu-se.github.io/courses/dsa">atu-se.github.io/courses/dsa</a></li>
+<li>Primary Textbook - <a href="">Introduction to Java Programming, 10th Edition (Liang)</a></li>
+</ul>
+</section><section id="meeting-times" class="slide level2">
+<h2>Meeting Times</h2>
+<ul>
+<li>Sunday @ 10:30 a.m.</li>
+<li>Tuesday @ 8:30 a.m.</li>
+<li>Wednesday @ 10:30 a.m.</li>
+</ul>
+</section><section id="how-to-succeed" class="slide level2">
+<h2>How to Succeed</h2>
+<ul>
+<li>Attend all lectures</li>
+<li>Take notes (not all materials will be distributed as slides)</li>
+<li>Ready and study your textbook</li>
+<li>Do all assignments</li>
+<li>Ask questions</li>
+</ul>
+</section><section id="academic-integrity" class="slide level2">
+<h2>Academic Integrity</h2>
+<ul>
+<li>Read the academic integrity policy in the syllabus</li>
+<li>You are encouraged to discuss the topics among yourselves.</li>
+<li>Unless otherwise noted, your work should be your own and you should not share your work with others</li>
+<li>Copying or cheating on homework, exams, etc. may result in failing grades</li>
+</ul>
+</section></section>
+<section><section id="lecture-1-recursion" class="title-slide slide level1"><h1>Lecture 1: Recursion</h1></section><section id="key-terms" class="slide level2">
+<h2>Key Terms</h2>
+<ul>
+<li>Recursion is a technique that leads to elegant solutions to problems that are difficult to program using simple loops.</li>
+<li>A recursive method is one that invokes itself.</li>
+</ul>
+</section><section id="recursion-example-factorial" class="slide level2">
+<h2>Recursion Example: Factorial</h2>
+</section><section id="example-factorial" class="slide level2">
+<h2>Example: Factorial</h2>
+<p><br /><span class="math display">0! = 1</span><br /> <br /><span class="math display"><em>n</em>! = <em>n</em> ⋅ (<em>n</em> − 1)!  when ≥ 1</span><br /></p>
+</section><section id="example-factorial-1" class="slide level2">
+<h2>Example: Factorial</h2>
+<p>2! = 2 <span class="math inline">×</span> 1! = 2 <span class="math inline">×</span> 1 = 2</p>
+<p>3! = 3 <span class="math inline">×</span> 2! = 3 <span class="math inline">×</span> 2 <span class="math inline">×</span> 1! = 3 <span class="math inline">×</span> 2 <span class="math inline">×</span> 1 = 6</p>
+</section><section id="example-factorial-2" class="slide level2">
+<h2>Example: Factorial</h2>
+<pre><code>import java.util.Scanner;
+  
+public class ComputeFactorial {
+    /** Main method */
+    public static void main(String[] args) {
+        // Create a Scanner
+        Scanner input = new Scanner(System.in);
+        System.out.print(&quot;Enter a non-negative integer:&quot;);
+        int n = input.nextInt();
+        // Display factorial
+        System.out.println(&quot;Factorial of &quot; + n + &quot; is &quot;
+        + factorial(n));
+    }</code></pre>
+<p>…</p>
+</section><section id="example-factorial-3" class="slide level2">
+<h2>Example: Factorial</h2>
+<p>…</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1">  <span class="co">/**</span> Return the factorial for a specified number <span class="co">*/</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">factorial</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb2-3" title="3">      <span class="kw">if</span> (n == <span class="dv">0</span>) <span class="co">// Base case</span></a>
+<a class="sourceLine" id="cb2-4" title="4">          <span class="kw">return</span> <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb2-5" title="5">      <span class="kw">else</span></a>
+<a class="sourceLine" id="cb2-6" title="6">          <span class="kw">return</span> n * <span class="fu">factorial</span>(n - <span class="dv">1</span>); <span class="co">// Recursive call</span></a>
+<a class="sourceLine" id="cb2-7" title="7">  }</a>
+<a class="sourceLine" id="cb2-8" title="8">}</a></code></pre></div>
+</section><section id="what-if" class="slide level2">
+<h2>What-If</h2>
+<p>What if our factorial function was like this?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">factorial</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">return</span> n * <span class="fu">factorial</span>(n - <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb3-3" title="3">}</a></code></pre></div>
+</section></section>
+<section><section id="example-fibonacci" class="title-slide slide level1"><h1>Example: Fibonacci</h1></section><section id="example-fibonacci-1" class="slide level2">
+<h2>Example: Fibonacci</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">import</span><span class="im"> java.util.Scanner;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">public</span> <span class="kw">class</span> ComputeFibonacci {</a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="co">/**</span> Main method <span class="co">*/</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span> args[]) {</a>
+<a class="sourceLine" id="cb4-5" title="5">    <span class="co">// Create a Scanner</span></a>
+<a class="sourceLine" id="cb4-6" title="6">    <span class="bu">Scanner</span> input = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;Enter an index for the Fibonacci number: &quot;</span>);</a>
+<a class="sourceLine" id="cb4-8" title="8">    <span class="dt">int</span> index = input.<span class="fu">nextInt</span>();</a>
+<a class="sourceLine" id="cb4-9" title="9">    <span class="co">// Find and display the Fibonacci number</span></a>
+<a class="sourceLine" id="cb4-10" title="10">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(</a>
+<a class="sourceLine" id="cb4-11" title="11">      <span class="st">&quot;Fibonacci number at index &quot;</span> + index + <span class="st">&quot; is &quot;</span> + <span class="fu">fib</span>(index));</a>
+<a class="sourceLine" id="cb4-12" title="12">  }</a></code></pre></div>
+</section><section id="example-fibonacci-2" class="slide level2">
+<h2>Example: Fibonacci 2</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="co">/**</span> The method for finding the Fibonacci number <span class="co">*/</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">fib</span>(<span class="dt">long</span> index) {</a>
+<a class="sourceLine" id="cb5-3" title="3">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Called fib&quot;</span>);</a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="kw">if</span> (index == <span class="dv">0</span>) <span class="co">// Base case</span></a>
+<a class="sourceLine" id="cb5-5" title="5">    <span class="kw">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="kw">else</span> <span class="kw">if</span> (index == <span class="dv">1</span>) <span class="co">// Base case</span></a>
+<a class="sourceLine" id="cb5-7" title="7">    <span class="kw">return</span> <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="kw">else</span>  <span class="co">// Reduction and recursive calls</span></a>
+<a class="sourceLine" id="cb5-9" title="9">    <span class="kw">return</span> <span class="fu">fib</span>(index - <span class="dv">1</span>) + <span class="fu">fib</span>(index - <span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb5-10" title="10">  }</a>
+<a class="sourceLine" id="cb5-11" title="11">}</a></code></pre></div>
+</section></section>
+<section><section id="example-recursive-palindrome" class="title-slide slide level1"><h1>Example: Recursive Palindrome</h1></section><section id="example-recursive-palindrome-1" class="slide level2">
+<h2>Example: Recursive Palindrome</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">public</span> <span class="kw">class</span> RecursivePalindrome {</a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">boolean</span> <span class="fu">isPalindrome</span>(<span class="bu">String</span> s) {</a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">return</span> <span class="fu">isPalindrome</span>(s, <span class="dv">0</span>, s.<span class="fu">length</span>() - <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb6-4" title="4">  }</a>
+<a class="sourceLine" id="cb6-5" title="5">  </a>
+<a class="sourceLine" id="cb6-6" title="6">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">boolean</span> <span class="fu">isPalindrome</span>(<span class="bu">String</span> s, <span class="dt">int</span> low, <span class="dt">int</span> high) {</a>
+<a class="sourceLine" id="cb6-7" title="7">    <span class="kw">if</span> (high &lt;= low) <span class="co">// Base case</span></a>
+<a class="sourceLine" id="cb6-8" title="8">      <span class="kw">return</span> <span class="kw">true</span>;</a>
+<a class="sourceLine" id="cb6-9" title="9">    <span class="kw">else</span> <span class="kw">if</span> (s.<span class="fu">charAt</span>(low) != s.<span class="fu">charAt</span>(high)) <span class="co">// Base case</span></a>
+<a class="sourceLine" id="cb6-10" title="10">      <span class="kw">return</span> <span class="kw">false</span>;</a>
+<a class="sourceLine" id="cb6-11" title="11">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb6-12" title="12">      <span class="kw">return</span> <span class="fu">isPalindrome</span>(s, low + <span class="dv">1</span>, high - <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb6-13" title="13">  }</a></code></pre></div>
+</section><section id="example-recursive-palindrome-2" class="slide level2">
+<h2>Example: Recursive Palindrome 2</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb7-2" title="2">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Is moon a palindrome? &quot;</span></a>
+<a class="sourceLine" id="cb7-3" title="3">      + <span class="fu">isPalindrome</span>(<span class="st">&quot;moon&quot;</span>));</a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Is noon a palindrome? &quot;</span></a>
+<a class="sourceLine" id="cb7-5" title="5">      + <span class="fu">isPalindrome</span>(<span class="st">&quot;noon&quot;</span>));</a>
+<a class="sourceLine" id="cb7-6" title="6">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Is a a palindrome? &quot;</span> + <span class="fu">isPalindrome</span>(<span class="st">&quot;a&quot;</span>));</a>
+<a class="sourceLine" id="cb7-7" title="7">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Is aba a palindrome? &quot;</span> +</a>
+<a class="sourceLine" id="cb7-8" title="8">      <span class="fu">isPalindrome</span>(<span class="st">&quot;aba&quot;</span>));</a>
+<a class="sourceLine" id="cb7-9" title="9">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Is ab a palindrome? &quot;</span> + <span class="fu">isPalindrome</span>(<span class="st">&quot;ab&quot;</span>));</a>
+<a class="sourceLine" id="cb7-10" title="10">  }</a>
+<a class="sourceLine" id="cb7-11" title="11">}</a></code></pre></div>
+</section></section>
+<section><section id="example-recursive-selection-sort" class="title-slide slide level1"><h1>Example: Recursive Selection Sort</h1></section><section id="example-selection-sort" class="slide level2">
+<h2>Example: Selection Sort</h2>
+<ul>
+<li>Find the smallest element in the list and swap it with the first element.</li>
+<li>Ignore the first element and sort the remaining smaller list recursively.</li>
+</ul>
+</section><section id="example-selection-sort-1" class="slide level2">
+<h2>Example: Selection Sort</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">public</span> <span class="kw">class</span> RecursiveSelectionSort {</a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">sort</span>(<span class="dt">double</span>[] list) {</a>
+<a class="sourceLine" id="cb8-3" title="3">    <span class="fu">sort</span>(list, <span class="dv">0</span>, list.<span class="fu">length</span> - <span class="dv">1</span>); <span class="co">// Sort the entire list</span></a>
+<a class="sourceLine" id="cb8-4" title="4">  }</a></code></pre></div>
+</section><section id="example-selection-sort-2" class="slide level2">
+<h2>Example: Selection Sort</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">sort</span>(<span class="dt">double</span>[] list, <span class="dt">int</span> low, <span class="dt">int</span> high) {</a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">if</span> (low &lt; high) {</a>
+<a class="sourceLine" id="cb9-3" title="3">    <span class="co">// Find the smallest number and its index in list(low .. high)</span></a>
+<a class="sourceLine" id="cb9-4" title="4">    <span class="dt">int</span> indexOfMin = low;</a>
+<a class="sourceLine" id="cb9-5" title="5">    <span class="dt">double</span> min = list[low];</a>
+<a class="sourceLine" id="cb9-6" title="6">    <span class="kw">for</span> (<span class="dt">int</span> i = low + <span class="dv">1</span>; i &lt;= high; i++) {</a>
+<a class="sourceLine" id="cb9-7" title="7">      <span class="kw">if</span> (list[i] &lt; min) {</a>
+<a class="sourceLine" id="cb9-8" title="8">        min = list[i];</a>
+<a class="sourceLine" id="cb9-9" title="9">        indexOfMin = i;</a>
+<a class="sourceLine" id="cb9-10" title="10">      }</a>
+<a class="sourceLine" id="cb9-11" title="11">    }</a></code></pre></div>
+</section><section id="example-selection-sort-3" class="slide level2">
+<h2>Example: Selection Sort</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1">    <span class="co">// Swap the smallest in list(low .. high) with list(low)</span></a>
+<a class="sourceLine" id="cb10-2" title="2">    list[indexOfMin] = list[low];</a>
+<a class="sourceLine" id="cb10-3" title="3">    list[low] = min;</a>
+<a class="sourceLine" id="cb10-4" title="4">  </a>
+<a class="sourceLine" id="cb10-5" title="5">    <span class="co">// Sort the remaining list(low+1 .. high)</span></a>
+<a class="sourceLine" id="cb10-6" title="6">    <span class="fu">sort</span>(list, low + <span class="dv">1</span>, high);</a>
+<a class="sourceLine" id="cb10-7" title="7">  }</a>
+<a class="sourceLine" id="cb10-8" title="8">}</a></code></pre></div>
+</section><section id="example-selection-sort-4" class="slide level2">
+<h2>Example: Selection Sort</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb11-2" title="2">    <span class="dt">double</span>[] list = {<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">2</span>, -<span class="dv">1</span>, <span class="dv">0</span>};</a>
+<a class="sourceLine" id="cb11-3" title="3">    <span class="fu">sort</span>(list);</a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">length</span>; i++)</a>
+<a class="sourceLine" id="cb11-5" title="5">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(list[i] + <span class="st">&quot; &quot;</span>);</a>
+<a class="sourceLine" id="cb11-6" title="6">  }</a>
+<a class="sourceLine" id="cb11-7" title="7">}</a></code></pre></div>
+</section></section>
+<section><section id="practice-exercises" class="title-slide slide level1"><h1>Practice Exercises</h1></section><section id="practice-exercise-184" class="slide level2">
+<h2>Practice Exercise 18.4</h2>
+<p>Write a recursive mathematical definition for computing 2<sup>n</sup> for a positive integer n.</p>
+</section><section id="practice-exercise-184-1" class="slide level2">
+<h2>Practice Exercise 18.4</h2>
+<p><br /><span class="math display"><em>p</em><em>o</em><em>w</em><em>e</em><em>r</em>_<em>o</em><em>f</em>_<em>t</em><em>w</em><em>o</em>(0) = 1</span><br /> <br /><span class="math display"><em>p</em><em>o</em><em>w</em><em>e</em><em>r</em>_<em>o</em><em>f</em>_<em>t</em><em>w</em><em>o</em>(<em>n</em>) = 2 * <em>p</em><em>o</em><em>w</em><em>e</em><em>r</em>_<em>o</em><em>f</em>_<em>t</em><em>w</em><em>o</em>(<em>n</em> − 1)  when &gt; 0</span><br /></p>
+</section><section id="practice-exercise-187a" class="slide level2">
+<h2>Practice Exercise 18.7a</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Test {</a>
+<a class="sourceLine" id="cb12-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb12-3" title="3">    <span class="fu">xMethod</span>(<span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb12-4" title="4">  }</a>
+<a class="sourceLine" id="cb12-5" title="5">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">xMethod</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb12-6" title="6">    <span class="kw">if</span> (n &gt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb12-7" title="7">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(n + <span class="st">&quot; &quot;</span>);</a>
+<a class="sourceLine" id="cb12-8" title="8">      <span class="fu">xMethod</span>(n - <span class="dv">1</span>); }</a>
+<a class="sourceLine" id="cb12-9" title="9">    }</a>
+<a class="sourceLine" id="cb12-10" title="10">}</a></code></pre></div>
+</section><section id="practice-exercise-187b" class="slide level2">
+<h2>Practice Exercise 18.7b</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Test {</a>
+<a class="sourceLine" id="cb13-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb13-3" title="3">    <span class="fu">xMethod</span>(<span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb13-4" title="4">  }</a>
+<a class="sourceLine" id="cb13-5" title="5">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">xMethod</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb13-6" title="6">    <span class="kw">if</span> (n &gt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb13-7" title="7">      <span class="fu">xMethod</span>(n - <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb13-8" title="8">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(n + <span class="st">&quot; &quot;</span>); }</a>
+<a class="sourceLine" id="cb13-9" title="9">    }</a>
+<a class="sourceLine" id="cb13-10" title="10">}</a></code></pre></div>
+</section><section id="practice-exercise-188a" class="slide level2">
+<h2>Practice Exercise 18.8a</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Test {</a>
+<a class="sourceLine" id="cb14-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb14-3" title="3">      <span class="fu">xMethod</span>(<span class="dv">1234567</span>);</a>
+<a class="sourceLine" id="cb14-4" title="4">  }</a>
+<a class="sourceLine" id="cb14-5" title="5">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">xMethod</span>(<span class="dt">double</span> n) {</a>
+<a class="sourceLine" id="cb14-6" title="6">    <span class="kw">if</span> (n != <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb14-7" title="7">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(n);</a>
+<a class="sourceLine" id="cb14-8" title="8">      <span class="fu">xMethod</span>(n / <span class="dv">10</span>); }</a>
+<a class="sourceLine" id="cb14-9" title="9">    }</a>
+<a class="sourceLine" id="cb14-10" title="10">}</a></code></pre></div>
+</section><section id="practice-exercise-188b" class="slide level2">
+<h2>Practice Exercise 18.8b</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Test {</a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb15-3" title="3">      Test test = <span class="kw">new</span> <span class="fu">Test</span>();</a>
+<a class="sourceLine" id="cb15-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(test.<span class="fu">toString</span>());</a>
+<a class="sourceLine" id="cb15-5" title="5">    }</a>
+<a class="sourceLine" id="cb15-6" title="6">    <span class="kw">public</span> <span class="fu">Test</span>() {</a>
+<a class="sourceLine" id="cb15-7" title="7">      Test test = <span class="kw">new</span> <span class="fu">Test</span>();</a>
+<a class="sourceLine" id="cb15-8" title="8">    }</a>
+<a class="sourceLine" id="cb15-9" title="9">}</a></code></pre></div>
+</section></section>
+<section><section id="lecture-1b" class="title-slide slide level1"><h1>Lecture 1b</h1></section><section id="problem-solving-using-recursion" class="slide level2">
+<h2>Problem Solving Using Recursion</h2>
+<p>All recursive methods have the following characteristics:</p>
+<ul>
+<li>The method is implemented using an if-else or a switch statement that leads to different cases.</li>
+<li>One or more base cases (the simplest case) are used to stop recursion.</li>
+<li>Every recursive call reduces the original problem, bringing it increasingly closer to a base case until it becomes that case.</li>
+</ul>
+</section><section id="problem-solving-using-recursion-1" class="slide level2">
+<h2>Problem Solving Using Recursion</h2>
+<p>In general, to solve a problem using recursion, you break it into subproblems. Each subproblem is the same as the original problem but smaller in size. You can apply the same approach to each subproblem to solve it recursively.</p>
+</section><section id="recursive-coffee-drinking" class="slide level2">
+<h2>Recursive Coffee Drinking</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">drinkCoffee</span>(Cup cup) {</a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="kw">if</span> (!cup.<span class="fu">isEmpty</span>()) {</a>
+<a class="sourceLine" id="cb16-3" title="3">      cup.<span class="fu">takeOneSip</span>(); <span class="co">// Take one sip</span></a>
+<a class="sourceLine" id="cb16-4" title="4">      <span class="fu">drinkCoffee</span>(cup);</a>
+<a class="sourceLine" id="cb16-5" title="5">    }</a>
+<a class="sourceLine" id="cb16-6" title="6">}</a></code></pre></div>
+</section><section id="printing-n-times" class="slide level2">
+<h2>Printing N Times</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">nPrintln</span>(<span class="bu">String</span> message, <span class="dt">int</span> times)</a>
+<a class="sourceLine" id="cb17-2" title="2">{</a>
+<a class="sourceLine" id="cb17-3" title="3">  <span class="kw">if</span> (times &gt;= <span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb17-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(message);</a>
+<a class="sourceLine" id="cb17-5" title="5">      <span class="fu">nPrintln</span>(message, times - <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb17-6" title="6">  } <span class="co">// The base case is times == 0</span></a>
+<a class="sourceLine" id="cb17-7" title="7">}</a></code></pre></div>
+</section></section>
+<section><section id="recursive-binary-search-bs" class="title-slide slide level1"><h1>Recursive Binary Search (BS)</h1></section><section id="bs-algorithm" class="slide level2">
+<h2>BS Algorithm</h2>
+<p>Given an array that is sorted in increasing order, imagine searching for a single element (the key).</p>
+<p>Begin by comparing the key to the middle element of the array. There are three possibilities.</p>
+</section><section id="bs-algorithm-1" class="slide level2">
+<h2>BS Algorithm</h2>
+<ul>
+<li>Case 1: If the key is less than the middle element, recursively search for the key in the first half of the array.</li>
+<li>Case 2: If the key is equal to the middle element, the search ends with a match.</li>
+<li>Case 3: If the key is greater than the middle element, recursively search for the key in the second half of the array.</li>
+</ul>
+</section><section id="bs-implementation" class="slide level2">
+<h2>BS Implementation</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">public</span> <span class="kw">class</span> RecursiveBinarySearch {</a>
+<a class="sourceLine" id="cb18-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">recursiveBinarySearch</span>(<span class="dt">int</span>[] list, <span class="dt">int</span> key) {</a>
+<a class="sourceLine" id="cb18-3" title="3">    <span class="dt">int</span> low = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb18-4" title="4">    <span class="dt">int</span> high = list.<span class="fu">length</span> - <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb18-5" title="5">    <span class="kw">return</span> <span class="fu">recursiveBinarySearch</span>(list, key, low, high);</a>
+<a class="sourceLine" id="cb18-6" title="6">  }</a></code></pre></div>
+</section><section id="bs-implementation-1" class="slide level2">
+<h2>BS Implementation</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">recursiveBinarySearch</span>(<span class="dt">int</span>[] list, <span class="dt">int</span> key,</a>
+<a class="sourceLine" id="cb19-2" title="2">      <span class="dt">int</span> low, <span class="dt">int</span> high) {</a>
+<a class="sourceLine" id="cb19-3" title="3">    <span class="kw">if</span> (low &gt; high)  <span class="co">// The list has been exhausted without a match</span></a>
+<a class="sourceLine" id="cb19-4" title="4">      <span class="kw">return</span> -low - <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb19-5" title="5">  </a>
+<a class="sourceLine" id="cb19-6" title="6">    <span class="dt">int</span> mid = (low + high) / <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb19-7" title="7">    <span class="kw">if</span> (key &lt; list[mid])</a>
+<a class="sourceLine" id="cb19-8" title="8">      <span class="kw">return</span> <span class="fu">recursiveBinarySearch</span>(list, key, low, mid - <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb19-9" title="9">    <span class="kw">else</span> <span class="kw">if</span> (key == list[mid])</a>
+<a class="sourceLine" id="cb19-10" title="10">      <span class="kw">return</span> mid;</a>
+<a class="sourceLine" id="cb19-11" title="11">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb19-12" title="12">      <span class="kw">return</span> <span class="fu">recursiveBinarySearch</span>(list, key, mid + <span class="dv">1</span>, high);</a>
+<a class="sourceLine" id="cb19-13" title="13">  }</a>
+<a class="sourceLine" id="cb19-14" title="14">}</a></code></pre></div>
+</section><section id="directory-size" class="slide level2">
+<h2>Directory Size</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">import</span><span class="im"> java.io.File;</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="kw">import</span><span class="im"> java.util.Scanner;</span></a>
+<a class="sourceLine" id="cb20-3" title="3"><span class="kw">public</span> <span class="kw">class</span> DirectorySize {</a>
+<a class="sourceLine" id="cb20-4" title="4">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb20-5" title="5">    <span class="co">// Prompt the user to enter a directory or a file</span></a>
+<a class="sourceLine" id="cb20-6" title="6">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;Enter a directory or a file: &quot;</span>);    </a>
+<a class="sourceLine" id="cb20-7" title="7">    <span class="bu">Scanner</span> input = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</a>
+<a class="sourceLine" id="cb20-8" title="8">    <span class="bu">String</span> directory = input.<span class="fu">nextLine</span>();</a>
+<a class="sourceLine" id="cb20-9" title="9">  </a>
+<a class="sourceLine" id="cb20-10" title="10">    <span class="co">// Display the size</span></a>
+<a class="sourceLine" id="cb20-11" title="11">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">getSize</span>(<span class="kw">new</span> <span class="bu">File</span>(directory)) + <span class="st">&quot; bytes&quot;</span>);</a>
+<a class="sourceLine" id="cb20-12" title="12">  }</a></code></pre></div>
+</section><section id="directory-size-1" class="slide level2">
+<h2>Directory Size</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">getSize</span>(<span class="bu">File</span> file) {</a>
+<a class="sourceLine" id="cb21-2" title="2">    <span class="dt">long</span> size = <span class="dv">0</span>; <span class="co">// Store the total size of all files</span></a>
+<a class="sourceLine" id="cb21-3" title="3">    <span class="kw">if</span> (file.<span class="fu">isDirectory</span>()) {</a>
+<a class="sourceLine" id="cb21-4" title="4">      <span class="bu">File</span>[] files = file.<span class="fu">listFiles</span>(); <span class="co">// All files and subdirectories</span></a>
+<a class="sourceLine" id="cb21-5" title="5">      <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; files.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb21-6" title="6">        size += <span class="fu">getSize</span>(files[i]); <span class="co">// Recursive call</span></a>
+<a class="sourceLine" id="cb21-7" title="7">      }</a>
+<a class="sourceLine" id="cb21-8" title="8">    }</a>
+<a class="sourceLine" id="cb21-9" title="9">    <span class="kw">else</span> { <span class="co">// Base case</span></a>
+<a class="sourceLine" id="cb21-10" title="10">      size += file.<span class="fu">length</span>();</a>
+<a class="sourceLine" id="cb21-11" title="11">    }</a>
+<a class="sourceLine" id="cb21-12" title="12">    <span class="kw">return</span> size;</a>
+<a class="sourceLine" id="cb21-13" title="13">  }</a>
+<a class="sourceLine" id="cb21-14" title="14">}</a></code></pre></div>
+</section></section>
+<section><section id="tower-of-hanoi" class="title-slide slide level1"><h1>Tower of Hanoi</h1></section><section id="tower-of-hanoi-1" class="slide level2">
+<h2>Tower of Hanoi</h2>
+<p>The Tower of Hanoi problem is a classic problem that can be solved easily using recursion, but it is difficult to solve otherwise.</p>
+</section><section id="tower-of-hanoi-2" class="slide level2">
+<h2>Tower of Hanoi</h2>
+<p><img data-src="./lecture1/tower_of_hanoi.png" alt="Tower of Hanoi" /> {r, fig.width=8<em>k, fig.height=6</em>k}</p>
+</section><section id="tower-of-hanoi-3" class="slide level2">
+<h2>Tower of Hanoi</h2>
+<p>There are n disks labeled 1, 2, 3, . . . , n and three towers labeled A, B, and C.</p>
+<ul>
+<li>No disk can be on top of a smaller disk at any time.</li>
+<li>All the disks are initially placed on tower A.</li>
+<li>Only one disk can be moved at a time, and it must be the smallest disk on a tower.</li>
+</ul>
+<p><a href="https://www.mathsisfun.com/games/towerofhanoi.html">Demonstration</a></p>
+</section><section id="tower-of-hanoi-4" class="slide level2">
+<h2>Tower of Hanoi</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">import</span><span class="im"> java.util.Scanner;</span></a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="kw">public</span> <span class="kw">class</span> TowersOfHanoi {</a>
+<a class="sourceLine" id="cb22-3" title="3">  <span class="co">/**</span> Main method <span class="co">*/</span></a>
+<a class="sourceLine" id="cb22-4" title="4">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb22-5" title="5">    <span class="co">// Create a Scanner</span></a>
+<a class="sourceLine" id="cb22-6" title="6">    <span class="bu">Scanner</span> input = <span class="kw">new</span> <span class="bu">Scanner</span>(<span class="bu">System</span>.<span class="fu">in</span>);</a>
+<a class="sourceLine" id="cb22-7" title="7">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;Enter number of disks: &quot;</span>);</a>
+<a class="sourceLine" id="cb22-8" title="8">    <span class="dt">int</span> n = input.<span class="fu">nextInt</span>();</a>
+<a class="sourceLine" id="cb22-9" title="9">    <span class="co">// Find the solution recursively</span></a>
+<a class="sourceLine" id="cb22-10" title="10">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The moves are:&quot;</span>);</a>
+<a class="sourceLine" id="cb22-11" title="11">    <span class="fu">moveDisks</span>(n, <span class="ch">&#39;A&#39;</span>, <span class="ch">&#39;B&#39;</span>, <span class="ch">&#39;C&#39;</span>);</a>
+<a class="sourceLine" id="cb22-12" title="12">  }</a></code></pre></div>
+</section><section id="tower-of-hanoi-5" class="slide level2">
+<h2>Tower of Hanoi</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" title="1"><span class="co">/**</span> The method for finding the solution to move n disks</a>
+<a class="sourceLine" id="cb23-2" title="2">    from fromTower to toTower with auxTower <span class="co">*/</span></a>
+<a class="sourceLine" id="cb23-3" title="3">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">moveDisks</span>(<span class="dt">int</span> n, <span class="dt">char</span> fromTower,</a>
+<a class="sourceLine" id="cb23-4" title="4">      <span class="dt">char</span> toTower, <span class="dt">char</span> auxTower) {</a>
+<a class="sourceLine" id="cb23-5" title="5">    <span class="kw">if</span> (n == <span class="dv">1</span>) <span class="co">// Stopping condition</span></a>
+<a class="sourceLine" id="cb23-6" title="6">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Move disk &quot;</span> + n + <span class="st">&quot; from &quot;</span> +</a>
+<a class="sourceLine" id="cb23-7" title="7">        fromTower + <span class="st">&quot; to &quot;</span> + toTower);</a>
+<a class="sourceLine" id="cb23-8" title="8">    <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb23-9" title="9">      <span class="fu">moveDisks</span>(n - <span class="dv">1</span>, fromTower, auxTower, toTower);</a>
+<a class="sourceLine" id="cb23-10" title="10">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Move disk &quot;</span> + n + <span class="st">&quot; from &quot;</span> +</a>
+<a class="sourceLine" id="cb23-11" title="11">        fromTower + <span class="st">&quot; to &quot;</span> + toTower);</a>
+<a class="sourceLine" id="cb23-12" title="12">      <span class="fu">moveDisks</span>(n - <span class="dv">1</span>, auxTower, toTower, fromTower);</a>
+<a class="sourceLine" id="cb23-13" title="13">    }</a>
+<a class="sourceLine" id="cb23-14" title="14">  }</a>
+<a class="sourceLine" id="cb23-15" title="15">}</a></code></pre></div>
+</section></section>
+<section><section id="recursion-vs-iteration" class="title-slide slide level1"><h1>Recursion vs. Iteration</h1></section><section id="recursion-vs-iteration-1" class="slide level2">
+<h2>Recursion vs. Iteration</h2>
+<ul>
+<li>Recursion is an alternative form of program control. It is essentially repetition without a loop.</li>
+<li>Any problem that can be solved recursively can be solved nonrecursively with iterations.</li>
+<li>Recursion has some negative aspects: it uses up too much time and too much memory.</li>
+</ul>
+</section><section id="why-recursion" class="slide level2">
+<h2>Why Recursion?</h2>
+<ul>
+<li>In some cases, using recursion enables you to specify a clear, simple solution for an inherently recursive problem that would otherwise be difficult to obtain.</li>
+<li>The rule of thumb is to use which- ever approach can best develop an intuitive solution that naturally mirrors the problem.</li>
+<li>If an iterative solution is obvious, use it. It will generally be more efficient than the recursive option.</li>
+</ul>
+</section></section>
+<section><section id="tail-recursion" class="title-slide slide level1"><h1>Tail Recursion</h1></section><section id="tail-recursion-1" class="slide level2">
+<h2>Tail Recursion</h2>
+<ul>
+<li>A tail recursive method is efficient for reducing stack size.</li>
+<li>A recursive method is said to be tail recursive if there are no pending operations to be performed on return from a recursive call</li>
+</ul>
+</section><section id="tail-recursion-2" class="slide level2">
+<h2>Tail Recursion</h2>
+<h3 id="non-tail-recursion">Non-tail recursion</h3>
+<pre><code>...
+...
+recursive_method_call()
+...</code></pre>
+<h3 id="tail-recursion-3">Tail Recursion</h3>
+<pre><code>...
+...
+...
+recursive_method_call()</code></pre>
+</section><section id="nontail-recursive-factorial" class="slide level2">
+<h2>Nontail-recursive Factorial</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb26-1" title="1"><span class="co">/**</span> Return the factorial for a specified number <span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-2" title="2"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">factorial</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb26-3" title="3">  <span class="kw">if</span> (n == <span class="dv">0</span>) <span class="co">// Base case</span></a>
+<a class="sourceLine" id="cb26-4" title="4">    <span class="kw">return</span> <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb26-5" title="5">  <span class="kw">else</span></a>
+<a class="sourceLine" id="cb26-6" title="6">    <span class="kw">return</span> n * <span class="fu">factorial</span>(n - <span class="dv">1</span>); <span class="co">// Recursive call</span></a>
+<a class="sourceLine" id="cb26-7" title="7">}</a></code></pre></div>
+</section><section id="tail-recursive-factorial" class="slide level2">
+<h2>Tail Recursive Factorial</h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb27-1" title="1"><span class="co">/**</span> Auxiliary tail<span class="co">-</span>recursive method for factorial <span class="co">*/</span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="kw">private</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">factorial</span>(<span class="dt">int</span> n, <span class="dt">int</span> result) {</a>
+<a class="sourceLine" id="cb27-3" title="3">  <span class="kw">if</span> (n == <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb27-4" title="4">    <span class="kw">return</span> result;</a>
+<a class="sourceLine" id="cb27-5" title="5">  <span class="kw">else</span></a>
+<a class="sourceLine" id="cb27-6" title="6">    <span class="kw">return</span> <span class="fu">factorial</span>(n - <span class="dv">1</span>, n * result); <span class="co">// Recursive call</span></a>
+<a class="sourceLine" id="cb27-7" title="7">}</a></code></pre></div>
+</section></section>
+<section><section id="chapter-key-points" class="title-slide slide level1"><h1>Chapter Key Points</h1></section><section id="chapter-key-points-1" class="slide level2">
+<h2>Chapter Key Points</h2>
+<ol type="1">
+<li>A recursive method is one that directly or indirectly invokes itself. For a recursive method to terminate, there must be one or more base cases.</li>
+<li>Recursion is an alternative form of program control. It is essentially repetition without a loop control. It can be used to write simple, clear solutions for inherently recursive problems that would otherwise be difficult to solve.</li>
+</ol>
+</section><section id="chapter-key-points-2" class="slide level2">
+<h2>Chapter Key Points</h2>
+<ol start="3" type="1">
+<li>Sometimes the original method needs to be modified to receive additional parameters in order to be invoked recursively. A recursive helper method can be defined for this purpose.</li>
+<li>Recursion bears substantial overhead. Each time the program calls a method, the system must allocate memory for all of the method’s local variables and parameters. This can consume considerable memory and requires extra time to manage the memory.</li>
+</ol>
+</section><section id="chapter-key-points-3" class="slide level2">
+<h2>Chapter Key Points</h2>
+<ol start="5" type="1">
+<li>A recursive method is said to be tail recursive if there are no pending operations to be performed on return from a recursive call. Some compilers can optimize tail recursion to reduce stack size.</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
