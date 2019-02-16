@@ -7,6 +7,7 @@
 
 | Topic                                                          | Reading Assignment |
 |----------------------------------------------------------------|--------------------|
+| 3. Lists, Stacks, Queues, and Priority Queues [Notes](lectures/lecture3) - [Slides](lectures/lecture3-slides) | Chapter 20   |
 | 2. Generics [Notes](lectures/lecture2) - [Slides](lectures/lecture2-slides)   | Chapter 19  |
 | 1. Recursion [Notes](lectures/lecture1) - [Slides](lectures/lecture1-slides)   | Chapter 18            |
 
