@@ -86,6 +86,6 @@ digraph finite_state_machine {
 
 *Convert to an NFA:*
 
-11.  `(001)*(1+e)`
-12.  `(01*0 + e + 00)`
-13.  `(001)*(1+e)(01*0 + e + 00)`
+11.  (001)*(1 $\cup$  $\epsilon$)
+12.  (01*0 $\cup$ $\epsilon$ $\cup$ 00)
+13.  (001)*(1 $\cup$ $\epsilon$)( 01*0 $\cup$ $\epsilon$ $\cup$ 00)
