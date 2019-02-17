@@ -13,6 +13,13 @@
 
 ## Updates
 
+### Lecture 3 19-Feb
+
+* Lecture 3 - Lists, Stacks, Queues, and Priority Queues
+* Practice Exercise
+  - Review and run Case Study 20.7 and Case Study 20.10
+  - 
+
 ### Lecture 2b 13-Feb
 
 * Today we completed the lecture on Chapter 19: Generics
