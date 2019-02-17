@@ -78,6 +78,7 @@
       - $\cup$
       - $\ast$
       - $\delta$
+    - Understand the complement of a language and the complement of a finite automata.
   - 1.2 Nondeterminism
     - Nondeterminism vs. determinism
     - Definition 1.37 - NFA
@@ -114,8 +115,12 @@
       - $\epsilon$
       - $\emptyset$
       - L(R)
-      -
-      -
+    - 1.4 Nonregular languages
+      - Know the difference between a regular and non-regular language
+      - Know the relationship between non-regular languages and finite automata
+      - Understand the basic premise of the Pumping Lemma: *if the length of a string in a regular language exceeds the number of states in its corresponding finite automaton, there must be a loop.  This loop can be repeated ("pumped") to produce other strings in the language.*
+
+
 ## Some study tips
 
 * Reread Chapters 0 and 1
