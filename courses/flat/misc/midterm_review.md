@@ -9,9 +9,9 @@
 ## Topics Not on Exam
 
 
-
 - You will not have problems directly related to graphs (Covered in Section 0.2)
 - You will not have to *write* a proof (Section 0.4), though you should understand the theorems that have been proven in the textbook or in lecture
+- You will not have to use the Pumping Lemma to prove that a language is not regular, but you should understand the general idea and what its purpose is.
 
 ## Outline of Notable Topics
 

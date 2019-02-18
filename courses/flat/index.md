@@ -35,6 +35,11 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Updates
 
+### Update 18-Feb
+
+* The midterm exam will be on Wednesday, 20-February at 6:30 p.m.
+
+
 ### Lecture 4b 13-Feb
 
 * [Practice #4](lectures/practice4-html) on the Pumping Lemma
