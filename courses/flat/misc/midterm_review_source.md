@@ -1,3 +1,13 @@
+---
+title: Formal Languages & Automata Theory
+subtitle: Midterm Review
+date: February 19, 2019
+output:
+  custom_document:
+    path: "./midterm_review.html"
+    pandoc_args: ["--standalone"]
+---
+
 # Midterm Review
 
 ## Topics Covered
