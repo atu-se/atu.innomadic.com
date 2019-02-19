@@ -38,6 +38,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 ### Update 18-Feb
 
 * The midterm exam will be on Wednesday, 20-February at 6:30 p.m.
+* Read 2.1-2.2 in preparation for the lecture after the exam.
 
 
 ### Lecture 4b 13-Feb
