@@ -1,0 +1,15 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "values": [
+      {"Set Class": "HashSet","Removal Time": 43}, {"Set Class": "LinkedHashSet","Removal Time": 50}, {"Set Class": "TreeSet","Removal Time": 115},
+      {"Set Class": "ArrayList","Removal Time": 6116}, {"Set Class": "LinkedList","Removal Time": 8531}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Set Class", "type": "nominal"},
+    "y": {"field": "Removal Time", "type": "quantitative"}
+  }
+}

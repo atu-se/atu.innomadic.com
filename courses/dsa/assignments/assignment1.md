@@ -20,6 +20,14 @@ Then, make the following changes to the code:
     - Hint: your function signature should look like this: `public void clear()`
 5. **1 Mark** Create a new button labeled "Color".  When "Color" is selected
     - Hint: use the moveBall function as an example of how to iterator over the list of Balls in order to change their colors.
-    - Use a website like https://rgbcolorcode.com/ to choose a color (look for its Red, Green, and Blue values).
+    - Choose a color from the [Color class](https://docs.oracle.com/javafx/2/api/javafx/scene/paint/Color.html).
     - Ball extends the [Circle class](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/Circle.html).  
     - Note that Circle has a [setFill() function](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/Shape.html#setFill-javafx.scene.paint.Paint-).  You will need to use the `setFill` function and you will need to define a new Color (see the `add()` function for how to create a color).
+
+Submission:
+
+1. Put a comment block at your file.
+2. Add this line to the comment "Group: <yourname> <otherpersonsname>" (if you worked alone, just put your name).
+3. Add a line that says Assignent 1
+4. Add a line with the date you are submitting the file
+5. Email it to your instructor by the deadline.  Late work may be considered for reduced credit.
