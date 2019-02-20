@@ -28,7 +28,7 @@ Then, make the following changes to the code:
     - Choose a color from the [Color class](https://docs.oracle.com/javafx/2/api/javafx/scene/paint/Color.html).
     - Ball extends the [Circle class](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/Circle.html).  
     - Note that Circle has a [setFill() function](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/Shape.html#setFill-javafx.scene.paint.Paint-).  You will need to use the `setFill` function and you will need to define a new Color (see the `add()` function for how to create a color).
-6. Your submission should compile and run using Java Runtime 1.8
+6. Your submission should compile and run without error
 
 ## Submission Requirements
 
