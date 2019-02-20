@@ -13,12 +13,19 @@
 
 ## Updates
 
+### Lecture 4 20-Feb
+
+* Lecture 4 - Sets and Maps
+* Announcements:
+  * Next week you will have a quiz covering material from Chapters 18-20
+  * Next week you will receive an assignment for a grade.  I am planning on having you do a modification of Case Study 20.7
+
 ### Lecture 3 19-Feb
 
 * Lecture 3 - Lists, Stacks, Queues, and Priority Queues
 * Practice Exercise
   - Review and run Case Study 20.7 and Case Study 20.10
-  - 
+  -
 
 ### Lecture 2b 13-Feb
 

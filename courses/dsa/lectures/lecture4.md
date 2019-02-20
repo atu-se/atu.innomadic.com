@@ -234,7 +234,8 @@ Remove element time for linked list is 8531 milliseconds
 * +keySet(): Set<K>
 * +put(key: K, value: V): V
 * +putAll(m: Map<? extends K,? extends V>): void
-* +remove(key: Object): V * +size(): int
+* +remove(key: Object): V
+* +size(): int
 * +values(): Collection<V>
 
 ## HashMap
@@ -258,26 +259,88 @@ Remove element time for linked list is 8531 milliseconds
 ## Map Demo Observations
 
 * HashMap entries are in random order
-
+* TreeMap entries are in increasing order
+* LinkedHashMap entries are in access order
 
 # Case Study: Occurrence of Words (21.6)
 
 # Singleton and Unmodifiable Collections and Maps (21.7)
 
-## Singleton and Unmodifiable Collections and Maps
+## Singletons and Unmodifiables
 
 * You can create singleton sets, lists, and maps and unmodifiable sets, lists, and maps using the static methods in the Collections class.
-* The Collections class contains the static methods for lists and collections.
-* It also contains the methods for creating immutable singleton sets, lists, and maps, and for creating read-only sets, lists, and maps
+* The Collections Framework contains the methods for creating immutable singleton sets, lists, and maps,
+* The Collections Framework contains methods for creating read-only sets, lists, and maps
+
+## Constants
+
+* The Collections class defines three constants—
+  * EMPTY_SET
+  * EMPTY_LIST
+  * EMPTY_MAP
+* These collections are immutable. (they cannot be changed)
+
+
+## Singletons
+
+These immutable collections stores a single item:
+
+* +singleton(o: Object): Set
+* +singletonList(o: Object): List
+* +singletonMap(key: Object, value: Object): Map
+
+## Unmodifiable Collections
+
+* +unmodifiableCollection(c: Collection): Collection
+* +unmodifiableList(list: List): List
+
+## Unmodifiable Sets
+
+* +unmodifiableSet(s: Set): Set
+* +unmodifiableSortedSet(s: SortedSet): SortedSet
+
+## Unmodifiable Maps
+
+* +unmodifiableMap(m: Map): Map
+* +unmodifiableSortedMap(s: SortedMap): SortedMap
+
 
 # Summary
 
+## Summary
+
 1. A set stores nonduplicate elements. To allow duplicate elements to be stored in a collection, you need to use a list.
 2. A map stores key/value pairs. It provides a quick lookup for a value using a key.
-3. Three types of sets are supported: HashSet, LinkedHashSet, and TreeSet.HashSet stores elements in an unpredictable order. LinkedHashSet stores elements in the order they were inserted. TreeSet stores elements sorted. All the methods in HashSet, LinkedHashSet, and TreeSet are inherited from the Collection interface.
-4. The Map interface maps keys to the elements. The keys are like indexes. In List, the indexes are integers. In Map, the keys can be any objects. A map cannot contain duplicate keys. Each key can map to at most one value. The Map interface provides the methods for querying, updating, and obtaining a collection of values and a set of keys.
+
+
+## Summary
+
+3. Three types of sets are supported: HashSet, LinkedHashSet, and TreeSet.
+  * HashSet stores elements in an unpredictable order.
+  * LinkedHashSet stores elements in the order they were inserted.
+  * TreeSet stores elements sorted.
+* All the methods in HashSet, LinkedHashSet, and TreeSet are inherited from the Collection interface.
+
+## Summary
+
+4. The Map interface maps keys to the elements.
+    * The keys are like indexes.
+    * In List, the indexes are integers.
+    * In Map, the keys can be any objects.
+    * A map cannot contain duplicate keys.
+    * Each key can map to at most one value.
+    * The Map interface provides the methods for querying, updating, and obtaining a collection of values and a set of keys.
+
+## Summary
+
 5. Three types of maps are supported: HashMap, LinkedHashMap, and TreeMap.
     - HashMap is efficient for locating a value, inserting an entry, and deleting an entry.
     - LinkedHashMap supports ordering of the entries in the map.
-    - The entries in a HashMap are not ordered, but the entries in a LinkedHashMap can be retrieved either in the order in which they were inserted into the map (known as the insertion order) or in the order in which they were last accessed, from least recently accessed to most recently (access order).
     - TreeMap is efficient for traversing the keys in a sorted order. The keys can be sorted using the Comparable interface or the Comparator interface.
+
+## Summary
+
+5. Three types of maps are supported: HashMap, LinkedHashMap, and TreeMap.
+    - The entries in a HashMap are not ordered, but the entries in a LinkedHashMap can be retrieved:
+      - either in the order in which they were inserted into the map (known as the insertion order)
+      - or in the order in which they were last accessed, from least recently accessed to most recently (access order).

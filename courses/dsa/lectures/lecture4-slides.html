@@ -273,10 +273,10 @@ Member test time for linked list is 13235 milliseconds
 Remove element time for linked list is 8531 milliseconds</code></pre>
 </section><section id="test-results" class="slide level2">
 <h2>Test Results</h2>
-<p><img data-src="../../../assets/22209244dd71e245ef890fd71a9f49180.png?0.2221953632847926" /></p>
+<p><img data-src="../../../assets/22209244dd71e245ef890fd71a9f49180.png?0.040777960543540326" /></p>
 </section><section id="test-results-1" class="slide level2">
 <h2>Test Results</h2>
-<p><img data-src="../../../assets/22209244dd71e245ef890fd71a9f49181.png?0.39738020622920245" /></p>
+<p><img data-src="../../../assets/22209244dd71e245ef890fd71a9f49181.png?0.43102573583018944" /></p>
 </section></section>
 <section><section id="case-study-counting-keywords-214" class="title-slide slide level1"><h1>Case Study: Counting Keywords (21.4)</h1></section><section id="counting-keywords" class="slide level2">
 <h2>Counting Keywords</h2>
@@ -328,7 +328,8 @@ Remove element time for linked list is 8531 milliseconds</code></pre>
 <li>+keySet(): Set<K></li>
 <li>+put(key: K, value: V): V</li>
 <li>+putAll(m: Map&lt;? extends K,? extends V&gt;): void</li>
-<li>+remove(key: Object): V * +size(): int</li>
+<li>+remove(key: Object): V</li>
+<li>+size(): int</li>
 <li>+values(): Collection<V></li>
 </ul>
 </section><section id="hashmap" class="slide level2">
@@ -358,18 +359,109 @@ Remove element time for linked list is 8531 milliseconds</code></pre>
 <h2>Map Demo Observations</h2>
 <ul>
 <li>HashMap entries are in random order</li>
+<li>TreeMap entries are in increasing order</li>
+<li>LinkedHashMap entries are in access order</li>
 </ul>
 </section></section>
 <section id="case-study-occurrence-of-words-216" class="title-slide slide level1"><h1>Case Study: Occurrence of Words (21.6)</h1></section>
-<section><section id="singleton-and-unmodifiable-collections-and-maps-217" class="title-slide slide level1"><h1>Singleton and Unmodifiable Collections and Maps (21.7)</h1></section><section id="singleton-and-unmodifiable-collections-and-maps" class="slide level2">
-<h2>Singleton and Unmodifiable Collections and Maps</h2>
+<section><section id="singleton-and-unmodifiable-collections-and-maps-217" class="title-slide slide level1"><h1>Singleton and Unmodifiable Collections and Maps (21.7)</h1></section><section id="singletons-and-unmodifiables" class="slide level2">
+<h2>Singletons and Unmodifiables</h2>
 <ul>
 <li>You can create singleton sets, lists, and maps and unmodifiable sets, lists, and maps using the static methods in the Collections class.</li>
-<li>The Collections class contains the static methods for lists and collections.</li>
-<li>It also contains the methods for creating immutable singleton sets, lists, and maps, and for creating read-only sets, lists, and maps</li>
+<li>The Collections Framework contains the methods for creating immutable singleton sets, lists, and maps,</li>
+<li>The Collections Framework contains methods for creating read-only sets, lists, and maps</li>
+</ul>
+</section><section id="constants" class="slide level2">
+<h2>Constants</h2>
+<ul>
+<li>The Collections class defines three constants—
+<ul>
+<li>EMPTY_SET</li>
+<li>EMPTY_LIST</li>
+<li>EMPTY_MAP</li>
+</ul></li>
+<li>These collections are immutable. (they cannot be changed)</li>
+</ul>
+</section><section id="singletons" class="slide level2">
+<h2>Singletons</h2>
+<p>These immutable collections stores a single item:</p>
+<ul>
+<li>+singleton(o: Object): Set</li>
+<li>+singletonList(o: Object): List</li>
+<li>+singletonMap(key: Object, value: Object): Map</li>
+</ul>
+</section><section id="unmodifiable-collections" class="slide level2">
+<h2>Unmodifiable Collections</h2>
+<ul>
+<li>+unmodifiableCollection(c: Collection): Collection</li>
+<li>+unmodifiableList(list: List): List</li>
+</ul>
+</section><section id="unmodifiable-sets" class="slide level2">
+<h2>Unmodifiable Sets</h2>
+<ul>
+<li>+unmodifiableSet(s: Set): Set</li>
+<li>+unmodifiableSortedSet(s: SortedSet): SortedSet</li>
+</ul>
+</section><section id="unmodifiable-maps" class="slide level2">
+<h2>Unmodifiable Maps</h2>
+<ul>
+<li>+unmodifiableMap(m: Map): Map</li>
+<li>+unmodifiableSortedMap(s: SortedMap): SortedMap</li>
 </ul>
 </section></section>
-<section id="summary" class="title-slide slide level1"><h1>Summary</h1></section>
+<section><section id="summary" class="title-slide slide level1"><h1>Summary</h1></section><section id="summary-1" class="slide level2">
+<h2>Summary</h2>
+<ol type="1">
+<li>A set stores nonduplicate elements. To allow duplicate elements to be stored in a collection, you need to use a list.</li>
+<li>A map stores key/value pairs. It provides a quick lookup for a value using a key.</li>
+</ol>
+</section><section id="summary-2" class="slide level2">
+<h2>Summary</h2>
+<ol start="3" type="1">
+<li>Three types of sets are supported: HashSet, LinkedHashSet, and TreeSet.</li>
+</ol>
+<ul>
+<li>HashSet stores elements in an unpredictable order.</li>
+<li>LinkedHashSet stores elements in the order they were inserted.</li>
+<li>TreeSet stores elements sorted.</li>
+<li>All the methods in HashSet, LinkedHashSet, and TreeSet are inherited from the Collection interface.</li>
+</ul>
+</section><section id="summary-3" class="slide level2">
+<h2>Summary</h2>
+<ol start="4" type="1">
+<li>The Map interface maps keys to the elements.
+<ul>
+<li>The keys are like indexes.</li>
+<li>In List, the indexes are integers.</li>
+<li>In Map, the keys can be any objects.</li>
+<li>A map cannot contain duplicate keys.</li>
+<li>Each key can map to at most one value.</li>
+<li>The Map interface provides the methods for querying, updating, and obtaining a collection of values and a set of keys.</li>
+</ul></li>
+</ol>
+</section><section id="summary-4" class="slide level2">
+<h2>Summary</h2>
+<ol start="5" type="1">
+<li>Three types of maps are supported: HashMap, LinkedHashMap, and TreeMap.
+<ul>
+<li>HashMap is efficient for locating a value, inserting an entry, and deleting an entry.</li>
+<li>LinkedHashMap supports ordering of the entries in the map.</li>
+<li>TreeMap is efficient for traversing the keys in a sorted order. The keys can be sorted using the Comparable interface or the Comparator interface.</li>
+</ul></li>
+</ol>
+</section><section id="summary-5" class="slide level2">
+<h2>Summary</h2>
+<ol start="5" type="1">
+<li>Three types of maps are supported: HashMap, LinkedHashMap, and TreeMap.
+<ul>
+<li>The entries in a HashMap are not ordered, but the entries in a LinkedHashMap can be retrieved:
+<ul>
+<li>either in the order in which they were inserted into the map (known as the insertion order)</li>
+<li>or in the order in which they were last accessed, from least recently accessed to most recently (access order).</li>
+</ul></li>
+</ul></li>
+</ol>
+</section></section>
     </div>
   </div>
 

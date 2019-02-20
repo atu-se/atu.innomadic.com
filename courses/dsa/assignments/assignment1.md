@@ -1,10 +1,10 @@
 # Assignment 1
 
-Assignment one is worth 5 marks for the semester.
+Assignment one is worth **5 marks** for the semester.
 
 You will modify [Case Study 20.7](MultipleBounceBall.java) as specified below.
 
-For this exercise you may work alone or in groups of two.  You may not discuss or share your solution with other students or other groups.  If cheating is detected, all involved parties may receive a failing grade.
+**For this exercise you may work alone or in groups of two.  You may not discuss or share your solution with other students or other groups.  If cheating is detected, all involved parties may receive a failing grade.**
 
 First, examine, compile, and run the code.  Study the code to understand how it works.  You may wish to modify parts of the code to see how it works.  
 
@@ -28,6 +28,6 @@ Submission:
 
 1. Put a comment block at your file.
 2. Add this line to the comment "Group: <yourname> <otherpersonsname>" (if you worked alone, just put your name).
-3. Add a line that says Assignent 1
+3. Add a line that says Assignment 1
 4. Add a line with the date you are submitting the file
 5. Email it to your instructor by the deadline.  Late work may be considered for reduced credit.
