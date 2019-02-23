@@ -14,6 +14,13 @@
 
 ## Updates
 
+### Update 23-Feb
+
+* Today we finish lecture 4
+* Please read chapter 22 for our next class
+* *Tomorrow* there will be a quiz covering chapters 18-20
+
+
 ### Lecture 4 20-Feb
 
 * Lecture 4 - Sets and Maps
@@ -25,8 +32,7 @@
 
 * Lecture 3 - Lists, Stacks, Queues, and Priority Queues
 * Practice Exercise
-  - Review and run Case Study 20.7 and Case Study 20.10
-  -
+  * Review and run Case Study 20.7 and Case Study 20.10
 
 ### Lecture 2b 13-Feb
 
