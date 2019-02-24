@@ -23,7 +23,7 @@ Then, make the following changes to the code:
    - For example, if your number was 100, then the ball would start at x=100, y=100.  Your numbers should be between 50 and 60.
 4. **1 Mark** Create a new button labeled "Clear".  When this button is pressed it should call a recursive method which will remove the balls from the data structure one by one.
     - Hint: your function signature should look like this: `public void clear()`
-5. **1 Mark** Create a new button labeled "Color".  When "Color" is selected
+5. **1 Mark** Create a new button labeled "Color".  When "Color" is selected it should change all of the balls to the color of your choice.
     - Hint: use the moveBall function as an example of how to iterator over the list of Balls in order to change their colors.
     - Choose a color from the [Color class](https://docs.oracle.com/javafx/2/api/javafx/scene/paint/Color.html).
     - Ball extends the [Circle class](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/Circle.html).  
