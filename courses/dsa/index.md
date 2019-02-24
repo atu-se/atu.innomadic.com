@@ -14,6 +14,11 @@
 
 ## Updates
 
+### Lecture 5 24-Feb
+
+* Announcing [Assignment 1](assignments/assignment1)
+
+
 ### Update 23-Feb
 
 * Today we finish lecture 4

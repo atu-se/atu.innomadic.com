@@ -35,6 +35,7 @@ Then, make the following changes to the code:
 
 1. Add a comment near the top of your java file with "Group: <yourname> <otherpersonsname>" (if you worked alone, just put your name).
 2. Add a comment near the top of your java file with a line that says Assignment 1
+3. Name your java file "dfa-assignment1-<yourname>.java"
 3. Attach your java file to an email
 4. In the body of your email, list your name as it is written on the class roster.
 5. Email it to your instructor by the deadline.  Late work **may be** considered for **reduced credit**.

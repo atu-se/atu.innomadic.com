@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-02-24">
+  <title>DSA Lecture</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">DSA Lecture</h1>
+  <p class="subtitle">5. Developing Efficient Algorithms</p>
+  <p class="date">February 24, 2019</p>
+</section>
+
+<section><section id="introduction-222" class="title-slide slide level1"><h1>Introduction (22.2)</h1></section><section id="objectives" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>To estimate algorithm efficiency using the Big O notation (§22.2).</li>
+<li>To explain growth rates and why constants and nondominating terms can be ignored in the estimation (§22.2).</li>
+<li>To determine the complexity of various types of algorithms (§22.3).</li>
+<li>To analyze the binary search algorithm (§22.4.1).</li>
+<li>To analyze the selection sort algorithm (§22.4.2).</li>
+</ul>
+</section><section id="objectives-1" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>To analyze the Tower of Hanoi algorithm (§22.4.3).</li>
+<li>To describe common growth functions (constant, logarithmic, log- linear, quadratic, cubic, exponential) (§22.4.4).</li>
+<li>To design efficient algorithms for finding Fibonacci numbers using dynamic programming (§22.5).</li>
+<li>To find the GCD using Euclid’s algorithm (§22.6).</li>
+<li>To find prime numbers using the sieve of Eratosthenes (§22.7).</li>
+</ul>
+</section><section id="objectives-2" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>To design efficient algorithms for finding the closest pair of points using the divide-and-conquer approach (§22.8).</li>
+<li>To solve the Eight Queens problem using the backtracking approach (§22.9).</li>
+<li>To design efficient algorithms for finding a convex hull for a set of points (§22.10).</li>
+</ul>
+</section><section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li>Algorithm design is to develop a mathematical process for solving a problem. Algorithm analysis is to predict the performance of an algorithm.</li>
+<li>This chapter will use a variety of examples to introduce common algorithmic techniques (dynamic programming, divide-and-conquer, and backtracking) for developing efficient algorithms</li>
+<li>Before introducing developing efficient algorithms, we need to address the question on how to measure algorithm efficiency.</li>
+</ul>
+</section></section>
+<section><section id="measuring-efficiency-222" class="title-slide slide level1"><h1>Measuring Efficiency (22.2)</h1></section><section id="big-o-notation" class="slide level2">
+<h2>Big O Notation</h2>
+<ul>
+<li>The Big O notation obtains a function for measuring algorithm time complexity based on the input size.</li>
+<li>You can ignore multiplicative constants and nondominating terms in the function.</li>
+</ul>
+</section><section id="comparing-search-algorithms" class="slide level2">
+<h2>Comparing Search Algorithms</h2>
+<ul>
+<li>Suppose two algorithms perform the same task, such as search (<em>linear search</em> vs. <em>binary search</em>).</li>
+<li>Which one is better?</li>
+</ul>
+</section><section id="measuring-runtime" class="slide level2">
+<h2>Measuring Runtime</h2>
+<ul>
+<li>To answer this question, you might implement these algorithms and run the programs to get execution time. But there are two problems with this approach:
+<ul>
+<li>First, many tasks run concurrently on a computer. The execution time of a particular program depends on the <em>system load</em>.</li>
+<li>Second, the execution time depends on <em>specific input</em>. Consider, for example, linear search and binary search. If an element to be searched happens to be the first in the list, linear search will find the element quicker than binary search.</li>
+</ul></li>
+</ul>
+</section><section id="growth-rates" class="slide level2">
+<h2>Growth Rates</h2>
+<ul>
+<li>It is very difficult to compare algorithms by measuring their execution time.</li>
+<li>To overcome these problems, a theoretical approach was developed to analyze algorithms independent of computers and specific input.</li>
+<li>This approach approximates the effect of a change on the size of the input.</li>
+<li>In this way, you can see how fast an algorithm’s execution time increases as the input size increases, so you can compare two algorithms by examining their <strong>growth rates</strong>.</li>
+</ul>
+</section><section id="measuring-runtime-1" class="slide level2">
+<h2>Measuring Runtime</h2>
+<ul>
+<li>For the same input size, an algorithm’s execution time may vary, depending on the input.</li>
+<li>An input that results in the shortest execution time is called the best-case input,</li>
+<li>An input that results in the longest execution time is the worst-case input.</li>
+</ul>
+</section><section id="measuring-runtime-2" class="slide level2">
+<h2>Measuring Runtime</h2>
+<ul>
+<li><strong>Best-case analysis</strong> and <strong>worst-case analysis</strong> are to analyze the algorithms for their best-case input and worst-case input.</li>
+<li>Best-case and worst-case analysis are not representative</li>
+<li>Worst-case analysis is very useful. You can be assured that the algorithm will never be slower than the worst case.</li>
+</ul>
+</section><section id="measuring-runtime-3" class="slide level2">
+<h2>Measuring Runtime</h2>
+<ul>
+<li>An <strong>average-case analysis</strong> attempts to determine the average amount of time among all possible inputs of the same size.</li>
+<li>Average-case analysis is ideal, but difficult to perform, because for many problems it is hard to determine the relative probabilities and distributions of various input instances.</li>
+<li>Worst-case analysis is easier to perform, so the analysis is generally conducted for the worst case.</li>
+</ul>
+</section><section id="example-linear-search" class="slide level2">
+<h2>Example: Linear Search</h2>
+<ul>
+<li>The linear search algorithm compares the key with the elements in the array sequentially until the key is found or the array is exhausted.</li>
+<li>If the key is not in the array, it requires n comparisons for an array of size n.</li>
+<li>If the key is in the array, it requires n/2 comparisons on average.</li>
+<li>The algorithm’s execution time is proportional to the size of the array.</li>
+</ul>
+</section><section id="example-linear-search-1" class="slide level2">
+<h2>Example: Linear Search</h2>
+<ul>
+<li>If you double the size of the array, you will expect the number of comparisons to double.</li>
+<li>The algorithm grows at a linear rate. The growth rate has an order of magnitude of n.</li>
+<li>Computer scientists use the Big O notation to represent the “order of magnitude.”</li>
+<li>Using this notation, the complexity of the linear search algorithm is O(n), pronounced as “order of n.”</li>
+</ul>
+</section><section id="example-linear-search-2" class="slide level2">
+<h2>Example: Linear Search</h2>
+<table>
+<thead>
+<tr class="header">
+<th>n\f(n)</th>
+<th>n</th>
+<th>n/2</th>
+<th>100n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100</td>
+<td>100</td>
+<td>50</td>
+<td>10,000</td>
+</tr>
+<tr class="even">
+<td>200</td>
+<td>200</td>
+<td>100</td>
+<td>20,000</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>f(n) = n, f(n) = n/2 and f(n) = 100n are all linear functions</li>
+<li>Doubling the size of n does yields the same growth rate for all three functions</li>
+</ul>
+</section><section id="example-array-maximum" class="slide level2">
+<h2>Example: Array Maximum</h2>
+<ul>
+<li>Consider the algorithm for finding the maximum number in an array of n elements.</li>
+<li>To find the maximum number if n is 2, it takes one comparison;</li>
+<li>if n is 3, two comparisons.</li>
+<li>In general, it takes n - 1 comparisons to find the maximum number in a list of n elements.</li>
+<li>So what is the order of magnitude for this algorithm? Hint: it’s not O(n-1)</li>
+</ul>
+</section><section id="example-array-maximum-1" class="slide level2">
+<h2>Example: Array Maximum</h2>
+<ul>
+<li>Algorithm analysis is for large input size.</li>
+<li>If the input size is small, there is no significance in estimating an algorithm’s efficiency.</li>
+<li>As n grows larger, the n part in the expression n - 1 dominates the complexity.</li>
+<li><strong>The Big O notation allows you to ignore the nondominating part</strong> (e.g., -1 in the expression n - 1) and <strong>highlight the important part</strong> (e.g., n in the expression n - 1).</li>
+<li>Therefore, the complexity of this algorithm is O(n).</li>
+</ul>
+</section><section id="constant-time" class="slide level2">
+<h2>Constant Time</h2>
+<ul>
+<li>If the time is not related to the input size, the algorithm is said to take constant time with the notation O(1).</li>
+<li>For example, a method that retrieves an element at a given index in an array takes <em>constant time</em>, because the time does not grow as the size of the array increases.</li>
+</ul>
+</section><section id="other-examples" class="slide level2">
+<h2>Other Examples</h2>
+<ul>
+<li>So far you have seen examples of:
+<ul>
+<li>O(n) “Linear”</li>
+<li>O(1) “Constant time”</li>
+</ul></li>
+<li>There are other orders of magnitude</li>
+</ul>
+</section><section id="other-examples-1" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">1 + 2 + 3 + ... + (n-2) + (n-1) = \frac{n(n-1)}{2} = O(?)</span></p>
+</section><section id="other-examples-2" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">1 + 2 + 3 + ... + (n-2) + (n-1) = \frac{n(n-1)}{2} = O(n^2)</span></p>
+</section><section id="other-examples-3" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">1 + 2 + 3 + ... + (n-1) + (n) = \frac{n(n+1)}{2} = O(?)</span></p>
+</section><section id="other-examples-4" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">1 + 2 + 3 + ... + (n-1) + (n) = \frac{n(n+1)}{2} = O(n^2)</span></p>
+</section><section id="other-examples-5" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">a^0 + a^1 + a^2 + a^3 + ... + a^(n-1) + a^n  = \frac{a^(n+1) - 1}{a-1} = O(?)</span></p>
+</section><section id="other-examples-6" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">a^0 + a^1 + a^2 + a^3 + ... + a^(n-1) + a^n  = \frac{a^(n+1) - 1}{a-1} = O(a^n)</span></p>
+</section><section id="other-examples-7" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">2^0 + 2^1 + 2^2 + 2^3 + ... + 2^(n-1) + 2^n  = \frac{2^(n+1) - 1}{2-1} = O(?)</span></p>
+</section><section id="other-examples-8" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">2^0 + 2^1 + 2^2 + 2^3 + ... + 2^(n-1) + 2^n  = \frac{2^(n+1) - 1}{2-1} = O(2^n)</span></p>
+</section><section id="orders-of-magnitude-covered" class="slide level2">
+<h2>Orders of Magnitude Covered</h2>
+<ul>
+<li>O(1) “Constant time”</li>
+<li>O(n) “Linear”</li>
+<li>O(n^2)</li>
+<li>O(2^n)</li>
+</ul>
+</section><section id="two-complexity-measures" class="slide level2">
+<h2>Two Complexity Measures</h2>
+<ul>
+<li><em>Time complexity</em> is a measure of execution time using the Big-O notation. Similarly, you can also measure space complexity using the Big-O notation.</li>
+<li><em>Space complexity</em> measures the amount of memory space used by an algorithm.
+<ul>
+<li>The space complexity for most algorithms presented in the book is O(n). i.e., they exibit linear growth rate to the input size.</li>
+<li>For example, the space complexity for linear search is O(n).</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="determining-big-o" class="title-slide slide level1"><h1>Determining Big O</h1></section><section id="big-o-example-1" class="slide level2">
+<h2>Big O Example 1</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb1-2" title="2">  k = k + <span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb1-3" title="3">}</a></code></pre></div>
+</section><section id="big-o-example-1-1" class="slide level2">
+<h2>Big O Example 1</h2>
+<ul>
+<li>The statement <code>k = k + 5;</code> is a constant time, <em>c</em>.<br />
+</li>
+<li>When it is put inside of the for loop, <code>for (int i = 1; i &lt;= n; i++)</code>, the time complexity becomes:</li>
+</ul>
+<p>T(n) = ( a constant <em>c</em> ) * n = O(n)</p>
+</section><section id="big-o-example-2" class="slide level2">
+<h2>Big O Example 2</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= n; j++) {</a>
+<a class="sourceLine" id="cb2-3" title="3">    k = k + i + j;</a>
+<a class="sourceLine" id="cb2-4" title="4">  }</a>
+<a class="sourceLine" id="cb2-5" title="5">}</a></code></pre></div>
+</section><section id="big-o-example-2-1" class="slide level2">
+<h2>Big O Example 2</h2>
+<ul>
+<li>The statement <code>k = k + i + j;</code> is a constant time, <em>c</em>.<br />
+</li>
+<li>The inner loop runs j times</li>
+<li>The outer loop runs i times</li>
+<li>So how many total times does the addition statement run?</li>
+</ul>
+</section><section id="big-o-example-2-2" class="slide level2">
+<h2>Big O Example 2</h2>
+<p>The time complexity for this loop is:</p>
+<p>T(n) = (a constant <em>c</em>) * n * n = O(n<sup>2</sup>)</p>
+<ul>
+<li>O(n<sup>2</sup>) is called a quadratic algorithm. When input size is doubled, the time quadruples</li>
+<li>Nested loops often create quadratic Big O’s</li>
+</ul>
+</section><section id="big-o-example-3" class="slide level2">
+<h2>Big O Example 3</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= i; j++) {</a>
+<a class="sourceLine" id="cb3-3" title="3">    k = k + i + j;</a>
+<a class="sourceLine" id="cb3-4" title="4">  }</a>
+<a class="sourceLine" id="cb3-5" title="5">}</a></code></pre></div>
+</section><section id="big-o-example-3-1" class="slide level2">
+<h2>Big O Example 3</h2>
+<ul>
+<li>The outer loop runs n times</li>
+<li>The inner loop is executed 1 time, then 2 times, then 3 times… up to n times.</li>
+<li>What is the time complexity?</li>
+</ul>
+</section><section id="big-o-example-3-2" class="slide level2">
+<h2>Big O Example 3</h2>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= c + 2c + 3c + 4c + ... + nc \\ &amp;= cn (n+1)/2 \\ &amp;= (c / 2) n^2 + (c / 2) n \\ &amp;= O(n^2)
+ \end{aligned} </span></p>
+</section><section id="big-o-example-4" class="slide level2">
+<h2>Big O Example 4</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= <span class="dv">20</span>; j++) {</a>
+<a class="sourceLine" id="cb4-3" title="3">    k = k + i + j; }</a>
+<a class="sourceLine" id="cb4-4" title="4">}</a></code></pre></div>
+</section><section id="big-o-example-4-1" class="slide level2">
+<h2>Big O Example 4</h2>
+<ul>
+<li>The inner loop executes 20 times, and the outer loop n times. Therefore, the time complexity for the loop is:</li>
+</ul>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= 20*c*n \\ &amp;= O(n)
+ \end{aligned} </span></p>
+</section><section id="big-o-example-5" class="slide level2">
+<h2>Big O Example 5</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= <span class="dv">10</span>; j++) {</a>
+<a class="sourceLine" id="cb5-2" title="2">  k = k + <span class="dv">4</span>;</a>
+<a class="sourceLine" id="cb5-3" title="3">}</a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb5-5" title="5">  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= <span class="dv">20</span>; j++) {</a>
+<a class="sourceLine" id="cb5-6" title="6">    k = k + i + j;</a>
+<a class="sourceLine" id="cb5-7" title="7">  }</a>
+<a class="sourceLine" id="cb5-8" title="8">}</a></code></pre></div>
+</section><section id="big-o-example-5-1" class="slide level2">
+<h2>Big O Example 5</h2>
+<ul>
+<li>The first loop executes 10 times</li>
+<li>The second loop executes 20*n times</li>
+<li>What is the Big O for this code?</li>
+</ul>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= 10*c + 20*c*n \\ &amp;= O(?)
+  \end{aligned} </span></p>
+</section><section id="big-o-example-5-2" class="slide level2">
+<h2>Big O Example 5</h2>
+<ul>
+<li>The first loop executes 10 times</li>
+<li>The second loop executes 20*n times</li>
+<li><p>What is the Big O for this code?</p>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= 10*c + 20*c*n \\ &amp;= O(n)
+ \end{aligned} </span></p></li>
+</ul>
+</section><section id="big-o-example-6" class="slide level2">
+<h2>Big O Example 6</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">if</span> (list.<span class="fu">contains</span>(e)) {     </a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(e);</a>
+<a class="sourceLine" id="cb6-3" title="3">}</a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="kw">else</span></a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="kw">for</span> (<span class="bu">Object</span> t: list) {</a>
+<a class="sourceLine" id="cb6-6" title="6">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</a>
+<a class="sourceLine" id="cb6-7" title="7">  }</a></code></pre></div>
+<ul>
+<li>Suppose the list contains n elements</li>
+<li>The execution time for list.contains(e) is O(n)</li>
+<li>The loop in the else clause takes O(n) time.</li>
+<li>What is the time complexity for the entire statement?</li>
+</ul>
+</section><section id="big-o-example-6-1" class="slide level2">
+<h2>Big O Example 6</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">if</span> (list.<span class="fu">contains</span>(e)) {     </a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(e);</a>
+<a class="sourceLine" id="cb7-3" title="3">}</a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="kw">else</span></a>
+<a class="sourceLine" id="cb7-5" title="5">  <span class="kw">for</span> (<span class="bu">Object</span> t: list) {</a>
+<a class="sourceLine" id="cb7-6" title="6">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</a>
+<a class="sourceLine" id="cb7-7" title="7">  }</a></code></pre></div>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= if\ test\ time + worstcase\ test\ time \\ &amp;= O(n) + O(n) \\ &amp;= O(?)
+ \end{aligned} </span></p>
+</section><section id="big-o-example-6-2" class="slide level2">
+<h2>Big O Example 6</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">if</span> (list.<span class="fu">contains</span>(e)) {     </a>
+<a class="sourceLine" id="cb8-2" title="2"> <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(e);</a>
+<a class="sourceLine" id="cb8-3" title="3">}</a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="kw">else</span></a>
+<a class="sourceLine" id="cb8-5" title="5"> <span class="kw">for</span> (<span class="bu">Object</span> t: list) {</a>
+<a class="sourceLine" id="cb8-6" title="6">   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</a>
+<a class="sourceLine" id="cb8-7" title="7"> }</a></code></pre></div>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= if\ test\ time + worstcase\ test\ time \\ &amp;= O(n) + O(n) \\ &amp;= O(n)
+\end{aligned} </span></p>
+</section><section id="big-o-example-7" class="slide level2">
+<h2>Big O Example 7</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1">result = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++)</a>
+<a class="sourceLine" id="cb9-3" title="3">  result *= a;</a></code></pre></div>
+<p>What is the execution time?</p>
+</section><section id="big-o-example-7-1" class="slide level2">
+<h2>Big O Example 7</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1">result = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++)</a>
+<a class="sourceLine" id="cb10-3" title="3">  result *= a;</a></code></pre></div>
+<p><span class="math display"> O(n) </span></p>
+</section><section id="big-o-example-7-2" class="slide level2">
+<h2>Big O Example 7</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1">result = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++)</a>
+<a class="sourceLine" id="cb11-3" title="3">  result *= a;</a></code></pre></div>
+<p>What if we knew that <span class="math inline">n=2^k</span> for some k?</p>
+<p>We could improve the algorithm like this:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1">result = a;</a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= k; i++)</a>
+<a class="sourceLine" id="cb12-3" title="3">  result = result*result;</a></code></pre></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
