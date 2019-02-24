@@ -7,6 +7,7 @@
 
 | Topic                                                          | Reading Assignment |
 |----------------------------------------------------------------|--------------------|
+| 5. Developing Efficient Algorithms [Notes](lectures/lecture5) - [Slides](lectures/lecture5-slides)  | Chapter 22  |
 | 4. Sets and Maps [Notes](lectures/lecture4) - [Slides](lectures/lecture4-slides)  | Chapter 21  |
 | 3. Lists, Stacks, Queues, and Priority Queues [Notes](lectures/lecture3) - [Slides](lectures/lecture3-slides) | Chapter 20   |
 | 2. Generics [Notes](lectures/lecture2) - [Slides](lectures/lecture2-slides)   | Chapter 19  |
@@ -17,6 +18,7 @@
 ### Lecture 5 24-Feb
 
 * Announcing [Assignment 1](assignments/assignment1).  It is due via email on Sunday, 3-March @ 10:30 a.m. Late assignments *may* be considered for reduced credit.  Pay special attention to the group work requirements.
+* Today we began lecture 5
 
 
 ### Update 23-Feb
@@ -54,6 +56,7 @@
 
 
 ### Lecture 1b 6-Feb
+
 * Lecture 1: Updated lecture 1 notes
 * Assigned Reading: Chapter 19 on Generics
 * Links
@@ -67,6 +70,7 @@
 
 
 ### Lecture 1 3-Feb
+
 * Lecture 1: Recursion (see Lectures table above for notes)
 * Assigned Reading: Chapter 18
 * Practice #1:
