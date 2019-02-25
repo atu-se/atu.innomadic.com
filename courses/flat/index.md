@@ -20,6 +20,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 | Assignment                          | Due Date                       |
 |-------------------------------------|--------------------------------|
+| [Homework 4](homework/homework4.md) | 4-Mar                         |
 | [Homework 3](homework/homework3.md) | 11-Feb                         |
 | [Homework 2](homework/homework2.md) | Postponed to Wednesday, 6-Feb  |
 | [Homework 1](homework/homework1.md) | Monday, 30-Jan                 |
@@ -28,12 +29,17 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 | Topic                                                          | Reading | Practice |
 |----------------------------------------------------------------|--------------------|---|
+| 5. [Non-Regular Languages](lectures/lecture4-slides.html)   | 2.1  |  |
 | 4. [Non-Regular Languages](lectures/Lecture4.pdf)   | 1.4  | [Practice 4](lectures/practice4-html.html) |
 | 3. [Regular Expressions](lectures/Lecture3.pdf)  |  1.3 |  [Practice 3](lectures/practice3-html.html) |
 | 2. [Non-deterministic Finite Automata](lectures/Lecture2.pdf) | 1.2            |  [Practice 2](lectures/practice2-html.html) |
 | 1. [Introduction to Finite Automata](lectures/Lecture1.pdf)    | 0.1-1.1              | [Practice 1](lectures/practice1) |
 
 ## Updates
+
+### Lecture 5 25-Feb
+
+* Homework 4 has been assigned
 
 ### Update 18-Feb
 

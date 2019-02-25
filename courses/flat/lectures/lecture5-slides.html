@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-02-24">
+  <title>Formal Languages and Automata Theory</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Formal Languages and Automata Theory</h1>
+  <p class="subtitle">5. Context-Free Languages</p>
+  <p class="date">February 24, 2019</p>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="context-free-grammars" class="slide level2">
+<h2>Context-Free Grammars</h2>
+<ul>
+<li>In this chapter we present context-free grammars (CFGs), a more powerful method of describing languages.</li>
+<li>Such grammars can describe certain features that have a recursive structure, which makes them useful in a variety of applications.</li>
+</ul>
+</section><section id="context-free-grammars-1" class="slide level2">
+<h2>Context-Free Grammars</h2>
+<ul>
+<li>Context-free grammars were first used in the study of human languages.</li>
+<li>One way of understanding the relationship of terms such as noun, verb, and preposition and their respective phrases leads to a natural recursion because noun phrases may appear inside verb phrases and vice versa.</li>
+<li>Context-free grammars help us organize and understand these relationships.</li>
+</ul>
+</section><section id="application-compilers" class="slide level2">
+<h2>Application: Compilers</h2>
+<ul>
+<li>An important application of context-free grammars occurs in the specification and compilation of programming languages.</li>
+<li>A grammar for a programming language often appears as a reference for people trying to learn the language syntax.</li>
+<li>Most compilers and interpreters contain a component called a parser that extracts the meaning of a program prior to generating the compiled code or performing the interpreted execution.</li>
+</ul>
+</section></section>
+<section><section id="context-free-grammars-2" class="title-slide slide level1"><h1>Context-Free Grammars</h1></section><section id="context-free-grammars-3" class="slide level2">
+<h2>Context-Free Grammars</h2>
+<ul>
+<li>The following is an example of a context-free grammar, which we call G<sub>1</sub>.</li>
+</ul>
+<p><span class="math display">
+A \longrightarrow 0A1 \\
+A\longrightarrow B \\
+B\longrightarrow \#
+</span></p>
+</section><section id="cfg-components" class="slide level2">
+<h2>CFG Components</h2>
+<ul>
+<li>collection of <strong>substitution rules</strong>, also called productions.</li>
+<li>Each rule appears as a line in the grammar, comprising a symbol and a string separated by an arrow.</li>
+<li>The symbol is called a <strong>variable</strong>.</li>
+<li>The string consists of variables and other symbols called <strong>terminals</strong>.</li>
+</ul>
+</section><section id="context-free-grammars-4" class="slide level2">
+<h2>Context-Free Grammars</h2>
+<ul>
+<li>The variable symbols often are represented by capital letters.</li>
+<li>The terminals are analogous to the input alphabet and often are represented by lowercase letters, numbers, or special symbols.</li>
+<li>One variable is designated as the <strong>start variable</strong>.</li>
+<li>It usually occurs on the left-hand side of the topmost rule.</li>
+</ul>
+</section><section id="example-cfg-g1" class="slide level2">
+<h2>Example CFG G1</h2>
+<p><span class="math display">
+A \longrightarrow 0A1 \\
+A\longrightarrow B \\
+B\longrightarrow \#
+</span></p>
+<ul>
+<li>For example, grammar G<sub>1</sub> contains three rules.</li>
+<li>G<sub>1</sub>’s variables are A and B, where A is the start variable.</li>
+<li>Its terminals are 0, 1, and #.</li>
+</ul>
+</section><section id="generating-strings" class="slide level2">
+<h2>Generating Strings</h2>
+<ol type="1">
+<li>Write down the start variable. It is the variable on the left-hand side of the top rule, unless specified otherwise.</li>
+<li>Find a variable that is written down and a rule that starts with that variable. Replace the written down variable with the right-hand side of that rule.</li>
+<li>Repeat step 2 until no variables remain.</li>
+</ol>
+</section><section id="generating-strings-1" class="slide level2">
+<h2>Generating Strings</h2>
+<p>G1: <span class="math display">
+A \longrightarrow 0A1 \\
+A\longrightarrow B \\
+B\longrightarrow \#
+</span></p>
+<ul>
+<li>G<sub>1</sub> generates 000#111.<br />
+</li>
+<li>The sequence of substitutions to obtain a string is called its <strong>derivation</strong>.</li>
+</ul>
+</section><section id="derivation-from-g1" class="slide level2">
+<h2>Derivation from G1</h2>
+<p><span class="math display">
+A \longrightarrow 0A1 \\
+A\longrightarrow B \\
+B\longrightarrow \#
+</span></p>
+<ul>
+<li>A derivation of string 000#111 in grammar G<sub>1</sub> is: <span class="math display"> A \Rightarrow 0A1 \Rightarrow 00A11 \Rightarrow 000A111 \Rightarrow 000B111 \Rightarrow 000\#111 </span></li>
+</ul>
+</section><section id="parse-tree" class="slide level2">
+<h2>Parse Tree</h2>
+<p>A derivation may be pictures pictorially using a <strong>parse tree</strong>.</p>
+</section><section id="parse-tree-1" class="slide level2">
+<h2>Parse Tree</h2>
+<img data-src="lecture5-diagram1.png" title="fig:" alt="Parse Tree of G1" class="stretch" />
+</section><section id="context-free-languages" class="slide level2">
+<h2>Context-Free Languages</h2>
+<ul>
+<li>All strings generated in this way constitute the language of the grammar.</li>
+<li>We write <span class="math inline">L(G_{1})</span> for the language of Grammar <span class="math inline">G_{1}</span>.</li>
+<li><span class="math inline">L(G(_{1}))</span> is <span class="math inline">\{0^n\#1^n | n \geq 0\}</span></li>
+<li><strong>Any language that can be generated by some context-free grammar is called a context-free language (CFL)</strong></li>
+</ul>
+</section><section id="cfg-example-g2" class="slide level2">
+<h2>CFG Example G2</h2>
+<p><span class="math display">{\scriptsize\begin{aligned}⟨SENTENCE⟩ &amp;\longrightarrow ⟨NOUN-PHRASE⟩⟨VERB-PHRASE⟩
+\\ ⟨NOUN-PHRASE⟩ &amp;\longrightarrow ⟨CMPLX-NOUN⟩ | ⟨CMPLX-NOUN⟩⟨PREP-PHRASE⟩
+\\ ⟨VERB-PHRASE⟩ &amp;\longrightarrow ⟨CMPLX-VERB⟩ | ⟨CMPLX-VERB⟩⟨PREP-PHRASE⟩
+\\ ⟨PREP-PHRASE⟩ &amp;\longrightarrow ⟨PREP⟩⟨CMPLX-NOUN⟩
+\\ ⟨CMPLX-NOUN⟩ &amp;\longrightarrow ⟨ARTICLE⟩⟨NOUN⟩
+\\ ⟨CMPLX-VERB⟩ &amp;\longrightarrow ⟨VERB⟩ | ⟨VERB⟩⟨NOUN-PHRASE⟩
+\\ ⟨ARTICLE⟩ &amp;\longrightarrow a | the
+\\ ⟨NOUN⟩ &amp;\longrightarrow boy | girl | flower
+\\ ⟨VERB⟩ &amp;\longrightarrow touches | likes | sees
+\\ ⟨PREP⟩ &amp;\longrightarrow with
+\end{aligned} } </span></p>
+</section><section id="cfg-example-g2-1" class="slide level2">
+<h2>CFG Example G2</h2>
+<p>Grammar G<sub>2</sub> has:</p>
+<ul>
+<li>10 variables (the capitalized grammatical terms written inside brackets)</li>
+<li>27 terminals (the standard English alphabet plus a space character)</li>
+<li>18 rules.</li>
+</ul>
+</section><section id="cfg-example-g2-2" class="slide level2">
+<h2>CFG Example G2</h2>
+<p>Strings in L(G<sub>2</sub>) include:</p>
+<ul>
+<li>a boy sees</li>
+<li>the boy sees a flower</li>
+<li>a girl with a flower likes the boy</li>
+</ul>
+</section><section id="cfg-example-g2-3" class="slide level2">
+<h2>CFG Example G2</h2>
+<p>The following is a derivation of <code>a boy sees</code>:</p>
+<p><span class="math display">\begin{aligned}⟨SENTENCE⟩ &amp;\Rightarrow ⟨NOUN-PHRASE⟩⟨VERB-PHRASE⟩ \\ &amp;\Rightarrow ⟨CMPLX-NOUN⟩⟨VERB-PHRASE⟩
+\\ &amp;\Rightarrow ⟨ARTICLE⟩⟨NOUN⟩⟨VERB-PHRASE⟩ \\ &amp;\Rightarrow a ⟨NOUN⟩⟨VERB-PHRASE⟩
+\\ &amp;\Rightarrow a\, boy ⟨VERB-PHRASE⟩
+\\ &amp;\Rightarrow a\, boy ⟨CMPLX-VERB⟩
+\\ &amp;\Rightarrow a\, boy ⟨VERB⟩ \\ &amp;\Rightarrow a\, boy\ sees \end{aligned}</span></p>
+</section></section>
+<section><section id="formal-definition" class="title-slide slide level1"><h1>Formal Definition</h1></section><section id="formal-definition-of-a-cfg" class="slide level2">
+<h2>Formal Definition of a CFG</h2>
+<p>A context-free grammar is a 4-tuple (V, Σ, R, S), where:</p>
+<ol type="1">
+<li>V is a finite set called the variables,</li>
+<li>Σ is a finite set, disjoint from V , called the terminals,</li>
+<li>R is a finite set of rules, with each rule being a variable and a string of variables and terminals, and</li>
+<li>S ∈ V is the start variable.</li>
+</ol>
+</section><section id="terminology" class="slide level2">
+<h2>Terminology</h2>
+<ul>
+<li>If u, v, and w are strings of variables and terminals, and A → w is a rule of the grammar, we say that uAv <strong>yields</strong> uwv, written uAv ⇒ uwv.</li>
+<li>Say that u <strong>derives</strong> v, written u <span class="math inline">\xRightarrow{*}</span> v, if <span class="math inline">u = v</span> or if a sequence <span class="math inline">u_{1},u_{2},...,u_{k}</span> exists for k ≥ 0 and</li>
+</ul>
+<p><span class="math display"> u \Rightarrow u_{1} \Rightarrow u_{2} \Rightarrow ...\Rightarrow u_{k}\Rightarrow v.</span></p>
+<ul>
+<li>The language of the grammar is:</li>
+</ul>
+<p><span class="math display">\{w \isin \Sigma ^∗\ |\ S \xRightarrow{*} w\}.</span></p>
+</section><section id="example-g4" class="slide level2">
+<h2>Example G4</h2>
+<p>Consider grammar G<sub>4</sub> =(V,Σ,R,⟨EXPR⟩).</p>
+<ul>
+<li>V is {⟨EXPR⟩,⟨TERM⟩,⟨FACTOR⟩}</li>
+<li>Σ is {a,+, x,(,)}</li>
+<li>The rules are:</li>
+</ul>
+<p><span class="math display">\begin{aligned}⟨EXPR⟩ &amp;\Rightarrow ⟨EXPR⟩+⟨TERM⟩ | ⟨TERM⟩ \\
+⟨TERM⟩ &amp;\Rightarrow ⟨TERM⟩\times⟨FACTOR⟩ | ⟨FACTOR⟩ \\
+  ⟨FACTOR⟩ &amp;\Rightarrow(⟨EXPR⟩)|a \end{aligned}</span></p>
+</section><section id="example-g4-1" class="slide level2">
+<h2>Example G4</h2>
+<p><span class="math display">\begin{aligned}⟨EXPR⟩ &amp;\Rightarrow ⟨EXPR⟩+⟨TERM⟩ | ⟨TERM⟩ \\
+  ⟨TERM⟩ &amp;\Rightarrow ⟨TERM⟩\times⟨FACTOR⟩ | ⟨FACTOR⟩ \\
+    ⟨FACTOR⟩ &amp;\Rightarrow(⟨EXPR⟩)|a \end{aligned}</span></p>
+<p>Draw parse trees for <span class="math inline">a+a\times a</span> and <span class="math inline">(a+a)\times a</span>.</p>
+</section><section id="example-g4-2" class="slide level2">
+<h2>Example G4</h2>
+<p>Draw parse trees for <span class="math inline">a+a\times a</span> and <span class="math inline">(a+a)\times a</span>.</p>
+<figure>
+<img data-src="lecture5-diagram2.png" alt="G4 Parse Trees" /><figcaption>G4 Parse Trees</figcaption>
+</figure>
+</section><section id="compiler-application" class="slide level2">
+<h2>Compiler Application</h2>
+<ul>
+<li>A compiler translates code written in a programming language into another form, usually one more suitable for execution.</li>
+<li>To do so, the compiler extracts the meaning of the code to be compiled in a process called parsing.</li>
+<li>One representation of this meaning is the parse tree for the code, in the context-free grammar for the programming language</li>
+</ul>
+</section></section>
+<section><section id="designing-context-free-grammars" class="title-slide slide level1"><h1>Designing Context-Free Grammars</h1></section><section id="designing-cfgs" class="slide level2">
+<h2>Designing CFGs</h2>
+<ul>
+<li>As with the design of finite automata, the design of context-free grammars requires creativity.</li>
+<li>Context-free grammars are even trickier to construct than finite automata because we are more accustomed to programming a machine for specific tasks than we are to describing languages with grammars.</li>
+</ul>
+</section><section id="cfg-design-technique-1" class="slide level2">
+<h2>CFG Design Technique 1</h2>
+<ul>
+<li>Many CFLs are the union of simpler CFLs. If you must construct a CFG for a CFL that you can break into simpler pieces, do so and then construct individual grammars for each piece.</li>
+<li>These individual grammars can be easily merged into a grammar for the original language by combining their rules</li>
+<li>Then add the new rule <span class="math inline">S → S_{1} | S_{2} | ··· | S_{k},</span> where the variables Si are the start variables for the individual grammars</li>
+</ul>
+</section><section id="cfg-design-technique-2" class="slide level2">
+<h2>CFG Design Technique 2</h2>
+<ul>
+<li>Constructing a CFG for a language that happens to be regular is easy if you can first construct a DFA for that language.</li>
+<li>You can convert any DFA into an equivalent CFG as follows.</li>
+</ul>
+</section><section id="cfg-design-technique-2-1" class="slide level2">
+<h2>CFG Design Technique 2</h2>
+<ol type="1">
+<li>Make a variable Ri for each state qi of the DFA.</li>
+<li>Add the rule Ri → aRj to the CFG if δ(qi,a) = qj is a transition in the DFA.</li>
+<li>Add the rule Ri → ε if qi is an accept state of the DFA.</li>
+<li>Make R0 the start variable of the grammar, where q0 is the start state of the machine.</li>
+<li>Verify on your own that the resulting CFG generates the same language that the DFA recognizes.</li>
+</ol>
+</section><section id="cfg-design-technique-3" class="slide level2">
+<h2>CFG Design Technique 3</h2>
+<ul>
+<li>CFLs contain strings with two substrings that are “linked” in the sense that a machine for such a language would need to remember an unbounded amount of information about one of the substrings to verify that it corresponds properly to the other substring</li>
+<li>This situation occurs in the language {0<sup>n1</sup>n| n ≥ 0} because a machine would need to remember the number of 0s in order to verify that it equals the number of 1s.</li>
+<li>You can construct a CFG to handle this situation by using a rule of the form R → uRv, which generates strings wherein the portion containing the u’s corresponds to the portion containing the v’s.</li>
+</ul>
+</section><section id="cfg-design-technique-4" class="slide level2">
+<h2>CFG Design Technique 4</h2>
+<p>In more complex languages, the strings may contain certain structures that appear recursively as part of other (or the same) structures. That situation occurs in the grammar that generates arithmetic expressions in Example 2.4. Any time the symbol a appears, an entire parenthesized expression might appear recursively instead. To achieve this effect, place the variable symbol generating the structure in the location of the rules corresponding to where that structure may recursively appear.</p>
+</section><section id="ambiguity" class="slide level2">
+<h2>Ambiguity</h2>
+<ul>
+<li>Sometimes a grammar can generate the same string in several different ways.</li>
+<li>Such a string will have several different parse trees and thus several different meanings.</li>
+<li>This result may be undesirable for certain applications, such as programming languages, where a program should have a unique interpretation.</li>
+<li>If a grammar generates the same string in several different ways, we say that the string is derived ambiguously in that grammar.</li>
+<li>If a grammar generates some string ambiguously, we say that the grammar is ambiguous.</li>
+</ul>
+</section><section id="ambiguity-1" class="slide level2">
+<h2>Ambiguity</h2>
+<ol type="1">
+<li>Consider grammar <span class="math inline">G_{3} = ({S}, {a,b}, R, S)</span>. The set of rules, <em>R</em>, is:</li>
+</ol>
+<p><span class="math display">S →aSb|SS|ε.</span></p>
+<ol type="a">
+<li>Give two examples of strings in <span class="math inline">L(G_{3})</span>.</li>
+<li>Write a leftmost derivation of <span class="math inline">G_{3}</span>.</li>
+<li>Write a rightmost derivation of $G_{3}.</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
