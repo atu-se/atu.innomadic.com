@@ -18,6 +18,7 @@
 ### Update 25-Feb
 
 * Course syllabus has been updated with grading information
+* Assignment 1 has been updated with a sample Netbeans Project
 
 
 ### Lecture 5 24-Feb
