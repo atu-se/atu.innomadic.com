@@ -1,9 +1,21 @@
 # Assignment 1
 
+## Updates
+
+* 25-Feb: I've added a zipped Netbeans project folder for your convenience.  You shouldn't have to download a separate JavaFx package if you are using JDK 1.8 or newer, which you should be.  
+
 ## Overview
 Assignment one is worth **5 marks** for the semester.
 
-You will modify [Case Study 20.7](MultipleBounceBall.java) as specified below.
+You will modify Case Study 20.7 as specified below.
+
+Supporting files:
+*  [Case Study 20.7](MultipleBounceBall.java)
+*  [Zipped Netbeans Project](Assignment1.zip)
+
+You may either use the single Java file (you may need to set up a project or your own packaging to compile it.  You can do this by creating a new project in Netbeans and adding this file)
+
+Or, perhaps more easily, you can unzip the Netbeans Project I have provided above.  
 
 ## Group Work Requirements
 
