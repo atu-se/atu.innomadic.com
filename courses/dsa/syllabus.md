@@ -49,6 +49,13 @@ Student should attend all classes and participate in class discussion.  Outside 
 
 ## Grading Procedures
 
+* 10% Attendance
+* 40% Final
+* 30% Mid-Term
+* 20% Quizzes, Homework, etc.
+
+Late assignments will be received reduced credit at the teacher’s discretion.
+
 Late assignments will be received reduced credit at the teacher's discretion.
 
 

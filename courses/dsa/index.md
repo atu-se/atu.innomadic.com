@@ -15,6 +15,11 @@
 
 ## Updates
 
+### Update 25-Feb
+
+* Course syllabus has been updated with grading information
+
+
 ### Lecture 5 24-Feb
 
 * Announcing [Assignment 1](assignments/assignment1).  It is due via email on Sunday, 3-March @ 10:30 a.m. Late assignments *may* be considered for reduced credit.  Pay special attention to the group work requirements.
