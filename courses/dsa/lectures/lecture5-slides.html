@@ -109,7 +109,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="date">February 24, 2019</p>
 </section>
 
-<section><section id="introduction-222" class="title-slide slide level1"><h1>Introduction (22.2)</h1></section><section id="objectives" class="slide level2">
+<section><section id="introduction-221" class="title-slide slide level1"><h1>Introduction (22.1)</h1></section><section id="objectives" class="slide level2">
 <h2>Objectives</h2>
 <ul>
 <li>To estimate algorithm efficiency using the Big O notation (§22.2).</li>
@@ -301,8 +301,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>O(1) “Constant time”</li>
 <li>O(n) “Linear”</li>
-<li>O(n^2)</li>
-<li>O(2^n)</li>
+<li>O(n^2) “Quadratic”</li>
+<li>O(2^n) “Exponential”</li>
 </ul>
 </section><section id="two-complexity-measures" class="slide level2">
 <h2>Two Complexity Measures</h2>
@@ -315,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </section></section>
-<section><section id="determining-big-o" class="title-slide slide level1"><h1>Determining Big O</h1></section><section id="big-o-example-1" class="slide level2">
+<section><section id="determining-big-o-223" class="title-slide slide level1"><h1>Determining Big O (22.3)</h1></section><section id="big-o-example-1" class="slide level2">
 <h2>Big O Example 1</h2>
 <p>Consider the time complexity for the following loop:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
@@ -351,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The time complexity for this loop is:</p>
 <p>T(n) = (a constant <em>c</em>) * n * n = O(n<sup>2</sup>)</p>
 <ul>
-<li>O(n<sup>2</sup>) is called a quadratic algorithm. When input size is doubled, the time quadruples</li>
+<li>O(n<sup>2</sup>) is called a <strong>quadratic algorithm</strong>. When input size is doubled, the time quadruples</li>
 <li>Nested loops often create quadratic Big O’s</li>
 </ul>
 </section><section id="big-o-example-3" class="slide level2">
@@ -378,8 +378,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Consider the time complexity for the following loop:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
 <a class="sourceLine" id="cb4-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= <span class="dv">20</span>; j++) {</a>
-<a class="sourceLine" id="cb4-3" title="3">    k = k + i + j; }</a>
-<a class="sourceLine" id="cb4-4" title="4">}</a></code></pre></div>
+<a class="sourceLine" id="cb4-3" title="3">    k = k + i + j;</a>
+<a class="sourceLine" id="cb4-4" title="4">  }</a>
+<a class="sourceLine" id="cb4-5" title="5">}</a></code></pre></div>
 </section><section id="big-o-example-4-1" class="slide level2">
 <h2>Big O Example 4</h2>
 <ul>
@@ -471,10 +472,123 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb11-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++)</a>
 <a class="sourceLine" id="cb11-3" title="3">  result *= a;</a></code></pre></div>
 <p>What if we knew that <span class="math inline">n=2^k</span> for some k?</p>
+</section><section id="big-o-example-7-3" class="slide level2">
+<h2>Big O Example 7</h2>
 <p>We could improve the algorithm like this:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1">result = a;</a>
 <a class="sourceLine" id="cb12-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= k; i++)</a>
 <a class="sourceLine" id="cb12-3" title="3">  result = result*result;</a></code></pre></div>
+<p>We don’t know that <span class="math inline">n=2^k</span> for some k, but the algorithm can be revised to prove that the complexity is still O(log n) for the general case for n.</p>
+</section></section>
+<section><section id="practice" class="title-slide slide level1"><h1>Practice</h1></section><section id="practice-1-count-iterations" class="slide level2">
+<h2>Practice 1: Count Iterations</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1"><span class="dt">int</span> count = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="kw">while</span> (count &lt; <span class="dv">30</span>) {</a>
+<a class="sourceLine" id="cb13-3" title="3">  count = count * <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb13-4" title="4">}</a></code></pre></div>
+</section><section id="practice-2-count-iterations" class="slide level2">
+<h2>Practice 2: Count Iterations</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="dt">int</span> count = <span class="dv">15</span>;</a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="kw">while</span> (count &lt; <span class="dv">30</span>) {</a>
+<a class="sourceLine" id="cb14-3" title="3">  count = count * <span class="dv">3</span>;</a>
+<a class="sourceLine" id="cb14-4" title="4">}</a></code></pre></div>
+</section><section id="practice-3-count-stars" class="slide level2">
+<h2>Practice 3: Count Stars</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="ch">&#39;*&#39;</span>);</a>
+<a class="sourceLine" id="cb15-3" title="3">}</a></code></pre></div>
+</section><section id="practice-4-count-iterations" class="slide level2">
+<h2>Practice 4: Count Iterations</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; n; k++) {</a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</a>
+<a class="sourceLine" id="cb16-3" title="3">    <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; n; j++) {</a>
+<a class="sourceLine" id="cb16-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="ch">&#39;*&#39;</span>);</a>
+<a class="sourceLine" id="cb16-5" title="5">    }   </a>
+<a class="sourceLine" id="cb16-6" title="6">  }</a>
+<a class="sourceLine" id="cb16-7" title="7">}</a></code></pre></div>
+</section><section id="practice-5-time-complexity" class="slide level2">
+<h2>Practice 5: Time Complexity</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mA</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb17-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</a>
+<a class="sourceLine" id="cb17-3" title="3">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="bu">Math</span>.<span class="fu">random</span>());</a>
+<a class="sourceLine" id="cb17-4" title="4">  }</a>
+<a class="sourceLine" id="cb17-5" title="5">}</a></code></pre></div>
+</section><section id="practice-6-time-complexity" class="slide level2">
+<h2>Practice 6: Time Complexity</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mB</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb18-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</a>
+<a class="sourceLine" id="cb18-3" title="3">    <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; i; j++)</a>
+<a class="sourceLine" id="cb18-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="bu">Math</span>.<span class="fu">random</span>());</a>
+<a class="sourceLine" id="cb18-5" title="5">  }</a>
+<a class="sourceLine" id="cb18-6" title="6">}</a></code></pre></div>
+</section><section id="practice-7-time-complexity" class="slide level2">
+<h2>Practice 7: Time Complexity</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mC</span>(<span class="dt">int</span>[ ] m) {</a>
+<a class="sourceLine" id="cb19-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; m.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb19-3" title="3">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(m[i]);</a>
+<a class="sourceLine" id="cb19-4" title="4">  }</a>
+<a class="sourceLine" id="cb19-5" title="5">  <span class="kw">for</span> (<span class="dt">int</span> i = m.<span class="fu">length</span> - <span class="dv">1</span>; i &gt;= <span class="dv">0</span>; ) {</a>
+<a class="sourceLine" id="cb19-6" title="6">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(m[i]);</a>
+<a class="sourceLine" id="cb19-7" title="7">    i--;</a>
+<a class="sourceLine" id="cb19-8" title="8">  }</a>
+<a class="sourceLine" id="cb19-9" title="9">}</a></code></pre></div>
+</section><section id="practice-8-time-complexity" class="slide level2">
+<h2>Practice 8: Time Complexity</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mD</span>(<span class="dt">int</span>[] m) {</a>
+<a class="sourceLine" id="cb20-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; m.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb20-3" title="3">    <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; i; j++)</a>
+<a class="sourceLine" id="cb20-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(m[i] * m[j]);</a>
+<a class="sourceLine" id="cb20-5" title="5">  }</a>
+<a class="sourceLine" id="cb20-6" title="6">}</a></code></pre></div>
+</section></section>
+<section><section id="analyzing-complexity-22.4" class="title-slide slide level1"><h1>Analyzing Complexity (22.4)</h1></section><section id="analyzing-algorithm-complexity" class="slide level2">
+<h2>Analyzing Algorithm Complexity</h2>
+<p>This section analyzes the complexity of several well-known algorithms:</p>
+<ul>
+<li>binary search</li>
+<li>selection sort</li>
+<li>Tower of Hanoi.</li>
+</ul>
+</section><section id="binary-search" class="slide level2">
+<h2>Binary Search</h2>
+<p>Remember binary search?</p>
+<p>On a sorted array, we:</p>
+<ol type="1">
+<li>“Guess” that the middle element is our key.</li>
+<li>If the middle element is greater or less than our key, repeat the search using the second or first half of the array, respectively</li>
+<li>When you find the key, or our subarray reached zero length, stop.</li>
+</ol>
+</section><section id="binary-search-1" class="slide level2">
+<h2>Binary Search</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">binarySearch</span>(<span class="dt">int</span>[] list, <span class="dt">int</span> key) {</a>
+<a class="sourceLine" id="cb21-2" title="2">  <span class="dt">int</span> low = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb21-3" title="3">  <span class="dt">int</span> high = list.<span class="fu">length</span> - <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb21-4" title="4">  <span class="kw">while</span> (high &gt;= low) {</a>
+<a class="sourceLine" id="cb21-5" title="5">    <span class="dt">int</span> mid = (low + high) / <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb21-6" title="6">    <span class="kw">if</span> (key &lt; list[mid])</a>
+<a class="sourceLine" id="cb21-7" title="7">      high = mid - <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb21-8" title="8">    <span class="kw">else</span> <span class="kw">if</span> (key == list[mid])</a>
+<a class="sourceLine" id="cb21-9" title="9">      <span class="kw">return</span> mid;</a>
+<a class="sourceLine" id="cb21-10" title="10">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb21-11" title="11">      low = mid + <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb21-12" title="12">  }</a>
+<a class="sourceLine" id="cb21-13" title="13">  <span class="kw">return</span> -low - <span class="dv">1</span>; <span class="co">// Now high &lt; low</span></a>
+<a class="sourceLine" id="cb21-14" title="14">}</a></code></pre></div>
+</section><section id="binary-search-2" class="slide level2">
+<h2>Binary Search</h2>
+<ul>
+<li>Each iteration in the algorithm contains a fixed number of operations, denoted by c.</li>
+<li>Let T(n) denote the time complexity for a binary search on a list of n elements.</li>
+<li>Without loss of generality, assume n is a power of 2 and k = log n.</li>
+</ul>
+</section><section id="binary-search-3" class="slide level2">
+<h2>Binary Search</h2>
+<ul>
+<li>Since a binary search eliminates half of the input after two comparisons:</li>
+</ul>
+<p><span class="math display"> \begin{aligned}T\Big(n\Big) &amp;= T  \Big(\frac{n}{2}\Big) + c = T\Big(\frac{n}{2^2}\Big) + c + c = T\Big(\frac{n}{2^k}\Big) + kc \\ &amp;= T\Big(1\Big) + c\ log\ n =1 + (log\ n) c \\ &amp;= O(log\ n) \end{aligned} </span></p>
+</section><section id="binary-search-4" class="slide level2">
+<h2>Binary Search</h2>
 </section></section>
     </div>
   </div>

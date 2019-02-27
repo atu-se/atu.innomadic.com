@@ -10,7 +10,7 @@ output:
     pandoc_args: ["-t", "revealjs", "-V",  "revealjs-url=../../../presentation/reveal.js", "-V", "theme=beige", "--slide-level=2", "--standalone", "--katex"]
 ---
 
-# Introduction (22.2)
+# Introduction (22.1)
 
 ## Objectives
 
@@ -175,8 +175,8 @@ $$2^0 + 2^1 + 2^2 + 2^3 + ... + 2^(n-1) + 2^n  = \frac{2^(n+1) - 1}{2-1} = O(2^n
 
 * O(1) "Constant time"
 * O(n) "Linear"
-* O(n^2)
-* O(2^n)
+* O(n^2) "Quadratic"
+* O(2^n) "Exponential"
 
 ## Two Complexity Measures
 
@@ -185,7 +185,7 @@ $$2^0 + 2^1 + 2^2 + 2^3 + ... + 2^(n-1) + 2^n  = \frac{2^(n+1) - 1}{2-1} = O(2^n
   * The space complexity for most algorithms presented in the book is O(n). i.e., they exibit linear growth rate to the input size.
   * For example, the space complexity for linear search is O(n).
 
-# Determining Big O
+# Determining Big O (22.3)
 
 ## Big O Example 1
 
@@ -231,7 +231,7 @@ The time complexity for this loop is:
 
 T(n) = (a constant *c*) * n * n = O(n^2^)
 
-* O(n^2^) is called a quadratic algorithm.  When input size is doubled, the time quadruples
+* O(n^2^) is called a **quadratic algorithm**.  When input size is doubled, the time quadruples
 * Nested loops often create quadratic Big O's
 
 ## Big O Example 3
@@ -264,7 +264,8 @@ Consider the time complexity for the following loop:
 ```java
 for (int i = 1; i <= n; i++) {
   for (int j = 1; j <= 20; j++) {
-    k = k + i + j; }
+    k = k + i + j;
+  }
 }
 ```
 
@@ -387,6 +388,8 @@ for (int i = 1; i <= n; i++)
 
 What if we knew that $n=2^k$ for some k?
 
+## Big O Example 7
+
 We could improve the algorithm like this:
 
 ```java
@@ -394,3 +397,144 @@ result = a;
 for (int i = 1; i <= k; i++)
   result = result*result;
 ```
+
+We don't know that $n=2^k$ for some k, but the algorithm can be revised to prove that the complexity is still O(log n) for the general case for n.
+
+# Practice
+
+## Practice 1: Count Iterations
+
+```java
+int count = 1;
+while (count < 30) {
+  count = count * 2;
+}
+```
+
+## Practice 2: Count Iterations
+
+```java
+int count = 15;
+while (count < 30) {
+  count = count * 3;
+}
+```
+
+## Practice 3: Count Stars
+
+```java
+for (int i = 0; i < n; i++) {
+  System.out.print('*');
+}
+```
+
+## Practice 4: Count Iterations
+
+```java
+for (int k = 0; k < n; k++) {
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      System.out.print('*');
+    }   
+  }
+}
+```
+
+## Practice 5: Time Complexity
+
+```java
+public static void mA(int n) {
+  for (int i = 0; i < n; i++) {
+    System.out.print(Math.random());
+  }
+}
+```
+
+## Practice 6: Time Complexity
+
+```java
+public static void mB(int n) {
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < i; j++)
+      System.out.print(Math.random());
+  }
+}
+```
+
+## Practice 7: Time Complexity
+
+```java
+public static void mC(int[ ] m) {
+  for (int i = 0; i < m.length; i++) {
+    System.out.print(m[i]);
+  }
+  for (int i = m.length - 1; i >= 0; ) {
+    System.out.print(m[i]);
+    i--;
+  }
+}
+```
+
+## Practice 8: Time Complexity
+
+```java
+public static void mD(int[] m) {
+  for (int i = 0; i < m.length; i++) {
+    for (int j = 0; j < i; j++)
+      System.out.print(m[i] * m[j]);
+  }
+}
+```
+
+# Analyzing Complexity (22.4)
+
+## Analyzing Algorithm Complexity
+
+This section analyzes the complexity of several well-known algorithms:
+
+* binary search
+* selection sort
+* Tower of Hanoi.
+
+## Binary Search
+
+Remember binary search?
+
+On a sorted array, we:
+
+1. "Guess" that the middle element is our key.
+2. If the middle element is greater or less than our key, repeat the search using the second or first half of the array, respectively
+3. When you find the key, or our subarray reached zero length, stop.
+
+## Binary Search
+
+```java
+public static int binarySearch(int[] list, int key) {
+  int low = 0;
+  int high = list.length - 1;
+  while (high >= low) {
+    int mid = (low + high) / 2;
+    if (key < list[mid])
+      high = mid - 1;
+    else if (key == list[mid])
+      return mid;
+    else
+      low = mid + 1;
+  }
+  return -low - 1; // Now high < low
+}
+```
+
+## Binary Search
+
+* Each iteration in the algorithm contains a fixed number of operations, denoted by c.
+* Let T(n) denote the time complexity for a binary search on a list of n elements.
+* Without loss of generality, assume n is a power of 2 and k = log n.
+
+## Binary Search
+
+* Since a binary search eliminates half of the input after two comparisons:
+
+$$ \begin{aligned}T\Big(n\Big) &= T  \Big(\frac{n}{2}\Big) + c = T\Big(\frac{n}{2^2}\Big) + c + c = T\Big(\frac{n}{2^k}\Big) + kc \\ &= T\Big(1\Big) + c\ log\ n =1 + (log\ n) c \\ &= O(log\ n) \end{aligned} $$
+
+## Binary Search
