@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-02-27">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">6. Pushdown Automata</p>
+  <p class="date">February 27, 2019</p>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="pushdown-automata" class="slide level2">
+<h2>Pushdown Automata</h2>
+<ul>
+<li>In this section we introduce a new type of computational model called <strong>pushdown automata</strong> (PDA).</li>
+<li>These automata are like nondeterministic finite automata but have an extra component called a <strong>stack</strong>.</li>
+<li>The stack provides additional memory beyond the finite amount available in the control.</li>
+<li>The stack allows pushdown automata to recognize some nonregular languages.</li>
+</ul>
+</section><section id="pushdown-automata-1" class="slide level2">
+<h2>Pushdown Automata</h2>
+<ul>
+<li>Pushdown automata are equivalent in power to context-free grammars.</li>
+<li>This equivalence is useful because it gives us two options for proving that a language is context free.</li>
+<li>We can give either a context-free grammar generating it or a pushdown automaton recognizing it.</li>
+<li>Certain languages are more easily described in terms of generators, whereas others are more easily described by recognizers.</li>
+</ul>
+</section><section id="finite-automaton-schematic" class="slide level2">
+<h2>Finite Automaton Schematic</h2>
+<img data-src="lecture6-diagram1.png" title="fig:" alt="Finite Automaton Schematic" class="stretch" />
+</section><section id="pushdown-automaton-schematic" class="slide level2">
+<h2>Pushdown Automaton Schematic</h2>
+<img data-src="lecture6-diagram2.png" title="fig:" alt="Pushdown Automaton Schematic" class="stretch" />
+</section><section id="stacks" class="slide level2">
+<h2>Stacks</h2>
+<img data-src="lecture6-laxoox.jpg" title="fig:" alt="Laxoox" class="stretch" />
+</section><section id="stacks-1" class="slide level2">
+<h2>Stacks</h2>
+<ul>
+<li>Stacks operate by pushing and popping</li>
+<li>Pushing adds a new element to the top of the stack</li>
+<li>Popping remove the top element of the stack</li>
+<li>Stacks are first-in-last-out (FILO) data structures</li>
+</ul>
+</section></section>
+<section><section id="definition-of-a-pda" class="title-slide slide level1"><h1>Definition of a PDA</h1></section><section id="defining-a-pda" class="slide level2">
+<h2>Defining a PDA</h2>
+<ul>
+<li>The formal definition of a pushdown automaton is similar to that of a finite automaton, except for the stack.</li>
+<li>The stack is a device containing symbols drawn from some alphabet.</li>
+<li>The machine may use different alphabets for its input and its stack, so now we specify both an input alphabet Σ and a stack alphabet Γ.</li>
+</ul>
+</section><section id="pda-transition-function" class="slide level2">
+<h2>PDA Transition Function</h2>
+<ul>
+<li>At the heart of any formal definition of an automaton is the transition function, which describes its behavior.</li>
+<li>Recall that Σ<sub>ε</sub> = Σ ∪ {ε} and Γ<sub>ε</sub> = Γ ∪ {ε}.</li>
+<li>The domain of the transition function is Q × Σ<sub>ε</sub> × Γ<sub>ε</sub>.</li>
+<li>Thus the current state, next input symbol read, and top symbol of the stack determine the next move of a pushdown automaton.</li>
+</ul>
+</section><section id="pda-transition-function-1" class="slide level2">
+<h2>PDA Transition Function</h2>
+<ul>
+<li>Either symbol may be ε, causing the machine to move without reading a symbol from the input or without reading a symbol from the stack.</li>
+<li>For the range of the transition function we need to consider what to allow the automaton to do when it is in a particular situation.</li>
+<li>It may enter some new state and possibly write a symbol on the top of the stack.</li>
+<li>The function δ can indicate this action by returning a member of Q together with a member of Γ<sub>ε</sub>, that is, a member of Q × Γε.</li>
+</ul>
+</section><section id="pda-transition-function-2" class="slide level2">
+<h2>PDA Transition Function</h2>
+<ul>
+<li>Because we allow nondeterminism in this model, a situation may have several legal next moves.</li>
+<li>The transition function incorporates nondeterminism in the usual way, by returning a set of members of Q × Γ<sub>ε</sub>, that is, a member of P(Q × Γε).</li>
+<li>Putting it all together, our transition function δ takes the form δ : Q × Σ<sub>ε</sub> × Γ<sub>ε</sub> → P( Q × Γ<sub>ε</sub> ).</li>
+</ul>
+</section><section id="formal-definition-of-a-pda" class="slide level2">
+<h2>Formal Definition of a PDA</h2>
+<p>A pushdown automaton is a 6-tuple (Q, Σ, Γ, δ, q<sub>0</sub>, F ), where Q, Σ, Γ, and F are all finite sets, and</p>
+<ol type="1">
+<li>Q is the set of states,</li>
+<li>Σ is the input alphabet,</li>
+<li>Γ is the stack alphabet,</li>
+<li>δ: Q × Σ<sub>ε</sub> × Γ<sub>ε</sub>→ <span class="math inline">\mathbb{P}</span>(Q × Γ<sub>ε</sub>) is the transition function, 5. q<sub>0</sub> ∈ Q is the start state, and</li>
+<li>F ⊆ Q is the set of accept states.</li>
+</ol>
+</section></section>
+<section><section id="pda-computation" class="title-slide slide level1"><h1>PDA Computation</h1></section><section id="pda-computation-1" class="slide level2">
+<h2>PDA Computation</h2>
+<ul>
+<li>A pushdown automaton M = (Q, Σ, Γ, δ, q0, F ) computes as follows.</li>
+<li>It accepts input w if w can be written as <span class="math inline">w = w_{1}w_{2} ···w_{m}</span>, where each <span class="math inline">w_{i} ∈ Σ_{ε}</span> and sequences of states <span class="math inline">r_{0},r_{1},...,r_{m} ∈ Q</span> and strings <span class="math inline">s_{0},s_{1},...,s_{m} ∈ Γ^*</span> exist that satisfy the following three conditions.</li>
+<li>The strings s<sub>i</sub> represent the sequence of stack contents that M has on the accepting branch of the computation.</li>
+</ul>
+</section><section id="pda-computation-2" class="slide level2">
+<h2>PDA Computation</h2>
+<ol type="1">
+<li>r0 = q0 and s0 = ε. This condition signifies that M starts out properly, in the start state and with an empty stack.</li>
+<li>For i = 0,…,m − 1, we have (r<sub>i</sub>+1,b) ∈ <span class="math inline">δ(r_{i},w_{i}+1,a)</span>, where s<sub>i</sub> = at and s<sub>i</sub>+1 = bt for some a, b ∈ Γ<sub>ε</sub> and t ∈ Γ*. This condition states that M moves properly according to the state, stack, and next input symbol.</li>
+<li>r<sub>m</sub> ∈ F . This condition states that an accept state occurs at the input</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

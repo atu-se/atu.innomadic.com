@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="dcterms.date" content="2019-02-24">
-  <title>Formal Languages and Automata Theory</title>
+  <title>FLAT</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -41,7 +41,7 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Formal Languages and Automata Theory</h1>
+  <h1 class="title">FLAT</h1>
   <p class="subtitle">5. Context-Free Languages</p>
   <p class="date">February 24, 2019</p>
 </section>
@@ -270,31 +270,148 @@ B\longrightarrow \#
 <ul>
 <li>CFLs contain strings with two substrings that are “linked” in the sense that a machine for such a language would need to remember an unbounded amount of information about one of the substrings to verify that it corresponds properly to the other substring</li>
 <li>This situation occurs in the language {0<sup>n1</sup>n| n ≥ 0} because a machine would need to remember the number of 0s in order to verify that it equals the number of 1s.</li>
+</ul>
+</section><section id="cfg-design-technique-3-1" class="slide level2">
+<h2>CFG Design Technique 3</h2>
+<ul>
 <li>You can construct a CFG to handle this situation by using a rule of the form R → uRv, which generates strings wherein the portion containing the u’s corresponds to the portion containing the v’s.</li>
 </ul>
 </section><section id="cfg-design-technique-4" class="slide level2">
 <h2>CFG Design Technique 4</h2>
-<p>In more complex languages, the strings may contain certain structures that appear recursively as part of other (or the same) structures. That situation occurs in the grammar that generates arithmetic expressions in Example 2.4. Any time the symbol a appears, an entire parenthesized expression might appear recursively instead. To achieve this effect, place the variable symbol generating the structure in the location of the rules corresponding to where that structure may recursively appear.</p>
-</section><section id="ambiguity" class="slide level2">
+<ul>
+<li>In more complex languages, the strings may contain certain structures that appear recursively as part of other (or the same) structures.</li>
+<li>That situation occurs in the grammar that generates arithmetic expressions in Example 2.4.</li>
+</ul>
+</section><section id="cfg-design-technique-4-1" class="slide level2">
+<h2>CFG Design Technique 4</h2>
+<ul>
+<li>Any time the symbol a appears, an entire parenthesized expression might appear recursively instead.</li>
+<li>To achieve this effect, place the variable symbol generating the structure in the location of the rules corresponding to where that structure may recursively appear.</li>
+</ul>
+</section></section>
+<section><section id="ambiguity" class="title-slide slide level1"><h1>Ambiguity</h1></section><section id="ambiguity-1" class="slide level2">
 <h2>Ambiguity</h2>
 <ul>
 <li>Sometimes a grammar can generate the same string in several different ways.</li>
 <li>Such a string will have several different parse trees and thus several different meanings.</li>
 <li>This result may be undesirable for certain applications, such as programming languages, where a program should have a unique interpretation.</li>
+</ul>
+</section><section id="ambiguity-2" class="slide level2">
+<h2>Ambiguity</h2>
+<ul>
 <li>If a grammar generates the same string in several different ways, we say that the string is derived ambiguously in that grammar.</li>
 <li>If a grammar generates some string ambiguously, we say that the grammar is ambiguous.</li>
 </ul>
-</section><section id="ambiguity-1" class="slide level2">
+</section><section id="ambiguity-3" class="slide level2">
 <h2>Ambiguity</h2>
+<p>Consider G5:</p>
+<p>⟨EXPR⟩ → ⟨EXPR⟩+⟨EXPR⟩ | ⟨EXPR⟩x⟨EXPR⟩ |(⟨EXPR⟩)|a</p>
+<p>This grammar generates the string a + a x a ambiguously.</p>
+</section><section id="ambiguity-4" class="slide level2">
+<h2>Ambiguity</h2>
+<p>Consider G5:</p>
+<p>⟨EXPR⟩ → ⟨EXPR⟩+⟨EXPR⟩ | ⟨EXPR⟩x⟨EXPR⟩ |(⟨EXPR⟩)|a</p>
+<figure>
+<img data-src="lecture5-diagram3.png" alt="Diagram 3" /><figcaption>Diagram 3</figcaption>
+</figure>
+</section><section id="ambiguity-5" class="slide level2">
+<h2>Ambiguity</h2>
+<ul>
+<li>Sometimes when we have an ambiguous grammar we can find an unambiguous grammar that generates the same language.</li>
+<li>Some context-free languages, however, can be generated only by ambiguous grammars. Such languages are called <em>inherently ambiguous</em>.</li>
+</ul>
+</section><section id="formal-defintion-of-ambiguity-27" class="slide level2">
+<h2>Formal Defintion of Ambiguity (2.7)</h2>
+<p>A string w is derived ambiguously in context-free grammar G if it has two or more different leftmost derivations. Grammar G is ambiguous if it generates some string ambiguously.</p>
+</section><section id="leftmost-derivation" class="slide level2">
+<h2>Leftmost Derivation</h2>
+<p>A derivation of a string w in a grammar G is a leftmost derivation if at every step the leftmost remaining variable is the one replaced.</p>
+</section></section>
+<section><section id="chomsky-normal-form" class="title-slide slide level1"><h1>Chomsky Normal Form</h1></section><section id="chomsky-normal-form-1" class="slide level2">
+<h2>Chomsky Normal Form</h2>
+<p>When working with context-free grammars, it is often convenient to have them in simplified form. One of the simplest and most useful forms is called the Chomsky Normal Form.</p>
+</section><section id="chomsky-normal-form-2" class="slide level2">
+<h2>Chomsky Normal Form</h2>
+<p>A context-free grammar is in Chomsky normal form if every rule is of the form <span class="math display"> \begin{aligned} A &amp;\longrightarrow BC \\ A &amp;\longrightarrow a \end{aligned} </span> where a is any terminal and A, B, and C are any variables—except that B and C may not be the start variable. In addition, we permit the rule S → ε, where S is the start variable.</p>
+</section><section id="conversion-to-cnf" class="slide level2">
+<h2>Conversion to CNF</h2>
 <ol type="1">
-<li>Consider grammar <span class="math inline">G_{3} = ({S}, {a,b}, R, S)</span>. The set of rules, <em>R</em>, is:</li>
+<li>Add a new start variable S0 and the rule S0 → S, where S was the original start variable.</li>
+<li>Take care of all ε-rules. We remove an ε-rule A → ε, where A is not the start variable. Then for each occurrence of an A on the right-hand side of a rule, we add a new rule with that occurrence deleted.</li>
+<li>Remove all unit rules. We remove a unit rule A → B.</li>
 </ol>
-<p><span class="math display">S →aSb|SS|ε.</span></p>
-<ol type="a">
-<li>Give two examples of strings in <span class="math inline">L(G_{3})</span>.</li>
-<li>Write a leftmost derivation of <span class="math inline">G_{3}</span>.</li>
-<li>Write a rightmost derivation of $G_{3}.</li>
+</section><section id="conversion-to-cnf-1" class="slide level2">
+<h2>Conversion to CNF</h2>
+<ol start="4" type="1">
+<li>Finally, we convert all remaining rules into the proper form. We replace each rule <span class="math inline">A → u_{1}u_{2} ···u_{k}</span>, where k ≥ 3 and each ui is a variable or terminal symbol,with the rules <span class="math inline">A → u_{1}A_{1}, A_{1} → u_{2}A_{2}, A_{2} → u_{3}A_{3}, ... , and A_{k}−2 → u_{k−1}u_{k}</span>. The A_{i}’s are new variables. We replace any terminal u_{i} in the preceding rule(s) with the new variable U_{i} and add the rule U_{i} → u_{i}.</li>
 </ol>
+</section><section id="conversion-to-cnf-example" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<p>Initial Grammar G<sub>6</sub>: <span class="math display"> \begin{aligned} S &amp;\longrightarrow ASA\ |\ aB \\ A&amp;\longrightarrow B\ |\ S \\ B &amp;\longrightarrow b\ |\ \epsilon \end{aligned}</span></p>
+<p>First, add new start rule S<sub>0</sub>.</p>
+</section><section id="conversion-to-cnf-example-1" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<ol type="1">
+<li>Add new start rule S<sub>0</sub>: <span class="math display"> \begin{aligned} S_{0} &amp;\longrightarrow S \\ S &amp;\longrightarrow ASA\ |\ aB \\ A&amp;\longrightarrow B\ |\ S \\ B &amp;\longrightarrow b\ |\ \epsilon \end{aligned}</span></li>
+</ol>
+<p>Second, take care of all ε-rules.</p>
+</section><section id="conversion-to-cnf-example-2" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<p>2a. Take care of all <span class="math inline">B \longrightarrow \epsilon</span>-rules: <span class="math display"> \begin{aligned} S_{0} &amp;\longrightarrow S \\ S &amp;\longrightarrow ASA\ |\ aB\ |\ a \\ A&amp;\longrightarrow B\ |\ S\ |\ \epsilon \\ B &amp;\longrightarrow b \end{aligned}</span></p>
+<p>Next, remove all <span class="math inline">A \longrightarrow \epsilon</span>-rules.</p>
+</section><section id="conversion-to-cnf-example-3" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<p>2b. Take care of all <span class="math inline">A \longrightarrow \epsilon</span>-rules: <span class="math display"> \begin{aligned} S_{0} &amp;\longrightarrow S \\
+S &amp;\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ |\ S\\
+A&amp;\longrightarrow B\ |\ S \\
+ B &amp;\longrightarrow b \end{aligned}</span></p>
+<p>Next, remove all unit rules.</p>
+</section><section id="conversion-to-cnf-example-4" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<p>3a. Remove unit rule <span class="math inline">S\longrightarrow S</span> <span class="math display"> \begin{aligned} S_{0} &amp;\longrightarrow S \\
+S &amp;\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS \\
+A&amp;\longrightarrow B\ |\ S \\
+ B &amp;\longrightarrow b \end{aligned}</span></p>
+<p>Next, remove unit rule <span class="math inline">S_{0}\longrightarrow S</span></p>
+</section><section id="conversion-to-cnf-example-5" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<p>3b. Remove unit rule <span class="math inline">S_{0}\longrightarrow S</span></p>
+<p><span class="math display"> \begin{aligned} S_{0} &amp;\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ \\
+S &amp;\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS \\
+A&amp;\longrightarrow B\ |\ S \\
+ B &amp;\longrightarrow b \end{aligned}</span></p>
+<p>Next, remove unit rule <span class="math inline">A\longrightarrow B</span></p>
+</section><section id="conversion-to-cnf-example-6" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<p>3c. Remove unit rule <span class="math inline">A\longrightarrow B</span> <span class="math display"> \begin{aligned} S_{0} &amp;\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ \\
+S &amp;\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS \\
+A&amp;\longrightarrow  S\ |\ b \\
+ B &amp;\longrightarrow b \end{aligned}</span></p>
+<p>Next, remove unit rule <span class="math inline">A\longrightarrow S</span></p>
+</section><section id="conversion-to-cnf-example-7" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<p>3c. Remove unit rule <span class="math inline">A\longrightarrow S</span> <span class="math display"> \begin{aligned} S_{0} &amp;\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ \\
+S &amp;\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS  \\
+A&amp;\longrightarrow   b\ |\ ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ \\
+ B &amp;\longrightarrow b \end{aligned}</span></p>
+</section><section id="conversion-to-cnf-example-8" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<ul>
+<li>Next, convert remaining rules to the proper form by adding additional variables and rules.</li>
+<li>No rule should have a mix of variables and terminals, and it should have no more than 2 variables in each production.</li>
+<li>The final grammar is equivalent to G6.</li>
+</ul>
+</section><section id="conversion-to-cnf-example-9" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<p>Initial Grammar G<sub>6</sub>: <span class="math display"> \begin{aligned} S &amp;\longrightarrow ASA\ |\ aB \\ A&amp;\longrightarrow B\ |\ S \\ B &amp;\longrightarrow b\ |\ \epsilon \end{aligned}</span></p>
+</section><section id="conversion-to-cnf-example-10" class="slide level2">
+<h2>Conversion to CNF Example</h2>
+<p>G<sub>6</sub> equivalent in CNF: <span class="math display"> \begin{aligned} S0 &amp;→AA_{1}\ |\ UB\ |\ a\ |\ SA\ |\ AS \\
+S &amp;→ AA_{1}\ |\ UB\ |\ a\ |\ SA\ |\ AS \\
+A &amp;→b\ |\ AA_{1}\ |\ UB\ |\ a\ |\ SA\ |\ AS \\
+A_{1} &amp;→ SA \\
+U&amp;→a \\
+B&amp;→b \end{aligned}</span></p>
 </section></section>
     </div>
   </div>

@@ -1,5 +1,5 @@
 ---
-title: Formal Languages and Automata Theory
+title: FLAT
 subtitle: 5. Context-Free Languages
 date: February 24, 2019
 export_on_save:
@@ -236,39 +236,173 @@ Draw parse trees for $a+a\times a$ and $(a+a)\times a$.
 
 * CFLs contain strings with two substrings that are “linked” in the sense that a machine for such a language would need to remember an unbounded amount of information about one of the substrings to verify that it corresponds properly to the other substring
 * This situation occurs in the language {0^n1^n| n ≥ 0} because a machine would need to remember the number of 0s in order to verify that it equals the number of 1s.
+
+## CFG Design Technique 3
+
 * You can construct a CFG to handle this situation by using a rule of the form R → uRv, which generates strings wherein the portion containing the u’s corresponds to the portion containing the v’s.
 
 ## CFG Design Technique 4
 
-In more complex languages, the strings may contain certain structures that appear recursively as part of other (or the same) structures. That situation occurs in the grammar that generates arithmetic expressions in Example 2.4. Any time the symbol a appears, an entire parenthesized expression might appear recursively instead. To achieve this effect, place the variable symbol generating the structure in the location of the rules corresponding to where that structure may recursively appear.
+* In more complex languages, the strings may contain certain structures that appear recursively as part of other (or the same) structures.
+* That situation occurs in the grammar that generates arithmetic expressions in Example 2.4.
 
+## CFG Design Technique 4
+
+* Any time the symbol a appears, an entire parenthesized expression might appear recursively instead.
+* To achieve this effect, place the variable symbol generating the structure in the location of the rules corresponding to where that structure may recursively appear.
+
+# Ambiguity
 
 ## Ambiguity
 
 * Sometimes a grammar can generate the same string in several different ways.
 * Such a string will have several different parse trees and thus several different meanings.
 * This result may be undesirable for certain applications, such as programming languages, where a program should have a unique interpretation.
-* If a grammar generates the same string in several different ways, we say that the string is derived ambiguously in that grammar.
-* If a grammar generates some string ambiguously, we say that the grammar is ambiguous.
-
-
-
-
-
-
-
-
-
-
 
 ## Ambiguity
 
-1. Consider grammar $G_{3} = ({S}, {a,b}, R, S)$. The set of rules, _R_, is:
+* If a grammar generates the same string in several different ways, we say that the string is derived ambiguously in that grammar.
+* If a grammar generates some string ambiguously, we say that the grammar is ambiguous.
+
+## Ambiguity
+
+Consider G5:
+
+⟨EXPR⟩ → ⟨EXPR⟩+⟨EXPR⟩ | ⟨EXPR⟩x⟨EXPR⟩ |(⟨EXPR⟩)|a
+
+This grammar generates the string a + a x a ambiguously.
+
+## Ambiguity
+
+Consider G5:
+
+⟨EXPR⟩ → ⟨EXPR⟩+⟨EXPR⟩ | ⟨EXPR⟩x⟨EXPR⟩ |(⟨EXPR⟩)|a
+
+![Diagram 3](lecture5-diagram3.png)
+
+## Ambiguity
+
+* Sometimes when we have an ambiguous grammar we can find an unambiguous grammar that generates the same language.
+* Some context-free languages, however, can be generated only by ambiguous grammars. Such languages are called _inherently ambiguous_.
+
+## Formal Defintion of Ambiguity (2.7)
+
+A string w is derived ambiguously in context-free grammar G if it has two or more different leftmost derivations. Grammar G is ambiguous if it generates some string ambiguously.
+
+## Leftmost Derivation
+
+A derivation of a string w in a grammar G is a leftmost derivation if at every step the leftmost remaining variable is the one replaced.
+
+# Chomsky Normal Form
+
+## Chomsky Normal Form
+
+When working with context-free grammars, it is often convenient to have them in simplified form. One of the simplest and most useful forms is called the Chomsky Normal Form.
 
 
+## Chomsky Normal Form
 
-$$S →aSb|SS|ε.$$
+A context-free grammar is in Chomsky normal form if every rule is of the form
+$$ \begin{aligned} A &\longrightarrow BC \\ A &\longrightarrow a \end{aligned} $$
+where a is any terminal and A, B, and C are any variables—except that B and C may not be the start variable. In addition, we permit the rule S → ε, where S is the start variable.
 
-a. Give two examples of strings in $L(G_{3})$.
-b. Write a leftmost derivation of $G_{3}$.
-c. Write a rightmost derivation of $G_{3}.
+## Conversion to CNF
+
+1. Add a new start variable S0 and the rule S0 → S, where S was the original start variable.
+2. Take care of all ε-rules. We remove an ε-rule A → ε, where A is not the start variable. Then for each occurrence of an A on the right-hand side of a rule, we add a new rule with that occurrence deleted.
+3. Remove all unit rules. We remove a unit rule A → B.
+
+## Conversion to CNF
+
+4. Finally, we convert all remaining rules into the proper form. We replace each rule $A → u_{1}u_{2} ···u_{k}$, where k ≥ 3 and each ui is a variable or terminal symbol,with the rules $A → u_{1}A_{1}, A_{1} → u_{2}A_{2}, A_{2} → u_{3}A_{3}, ... , and A_{k}−2 → u_{k−1}u_{k}$. The A_{i}’s are new variables. We replace any terminal u_{i} in the preceding rule(s) with the new variable U_{i} and add the rule U_{i} → u_{i}.
+
+## Conversion to CNF Example
+
+Initial Grammar G~6~:
+$$ \begin{aligned} S &\longrightarrow ASA\ |\ aB \\ A&\longrightarrow B\ |\ S \\ B &\longrightarrow b\ |\ \epsilon \end{aligned}$$
+
+First, add new start rule S~0~.
+
+## Conversion to CNF Example
+
+1. Add new start rule S~0~:
+$$ \begin{aligned} S_{0} &\longrightarrow S \\ S &\longrightarrow ASA\ |\ aB \\ A&\longrightarrow B\ |\ S \\ B &\longrightarrow b\ |\ \epsilon \end{aligned}$$
+
+Second, take care of all ε-rules.
+
+## Conversion to CNF Example
+
+2a. Take care of all $B \longrightarrow \epsilon$-rules:
+$$ \begin{aligned} S_{0} &\longrightarrow S \\ S &\longrightarrow ASA\ |\ aB\ |\ a \\ A&\longrightarrow B\ |\ S\ |\ \epsilon \\ B &\longrightarrow b \end{aligned}$$
+
+Next, remove all $A \longrightarrow \epsilon$-rules.
+
+## Conversion to CNF Example
+
+2b. Take care of all $A \longrightarrow \epsilon$-rules:
+$$ \begin{aligned} S_{0} &\longrightarrow S \\
+S &\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ |\ S\\
+A&\longrightarrow B\ |\ S \\
+ B &\longrightarrow b \end{aligned}$$
+
+Next, remove all unit rules.
+
+## Conversion to CNF Example
+
+3a. Remove unit rule $S\longrightarrow S$
+$$ \begin{aligned} S_{0} &\longrightarrow S \\
+S &\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS \\
+A&\longrightarrow B\ |\ S \\
+ B &\longrightarrow b \end{aligned}$$
+
+Next, remove unit rule $S_{0}\longrightarrow S$
+
+## Conversion to CNF Example
+
+3b. Remove unit rule $S_{0}\longrightarrow S$
+
+$$ \begin{aligned} S_{0} &\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ \\
+S &\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS \\
+A&\longrightarrow B\ |\ S \\
+ B &\longrightarrow b \end{aligned}$$
+
+Next, remove unit rule $A\longrightarrow B$
+
+## Conversion to CNF Example
+
+3c. Remove unit rule $A\longrightarrow B$
+$$ \begin{aligned} S_{0} &\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ \\
+S &\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS \\
+A&\longrightarrow  S\ |\ b \\
+ B &\longrightarrow b \end{aligned}$$
+
+Next, remove unit rule $A\longrightarrow S$
+
+## Conversion to CNF Example
+
+3c. Remove unit rule $A\longrightarrow S$
+$$ \begin{aligned} S_{0} &\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ \\
+S &\longrightarrow ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS  \\
+A&\longrightarrow   b\ |\ ASA\ |\ aB\ |\ a \ |\ SA\ |\ AS\ \\
+ B &\longrightarrow b \end{aligned}$$
+
+## Conversion to CNF Example
+
+* Next, convert remaining rules to the proper form by adding additional variables and rules.
+* No rule should have a mix of variables and terminals, and it should have no more than 2 variables in each production.
+* The final grammar is equivalent to G6.
+
+## Conversion to CNF Example
+
+Initial Grammar G~6~:
+$$ \begin{aligned} S &\longrightarrow ASA\ |\ aB \\ A&\longrightarrow B\ |\ S \\ B &\longrightarrow b\ |\ \epsilon \end{aligned}$$
+
+## Conversion to CNF Example
+
+G~6~ equivalent in CNF:
+$$ \begin{aligned} S0 &→AA_{1}\ |\ UB\ |\ a\ |\ SA\ |\ AS \\
+S &→ AA_{1}\ |\ UB\ |\ a\ |\ SA\ |\ AS \\
+A &→b\ |\ AA_{1}\ |\ UB\ |\ a\ |\ SA\ |\ AS \\
+A_{1} &→ SA \\
+U&→a \\
+B&→b \end{aligned}$$

@@ -84,3 +84,8 @@ A language is regular if and only if some regular expression describes it.
 
 ## Theorem 1.55
 If a language is described by a regular expression, then it is regular.
+
+
+## Definition 2.7
+
+A string w is derived ambiguously in context-free grammar G if it has two or more different leftmost derivations. Grammar G is ambiguous if it generates some string ambiguously.

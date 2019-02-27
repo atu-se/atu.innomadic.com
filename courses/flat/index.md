@@ -29,7 +29,8 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 | Topic                                                          | Reading | Practice |
 |----------------------------------------------------------------|--------------------|---|
-| 5. [Context Free Languages](lectures/lecture5-slides.html)   | 2.1  |  |
+| 6. [Pushdown Automata](lectures/lecture6-slides.html)   | 2.2  |   |
+| 5. [Context Free Languages](lectures/lecture5-slides.html)   | 2.1  |  [Practice 5](lectures/practice5) |
 | 4. [Non-Regular Languages](lectures/Lecture4.pdf)   | 1.4  | [Practice 4](lectures/practice4-html.html) |
 | 3. [Regular Expressions](lectures/Lecture3.pdf)  |  1.3 |  [Practice 3](lectures/practice3-html.html) |
 | 2. [Non-deterministic Finite Automata](lectures/Lecture2.pdf) | 1.2            |  [Practice 2](lectures/practice2-html.html) |
