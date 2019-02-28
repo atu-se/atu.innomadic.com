@@ -131,10 +131,54 @@
 </section><section id="pda-computation-2" class="slide level2">
 <h2>PDA Computation</h2>
 <ol type="1">
-<li>r0 = q0 and s0 = ε. This condition signifies that M starts out properly, in the start state and with an empty stack.</li>
+<li>r<sub>0</sub> = q<sub>0</sub> and s<sub>0</sub> = ε. This condition signifies that M starts out properly, in the start state and with an empty stack.</li>
 <li>For i = 0,…,m − 1, we have (r<sub>i</sub>+1,b) ∈ <span class="math inline">δ(r_{i},w_{i}+1,a)</span>, where s<sub>i</sub> = at and s<sub>i</sub>+1 = bt for some a, b ∈ Γ<sub>ε</sub> and t ∈ Γ*. This condition states that M moves properly according to the state, stack, and next input symbol.</li>
 <li>r<sub>m</sub> ∈ F . This condition states that an accept state occurs at the input</li>
 </ol>
+</section></section>
+<section><section id="examples" class="title-slide slide level1"><h1>Examples</h1></section><section id="example-214" class="slide level2">
+<h2>Example 2.14</h2>
+<p>The following is the formal description of the PDA (page 112) that recognizes the language <span class="math inline">{0^n1^n| n ≥ 0}</span>. Let M<sub>1</sub> be (Q, Σ, Γ, δ, q<sub>1</sub>, F ), where:</p>
+<ul>
+<li><span class="math inline">Q = \{q_{1}, q_{2}, q_{3}, q_{4}\}</span>,</li>
+<li>Σ = {0,1},</li>
+<li>Γ = {0,$},</li>
+<li>F = {q1, q4}, and</li>
+<li>δ is given by the following table, wherein blank entries signify ∅.</li>
+</ul>
+</section><section id="example-214-1" class="slide level2">
+<h2>Example 2.14</h2>
+<img data-src="lecture6-example1.png" title="fig:" alt="Example 2.14" class="stretch" />
+</section><section id="example-214-2" class="slide level2">
+<h2>Example 2.14</h2>
+<ul>
+<li>We can also use a state diagram to describe a PDA</li>
+<li>We write “a,b → c” to signify that when the machine is reading an a from the input, it may replace the symbol b on the top of the stack with a c.</li>
+<li>Any of a, b, and c may be ε.</li>
+</ul>
+</section><section id="example-214-3" class="slide level2">
+<h2>Example 2.14</h2>
+<ul>
+<li>If a is ε, the machine may make this transition without reading any symbol from the input.</li>
+<li>If b is ε, the machine may make this transition without reading and popping any symbol from the stack.</li>
+<li>If c is ε, the machine does not write any symbol on the stack when going along this transition.</li>
+</ul>
+</section><section id="example-214-4" class="slide level2">
+<h2>Example 2.14</h2>
+<img data-src="lecture6-example1b.png" title="fig:" alt="Example 2.14" class="stretch" />
+</section><section id="example-214-5" class="slide level2">
+<h2>Example 2.14</h2>
+<p><img data-src="lecture6-example1.png" alt="Example 2.14" width="550" /> <img data-src="lecture6-example1b.png" alt="Example 2.14" width="550" /></p>
+</section><section id="empty-stack" class="slide level2">
+<h2>Empty Stack</h2>
+<ul>
+<li>The formal definition of a PDA contains no explicit mechanism to allow the PDA to test for an empty stack.</li>
+<li>This PDA is able to get the same effect by initially placing a special symbol $ on the stack.</li>
+<li>Then if it ever sees the $ again, it knows that the stack effectively is empty.</li>
+</ul>
+</section><section id="example-216" class="slide level2">
+<h2>Example 2.16</h2>
+<p>This example illustrates a pushdown automaton that recognizes the language {aibjck| i, j, k ≥ 0 and i = j or i = k}.</p>
 </section></section>
     </div>
   </div>

@@ -97,6 +97,55 @@ A pushdown automaton is a 6-tuple (Q, Σ, Γ, δ, q~0~, F ), where Q, Σ,
 
 ## PDA Computation
 
-1. r0 = q0 and s0 = ε. This condition signifies that M starts out properly, in the start state and with an empty stack.
+1. r~0~ = q~0~ and s~0~ = ε. This condition signifies that M starts out properly, in the start state and with an empty stack.
 2. For i = 0,...,m − 1, we have (r~i~+1,b) ∈ $δ(r_{i},w_{i}+1,a)$, where s~i~ = at and s~i~+1 = bt for some a, b ∈ Γ~ε~ and t ∈ Γ*. This condition states that M moves properly according to the state, stack, and next input symbol.
 3. r~m~ ∈ F . This condition states that an accept state occurs at the input
+
+# Examples
+
+## Example 2.14
+
+The following is the formal description of the PDA (page 112) that recognizes
+the language ${0^n1^n| n ≥ 0}$. Let M~1~ be (Q, Σ, Γ, δ, q~1~, F ), where:
+
+* $Q = \{q_{1}, q_{2}, q_{3}, q_{4}\}$,
+* Σ = {0,1},
+* Γ = {0,$},
+* F = {q1, q4}, and
+* δ is given by the following table, wherein blank entries signify ∅.
+
+## Example 2.14
+
+![Example 2.14](lecture6-example1.png){.stretch}
+
+## Example 2.14
+
+* We can also use a state diagram to describe a PDA
+* We write “a,b → c” to signify that when the machine is reading an a from the input, it may replace the symbol b on the top of the stack with a c.
+* Any of a, b, and c may be ε.
+
+## Example 2.14
+
+* If a is ε, the machine may make this transition without reading any symbol from the input.
+* If b is ε, the machine may make this transition without reading and popping any symbol from the stack.
+* If c is ε, the machine does not write any symbol on the stack when going along this transition.
+
+## Example 2.14
+
+![Example 2.14](lecture6-example1b.png){.stretch}
+
+## Example 2.14
+
+![Example 2.14](lecture6-example1.png){width=550px }
+![Example 2.14](lecture6-example1b.png){width=550px }
+
+## Empty Stack
+
+* The formal definition of a PDA contains no explicit mechanism to allow the PDA to test for an empty stack.
+* This PDA is able to get the same effect by initially placing a special symbol $ on the stack.
+* Then if it ever sees the $ again, it knows that the stack effectively is empty.
+
+## Example 2.16
+
+This example illustrates a pushdown automaton that recognizes the language
+{aibjck| i, j, k ≥ 0 and i = j or i = k}.
