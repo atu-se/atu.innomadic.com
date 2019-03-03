@@ -38,6 +38,11 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Updates
 
+### Update 1-Mar
+
+* Don't forget that Homework 4 is due on 4-March
+
+
 ### Lecture 5 25-Feb
 
 * Homework 4 has been assigned
