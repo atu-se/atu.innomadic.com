@@ -15,6 +15,12 @@
 
 ## Updates
 
+### Update 1-Mar
+
+* Don't forget Assignment 1 is due on Sunday.
+* Take a look at the [Big O Cheatsheet](http://bigocheatsheet.com/)
+
+
 ### Update 25-Feb
 
 * Course syllabus has been updated with grading information

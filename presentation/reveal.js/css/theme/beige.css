@@ -275,3 +275,7 @@ body {
 @media print {
   .backgrounds {
     background-color: #f7f3de; } }
+
+.reveal .tinyslide{
+  font-size:28px;
+}

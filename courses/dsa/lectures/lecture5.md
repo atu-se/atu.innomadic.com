@@ -7,7 +7,7 @@ export_on_save:
 output:
   custom_document:
     path: lecture5-slides.html
-    pandoc_args: ["-t", "revealjs", "-V",  "revealjs-url=../../../presentation/reveal.js", "-V", "theme=beige", "--slide-level=2", "--standalone", "--katex"]
+    pandoc_args: ["-t", "revealjs", "-V",  "revealjs-url=../../../presentation/reveal.js", "-V", "theme=beige", "--slide-level=2", "--standalone", "--katex=../../../presentation/katex/"]
 ---
 
 # Introduction (22.1)
@@ -156,20 +156,20 @@ $$1 + 2 + 3 + ... + (n-1) + (n) = \frac{n(n+1)}{2} = O(n^2)$$
 
 ## Other Examples
 
-$$a^0 + a^1 + a^2 + a^3 + ... + a^(n-1) + a^n  = \frac{a^(n+1) - 1}{a-1} = O(?)$$
+$$a^0 + a^1 + a^2 + a^3 + ... + a^{n-1} + a^n  = \frac{a^{n+1} - 1}{a-1} = O(?)$$
 
 ## Other Examples
 
-$$a^0 + a^1 + a^2 + a^3 + ... + a^(n-1) + a^n  = \frac{a^(n+1) - 1}{a-1} = O(a^n)$$
+$$a^0 + a^1 + a^2 + a^3 + ... + a^{n-1} + a^n  = \frac{a^{n+1} - 1}{a-1} = O(a^n)$$
 
 
 ## Other Examples
 
-$$2^0 + 2^1 + 2^2 + 2^3 + ... + 2^(n-1) + 2^n  = \frac{2^(n+1) - 1}{2-1} = O(?)$$
+$$2^0 + 2^1 + 2^2 + 2^3 + ... + 2^{n-1} + 2^n  = \frac{2^{n+1} - 1}{2-1} = O(?)$$
 
 ## Other Examples
 
-$$2^0 + 2^1 + 2^2 + 2^3 + ... + 2^(n-1) + 2^n  = \frac{2^(n+1) - 1}{2-1} = O(2^n)$$
+$$2^0 + 2^1 + 2^2 + 2^3 + ... + a^{n-1} + 2^n  = \frac{2^{n+1} - 1}{2-1} = O(2^n)$$
 
 ## Orders of Magnitude Covered
 
@@ -488,7 +488,7 @@ public static void mD(int[] m) {
 
 # Analyzing Complexity (22.4)
 
-## Analyzing Algorithm Complexity
+# Binary Search
 
 This section analyzes the complexity of several well-known algorithms:
 
@@ -537,4 +537,401 @@ public static int binarySearch(int[] list, int key) {
 
 $$ \begin{aligned}T\Big(n\Big) &= T  \Big(\frac{n}{2}\Big) + c = T\Big(\frac{n}{2^2}\Big) + c + c = T\Big(\frac{n}{2^k}\Big) + kc \\ &= T\Big(1\Big) + c\ log\ n =1 + (log\ n) c \\ &= O(log\ n) \end{aligned} $$
 
-## Binary Search
+# Selection Sort
+
+## Selection Sort Algorithm
+
+1. Find the smallest element in the list and swaps it with the first element.
+2. Find the smallest element remaining and swaps it with the first element in the remaning list
+3. Repeat until only one element is left.
+
+## Selection Sort Analysis
+
+* The number of comparisons is n - 1 for the first iteration, n - 2 for the second iteration, and so on.
+* Let T(n) denote the complexity for selection sort
+* Let c denote the total number of other operations such as assignments and additional comparisons in each iteration.
+* What is Big O for Selection Sort?
+
+## Selection Sort Analysis
+
+$$ \begin{aligned} T(n) &= (n - 1) + c + (n - 2) + c + ... + 2 + c + 1 + c \\
+&= \frac{(n - 1)(n - 1 + 1)}{2} + c(n-1) = \frac{n^2}{2} - \frac{n}{2} +cn-c \\
+&= O(?) \end{aligned} $$
+
+
+## Selection Sort Analysis
+
+$$ \begin{aligned} T(n) &= (n - 1) + c + (n - 2) + c + ... + 2 + c + 1 + c \\
+&= \frac{(n - 1)(n - 1 + 1)}{2} + c(n-1) = \frac{n^2}{2} - \frac{n}{2} +cn-c \\
+&= O(n^2) \end{aligned} $$
+
+The complexity of the selection sort algorithm is **O(n^2^)**.
+
+# Tower of Hanoi
+
+## Tower of Hanoi Algorithm
+
+1. Move the first n - 1 disks from A to C with the assistance of tower B.
+2. Move disk n from A to B.
+3. Move n - 1 disks from C to B with the assistance of tower A.
+
+## Tower of Hanoi Analysis
+
+* The complexity of this algorithm is measured by the number of moves.
+* Let T(n) denote the number of moves for the algorithm to move n disks from tower A to tower B with $T(1) = 1.$
+* What is the time complexity of the Tower of Hanoi algorithm?
+
+## Tower of Hanoi Analysis
+
+$$ \begin{aligned} T(n) &= T(n-1) + 1 + T(n-1) \\
+ \end{aligned} $$
+
+## Tower of Hanoi Analysis
+
+$$ \begin{aligned} T(n) &= T(n-1) + 1 + T(n-1) \\
+&=2T(n-1) + 1 \\
+\end{aligned} $$
+
+## Tower of Hanoi Analysis
+
+$$ \begin{aligned} T(n) &= T(n-1) + 1 + T(n-1) \\
+&=2T(n-1) + 1 \\
+&= 2(2T(n-2)+1)+1\\
+ \end{aligned} $$
+
+## Tower of Hanoi Analysis
+
+$$ \begin{aligned} T(n) &= T(n-1) + 1 + T(n-1) \\
+&=2T(n-1) + 1 \\
+&= 2(2T(n-2)+1)+1\\
+&= 2(2(2T(n-3) + 1)+1)+1 \\
+ \end{aligned} $$
+
+## Tower of Hanoi Analysis
+
+$$ \begin{aligned} T(n) &= T(n-1) + 1 + T(n-1) \\
+&=2T(n-1) + 1 \\
+&= 2(2T(n-2)+1)+1\\
+&= 2(2(2T(n-3) + 1)+1)+1 \\
+&= 2^{n-1} T(1)  + 2^{n-2} + ... + 2 + 1 \\
+\end{aligned} $$
+
+## Tower of Hanoi Analysis
+
+$$ \begin{aligned} T(n) &= T(n-1) + 1 + T(n-1) \\
+&=2T(n-1) + 1 \\
+&= 2(2T(n-2)+1)+1\\
+&= 2(2(2T(n-3) + 1)+1)+1 \\
+&= 2^{n-1} T(1)  + 2^{n-2} + ... + 2 + 1 \\
+&= 2^{n-1} + 2^{n-2} + ... + 2 + 1 = (2^n -1 ) \\
+&= O(?)
+\end{aligned} $$
+
+## Tower of Hanoi Analysis
+
+$$ \begin{aligned} T(n) &= T(n-1) + 1 + T(n-1) \\
+&=2T(n-1) + 1 \\
+&= 2(2T(n-2)+1)+1\\
+&= 2(2(2T(n-3) + 1)+1)+1 \\
+&= 2^{n-1} T(1)  + 2^{n-2} + ... + 2 + 1 \\
+&= 2^{n-1} + 2^{n-2} + ... + 2 + 1 = (2^n -1 ) \\
+&= O(2^n)
+\end{aligned} $$
+
+The Big O of Tower of Hanoi is **O(2^n^)**.
+
+## Tower of Hanoi Analysis
+
+* An algorithm with O(2^n^) time complexity is called an exponential algorithm, and it exhibits an exponential growth rate.
+* As the input size increases, the time for the exponential algorithm grows exponentially.
+
+## Exponential Algorithms
+
+* Exponential algorithms are not practical for large input size.
+* Suppose the disk is moved at a rate of 1 per second.
+* It would take 232/(365 * 24 * 60 * 60) = 136 years to move 32 disks
+* It would take 264/(365 * 24 * 60 * 60) = 585 billion years to move 64 disks.
+
+## Recurrence Relations {.tinyslide }
+
+Recurrence Relation               | Result            | Example
+----------------------------------|-------------------|------------------------------
+$T(n) = T(n/2) + O(1)$              | $T(n) = O(log\ n)$   | Binary search, Euclid’s GCD
+$T(n) = T(n - 1) + O(1)$            | $T(n) = O(n)$       | Linear search
+$T(n) = 2T(n/2) + O(1)$             | $T(n) = O(n)$       | Checkpoint Question 22.20
+$T(n) = 2T(n/2) + O(n)$             | $T(n) = O(n\ log\ n)$ | Merge sort (Chapter 23)
+$T(n) = T(n - 1) + O(n)$            | $T(n) = O(n^2)$    | Selection sort
+$T(n) = 2T(n - 1) + O(1)$           | $T(n) = O(2^n)$    | Tower of Hanoi
+$T(n) = T(n - 1) + T(n - 2) + O(1)$ | $T(n) = O( 2^n )$    | Recursive Fibonacci algorithm
+
+## Comparing Common Growth Rates {.tinyslide }
+
+Function  | Name | n=25 | n=50 | f(50)/f(25)
+--|--|--|--|--
+O(1) | Constant time | 1 | 1 | 1
+O(log n) | Logarithmic time | 4.64 | 5.64 | 1.21
+O(n) | Linear time | 25 | 50 | 2
+O(n log n) | Log-linear time | 116 | 282 | 2.43
+O(n^2^) | Quadratic time | 625 | 2,500 | 4
+O(n^3^) | Cubic time | 15,625 | 125,000 | 8
+O(2^n^) | Exponential time | 3.36 * 10^7^ | 1.27 * 10^15^ | 3.35 * 10^7^
+
+## Comparing Growth Rates
+
+O(1) < O(log n) < O(n) < O(n log n)
+
+< O(n^2^) < O(n^3^) < O(2^n^)
+
+## Comparing Growth Rates
+
+![Comparing Growth Rates](lecture5-diagram2.png){.stretch}
+
+## Comparing Growth Rates
+
+![Comparing Growth Rates (from bigocheatsheet.com)](lecture5-diagram3.png){width=700}
+
+# Fibonacci Using Dynamic Programming (22.5)
+
+## Recursive Fibonacci
+
+```java
+/** The method for finding the Fibonacci number */
+public static long fib(long index) {
+  if (index == 0) // Base case
+    return 0;
+  else if (index == 1) // Base case
+    return 1;
+  else // Reduction and recursive calls
+    return fib(index - 1) + fib(index - 2);
+}
+```
+
+## Recursive Fibonacci
+
+* We can now prove that the complexity of this algorithm is O(2^n^).
+* For convenience, let the index be n.
+* Let T(n) denote the complexity for the algorithm that finds fib(n)
+* Let c denote the constant time for comparing the index with 0 and 1;
+* That is, T(1) and T(0) are c.
+
+## Recursive Fibonacci
+
+$$ \begin{aligned} T(n) &= T(n - 1) + T(n - 2) + c \\
+&\leq 2T(n-1)+c \\
+&\leq 2(2T(n-2)+c)+c \\
+&= 2^2 T(n - 2) + 2c + c \\
+&= O(?)\end{aligned}$$
+
+## Recursive Fibonacci
+
+$$ \begin{aligned} T(n) &= T(n - 1) + T(n - 2) + c \\
+&\leq 2T(n-1)+c \\
+&\leq 2(2T(n-2)+c)+c \\
+&= 2^2 T(n - 2) + 2c + c \\
+&= O(2^n)\end{aligned}$$
+
+## Recursive Fibonacci
+
+* O(2^n^) this algorithm is not efficient.
+* What makes this algorithm so inefficient?
+
+## Recursive Fibonacci
+
+> * O(2^n^) this algorithm is not efficient.
+> * What makes this algorithm so inefficient?
+> * It is inefficient because it makes redundant calculations
+> * $fib(4) = fib(3) + fib(2)$
+> * $fib(3) = fib (2) + fib(1)$
+> * ...
+> * What if we saved fib(2) instead of calculating it twice?
+
+# Improved Fibonacci
+
+## Improved Fibonacci
+
+```java
+  public static long fib(long n) {   
+    long f0 = 0; // For fib(0)
+    long f1 = 1; // For fib(1)
+    long f2 = 1; // For fib(2)
+    if (n == 0)
+      return f0;
+    else if (n == 1)
+      return f1;
+    else if (n == 2)
+      return f2;
+    ...
+```
+
+## Improved Fibonacci O(?)
+
+```java
+    ...
+    for (int i = 3; i <= n; i++) {
+      f0 = f1;
+      f1 = f2;
+      f2 = f0 + f1;
+    }  
+    return f2;
+  }
+```
+
+## Improved Fibonacci Analysis
+
+This improved Fibonacci algorithm is $O(n)$
+
+# Greatest Common Divisors
+
+## Greatest Common Divisors
+
+* In algebra we seek to find the Greatest Common Divisors (GCD)
+* For example, the GCD of 12 and 8 is 4
+* There are different solutions for GCD.  
+* For this exercise, m and n are our inputs and we assume $m \geq n$.
+
+## Brute Force Methods
+
+* **Brute force** refers to an algorithmic approach that solves a problem in the simplest or most direct or obvious way.
+* As a result, such an algorithm can end up doing far more work to solve a given problem than a cleverer or more sophisticated algorithm might do.
+* On the other hand, a brute-force algorithm is often easier to implement than a more sophisticated one and, because of this simplicity, sometimes it can be more efficient.
+
+## GCD Brute Force
+
+* Given integers *m* and *n*, check every element from 2 up to the larger of *m* and *n* to see if it is a divisor of both
+* Return the GCD
+
+## GCD 1: Brute Force O(?)
+
+```java
+public static int gcd(int m, int n) {
+  int gcd = 1;
+  for (int k = 2; k <= m && k <= n; k++) {
+    if (m % k == 0 && n % k == 0)
+      gcd = k;
+  }
+  return gcd;
+}
+```
+
+## GCD 1: Brute Force
+
+> * $O(n)$
+> * How could we improve it?
+> * What if we checked from the top down instead of bottom up?
+
+## GCD 2 O(?)
+
+
+```java
+for (int k = n; k >= 1; k--) {
+  if (m % k == 0 && n % k == 0) {
+    gcd = k;
+    break;
+  }
+}
+```
+
+## GCD 2
+
+> * Better than GCD Brute Force 1
+> * What is the time complexity?
+> * Worst case is still $O(n)$
+> * Observation: a divisor cannot by more than half of a number.  So we can begin our search there instead of at n.
+
+## GCD 3 O(?)
+
+```java
+for (int k = m / 2; k >= 1; k--) {
+  if (m % k == 0 && n % k == 0) {
+    gcd = k;
+    break;
+  }
+}
+```
+
+## GCD 3
+
+> * Oops, this algorithm is faster but incorrect
+> * It doesn't consider than *n* can be a divisor for *m*
+
+## GCD 4 O(?)
+
+```java
+public static int gcd(int m, int n) {
+  int gcd = 1;
+  if (m % n == 0) return n;
+  for (int k = n / 2; k >= 1; k--) {
+    if (m % k == 0 && n % k == 0) {
+      gcd = k;
+      break;
+    }
+  }
+  return gcd;
+}
+```
+
+## GCD 4
+
+> * Assuming m $\geq$ n, the for loop is executed at most n/2 times
+> * This cuts the time in half from the previous algorithm
+> * T time complexity is still $O(n)$, but practically, it is much faster than GCD 2
+
+## Euclid
+
+* Euclid was a Greek Mathematician
+* the "father of geometry"
+* Born around 300 B.C.
+* Invented a solution to Greatest Common Divisor
+
+## Euclid's GCD
+
+```java
+public static int gcd(int m, int n) {
+  if (m % n == 0)
+    return n;
+  else
+    return gcd(n, m % n);
+}
+```
+
+## Euclid's GCD Analysis
+
+> * Best case is when $m \% n = 0 : O(n)$
+> * Average case is hard to determine
+> * What about worst case?
+
+## Euclid's GCD Analysis
+
+* If $n \leq m / 2, m \% n < m / 2$ since the remainder of m divided by n is always
+less than n.
+* If $n \gt m / 2, m \% n = m – n \lt m / 2$.
+* Therefore $m \% n < m/2$
+* Let's follow the recursive calls
+
+## Euclid's GCD Analysis
+
+> * $gcd(m, n)$
+> * $gcd(n, m \% n)$
+> * $gcd(m \% n, n \% (m \% n))$
+> * ...
+
+## Euclid's GCD Analysis
+
+> * Since $m % n < m / 2$ and $n % (m % n) < n / 2$ ,the argument passed to the gcd method is reduced by half after every two iterations.
+> * After invoking gcd two times, the second parameter is less than n/2.
+> * After invoking gcd four times, the second parameter is less than
+n/4.
+
+## Euclid's GCD Analysis
+
+* After invoking gcd six times, the second parameter is less than $\frac{n}{2^3}$.
+* Let k be the number of times gcd is invoked
+ * After invoking gcd k times, the second parameter is less than ______
+
+## Euclid's GCD Analysis
+
+> * After invoking gcd k times, the second parameter is less than $\frac{n}{2^{k/2}}$ which is greater than or equal to 1:
+> * $\frac{n}{2^{k/2}} \geq 1   => n \geq 2^{k/2} => k \leq 2 \log n $
+> * Therefore, $k \leq 2\log n$
+> * So the time complexity of Euclid's GCD is:
+> * $O(\log n)$
