@@ -745,7 +745,7 @@ $$ \begin{aligned} T(n) &= T(n - 1) + T(n - 2) + c \\
 > * ...
 > * What if we saved fib(2) instead of calculating it twice?
 
-# Improved Fibonacci
+# Improved Fibonacci (22.5)
 
 ## Improved Fibonacci
 
@@ -780,7 +780,7 @@ $$ \begin{aligned} T(n) &= T(n - 1) + T(n - 2) + c \\
 
 This improved Fibonacci algorithm is $O(n)$
 
-# Greatest Common Divisors
+# Greatest Common Divisors (22.6)
 
 ## Greatest Common Divisors
 
@@ -926,12 +926,244 @@ n/4.
 
 * After invoking gcd six times, the second parameter is less than $\frac{n}{2^3}$.
 * Let k be the number of times gcd is invoked
- * After invoking gcd k times, the second parameter is less than ______
+* After invoking gcd k times, the second parameter is less than ______
 
 ## Euclid's GCD Analysis
 
 > * After invoking gcd k times, the second parameter is less than $\frac{n}{2^{k/2}}$ which is greater than or equal to 1:
-> * $\frac{n}{2^{k/2}} \geq 1   => n \geq 2^{k/2} => k \leq 2 \log n $
+> * $\frac{n}{2^{k/2}} \geq 1   => n \geq 2^{k/2} => k \leq 2 \log n$
 > * Therefore, $k \leq 2\log n$
 > * So the time complexity of Euclid's GCD is:
 > * $O(\log n)$
+
+## GCD Algorithm Analyis
+
+Code Listing | Complexity | Description
+--|--|--
+GCD 1 | O(n) | Brute-force, checking all possible divisors
+GCD 2  | O(n)  | Checking half of all possible divisors
+Euclid's GCD  | O(log n)  | Euclid’s algorithm
+
+# Prime Numbers (22.7)
+
+## Prime Numbers
+
+* Can you design a fast algorithm for finding prime numbers?
+* An integer greater than 1 is prime if its only positive divisor is 1 or itself.
+* For example, 2, 3, 5, and 7 are prime numbers
+* 4, 6, 8, and 9 are not prime
+
+## Prime #'s' Algorithms
+
+> 1. Check $2, 3, 4, 5, ... n - 1$ to see if it is divisible by n O(n)
+> 2. Check $2, 4, 5, 5 ... n/2$ to see if they are divisible by n: O(n)
+> 3. It can be proven that if n is not prime, it must have a divisor $\leq \sqrt{n}$
+
+## Prime #'s Algorithms
+
+> * Since n is not prime, there exists two numbers p and q such that $n = pq\ such\ that\ 1 < p <= q$.
+> * Note that $n = \sqrt{n}\sqrt{n}$.  
+> * p must be less than or equal to $\sqrt{n}$.  
+> * Hence, you only need to check whether $2, 3, 4, 5 ..., or \sqrt{n}$ is divisible by n.  If not, n is prime.  
+> * This significantly reduces the time complexity of the algorithm to $O(\sqrt{n})$
+
+# Prime #'s Demo
+
+## Prime #'s Algorithms
+
+* It has been proved that the number of prime numbers less than or equal to i is approximately $\frac{i}{\log i}$
+* The time complexity of this algorithm is $O(\frac{n\sqrt{n}}{\log n})$
+
+## Sieve of Eratosthenes
+
+* Eratosthenes was a Greek mathematician
+* He devised an algorithm called the Sieve of Eratosthenes to calculate all prime numbers $\leq n$
+* It involves creating an array of boolean values and marking all numbers which are not divisors for n
+* Review section 22.7 for implementation details
+
+## Comparisons of Prime # Algorithms
+
+Complexity                    | Description
+------------------------------|--------------------------------------------
+$O(n^2)$                      | Brute-Force, checking all possible divisors
+$O(n\sqrt{n})$                | Checking divisors up to $\sqrt{n}$
+$O(\frac{n\sqrt{n}}{\log n})$ | Checking prime numbers up to $\sqrt{n}$
+$O(\frac{n\sqrt{n}}{\log n})$ | Sieve of Eratosthenes
+
+# Finding Closest Points (22.8)
+
+## Finding Closest points
+
+* This sections presents efficient algorithms for finding the closest pair of points using divide-and-conquer
+* [This animation illustrates the problem.](https://liveexample.pearsoncmg.com/liang/animation/web/ClosestPair.html)
+
+
+## Divide and Conquer
+
+* We will use an approach called divide-and-conquer to solve this problem.
+* The approach divides the problem into subproblems, solves the subproblems, then combines the solutions of the subproblems to obtain the solution for the entire problem.
+* Unlike the dynamic programming approach, the subproblems in the divide-and-conquer approach don’t overlap.
+
+## Divide and Conquer
+
+* A sub-problem is like the original problem with a smaller size, so you can apply recursion to solve the problem.
+* In fact, all the solutions for recursive problems follow the divide-and-conquer approach.
+
+## Closest Pair Algorithm
+
+### 3 Step Algorithm
+
+1. Sort the points in increasing order of x-coordinates. For the points with the same x-coordinates, sort on y-coordinates. This results in a sorted list S of points.
+2. Divide S into two subsets, S~1~ and S~2~, of equal size using the midpoint in the sorted list. Let the midpoint be in S~1~. Recursively find the closest pair in S~1~ and S~2~. Let d~1~ and d~2~ denote the distance of the closest pairs in the two subsets, respectively.
+
+## Closest Pair Algorithm
+
+### 3 Step Algorithm
+
+3. Find the closest pair between a point in S~1~ and a point in S~2~ and denote their distance as d~3~. The closest pair is the one with the distance min(d~1~, d~2~, d~3~).
+
+## Closest Pair Algorithm
+
+### Step 1
+
+* _Step 1: Sort the points in increasing order of x-coordinates. For the points with the same x-coordinates, sort on y-coordinates. This results in a sorted list S of points._
+* What is O(?) for Step 1?
+* Selection sort takes $O(n^2)$.  
+* In chapter 23 we will introduce merge sort and heap sort which are $O(n\log n)$
+
+## Closest Pair Algorithm
+
+### Step 3
+
+* _Step 3: Find the closest pair between a point in S~1~ and a point in S~2~ and denote their distance as d~3~. The closest pair is the one with the distance min(d~1~, d~2~, d~3~)._
+* What is O(?) for Step 3?
+* Step 3 is $O(n)$.  
+
+## Closest Pair Algorithm
+
+![Diagram 5](lecture5-diagram5.png)
+
+## Closest Pair Algorithm
+
+### Step 3
+
+* Let d = min(d1, d2).
+* We already know that the closest- pair distance cannot be larger than d. * For a point in S~1~ and a point in S~2~ to form the closest pair in S, the left point must be in stripL and the right point in stripR
+
+## Closest Pair Algorithm
+
+### Step 3
+
+![Diagram 6](lecture5-diagram6.png){.stretch}
+
+## Closest Pair Algorithm
+
+### Step 3
+
+* For a point p in stripL, you need only consider a right point within the d * 2d rectangle, as shown below:
+
+![Diagram 7](lecture5-diagram7.png){.stretch}
+
+## Closest Pair Algorithm
+
+### Step 3
+
+* Any right point outside the rectangle cannot form the closest pair with p.
+* Since the closest-pair distance in S~2~ is greater than or equal to d, there can be at most six points in the rectangle.
+* Thus, for each point in stripL, at most six points in stripR need to be considered.
+
+## Closest Pair Algorithm
+
+### Step 3
+
+* For each point p in stripL, how do you locate the points in the corresponding d * 2d rectangle area in stripR?
+* This can be done efficiently if the points in stripL and stripR are sorted in increasing order of their y-coordinates.
+
+## Closest Pair Algorithm
+
+### Step 3
+
+* Let _pointsOrderedOnY_ be the list of the points sorted in increasing order of y-coordinates. _pointsOrderedOnY_ can be obtained beforehand in the algorithm.
+* stripL and stripR can be obtained from pointsOrderedOnY
+
+## Closest Pair Algorithm
+
+### Partial Step 3
+
+```java
+for each point p in pointsOrderedOnY
+  if (p is in S1 and mid.x – p.x <= d)
+    append p to stripL;
+else if (p is in S2 and p.x - mid.x <= d)
+  append p to stripR;
+```
+
+## Closest Pair Algorithm
+
+### Partial Step 3
+
+```java
+d = min(d1, d2);
+r = 0; // r is the index of a point in stripR
+for (each point p in stripL) {
+// Skip the points in stripR below p.y - d
+  while (r < stripR.length && q[r].y <= p.y - d)
+    r++;
+  let r1 = r;
+  while (r1 < stripR.length && |q[r1].y – p.y| <= d) {
+    // Check if (p, q[r1]) is a possible closest pair
+    if (distance(p, q[r1]) < d) {
+      d = distance(p, q[r1]);  
+    }
+    r1 = r1 + 1;
+  }
+}
+```
+
+## Closest Pair Algorithm
+
+* The points in stripL are considered from p~0~, p~1~, ... , p~k~ in this order.
+* For a point p in stripL, skip the points in stripR that are below p.y – d (lines 5–6).  
+* Once a point is skipped, it will no longer be considered.
+* The while loop (lines 9–17) checks whether (p, q[r1]) is a possible closest pair.
+* There are at most six such q[r~1~] pairs, because the distance between two points in stripR cannot be less than d.
+* So the complexity for finding the closest pair in Step 3 is O(n).
+
+## Closest Pair Algorithm
+
+* Note that Step 1 in Listing 22.8 is performed only once to presort the points.
+* Assume that all the points are presorted.
+* Let T(n) denote the time complexity for this algorithm.
+* Thus, $T(n) = 2T(n/2) + O(n) = O(n \log n)$
+Therefore, the closest pair of points can be found in O(n log n) time.
+* [Video Explanation](https://www.youtube.com/watch?v=0W_m46Q4qMc)
+
+# 8 Queens (22.9)
+
+## 8 Queens
+
+* The Eight Queens problem is to find a solution to place a queen in each row on a chessboard such that no two queens can attack each other.
+* The problem can be solved using recursion (See Programming Exercise 18.34).
+* In this section, we will introduce a common algorithm design technique called **backtracking** for solving this problem.
+* The backtracking approach searches for a candidate solution incrementally, abandoning that option as soon as it determines that the candidate cannot possibly be a valid solution, and then looks for a new candidate
+* [Demo](http://eightqueen.becher-sundstroem.de/)
+
+## 8 Queens
+
+![8 Queens](lecture5-diagram4.png)
+
+## 8 Queens
+
+The search starts from the first row with k = 0, where k is the index of the current row being considered. The algorithm checks whether a queen can be possibly placed in the jth column in the row for j = 0, 1, ... , 7, in this order. The search is implemented as follows:
+
+* If successful, it continues to search for a placement for a queen in the next row. If the current row is the last row, a solution is found.
+* If not successful, it backtracks to the previous row and continues to search for a new placement in the next column in the previous row.
+* If the algorithm backtracks to the first row and cannot find a new placement for a queen in this row, no solution can be found.
+
+## 8 Queens Demo
+
+
+
+# Convex Hull (22.10)
+
+* [Animation](https://liveexample.pearsoncmg.com/liang/animation/web/ConvexHull.html)

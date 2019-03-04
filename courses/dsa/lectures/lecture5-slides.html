@@ -869,7 +869,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="fragment">What if we saved fib(2) instead of calculating it twice?</li>
 </ul>
 </section></section>
-<section><section id="improved-fibonacci" class="title-slide slide level1"><h1>Improved Fibonacci</h1></section><section id="improved-fibonacci-1" class="slide level2">
+<section><section id="improved-fibonacci-22.5" class="title-slide slide level1"><h1>Improved Fibonacci (22.5)</h1></section><section id="improved-fibonacci" class="slide level2">
 <h2>Improved Fibonacci</h2>
 <div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">fib</span>(<span class="dt">long</span> n) {   </a>
 <a class="sourceLine" id="cb23-2" title="2">    <span class="dt">long</span> f0 = <span class="dv">0</span>; <span class="co">// For fib(0)</span></a>
@@ -896,7 +896,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Improved Fibonacci Analysis</h2>
 <p>This improved Fibonacci algorithm is <span class="math inline">O(n)</span></p>
 </section></section>
-<section><section id="greatest-common-divisors" class="title-slide slide level1"><h1>Greatest Common Divisors</h1></section><section id="greatest-common-divisors-1" class="slide level2">
+<section><section id="greatest-common-divisors-22.6" class="title-slide slide level1"><h1>Greatest Common Divisors (22.6)</h1></section><section id="greatest-common-divisors" class="slide level2">
 <h2>Greatest Common Divisors</h2>
 <ul>
 <li>In algebra we seek to find the Greatest Common Divisors (GCD)</li>
@@ -1042,12 +1042,279 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Euclid’s GCD Analysis</h2>
 <ul>
 <li class="fragment">After invoking gcd k times, the second parameter is less than <span class="math inline">\frac{n}{2^{k/2}}</span> which is greater than or equal to 1:</li>
-<li class="fragment">$ 1 =&gt; n 2^{k/2} =&gt; k 2 n $</li>
+<li class="fragment"><span class="math inline">\frac{n}{2^{k/2}} \geq 1 =&gt; n \geq 2^{k/2} =&gt; k \leq 2 \log n</span></li>
 <li class="fragment">Therefore, <span class="math inline">k \leq 2\log n</span></li>
 <li class="fragment">So the time complexity of Euclid’s GCD is:</li>
 <li class="fragment"><span class="math inline">O(\log n)</span></li>
 </ul>
+</section><section id="gcd-algorithm-analyis" class="slide level2">
+<h2>GCD Algorithm Analyis</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Code Listing</th>
+<th>Complexity</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GCD 1</td>
+<td>O(n)</td>
+<td>Brute-force, checking all possible divisors</td>
+</tr>
+<tr class="even">
+<td>GCD 2</td>
+<td>O(n)</td>
+<td>Checking half of all possible divisors</td>
+</tr>
+<tr class="odd">
+<td>Euclid’s GCD</td>
+<td>O(log n)</td>
+<td>Euclid’s algorithm</td>
+</tr>
+</tbody>
+</table>
 </section></section>
+<section><section id="prime-numbers-22.7" class="title-slide slide level1"><h1>Prime Numbers (22.7)</h1></section><section id="prime-numbers" class="slide level2">
+<h2>Prime Numbers</h2>
+<ul>
+<li>Can you design a fast algorithm for finding prime numbers?</li>
+<li>An integer greater than 1 is prime if its only positive divisor is 1 or itself.</li>
+<li>For example, 2, 3, 5, and 7 are prime numbers</li>
+<li>4, 6, 8, and 9 are not prime</li>
+</ul>
+</section><section id="prime-s-algorithms" class="slide level2">
+<h2>Prime #‘s’ Algorithms</h2>
+<ol type="1">
+<li class="fragment">Check <span class="math inline">2, 3, 4, 5, ... n - 1</span> to see if it is divisible by n O(n)</li>
+<li class="fragment">Check <span class="math inline">2, 4, 5, 5 ... n/2</span> to see if they are divisible by n: O(n)</li>
+<li class="fragment">It can be proven that if n is not prime, it must have a divisor <span class="math inline">\leq \sqrt{n}</span></li>
+</ol>
+</section><section id="prime-s-algorithms-1" class="slide level2">
+<h2>Prime #’s Algorithms</h2>
+<ul>
+<li class="fragment">Since n is not prime, there exists two numbers p and q such that <span class="math inline">n = pq\ such\ that\ 1 &lt; p &lt;= q</span>.</li>
+<li class="fragment">Note that <span class="math inline">n = \sqrt{n}\sqrt{n}</span>.<br />
+</li>
+<li class="fragment">p must be less than or equal to <span class="math inline">\sqrt{n}</span>.<br />
+</li>
+<li class="fragment">Hence, you only need to check whether <span class="math inline">2, 3, 4, 5 ..., or \sqrt{n}</span> is divisible by n. If not, n is prime.<br />
+</li>
+<li class="fragment">This significantly reduces the time complexity of the algorithm to <span class="math inline">O(\sqrt{n})</span></li>
+</ul>
+</section></section>
+<section><section id="prime-s-demo" class="title-slide slide level1"><h1>Prime #’s Demo</h1></section><section id="prime-s-algorithms-2" class="slide level2">
+<h2>Prime #’s Algorithms</h2>
+<ul>
+<li>It has been proved that the number of prime numbers less than or equal to i is approximately <span class="math inline">\frac{i}{\log i}</span></li>
+<li>The time complexity of this algorithm is <span class="math inline">O(\frac{n\sqrt{n}}{\log n})</span></li>
+</ul>
+</section><section id="sieve-of-eratosthenes" class="slide level2">
+<h2>Sieve of Eratosthenes</h2>
+<ul>
+<li>Eratosthenes was a Greek mathematician</li>
+<li>He devised an algorithm called the Sieve of Eratosthenes to calculate all prime numbers <span class="math inline">\leq n</span></li>
+<li>It involves creating an array of boolean values and marking all numbers which are not divisors for n</li>
+<li>Review section 22.7 for implementation details</li>
+</ul>
+</section><section id="comparisons-of-prime-algorithms" class="slide level2">
+<h2>Comparisons of Prime # Algorithms</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Complexity</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">O(n^2)</span></td>
+<td>Brute-Force, checking all possible divisors</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">O(n\sqrt{n})</span></td>
+<td>Checking divisors up to <span class="math inline">\sqrt{n}</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">O(\frac{n\sqrt{n}}{\log n})</span></td>
+<td>Checking prime numbers up to <span class="math inline">\sqrt{n}</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">O(\frac{n\sqrt{n}}{\log n})</span></td>
+<td>Sieve of Eratosthenes</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section><section id="finding-closest-points-22.8" class="title-slide slide level1"><h1>Finding Closest Points (22.8)</h1></section><section id="finding-closest-points" class="slide level2">
+<h2>Finding Closest points</h2>
+<ul>
+<li>This sections presents efficient algorithms for finding the closest pair of points using divide-and-conquer</li>
+<li><a href="https://liveexample.pearsoncmg.com/liang/animation/web/ClosestPair.html">This animation illustrates the problem.</a></li>
+</ul>
+</section><section id="divide-and-conquer" class="slide level2">
+<h2>Divide and Conquer</h2>
+<ul>
+<li>We will use an approach called divide-and-conquer to solve this problem.</li>
+<li>The approach divides the problem into subproblems, solves the subproblems, then combines the solutions of the subproblems to obtain the solution for the entire problem.</li>
+<li>Unlike the dynamic programming approach, the subproblems in the divide-and-conquer approach don’t overlap.</li>
+</ul>
+</section><section id="divide-and-conquer-1" class="slide level2">
+<h2>Divide and Conquer</h2>
+<ul>
+<li>A sub-problem is like the original problem with a smaller size, so you can apply recursion to solve the problem.</li>
+<li>In fact, all the solutions for recursive problems follow the divide-and-conquer approach.</li>
+</ul>
+</section><section id="closest-pair-algorithm" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-algorithm">3 Step Algorithm</h3>
+<ol type="1">
+<li>Sort the points in increasing order of x-coordinates. For the points with the same x-coordinates, sort on y-coordinates. This results in a sorted list S of points.</li>
+<li>Divide S into two subsets, S<sub>1</sub> and S<sub>2</sub>, of equal size using the midpoint in the sorted list. Let the midpoint be in S<sub>1</sub>. Recursively find the closest pair in S<sub>1</sub> and S<sub>2</sub>. Let d<sub>1</sub> and d<sub>2</sub> denote the distance of the closest pairs in the two subsets, respectively.</li>
+</ol>
+</section><section id="closest-pair-algorithm-1" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-algorithm-1">3 Step Algorithm</h3>
+<ol start="3" type="1">
+<li>Find the closest pair between a point in S<sub>1</sub> and a point in S<sub>2</sub> and denote their distance as d<sub>3</sub>. The closest pair is the one with the distance min(d<sub>1</sub>, d<sub>2</sub>, d<sub>3</sub>).</li>
+</ol>
+</section><section id="closest-pair-algorithm-2" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-1">Step 1</h3>
+<ul>
+<li><em>Step 1: Sort the points in increasing order of x-coordinates. For the points with the same x-coordinates, sort on y-coordinates. This results in a sorted list S of points.</em></li>
+<li>What is O(?) for Step 1?</li>
+<li>Selection sort takes <span class="math inline">O(n^2)</span>.<br />
+</li>
+<li>In chapter 23 we will introduce merge sort and heap sort which are <span class="math inline">O(n\log n)</span></li>
+</ul>
+</section><section id="closest-pair-algorithm-3" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3">Step 3</h3>
+<ul>
+<li><em>Step 3: Find the closest pair between a point in S<sub>1</sub> and a point in S<sub>2</sub> and denote their distance as d<sub>3</sub>. The closest pair is the one with the distance min(d<sub>1</sub>, d<sub>2</sub>, d<sub>3</sub>).</em></li>
+<li>What is O(?) for Step 3?</li>
+<li>Step 3 is <span class="math inline">O(n)</span>.</li>
+</ul>
+</section><section id="closest-pair-algorithm-4" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<figure>
+<img data-src="lecture5-diagram5.png" alt="Diagram 5" /><figcaption>Diagram 5</figcaption>
+</figure>
+</section><section id="closest-pair-algorithm-5" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-1">Step 3</h3>
+<ul>
+<li>Let d = min(d1, d2).</li>
+<li>We already know that the closest- pair distance cannot be larger than d. * For a point in S<sub>1</sub> and a point in S<sub>2</sub> to form the closest pair in S, the left point must be in stripL and the right point in stripR</li>
+</ul>
+</section><section id="closest-pair-algorithm-6" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-2">Step 3</h3>
+<img data-src="lecture5-diagram6.png" title="fig:" alt="Diagram 6" class="stretch" />
+</section><section id="closest-pair-algorithm-7" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-3">Step 3</h3>
+<ul>
+<li>For a point p in stripL, you need only consider a right point within the d * 2d rectangle, as shown below:</li>
+</ul>
+<img data-src="lecture5-diagram7.png" title="fig:" alt="Diagram 7" class="stretch" />
+</section><section id="closest-pair-algorithm-8" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-4">Step 3</h3>
+<ul>
+<li>Any right point outside the rectangle cannot form the closest pair with p.</li>
+<li>Since the closest-pair distance in S<sub>2</sub> is greater than or equal to d, there can be at most six points in the rectangle.</li>
+<li>Thus, for each point in stripL, at most six points in stripR need to be considered.</li>
+</ul>
+</section><section id="closest-pair-algorithm-9" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-5">Step 3</h3>
+<ul>
+<li>For each point p in stripL, how do you locate the points in the corresponding d * 2d rectangle area in stripR?</li>
+<li>This can be done efficiently if the points in stripL and stripR are sorted in increasing order of their y-coordinates.</li>
+</ul>
+</section><section id="closest-pair-algorithm-10" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-6">Step 3</h3>
+<ul>
+<li>Let <em>pointsOrderedOnY</em> be the list of the points sorted in increasing order of y-coordinates. <em>pointsOrderedOnY</em> can be obtained beforehand in the algorithm.</li>
+<li>stripL and stripR can be obtained from pointsOrderedOnY</li>
+</ul>
+</section><section id="closest-pair-algorithm-11" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="partial-step-3">Partial Step 3</h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">for</span> each point p in pointsOrderedOnY</a>
+<a class="sourceLine" id="cb30-2" title="2">  <span class="kw">if</span> (p is in S1 and mid.<span class="fu">x</span> – p.<span class="fu">x</span> &lt;= d)</a>
+<a class="sourceLine" id="cb30-3" title="3">    append p to stripL;</a>
+<a class="sourceLine" id="cb30-4" title="4"><span class="kw">else</span> <span class="kw">if</span> (p is in S2 and p.<span class="fu">x</span> - mid.<span class="fu">x</span> &lt;= d)</a>
+<a class="sourceLine" id="cb30-5" title="5">  append p to stripR;</a></code></pre></div>
+</section><section id="closest-pair-algorithm-12" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="partial-step-3-1">Partial Step 3</h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb31-1" title="1">d = <span class="fu">min</span>(d1, d2);</a>
+<a class="sourceLine" id="cb31-2" title="2">r = <span class="dv">0</span>; <span class="co">// r is the index of a point in stripR</span></a>
+<a class="sourceLine" id="cb31-3" title="3"><span class="kw">for</span> (each point p in stripL) {</a>
+<a class="sourceLine" id="cb31-4" title="4"><span class="co">// Skip the points in stripR below p.y - d</span></a>
+<a class="sourceLine" id="cb31-5" title="5">  <span class="kw">while</span> (r &lt; stripR.<span class="fu">length</span> &amp;&amp; q[r].<span class="fu">y</span> &lt;= p.<span class="fu">y</span> - d)</a>
+<a class="sourceLine" id="cb31-6" title="6">    r++;</a>
+<a class="sourceLine" id="cb31-7" title="7">  let r1 = r;</a>
+<a class="sourceLine" id="cb31-8" title="8">  <span class="kw">while</span> (r1 &lt; stripR.<span class="fu">length</span> &amp;&amp; |q[r1].<span class="fu">y</span> – p.<span class="fu">y</span>| &lt;= d) {</a>
+<a class="sourceLine" id="cb31-9" title="9">    <span class="co">// Check if (p, q[r1]) is a possible closest pair</span></a>
+<a class="sourceLine" id="cb31-10" title="10">    <span class="kw">if</span> (<span class="fu">distance</span>(p, q[r1]) &lt; d) {</a>
+<a class="sourceLine" id="cb31-11" title="11">      d = <span class="fu">distance</span>(p, q[r1]);  </a>
+<a class="sourceLine" id="cb31-12" title="12">    }</a>
+<a class="sourceLine" id="cb31-13" title="13">    r1 = r1 + <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb31-14" title="14">  }</a>
+<a class="sourceLine" id="cb31-15" title="15">}</a></code></pre></div>
+</section><section id="closest-pair-algorithm-13" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<ul>
+<li>The points in stripL are considered from p<sub>0</sub>, p<sub>1</sub>, … , p<sub>k</sub> in this order.</li>
+<li>For a point p in stripL, skip the points in stripR that are below p.y – d (lines 5–6).<br />
+</li>
+<li>Once a point is skipped, it will no longer be considered.</li>
+<li>The while loop (lines 9–17) checks whether (p, q[r1]) is a possible closest pair.</li>
+<li>There are at most six such q[r<sub>1</sub>] pairs, because the distance between two points in stripR cannot be less than d.</li>
+<li>So the complexity for finding the closest pair in Step 3 is O(n).</li>
+</ul>
+</section><section id="closest-pair-algorithm-14" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<ul>
+<li>Note that Step 1 in Listing 22.8 is performed only once to presort the points.</li>
+<li>Assume that all the points are presorted.</li>
+<li>Let T(n) denote the time complexity for this algorithm.</li>
+<li>Thus, <span class="math inline">T(n) = 2T(n/2) + O(n) = O(n \log n)</span> Therefore, the closest pair of points can be found in O(n log n) time.</li>
+<li><a href="https://www.youtube.com/watch?v=0W_m46Q4qMc">Video Explanation</a></li>
+</ul>
+</section></section>
+<section><section id="queens-22.9" class="title-slide slide level1"><h1>8 Queens (22.9)</h1></section><section id="queens" class="slide level2">
+<h2>8 Queens</h2>
+<ul>
+<li>The Eight Queens problem is to find a solution to place a queen in each row on a chessboard such that no two queens can attack each other.</li>
+<li>The problem can be solved using recursion (See Programming Exercise 18.34).</li>
+<li>In this section, we will introduce a common algorithm design technique called <strong>backtracking</strong> for solving this problem.</li>
+<li>The backtracking approach searches for a candidate solution incrementally, abandoning that option as soon as it determines that the candidate cannot possibly be a valid solution, and then looks for a new candidate</li>
+<li><a href="http://eightqueen.becher-sundstroem.de/">Demo</a></li>
+</ul>
+</section><section id="queens-1" class="slide level2">
+<h2>8 Queens</h2>
+<figure>
+<img data-src="lecture5-diagram4.png" alt="8 Queens" /><figcaption>8 Queens</figcaption>
+</figure>
+</section><section id="queens-2" class="slide level2">
+<h2>8 Queens</h2>
+<p>The search starts from the first row with k = 0, where k is the index of the current row being considered. The algorithm checks whether a queen can be possibly placed in the jth column in the row for j = 0, 1, … , 7, in this order. The search is implemented as follows:</p>
+<ul>
+<li>If successful, it continues to search for a placement for a queen in the next row. If the current row is the last row, a solution is found.</li>
+<li>If not successful, it backtracks to the previous row and continues to search for a new placement in the next column in the previous row.</li>
+<li>If the algorithm backtracks to the first row and cannot find a new placement for a queen in this row, no solution can be found.</li>
+</ul>
+</section><section id="queens-demo" class="slide level2">
+<h2>8 Queens Demo</h2>
+</section></section>
+<section id="convex-hull-22.10" class="title-slide slide level1"><h1>Convex Hull (22.10)</h1></section>
     </div>
   </div>
 
