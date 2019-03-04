@@ -25,6 +25,10 @@ output:
 * This equivalence is useful because it gives us two options for proving that a language is context free.
 * We can give either a context-free grammar generating it or a pushdown automaton recognizing it.
 * Certain languages are more easily described in terms of generators, whereas others are more easily described by recognizers.
+* PDAs can be deterministic or non-deterministic
+
+
+## Pushdown Automata
 
 ## Finite Automaton Schematic
 
@@ -53,6 +57,9 @@ output:
 * The stack is a device containing symbols drawn from some alphabet.
 * The machine may use different alphabets for its input and its stack, so now we specify both an input alphabet Σ and a stack alphabet Γ.
 
+## PDA State Diagram Example
+
+![Example 2.14](lecture6-example1b.png){.stretch}
 
 ## PDA Transition Function
 
@@ -87,6 +94,17 @@ A pushdown automaton is a 6-tuple (Q, Σ, Γ, δ, q~0~, F ), where Q, Σ,
 6. F ⊆ Q is the set of accept states.
 
 
+# Determinism and PDAs
+
+## Determinism and PDAs
+
+* Pushdown automata may be nondeterministic.
+* Deterministic and nondeterministic pushdown automata are not equivalent in power
+* Nondeterministic pushdown automata recognize certain languages that no deterministic pushdown automata can recognize
+* Recall that deterministic and nondeterministic finite automata do recognize the same class of languages, so the pushdown automata situation is different.
+* We focus on nondeterministic pushdown automata because these automata are equivalent in power to context-free grammars.
+
+
 # PDA Computation
 
 ## PDA Computation
@@ -100,6 +118,12 @@ A pushdown automaton is a 6-tuple (Q, Σ, Γ, δ, q~0~, F ), where Q, Σ,
 1. r~0~ = q~0~ and s~0~ = ε. This condition signifies that M starts out properly, in the start state and with an empty stack.
 2. For i = 0,...,m − 1, we have (r~i~+1,b) ∈ $δ(r_{i},w_{i}+1,a)$, where s~i~ = at and s~i~+1 = bt for some a, b ∈ Γ~ε~ and t ∈ Γ*. This condition states that M moves properly according to the state, stack, and next input symbol.
 3. r~m~ ∈ F . This condition states that an accept state occurs at the input
+
+## Empty Stack
+
+* The formal definition of a PDA contains no explicit mechanism to allow the PDA to test for an empty stack.
+* This PDA is able to get the same effect by initially placing a special symbol $ on the stack.
+* Then if it ever sees the $ again, it knows that the stack effectively is empty.
 
 # Examples
 
@@ -139,13 +163,97 @@ the language ${0^n1^n| n ≥ 0}$. Let M~1~ be (Q, Σ, Γ, δ, q~1~, F ), where:
 ![Example 2.14](lecture6-example1.png){width=550px }
 ![Example 2.14](lecture6-example1b.png){width=550px }
 
-## Empty Stack
 
-* The formal definition of a PDA contains no explicit mechanism to allow the PDA to test for an empty stack.
-* This PDA is able to get the same effect by initially placing a special symbol $ on the stack.
-* Then if it ever sees the $ again, it knows that the stack effectively is empty.
 
 ## Example 2.16
 
-This example illustrates a pushdown automaton that recognizes the language
-{aibjck| i, j, k ≥ 0 and i = j or i = k}.
+This example illustrates a pushdown automaton that recognizes the language:
+
+$$A = \{a^i b^j c^k \vert i, j, k ≥ 0\ and\ i = j\ or\ i = k\}$$
+
+## Example 2.16
+
+### Informal Description
+
+* Designing a PDA to recognize A is similar recognizing $\{0^n1^n\}$.  
+* We need to use the stack to remember the size of i.
+* The apparent problem is that we don't know whether i will equal j or k.
+* This problem is addressed by using non-determinism -- we will test for both.
+
+## Example 2.16
+
+### Informal Description
+
+* Using its nondeterminism, the PDA can guess whether to match the a’s with the b’s or with the c’s
+* Think of the machine as having two branches of its nondeterminism, one for each possible guess.
+* If either of them matches, that branch accepts and the entire machine accepts.
+
+## Example 2.16
+
+* Solve on Board
+* JFLAP Demo
+
+## Example 2.16
+
+![Example 2.16](lecture6-figure2-17.png){.stretch}
+
+## Example 2.18
+
+$$\{ww^R \vert w ∈ \{0,1\}^*\}$$
+
+## Example 2.18
+
+### Informal Description
+
+* As each input symbol is read, push the symbol onto the stack.  
+* Because we can't know when w ends, we should non-deterministically change state to the beginning of w^R^.  
+
+## Example 2.18
+
+### Informal Description
+
+* As we read each symbol of w^R^, we should pop a matching symbol off of the stack.
+* When we have finished consuming w^R^, we should also have emptied the stack.  If so, we can accept the string.
+
+## Example 2.18
+
+### Create State Diagram on Board
+
+## Example 2.18
+
+![Example 2.18](lecture6-figure2-19.png){.stretch}
+
+# Review of Properties of PDAs and CFLs
+
+## CFG Equivalence
+
+### Theorem 2.20
+
+>A language is context free if and only if some pushdown automaton recognizes it.
+
+## CFG Equivalence
+
+### Lemma 2.21
+
+>If a language is context free, then some pushdown automaton recognizes it.
+
+## CFG Equivalence
+
+### Lemma 2.27
+
+>If a pushdown automaton recognizes some language, then it is context free.
+
+## Relationship between CFL and Regular Languages
+
+### Corollary 2.32
+
+> Every regular language is context free.
+
+![Diagram 3](lecture6-diagram3.png)
+
+## Correlation Between Automata and Languages
+
+.                       | Regular Languages           | Context-Free Languages
+------------------------|-----------------------------|-----------------------
+**Language Recognizer** | Finite Automaton (NFA, DFA) | Pushdown Automaton
+**Language Generator**  | Regular Expression          | Context-Free Grammar
