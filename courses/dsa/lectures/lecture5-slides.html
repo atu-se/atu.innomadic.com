@@ -1296,7 +1296,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The problem can be solved using recursion (See Programming Exercise 18.34).</li>
 <li>In this section, we will introduce a common algorithm design technique called <strong>backtracking</strong> for solving this problem.</li>
 <li>The backtracking approach searches for a candidate solution incrementally, abandoning that option as soon as it determines that the candidate cannot possibly be a valid solution, and then looks for a new candidate</li>
-<li><a href="http://eightqueen.becher-sundstroem.de/">Demo</a></li>
 </ul>
 </section><section id="queens-1" class="slide level2">
 <h2>8 Queens</h2>
@@ -1313,8 +1312,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="queens-demo" class="slide level2">
 <h2>8 Queens Demo</h2>
+<ul>
+<li>Read 22.9 for 8 Queens Analysis</li>
+<li><a href="http://eightqueen.becher-sundstroem.de/">Demo</a></li>
+</ul>
 </section></section>
-<section id="convex-hull-22.10" class="title-slide slide level1"><h1>Convex Hull (22.10)</h1></section>
+<section><section id="convex-hull-22.10" class="title-slide slide level1"><h1>Convex Hull (22.10)</h1></section><section id="convex-hull" class="slide level2">
+<h2>Convex Hull</h2>
+<ul>
+<li>Given a set of points, a convex hull is the smallest convex polygon that encloses all these points</li>
+<li>A polygon is convex if every line connecting two vertices is inside the polygon.</li>
+</ul>
+</section><section id="convex-hull-1" class="slide level2">
+<h2>Convex Hull</h2>
+<figure>
+<img data-src="lecture5-diagram8.png" alt="Convex Hull" /><figcaption>Convex Hull</figcaption>
+</figure>
+</section><section id="gift-wrapping-algorithm" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<ul>
+<li>Step 1: Given a list of points S, let the points in S be labeled <span class="math inline">s_{0}, s_{1}, ..., s_{k}</span>.
+<ul>
+<li>Select the rightmost lowest point S.</li>
+<li>As shown in figure next slide, h<sub>0</sub> is such a point.</li>
+<li>Add h<sub>0</sub> to list H. (H is initially empty. H will hold all points in the convex hull after the algorithm is finished.)</li>
+<li>Let t<sub>0</sub> be h<sub>0</sub>.</li>
+</ul></li>
+</ul>
+</section><section id="gift-wrapping-algorithm-1" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<figure>
+<img data-src="lecture5-diagram9.png" alt="Step 1" /><figcaption>Step 1</figcaption>
+</figure>
+</section><section id="gift-wrapping-algorithm-2" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<ul>
+<li>Step 2: Let t<sub>1</sub> be s<sub>0</sub>.
+<ul>
+<li>For every point p in S, if p is on the right side of the direct line from t<sub>0</sub> to t<sub>1</sub>, then let t<sub>1</sub> be p.</li>
+<li>(After Step 2, no points lie on the right side of the direct line from t0 to t1, as shown in the figure on the next slide)</li>
+</ul></li>
+</ul>
+</section><section id="gift-wrapping-algorithm-3" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<figure>
+<img data-src="lecture5-diagram10.png" alt="Step 2" /><figcaption>Step 2</figcaption>
+</figure>
+</section><section id="gift-wrapping-algorithm-4" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<figure>
+<img data-src="lecture5-diagram11.png" alt="Step 3" /><figcaption>Step 3</figcaption>
+</figure>
+<ul>
+<li>Step 3: If t<sub>1</sub> is h<sub>0</sub> (see Figure 22.9d), the points in H form a convex hull for S. Otherwise, add t<sub>1</sub> to H, let t<sub>0</sub> be t<sub>1</sub>, and go back to Step 2 (see Figure 22.9c).</li>
+</ul>
+</section><section id="gift-wrapping-analysis" class="slide level2">
+<h2>Gift-wrapping Analysis</h2>
+<ul>
+<li>If n is the number of points in the field and h is the number of points in the hull, the algorithm is <span class="math inline">O(hn)</span></li>
+<li>In the worst-case scenario, h = n and it is <span class="math inline">O(n^2)</span></li>
+</ul>
+</section><section id="grahams-algorithm" class="slide level2">
+<h2>Graham’s Algorithm</h2>
+<ul>
+<li>Step 1: Given a list of points S, select the rightmost lowest point and name it p<sub>0</sub>.</li>
+<li>Step 2: Sort the points in S angularly along the x-axis with p<sub>0</sub> as the cente. If there is a tie and two points have the same angle, discard the one that is closer to p0. The points in S are now sorted as <span class="math inline">p_{0}, p_{1}, p_{2}, ..., p_{n-1}</span>.</li>
+<li>Step 3: Push p<sub>0</sub>, p<sub>1</sub>, and p<sub>2</sub> into stack H. (After the algorithm finishes, H contains all the points in the convex hull.)</li>
+</ul>
+</section><section id="grahams-algorithm-1" class="slide level2">
+<h2>Graham’s Algorithm</h2>
+<h3 id="step-4">Step 4:</h3>
+<pre><code>i = 3;
+while (i &lt; n) {
+  Let t1 and t2 be the top first and second element in stack H;
+  if (pi is on the left side of the direct line from t2 to t1) {
+    Push pi to H;
+    i++; // Consider the next point in S. }
+    else
+    Pop the top element off stack H.
+}</code></pre>
+<ul>
+<li>Step 5: The points in H form a convex hull.</li>
+</ul>
+</section><section id="convex-hull-2" class="slide level2">
+<h2>Convex Hull</h2>
+<ul>
+<li>Read chapter 22.10 for Convex Hull Analysis</li>
+<li><a href="https://liveexample.pearsoncmg.com/liang/animation/web/ConvexHull.html">Animation</a></li>
+</ul>
+</section></section>
     </div>
   </div>
 

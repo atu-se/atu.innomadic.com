@@ -19,4 +19,9 @@ output:
 ## PDA Design 2
 
 
+$\{ w\ \vert\ w = w^R , w \in \{0,1\}^*\}$
+
+## PDA Design 3
+
+
 $\{ w\#x\ \vert\ w^R\ is\ a\ substring\ of\ x\ for\ w,\ x \in \{0,1\}^*\}$

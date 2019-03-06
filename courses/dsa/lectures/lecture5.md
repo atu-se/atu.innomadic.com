@@ -1146,7 +1146,7 @@ Therefore, the closest pair of points can be found in O(n log n) time.
 * The problem can be solved using recursion (See Programming Exercise 18.34).
 * In this section, we will introduce a common algorithm design technique called **backtracking** for solving this problem.
 * The backtracking approach searches for a candidate solution incrementally, abandoning that option as soon as it determines that the candidate cannot possibly be a valid solution, and then looks for a new candidate
-* [Demo](http://eightqueen.becher-sundstroem.de/)
+
 
 ## 8 Queens
 
@@ -1162,8 +1162,81 @@ The search starts from the first row with k = 0, where k is the index of the cur
 
 ## 8 Queens Demo
 
-
+* Read 22.9 for 8 Queens Analysis
+* [Demo](http://eightqueen.becher-sundstroem.de/)
 
 # Convex Hull (22.10)
 
+## Convex Hull
+
+* Given a set of points, a convex hull is the smallest convex polygon that encloses all these points
+* A polygon is convex if every line connecting two vertices is inside the polygon.
+
+## Convex Hull
+
+![Convex Hull](lecture5-diagram8.png)
+
+## Gift-wrapping Algorithm
+
+* Step 1: Given a list of points S, let the points in S be labeled $s_{0}, s_{1}, ..., s_{k}$.
+  * Select the rightmost lowest point S.
+  * As shown in figure next slide, h~0~ is such a point.
+  * Add h~0~ to list H. (H is initially empty. H will hold all points in the convex hull after the algorithm is finished.)
+  * Let t~0~ be h~0~.
+
+## Gift-wrapping Algorithm
+
+![Step 1](lecture5-diagram9.png)
+
+## Gift-wrapping Algorithm
+
+* Step 2: Let t~1~ be s~0~.
+  * For every point p in S,
+if p is on the right side of the direct line from t~0~ to t~1~, then let t~1~ be p.
+  * (After Step 2, no points lie on the right side of the direct line from t0 to t1, as shown in the figure on the next slide)
+
+## Gift-wrapping Algorithm
+
+![Step 2](lecture5-diagram10.png)
+
+## Gift-wrapping Algorithm
+
+![Step 3](lecture5-diagram11.png)
+
+* Step 3: If t~1~ is h~0~ (see Figure 22.9d), the points in H form a convex hull for S. Otherwise, add t~1~ to H, let t~0~ be t~1~, and go back to Step 2 (see Figure 22.9c).
+
+## Gift-wrapping Analysis
+
+* If n is the number of points in the field and h is the number of points in the hull, the algorithm is $O(hn)$
+* In the worst-case scenario, h = n and it is $O(n^2)$
+
+
+## Graham's Algorithm
+
+* Step 1: Given a list of points S, select the rightmost lowest point and name it p~0~.
+* Step 2: Sort the points in S angularly along the x-axis with p~0~ as the cente. If there is a tie and two points have the same angle, discard the one that is closer to p0. The points in S are now sorted as $p_{0}, p_{1}, p_{2}, ..., p_{n-1}$.
+* Step 3: Push p~0~, p~1~, and p~2~ into stack H. (After the algorithm finishes, H contains all the points in the convex hull.)
+
+## Graham's Algorithm
+
+### Step 4:
+
+```
+i = 3;
+while (i < n) {
+  Let t1 and t2 be the top first and second element in stack H;
+  if (pi is on the left side of the direct line from t2 to t1) {
+    Push pi to H;
+    i++; // Consider the next point in S. }
+    else
+    Pop the top element off stack H.
+}
+```
+
+* Step 5: The points in H form a convex hull.
+
+
+## Convex Hull
+
+* Read chapter 22.10 for Convex Hull Analysis
 * [Animation](https://liveexample.pearsoncmg.com/liang/animation/web/ConvexHull.html)
