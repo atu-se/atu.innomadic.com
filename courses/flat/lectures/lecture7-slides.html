@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-03-04">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">7. Non-Context Free Languages</p>
+  <p class="date">March 4, 2019</p>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li>In this section we present a technique for proving that certain languages are not context free.</li>
+<li>Recall that in Section 1.4 we introduced the pumping lemma for showing that certain languages are not regular.</li>
+<li>Here we present a similar pumping lemma for context-free languages.</li>
+</ul>
+</section><section id="pumping-lemma" class="slide level2">
+<h2>Pumping Lemma</h2>
+<ul>
+<li>The pumping lemma for CFLs states that every context-free language has a special value called the pumping length such that all longer strings in the language can be “pumped.”</li>
+<li>This time the meaning of pumped is a bit more complex.</li>
+<li>It means that the string can be divided into five parts so that the second and the fourth parts may be repeated together any number of times and the resulting string still remains in the language.</li>
+</ul>
+</section><section id="pumping-lemma-for-context-free-languages" class="slide level2">
+<h2>Pumping Lemma for Context-Free Languages</h2>
+<h3 id="theorem-234">Theorem 2.34</h3>
+<ul>
+<li>If A is a context-free language, then there is a number p (the pumping length) where, if s is any string in A of length at least p, then s may be divided into five pieces s = uvxyz satisfying the conditions:</li>
+</ul>
+<ol type="1">
+<li><span class="math inline">for\ each\ i\geq 0, uv^i xy^i z\in A</span>,</li>
+<li><span class="math inline">|vy| &gt; 0</span>, and</li>
+<li><span class="math inline">|vxy| \leq p</span>.</li>
+</ol>
+</section><section id="pumping-lemma-for-context-free-languages-1" class="slide level2">
+<h2>Pumping Lemma for Context-Free Languages</h2>
+<h3 id="theorem-234-1">Theorem 2.34</h3>
+<ul>
+<li>When s is being divided into uvxyz, condition 2 says that either v or y is not the empty string.</li>
+<li>Otherwise the theorem would be trivially true.</li>
+<li>Condition 3 states that the pieces v, x, and y together have length at most p.</li>
+<li>This technical condition sometimes is useful in proving that certain languages are not context free.</li>
+</ul>
+</section></section>
+<section><section id="proof-idea" class="title-slide slide level1"><h1>Proof Idea</h1></section><section id="proof-idea-1" class="slide level2">
+<h2>Proof Idea</h2>
+<h3 id="setup">Setup</h3>
+<ul>
+<li>Let A be a CFL and let G be a CFG that generates it.</li>
+</ul>
+<h3 id="the-objective">The Objective</h3>
+<ul>
+<li>We must show that any sufficiently long string s in A can be pumped and remain in A.</li>
+</ul>
+<h3 id="the-proof-type">The Proof Type</h3>
+<ul>
+<li>We will prove by contradiction</li>
+<li>Just like the pumping lemma for regular languages!</li>
+</ul>
+</section><section id="proof-idea-2" class="slide level2">
+<h2>Proof Idea</h2>
+<ul>
+<li>Let s be a very long string in A.</li>
+<li>Because s is in A, it is derivable from G and so has a parse tree.</li>
+<li>The parse tree for s must be very tall because s is very long.</li>
+<li>That is, the parse tree must contain some long path from the start variable at the root of the tree to one of the terminal symbols at a leaf.</li>
+<li>On this long path, some variable symbol R must repeat because of the pigeonhole principle.</li>
+</ul>
+</section><section id="proof-idea-3" class="slide level2">
+<h2>Proof Idea</h2>
+<h3 id="pigeonhole-principle">Pigeonhole Principle</h3>
+<p>The pigeonhole principle is a fancy name for the rather obvious fact that:</p>
+<ul>
+<li>if p pigeons are placed into fewer than p holes,</li>
+<li>some hole has to have more than one pigeon in it.</li>
+</ul>
+</section><section id="proof-idea-4" class="slide level2">
+<h2>Proof Idea</h2>
+<table>
+<thead>
+<tr class="header">
+<th>.</th>
+<th>Pumping Up</th>
+<th>Pumping Down</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="lecture7-diagram1.png" alt="PL for CFGs Diagram 1" /></td>
+<td><img data-src="lecture7-diagram2.png" alt="PL for CFGs Diagram 2" /></td>
+<td><img data-src="lecture7-diagram3.png" alt="PL for CFGs Diagram 3" /></td>
+</tr>
+</tbody>
+</table>
+<p>The repetition allows us to replace the subtree under the second occurrence of R with the subtree under the first occurrence of R and still get a legal parse tree.</p>
+</section><section id="proof-idea-5" class="slide level2">
+<h2>Proof Idea</h2>
+<ul>
+<li>Therefore, we may cut s into five pieces <span class="math inline">uvxyz</span> as the figure indicates</li>
+<li>We may repeat the second and fourth pieces and obtain a string still in the language.</li>
+<li>In other words, <span class="math inline">uv^i xy^i z \in A</span> for any i ≥ 0.</li>
+</ul>
+</section></section>
+<section><section id="proof" class="title-slide slide level1"><h1>Proof</h1></section><section id="proof-part-a" class="slide level2">
+<h2>Proof Part A</h2>
+<ul>
+<li>Let G be a CFG for CFL A.</li>
+<li>Let b be the maximum number of symbols in the right-hand side of a rule (assume at least 2).</li>
+<li>In any parse tree using this grammar, we know that a node can have no more than b children. In other words, at most b leaves are 1 step from the start variable; at most b<sup>2</sup> leaves are within 2 steps of the start variable; and at most b<sup>h</sup> leaves are within h steps of the start variable.</li>
+</ul>
+</section><section id="proof-part-a-1" class="slide level2">
+<h2>Proof Part A</h2>
+<ul>
+<li>So, if the height of the parse tree is at most h, the length of the string generated is at most <span class="math inline">b^h</span>.</li>
+<li>Conversely, if a generated string is at least <span class="math inline">b^h + 1</span> long, each of its parse trees must be at least h + 1 high.</li>
+</ul>
+</section><section id="proof-part-b" class="slide level2">
+<h2>Proof Part B</h2>
+<ul>
+<li>Say |V| is the number of variables in G.</li>
+<li>We set p, the pumping length, to be <span class="math inline">b^{|V|+1}</span>.</li>
+<li>Now if s is a string in A and its length is p or more, its parse tree must be at least |V|+1 high</li>
+<li>because <span class="math inline">b^{|V|+1} \geq b^{|V|}+1</span>.</li>
+</ul>
+</section><section id="proof-part-b-1" class="slide level2">
+<h2>Proof Part B</h2>
+<ul>
+<li>To see how to pump any such string s, let <span class="math inline">\tau</span> (tau) be one of its parse trees.</li>
+<li>If s has several parse trees, choose τ to be a parse tree that has the smallest number of nodes.</li>
+<li>We know that τ must be at least |V| + 1 high, so its longest path from the root to a leaf has length at least |V | + 1.</li>
+<li>That path has at least |V| + 2 nodes; one at a terminal, the others at variables. Hence that path has at least |V | + 1 variables.</li>
+</ul>
+</section><section id="proof-part-b-2" class="slide level2">
+<h2>Proof Part B</h2>
+<ul>
+<li>With G having only |V| variables, some variable R appears more than once on that path.</li>
+<li>For convenience later, we select R to be a variable that repeats among the lowest |V | + 1 variables on this path.</li>
+</ul>
+</section><section id="proof-part-c" class="slide level2">
+<h2>Proof Part C</h2>
+<ul>
+<li>We divide s into uvxyz according to Figure 2.35.</li>
+<li>Each occurrence of R has a subtree under it, generating a part of the string s.</li>
+<li>The upper occurrence of R has a larger subtree and generates vxy, whereas the lower occurrence generates just x with a smaller subtree.</li>
+<li>Both of these subtrees are generated by the same variable, so we may substitute one for the other and still obtain a valid parse tree.</li>
+</ul>
+</section><section id="proof-part-c-1" class="slide level2">
+<h2>Proof Part C</h2>
+<ul>
+<li>Replacing the smaller by the larger repeatedly gives parse trees for the strings uv<sup>i</sup>xy<sup>i</sup>z at each i &gt; 1.</li>
+<li>Replacing the larger by the smaller generates the string uxz. That establishes condition 1 of the lemma. We now turn to conditions 2 and 3.</li>
+</ul>
+</section><section id="proof-part-d" class="slide level2">
+<h2>Proof Part D</h2>
+<ul>
+<li>To get condition 2, we must be sure that v and y are not both ε.</li>
+<li>If they were, the parse tree obtained by substituting the smaller subtree for the larger would have fewer nodes than τ does and would still generate s.</li>
+<li>This result isn’t possible because we had already chosen τ to be a parse tree for s with the smallest number of nodes.</li>
+<li>That is the reason for selecting τ in this way.</li>
+</ul>
+</section><section id="proof-part-e" class="slide level2">
+<h2>Proof Part E</h2>
+<ul>
+<li>In order to get condition 3, we need to be sure that vxy has length at most p.</li>
+<li>In the parse tree for s the upper occurrence of R generates vxy.</li>
+<li>We chose R so that both occurrences fall within the bottom |V| + 1 variables on the path, and we chose the longest path in the parse tree, so the subtree where R generates vxy is at most |V| + 1 high.</li>
+<li>A tree of this height can generate a string of length at most <span class="math inline">b^{|V|+1} = p</span>.</li>
+</ul>
+</section></section>
+<section><section id="example" class="title-slide slide level1"><h1>Example</h1></section><section id="language" class="slide level2">
+<h2>Language</h2>
+<p>Use the pumping lemma to show that the language B = {anbncn| n ≥ 0} is not context free.</p>
+</section><section id="proof-by-contradiction" class="slide level2">
+<h2>Proof by Contradiction</h2>
+<p>We assume that B is a CFL and obtain a contradiction.</p>
+</section><section id="proof-1" class="slide level2">
+<h2>Proof</h2>
+<ul>
+<li>Let p be the pumping length for B that is guaranteed to exist by the pumping lemma.</li>
+<li>Select the string s = a<sup>p</sup>b<sup>p</sup>c<sup>p</sup>. Clearly s is a member of B and of length at least p.</li>
+<li>The pumping lemma states that s can be pumped, but we show that it cannot.</li>
+<li>In other words, we show that no matter how we divide s into uvxyz, one of the three conditions of the lemma is violated.</li>
+</ul>
+</section><section id="proof-2" class="slide level2">
+<h2>Proof</h2>
+<ul>
+<li>First, condition 2 stipulates that either v or y is nonempty.</li>
+<li>Then we consider one of two cases, depending on whether substrings v and y contain more than one type of alphabet symbol.</li>
+</ul>
+</section><section id="proof-case-1" class="slide level2">
+<h2>Proof - Case 1</h2>
+<ul>
+<li>When both v and y contain only one type of alphabet symbol, v does not contain both a’s and b’s or both b’s and c’s, and the same holds for y.</li>
+<li>In this case, the string uv<sup>2</sup>xy<sup>2</sup>z cannot contain equal numbers of a’s, b’s, and c’s.</li>
+<li>Therefore, it cannot be a member of B.</li>
+<li>That violates condition 1 of the lemma and is thus a contradiction.</li>
+</ul>
+</section><section id="proof-case-2" class="slide level2">
+<h2>Proof - Case 2</h2>
+<ul>
+<li>When either v or y contains more than one type of symbol, uv<sup>2</sup>xy<sup>2</sup>z may contain equal numbers of the three alphabet symbols but not in the correct order.</li>
+<li>Hence it cannot be a member of B and a contradiction occurs.</li>
+</ul>
+</section><section id="proof-3" class="slide level2">
+<h2>Proof</h2>
+<ul>
+<li>One of these cases must occur.</li>
+<li>Because both cases result in a contradiction, a contradiction is unavoidable.</li>
+<li>So the assumption that B is a CFL must be false.</li>
+<li>Thus we have proved that B is not a CFL.</li>
+</ul>
+</section></section>
+<section><section id="example-2" class="title-slide slide level1"><h1>Example 2</h1></section><section id="setup-1" class="slide level2">
+<h2>Setup</h2>
+<ul>
+<li>Let <span class="math inline">D = \{ww| w ∈ {0,1}^*\}</span>.</li>
+<li>Use the pumping lemma to show that D is not a CFL.</li>
+<li>Assume that D is a CFL and obtain a contradiction.</li>
+<li>Let p be the pumping length given by the pumping lemma.</li>
+</ul>
+</section><section id="choosing-string" class="slide level2">
+<h2>Choosing string</h2>
+<p>This time choosing string s is less obvious.</p>
+<ul>
+<li>One possibility is the string 0^p 10^p1.</li>
+<li>It is a member of D and has length greater than p, so it appears to be a good candidate.</li>
+<li>But this string can be pumped by dividing it as follows, so it is not adequate for our purposes.</li>
+</ul>
+<figure>
+<img data-src="lecture7-diagram4.png" alt="Diagram 4" /><figcaption>Diagram 4</figcaption>
+</figure>
+<p>uvxyz Let’s try another candidate for s. Intuitively, the string 0p1p0p1p seems to capture more of the “essence” of the language D than the previous candidate did. In fact, we can show that this string does work, as follows. We show that the string s = 0p1p0p1p cannot be pumped. This time we use condition 3 of the pumping lemma to restrict the way that s can be divided. It says that we can pump s by dividing s = uvxyz, where |vxy| ≤ p. First, we show that the substring vxy must straddle the midpoint of s. Other- wise, if the substring occurs only in the first half of s, pumping s up to uv2xy2z moves a 1 into the first position of the second half, and so it cannot be of the form ww. Similarly, if vxy occurs in the second half of s, pumping s up to uv2xy2z moves a 0 into the last position of the first half, and so it cannot be of the form ww. But if the substring vxy straddles the midpoint of s, when we try to pump s down to uxz it has the form 0p1i0j1p, where i and j cannot both be p. This string is not of the form ww. Thus s cannot be pumped, and D is not a CFL.</p>
+</section></section>
+<section><section id="extra-resources" class="title-slide slide level1"><h1>Extra Resources</h1></section><section id="video-resource" class="slide level2">
+<h2>Video Resource</h2>
+<p>See <a href="https://www.youtube.com/watch?v=jRhqx1_KcCk">Neso Academy lecture</a> for an additional resource on the Pumping Lemma for CFLs</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jRhqx1_KcCk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</section><section id="application-from-neso" class="slide level2">
+<h2>Application from Neso</h2>
+<ol type="1">
+<li>Assume that A is context free</li>
+<li>It has to have a pumping length (we will call it p)</li>
+<li>All strings longer than P can be pumped |S| &gt;= P</li>
+<li>Find a string ‘S’ in A such that |S| &gt;= P</li>
+<li>Divide S into uvxyz</li>
+</ol>
+</section><section id="application-from-neso-1" class="slide level2">
+<h2>Application from Neso</h2>
+<ol start="6" type="1">
+<li>Show that uvixyiz is not in A for some i</li>
+<li>Then consider the ways that S can be divided into uvxyz</li>
+<li>Show that none of these can satisfy all 3 pumping conditions at the same time</li>
+<li>S cannot be pumped == Contradiction</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

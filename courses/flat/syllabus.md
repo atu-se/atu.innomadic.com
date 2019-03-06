@@ -101,6 +101,7 @@ Lecture | Topic                             | Assigned Reading |
         | Review                            |                  |
 
 Depending upon time, we may cover:
+
 * 10 Decidable Languages (4.1)
 * 11 The Halting Problem 5.1
 * 12 Reductions (5.1-5.2)
