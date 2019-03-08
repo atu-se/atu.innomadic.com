@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-03-07">
+  <title>DSA Lecture</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">DSA Lecture</h1>
+  <p class="subtitle">6. Sorting Algorithms</p>
+  <p class="date">March 7, 2019</p>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<p>Sorting is a classic subject in computer science. There are three reasons to study sorting algorithms.</p>
+<ul>
+<li>First, sorting algorithms illustrate many creative approaches to problem solving, and these approaches can be applied to solve other problems.</li>
+<li>Second, sorting algorithms are good for practicing fundamental programming techniques using selection statements, loops, methods, and arrays.</li>
+<li>Third, sorting algorithms are excellent examples to demonstrate algorithm performance.</li>
+</ul>
+</section><section id="introduction-2" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li>Recall that selection sort has a time complexity of O(n<sup>2</sup>)</li>
+<li>Today we will look at another of other sorting algorithms</li>
+<li>You should become familiar with all of the algorithms and their time complexity</li>
+</ul>
+</section></section>
+<section><section id="insertion-sort" class="title-slide slide level1"><h1>Insertion Sort</h1></section><section id="insertion-sort-1" class="slide level2">
+<h2>Insertion Sort</h2>
+<ul>
+<li>The insertion-sort algorithm sorts a list of values by repeatedly inserting a new element into a sorted sublist until the whole list is sorted.</li>
+</ul>
+</section><section id="insertion-sort-2" class="slide level2">
+<h2>Insertion Sort</h2>
+<img data-src="lecture6-diagram1.png" title="fig:" alt="Insertion Sort" class="stretch" />
+</section><section id="insertion-sort-3" class="slide level2">
+<h2>Insertion Sort</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt; list.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb1-2" title="2">     insert list[i] into a sorted sublist list[<span class="fl">0.</span>.<span class="fu">i</span>-<span class="dv">1</span>] so that</a>
+<a class="sourceLine" id="cb1-3" title="3">     list[<span class="fl">0.</span>.<span class="fu">i</span>] is sorted.</a>
+<a class="sourceLine" id="cb1-4" title="4">}</a></code></pre></div>
+</section><section id="insertion-sort-4" class="slide level2">
+<h2>Insertion Sort</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">insertionSort</span>(<span class="dt">double</span>[] list) {</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt; list.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="dt">double</span> currentElement = list[i];</a>
+<a class="sourceLine" id="cb2-4" title="4">    <span class="dt">int</span> k;</a>
+<a class="sourceLine" id="cb2-5" title="5">    <span class="kw">for</span> (k = i - <span class="dv">1</span>; k &gt;= <span class="dv">0</span> &amp;&amp; list[k] &gt; currentElement; k--) {</a>
+<a class="sourceLine" id="cb2-6" title="6">      list[k + <span class="dv">1</span>] = list[k];</a>
+<a class="sourceLine" id="cb2-7" title="7">    }</a>
+<a class="sourceLine" id="cb2-8" title="8">    list[k + <span class="dv">1</span>] = currentElement;</a>
+<a class="sourceLine" id="cb2-9" title="9">  }</a>
+<a class="sourceLine" id="cb2-10" title="10">}</a></code></pre></div>
+</section><section id="animation" class="slide level2">
+<h2>Animation</h2>
+<p><a href="https://liveexample.pearsoncmg.com/liang/animation/web/InsertionSort.html">Animation</a></p>
+</section><section id="insertion-sort-analysis" class="slide level2">
+<h2>Insertion Sort Analysis</h2>
+<ul>
+<li>The method is implemented with a nested for loop.</li>
+<li>The outer loop (with the loop control variable i) is iterated in order to obtain a sorted sublist, which ranges from list[0] to list[i].</li>
+<li>The inner loop (with the loop control variable k) inserts list[i] into the sublist from list[0] to list[i-1].</li>
+</ul>
+</section><section id="insertion-sort-analysis-1" class="slide level2">
+<h2>Insertion Sort Analysis</h2>
+<ul>
+<li>At the kth iteration, to insert an element into an array of size k, it takes up to k comparisions to find the insert position, and k moves to insert the number.<br />
+</li>
+<li>Let T(n) be the time complexity for insertion sort</li>
+<li>Let c denote the total number of other operations such as assignments and additional comparisons in each iterations</li>
+</ul>
+</section><section id="time-complexity" class="slide level2">
+<h2>Time Complexity</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;=(2+c)+(2*2+c)+ ... +(2*(n-1)+c) \end{aligned}</span></p>
+</section><section id="time-complexity-1" class="slide level2">
+<h2>Time Complexity</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;=(2+c)+(2*2+c)+ ... +(2*(n-1)+c) \\
+&amp;=2(1+2+ g+n-1)+c(n-1) \\
+\end{aligned}</span></p>
+</section><section id="time-complexity-2" class="slide level2">
+<h2>Time Complexity</h2>
+<p><span class="math display">\begin{aligned} T(n) &amp;=(2+c)+(2*2+c)+ ... +(2*(n-1)+c) \\
+ &amp;=2(1+2+ g+n-1)+c(n-1) \\
+&amp;=2\frac{(n-1)n}{2} +cn-c=n^2 -n+c \\
+\end{aligned}</span></p>
+</section><section id="time-complexity-3" class="slide level2">
+<h2>Time Complexity</h2>
+<p><span class="math display">\begin{aligned} T(n) &amp;=(2+c)+(2*2+c)+ ... +(2*(n-1)+c) \\
+ &amp;=2(1+2+ g+n-1)+c(n-1) \\
+&amp;=2\frac{(n-1)n}{2} +cn-c=n^2 -n+c \\
+&amp;= O(n^2) \\
+\end{aligned}</span></p>
+</section><section id="time-complexity-4" class="slide level2">
+<h2>Time Complexity</h2>
+<ul>
+<li>Therefore, the complexity of the insertion sort algorithm is O(n<sup>2</sup>).</li>
+<li>Hence, the selection sort and insertion sort are of the same time complexity.</li>
+</ul>
+</section></section>
+<section><section id="bubble-sort-233" class="title-slide slide level1"><h1>Bubble Sort (23.3)</h1></section><section id="bubble-sort" class="slide level2">
+<h2>Bubble Sort</h2>
+<ul>
+<li>A bubble sort sorts the array in multiple phases.</li>
+<li>Each pass successively swaps the neighboring elements if the elements are not in order.</li>
+</ul>
+</section><section id="algorithm" class="slide level2">
+<h2>Algorithm</h2>
+<pre><code>for (int k = 1; k &lt; list.length; k++) {
+  //Perform the kth pass
+  for (int i = 0; i &lt; list.length - k; i++) {
+    if (list[i] &gt; list[i + 1])
+    swap list[i] with list[i + 1];
+  }
+}</code></pre>
+</section><section id="bubble-sort-1" class="slide level2">
+<h2>Bubble Sort</h2>
+<img data-src="lecture6-diagram2.png" title="fig:" alt="Bubble Sort" class="stretch" />
+</section><section id="algorithm-analysis" class="slide level2">
+<h2>Algorithm Analysis</h2>
+<ul>
+<li>Note that if no swap takes place in a pass, there is no need to perform the next pass, because all the elements are already sorted.</li>
+<li>If we check to see if any swaps take placed, then we can improve the algorithm</li>
+</ul>
+</section><section id="bubble-sort-2" class="slide level2">
+<h2>Bubble Sort</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="dt">boolean</span> needNextPass = <span class="kw">true</span>;</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">1</span>; k &lt; list.<span class="fu">length</span>; k++) {</a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="co">// Array may be sorted and next pass not needed</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  needNextPass = <span class="kw">false</span>;</a>
+<a class="sourceLine" id="cb4-5" title="5">  <span class="co">// Perform the kth pass</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">length</span> – k; i++) {</a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="kw">if</span> (list[i] &gt; list[i + <span class="dv">1</span>]) {</a>
+<a class="sourceLine" id="cb4-8" title="8">        swap list[i] with list[i + <span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb4-9" title="9">        needNextPass = <span class="kw">true</span>; <span class="co">// Next pass still needed</span></a>
+<a class="sourceLine" id="cb4-10" title="10">        <span class="co">// Perform the kth pass</span></a>
+<a class="sourceLine" id="cb4-11" title="11">        <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; list.<span class="fu">length</span> - k; i++) {</a>
+<a class="sourceLine" id="cb4-12" title="12">          <span class="kw">if</span> (list[i] &gt; list[i + <span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb4-13" title="13">            swap list[i] with list[i + <span class="dv">1</span>];</a></code></pre></div>
+</section><section id="bubble-sort-animation" class="slide level2">
+<h2>Bubble Sort Animation</h2>
+<p><a href="https://liveexample.pearsoncmg.com/liang/animation/web/BubbleSort.html">Animation</a></p>
+</section><section id="algorithm-analysis-1" class="slide level2">
+<h2>Algorithm Analysis</h2>
+<ul>
+<li>In the best case, the bubble sort algorithm needs just the first pass to find that the array is already sorted—no next pass is needed.</li>
+<li>Since the number of comparisons is n - 1 in the first pass, the best-case time for a bubble sort is O(n).</li>
+</ul>
+</section><section id="algorithm-analysis-2" class="slide level2">
+<h2>Algorithm Analysis</h2>
+<ul>
+<li>In the worst case, the bubble sort algorithm requires n - 1 passes.
+<ul>
+<li>The first pass makes n - 1 comparisons;</li>
+<li>the second pass makes n - 2 comparisons; and so on;</li>
+<li>the last pass makes 1 comparison.</li>
+</ul></li>
+<li>Can you write an equation (T(n)) for the total number of comparisons?</li>
+</ul>
+</section><section id="time-complexity-5" class="slide level2">
+<h2>Time Complexity</h2>
+<p><span class="math display">\begin{aligned} T(n) = (n - 1) + (n-2) + ... + 2 + 1 \\
+\end{aligned}</span></p>
+</section><section id="time-complexity-6" class="slide level2">
+<h2>Time Complexity</h2>
+<p><span class="math display">\begin{aligned} T(n) &amp;= (n - 1) + (n-2) + ... + 2 + 1 \\
+&amp;=\frac{(n-1)n}{2} = \frac{n^2}{2} - \frac{n}{2} \\
+&amp;= O(?) \\
+\end{aligned}</span></p>
+</section><section id="time-complexity-7" class="slide level2">
+<h2>Time Complexity</h2>
+<p><span class="math display">\begin{aligned} T(n) &amp;= (n - 1) + (n-2) + ... + 2 + 1 \\
+&amp;=\frac{(n-1)n}{2} = \frac{n^2}{2} - \frac{n}{2} \\
+&amp;= O(n^2) \\
+\end{aligned}</span></p>
+</section><section id="time-complexity-8" class="slide level2">
+<h2>Time Complexity</h2>
+<ul>
+<li>The worst-case time for a bubble sort is O(n<sup>2</sup>)</li>
+<li>This is the same as selection sort and insertion sort.</li>
+</ul>
+</section></section>
+<section><section id="merge-sort" class="title-slide slide level1"><h1>Merge Sort</h1></section><section id="merge-sort-1" class="slide level2">
+<h2>Merge Sort</h2>
+<ul>
+<li>The merge sort algorithm can be described recursively as follows:</li>
+<li>The algorithm divides the array into two halves and applies a merge sort on each half recursively.</li>
+<li>After the two halves are sorted, merge them.</li>
+</ul>
+</section><section id="merge-sort-2" class="slide level2">
+<h2>Merge Sort</h2>
+<img data-src="lecture6-diagram3.png" title="fig:" alt="Merge Sort" class="stretch" />
+</section><section id="merge-sort-3" class="slide level2">
+<h2>Merge Sort</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mergeSort</span>(<span class="dt">int</span>[] list) {</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">if</span> (list.<span class="fu">length</span> &gt; <span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="fu">mergeSort</span>(list[<span class="dv">0</span> <span class="kw">... </span>list.<span class="fu">length</span> / <span class="dv">2</span>]);</a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="fu">mergeSort</span>(list[<span class="dv">0</span> <span class="kw">... </span>list.<span class="fu">length</span> / <span class="dv">2</span>]);</a>
+<a class="sourceLine" id="cb5-5" title="5">    merge list[<span class="dv">0</span> <span class="kw">... </span>list.<span class="fu">length</span> / <span class="dv">2</span>] with</a>
+<a class="sourceLine" id="cb5-6" title="6">      list[list.<span class="fu">length</span> / <span class="dv">2</span> + <span class="dv">1</span> <span class="kw">... </span>list.<span class="fu">length</span>];</a>
+<a class="sourceLine" id="cb5-7" title="7">  }</a>
+<a class="sourceLine" id="cb5-8" title="8">}</a></code></pre></div>
+</section><section id="merge-sort-merge" class="slide level2">
+<h2>Merge Sort - Merge</h2>
+<img data-src="lecture6-diagram4.png" title="fig:" alt="Merge Sort" class="stretch" />
+</section><section id="merge-sort-animation" class="slide level2">
+<h2>Merge Sort Animation</h2>
+<ul>
+<li><a href="https://liveexample.pearsoncmg.com/liang/animation/web/MergeList.html">Animation</a></li>
+</ul>
+</section><section id="time-complexity-9" class="slide level2">
+<h2>Time Complexity</h2>
+<ul>
+<li>Let T(n) denote the time required for sorting an array of n elements using a merge sort.</li>
+<li>Without loss of generality, assume that n is a power of 2</li>
+</ul>
+<p><span class="math display"> T(n) = T(\frac{n}{2}) + T(\frac{n}{2}) + mergetime</span></p>
+</section><section id="time-complexity-10" class="slide level2">
+<h2>Time Complexity</h2>
+<ul>
+<li>To merge two subarrays, it takes at most n-1 comparisons to compare the elements from the two subarrays and n moves to move elements to the temporary array. Thus, the total time is 2n - 1</li>
+<li>Therefore</li>
+</ul>
+<p><span class="math display"> \begin{aligned}  T(n) &amp;= T(\frac{n}{2}) + T(\frac{n}{2}) + 2n-1 \\
+&amp;= O(?)\end{aligned}</span></p>
+</section><section id="time-complexity-11" class="slide level2">
+<h2>Time Complexity</h2>
+<ul>
+<li>To merge two subarrays, it takes at most n-1 comparisons to compare the elements from the two subarrays and n moves to move elements to the temporary array. Thus, the total time is 2n - 1</li>
+<li>Therefore</li>
+</ul>
+<p><span class="math display"> \begin{aligned}  T(n) &amp;= T(\frac{n}{2}) + T(\frac{n}{2}) + 2n-1 \\
+&amp;= O(n \log n)\end{aligned}</span></p>
+</section><section id="time-complexity-12" class="slide level2">
+<h2>Time Complexity</h2>
+<ul>
+<li>Thus complexity of a merge sort is O(n log n).</li>
+<li>This algorithm is better than selection sort, insertion sort, and bubble sort, because the time complexity of these algorithms is O(n<sup>2</sup>).</li>
+<li>The sort method in the java.util.Arrays class is implemented using a variation of the merge sort algorithm.</li>
+</ul>
+</section></section>
+<section><section id="quick-sort" class="title-slide slide level1"><h1>Quick Sort</h1></section><section id="quick-sort-1" class="slide level2">
+<h2>Quick Sort</h2>
+<p>A quick sort works as follows: The algorithm selects an element, called the pivot, in the array. It divides the array into two parts, so that all the elements in the first part are less than or equal to the pivot and all the elements in the second part are greater than the pivot. The quick sort algorithm is then recursively applied to the first part and then the second part.</p>
+</section><section id="quick-sort-2" class="slide level2">
+<h2>Quick Sort</h2>
+<pre><code>public static void quickSort(int[] list) {
+    if (list.length &gt; 1) {
+      select a pivot;
+      partition list into list1 and list2 such that all elements in list1 &lt;= pivot and all elements in list2 &gt; pivot
+      quickSort(list1);
+      quickSort(list2);
+    }
+}</code></pre>
+</section><section id="time-complexity-13" class="slide level2">
+<h2>Time Complexity</h2>
+<p>the average time is O(n logn)</p>
+</section><section id="quick-sort-vs-merge-sort" class="slide level2">
+<h2>Quick Sort vs. Merge Sort</h2>
+<ul>
+<li>Both merge sort and quick sort employ the divide-and-conquer approach.</li>
+<li>For merge sort, the bulk of the work is to merge two sublists, which takes place after the sublists are sorted.</li>
+<li>For quick sort, the bulk of the work is to partition the list into two sublists, which takes place before the sublists are sorted.</li>
+<li>Merge sort is more efficient than quick sort in the worst case, but the two are equally efficient in the average case.</li>
+<li>Merge sort requires a temporary array for sorting two subarrays.</li>
+<li>Quick sort does not need additional array space.</li>
+<li>Thus, quick sort is more space efficient than merge sort.</li>
+</ul>
+</section></section>
+<section><section id="heap-sort" class="title-slide slide level1"><h1>Heap Sort</h1></section><section id="heap-sort-1" class="slide level2">
+<h2>Heap Sort</h2>
+<p>A heap sort uses a binary heap. It first adds all the elements to a heap and then removes the largest elements successively to obtain a sorted list.</p>
+</section><section id="heap-class-demo" class="slide level2">
+<h2>Heap Class Demo</h2>
+</section><section id="time-complexity-14" class="slide level2">
+<h2>Time Complexity</h2>
+<p>the total time for producing a sorted array from a heap is O(n logn).</p>
+</section><section id="animations" class="slide level2">
+<h2>Animations</h2>
+<ul>
+<li>https://liveexample.pearsoncmg.com/liang/animation/web/InsertionSort.html</li>
+<li>https://liveexample.pearsoncmg.com/liang/animation/web/BubbleSort.html</li>
+<li>https://liveexample.pearsoncmg.com/liang/animation/web/MergeList.html</li>
+</ul>
+</section></section>
+<section><section id="bucket-and-radix-sorts" class="title-slide slide level1"><h1>Bucket and Radix Sorts</h1></section><section id="bucket-and-radix-sorts-1" class="slide level2">
+<h2>Bucket and Radix Sorts</h2>
+<p>Bucket sorts and radix sorts are efficient for sorting integers.</p>
+</section><section id="bucket" class="slide level2">
+<h2>Bucket</h2>
+</section><section id="radix" class="slide level2">
+<h2>Radix</h2>
+</section><section id="time-complexity-15" class="slide level2">
+<h2>Time Complexity</h2>
+<ul>
+<li>Radix sort takes O(dn) time to sort n elements with integer keys, where d is the maximum</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
