@@ -340,7 +340,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section></section>
 <section><section id="quick-sort" class="title-slide slide level1"><h1>Quick Sort</h1></section><section id="quick-sort-1" class="slide level2">
 <h2>Quick Sort</h2>
-<p>A quick sort works as follows: The algorithm selects an element, called the pivot, in the array. It divides the array into two parts, so that all the elements in the first part are less than or equal to the pivot and all the elements in the second part are greater than the pivot. The quick sort algorithm is then recursively applied to the first part and then the second part.</p>
+<p>A quick sort works as follows:</p>
+<ul>
+<li>The algorithm selects an element, called the pivot, in the array.</li>
+<li>It divides the array into two parts, so that all the elements in the first part are less than or equal to the pivot and all the elements in the second part are greater than the pivot.</li>
+<li>The quick sort algorithm is then recursively applied to the first part and then the second part.</li>
+</ul>
+</section><section id="quick-start" class="slide level2">
+<h2>Quick Start</h2>
+<img data-src="lecture6-diagram5.png" title="fig:" alt="Quick Sort" class="stretch" />
 </section><section id="quick-sort-2" class="slide level2">
 <h2>Quick Sort</h2>
 <pre><code>public static void quickSort(int[] list) {
@@ -353,7 +361,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</code></pre>
 </section><section id="time-complexity-13" class="slide level2">
 <h2>Time Complexity</h2>
-<p>the average time is O(n logn)</p>
+<h3 id="best-case">Best Case</h3>
+<p>In the best case, the pivot divides the array each time into two parts of about the same size. Let T(n) denote the time required for sorting an array of n elements using quick sort. Thus,</p>
+<p><span class="math display">T(n) = T(\frac{n}{2}) + T(\frac{n}{2}) + n</span></p>
+<p>Similar to the merge sort analysis, T(n) = O ( n log n)</p>
+</section><section id="time-complexity-14" class="slide level2">
+<h2>Time Complexity</h2>
+<h3 id="average-case">Average Case</h3>
+<p>On average, pivot will not divide the array into two parts of the same size or one empty part each time. Statistically, the sizes of the two parts are very close. Therefore, the average time is still O ( n log n).</p>
 </section><section id="quick-sort-vs-merge-sort" class="slide level2">
 <h2>Quick Sort vs. Merge Sort</h2>
 <ul>
@@ -369,9 +384,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section><section id="heap-sort" class="title-slide slide level1"><h1>Heap Sort</h1></section><section id="heap-sort-1" class="slide level2">
 <h2>Heap Sort</h2>
 <p>A heap sort uses a binary heap. It first adds all the elements to a heap and then removes the largest elements successively to obtain a sorted list.</p>
+</section><section id="heap-example" class="slide level2">
+<h2>Heap Example</h2>
+<img data-src="lecture6-diagram6.png" title="fig:" alt="Heap Sort" class="stretch" />
+</section><section id="heap-example-1" class="slide level2">
+<h2>Heap Example</h2>
+<img data-src="lecture6-diagram7.png" title="fig:" alt="Heap Sort" class="stretch" />
+</section><section id="adding-a-node" class="slide level2">
+<h2>Adding a Node</h2>
+<pre><code>Let the last node be the current node;
+while (the current node is greater than its parent) {
+    Swap the current node with its parent;
+    Now the current node is one level up;
+}</code></pre>
+</section><section id="removing-a-node" class="slide level2">
+<h2>Removing a Node</h2>
+<pre><code>Move the last node to replace the root;
+Let the root be the current node;
+while (the current node has children and the current node is          smaller than one of its children) {
+    Swap the current node with the larger of its children;
+        Now the current node is one level down;
+}</code></pre>
 </section><section id="heap-class-demo" class="slide level2">
 <h2>Heap Class Demo</h2>
-</section><section id="time-complexity-14" class="slide level2">
+</section><section id="time-complexity-15" class="slide level2">
 <h2>Time Complexity</h2>
 <p>the total time for producing a sorted array from a heap is O(n logn).</p>
 </section><section id="animations" class="slide level2">
@@ -389,7 +425,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Bucket</h2>
 </section><section id="radix" class="slide level2">
 <h2>Radix</h2>
-</section><section id="time-complexity-15" class="slide level2">
+</section><section id="time-complexity-16" class="slide level2">
 <h2>Time Complexity</h2>
 <ul>
 <li>Radix sort takes O(dn) time to sort n elements with integer keys, where d is the maximum</li>

@@ -233,7 +233,6 @@ public static void mergeSort(int[] list) {
 
 * [Animation](https://liveexample.pearsoncmg.com/liang/animation/web/MergeList.html)
 
-
 ## Time Complexity
 
 * Let T(n) denote the time required for sorting an array of n elements using a merge sort.
@@ -269,7 +268,15 @@ $$ \begin{aligned}  T(n) &= T(\frac{n}{2}) + T(\frac{n}{2}) + 2n-1 \\
 
 ## Quick Sort
 
-A quick sort works as follows: The algorithm selects an element, called the pivot, in the array. It divides the array into two parts, so that all the elements in the first part are less than or equal to the pivot and all the elements in the second part are greater than the pivot. The quick sort algorithm is then recursively applied to the first part and then the second part.
+A quick sort works as follows:
+
+* The algorithm selects an element, called the pivot, in the array.
+* It divides the array into two parts, so that all the elements in the first part are less than or equal to the pivot and all the elements in the second part are greater than the pivot.
+* The quick sort algorithm is then recursively applied to the first part and then the second part.
+
+## Quick Start
+
+![Quick Sort](lecture6-diagram5.png){.stretch}
 
 ## Quick Sort
 
@@ -286,7 +293,20 @@ public static void quickSort(int[] list) {
 
 ## Time Complexity
 
- the average time is O(n logn)
+### Best Case
+
+In the best case, the pivot divides the array each time into two parts of about the same size. Let T(n) denote the time required for sorting an array of n elements using quick sort. Thus,
+
+$$T(n) = T(\frac{n}{2}) + T(\frac{n}{2}) + n$$
+
+Similar to the merge sort analysis, T(n) = O ( n log n)
+
+## Time Complexity
+
+### Average Case
+
+On average, pivot will not divide the array into two parts of the same size or one empty part each time.  Statistically, the sizes of the two parts are very close.  Therefore, the average time is still O ( n log n).
+
 
 ## Quick Sort vs. Merge Sort
 
@@ -303,6 +323,35 @@ public static void quickSort(int[] list) {
 ## Heap Sort
 
 A heap sort uses a binary heap. It first adds all the elements to a heap and then removes the largest elements successively to obtain a sorted list.
+
+## Heap Example
+
+![Heap Sort](lecture6-diagram6.png){.stretch}
+
+## Heap Example
+
+![Heap Sort](lecture6-diagram7.png){.stretch}
+
+## Adding a Node
+
+```
+Let the last node be the current node;
+while (the current node is greater than its parent) {
+    Swap the current node with its parent;
+    Now the current node is one level up;
+}
+```
+
+## Removing a Node
+
+```
+Move the last node to replace the root;
+Let the root be the current node;
+while (the current node has children and the current node is          smaller than one of its children) {
+    Swap the current node with the larger of its children;
+        Now the current node is one level down;
+}
+```
 
 ## Heap Class Demo
 

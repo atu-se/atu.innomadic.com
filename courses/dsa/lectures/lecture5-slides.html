@@ -15,6 +15,69 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
   <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
@@ -27,6 +90,14 @@
   <!--[if lt IE 9]>
   <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
 </head>
 <body>
   <div class="reveal">
@@ -38,36 +109,1296 @@
   <p class="date">February 24, 2019</p>
 </section>
 
-<section><section id="insertion-sort" class="title-slide slide level1"><h1>Insertion Sort</h1></section><section id="insertion-sort-1" class="slide level2">
-<h2>Insertion Sort</h2>
-<p>The insertion-sort algorithm sorts a list of values by repeatedly inserting a new element into a sorted sublist until the whole list is sorted.</p>
-<pre><code>for (int i = 1; i &lt; list.length; i++) {
-     insert list[i] into a sorted sublist list[0..i-1] so that
-     list[0..i] is sorted.
-}</code></pre>
-</section></section>
-<section id="bubble-sort-233" class="title-slide slide level1"><h1>Bubble Sort (23.3)</h1></section>
-<section id="section" class="title-slide slide level1"><h1></h1></section>
-<section id="section-1" class="title-slide slide level1"><h1></h1></section>
-<section><section id="merge-sort" class="title-slide slide level1"><h1>Merge Sort</h1></section><section id="merge-sort-1" class="slide level2">
-<h2>Merge Sort</h2>
-<p>The merge sort algorithm can be described recursively as follows: The algorithm divides the array into two halves and applies a merge sort on each half recursively. After the two halves are sorted, merge them.</p>
-</section></section>
-<section id="section-2" class="title-slide slide level1"><h1></h1></section>
-<section><section id="quick-sort" class="title-slide slide level1"><h1>Quick Sort</h1></section><section id="quick-sort-1" class="slide level2">
-<h2>Quick Sort</h2>
-<p>A quick sort works as follows: The algorithm selects an element, called the pivot, in the array. It divides the array into two parts, so that all the elements in the first part are less than or equal to the pivot and all the elements in the second part are greater than the pivot. The quick sort algorithm is then recursively applied to the first part and then the second part.</p>
-</section></section>
-<section id="section-3" class="title-slide slide level1"><h1></h1></section>
-<section id="heap-sort" class="title-slide slide level1"><h1>Heap Sort</h1></section>
-<section><section id="section-4" class="title-slide slide level1"><h1></h1></section><section id="heap-class-demo" class="slide level2">
-<h2>Heap Class Demo</h2>
-</section><section id="animations" class="slide level2">
-<h2>Animations</h2>
+<section><section id="introduction-221" class="title-slide slide level1"><h1>Introduction (22.1)</h1></section><section id="objectives" class="slide level2">
+<h2>Objectives</h2>
 <ul>
-<li>https://liveexample.pearsoncmg.com/liang/animation/web/InsertionSort.html</li>
-<li>https://liveexample.pearsoncmg.com/liang/animation/web/BubbleSort.html</li>
-<li>https://liveexample.pearsoncmg.com/liang/animation/web/MergeList.html</li>
+<li>To estimate algorithm efficiency using the Big O notation (§22.2).</li>
+<li>To explain growth rates and why constants and nondominating terms can be ignored in the estimation (§22.2).</li>
+<li>To determine the complexity of various types of algorithms (§22.3).</li>
+<li>To analyze the binary search algorithm (§22.4.1).</li>
+<li>To analyze the selection sort algorithm (§22.4.2).</li>
+</ul>
+</section><section id="objectives-1" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>To analyze the Tower of Hanoi algorithm (§22.4.3).</li>
+<li>To describe common growth functions (constant, logarithmic, log- linear, quadratic, cubic, exponential) (§22.4.4).</li>
+<li>To design efficient algorithms for finding Fibonacci numbers using dynamic programming (§22.5).</li>
+<li>To find the GCD using Euclid’s algorithm (§22.6).</li>
+<li>To find prime numbers using the sieve of Eratosthenes (§22.7).</li>
+</ul>
+</section><section id="objectives-2" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>To design efficient algorithms for finding the closest pair of points using the divide-and-conquer approach (§22.8).</li>
+<li>To solve the Eight Queens problem using the backtracking approach (§22.9).</li>
+<li>To design efficient algorithms for finding a convex hull for a set of points (§22.10).</li>
+</ul>
+</section><section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li>Algorithm design is to develop a mathematical process for solving a problem. Algorithm analysis is to predict the performance of an algorithm.</li>
+<li>This chapter will use a variety of examples to introduce common algorithmic techniques (dynamic programming, divide-and-conquer, and backtracking) for developing efficient algorithms</li>
+<li>Before introducing developing efficient algorithms, we need to address the question on how to measure algorithm efficiency.</li>
+</ul>
+</section></section>
+<section><section id="measuring-efficiency-222" class="title-slide slide level1"><h1>Measuring Efficiency (22.2)</h1></section><section id="big-o-notation" class="slide level2">
+<h2>Big O Notation</h2>
+<ul>
+<li>The Big O notation obtains a function for measuring algorithm time complexity based on the input size.</li>
+<li>You can ignore multiplicative constants and nondominating terms in the function.</li>
+</ul>
+</section><section id="comparing-search-algorithms" class="slide level2">
+<h2>Comparing Search Algorithms</h2>
+<ul>
+<li>Suppose two algorithms perform the same task, such as search (<em>linear search</em> vs. <em>binary search</em>).</li>
+<li>Which one is better?</li>
+</ul>
+</section><section id="measuring-runtime" class="slide level2">
+<h2>Measuring Runtime</h2>
+<ul>
+<li>To answer this question, you might implement these algorithms and run the programs to get execution time. But there are two problems with this approach:
+<ul>
+<li>First, many tasks run concurrently on a computer. The execution time of a particular program depends on the <em>system load</em>.</li>
+<li>Second, the execution time depends on <em>specific input</em>. Consider, for example, linear search and binary search. If an element to be searched happens to be the first in the list, linear search will find the element quicker than binary search.</li>
+</ul></li>
+</ul>
+</section><section id="growth-rates" class="slide level2">
+<h2>Growth Rates</h2>
+<ul>
+<li>It is very difficult to compare algorithms by measuring their execution time.</li>
+<li>To overcome these problems, a theoretical approach was developed to analyze algorithms independent of computers and specific input.</li>
+<li>This approach approximates the effect of a change on the size of the input.</li>
+<li>In this way, you can see how fast an algorithm’s execution time increases as the input size increases, so you can compare two algorithms by examining their <strong>growth rates</strong>.</li>
+</ul>
+</section><section id="measuring-runtime-1" class="slide level2">
+<h2>Measuring Runtime</h2>
+<ul>
+<li>For the same input size, an algorithm’s execution time may vary, depending on the input.</li>
+<li>An input that results in the shortest execution time is called the best-case input,</li>
+<li>An input that results in the longest execution time is the worst-case input.</li>
+</ul>
+</section><section id="measuring-runtime-2" class="slide level2">
+<h2>Measuring Runtime</h2>
+<ul>
+<li><strong>Best-case analysis</strong> and <strong>worst-case analysis</strong> are to analyze the algorithms for their best-case input and worst-case input.</li>
+<li>Best-case and worst-case analysis are not representative</li>
+<li>Worst-case analysis is very useful. You can be assured that the algorithm will never be slower than the worst case.</li>
+</ul>
+</section><section id="measuring-runtime-3" class="slide level2">
+<h2>Measuring Runtime</h2>
+<ul>
+<li>An <strong>average-case analysis</strong> attempts to determine the average amount of time among all possible inputs of the same size.</li>
+<li>Average-case analysis is ideal, but difficult to perform, because for many problems it is hard to determine the relative probabilities and distributions of various input instances.</li>
+<li>Worst-case analysis is easier to perform, so the analysis is generally conducted for the worst case.</li>
+</ul>
+</section><section id="example-linear-search" class="slide level2">
+<h2>Example: Linear Search</h2>
+<ul>
+<li>The linear search algorithm compares the key with the elements in the array sequentially until the key is found or the array is exhausted.</li>
+<li>If the key is not in the array, it requires n comparisons for an array of size n.</li>
+<li>If the key is in the array, it requires n/2 comparisons on average.</li>
+<li>The algorithm’s execution time is proportional to the size of the array.</li>
+</ul>
+</section><section id="example-linear-search-1" class="slide level2">
+<h2>Example: Linear Search</h2>
+<ul>
+<li>If you double the size of the array, you will expect the number of comparisons to double.</li>
+<li>The algorithm grows at a linear rate. The growth rate has an order of magnitude of n.</li>
+<li>Computer scientists use the Big O notation to represent the “order of magnitude.”</li>
+<li>Using this notation, the complexity of the linear search algorithm is O(n), pronounced as “order of n.”</li>
+</ul>
+</section><section id="example-linear-search-2" class="slide level2">
+<h2>Example: Linear Search</h2>
+<table>
+<thead>
+<tr class="header">
+<th>n\f(n)</th>
+<th>n</th>
+<th>n/2</th>
+<th>100n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100</td>
+<td>100</td>
+<td>50</td>
+<td>10,000</td>
+</tr>
+<tr class="even">
+<td>200</td>
+<td>200</td>
+<td>100</td>
+<td>20,000</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>f(n) = n, f(n) = n/2 and f(n) = 100n are all linear functions</li>
+<li>Doubling the size of n does yields the same growth rate for all three functions</li>
+</ul>
+</section><section id="example-array-maximum" class="slide level2">
+<h2>Example: Array Maximum</h2>
+<ul>
+<li>Consider the algorithm for finding the maximum number in an array of n elements.</li>
+<li>To find the maximum number if n is 2, it takes one comparison;</li>
+<li>if n is 3, two comparisons.</li>
+<li>In general, it takes n - 1 comparisons to find the maximum number in a list of n elements.</li>
+<li>So what is the order of magnitude for this algorithm? Hint: it’s not O(n-1)</li>
+</ul>
+</section><section id="example-array-maximum-1" class="slide level2">
+<h2>Example: Array Maximum</h2>
+<ul>
+<li>Algorithm analysis is for large input size.</li>
+<li>If the input size is small, there is no significance in estimating an algorithm’s efficiency.</li>
+<li>As n grows larger, the n part in the expression n - 1 dominates the complexity.</li>
+<li><strong>The Big O notation allows you to ignore the nondominating part</strong> (e.g., -1 in the expression n - 1) and <strong>highlight the important part</strong> (e.g., n in the expression n - 1).</li>
+<li>Therefore, the complexity of this algorithm is O(n).</li>
+</ul>
+</section><section id="constant-time" class="slide level2">
+<h2>Constant Time</h2>
+<ul>
+<li>If the time is not related to the input size, the algorithm is said to take constant time with the notation O(1).</li>
+<li>For example, a method that retrieves an element at a given index in an array takes <em>constant time</em>, because the time does not grow as the size of the array increases.</li>
+</ul>
+</section><section id="other-examples" class="slide level2">
+<h2>Other Examples</h2>
+<ul>
+<li>So far you have seen examples of:
+<ul>
+<li>O(n) “Linear”</li>
+<li>O(1) “Constant time”</li>
+</ul></li>
+<li>There are other orders of magnitude</li>
+</ul>
+</section><section id="other-examples-1" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">1 + 2 + 3 + ... + (n-2) + (n-1) = \frac{n(n-1)}{2} = O(?)</span></p>
+</section><section id="other-examples-2" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">1 + 2 + 3 + ... + (n-2) + (n-1) = \frac{n(n-1)}{2} = O(n^2)</span></p>
+</section><section id="other-examples-3" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">1 + 2 + 3 + ... + (n-1) + (n) = \frac{n(n+1)}{2} = O(?)</span></p>
+</section><section id="other-examples-4" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">1 + 2 + 3 + ... + (n-1) + (n) = \frac{n(n+1)}{2} = O(n^2)</span></p>
+</section><section id="other-examples-5" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">a^0 + a^1 + a^2 + a^3 + ... + a^{n-1} + a^n  = \frac{a^{n+1} - 1}{a-1} = O(?)</span></p>
+</section><section id="other-examples-6" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">a^0 + a^1 + a^2 + a^3 + ... + a^{n-1} + a^n  = \frac{a^{n+1} - 1}{a-1} = O(a^n)</span></p>
+</section><section id="other-examples-7" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">2^0 + 2^1 + 2^2 + 2^3 + ... + 2^{n-1} + 2^n  = \frac{2^{n+1} - 1}{2-1} = O(?)</span></p>
+</section><section id="other-examples-8" class="slide level2">
+<h2>Other Examples</h2>
+<p><span class="math display">2^0 + 2^1 + 2^2 + 2^3 + ... + a^{n-1} + 2^n  = \frac{2^{n+1} - 1}{2-1} = O(2^n)</span></p>
+</section><section id="orders-of-magnitude-covered" class="slide level2">
+<h2>Orders of Magnitude Covered</h2>
+<ul>
+<li>O(1) “Constant time”</li>
+<li>O(n) “Linear”</li>
+<li>O(n^2) “Quadratic”</li>
+<li>O(2^n) “Exponential”</li>
+</ul>
+</section><section id="two-complexity-measures" class="slide level2">
+<h2>Two Complexity Measures</h2>
+<ul>
+<li><em>Time complexity</em> is a measure of execution time using the Big-O notation. Similarly, you can also measure space complexity using the Big-O notation.</li>
+<li><em>Space complexity</em> measures the amount of memory space used by an algorithm.
+<ul>
+<li>The space complexity for most algorithms presented in the book is O(n). i.e., they exibit linear growth rate to the input size.</li>
+<li>For example, the space complexity for linear search is O(n).</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="determining-big-o-223" class="title-slide slide level1"><h1>Determining Big O (22.3)</h1></section><section id="big-o-example-1" class="slide level2">
+<h2>Big O Example 1</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb1-2" title="2">  k = k + <span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb1-3" title="3">}</a></code></pre></div>
+</section><section id="big-o-example-1-1" class="slide level2">
+<h2>Big O Example 1</h2>
+<ul>
+<li>The statement <code>k = k + 5;</code> is a constant time, <em>c</em>.<br />
+</li>
+<li>When it is put inside of the for loop, <code>for (int i = 1; i &lt;= n; i++)</code>, the time complexity becomes:</li>
+</ul>
+<p>T(n) = ( a constant <em>c</em> ) * n = O(n)</p>
+</section><section id="big-o-example-2" class="slide level2">
+<h2>Big O Example 2</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= n; j++) {</a>
+<a class="sourceLine" id="cb2-3" title="3">    k = k + i + j;</a>
+<a class="sourceLine" id="cb2-4" title="4">  }</a>
+<a class="sourceLine" id="cb2-5" title="5">}</a></code></pre></div>
+</section><section id="big-o-example-2-1" class="slide level2">
+<h2>Big O Example 2</h2>
+<ul>
+<li>The statement <code>k = k + i + j;</code> is a constant time, <em>c</em>.<br />
+</li>
+<li>The inner loop runs j times</li>
+<li>The outer loop runs i times</li>
+<li>So how many total times does the addition statement run?</li>
+</ul>
+</section><section id="big-o-example-2-2" class="slide level2">
+<h2>Big O Example 2</h2>
+<p>The time complexity for this loop is:</p>
+<p>T(n) = (a constant <em>c</em>) * n * n = O(n<sup>2</sup>)</p>
+<ul>
+<li>O(n<sup>2</sup>) is called a <strong>quadratic algorithm</strong>. When input size is doubled, the time quadruples</li>
+<li>Nested loops often create quadratic Big O’s</li>
+</ul>
+</section><section id="big-o-example-3" class="slide level2">
+<h2>Big O Example 3</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= i; j++) {</a>
+<a class="sourceLine" id="cb3-3" title="3">    k = k + i + j;</a>
+<a class="sourceLine" id="cb3-4" title="4">  }</a>
+<a class="sourceLine" id="cb3-5" title="5">}</a></code></pre></div>
+</section><section id="big-o-example-3-1" class="slide level2">
+<h2>Big O Example 3</h2>
+<ul>
+<li>The outer loop runs n times</li>
+<li>The inner loop is executed 1 time, then 2 times, then 3 times… up to n times.</li>
+<li>What is the time complexity?</li>
+</ul>
+</section><section id="big-o-example-3-2" class="slide level2">
+<h2>Big O Example 3</h2>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= c + 2c + 3c + 4c + ... + nc \\ &amp;= cn (n+1)/2 \\ &amp;= (c / 2) n^2 + (c / 2) n \\ &amp;= O(n^2)
+ \end{aligned} </span></p>
+</section><section id="big-o-example-4" class="slide level2">
+<h2>Big O Example 4</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= <span class="dv">20</span>; j++) {</a>
+<a class="sourceLine" id="cb4-3" title="3">    k = k + i + j;</a>
+<a class="sourceLine" id="cb4-4" title="4">  }</a>
+<a class="sourceLine" id="cb4-5" title="5">}</a></code></pre></div>
+</section><section id="big-o-example-4-1" class="slide level2">
+<h2>Big O Example 4</h2>
+<ul>
+<li>The inner loop executes 20 times, and the outer loop n times. Therefore, the time complexity for the loop is:</li>
+</ul>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= 20*c*n \\ &amp;= O(n)
+ \end{aligned} </span></p>
+</section><section id="big-o-example-5" class="slide level2">
+<h2>Big O Example 5</h2>
+<p>Consider the time complexity for the following loop:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= <span class="dv">10</span>; j++) {</a>
+<a class="sourceLine" id="cb5-2" title="2">  k = k + <span class="dv">4</span>;</a>
+<a class="sourceLine" id="cb5-3" title="3">}</a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb5-5" title="5">  <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= <span class="dv">20</span>; j++) {</a>
+<a class="sourceLine" id="cb5-6" title="6">    k = k + i + j;</a>
+<a class="sourceLine" id="cb5-7" title="7">  }</a>
+<a class="sourceLine" id="cb5-8" title="8">}</a></code></pre></div>
+</section><section id="big-o-example-5-1" class="slide level2">
+<h2>Big O Example 5</h2>
+<ul>
+<li>The first loop executes 10 times</li>
+<li>The second loop executes 20*n times</li>
+<li>What is the Big O for this code?</li>
+</ul>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= 10*c + 20*c*n \\ &amp;= O(?)
+  \end{aligned} </span></p>
+</section><section id="big-o-example-5-2" class="slide level2">
+<h2>Big O Example 5</h2>
+<ul>
+<li>The first loop executes 10 times</li>
+<li>The second loop executes 20*n times</li>
+<li><p>What is the Big O for this code?</p>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= 10*c + 20*c*n \\ &amp;= O(n)
+ \end{aligned} </span></p></li>
+</ul>
+</section><section id="big-o-example-6" class="slide level2">
+<h2>Big O Example 6</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">if</span> (list.<span class="fu">contains</span>(e)) {     </a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(e);</a>
+<a class="sourceLine" id="cb6-3" title="3">}</a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="kw">else</span></a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="kw">for</span> (<span class="bu">Object</span> t: list) {</a>
+<a class="sourceLine" id="cb6-6" title="6">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</a>
+<a class="sourceLine" id="cb6-7" title="7">  }</a></code></pre></div>
+<ul>
+<li>Suppose the list contains n elements</li>
+<li>The execution time for list.contains(e) is O(n)</li>
+<li>The loop in the else clause takes O(n) time.</li>
+<li>What is the time complexity for the entire statement?</li>
+</ul>
+</section><section id="big-o-example-6-1" class="slide level2">
+<h2>Big O Example 6</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">if</span> (list.<span class="fu">contains</span>(e)) {     </a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(e);</a>
+<a class="sourceLine" id="cb7-3" title="3">}</a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="kw">else</span></a>
+<a class="sourceLine" id="cb7-5" title="5">  <span class="kw">for</span> (<span class="bu">Object</span> t: list) {</a>
+<a class="sourceLine" id="cb7-6" title="6">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</a>
+<a class="sourceLine" id="cb7-7" title="7">  }</a></code></pre></div>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= if\ test\ time + worstcase\ test\ time \\ &amp;= O(n) + O(n) \\ &amp;= O(?)
+ \end{aligned} </span></p>
+</section><section id="big-o-example-6-2" class="slide level2">
+<h2>Big O Example 6</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">if</span> (list.<span class="fu">contains</span>(e)) {     </a>
+<a class="sourceLine" id="cb8-2" title="2"> <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(e);</a>
+<a class="sourceLine" id="cb8-3" title="3">}</a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="kw">else</span></a>
+<a class="sourceLine" id="cb8-5" title="5"> <span class="kw">for</span> (<span class="bu">Object</span> t: list) {</a>
+<a class="sourceLine" id="cb8-6" title="6">   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(t);</a>
+<a class="sourceLine" id="cb8-7" title="7"> }</a></code></pre></div>
+<p><span class="math display"> \begin{aligned}T(n) &amp;= if\ test\ time + worstcase\ test\ time \\ &amp;= O(n) + O(n) \\ &amp;= O(n)
+\end{aligned} </span></p>
+</section><section id="big-o-example-7" class="slide level2">
+<h2>Big O Example 7</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1">result = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++)</a>
+<a class="sourceLine" id="cb9-3" title="3">  result *= a;</a></code></pre></div>
+<p>What is the execution time?</p>
+</section><section id="big-o-example-7-1" class="slide level2">
+<h2>Big O Example 7</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1">result = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++)</a>
+<a class="sourceLine" id="cb10-3" title="3">  result *= a;</a></code></pre></div>
+<p><span class="math display"> O(n) </span></p>
+</section><section id="big-o-example-7-2" class="slide level2">
+<h2>Big O Example 7</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1">result = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; i++)</a>
+<a class="sourceLine" id="cb11-3" title="3">  result *= a;</a></code></pre></div>
+<p>What if we knew that <span class="math inline">n=2^k</span> for some k?</p>
+</section><section id="big-o-example-7-3" class="slide level2">
+<h2>Big O Example 7</h2>
+<p>We could improve the algorithm like this:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1">result = a;</a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= k; i++)</a>
+<a class="sourceLine" id="cb12-3" title="3">  result = result*result;</a></code></pre></div>
+<p>We don’t know that <span class="math inline">n=2^k</span> for some k, but the algorithm can be revised to prove that the complexity is still O(log n) for the general case for n.</p>
+</section></section>
+<section><section id="practice" class="title-slide slide level1"><h1>Practice</h1></section><section id="practice-1-count-iterations" class="slide level2">
+<h2>Practice 1: Count Iterations</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1"><span class="dt">int</span> count = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="kw">while</span> (count &lt; <span class="dv">30</span>) {</a>
+<a class="sourceLine" id="cb13-3" title="3">  count = count * <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb13-4" title="4">}</a></code></pre></div>
+</section><section id="practice-2-count-iterations" class="slide level2">
+<h2>Practice 2: Count Iterations</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="dt">int</span> count = <span class="dv">15</span>;</a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="kw">while</span> (count &lt; <span class="dv">30</span>) {</a>
+<a class="sourceLine" id="cb14-3" title="3">  count = count * <span class="dv">3</span>;</a>
+<a class="sourceLine" id="cb14-4" title="4">}</a></code></pre></div>
+</section><section id="practice-3-count-stars" class="slide level2">
+<h2>Practice 3: Count Stars</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="ch">&#39;*&#39;</span>);</a>
+<a class="sourceLine" id="cb15-3" title="3">}</a></code></pre></div>
+</section><section id="practice-4-count-iterations" class="slide level2">
+<h2>Practice 4: Count Iterations</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; n; k++) {</a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</a>
+<a class="sourceLine" id="cb16-3" title="3">    <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; n; j++) {</a>
+<a class="sourceLine" id="cb16-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="ch">&#39;*&#39;</span>);</a>
+<a class="sourceLine" id="cb16-5" title="5">    }   </a>
+<a class="sourceLine" id="cb16-6" title="6">  }</a>
+<a class="sourceLine" id="cb16-7" title="7">}</a></code></pre></div>
+</section><section id="practice-5-time-complexity" class="slide level2">
+<h2>Practice 5: Time Complexity</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mA</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb17-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</a>
+<a class="sourceLine" id="cb17-3" title="3">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="bu">Math</span>.<span class="fu">random</span>());</a>
+<a class="sourceLine" id="cb17-4" title="4">  }</a>
+<a class="sourceLine" id="cb17-5" title="5">}</a></code></pre></div>
+</section><section id="practice-6-time-complexity" class="slide level2">
+<h2>Practice 6: Time Complexity</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mB</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb18-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++) {</a>
+<a class="sourceLine" id="cb18-3" title="3">    <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; i; j++)</a>
+<a class="sourceLine" id="cb18-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="bu">Math</span>.<span class="fu">random</span>());</a>
+<a class="sourceLine" id="cb18-5" title="5">  }</a>
+<a class="sourceLine" id="cb18-6" title="6">}</a></code></pre></div>
+</section><section id="practice-7-time-complexity" class="slide level2">
+<h2>Practice 7: Time Complexity</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mC</span>(<span class="dt">int</span>[ ] m) {</a>
+<a class="sourceLine" id="cb19-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; m.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb19-3" title="3">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(m[i]);</a>
+<a class="sourceLine" id="cb19-4" title="4">  }</a>
+<a class="sourceLine" id="cb19-5" title="5">  <span class="kw">for</span> (<span class="dt">int</span> i = m.<span class="fu">length</span> - <span class="dv">1</span>; i &gt;= <span class="dv">0</span>; ) {</a>
+<a class="sourceLine" id="cb19-6" title="6">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(m[i]);</a>
+<a class="sourceLine" id="cb19-7" title="7">    i--;</a>
+<a class="sourceLine" id="cb19-8" title="8">  }</a>
+<a class="sourceLine" id="cb19-9" title="9">}</a></code></pre></div>
+</section><section id="practice-8-time-complexity" class="slide level2">
+<h2>Practice 8: Time Complexity</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">mD</span>(<span class="dt">int</span>[] m) {</a>
+<a class="sourceLine" id="cb20-2" title="2">  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; m.<span class="fu">length</span>; i++) {</a>
+<a class="sourceLine" id="cb20-3" title="3">    <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; i; j++)</a>
+<a class="sourceLine" id="cb20-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(m[i] * m[j]);</a>
+<a class="sourceLine" id="cb20-5" title="5">  }</a>
+<a class="sourceLine" id="cb20-6" title="6">}</a></code></pre></div>
+</section></section>
+<section id="analyzing-complexity-22.4" class="title-slide slide level1"><h1>Analyzing Complexity (22.4)</h1></section>
+<section><section id="binary-search" class="title-slide slide level1"><h1>Binary Search</h1></section><section id="binary-search-1" class="slide level2">
+<h2>Binary Search</h2>
+<p>Remember binary search?</p>
+<p>On a sorted array, we:</p>
+<ol type="1">
+<li>“Guess” that the middle element is our key.</li>
+<li>If the middle element is greater or less than our key, repeat the search using the second or first half of the array, respectively</li>
+<li>When you find the key, or our subarray reached zero length, stop.</li>
+</ol>
+</section><section id="binary-search-2" class="slide level2">
+<h2>Binary Search</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">binarySearch</span>(<span class="dt">int</span>[] list, <span class="dt">int</span> key) {</a>
+<a class="sourceLine" id="cb21-2" title="2">  <span class="dt">int</span> low = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb21-3" title="3">  <span class="dt">int</span> high = list.<span class="fu">length</span> - <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb21-4" title="4">  <span class="kw">while</span> (high &gt;= low) {</a>
+<a class="sourceLine" id="cb21-5" title="5">    <span class="dt">int</span> mid = (low + high) / <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb21-6" title="6">    <span class="kw">if</span> (key &lt; list[mid])</a>
+<a class="sourceLine" id="cb21-7" title="7">      high = mid - <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb21-8" title="8">    <span class="kw">else</span> <span class="kw">if</span> (key == list[mid])</a>
+<a class="sourceLine" id="cb21-9" title="9">      <span class="kw">return</span> mid;</a>
+<a class="sourceLine" id="cb21-10" title="10">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb21-11" title="11">      low = mid + <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb21-12" title="12">  }</a>
+<a class="sourceLine" id="cb21-13" title="13">  <span class="kw">return</span> -low - <span class="dv">1</span>; <span class="co">// Now high &lt; low</span></a>
+<a class="sourceLine" id="cb21-14" title="14">}</a></code></pre></div>
+</section><section id="binary-search-3" class="slide level2">
+<h2>Binary Search</h2>
+<ul>
+<li>Each iteration in the algorithm contains a fixed number of operations, denoted by c.</li>
+<li>Let T(n) denote the time complexity for a binary search on a list of n elements.</li>
+<li>Without loss of generality, assume n is a power of 2 and k = log n.</li>
+</ul>
+</section><section id="binary-search-4" class="slide level2">
+<h2>Binary Search</h2>
+<ul>
+<li>Since a binary search eliminates half of the input after two comparisons:</li>
+</ul>
+<p><span class="math display"> \begin{aligned}T\Big(n\Big) &amp;= T  \Big(\frac{n}{2}\Big) + c = T\Big(\frac{n}{2^2}\Big) + c + c = T\Big(\frac{n}{2^k}\Big) + kc \\ &amp;= T\Big(1\Big) + c\ log\ n =1 + (log\ n) c \\ &amp;= O(log\ n) \end{aligned} </span></p>
+</section></section>
+<section><section id="selection-sort" class="title-slide slide level1"><h1>Selection Sort</h1></section><section id="selection-sort-algorithm" class="slide level2">
+<h2>Selection Sort Algorithm</h2>
+<ol type="1">
+<li>Find the smallest element in the list and swaps it with the first element.</li>
+<li>Find the smallest element remaining and swaps it with the first element in the remaning list</li>
+<li>Repeat until only one element is left.</li>
+</ol>
+</section><section id="selection-sort-analysis" class="slide level2">
+<h2>Selection Sort Analysis</h2>
+<ul>
+<li>The number of comparisons is n - 1 for the first iteration, n - 2 for the second iteration, and so on.</li>
+<li>Let T(n) denote the complexity for selection sort</li>
+<li>Let c denote the total number of other operations such as assignments and additional comparisons in each iteration.</li>
+<li>What is Big O for Selection Sort?</li>
+</ul>
+</section><section id="selection-sort-analysis-1" class="slide level2">
+<h2>Selection Sort Analysis</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= (n - 1) + c + (n - 2) + c + ... + 2 + c + 1 + c \\
+&amp;= \frac{(n - 1)(n - 1 + 1)}{2} + c(n-1) = \frac{n^2}{2} - \frac{n}{2} +cn-c \\
+&amp;= O(?) \end{aligned} </span></p>
+</section><section id="selection-sort-analysis-2" class="slide level2">
+<h2>Selection Sort Analysis</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= (n - 1) + c + (n - 2) + c + ... + 2 + c + 1 + c \\
+&amp;= \frac{(n - 1)(n - 1 + 1)}{2} + c(n-1) = \frac{n^2}{2} - \frac{n}{2} +cn-c \\
+&amp;= O(n^2) \end{aligned} </span></p>
+<p>The complexity of the selection sort algorithm is <strong>O(n<sup>2</sup>)</strong>.</p>
+</section></section>
+<section><section id="tower-of-hanoi" class="title-slide slide level1"><h1>Tower of Hanoi</h1></section><section id="tower-of-hanoi-algorithm" class="slide level2">
+<h2>Tower of Hanoi Algorithm</h2>
+<ol type="1">
+<li>Move the first n - 1 disks from A to C with the assistance of tower B.</li>
+<li>Move disk n from A to B.</li>
+<li>Move n - 1 disks from C to B with the assistance of tower A.</li>
+</ol>
+</section><section id="tower-of-hanoi-analysis" class="slide level2">
+<h2>Tower of Hanoi Analysis</h2>
+<ul>
+<li>The complexity of this algorithm is measured by the number of moves.</li>
+<li>Let T(n) denote the number of moves for the algorithm to move n disks from tower A to tower B with <span class="math inline">T(1) = 1.</span></li>
+<li>What is the time complexity of the Tower of Hanoi algorithm?</li>
+</ul>
+</section><section id="tower-of-hanoi-analysis-1" class="slide level2">
+<h2>Tower of Hanoi Analysis</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= T(n-1) + 1 + T(n-1) \\
+ \end{aligned} </span></p>
+</section><section id="tower-of-hanoi-analysis-2" class="slide level2">
+<h2>Tower of Hanoi Analysis</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= T(n-1) + 1 + T(n-1) \\
+&amp;=2T(n-1) + 1 \\
+\end{aligned} </span></p>
+</section><section id="tower-of-hanoi-analysis-3" class="slide level2">
+<h2>Tower of Hanoi Analysis</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= T(n-1) + 1 + T(n-1) \\
+&amp;=2T(n-1) + 1 \\
+&amp;= 2(2T(n-2)+1)+1\\
+ \end{aligned} </span></p>
+</section><section id="tower-of-hanoi-analysis-4" class="slide level2">
+<h2>Tower of Hanoi Analysis</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= T(n-1) + 1 + T(n-1) \\
+&amp;=2T(n-1) + 1 \\
+&amp;= 2(2T(n-2)+1)+1\\
+&amp;= 2(2(2T(n-3) + 1)+1)+1 \\
+ \end{aligned} </span></p>
+</section><section id="tower-of-hanoi-analysis-5" class="slide level2">
+<h2>Tower of Hanoi Analysis</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= T(n-1) + 1 + T(n-1) \\
+&amp;=2T(n-1) + 1 \\
+&amp;= 2(2T(n-2)+1)+1\\
+&amp;= 2(2(2T(n-3) + 1)+1)+1 \\
+&amp;= 2^{n-1} T(1)  + 2^{n-2} + ... + 2 + 1 \\
+\end{aligned} </span></p>
+</section><section id="tower-of-hanoi-analysis-6" class="slide level2">
+<h2>Tower of Hanoi Analysis</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= T(n-1) + 1 + T(n-1) \\
+&amp;=2T(n-1) + 1 \\
+&amp;= 2(2T(n-2)+1)+1\\
+&amp;= 2(2(2T(n-3) + 1)+1)+1 \\
+&amp;= 2^{n-1} T(1)  + 2^{n-2} + ... + 2 + 1 \\
+&amp;= 2^{n-1} + 2^{n-2} + ... + 2 + 1 = (2^n -1 ) \\
+&amp;= O(?)
+\end{aligned} </span></p>
+</section><section id="tower-of-hanoi-analysis-7" class="slide level2">
+<h2>Tower of Hanoi Analysis</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= T(n-1) + 1 + T(n-1) \\
+&amp;=2T(n-1) + 1 \\
+&amp;= 2(2T(n-2)+1)+1\\
+&amp;= 2(2(2T(n-3) + 1)+1)+1 \\
+&amp;= 2^{n-1} T(1)  + 2^{n-2} + ... + 2 + 1 \\
+&amp;= 2^{n-1} + 2^{n-2} + ... + 2 + 1 = (2^n -1 ) \\
+&amp;= O(2^n)
+\end{aligned} </span></p>
+<p>The Big O of Tower of Hanoi is <strong>O(2<sup>n</sup>)</strong>.</p>
+</section><section id="tower-of-hanoi-analysis-8" class="slide level2">
+<h2>Tower of Hanoi Analysis</h2>
+<ul>
+<li>An algorithm with O(2<sup>n</sup>) time complexity is called an exponential algorithm, and it exhibits an exponential growth rate.</li>
+<li>As the input size increases, the time for the exponential algorithm grows exponentially.</li>
+</ul>
+</section><section id="exponential-algorithms" class="slide level2">
+<h2>Exponential Algorithms</h2>
+<ul>
+<li>Exponential algorithms are not practical for large input size.</li>
+<li>Suppose the disk is moved at a rate of 1 per second.</li>
+<li>It would take 232/(365 * 24 * 60 * 60) = 136 years to move 32 disks</li>
+<li>It would take 264/(365 * 24 * 60 * 60) = 585 billion years to move 64 disks.</li>
+</ul>
+</section><section id="recurrence-relations" class="slide level2 tinyslide">
+<h2>Recurrence Relations</h2>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 22%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Recurrence Relation</th>
+<th>Result</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">T(n) = T(n/2) + O(1)</span></td>
+<td><span class="math inline">T(n) = O(log\ n)</span></td>
+<td>Binary search, Euclid’s GCD</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">T(n) = T(n - 1) + O(1)</span></td>
+<td><span class="math inline">T(n) = O(n)</span></td>
+<td>Linear search</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">T(n) = 2T(n/2) + O(1)</span></td>
+<td><span class="math inline">T(n) = O(n)</span></td>
+<td>Checkpoint Question 22.20</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">T(n) = 2T(n/2) + O(n)</span></td>
+<td><span class="math inline">T(n) = O(n\ log\ n)</span></td>
+<td>Merge sort (Chapter 23)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">T(n) = T(n - 1) + O(n)</span></td>
+<td><span class="math inline">T(n) = O(n^2)</span></td>
+<td>Selection sort</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">T(n) = 2T(n - 1) + O(1)</span></td>
+<td><span class="math inline">T(n) = O(2^n)</span></td>
+<td>Tower of Hanoi</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">T(n) = T(n - 1) + T(n - 2) + O(1)</span></td>
+<td><span class="math inline">T(n) = O( 2^n )</span></td>
+<td>Recursive Fibonacci algorithm</td>
+</tr>
+</tbody>
+</table>
+</section><section id="comparing-common-growth-rates" class="slide level2 tinyslide">
+<h2>Comparing Common Growth Rates</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Name</th>
+<th>n=25</th>
+<th>n=50</th>
+<th>f(50)/f(25)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>O(1)</td>
+<td>Constant time</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>O(log n)</td>
+<td>Logarithmic time</td>
+<td>4.64</td>
+<td>5.64</td>
+<td>1.21</td>
+</tr>
+<tr class="odd">
+<td>O(n)</td>
+<td>Linear time</td>
+<td>25</td>
+<td>50</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>O(n log n)</td>
+<td>Log-linear time</td>
+<td>116</td>
+<td>282</td>
+<td>2.43</td>
+</tr>
+<tr class="odd">
+<td>O(n<sup>2</sup>)</td>
+<td>Quadratic time</td>
+<td>625</td>
+<td>2,500</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>O(n<sup>3</sup>)</td>
+<td>Cubic time</td>
+<td>15,625</td>
+<td>125,000</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>O(2<sup>n</sup>)</td>
+<td>Exponential time</td>
+<td>3.36 * 10<sup>7</sup></td>
+<td>1.27 * 10<sup>15</sup></td>
+<td>3.35 * 10<sup>7</sup></td>
+</tr>
+</tbody>
+</table>
+</section><section id="comparing-growth-rates" class="slide level2">
+<h2>Comparing Growth Rates</h2>
+<p>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n)</p>
+<p>&lt; O(n<sup>2</sup>) &lt; O(n<sup>3</sup>) &lt; O(2<sup>n</sup>)</p>
+</section><section id="comparing-growth-rates-1" class="slide level2">
+<h2>Comparing Growth Rates</h2>
+<img data-src="lecture5-diagram2.png" title="fig:" alt="Comparing Growth Rates" class="stretch" />
+</section><section id="comparing-growth-rates-2" class="slide level2">
+<h2>Comparing Growth Rates</h2>
+<figure>
+<img data-src="lecture5-diagram3.png" alt="Comparing Growth Rates (from bigocheatsheet.com)" width="700" /><figcaption>Comparing Growth Rates (from bigocheatsheet.com)</figcaption>
+</figure>
+</section></section>
+<section><section id="fibonacci-using-dynamic-programming-22.5" class="title-slide slide level1"><h1>Fibonacci Using Dynamic Programming (22.5)</h1></section><section id="recursive-fibonacci" class="slide level2">
+<h2>Recursive Fibonacci</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1"><span class="co">/**</span> The method for finding the Fibonacci number <span class="co">*/</span></a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">fib</span>(<span class="dt">long</span> index) {</a>
+<a class="sourceLine" id="cb22-3" title="3">  <span class="kw">if</span> (index == <span class="dv">0</span>) <span class="co">// Base case</span></a>
+<a class="sourceLine" id="cb22-4" title="4">    <span class="kw">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb22-5" title="5">  <span class="kw">else</span> <span class="kw">if</span> (index == <span class="dv">1</span>) <span class="co">// Base case</span></a>
+<a class="sourceLine" id="cb22-6" title="6">    <span class="kw">return</span> <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb22-7" title="7">  <span class="kw">else</span> <span class="co">// Reduction and recursive calls</span></a>
+<a class="sourceLine" id="cb22-8" title="8">    <span class="kw">return</span> <span class="fu">fib</span>(index - <span class="dv">1</span>) + <span class="fu">fib</span>(index - <span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb22-9" title="9">}</a></code></pre></div>
+</section><section id="recursive-fibonacci-1" class="slide level2">
+<h2>Recursive Fibonacci</h2>
+<ul>
+<li>We can now prove that the complexity of this algorithm is O(2<sup>n</sup>).</li>
+<li>For convenience, let the index be n.</li>
+<li>Let T(n) denote the complexity for the algorithm that finds fib(n)</li>
+<li>Let c denote the constant time for comparing the index with 0 and 1;</li>
+<li>That is, T(1) and T(0) are c.</li>
+</ul>
+</section><section id="recursive-fibonacci-2" class="slide level2">
+<h2>Recursive Fibonacci</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= T(n - 1) + T(n - 2) + c \\
+&amp;\leq 2T(n-1)+c \\
+&amp;\leq 2(2T(n-2)+c)+c \\
+&amp;= 2^2 T(n - 2) + 2c + c \\
+&amp;= O(?)\end{aligned}</span></p>
+</section><section id="recursive-fibonacci-3" class="slide level2">
+<h2>Recursive Fibonacci</h2>
+<p><span class="math display"> \begin{aligned} T(n) &amp;= T(n - 1) + T(n - 2) + c \\
+&amp;\leq 2T(n-1)+c \\
+&amp;\leq 2(2T(n-2)+c)+c \\
+&amp;= 2^2 T(n - 2) + 2c + c \\
+&amp;= O(2^n)\end{aligned}</span></p>
+</section><section id="recursive-fibonacci-4" class="slide level2">
+<h2>Recursive Fibonacci</h2>
+<ul>
+<li>O(2<sup>n</sup>) this algorithm is not efficient.</li>
+<li>What makes this algorithm so inefficient?</li>
+</ul>
+</section><section id="recursive-fibonacci-5" class="slide level2">
+<h2>Recursive Fibonacci</h2>
+<ul>
+<li class="fragment">O(2<sup>n</sup>) this algorithm is not efficient.</li>
+<li class="fragment">What makes this algorithm so inefficient?</li>
+<li class="fragment">It is inefficient because it makes redundant calculations</li>
+<li class="fragment"><span class="math inline">fib(4) = fib(3) + fib(2)</span></li>
+<li class="fragment"><span class="math inline">fib(3) = fib (2) + fib(1)</span></li>
+<li class="fragment">…</li>
+<li class="fragment">What if we saved fib(2) instead of calculating it twice?</li>
+</ul>
+</section></section>
+<section><section id="improved-fibonacci-22.5" class="title-slide slide level1"><h1>Improved Fibonacci (22.5)</h1></section><section id="improved-fibonacci" class="slide level2">
+<h2>Improved Fibonacci</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">fib</span>(<span class="dt">long</span> n) {   </a>
+<a class="sourceLine" id="cb23-2" title="2">    <span class="dt">long</span> f0 = <span class="dv">0</span>; <span class="co">// For fib(0)</span></a>
+<a class="sourceLine" id="cb23-3" title="3">    <span class="dt">long</span> f1 = <span class="dv">1</span>; <span class="co">// For fib(1)</span></a>
+<a class="sourceLine" id="cb23-4" title="4">    <span class="dt">long</span> f2 = <span class="dv">1</span>; <span class="co">// For fib(2)</span></a>
+<a class="sourceLine" id="cb23-5" title="5">    <span class="kw">if</span> (n == <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb23-6" title="6">      <span class="kw">return</span> f0;</a>
+<a class="sourceLine" id="cb23-7" title="7">    <span class="kw">else</span> <span class="kw">if</span> (n == <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb23-8" title="8">      <span class="kw">return</span> f1;</a>
+<a class="sourceLine" id="cb23-9" title="9">    <span class="kw">else</span> <span class="kw">if</span> (n == <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb23-10" title="10">      <span class="kw">return</span> f2;</a>
+<a class="sourceLine" id="cb23-11" title="11">    ...</a></code></pre></div>
+</section><section id="improved-fibonacci-o" class="slide level2">
+<h2>Improved Fibonacci O(?)</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" title="1">    ...</a>
+<a class="sourceLine" id="cb24-2" title="2">    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">3</span>; i &lt;= n; i++) {</a>
+<a class="sourceLine" id="cb24-3" title="3">      f0 = f1;</a>
+<a class="sourceLine" id="cb24-4" title="4">      f1 = f2;</a>
+<a class="sourceLine" id="cb24-5" title="5">      f2 = f0 + f1;</a>
+<a class="sourceLine" id="cb24-6" title="6">    }  </a>
+<a class="sourceLine" id="cb24-7" title="7">    <span class="kw">return</span> f2;</a>
+<a class="sourceLine" id="cb24-8" title="8">  }</a></code></pre></div>
+</section><section id="improved-fibonacci-analysis" class="slide level2">
+<h2>Improved Fibonacci Analysis</h2>
+<p>This improved Fibonacci algorithm is <span class="math inline">O(n)</span></p>
+</section></section>
+<section><section id="greatest-common-divisors-22.6" class="title-slide slide level1"><h1>Greatest Common Divisors (22.6)</h1></section><section id="greatest-common-divisors" class="slide level2">
+<h2>Greatest Common Divisors</h2>
+<ul>
+<li>In algebra we seek to find the Greatest Common Divisors (GCD)</li>
+<li>For example, the GCD of 12 and 8 is 4</li>
+<li>There are different solutions for GCD.<br />
+</li>
+<li>For this exercise, m and n are our inputs and we assume <span class="math inline">m \geq n</span>.</li>
+</ul>
+</section><section id="brute-force-methods" class="slide level2">
+<h2>Brute Force Methods</h2>
+<ul>
+<li><strong>Brute force</strong> refers to an algorithmic approach that solves a problem in the simplest or most direct or obvious way.</li>
+<li>As a result, such an algorithm can end up doing far more work to solve a given problem than a cleverer or more sophisticated algorithm might do.</li>
+<li>On the other hand, a brute-force algorithm is often easier to implement than a more sophisticated one and, because of this simplicity, sometimes it can be more efficient.</li>
+</ul>
+</section><section id="gcd-brute-force" class="slide level2">
+<h2>GCD Brute Force</h2>
+<ul>
+<li>Given integers <em>m</em> and <em>n</em>, check every element from 2 up to the larger of <em>m</em> and <em>n</em> to see if it is a divisor of both</li>
+<li>Return the GCD</li>
+</ul>
+</section><section id="gcd-1-brute-force-o" class="slide level2">
+<h2>GCD 1: Brute Force O(?)</h2>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">gcd</span>(<span class="dt">int</span> m, <span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb25-2" title="2">  <span class="dt">int</span> gcd = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb25-3" title="3">  <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">2</span>; k &lt;= m &amp;&amp; k &lt;= n; k++) {</a>
+<a class="sourceLine" id="cb25-4" title="4">    <span class="kw">if</span> (m % k == <span class="dv">0</span> &amp;&amp; n % k == <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb25-5" title="5">      gcd = k;</a>
+<a class="sourceLine" id="cb25-6" title="6">  }</a>
+<a class="sourceLine" id="cb25-7" title="7">  <span class="kw">return</span> gcd;</a>
+<a class="sourceLine" id="cb25-8" title="8">}</a></code></pre></div>
+</section><section id="gcd-1-brute-force" class="slide level2">
+<h2>GCD 1: Brute Force</h2>
+<ul>
+<li class="fragment"><span class="math inline">O(n)</span></li>
+<li class="fragment">How could we improve it?</li>
+<li class="fragment">What if we checked from the top down instead of bottom up?</li>
+</ul>
+</section><section id="gcd-2-o" class="slide level2">
+<h2>GCD 2 O(?)</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> k = n; k &gt;= <span class="dv">1</span>; k--) {</a>
+<a class="sourceLine" id="cb26-2" title="2">  <span class="kw">if</span> (m % k == <span class="dv">0</span> &amp;&amp; n % k == <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb26-3" title="3">    gcd = k;</a>
+<a class="sourceLine" id="cb26-4" title="4">    <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb26-5" title="5">  }</a>
+<a class="sourceLine" id="cb26-6" title="6">}</a></code></pre></div>
+</section><section id="gcd-2" class="slide level2">
+<h2>GCD 2</h2>
+<ul>
+<li class="fragment">Better than GCD Brute Force 1</li>
+<li class="fragment">What is the time complexity?</li>
+<li class="fragment">Worst case is still <span class="math inline">O(n)</span></li>
+<li class="fragment">Observation: a divisor cannot by more than half of a number. So we can begin our search there instead of at n.</li>
+</ul>
+</section><section id="gcd-3-o" class="slide level2">
+<h2>GCD 3 O(?)</h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> k = m / <span class="dv">2</span>; k &gt;= <span class="dv">1</span>; k--) {</a>
+<a class="sourceLine" id="cb27-2" title="2">  <span class="kw">if</span> (m % k == <span class="dv">0</span> &amp;&amp; n % k == <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb27-3" title="3">    gcd = k;</a>
+<a class="sourceLine" id="cb27-4" title="4">    <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb27-5" title="5">  }</a>
+<a class="sourceLine" id="cb27-6" title="6">}</a></code></pre></div>
+</section><section id="gcd-3" class="slide level2">
+<h2>GCD 3</h2>
+<ul>
+<li class="fragment">Oops, this algorithm is faster but incorrect</li>
+<li class="fragment">It doesn’t consider than <em>n</em> can be a divisor for <em>m</em></li>
+</ul>
+</section><section id="gcd-4-o" class="slide level2">
+<h2>GCD 4 O(?)</h2>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">gcd</span>(<span class="dt">int</span> m, <span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb28-2" title="2">  <span class="dt">int</span> gcd = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb28-3" title="3">  <span class="kw">if</span> (m % n == <span class="dv">0</span>) <span class="kw">return</span> n;</a>
+<a class="sourceLine" id="cb28-4" title="4">  <span class="kw">for</span> (<span class="dt">int</span> k = n / <span class="dv">2</span>; k &gt;= <span class="dv">1</span>; k--) {</a>
+<a class="sourceLine" id="cb28-5" title="5">    <span class="kw">if</span> (m % k == <span class="dv">0</span> &amp;&amp; n % k == <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb28-6" title="6">      gcd = k;</a>
+<a class="sourceLine" id="cb28-7" title="7">      <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb28-8" title="8">    }</a>
+<a class="sourceLine" id="cb28-9" title="9">  }</a>
+<a class="sourceLine" id="cb28-10" title="10">  <span class="kw">return</span> gcd;</a>
+<a class="sourceLine" id="cb28-11" title="11">}</a></code></pre></div>
+</section><section id="gcd-4" class="slide level2">
+<h2>GCD 4</h2>
+<ul>
+<li class="fragment">Assuming m <span class="math inline">\geq</span> n, the for loop is executed at most n/2 times</li>
+<li class="fragment">This cuts the time in half from the previous algorithm</li>
+<li class="fragment">T time complexity is still <span class="math inline">O(n)</span>, but practically, it is much faster than GCD 2</li>
+</ul>
+</section><section id="euclid" class="slide level2">
+<h2>Euclid</h2>
+<ul>
+<li>Euclid was a Greek Mathematician</li>
+<li>the “father of geometry”</li>
+<li>Born around 300 B.C.</li>
+<li>Invented a solution to Greatest Common Divisor</li>
+</ul>
+</section><section id="euclids-gcd" class="slide level2">
+<h2>Euclid’s GCD</h2>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">gcd</span>(<span class="dt">int</span> m, <span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb29-2" title="2">  <span class="kw">if</span> (m % n == <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb29-3" title="3">    <span class="kw">return</span> n;</a>
+<a class="sourceLine" id="cb29-4" title="4">  <span class="kw">else</span></a>
+<a class="sourceLine" id="cb29-5" title="5">    <span class="kw">return</span> <span class="fu">gcd</span>(n, m % n);</a>
+<a class="sourceLine" id="cb29-6" title="6">}</a></code></pre></div>
+</section><section id="euclids-gcd-analysis" class="slide level2">
+<h2>Euclid’s GCD Analysis</h2>
+<ul>
+<li class="fragment">Best case is when <span class="math inline">m \% n = 0 : O(n)</span></li>
+<li class="fragment">Average case is hard to determine</li>
+<li class="fragment">What about worst case?</li>
+</ul>
+</section><section id="euclids-gcd-analysis-1" class="slide level2">
+<h2>Euclid’s GCD Analysis</h2>
+<ul>
+<li>If <span class="math inline">n \leq m / 2, m \% n &lt; m / 2</span> since the remainder of m divided by n is always less than n.</li>
+<li>If <span class="math inline">n \gt m / 2, m \% n = m – n \lt m / 2</span>.</li>
+<li>Therefore <span class="math inline">m \% n &lt; m/2</span></li>
+<li>Let’s follow the recursive calls</li>
+</ul>
+</section><section id="euclids-gcd-analysis-2" class="slide level2">
+<h2>Euclid’s GCD Analysis</h2>
+<ul>
+<li class="fragment"><span class="math inline">gcd(m, n)</span></li>
+<li class="fragment"><span class="math inline">gcd(n, m \% n)</span></li>
+<li class="fragment"><span class="math inline">gcd(m \% n, n \% (m \% n))</span></li>
+<li class="fragment">…</li>
+</ul>
+</section><section id="euclids-gcd-analysis-3" class="slide level2">
+<h2>Euclid’s GCD Analysis</h2>
+<ul>
+<li class="fragment">Since <span class="math inline">m % n &lt; m / 2</span> and <span class="math inline">n % (m % n) &lt; n / 2</span> ,the argument passed to the gcd method is reduced by half after every two iterations.</li>
+<li class="fragment">After invoking gcd two times, the second parameter is less than n/2.</li>
+<li class="fragment">After invoking gcd four times, the second parameter is less than n/4.</li>
+</ul>
+</section><section id="euclids-gcd-analysis-4" class="slide level2">
+<h2>Euclid’s GCD Analysis</h2>
+<ul>
+<li>After invoking gcd six times, the second parameter is less than <span class="math inline">\frac{n}{2^3}</span>.</li>
+<li>Let k be the number of times gcd is invoked</li>
+<li>After invoking gcd k times, the second parameter is less than ______</li>
+</ul>
+</section><section id="euclids-gcd-analysis-5" class="slide level2">
+<h2>Euclid’s GCD Analysis</h2>
+<ul>
+<li class="fragment">After invoking gcd k times, the second parameter is less than <span class="math inline">\frac{n}{2^{k/2}}</span> which is greater than or equal to 1:</li>
+<li class="fragment"><span class="math inline">\frac{n}{2^{k/2}} \geq 1 =&gt; n \geq 2^{k/2} =&gt; k \leq 2 \log n</span></li>
+<li class="fragment">Therefore, <span class="math inline">k \leq 2\log n</span></li>
+<li class="fragment">So the time complexity of Euclid’s GCD is:</li>
+<li class="fragment"><span class="math inline">O(\log n)</span></li>
+</ul>
+</section><section id="gcd-algorithm-analyis" class="slide level2">
+<h2>GCD Algorithm Analyis</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Code Listing</th>
+<th>Complexity</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GCD 1</td>
+<td>O(n)</td>
+<td>Brute-force, checking all possible divisors</td>
+</tr>
+<tr class="even">
+<td>GCD 2</td>
+<td>O(n)</td>
+<td>Checking half of all possible divisors</td>
+</tr>
+<tr class="odd">
+<td>Euclid’s GCD</td>
+<td>O(log n)</td>
+<td>Euclid’s algorithm</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section><section id="prime-numbers-22.7" class="title-slide slide level1"><h1>Prime Numbers (22.7)</h1></section><section id="prime-numbers" class="slide level2">
+<h2>Prime Numbers</h2>
+<ul>
+<li>Can you design a fast algorithm for finding prime numbers?</li>
+<li>An integer greater than 1 is prime if its only positive divisor is 1 or itself.</li>
+<li>For example, 2, 3, 5, and 7 are prime numbers</li>
+<li>4, 6, 8, and 9 are not prime</li>
+</ul>
+</section><section id="prime-s-algorithms" class="slide level2">
+<h2>Prime #‘s’ Algorithms</h2>
+<ol type="1">
+<li class="fragment">Check <span class="math inline">2, 3, 4, 5, ... n - 1</span> to see if it is divisible by n O(n)</li>
+<li class="fragment">Check <span class="math inline">2, 4, 5, 5 ... n/2</span> to see if they are divisible by n: O(n)</li>
+<li class="fragment">It can be proven that if n is not prime, it must have a divisor <span class="math inline">\leq \sqrt{n}</span></li>
+</ol>
+</section><section id="prime-s-algorithms-1" class="slide level2">
+<h2>Prime #’s Algorithms</h2>
+<ul>
+<li class="fragment">Since n is not prime, there exists two numbers p and q such that <span class="math inline">n = pq\ such\ that\ 1 &lt; p &lt;= q</span>.</li>
+<li class="fragment">Note that <span class="math inline">n = \sqrt{n}\sqrt{n}</span>.<br />
+</li>
+<li class="fragment">p must be less than or equal to <span class="math inline">\sqrt{n}</span>.<br />
+</li>
+<li class="fragment">Hence, you only need to check whether <span class="math inline">2, 3, 4, 5 ..., or \sqrt{n}</span> is divisible by n. If not, n is prime.<br />
+</li>
+<li class="fragment">This significantly reduces the time complexity of the algorithm to <span class="math inline">O(\sqrt{n})</span></li>
+</ul>
+</section></section>
+<section><section id="prime-s-demo" class="title-slide slide level1"><h1>Prime #’s Demo</h1></section><section id="prime-s-algorithms-2" class="slide level2">
+<h2>Prime #’s Algorithms</h2>
+<ul>
+<li>It has been proved that the number of prime numbers less than or equal to i is approximately <span class="math inline">\frac{i}{\log i}</span></li>
+<li>The time complexity of this algorithm is <span class="math inline">O(\frac{n\sqrt{n}}{\log n})</span></li>
+</ul>
+</section><section id="sieve-of-eratosthenes" class="slide level2">
+<h2>Sieve of Eratosthenes</h2>
+<ul>
+<li>Eratosthenes was a Greek mathematician</li>
+<li>He devised an algorithm called the Sieve of Eratosthenes to calculate all prime numbers <span class="math inline">\leq n</span></li>
+<li>It involves creating an array of boolean values and marking all numbers which are not divisors for n</li>
+<li>Review section 22.7 for implementation details</li>
+</ul>
+</section><section id="comparisons-of-prime-algorithms" class="slide level2">
+<h2>Comparisons of Prime # Algorithms</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Complexity</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">O(n^2)</span></td>
+<td>Brute-Force, checking all possible divisors</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">O(n\sqrt{n})</span></td>
+<td>Checking divisors up to <span class="math inline">\sqrt{n}</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">O(\frac{n\sqrt{n}}{\log n})</span></td>
+<td>Checking prime numbers up to <span class="math inline">\sqrt{n}</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">O(\frac{n\sqrt{n}}{\log n})</span></td>
+<td>Sieve of Eratosthenes</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section><section id="finding-closest-points-22.8" class="title-slide slide level1"><h1>Finding Closest Points (22.8)</h1></section><section id="finding-closest-points" class="slide level2">
+<h2>Finding Closest points</h2>
+<ul>
+<li>This sections presents efficient algorithms for finding the closest pair of points using divide-and-conquer</li>
+<li><a href="https://liveexample.pearsoncmg.com/liang/animation/web/ClosestPair.html">This animation illustrates the problem.</a></li>
+</ul>
+</section><section id="divide-and-conquer" class="slide level2">
+<h2>Divide and Conquer</h2>
+<ul>
+<li>We will use an approach called divide-and-conquer to solve this problem.</li>
+<li>The approach divides the problem into subproblems, solves the subproblems, then combines the solutions of the subproblems to obtain the solution for the entire problem.</li>
+<li>Unlike the dynamic programming approach, the subproblems in the divide-and-conquer approach don’t overlap.</li>
+</ul>
+</section><section id="divide-and-conquer-1" class="slide level2">
+<h2>Divide and Conquer</h2>
+<ul>
+<li>A sub-problem is like the original problem with a smaller size, so you can apply recursion to solve the problem.</li>
+<li>In fact, all the solutions for recursive problems follow the divide-and-conquer approach.</li>
+</ul>
+</section><section id="closest-pair-algorithm" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-algorithm">3 Step Algorithm</h3>
+<ol type="1">
+<li>Sort the points in increasing order of x-coordinates. For the points with the same x-coordinates, sort on y-coordinates. This results in a sorted list S of points.</li>
+<li>Divide S into two subsets, S<sub>1</sub> and S<sub>2</sub>, of equal size using the midpoint in the sorted list. Let the midpoint be in S<sub>1</sub>. Recursively find the closest pair in S<sub>1</sub> and S<sub>2</sub>. Let d<sub>1</sub> and d<sub>2</sub> denote the distance of the closest pairs in the two subsets, respectively.</li>
+</ol>
+</section><section id="closest-pair-algorithm-1" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-algorithm-1">3 Step Algorithm</h3>
+<ol start="3" type="1">
+<li>Find the closest pair between a point in S<sub>1</sub> and a point in S<sub>2</sub> and denote their distance as d<sub>3</sub>. The closest pair is the one with the distance min(d<sub>1</sub>, d<sub>2</sub>, d<sub>3</sub>).</li>
+</ol>
+</section><section id="closest-pair-algorithm-2" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-1">Step 1</h3>
+<ul>
+<li><em>Step 1: Sort the points in increasing order of x-coordinates. For the points with the same x-coordinates, sort on y-coordinates. This results in a sorted list S of points.</em></li>
+<li>What is O(?) for Step 1?</li>
+<li>Selection sort takes <span class="math inline">O(n^2)</span>.<br />
+</li>
+<li>In chapter 23 we will introduce merge sort and heap sort which are <span class="math inline">O(n\log n)</span></li>
+</ul>
+</section><section id="closest-pair-algorithm-3" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3">Step 3</h3>
+<ul>
+<li><em>Step 3: Find the closest pair between a point in S<sub>1</sub> and a point in S<sub>2</sub> and denote their distance as d<sub>3</sub>. The closest pair is the one with the distance min(d<sub>1</sub>, d<sub>2</sub>, d<sub>3</sub>).</em></li>
+<li>What is O(?) for Step 3?</li>
+<li>Step 3 is <span class="math inline">O(n)</span>.</li>
+</ul>
+</section><section id="closest-pair-algorithm-4" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<figure>
+<img data-src="lecture5-diagram5.png" alt="Diagram 5" /><figcaption>Diagram 5</figcaption>
+</figure>
+</section><section id="closest-pair-algorithm-5" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-1">Step 3</h3>
+<ul>
+<li>Let d = min(d1, d2).</li>
+<li>We already know that the closest- pair distance cannot be larger than d. * For a point in S<sub>1</sub> and a point in S<sub>2</sub> to form the closest pair in S, the left point must be in stripL and the right point in stripR</li>
+</ul>
+</section><section id="closest-pair-algorithm-6" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-2">Step 3</h3>
+<img data-src="lecture5-diagram6.png" title="fig:" alt="Diagram 6" class="stretch" />
+</section><section id="closest-pair-algorithm-7" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-3">Step 3</h3>
+<ul>
+<li>For a point p in stripL, you need only consider a right point within the d * 2d rectangle, as shown below:</li>
+</ul>
+<img data-src="lecture5-diagram7.png" title="fig:" alt="Diagram 7" class="stretch" />
+</section><section id="closest-pair-algorithm-8" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-4">Step 3</h3>
+<ul>
+<li>Any right point outside the rectangle cannot form the closest pair with p.</li>
+<li>Since the closest-pair distance in S<sub>2</sub> is greater than or equal to d, there can be at most six points in the rectangle.</li>
+<li>Thus, for each point in stripL, at most six points in stripR need to be considered.</li>
+</ul>
+</section><section id="closest-pair-algorithm-9" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-5">Step 3</h3>
+<ul>
+<li>For each point p in stripL, how do you locate the points in the corresponding d * 2d rectangle area in stripR?</li>
+<li>This can be done efficiently if the points in stripL and stripR are sorted in increasing order of their y-coordinates.</li>
+</ul>
+</section><section id="closest-pair-algorithm-10" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="step-3-6">Step 3</h3>
+<ul>
+<li>Let <em>pointsOrderedOnY</em> be the list of the points sorted in increasing order of y-coordinates. <em>pointsOrderedOnY</em> can be obtained beforehand in the algorithm.</li>
+<li>stripL and stripR can be obtained from pointsOrderedOnY</li>
+</ul>
+</section><section id="closest-pair-algorithm-11" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="partial-step-3">Partial Step 3</h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">for</span> each point p in pointsOrderedOnY</a>
+<a class="sourceLine" id="cb30-2" title="2">  <span class="kw">if</span> (p is in S1 and mid.<span class="fu">x</span> – p.<span class="fu">x</span> &lt;= d)</a>
+<a class="sourceLine" id="cb30-3" title="3">    append p to stripL;</a>
+<a class="sourceLine" id="cb30-4" title="4"><span class="kw">else</span> <span class="kw">if</span> (p is in S2 and p.<span class="fu">x</span> - mid.<span class="fu">x</span> &lt;= d)</a>
+<a class="sourceLine" id="cb30-5" title="5">  append p to stripR;</a></code></pre></div>
+</section><section id="closest-pair-algorithm-12" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<h3 id="partial-step-3-1">Partial Step 3</h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb31-1" title="1">d = <span class="fu">min</span>(d1, d2);</a>
+<a class="sourceLine" id="cb31-2" title="2">r = <span class="dv">0</span>; <span class="co">// r is the index of a point in stripR</span></a>
+<a class="sourceLine" id="cb31-3" title="3"><span class="kw">for</span> (each point p in stripL) {</a>
+<a class="sourceLine" id="cb31-4" title="4"><span class="co">// Skip the points in stripR below p.y - d</span></a>
+<a class="sourceLine" id="cb31-5" title="5">  <span class="kw">while</span> (r &lt; stripR.<span class="fu">length</span> &amp;&amp; q[r].<span class="fu">y</span> &lt;= p.<span class="fu">y</span> - d)</a>
+<a class="sourceLine" id="cb31-6" title="6">    r++;</a>
+<a class="sourceLine" id="cb31-7" title="7">  let r1 = r;</a>
+<a class="sourceLine" id="cb31-8" title="8">  <span class="kw">while</span> (r1 &lt; stripR.<span class="fu">length</span> &amp;&amp; |q[r1].<span class="fu">y</span> – p.<span class="fu">y</span>| &lt;= d) {</a>
+<a class="sourceLine" id="cb31-9" title="9">    <span class="co">// Check if (p, q[r1]) is a possible closest pair</span></a>
+<a class="sourceLine" id="cb31-10" title="10">    <span class="kw">if</span> (<span class="fu">distance</span>(p, q[r1]) &lt; d) {</a>
+<a class="sourceLine" id="cb31-11" title="11">      d = <span class="fu">distance</span>(p, q[r1]);  </a>
+<a class="sourceLine" id="cb31-12" title="12">    }</a>
+<a class="sourceLine" id="cb31-13" title="13">    r1 = r1 + <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb31-14" title="14">  }</a>
+<a class="sourceLine" id="cb31-15" title="15">}</a></code></pre></div>
+</section><section id="closest-pair-algorithm-13" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<ul>
+<li>The points in stripL are considered from p<sub>0</sub>, p<sub>1</sub>, … , p<sub>k</sub> in this order.</li>
+<li>For a point p in stripL, skip the points in stripR that are below p.y – d (lines 5–6).<br />
+</li>
+<li>Once a point is skipped, it will no longer be considered.</li>
+<li>The while loop (lines 9–17) checks whether (p, q[r1]) is a possible closest pair.</li>
+<li>There are at most six such q[r<sub>1</sub>] pairs, because the distance between two points in stripR cannot be less than d.</li>
+<li>So the complexity for finding the closest pair in Step 3 is O(n).</li>
+</ul>
+</section><section id="closest-pair-algorithm-14" class="slide level2">
+<h2>Closest Pair Algorithm</h2>
+<ul>
+<li>Note that Step 1 in Listing 22.8 is performed only once to presort the points.</li>
+<li>Assume that all the points are presorted.</li>
+<li>Let T(n) denote the time complexity for this algorithm.</li>
+<li>Thus, <span class="math inline">T(n) = 2T(n/2) + O(n) = O(n \log n)</span> Therefore, the closest pair of points can be found in O(n log n) time.</li>
+<li><a href="https://www.youtube.com/watch?v=0W_m46Q4qMc">Video Explanation</a></li>
+</ul>
+</section></section>
+<section><section id="queens-22.9" class="title-slide slide level1"><h1>8 Queens (22.9)</h1></section><section id="queens" class="slide level2">
+<h2>8 Queens</h2>
+<ul>
+<li>The Eight Queens problem is to find a solution to place a queen in each row on a chessboard such that no two queens can attack each other.</li>
+<li>The problem can be solved using recursion (See Programming Exercise 18.34).</li>
+<li>In this section, we will introduce a common algorithm design technique called <strong>backtracking</strong> for solving this problem.</li>
+<li>The backtracking approach searches for a candidate solution incrementally, abandoning that option as soon as it determines that the candidate cannot possibly be a valid solution, and then looks for a new candidate</li>
+</ul>
+</section><section id="queens-1" class="slide level2">
+<h2>8 Queens</h2>
+<figure>
+<img data-src="lecture5-diagram4.png" alt="8 Queens" /><figcaption>8 Queens</figcaption>
+</figure>
+</section><section id="queens-2" class="slide level2">
+<h2>8 Queens</h2>
+<p>The search starts from the first row with k = 0, where k is the index of the current row being considered. The algorithm checks whether a queen can be possibly placed in the jth column in the row for j = 0, 1, … , 7, in this order. The search is implemented as follows:</p>
+<ul>
+<li>If successful, it continues to search for a placement for a queen in the next row. If the current row is the last row, a solution is found.</li>
+<li>If not successful, it backtracks to the previous row and continues to search for a new placement in the next column in the previous row.</li>
+<li>If the algorithm backtracks to the first row and cannot find a new placement for a queen in this row, no solution can be found.</li>
+</ul>
+</section><section id="queens-demo" class="slide level2">
+<h2>8 Queens Demo</h2>
+<ul>
+<li>Read 22.9 for 8 Queens Analysis</li>
+<li><a href="http://eightqueen.becher-sundstroem.de/">Demo</a></li>
+</ul>
+</section></section>
+<section><section id="convex-hull-22.10" class="title-slide slide level1"><h1>Convex Hull (22.10)</h1></section><section id="convex-hull" class="slide level2">
+<h2>Convex Hull</h2>
+<ul>
+<li>Given a set of points, a convex hull is the smallest convex polygon that encloses all these points</li>
+<li>A polygon is convex if every line connecting two vertices is inside the polygon.</li>
+</ul>
+</section><section id="convex-hull-1" class="slide level2">
+<h2>Convex Hull</h2>
+<figure>
+<img data-src="lecture5-diagram8.png" alt="Convex Hull" /><figcaption>Convex Hull</figcaption>
+</figure>
+</section><section id="gift-wrapping-algorithm" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<ul>
+<li>Step 1: Given a list of points S, let the points in S be labeled <span class="math inline">s_{0}, s_{1}, ..., s_{k}</span>.
+<ul>
+<li>Select the rightmost lowest point S.</li>
+<li>As shown in figure next slide, h<sub>0</sub> is such a point.</li>
+<li>Add h<sub>0</sub> to list H. (H is initially empty. H will hold all points in the convex hull after the algorithm is finished.)</li>
+<li>Let t<sub>0</sub> be h<sub>0</sub>.</li>
+</ul></li>
+</ul>
+</section><section id="gift-wrapping-algorithm-1" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<figure>
+<img data-src="lecture5-diagram9.png" alt="Step 1" /><figcaption>Step 1</figcaption>
+</figure>
+</section><section id="gift-wrapping-algorithm-2" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<ul>
+<li>Step 2: Let t<sub>1</sub> be s<sub>0</sub>.
+<ul>
+<li>For every point p in S, if p is on the right side of the direct line from t<sub>0</sub> to t<sub>1</sub>, then let t<sub>1</sub> be p.</li>
+<li>(After Step 2, no points lie on the right side of the direct line from t0 to t1, as shown in the figure on the next slide)</li>
+</ul></li>
+</ul>
+</section><section id="gift-wrapping-algorithm-3" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<figure>
+<img data-src="lecture5-diagram10.png" alt="Step 2" /><figcaption>Step 2</figcaption>
+</figure>
+</section><section id="gift-wrapping-algorithm-4" class="slide level2">
+<h2>Gift-wrapping Algorithm</h2>
+<figure>
+<img data-src="lecture5-diagram11.png" alt="Step 3" /><figcaption>Step 3</figcaption>
+</figure>
+<ul>
+<li>Step 3: If t<sub>1</sub> is h<sub>0</sub> (see Figure 22.9d), the points in H form a convex hull for S. Otherwise, add t<sub>1</sub> to H, let t<sub>0</sub> be t<sub>1</sub>, and go back to Step 2 (see Figure 22.9c).</li>
+</ul>
+</section><section id="gift-wrapping-analysis" class="slide level2">
+<h2>Gift-wrapping Analysis</h2>
+<ul>
+<li>If n is the number of points in the field and h is the number of points in the hull, the algorithm is <span class="math inline">O(hn)</span></li>
+<li>In the worst-case scenario, h = n and it is <span class="math inline">O(n^2)</span></li>
+</ul>
+</section><section id="grahams-algorithm" class="slide level2">
+<h2>Graham’s Algorithm</h2>
+<ul>
+<li>Step 1: Given a list of points S, select the rightmost lowest point and name it p<sub>0</sub>.</li>
+<li>Step 2: Sort the points in S angularly along the x-axis with p<sub>0</sub> as the cente. If there is a tie and two points have the same angle, discard the one that is closer to p0. The points in S are now sorted as <span class="math inline">p_{0}, p_{1}, p_{2}, ..., p_{n-1}</span>.</li>
+<li>Step 3: Push p<sub>0</sub>, p<sub>1</sub>, and p<sub>2</sub> into stack H. (After the algorithm finishes, H contains all the points in the convex hull.)</li>
+</ul>
+</section><section id="grahams-algorithm-1" class="slide level2">
+<h2>Graham’s Algorithm</h2>
+<h3 id="step-4">Step 4:</h3>
+<pre><code>i = 3;
+while (i &lt; n) {
+  Let t1 and t2 be the top first and second element in stack H;
+  if (pi is on the left side of the direct line from t2 to t1) {
+    Push pi to H;
+    i++; // Consider the next point in S. }
+    else
+    Pop the top element off stack H.
+}</code></pre>
+<ul>
+<li>Step 5: The points in H form a convex hull.</li>
+</ul>
+</section><section id="convex-hull-2" class="slide level2">
+<h2>Convex Hull</h2>
+<ul>
+<li>Read chapter 22.10 for Convex Hull Analysis</li>
+<li><a href="https://liveexample.pearsoncmg.com/liang/animation/web/ConvexHull.html">Animation</a></li>
 </ul>
 </section></section>
     </div>
