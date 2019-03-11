@@ -284,9 +284,6 @@ Now we give the formal description of $M2 = (Q, Σ, Γ, δ, q~1~, q_{accept}, q_
 
 ![M2](lecture8-diagram4-m2.png){.stretch}
 
-## M2 State Diagram
-
- ![M2](lecture8-diagram4-m2.png)
 
 ## M2 Sample Run
 
@@ -314,8 +311,14 @@ See description on page 167.
 
 ## M1
 
-* Q={q1,...,q8,q~accept~,q~reject~}
+* Q={q~1~,...,q~8~,q~accept~,q~reject~}
 * Σ={0,1,#}
 * Γ={0,1,#,x,␣}.
 * δ is described in the state diagram below
 * The start, accept, and reject states are q~1~, q~accept~, and q~reject~, respectively.
+
+## M1 Transition Diagram
+
+![M2](lecture8-diagram5-m1.png){.stretch}
+
+* _Note: to simplify the figure, the reject state has been omitted.  All states which lack a transition on a particular symbol should reject._

@@ -30,6 +30,8 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 | Topic                                                          | Reading | Practice |
 |----------------------------------------------------------------|--------------------|---|
+| 8. [The Church-Turing Thesis](lectures/lecture8-slides.html)   | 3.1  |
+| 7. [Non-Context Free Languages](lectures/lecture7-slides.html)   | 2.3  |
 | 6. [Pushdown Automata](lectures/lecture6-slides.html)   | 2.2  | [Practice 6](lectures/practice6-html)  |
 | 5. [Context Free Languages](lectures/lecture5-slides.html)   | 2.1  |  [Practice 5](lectures/practice5-html) |
 | 4. [Non-Regular Languages](lectures/Lecture4.pdf)   | 1.4  | [Practice 4](lectures/practice4-html.html) |
