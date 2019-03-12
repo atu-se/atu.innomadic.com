@@ -65,9 +65,9 @@ The midterm will cover chapter 18-23
         * O(log n) "Logarithmic time"
         * O(n) "Linear time"
         * O(n log n) "Log-Linear time"
-        * O(n^2) "Quadratic"
-        * O(n^3) "Cubic"
-        * O(2^n) "Exponential"
+        * O(n^2^) "Quadratic"
+        * O(n^3^) "Cubic"
+        * O(2^n^) "Exponential"
 6. Sorting
   Be familiar with the following algorithms, their implementation, and their time complexity
     1. Insertion Sort
