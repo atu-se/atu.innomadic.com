@@ -1,4 +1,4 @@
-# Data Structures and Algorithms
+e# Data Structures and Algorithms
 
 ## Syllabus
 [Syllabus](syllabus.md)
@@ -14,6 +14,11 @@
 | 1. Recursion [Notes](lectures/lecture1) - [Slides](lectures/lecture1-slides)   | Chapter 18            |
 
 ## Updates
+
+### Update 13-Mar
+
+* [Midterm review](lectures/midterm_review) has been posted
+
 
 ### Update 1-Mar
 
