@@ -436,7 +436,6 @@ q5␣xxx␣
 <h2>M1</h2>
 <p>Let M<sub>1</sub> be a Turing machine that decides lan- guage <span class="math inline">B = \{w\#w| w ∈ \{0,1\}^*\}</span></p>
 <p>M<sub>1</sub> =(Q,Σ,Γ,δ,q<sub>1</sub>,q<sub>accept</sub>,q<sub>reject</sub>)</p>
-<p>See description on page 167.</p>
 </section><section id="m1-1" class="slide level2">
 <h2>M1</h2>
 <ul>
@@ -452,6 +451,20 @@ q5␣xxx␣
 <ul>
 <li><em>Note: to simplify the figure, the reject state has been omitted. All states which lack a transition on a particular symbol should reject.</em></li>
 </ul>
+</section></section>
+<section><section id="practice-m3" class="title-slide slide level1"><h1>Practice M3</h1></section><section id="lm3" class="slide level2">
+<h2>L(M3)</h2>
+<p>Here, a TM M<sub>3</sub> is doing some elementary arithmetic. It decides the language</p>
+<p><span class="math display">C = \{a^{i}b^{j}c^{k}\ |\ i × j = k\ and\ i, j, k ≥ 1\}.</span></p>
+<p>M<sub>3</sub> = “On input string w:</p>
+</section><section id="m3-algorithm" class="slide level2">
+<h2>M3 Algorithm</h2>
+<ol type="1">
+<li>Scan the input from left to right to determine whether it is a member of a+b+c+ and reject if it isn’t.</li>
+<li>Return the head to the left-hand end of the tape.</li>
+<li>Cross off an a and scan to the right until a b occurs. Shuttle between the b’s and the c’s, crossing off one of each until all b’s are gone. If all c’s have been crossed off and some b’s remain, reject .</li>
+<li>Restore the crossed off b’s and repeat stage 3 if there is another a to cross off. If all a’s have been crossed off, determine whether all c’s also have been crossed off. If yes, accept; otherwise, reject .”</li>
+</ol>
 </section></section>
     </div>
   </div>

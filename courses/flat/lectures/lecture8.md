@@ -307,8 +307,6 @@ $B = \{w\#w| w ∈ \{0,1\}^*\}$
 
 M~1~ =(Q,Σ,Γ,δ,q~1~,q~accept~,q~reject~)
 
-See description on page 167.
-
 ## M1
 
 * Q={q~1~,...,q~8~,q~accept~,q~reject~}
@@ -322,3 +320,22 @@ See description on page 167.
 ![M2](lecture8-diagram5-m1.png){.stretch}
 
 * _Note: to simplify the figure, the reject state has been omitted.  All states which lack a transition on a particular symbol should reject._
+
+# Practice M3
+
+## L(M3)
+
+Here, a TM M~3~ is doing some elementary arithmetic. It decides the language
+
+$$C = \{a^{i}b^{j}c^{k}\ |\ i × j = k\ and\ i, j, k ≥ 1\}.$$
+
+M~3~ = “On input string w:
+
+
+## M3 Algorithm
+
+1. Scan the input from left to right to determine whether it is a
+member of a^+b^+c^+ and reject if it isn’t.
+2. Return the head to the left-hand end of the tape.
+3. Cross off an a and scan to the right until a b occurs. Shuttle between the b’s and the c’s, crossing off one of each until all b’s are gone. If all c’s have been crossed off and some b’s remain, reject .
+4. Restore the crossed off b’s and repeat stage 3 if there is another a to cross off. If all a’s have been crossed off, determine whether all c’s also have been crossed off. If yes, accept; otherwise, reject .”
