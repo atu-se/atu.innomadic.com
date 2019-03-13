@@ -432,6 +432,15 @@ q5␣xxx␣
 </tr>
 </table>
 </section></section>
+<section><section id="descriptions-of-turing-machines" class="title-slide slide level1"><h1>Descriptions of Turing Machines</h1></section><section id="descriptions" class="slide level2">
+<h2>Descriptions</h2>
+<ul>
+<li>As we did for finite and pushdown automata, we can formally describe a particular Turing machine by specifying each of its seven parts.</li>
+<li>However, going to that level of detail can be cumbersome for all but the tiniest Turing machine, so we won’t spend much time giving such descriptions.</li>
+<li>Higher level descriptions are precise enough for our purposes and they are easier to understand</li>
+<li>Nevertheless, it is important to remember that every higher level description is actually just shorthand for its formal counterpart.</li>
+</ul>
+</section></section>
 <section><section id="example-m1" class="title-slide slide level1"><h1>Example M1</h1></section><section id="m1" class="slide level2">
 <h2>M1</h2>
 <p>Let M<sub>1</sub> be a Turing machine that decides lan- guage <span class="math inline">B = \{w\#w| w ∈ \{0,1\}^*\}</span></p>
@@ -460,10 +469,32 @@ q5␣xxx␣
 </section><section id="m3-algorithm" class="slide level2">
 <h2>M3 Algorithm</h2>
 <ol type="1">
-<li>Scan the input from left to right to determine whether it is a member of a+b+c+ and reject if it isn’t.</li>
+<li>Scan the input from left to right to determine whether it is a member of a<sup>+b</sup>+c^+ and reject if it isn’t.</li>
 <li>Return the head to the left-hand end of the tape.</li>
 <li>Cross off an a and scan to the right until a b occurs. Shuttle between the b’s and the c’s, crossing off one of each until all b’s are gone. If all c’s have been crossed off and some b’s remain, reject .</li>
 <li>Restore the crossed off b’s and repeat stage 3 if there is another a to cross off. If all a’s have been crossed off, determine whether all c’s also have been crossed off. If yes, accept; otherwise, reject .”</li>
+</ol>
+</section></section>
+<section><section id="example-m4" class="title-slide slide level1"><h1>Example M4</h1></section><section id="lm4" class="slide level2">
+<h2>L(M4)</h2>
+<p>TM M4 is solving what is called the element distinctness problem. It is given a list of strings over {0,1} separated by #s and its job is to accept if all the strings are different. The language is:</p>
+<p><span class="math display">E = \{\#x_{1}\#x_{2}\#...\#x_{l}|\ each\ x_{i} ∈ \{0,1\}* and\ x_{i} \not=\ x_{j} for\ each\ i \neq j\}.</span></p>
+</section><section id="m4-high-level-description" class="slide level2">
+<h2>M4 High Level Description</h2>
+<p>Machine M<sub>4</sub> works by comparing x<sub>1</sub> with x<sub>2</sub> through x<sub>l</sub>, then by comparing x<sub>2</sub> with x<sub>3</sub> through x<sub>l</sub>, and so on.</p>
+</section><section id="m4-informal-description" class="slide level2">
+<h2>M4 Informal Description</h2>
+<p>M4 = “On input w:</p>
+<ol type="1">
+<li>Place a mark on top of the leftmost tape symbol. If that symbol was a blank, accept . If that symbol was a #, continue with the next stage. Otherwise, reject.</li>
+<li>Scan right to the next # and place a second mark on top of it. If no # is encountered before a blank symbol, only x<sub>1</sub> was present, so accept.</li>
+<li>By zig-zagging, compare the two strings to the right of the marked #s. If they are equal, reject .</li>
+</ol>
+</section><section id="m4-informal-description-1" class="slide level2">
+<h2>M4 Informal Description</h2>
+<ol start="4" type="1">
+<li>Move the rightmost of the two marks to the next # symbol to the right. If no # symbol is encountered before a blank symbol, move the leftmost mark to the next # to its right and the rightmost mark to the # after that. This time, if no # is available for the rightmost mark, all the strings have been compared, so accept .</li>
+<li>Go to stage 3.”</li>
 </ol>
 </section></section>
     </div>

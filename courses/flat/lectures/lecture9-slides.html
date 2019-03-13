@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-03-13">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">9. Turing Machine Variants</p>
+  <p class="date">March 13, 2019</p>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="variants-of-turing-machines" class="slide level2">
+<h2>Variants of Turing Machines</h2>
+<ul>
+<li>Alternative definitions of Turing machines abound, including versions with multiple tapes or with nondeterminism.</li>
+<li>They are called variants of the Turing machine model.</li>
+<li>The original model and its reasonable variants all have the same power—they recognize the same class of languages.</li>
+</ul>
+</section></section>
+<section><section id="multitape-turing-machine" class="title-slide slide level1"><h1>Multitape Turing Machine</h1></section><section id="multitape-turing-machine-1" class="slide level2">
+<h2>Multitape Turing Machine</h2>
+<ul>
+<li>A multitape Turing machine is like an ordinary Turing machine with several tapes.</li>
+<li>Each tape has its own head for reading and writing.</li>
+<li>Initially the input appears on tape 1, and the others start out blank.</li>
+<li>The transition function is changed to allow for reading, writing, and moving the heads on some or all of the tapes simultaneously.</li>
+</ul>
+</section><section id="theorems" class="slide level2">
+<h2>Theorems</h2>
+<h3 id="theorem-313">Theorem 3.13</h3>
+<p>Every multitape Turing machine has an equivalent single-tape Turing machine.</p>
+<h3 id="corollary-315">Corollary 3.15</h3>
+<p>A language is Turing-recognizable if and only if some multitape Turing machine recognizes it.</p>
+</section><section id="multitape-turing-machine-equivalence" class="slide level2">
+<h2>Multitape Turing Machine Equivalence</h2>
+<figure>
+<img data-src="lecture8-diagram6-multitape.png" alt="Multitape Turing Machine Represented as One Tape" /><figcaption>Multitape Turing Machine Represented as One Tape</figcaption>
+</figure>
+</section></section>
+<section><section id="nondeterministic-turing-machines" class="title-slide slide level1"><h1>Nondeterministic Turing Machines</h1></section><section id="nondeterministic-turing-machines-1" class="slide level2">
+<h2>Nondeterministic Turing Machines</h2>
+<ul>
+<li>A nondeterministic Turing machine is defined in the expected way.</li>
+<li>At any point in a computation, the machine may proceed according to several possibilities.</li>
+<li>The transition function for a nondeterministic Turing machine has the form:</li>
+</ul>
+<p><span class="math display">δ : Q × Γ \longrightarrow P ( Q × Γ × { L , R } )</span></p>
+</section><section id="nondeterministic-turing-machines-2" class="slide level2">
+<h2>Nondeterministic Turing Machines</h2>
+<ul>
+<li>The computation of a nondeterministic Turing machine is a tree whose branches correspond to different possibilities for the machine.</li>
+<li>If some branch of the computation leads to the accept state, the machine accepts its input.</li>
+</ul>
+</section><section id="theorem-316" class="slide level2">
+<h2>Theorem 3.16</h2>
+<p>Every nondeterministic Turing machine has an equivalent deterministic Turing machine.</p>
+</section><section id="nondeterministic-tm-equivalence" class="slide level2">
+<h2>Nondeterministic TM Equivalence</h2>
+<figure>
+<img data-src="lecture8-diagram7-ndtm.png" alt="Nondeterministic TM Represented as a deterministic" /><figcaption>Nondeterministic TM Represented as a deterministic</figcaption>
+</figure>
+</section><section id="corollaries" class="slide level2">
+<h2>Corollaries</h2>
+<h3 id="corollary-318">Corollary 3.18</h3>
+<p>A language is Turing-recognizable if and only if some nondeterministic Turing machine recognizes it.</p>
+<h3 id="corollary-319">Corollary 3.19</h3>
+<p>A language is decidable if and only if some nondeterministic Turing machine decides it.</p>
+</section></section>
+<section><section id="enumerators" class="title-slide slide level1"><h1>Enumerators</h1></section><section id="enumerators-1" class="slide level2">
+<h2>Enumerators</h2>
+<ul>
+<li>As we mentioned earlier, some people use the term recursively enumerable language for Turing-recognizable language.</li>
+<li>That term originates from a type of Turing machine variant called an enumerator.</li>
+<li>Loosely defined, an enumerator is a Turing machine with an attached printer.</li>
+<li>The Turing machine can use that printer as an output device to print strings.</li>
+<li>Every time the Turing machine wants to add a string to the list, it sends the string to the printer.</li>
+</ul>
+</section><section id="enumerator" class="slide level2">
+<h2>Enumerator</h2>
+<figure>
+<img data-src="lecture9-diagram4-enumerator.png" alt="Schematic of an enumerator" /><figcaption>Schematic of an enumerator</figcaption>
+</figure>
+</section><section id="enumerator-1" class="slide level2">
+<h2>Enumerator</h2>
+<ul>
+<li>An enumerator E starts with a blank input on its work tape.</li>
+<li>If the enumerator doesn’t halt, it may print an infinite list of strings.</li>
+<li>The language enumerated by E is the collection of all the strings that it eventually prints out.</li>
+<li>Moreover, E may generate the strings of the language in any order, possibly with repetitions.</li>
+</ul>
+</section><section id="theorem-321" class="slide level2">
+<h2>Theorem 3.21</h2>
+<p>A language is Turing-recognizable if and only if some enumerator enumerates it.</p>
+</section><section id="equivalence-with-other-models" class="slide level2">
+<h2>Equivalence with Other Models</h2>
+<ul>
+<li>So far we have presented several variants of the Turing machine model and have shown them to be equivalent in power.</li>
+<li>Many other models of general purpose computation have been proposed.</li>
+<li>Some of these models are very much like Turing machines, but others are quite different.</li>
+</ul>
+</section><section id="equivalence-with-other-models-1" class="slide level2">
+<h2>Equivalence with Other Models</h2>
+<ul>
+<li>All share the essential feature of Turing machines—namely, unrestricted access to unlimited memory— distinguishing them from weaker models such as finite automata and pushdown automata.</li>
+<li>Remarkably, all models with that feature turn out to be equivalent in power, so long as they satisfy reasonable requirements.</li>
+</ul>
+</section></section>
+<section><section id="the-definition-of-algorithm" class="title-slide slide level1"><h1>The Definition of Algorithm</h1></section><section id="the-definition-of-algorithm-1" class="slide level2">
+<h2>The Definition of Algorithm</h2>
+<ul>
+<li>Informally speaking, an algorithm is a collection of simple instructions for car- rying out some task.</li>
+<li>Commonplace in everyday life, algorithms sometimes are called procedures or recipes. * Algorithms also play an important role in mathematics.</li>
+<li>Ancient mathematical literature contains descriptions of algorithms for a variety of tasks, such as finding prime numbers and greatest common divisors.</li>
+<li>In contemporary mathematics, algorithms abound.</li>
+</ul>
+</section><section id="the-church-turing-thesis" class="slide level2">
+<h2>The Church-Turing Thesis</h2>
+<ul>
+<li>A formal definition of an algorithm came in the 1936 papers of Alonzo Church and Alan Turing.</li>
+<li>Church used a notational system called the λ-calculus to define algorithms.</li>
+<li>Turing did it with his “machines.”</li>
+<li>These two definitions were shown to be equivalent.</li>
+<li>This connection between the informal notion of algorithm and the precise definition has come to be called the Church–Turing thesis.</li>
+</ul>
+</section><section id="the-church-turing-thesis-1" class="slide level2">
+<h2>The Church-Turing Thesis</h2>
+<ul>
+<li>The Church-Turing Thesis tells us that the intuitive notion of algorithms is equivalent to Turing machine algorithms</li>
+</ul>
+</section><section id="terminology-for-describing-turing-machines" class="slide level2">
+<h2>Terminology for Describing Turing Machines</h2>
+<ul>
+<li>We continue to speak of Turing machines, but our real focus from now on is on algorithms.</li>
+<li>That is, the Turing machine merely serves as a precise model for the definition of algorithm.</li>
+<li>We may skip over the extensive theory of Turing machines themselves and not spend much time on the low-level programming of Turing machines.</li>
+<li>We need only to be comfortable enough with Turing machines to believe that they capture all algorithms.</li>
+</ul>
+</section><section id="terminology-for-describing-turing-machines-1" class="slide level2">
+<h2>Terminology for Describing Turing Machines</h2>
+<p>There are three possibilities for how to describe Turing machines:</p>
+<ol type="1">
+<li>The first is the formal description that spells out in full the Turing machine’s states, transition function, and so on. It is the lowest, most detailed level of description.</li>
+<li>The second is a higher level of description, called the implementation description, in which we use English prose to describe the way that the Turing machine moves its head and the way that it stores data on its tape. At this level we do not give details of states or transition function.</li>
+<li>The third is the high-level description, wherein we use English prose to describe an algorithm, ignoring the implementation details. At this level we do not need to mention how the machine manages its tape or head.</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -298,6 +298,15 @@ Now we give the formal description of $M2 = (Q, Σ, Γ, δ, q~1~, q_{accept}, q_
 <tr><td/><td/><td>␣xxx␣qaccept</td></tr>
 </table>
 
+# Descriptions of Turing Machines
+
+## Descriptions
+
+* As we did for finite and pushdown automata, we can formally describe a particular Turing machine by specifying each of its seven parts.
+* However, going to that level of detail can be cumbersome for all but the tiniest Turing machine, so we won’t spend much time giving such descriptions.
+* Higher level descriptions are precise enough for our purposes and they are easier to understand
+* Nevertheless, it is important to remember that every higher level description is actually just shorthand for its formal counterpart.
+
 # Example M1
 
 ## M1
@@ -339,3 +348,34 @@ member of a^+b^+c^+ and reject if it isn’t.
 2. Return the head to the left-hand end of the tape.
 3. Cross off an a and scan to the right until a b occurs. Shuttle between the b’s and the c’s, crossing off one of each until all b’s are gone. If all c’s have been crossed off and some b’s remain, reject .
 4. Restore the crossed off b’s and repeat stage 3 if there is another a to cross off. If all a’s have been crossed off, determine whether all c’s also have been crossed off. If yes, accept; otherwise, reject .”
+
+# Example M4
+
+## L(M4)
+
+TM M4 is solving what is called the element distinctness problem. It is given a list of strings over {0,1} separated by #s and its job is to accept if all the strings are different. The language is:
+
+$$E = \{\#x_{1}\#x_{2}\#...\#x_{l}|\ each\ x_{i} ∈ \{0,1\}* and\ x_{i} \not=\ x_{j} for\ each\ i \neq j\}.$$
+
+## M4 High Level Description
+
+Machine M~4~ works by comparing x~1~ with x~2~ through x~l~, then by comparing x~2~ with x~3~ through x~l~, and so on.
+
+## M4 Informal Description
+
+M4 = “On input w:
+
+1. Place a mark on top of the leftmost tape symbol. If that symbol
+was a blank, accept . If that symbol was a #, continue with the
+next stage. Otherwise, reject.
+2. Scan right to the next # and place a second mark on top of it. If
+no # is encountered before a blank symbol, only x~1~ was present,
+so accept.
+3. By zig-zagging, compare the two strings to the right of the
+marked #s. If they are equal, reject .
+
+## M4 Informal Description
+
+4. Move the rightmost of the two marks to the next # symbol to
+the right. If no # symbol is encountered before a blank symbol, move the leftmost mark to the next # to its right and the rightmost mark to the # after that. This time, if no # is available for the rightmost mark, all the strings have been compared, so accept .
+5. Go to stage 3.”
