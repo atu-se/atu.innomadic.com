@@ -1,4 +1,7 @@
-# Midterm Review
+---
+output: pdf_document
+---
+# DSA Midterm Study Guide
 
 ## Contents
 
