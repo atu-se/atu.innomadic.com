@@ -11,7 +11,7 @@
 
 * [*Book of Proof*](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 * [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf)
-
+* [Playlist of Shai Simonson's Lectures on Theory of Computation](https://www.youtube.com/playlist?list=PL601FC994BDD963E4)
 ## Definitions and Theorems
 
 I have created a [summary page of important definitions, theorems, etc.](definitions_and_theorems.md) from our textbook for your convenience.  You should know these well.

@@ -118,7 +118,7 @@ A language is Turing-recognizable if and only if some enumerator enumerates it.
 
 ## The Definition of Algorithm
 
-* Informally speaking, an algorithm is a collection of simple instructions for car- rying out some task.
+  - Informally speaking, an algorithm is a collection of simple instructions for carrying out some task.
 * Commonplace in everyday life, algorithms sometimes are called procedures or recipes. * Algorithms also play an important role in mathematics.
 * Ancient mathematical literature contains descriptions of algorithms for a variety of tasks, such as finding prime numbers and greatest common divisors.
 * In contemporary mathematics, algorithms abound.
