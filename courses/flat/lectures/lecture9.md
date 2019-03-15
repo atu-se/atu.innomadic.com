@@ -147,5 +147,11 @@ A language is Turing-recognizable if and only if some enumerator enumerates it.
 There are three possibilities for how to describe Turing machines:
 
 1. The first is the formal description that spells out in full the Turing machine’s states, transition function, and so on. It is the lowest, most detailed level of description.
+
+## Terminology for Describing Turing Machines
+
 2. The second is a higher level of description, called the implementation description, in which we use English prose to describe the way that the Turing machine moves its head and the way that it stores data on its tape. At this level we do not give details of states or transition function.
+
+## Terminology for Describing Turing Machines
+
 3. The third is the high-level description, wherein we use English prose to describe an algorithm, ignoring the implementation details. At this level we do not need to mention how the machine manages its tape or head.
