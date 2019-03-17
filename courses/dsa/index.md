@@ -7,6 +7,7 @@ e# Data Structures and Algorithms
 
 | Topic                                                          | Reading Assignment |
 |----------------------------------------------------------------|--------------------|
+| 6. Sorting [Notes](lectures/lecture6) - [Slides](lectures/lecture6-slides)  | Chapter 23  |
 | 5. Developing Efficient Algorithms [Notes](lectures/lecture5) - [Slides](lectures/lecture5-slides)  | Chapter 22  |
 | 4. Sets and Maps [Notes](lectures/lecture4) - [Slides](lectures/lecture4-slides)  | Chapter 21  |
 | 3. Lists, Stacks, Queues, and Priority Queues [Notes](lectures/lecture3) - [Slides](lectures/lecture3-slides) | Chapter 20   |
