@@ -1,24 +1,12 @@
-# Abaarso Tech University - Software Engineering
-
 # Syllabus -- Draft
 
 ## Course Title
+
 Introduction to Databases
 
 ## Course
+
 Year 1 / Semester 2
-
-## Class Meeting Times
-
-### Section 1
-* Saturday 10:30 a.m.
-* Sunday 8:30 a.m.
-* Wednesday 10:30 a.m.
-
-### Section 2
-* Sunday 6:30 p.m.
-* Monday 6:30 p.m.
-* Tuesday 4:30 p.m.
 
 ## Instructor Contact Information
 
@@ -26,13 +14,7 @@ Provided in Lecture
 
 ## Rationale
 
-
-
 ## Course Aims
-
-
-
-
 
 ## Format and Procedures
 
@@ -46,23 +28,26 @@ Student should attend all classes and participate in class discussion.  Outside 
 
 ##  My Assumptions
 
-
-
 ## Course Requirements
 
-### Required reading
+### Required Reading
+
+[Database System Concepts, 6th Edition](https://www.amazon.com/Database-Concepts-Abraham-Silberschatz-Professor/dp/0073523321/ref=sr_1_1?keywords=Database+system+concepts&qid=1552639012&s=gateway&sr=8-1)
 
 ### Lecture Textbook
 
+[Database System Concepts, 6th Edition](https://www.amazon.com/Database-Concepts-Abraham-Silberschatz-Professor/dp/0073523321/ref=sr_1_1?keywords=Database+system+concepts&qid=1552639012&s=gateway&sr=8-1)
+
 ### Supplemental readings
+
 Supplemental reading and other materials will be linked on the [course website](https://atu-se.github.io/courses/db/).  Students are responsible for regularly checking the course website for updates.
 
 ## Grading Procedures
 
 * 10% Attendance
-* 40% Final
-* 30% Mid-Term
-* 20% Assignments: Project, Quizzes, Homework, etc.
+* 40% Project
+* 40% Mid-Term
+* 10% Assignments: Quizzes, Homework, etc.
 
 Late assignments will be received reduced credit at the teacher's discretion.
 
