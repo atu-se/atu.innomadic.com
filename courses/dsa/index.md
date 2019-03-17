@@ -1,4 +1,4 @@
-e# Data Structures and Algorithms
+# Data Structures and Algorithms
 
 ## Syllabus
 [Syllabus](syllabus.md)
