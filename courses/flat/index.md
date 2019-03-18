@@ -42,6 +42,10 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Updates
 
+### Update 18-Mar
+
+* A draft of the [final exam review](misc/final_review) is posted.  
+
 ### Update 1-Mar
 
 * Don't forget that Homework 4 is due on 4-March
