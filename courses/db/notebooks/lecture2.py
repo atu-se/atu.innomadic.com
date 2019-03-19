@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # ---
 # jupyter:
 #   jupytext:
@@ -154,82 +153,4 @@ create table course (
 # %%sql 
 show tables;
 
-# # Lecture 2b
 
-# First, let's recreate the instructor table -- this time with no foreign key.
-
-# %%sql 
-drop table if exists instructor;
-create table instructor (
-    ID         char(5),
-    name       varchar(20) not null,
-    dept_name  varchar(20),
-    salary     numeric(8,2),
-    primary key (ID)
-);
-
-# # Show Tuples
-
-# %%sql 
-select * from instructor;
-
-# # Updates to Tables
-#
-# ## Insert
-#
-# ```sql
-# insert into instructor values (‘10211’, ’Smith’, ’Biology’, 66000);
-# ```
-#
-
-# %%sql 
-insert into instructor (ID, name, dept_name, salary) values ('10211', 'Smith', 'Biology', 66000);
-
-# %%sql 
-select * from instructor;
-
-# ## Delete
-#
-# Remove all tuples from the a relation
-#
-# `delete from <table>`
-#
-
-# %%sql 
-delete from instructor;
-
-# %%sql 
-select * from instructor;
-
-# ## Delete Table
-
-# %%sql 
-drop table instructor;
-
-# %%sql 
-show tables;
-
-# %%sql 
-desc department;
-
-# ## Alter
-
-# ## Adding an Attribute 
-#
-# alter table r add A D;
-
-# %%sql 
-alter table department add ID char(3);
-
-# %%sql 
-desc department;
-
-# ## Dropping an Attribute 
-#
-# alter table r drop A;
-#
-# * where A is the name of an attribute in relation _r_
-# * Dropping of attributes is not supported by some databases
-
-# %%sql 
-alter table departmen
