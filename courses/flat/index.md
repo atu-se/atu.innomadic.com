@@ -30,7 +30,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 | Topic                                                          | Reading | Practice |
 |----------------------------------------------------------------|--------------------|---|
-| 9. [Turing Machine Variants and Algorithms](lectures/lecture8-slides.html)   | 3.2-3  |
+| 9. [Turing Machine Variants and Algorithms](lectures/lecture9-slides.html)   | 3.2-3  |
 | 8. [The Church-Turing Thesis](lectures/lecture8-slides.html)   | 3.1  |
 | 7. [Non-Context Free Languages](lectures/lecture7-slides.html)   | 2.3  |
 | 6. [Pushdown Automata](lectures/lecture6-slides.html)   | 2.2  | [Practice 6](lectures/practice6-html)  |
