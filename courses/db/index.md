@@ -13,11 +13,11 @@
 
 # Lectures
 
-| Topic                                                          | Reading Assignment |
-|----------------------------------------------------------------|--------------------|
-| 3.  [Introduction](lectures/ch3.ppt)   | Chapter 3  |
-| 2.  [Introduction](lectures/ch2.ppt)   | Chapter 2  |
-| 1.  [Introduction](lectures/ch1.ppt)   | Chapter 1  |
+| Topic                                | Reading Assignment | Practical Labs                                                      |
+|--------------------------------------|--------------------|---------------------------------------------------------------------|
+| 3.  [Introduction](lectures/ch3.ppt) | Chapter 3          |                                                                     |
+| 2.  [Introduction](lectures/ch2.ppt) | Chapter 2          | [Notebook 2](notebooks/lecture2) [Notebook 2b](notebooks/lecture2b) |
+| 1.  [Introduction](lectures/ch1.ppt) | Chapter 1          |                                                                     |
 
 
 # Course Updates
