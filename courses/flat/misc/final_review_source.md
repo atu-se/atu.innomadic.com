@@ -8,8 +8,6 @@ output:
     pandoc_args: ["--standalone"]
 ---
 
-# Midterm Review
-
 ## Topics Covered
 
 * The midterm exam will cover the following sections:

@@ -42,6 +42,16 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Updates
 
+### Update 21-March
+
+* On Monday, March 25, there will be a quiz over material covered since the midterm.
+* The Final Exam will be on Wednesday, March 27th
+* The grading breakdown has been updated in this way:
+  - Quizzes (15%)
+  - Midterm (30%)
+  - Final (45%)
+  - Attendance (10%)
+
 ### Update 18-Mar
 
 * A draft of the [final exam review](misc/final_review) is posted.  
