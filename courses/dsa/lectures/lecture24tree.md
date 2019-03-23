@@ -2,8 +2,8 @@
 
 ## Reading
 
-* https://opendatastructures.org/ods-java/9_Red_Black_Trees.html
-* https://opendatastructures.org/ods-java/9_1_2_4_Trees.html
+* [Introduction](https://opendatastructures.org/ods-java/9_Red_Black_Trees.html)
+* [2-4 Trees](https://opendatastructures.org/ods-java/9_1_2_4_Trees.html)
 
 ## Other Resources
 
