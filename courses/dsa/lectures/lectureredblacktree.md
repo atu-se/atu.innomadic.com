@@ -2,7 +2,7 @@
 
 ## Reading
 
-* [Overview]https://opendatastructures.org/ods-python/9_2_RedBlackTree_Simulated_.html
+* [Overview](https://opendatastructures.org/ods-python/9_2_RedBlackTree_Simulated_.html)
 * [Summary](https://opendatastructures.org/ods-java/9_3_Summary.html)
 
 ## Other Resources
