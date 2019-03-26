@@ -42,6 +42,11 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Updates
 
+### Update 26-March
+
+* [Quiz 2](misc/quiz2.pdf) is available to help you study
+* Remember the final exam is on Wednesday, March 27
+
 ### Update 21-March
 
 * On Monday, March 25, there will be a quiz over material covered since the midterm.
