@@ -56,11 +56,14 @@ insert into instructor (ID, name, dept_name, salary) values ('10211', 'Smith', '
 # %%sql 
 select * from instructor;
 
+# %%sql
+insert into instructor values ('55532', 'Ahmed', 'Chemistry', 150000);
+
 # ## Delete
 #
 # Remove all tuples from the a relation
 #
-# `delete from <table>`
+# `delete from <table>;`
 #
 
 # %%sql 
@@ -73,6 +76,9 @@ select * from instructor;
 
 # %%sql 
 drop table instructor;
+
+# %%sql 
+show tables;
 
 # %%sql 
 create table department (
@@ -141,18 +147,21 @@ create table instructor (
 # %%sql 
 insert into instructor (ID, name, dept_name, salary) values ('10211', 'Smith', 'Biology', 50000);
 insert into instructor (ID, name, dept_name, salary) values ('10212', 'Yusuf', 'Mathematics', 55000);
+insert into instructor (ID, name, dept_name, salary) values ('10215', 'Yusuf', 'English', 52000);
 insert into instructor (ID, name, dept_name, salary) values ('10213', 'Asma', 'Mathematics', 60000);
 insert into instructor (ID, name, dept_name, salary) values ('10214', 'Thomas', 'Literature', 65000);
 
 # Now, let's query for instructor names:
 
 # %%sql
-select name 
+select *
 from instructor;
 
 # Now, let's add a predicate:
 
 # %%sql 
-select name from instructor where salary > 55000;
+select dept_name, salary
+from instructor 
+where name = 'Yusuf';
 
 
