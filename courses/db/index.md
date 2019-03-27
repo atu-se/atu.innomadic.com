@@ -16,7 +16,7 @@
 | Topic                                | Reading Assignment | Practical Labs                                                      |
 |--------------------------------------|--------------------|---------------------------------------------------------------------|
 | 3.  [Introduction](lectures/ch3.ppt) | Chapter 3          |                                                                     |
-| 2.  [Introduction](lectures/ch2.ppt) | Chapter 2          | [Notebook 2](notebooks/lecture2) [Notebook 2b](notebooks/lecture2b) |
+| 2.  [Introduction](lectures/ch2.ppt) | Chapter 2          | [Notebook 2](notebooks/lecture2) [Notebook 2b](notebooks/lecture2b) [2c Relational Algebra](notebooks/Lecture 2C - Relational Algebra.ipynb)|
 | 1.  [Introduction](lectures/ch1.ppt) | Chapter 1          |                                                                     |
 
 
