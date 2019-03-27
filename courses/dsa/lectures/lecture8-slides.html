@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-03-27">
+  <title>DSA Lecture</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">DSA Lecture</h1>
+  <p class="subtitle">8. Binary Search Trees</p>
+  <p class="date">March 27, 2019</p>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="objectives" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>To design and implement a binary search tree (§25.2).</li>
+<li>To represent binary trees using linked data structures (§25.2.1).</li>
+<li>To search an element in a binary search tree (§25.2.2).</li>
+<li>To insert an element into a binary search tree (§25.2.3).</li>
+<li>To traverse elements in a binary tree (§25.2.4).</li>
+<li>To design and implement the Tree interface, AbstractTree class, and the BST class (§25.2.5).</li>
+</ul>
+</section><section id="objectives-1" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>To delete elements from a binary search tree (§25.3).</li>
+<li>To display a binary tree graphically (§25.4).</li>
+<li>To create iterators for traversing a binary tree (§25.5).</li>
+<li>To implement Huffman coding for compressing data using a binary tree (§25.6).</li>
+</ul>
+</section><section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<p>A tree is a classic data structure with many important applications.</p>
+</section></section>
+<section><section id="binary-search-trees-252" class="title-slide slide level1"><h1>Binary Search Trees (25.2)</h1></section><section id="binary-search-trees" class="slide level2">
+<h2>Binary Search Trees</h2>
+<p>A binary search tree can be implemented using a linked structure.</p>
+</section><section id="binary-trees" class="slide level2">
+<h2>Binary Trees</h2>
+<figure>
+<img data-src="lecture8-diagram1.png" alt="Binary Search Trees" /><figcaption>Binary Search Trees</figcaption>
+</figure>
+</section><section id="binary-trees-1" class="slide level2">
+<h2>Binary Trees</h2>
+<table>
+<tr>
+<td>
+<img data-src="lecture8-diagram1.png" alt="Binary Search Trees" />
+</td>
+<td>
+<ul>
+<li>
+root
+</li>
+<li>
+left/right subtree
+</li>
+<li>
+length
+</li>
+<li>
+level
+</li>
+<li>
+siblings
+</li>
+<li>
+left/right child
+</li>
+<li>
+leaf
+</li>
+</td>
+</tr>
+</table>
+</section><section id="binary-search-trees-1" class="slide level2">
+<h2>Binary Search Trees</h2>
+<ul>
+<li>A special type of binary tree called a binary search tree (BST) is often useful.</li>
+<li>A BST (with no duplicate elements) has the property that for every node in the tree, the value of any node in its left subtree is less than the value of the node, and the value of any node in its right subtree is greater than the value of the node.</li>
+</ul>
+</section><section id="binary-search-trees-2" class="slide level2">
+<h2>Binary Search Trees</h2>
+<p><a href="http://cs.armstrong.edu/liang/animation/web/BST.html">Demo</a></p>
+</section></section>
+<section><section id="representing-binary-search-trees" class="title-slide slide level1"><h1>Representing Binary Search Trees</h1></section><section id="representing-binary-search-trees-1" class="slide level2">
+<h2>Representing Binary Search Trees</h2>
+<ul>
+<li>A binary tree can be represented using a set of linked nodes.</li>
+<li>Each node contains a value and two links named left and right that reference the left child and right child, respectively</li>
+</ul>
+</section><section id="representing-binary-search-trees-2" class="slide level2">
+<h2>Representing Binary Search Trees</h2>
+<figure>
+<img data-src="lecture8-diagram3.png" alt="Binary Search Trees" /><figcaption>Binary Search Trees</figcaption>
+</figure>
+</section><section id="representing-binary-search-trees-3" class="slide level2">
+<h2>Representing Binary Search Trees</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> <span class="bu">TreeNode</span>&lt;E&gt; {</a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="kw">protected</span> E element;</a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="kw">protected</span> <span class="bu">TreeNode</span>&lt;E&gt; left;</a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="kw">protected</span> <span class="bu">TreeNode</span>&lt;E&gt; right;</a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="kw">public</span> <span class="bu">TreeNode</span>(E e) {</a>
+<a class="sourceLine" id="cb1-6" title="6">    element = e;</a>
+<a class="sourceLine" id="cb1-7" title="7">  }</a>
+<a class="sourceLine" id="cb1-8" title="8">}</a></code></pre></div>
+</section><section id="representing-binary-search-trees-4" class="slide level2">
+<h2>Representing Binary Search Trees</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// Create the root node</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="bu">TreeNode</span>&lt;<span class="bu">Integer</span>&gt; root = <span class="kw">new</span> <span class="bu">TreeNode</span>&lt;&gt;(<span class="dv">60</span>); <span class="co">// Create the left child node</span></a>
+<a class="sourceLine" id="cb2-3" title="3">root.<span class="fu">left</span> = <span class="kw">new</span> <span class="bu">TreeNode</span>&lt;&gt;(<span class="dv">55</span>); <span class="co">// Create the right child node</span></a>
+<a class="sourceLine" id="cb2-4" title="4">root.<span class="fu">right</span> = <span class="kw">new</span> <span class="bu">TreeNode</span>&lt;&gt;(<span class="dv">100</span>);</a></code></pre></div>
+</section><section id="searching-for-an-element" class="slide level2">
+<h2>Searching for an Element</h2>
+<ul>
+<li>To search for an element in the BST, you start from the root and scan down from it until a match is found or you arrive at an empty subtree.</li>
+</ul>
+</section><section id="searching-for-an-element-1" class="slide level2">
+<h2>Searching for an Element</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">search</span>(E e) {</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="bu">TreeNode</span>&lt;E&gt; current = root; <span class="co">// Start from the root</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="kw">while</span> (current != <span class="kw">null</span>) {</a>
+<a class="sourceLine" id="cb3-4" title="4">    <span class="kw">if</span> (e.<span class="fu">compareTo</span>(current.<span class="fu">element</span>) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb3-5" title="5">      current = current.<span class="fu">left</span>;</a>
+<a class="sourceLine" id="cb3-6" title="6">    }</a>
+<a class="sourceLine" id="cb3-7" title="7">    <span class="kw">else</span> <span class="kw">if</span> (e.<span class="fu">compareTo</span>(current.<span class="fu">element</span>) &gt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb3-8" title="8">      current = current.<span class="fu">right</span>;</a>
+<a class="sourceLine" id="cb3-9" title="9">    }</a>
+<a class="sourceLine" id="cb3-10" title="10">    <span class="kw">else</span> <span class="co">// element matches current.element</span></a>
+<a class="sourceLine" id="cb3-11" title="11">      <span class="kw">return</span> <span class="kw">true</span>; <span class="co">// Element is found</span></a>
+<a class="sourceLine" id="cb3-12" title="12">  }</a>
+<a class="sourceLine" id="cb3-13" title="13">  <span class="kw">return</span> <span class="kw">false</span>;</a>
+<a class="sourceLine" id="cb3-14" title="14">}</a></code></pre></div>
+</section><section id="inserting-an-element" class="slide level2">
+<h2>Inserting an Element</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">insert</span>(E e) {</a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">if</span> (root == <span class="kw">null</span>)</a>
+<a class="sourceLine" id="cb4-3" title="3">    root = <span class="fu">createNewNode</span>(e); <span class="co">// Create a new root</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  <span class="kw">else</span> {<span class="co">// Locate the parent node</span></a>
+<a class="sourceLine" id="cb4-5" title="5">    <span class="bu">TreeNode</span>&lt;E&gt; parent = <span class="kw">null</span>;</a>
+<a class="sourceLine" id="cb4-6" title="6">    <span class="bu">TreeNode</span>&lt;E&gt; current = root;</a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="kw">while</span> (current != <span class="kw">null</span>)</a>
+<a class="sourceLine" id="cb4-8" title="8">      <span class="kw">if</span> (e.<span class="fu">compareTo</span>(current.<span class="fu">element</span>) &lt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb4-9" title="9">        parent = current;</a>
+<a class="sourceLine" id="cb4-10" title="10">        current = current.<span class="fu">left</span>;</a>
+<a class="sourceLine" id="cb4-11" title="11">      }</a>
+<a class="sourceLine" id="cb4-12" title="12">      <span class="kw">else</span> <span class="kw">if</span> (e.<span class="fu">compareTo</span>(current.<span class="fu">element</span>) &gt; <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb4-13" title="13">        parent = current;</a>
+<a class="sourceLine" id="cb4-14" title="14">        current = current.<span class="fu">right</span>;</a>
+<a class="sourceLine" id="cb4-15" title="15">      }</a></code></pre></div>
+</section><section id="inserting-an-element-1" class="slide level2">
+<h2>Inserting an Element</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb5-2" title="2">      <span class="kw">return</span> <span class="kw">false</span>; <span class="co">// Duplicate node not inserted</span></a>
+<a class="sourceLine" id="cb5-3" title="3">  </a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="co">// Create the new node and attach it to the parent node</span></a>
+<a class="sourceLine" id="cb5-5" title="5">    <span class="kw">if</span> (e.<span class="fu">compareTo</span>(parent.<span class="fu">element</span>) &lt; <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb5-6" title="6">    parent.<span class="fu">left</span> = <span class="fu">createNewNode</span>(e);</a>
+<a class="sourceLine" id="cb5-7" title="7">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb5-8" title="8">    parent.<span class="fu">right</span> = <span class="fu">createNewNode</span>(e);</a>
+<a class="sourceLine" id="cb5-9" title="9">    }</a>
+<a class="sourceLine" id="cb5-10" title="10">    size++;</a>
+<a class="sourceLine" id="cb5-11" title="11">    <span class="kw">return</span> <span class="kw">true</span>; <span class="co">// Element inserted successfully</span></a>
+<a class="sourceLine" id="cb5-12" title="12">}</a></code></pre></div>
+</section><section id="tree-traversal" class="slide level2">
+<h2>Tree Traversal</h2>
+<ul>
+<li>Tree traversal is the process of visiting each node in the tree exactly once.</li>
+<li>There are several ways to traverse a tree, including:
+<ul>
+<li>inorder</li>
+<li>postorder</li>
+<li>preorder</li>
+<li>depth-first</li>
+<li>breadth-first</li>
+</ul></li>
+</ul>
+</section><section id="inorder-traversal" class="slide level2">
+<h2>Inorder Traversal</h2>
+<ul>
+<li>With inorder traversal, the left subtree of the current node is visited first recursively, then the current node, and finally the right subtree of the current node recursively.</li>
+<li>The inorder traversal displays all the nodes in a BST in increasing order.</li>
+</ul>
+</section><section id="postorder-traversal" class="slide level2">
+<h2>Postorder Traversal</h2>
+<ul>
+<li>With postorder traversal, the left subtree of the current node is visited recursively first, then recursively the right subtree of the current node, and finally the current node itself.</li>
+<li>An application of postorder is to find the size of the directory in a file system.</li>
+</ul>
+</section><section id="preorder-depth-first" class="slide level2">
+<h2>Preorder/ Depth-First</h2>
+<ul>
+<li>With preorder traversal, the current node is visited first, then recursively the left subtree of the current node, and finally the right subtree of the current node recursively.</li>
+<li>Depth-first traversal is the same as preorder traversal.</li>
+<li>An application of preorder is to print a structured document.</li>
+<li>As shown in Figure 25.6, you can print a book’s table of contents using preorder traversal.</li>
+</ul>
+</section><section id="bft" class="slide level2">
+<h2>BFT</h2>
+<ul>
+<li>With breadth-first traversal, the nodes are visited level by level.</li>
+<li>First the root is visited, then all the children of the root from left to right, then the grandchildren of the root from left to right, and so on.</li>
+</ul>
+</section><section id="memory-device" class="slide level2">
+<h2>Memory Device</h2>
+<p>You can use the following tree to help remember inorder, postorder, and preorder.</p>
+<figure>
+<img data-src="lecture8-diagram4.png" alt="BST Traversal" /><figcaption>BST Traversal</figcaption>
+</figure>
+</section></section>
+<section id="the-bst-class" class="title-slide slide level1"><h1>25.2.5 The BST Class</h1></section>
+<section id="deleting-elements-from-a-bst" class="title-slide slide level1"><h1>25.3 Deleting Elements from a BST</h1><p>To delete an element from a BST, first locate it in the tree and then consider two cases—whether or not the node has a left child—before deleting the element and reconnecting the tree.</p></section>
+<section id="tree-visualization-and-mvc" class="title-slide slide level1"><h1>25.4 Tree Visualization and MVC</h1><p>You can use recursion to display a binary tree.</p></section>
+<section id="iterators" class="title-slide slide level1"><h1>25.5 Iterators</h1><p>BST is iterable because it is defined as a subtype of the java.lang.Iterable interface.</p>
+<p>25.6 Case Study: Data Compression</p>
+<p>Huffman coding compresses data by using fewer bits to encode characters that occur more frequently. The codes for the characters are constructed based on the occur- rence of the characters in the text using a binary tree, called the Huffman coding tree.</p></section>
+<section><section id="chapter-summary" class="title-slide slide level1"><h1>Chapter Summary</h1></section><section id="key-points" class="slide level2">
+<h2>Key Points</h2>
+<ol type="1">
+<li>A binary search tree (BST) is a hierarchical data structure. You learned how to define and implement a BST class, how to insert and delete elements into/from a BST, and how to traverse a BST using in order, postorder, preorder, depth-first, and breadth-first searches.</li>
+<li>An iterator is an object that provides a uniform way of traversing the elements in a container, such as a set, a list, or a binary tree. You learned how to define and implement iterator classes for traversing the elements in a binary tree.</li>
+<li>Huffman coding is a scheme for compressing data by using fewer bits to encode characters that occur more frequently. The codes for characters are constructed based on the occurrence of characters in the text using a binary tree, called the Huffman coding tree.</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
