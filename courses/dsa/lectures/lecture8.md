@@ -46,7 +46,7 @@ A binary search tree can be implemented using a linked structure.
 
 <table>
   <tr>
-    <td>![Binary Search Trees](lecture8-diagram1.png)</td>
+    <td> ![Binary Search Trees](lecture8-diagram1.png) </td>
     <td>
       <ul>
         <li>root</li>
@@ -56,6 +56,7 @@ A binary search tree can be implemented using a linked structure.
         <li>siblings</li>
         <li>left/right child</li>
         <li>leaf</li>
+        </ul>
     </td>
   </tr>
 </table>
