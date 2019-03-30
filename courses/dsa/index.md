@@ -7,6 +7,8 @@
 
 | Topic                                                          | Reading Assignment |
 |----------------------------------------------------------------|--------------------|
+| 8. Binary Search Trees [Notes](lectures/lecture8) - [Slides](lectures/lecture8-slides)  | Chapter 25  |
+| 7. Implementing Lists, Stacks, etc. (No slides)  | Chapter 24  |
 | 6. Sorting [Notes](lectures/lecture6) - [Slides](lectures/lecture6-slides)  | Chapter 23  |
 | 5. Developing Efficient Algorithms [Notes](lectures/lecture5) - [Slides](lectures/lecture5-slides)  | Chapter 22  |
 | 4. Sets and Maps [Notes](lectures/lecture4) - [Slides](lectures/lecture4-slides)  | Chapter 21  |
