@@ -13,7 +13,7 @@ Year 3 / Semester 89
 ## Class Meeting Times
 
 * Monday 4:30-6, 6:30-8
-* Wednesday 6:30-8
+* Wednesday 4:30-6 6:30-8
 
 
 ## Instructor Contact Information
@@ -62,26 +62,11 @@ Students should have an understanding of material from Formal Languages and Auto
 
 ## Course Requirements
 
-### Required reading
-
-* [*Introduction to the Theory of Computation **3rd Edition** * (Sipser)](https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X)
-
-
-### Supplemental Reading
-
-* [*Book of Proof*](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
-* [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf)
-
-### Supplemental readings
-Supplemental reading and other materials will be linked on the [course website](https://atu-se.github.io/courses/flat/).  Students are responsible for regularly checking the course website for updates.
-
-
 ## Grading Procedures
 
 * 10% Attendance
-* 45% Final
-* 30% Mid-Term
-* 15% Other Assessments
+* 50% Final
+* 40% Other Assessments 
 
 Late assignments will be received reduced credit at the teacher's discretion.
 
