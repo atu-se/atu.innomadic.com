@@ -1,4 +1,4 @@
-# Data Structures and Algorithms
+# Compiler Design
 
 ## Syllabus
 [Syllabus](syllabus.md)
