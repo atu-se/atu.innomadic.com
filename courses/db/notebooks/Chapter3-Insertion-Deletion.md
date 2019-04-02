@@ -22,8 +22,8 @@ load_ext sql
 ```
 
 ```python
-%%sql 
-mysql+pymysql://instructor:password@localhost/
+%%sql
+mysql+pymysql://@localhost/
 ```
 
 
@@ -49,8 +49,8 @@ Next, we will four tables for our database.  Do you understand each part of the 
 ```python
 %%sql
 create table course (
-    course_id		varchar(8), 
-	 title			varchar(50), 
+    course_id		varchar(8),
+	 title			varchar(50),
 	 dept_name		varchar(20),
 	 credits		numeric(2,0)
 );
@@ -59,9 +59,9 @@ create table course (
 ```python
 %%sql
 create table instructor(
-    ID			varchar(5), 
-	 name			varchar(20) not null, 
-	 dept_name		varchar(20), 
+    ID			varchar(5),
+	 name			varchar(20) not null,
+	 dept_name		varchar(20),
 	 salary			numeric(8,2),
 	 primary key (ID)
     );
@@ -70,9 +70,9 @@ create table instructor(
 ```python
 %%sql
 create table student
-	(ID			varchar(5), 
-	 name			varchar(20) not null, 
-	 dept_name		varchar(20), 
+	(ID			varchar(5),
+	 name			varchar(20) not null,
+	 dept_name		varchar(20),
 	 tot_cred		numeric(3,0) check (tot_cred >= 0),
 	 primary key (ID)
 	);
@@ -81,8 +81,8 @@ create table student
 ```python
 %%sql
 create table department
-	(dept_name		varchar(20), 
-	 building		varchar(15), 
+	(dept_name		varchar(20),
+	 building		varchar(15),
 	 budget		        numeric(12,2) check (budget > 0),
 	 primary key (dept_name)
 	);
@@ -93,7 +93,7 @@ create table department
 Now let's examine what we created.  In WorkBench, just refresh the list of tables.
 
 ```python
-%%sql 
+%%sql
 show tables;
 ```
 
@@ -107,31 +107,31 @@ The format is like this:
 values (A~1~, A~2~, A~3~, A~4~)
 
 ```python
-%%sql 
+%%sql
 insert into course       
 values ('CS-437', 'Database Systems', 'Comp. Sci.', 4);
 ```
 
 
 ```python
-%%sql 
+%%sql
 select * from course;
 ```
 
 ```python
-%%sql 
+%%sql
 insert into course (course_id, title, dept_name, credits)            
 values ('CS-437', 'Database Systems', 'Comp. Sci.', 4);
 ```
 
 ```python
-%%sql 
+%%sql
 insert into course (course_id, title, dept_name)            
 values ('CS-437', 'Database Systems', 'Comp. Sci.');
 ```
 
 ```python
-%%sql 
+%%sql
 insert into course (title, course_id, dept_name)            
 values ('Database Systems', 'CS-437', 'Comp. Sci.');
 ```
@@ -145,13 +145,13 @@ create table budget
 ```
 
 ```python
-%%sql 
-insert into budget 
+%%sql
+insert into budget
 values (1, 'Comp. Sci.', 10000, 123);
 ```
 
 ```python
-%%sql 
+%%sql
 select * from course;
 ```
 
@@ -172,7 +172,7 @@ select * from student;
 Now that we know how insert works, let's add more sample data to our relations.
 
 ```python
-%%sql 
+%%sql
 insert into instructor values ('10101', 'Srinivasan', 'Comp. Sci.', '65000');
 insert into instructor values ('12121', 'Wu', 'Finance', '90000');
 insert into instructor values ('15151', 'Mozart', 'Music', '40000');
@@ -223,7 +223,7 @@ where dept_name= 'Finance';`
 Delete all tuples in the instructor relation for those instructors associated with a department located in the Watson building:
 
 `delete from instructor
-where dept name in 
+where dept name in
     (
         select dept name
         from department
@@ -235,12 +235,12 @@ where dept name in
 ### Example 1 - Remove all tuples from a relation
 
 ```python
-%%sql 
+%%sql
 select * from student;
 ```
 
 ```python
-%%sql 
+%%sql
 delete from student;
 select * from student;
 ```
@@ -253,7 +253,7 @@ select * from instructor;
 ```
 
 ```python
-%%sql 
+%%sql
 delete from instructor
 where dept_name= 'Finance';
 select * from instructor;
@@ -278,8 +278,8 @@ First let's see which departments meet in the Watson building:
 
 ```python
 %%sql
-select * 
-from department 
+select *
+from department
 where building='Watson';
 ```
 
@@ -287,14 +287,14 @@ We can also do a join query to see which instructors will be deleted:
 
 ```python
 %%sql
-select instructor.* 
+select instructor.*
 from instructor, department
-where instructor.dept_name = department.dept_name 
+where instructor.dept_name = department.dept_name
 and department.building='Watson';
 ```
 
 ```python
-%%sql 
+%%sql
 delete from instructor
 where dept_name in (
     select dept_name
@@ -305,7 +305,7 @@ where dept_name in (
 
 
 ```python
-%%sql 
+%%sql
 select * from instructor;
 ```
 
@@ -321,29 +321,29 @@ You delete tuples.
 
 
 ```python
-%%sql 
+%%sql
 create table student
-	(ID			varchar(5), 
-	 name			varchar(20) not null, 
-	 dept_name		varchar(20), 
+	(ID			varchar(5),
+	 name			varchar(20) not null,
+	 dept_name		varchar(20),
 	 tot_cred		numeric(3,0) check (tot_cred >= 0),
 	 primary key (ID)
 	);
-    
+
 ```
 
 ```python
-%%sql 
+%%sql
 delete from student;
 ```
 
 ```python
-%%sql 
+%%sql
 drop table student;
 ```
 
 ```python
-%%sql 
+%%sql
 show tables;
 ```
 
