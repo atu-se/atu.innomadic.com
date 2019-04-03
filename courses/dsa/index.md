@@ -7,6 +7,7 @@
 
 | Topic                                                          | Reading Assignment |
 |----------------------------------------------------------------|--------------------|
+| 9. VL Trees [Slides](https://www3.cs.stonybrook.edu/~pfodor/courses/CSE260/L26_AVL.pdf)  | Chapter 26  |
 | 8. Binary Search Trees [Notes](lectures/lecture8) - [Slides](lectures/lecture8-slides)  | Chapter 25  |
 | 7. Implementing Lists, Stacks, etc. (No slides)  | Chapter 24  |
 | 6. Sorting [Notes](lectures/lecture6) - [Slides](lectures/lecture6-slides)  | Chapter 23  |
