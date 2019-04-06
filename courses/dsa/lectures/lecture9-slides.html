@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-04-03">
+  <title>DSA Lecture</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">DSA Lecture</h1>
+  <p class="subtitle">9. AVL Trees</p>
+  <p class="date">April 3, 2019</p>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="objectives" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li><p>To know what an AVL tree is (§26.1).</p></li>
+<li><p>To understand how to rebalance a tree using the LL rotation, LR rotation, RR rotation, and RL rotation (§26.2).</p></li>
+<li><p>To design the AVLTree class by extending the BST class (§26.3).</p></li>
+<li><p>To insert elements into an AVL tree (§26.4). ## Objectives {#objectives-1 }</p></li>
+<li><p>To implement tree rebalancing (§26.5).</p></li>
+<li><p>To delete elements from an AVL tree (§26.6).</p></li>
+<li><p>To implement the AVLTree class (§26.7).</p></li>
+<li><p>To test the AVLTree class (§26.8).</p></li>
+<li><p>To analyze the complexity of search, insertion, and deletion operations in AVL trees (§26.9).</p></li>
+</ul>
+</section><section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<ul>
+<li>Chapter 25 introduced binary search trees.</li>
+<li>The search, insertion, and deletion times for a binary tree depend on the height of the tree.</li>
+<li>In the worst case, the height is O(n). If a tree is perfectly balanced–i.e., a complete binary tree—its height is log n.</li>
+<li>Can we maintain a perfectly balanced tree? Yes, but doing so will be costly.</li>
+<li>The compromise is to maintain a well-balanced tree—that is, the heights of every node’s two subtrees are about the same.</li>
+</ul>
+</section><section id="history" class="slide level2">
+<h2>History</h2>
+<ul>
+<li>AVL trees were invented in 1962 by two Russian computer scientists, G. M. Adelson-Velsky and E. M. Landis</li>
+<li>Thus, they are named AVL Trees</li>
+</ul>
+</section><section id="overview" class="slide level2">
+<h2>Overview</h2>
+<ul>
+<li>In an AVL tree, the difference between the heights of every node’s two subtrees is 0 or 1.</li>
+<li>It can be shown that the maximum height of an AVL tree is O(log n).</li>
+</ul>
+</section><section id="balance" class="slide level2">
+<h2>Balance</h2>
+<ul>
+<li>The process for inserting or deleting an element in an AVL tree is the same as in a regular binary search tree, except that you may have to rebalance the tree after an insertion or deletion operation.</li>
+<li>The <strong>balance factor</strong> of a node is the height of its right subtree minus the height of its left subtree.</li>
+<li>A node is said to be balanced if its balance factor is -1, 0, or 1. A node is considered left-heavy if its balance factor is -1, and right-heavy if its balance factor is +1.</li>
+</ul>
+</section><section id="balance-1" class="slide level2">
+<h2>Balance</h2>
+<p>What is the balance of each need in these trees?</p>
+<img data-src="lecture9-diagram0.png" title="fig:" alt="Balance" class="stretch" />
+</section></section>
+<section><section id="rebalancing-trees-262" class="title-slide slide level1"><h1>Rebalancing Trees (26.2)</h1></section><section id="rebalancing" class="slide level2">
+<h2>Rebalancing</h2>
+<h3 id="key-point">Key Point</h3>
+<p>After inserting or deleting an element from an AVL tree, if the tree becomes unbalanced, perform a rotation operation to rebalance the tree.</p>
+</section><section id="rebalancing-1" class="slide level2">
+<h2>Rebalancing</h2>
+<ul>
+<li>If a node is not balanced after an insertion or deletion operation, you need to rebalance it.</li>
+<li>The process of rebalancing a node is called rotation.</li>
+<li>There are four possible rotations: LL, RR, LR, and RL.</li>
+</ul>
+</section><section id="ll-imbalance-and-rotation" class="slide level2">
+<h2>LL Imbalance and Rotation</h2>
+<ul>
+<li>An LL imbalance occurs at a node A, such that A has a balance factor of -2 and a left child B with a balance factor of -1 or 0</li>
+<li>This type of imbalance can be fixed by performing a single right rotation at A, as shown in the figure below.</li>
+</ul>
+</section><section id="ll-imbalance-and-rotation-1" class="slide level2">
+<h2>LL Imbalance and Rotation</h2>
+<img data-src="lecture9-diagram1.png" title="fig:" alt="LL Imbalance and Rotation" class="stretch" />
+</section><section id="rr-imbalance-and-rotation" class="slide level2">
+<h2>RR Imbalance and Rotation</h2>
+<ul>
+<li>An RR imbalance occurs at a node A, such that A has a balance factor of +2 and a right child B with a balance factor of +1 or 0</li>
+<li>This type of imbalance can be fixed by performing a single left rotation at A, as shown in the figure below.</li>
+</ul>
+</section><section id="rr-imbalance-and-rotation-1" class="slide level2">
+<h2>RR Imbalance and Rotation</h2>
+<img data-src="lecture9-diagram2.png" title="fig:" alt="RR Imbalance and Rotation" class="stretch" />
+</section><section id="lr-imbalance-and-rotation" class="slide level2">
+<h2>LR Imbalance and Rotation</h2>
+<ul>
+<li>An LR imbalance occurs at a node A, such that A has a balance factor of -2 and a left child B with a balance factor of +1
+<ul>
+<li>Assume B’s right child is C. This type of imbalance can be fixed by performing a double rotation (first a single left rotation at B and then a single right rotation at A), as shown in the figure below.</li>
+</ul></li>
+</ul>
+</section><section id="lr-imbalance-and-rotation-1" class="slide level2">
+<h2>LR Imbalance and Rotation</h2>
+<img data-src="lecture9-diagram3.png" title="fig:" alt="RR Imbalance and Rotation" class="stretch" />
+</section><section id="rl-imbalance-and-rotation" class="slide level2">
+<h2>RL Imbalance and Rotation</h2>
+<ul>
+<li>An RL imbalance occurs at a node A, such that A has a balance factor of +2 and a right child B with a balance factor of -1</li>
+<li>Assume B’s left child is C.</li>
+<li>This type of imbalance can be fixed by performing a double rotation (first a single right rotation at B and then a single left rotation at A), as shown in the figure below.</li>
+</ul>
+</section><section id="rl-imbalance-and-rotation-1" class="slide level2">
+<h2>RL Imbalance and Rotation</h2>
+<img data-src="lecture9-diagram4.png" title="fig:" alt="RR Imbalance and Rotation" class="stretch" />
+</section></section>
+<section><section id="designing-classes-for-an-avl-tree-263" class="title-slide slide level1"><h1>Designing Classes for an AVL Tree (26.3)</h1></section><section id="implementation" class="slide level2">
+<h2>Implementation</h2>
+<ul>
+<li>Since an AVL tree is a binary search tree, AVLTree is designed as a subclass of BST.</li>
+</ul>
+</section><section id="implementation-1" class="slide level2">
+<h2>Implementation</h2>
+<img data-src="lecture9-diagram5.png" title="fig:" alt="AVLTree Class" class="stretch" />
+</section></section>
+<section><section id="overriding-the-insert-method" class="title-slide slide level1"><h1>Overriding the <code>insert</code> method</h1></section><section id="overriding-insert" class="slide level2">
+<h2>Overriding <code>insert</code></h2>
+<ul>
+<li>Inserting an element into an AVL tree is the same as inserting it to a BST, except that the tree may need to be rebalanced.</li>
+<li>A new element is always inserted as a leaf node.</li>
+<li>As a result of adding a new node, the heights of the new leaf node’s ancestors may increase.</li>
+<li>After inserting a new node, check the nodes along the path from the new leaf node up to the root.</li>
+<li>If an unbalanced node is found, perform an appropriate rotation using the algorithm</li>
+</ul>
+</section><section id="overriding-insert-1" class="slide level2">
+<h2>Overriding <code>insert</code></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="at">@Override</span> <span class="co">/**</span> Insert an element and rebalance if necessary <span class="co">*/</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">insert</span>(E e) {</a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="dt">boolean</span> successful = <span class="kw">super</span>.<span class="fu">insert</span>(e);</a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="kw">if</span> (!successful)</a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">return</span> <span class="kw">false</span>; <span class="co">// e is already in the tree</span></a>
+<a class="sourceLine" id="cb1-6" title="6">  <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="fu">balancePath</span>(e); <span class="co">// Balance from e to the root if necessary</span></a>
+<a class="sourceLine" id="cb1-8" title="8">  }</a>
+<a class="sourceLine" id="cb1-9" title="9">  <span class="kw">return</span> <span class="kw">true</span>; <span class="co">// e is inserted</span></a>
+<a class="sourceLine" id="cb1-10" title="10">}</a></code></pre></div>
+</section><section id="balancepath-method" class="slide level2">
+<h2><code>balancePath</code> method</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">private</span> <span class="dt">void</span> <span class="fu">balancePath</span>(E e) {</a>
+<a class="sourceLine" id="cb2-2" title="2">    java.<span class="fu">util</span>.<span class="fu">ArrayList</span>&lt;<span class="bu">TreeNode</span>&lt;E&gt;&gt; path = <span class="fu">path</span>(e);</a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">for</span> (<span class="dt">int</span> i = path.<span class="fu">size</span>() - <span class="dv">1</span>; i &gt;= <span class="dv">0</span>; i--) {</a>
+<a class="sourceLine" id="cb2-4" title="4">      AVLTreeNode&lt;E&gt; A = (AVLTreeNode&lt;E&gt;)(path.<span class="fu">get</span>(i));</a>
+<a class="sourceLine" id="cb2-5" title="5">      <span class="fu">updateHeight</span>(A);</a>
+<a class="sourceLine" id="cb2-6" title="6">      AVLTreeNode&lt;E&gt; parentOfA = (A == root) ? <span class="kw">null</span> :</a>
+<a class="sourceLine" id="cb2-7" title="7">        (AVLTreeNode&lt;E&gt;)(path.<span class="fu">get</span>(i - <span class="dv">1</span>));</a>
+<a class="sourceLine" id="cb2-8" title="8">        <span class="kw">switch</span> (<span class="fu">balanceFactor</span>(A)) {</a>
+<a class="sourceLine" id="cb2-9" title="9">          <span class="kw">case</span> -<span class="dv">2</span>:</a>
+<a class="sourceLine" id="cb2-10" title="10">            <span class="kw">if</span> (<span class="fu">balanceFactor</span>((AVLTreeNode&lt;E&gt;)A.<span class="fu">left</span>) &lt;= <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb2-11" title="11">              <span class="fu">balanceLL</span>(A, parentOfA); <span class="co">// Perform LL rotation</span></a>
+<a class="sourceLine" id="cb2-12" title="12">            }</a>
+<a class="sourceLine" id="cb2-13" title="13">  </a></code></pre></div>
+</section><section id="balancepath-method-1" class="slide level2">
+<h2><code>balancePath</code> method</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1">        <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb3-2" title="2">          <span class="fu">balanceLR</span>(A, parentOfA); <span class="co">// Perform LR rotation</span></a>
+<a class="sourceLine" id="cb3-3" title="3">        }</a>
+<a class="sourceLine" id="cb3-4" title="4">        <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb3-5" title="5">      <span class="kw">case</span> +<span class="dv">2</span>:</a>
+<a class="sourceLine" id="cb3-6" title="6">        <span class="kw">if</span> (<span class="fu">balanceFactor</span>((AVLTreeNode&lt;E&gt;)A.<span class="fu">right</span>) &gt;= <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb3-7" title="7">          <span class="fu">balanceRR</span>(A, parentOfA); <span class="co">// Perform RR rotation</span></a>
+<a class="sourceLine" id="cb3-8" title="8">        }</a>
+<a class="sourceLine" id="cb3-9" title="9">        <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb3-10" title="10">          <span class="fu">balanceRL</span>(A, parentOfA); <span class="co">// Perform RL rotation</span></a>
+<a class="sourceLine" id="cb3-11" title="11">        }</a>
+<a class="sourceLine" id="cb3-12" title="12">    }</a>
+<a class="sourceLine" id="cb3-13" title="13">  }</a>
+<a class="sourceLine" id="cb3-14" title="14">}</a></code></pre></div>
+</section><section id="checkpoint" class="slide level2">
+<h2>Checkpoint</h2>
+<figure>
+<img data-src="lecture9-diagram0.png" alt="Insert 50 into A and rebalance" /><figcaption>Insert 50 into A and rebalance</figcaption>
+</figure>
+</section><section id="checkpoint-1" class="slide level2">
+<h2>Checkpoint</h2>
+<figure>
+<img data-src="lecture9-diagram0.png" alt="Insert 80 into A and rebalance" /><figcaption>Insert 80 into A and rebalance</figcaption>
+</figure>
+</section><section id="checkpoint-2" class="slide level2">
+<h2>Checkpoint</h2>
+<figure>
+<img data-src="lecture9-diagram0.png" alt="Insert 89 into A and rebalance" /><figcaption>Insert 89 into A and rebalance</figcaption>
+</figure>
+</section></section>
+<section><section id="implementing-rotations" class="title-slide slide level1"><h1>Implementing Rotations</h1></section><section id="implementing-rotations-1" class="slide level2">
+<h2>Implementing Rotations</h2>
+<h3 id="key-point-1">Key Point</h3>
+<p>An unbalanced tree becomes balanced by performing an appropriate rotation operation.</p>
+</section><section id="ll-rotation" class="slide level2 tinyslide">
+<h2>LL Rotation</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="co">/**</span> Balance LL <span class="co">(</span>see Figure <span class="co">27.1)</span> <span class="co">*/</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">balanceLL</span>(<span class="bu">TreeNode</span>&lt;E&gt; A, <span class="bu">TreeNode</span>&lt;E&gt; parentOfA) {</a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="bu">TreeNode</span>&lt;E&gt; B = A.<span class="fu">left</span>; <span class="co">// A is left-heavy and B is left-heavy</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  </a>
+<a class="sourceLine" id="cb4-5" title="5">    <span class="kw">if</span> (A == root) {</a>
+<a class="sourceLine" id="cb4-6" title="6">      root = B;</a>
+<a class="sourceLine" id="cb4-7" title="7">    }</a>
+<a class="sourceLine" id="cb4-8" title="8">    <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb4-9" title="9">      <span class="kw">if</span> (parentOfA.<span class="fu">left</span> == A) {</a>
+<a class="sourceLine" id="cb4-10" title="10">        parentOfA.<span class="fu">left</span> = B;</a>
+<a class="sourceLine" id="cb4-11" title="11">      }</a>
+<a class="sourceLine" id="cb4-12" title="12">      <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb4-13" title="13">        parentOfA.<span class="fu">right</span> = B;</a>
+<a class="sourceLine" id="cb4-14" title="14">      }</a>
+<a class="sourceLine" id="cb4-15" title="15">    }</a>
+<a class="sourceLine" id="cb4-16" title="16">  </a>
+<a class="sourceLine" id="cb4-17" title="17">    A.<span class="fu">left</span> = B.<span class="fu">right</span>; <span class="co">// Make T2 the left subtree of A</span></a>
+<a class="sourceLine" id="cb4-18" title="18">    B.<span class="fu">right</span> = A; <span class="co">// Make A the left child of B</span></a>
+<a class="sourceLine" id="cb4-19" title="19">    <span class="fu">updateHeight</span>((AVLTreeNode&lt;E&gt;)A);</a>
+<a class="sourceLine" id="cb4-20" title="20">    <span class="fu">updateHeight</span>((AVLTreeNode&lt;E&gt;)B);</a>
+<a class="sourceLine" id="cb4-21" title="21">  }</a></code></pre></div>
+</section></section>
+<section><section id="implementing-delete" class="title-slide slide level1"><h1>Implementing <code>delete</code></h1></section><section id="implementing-delete-1" class="slide level2">
+<h2>Implementing <code>delete</code></h2>
+<h3 id="key-point-2">Key Point</h3>
+<p>Deleting an element from an AVL tree is the same as deleing it from a BST, except that the tree may need to be rebalanced.</p>
+</section><section id="deletion" class="slide level2">
+<h2>Deletion</h2>
+<p>There are two possible cases with different algorithms for deletion:</p>
+<ul>
+<li>If the deleted has no left child</li>
+<li>If the deletd node has a left child</li>
+</ul>
+</section><section id="deletion-without-left-child" class="slide level2">
+<h2>Deletion Without Left Child</h2>
+<figure>
+<img data-src="lecture9-diagram6.png" alt="Deleting a node with no left child" class="stetch" /><figcaption>Deleting a node with no left child</figcaption>
+</figure>
+</section><section id="deletion-without-left-child-1" class="slide level2">
+<h2>Deletion Without Left Child</h2>
+<ul>
+<li>When this deletion happens, the height of the nodes from the parent node up to the root may have decreased</li>
+<li>Therefore, we must call <code>balancePath(parent.element)</code></li>
+</ul>
+</section><section id="deleting-with-left-child" class="slide level2">
+<h2>Deleting With Left Child</h2>
+<img data-src="lecture9-diagram7.png" title="fig:" alt="Deleting a node with a left child" class="stretch" />
+</section><section id="deleting-with-left-child-1" class="slide level2">
+<h2>Deleting With Left Child</h2>
+<ul>
+<li>When this deletion happens, the height of the nodes along the path from <code>parentOfMostRight</code> may change.<br />
+</li>
+<li>Therefore, we must call <code>balancePath(parentOfRightMost)</code></li>
+</ul>
+</section></section>
+<section id="avltree-class" class="title-slide slide level1"><h1><code>AVLTree</code> Class</h1></section>
+<section><section id="avl-tree-time-complexity" class="title-slide slide level1"><h1>AVL Tree Time Complexity</h1></section><section id="avl-tree-time-complexity-1" class="slide level2">
+<h2>AVL Tree Time Complexity</h2>
+<h3 id="key-point-3">Key Point</h3>
+<p>Since the height of an AVL tree is O(log n), the time complexity of the search, insert, and delete methods in AVLTree is O(log n).</p>
+</section><section id="avl-tree-time-complexity-2" class="slide level2">
+<h2>AVL Tree Time Complexity</h2>
+<ul>
+<li>The time complexity of the search, insert, and delete methods in AVLTree depends on the height of the tree.</li>
+<li>We can prove that the height of the tree is O(log n).</li>
+</ul>
+</section><section id="avl-tree-time-complexity-3" class="slide level2">
+<h2>AVL Tree Time Complexity</h2>
+<ul>
+<li>Let G(h) denote the minimum number of the nodes in an AVL tree with height h.</li>
+<li>G(1) is 1 and G(2) is 2.</li>
+<li>The minimum number of nodes in an AVL tree with height h &gt;= 3 must have two minimum subtrees: one with height h - 1 and the other with height h - 2.</li>
+<li>Thus <span class="math display">G(h) = G(h-1) + G (h-2) + 1</span></li>
+</ul>
+</section><section id="avl-tree-time-complexity-4" class="slide level2">
+<h2>AVL Tree Time Complexity</h2>
+<ul>
+<li>Recall that a Fibonacci number at index i can be described using the recurrence relation F(i) = F(i - 1) + F(i - 2).</li>
+<li>Therefore, the function G(h) is essentially the same as F(i).</li>
+<li>It can be proven that <span class="math display">h &lt; 1.4405\ log(n + 2) - 1.3277</span></li>
+<li>Hence, the height of an AVL tree is O(log n)</li>
+</ul>
+</section><section id="avl-tree-time-complexity-5" class="slide level2">
+<h2>AVL Tree Time Complexity</h2>
+<ul>
+<li>The search, insert, and delete methods involve only the nodes along a path in the tree.</li>
+<li>The updateHeight and balanceFactor methods are executed in a constant time for each node in the path.</li>
+<li>The balancePath method is executed in a constant time for a node in the path.</li>
+<li>Thus, the time complexity for the search, insert, and delete methods is O(log n).</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
