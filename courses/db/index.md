@@ -22,6 +22,17 @@
 
 # Course Updates
 
+### 9-April
+
+On Wednesday, April 10 we will have a quiz covering chapters 1-3 of your textbook.  Most of the quiz will cover basic SQL operations:
+
+* create
+* insert
+* delete
+* select ... from
+
+There will be one question on relational algebra (from chapter 2), and a question concerning desirable database properties such as concurrency and atomicity (chapter 1).
+
 ### 17-March
 
 * Read Chapters 1-2 in your textbook

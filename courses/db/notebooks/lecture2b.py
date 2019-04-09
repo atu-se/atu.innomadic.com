@@ -51,7 +51,8 @@ select * from instructor;
 #
 
 # %%sql 
-insert into instructor (ID, name, dept_name, salary) values ('10211', 'Smith', 'Biology', 66000);
+insert into instructor (ID, name, dept_name, salary) 
+values ('10211', 'Smith', 'Biology', 66000);
 
 # %%sql 
 select * from instructor;
