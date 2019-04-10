@@ -15,9 +15,10 @@
 
 | Topic                                | Reading Assignment | Practical Labs                                                      |
 |--------------------------------------|--------------------|---------------------------------------------------------------------|
-| 3.  [Introduction](lectures/ch3.ppt) | Chapter 3          |    [Notebook 3-Insertion & Deletion](notebooks/Chapter3-Insertion-Deletion)                                                                 |
-| 2.  [Introduction](lectures/ch2.ppt) | Chapter 2          | [Notebook 2](notebooks/lecture2) [Notebook 2b](notebooks/lecture2b) [2c Relational Algebra](notebooks/Lecture 2C - Relational Algebra.ipynb)|
-| 1.  [Introduction](lectures/ch1.ppt) | Chapter 1          |                                                                     |
+| 4.  [Entity Relationship Model ](lectures/ch7.ppt) | Chapter 7          |                           |
+| 3.  [Introduction to SQL](lectures/ch3.ppt) | Chapter 3          |    [Notebook 3-Insertion & Deletion](notebooks/Chapter3-Insertion-Deletion)                                                                 |
+| 2.  [Relational Algebra](lectures/ch2.ppt) | Chapter 2          | [Notebook 2](notebooks/lecture2) [Notebook 2b](notebooks/lecture2b) [2c Relational Algebra](notebooks/Lecture 2C - Relational Algebra.ipynb)|
+| 1.  [Introduction to DBMS](lectures/ch1.ppt) | Chapter 1          |                                                                     |
 
 
 # Course Updates
