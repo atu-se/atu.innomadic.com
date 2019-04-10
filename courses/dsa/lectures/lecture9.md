@@ -297,3 +297,16 @@ $$h < 1.4405\ log(n + 2) - 1.3277$$
 * The balancePath method is executed in a constant time for a node in the
 path.
 * Thus, the time complexity for the search, insert, and delete methods is O(log n).
+
+# Summary
+
+## Summary
+
+1. An AVL tree is a well-balanced binary tree. In an AVL tree, the difference between the heights of two subtrees for every node is 0 or 1.
+2. The process for inserting or deleting an element in an AVL tree is the same as in a regular binary search tree. The difference is that you may have to rebalance the tree after an insertion or deletion operation.
+3. Imbalances in the tree caused by insertions and deletions are rebalanced through subtree rotations at the node of the imbalance.
+
+## Summary
+
+4. The process of rebalancing a node is called a rotation. There are four possible rotations: LL rotation, LR rotation, RR rotation, and RL rotation.
+5. The height of an AVL tree is O(log n). Therefore, the time complexities for the search, insert, and delete methods are O(log n).

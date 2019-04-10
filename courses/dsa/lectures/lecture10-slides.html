@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-04-07">
+  <title>DSA Lecture</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">DSA Lecture</h1>
+  <p class="subtitle">10. Hashing</p>
+  <p class="date">April 7, 2019</p>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="objectives" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>To understand what hashing is and what hashing is used for (§27.2).</li>
+<li>To obtain the hash code for an object and design the hash function to map a key to an index (§27.3).</li>
+<li>To handle collisions using open addressing (§27.4).</li>
+<li>To know the differences among linear probing, quadratic probing, and double hashing (§27.4).</li>
+</ul>
+</section><section id="objectives-1" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>To handle collisions using separate chaining (§27.5).</li>
+<li>To understand the load factor and the need for rehashing (§27.6).</li>
+<li>To implement MyHashMap using hashing (§27.7).</li>
+<li>To implement MyHashSet using hashing (§27.8).</li>
+</ul>
+</section><section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li>Hashing is super efficient.</li>
+<li>It takes O(1) time to search, insert, and delete an element using hashing.</li>
+</ul>
+</section></section>
+<section><section id="what-is-hashing" class="title-slide slide level1"><h1>27.2 What is Hashing?</h1></section><section id="what-is-hashing-1" class="slide level2">
+<h2>What is hashing?</h2>
+<ul>
+<li>Before introducing hashing, let us review map, which is a data structure that is implemented using hashing.</li>
+<li>Recall that a map (introduced in Section 21.5) is a container object that stores entries.</li>
+<li>Each entry contains two parts: a key and a value. The key, also called a search key, is used to search for the corresponding value.</li>
+<li>For example, a dictionary can be stored in a map, in which the words are the keys and the definitions of the words are the values.</li>
+</ul>
+</section><section id="what-is-hashing-2" class="slide level2">
+<h2>What is Hashing</h2>
+<img data-src="lecture10-diagram1.png" title="fig:" alt="Separate Chaining" class="stretch" />
+</section><section id="java-collections-framework" class="slide level2">
+<h2>Java Collections Framework</h2>
+<ul>
+<li>The Java Collections Framework defines the java.util.Map interface for modeling maps.</li>
+<li>Three concrete implementations are java.util.HashMap, java.util.LinkedHashMap, and java.util.TreeMap.</li>
+</ul>
+</section><section id="java-collections-framework-1" class="slide level2">
+<h2>Java Collections Framework</h2>
+<ul>
+<li>java.util.HashMap is implemented using hashing, java. util.LinkedHashMap using LinkedList, and java.util.TreeMap using red-black trees.</li>
+<li>In this lecture we will will learn the concept of hashing and use it to implement a hash map</li>
+</ul>
+</section></section>
+<section><section id="hash-functions-and-codes" class="title-slide slide level1"><h1>27.3 Hash Functions and Codes</h1></section><section id="hash-functions-and-codes-1" class="slide level2">
+<h2>Hash Functions and Codes</h2>
+<p>A typical hash function first converts a search key to an integer value called a hash code, then compresses the hash code into an index to the hash table.</p>
+</section><section id="hash-codes-for-primitive-types" class="slide level2">
+<h2>Hash Codes for Primitive Types</h2>
+<ul>
+<li>To get the search keys for <code>byte</code>, <code>short</code>, <code>int</code>, and <code>char</code>, Java simply casts the variable to <code>int</code></li>
+<li>Other types have more complicated means for calculating the hash code</li>
+</ul>
+</section><section id="hash-codes-for-primitive-types-1" class="slide level2">
+<h2>Hash Codes for Primitive Types</h2>
+<ul>
+<li>For <code>float</code>, Java uses <code>Float.floatToIntBits(key)</code> as the hash code.</li>
+<li>This provides returns an int value whose bit representation is the same as the representation for the <code>float</code>.</li>
+</ul>
+</section><section id="java-methods" class="slide level2">
+<h2>Java methods</h2>
+<ul>
+<li>Java’s root class Object has the hashCode method, which returns an integer hash code.</li>
+<li>By default, the method returns the memory address for the object. The general contract for the hashCode method is as follows:</li>
+</ul>
+<ol type="1">
+<li>You should override the hashCode method whenever the equals method is overridden to ensure that two equal objects return the same hash code.</li>
+<li>During the execution of a program, invoking the hashCode method multiple times returns the same integer, provided that the object’s data are not changed.</li>
+<li>Two unequal objects may have the same hash code, but you should implement the hashCode method to avoid too many such cases.</li>
+</ol>
+</section></section>
+<section><section id="handling-collisions-using-open-addressing" class="title-slide slide level1"><h1>27.4 Handling Collisions Using Open Addressing</h1></section><section id="linear-probing" class="slide level2">
+<h2>Linear Probing</h2>
+</section><section id="linear-probing-1" class="slide level2">
+<h2>Linear Probing</h2>
+<img data-src="lecture10-diagram2.png" title="fig:" alt="Linear Probing" class="stretch" />
+</section><section id="linear-probing-2" class="slide level2">
+<h2>Linear Probing</h2>
+<p><a href="http://cs.armstrong.edu/liang/animation/web/LinearProbing.html">Demo</a></p>
+</section><section id="quadratic-probing" class="slide level2">
+<h2>Quadratic Probing</h2>
+<img data-src="lecture10-diagram3.png" title="fig:" alt="Quadratic Probing" class="stretch" />
+</section><section id="quadratic-probing-1" class="slide level2">
+<h2>Quadratic Probing</h2>
+<p><a href="http://cs.armstrong.edu/liang/animation/web/QuadraticProbing.html">Demo</a></p>
+</section><section id="double-hashing" class="slide level2">
+<h2>Double Hashing</h2>
+<ul>
+<li>Another open addressing scheme that avoids the clustering problem is known as double hash- ing.</li>
+<li>Starting from the initial index k, both linear probing and quadratic probing add an increment to k to define a search sequence.</li>
+<li>The increment is 1 for linear probing and j<sup>2</sup> for quadratic probing.</li>
+<li>These increments are independent of the keys.</li>
+<li>Double hashing uses a secondary hash function h′(key) on the keys to determine the increments to avoid the clustering problem.</li>
+</ul>
+</section><section id="double-hashing-1" class="slide level2">
+<h2>Double Hashing</h2>
+<img data-src="lecture10-diagram4.png" title="fig:" alt="Double Hashing" class="stretch" />
+</section><section id="double-hashing-2" class="slide level2">
+<h2>Double Hashing</h2>
+<ul>
+<li>Specifically, double hashing looks at the cells at indices:</li>
+</ul>
+<p><span class="math inline">(k + j* h′(key)) \% N</span>, for <span class="math inline">j \ge 0</span>, that is:</p>
+<ul>
+<li><span class="math inline">k\%N</span></li>
+<li><span class="math inline">(k + h′(key))\%N</span></li>
+<li><span class="math inline">(k + 2*h′(key))\%N</span></li>
+<li><span class="math inline">(k + 3*h′(key))\%N</span></li>
+<li>etc.</li>
+</ul>
+</section><section id="double-hashing-example" class="slide level2">
+<h2>Double Hashing Example</h2>
+<p>Given the following hash functions for a hash table of size 11:</p>
+<p><span class="math display">h(key) = key \% 11; \\ h&#39;(key) = 7 – key \% 7;</span></p>
+<p>For a search key of 12, we have:</p>
+<p><span class="math display">h(12) = 12 \% 11 = 1; \\ h&#39;(12) = 7 - 12 \% 7 = 2;</span></p>
+</section><section id="double-hashing-example-1" class="slide level2">
+<h2>Double Hashing Example</h2>
+<p>Using the following double hash functions: <span class="math display">h(key) = key \% 11; \\ h&#39;(key) = 7 – key \% 7;</span></p>
+<p>Show the result of adding 45, 58, 4, 28, 21, and 12 to the hash table.</p>
+</section><section id="double-hashing-3" class="slide level2">
+<h2>Double Hashing</h2>
+<p><a href="https://liveexample.pearsoncmg.com/dsanimation/DoubleHashingeBook.html">Demo</a></p>
+</section></section>
+<section><section id="handling-collisions-using-separate-chaining" class="title-slide slide level1"><h1>27.5 Handling Collisions Using Separate Chaining</h1></section><section id="separate-chaining" class="slide level2">
+<h2>Separate Chaining</h2>
+<ul>
+<li>The separate chaining scheme places all entries with the same hash index in the same location, rather than finding new locations.</li>
+<li>Each location in the separate chaining scheme uses a bucket to hold multiple entries.</li>
+</ul>
+</section><section id="separate-chaining-1" class="slide level2">
+<h2>Separate Chaining</h2>
+<ul>
+<li>You can implement a bucket using an array, ArrayList, or LinkedList.</li>
+<li>We will use LinkedList for demonstration.</li>
+<li>You can view each cell in the hash table as the reference to the head of a linked list, and elements in the linked list are chained starting from the head, as shown in the figure below</li>
+</ul>
+</section><section id="separate-chaining-2" class="slide level2">
+<h2>Separate Chaining</h2>
+<img data-src="lecture10-diagram5.png" title="fig:" alt="Separate Chaining" class="stretch" />
+</section></section>
+<section><section id="load-factor-and-rehashing" class="title-slide slide level1"><h1>27.6 Load Factor and Rehashing</h1></section><section id="load-factor-and-rehashing-1" class="slide level2">
+<h2>Load Factor and Rehashing</h2>
+<ul>
+<li>The load factor measures how full a hash table is.</li>
+<li>If the load factor is exceeded, increase the hash-table size and reload the entries into a new larger hash table.</li>
+<li>This is called rehashing.</li>
+</ul>
+</section></section>
+<section><section id="implementing-a-map-using-hashing" class="title-slide slide level1"><h1>27.7 Implementing a Map Using Hashing</h1></section><section id="implementing-a-map-using-hashing-1" class="slide level2">
+<h2>Implementing a Map Using Hashing</h2>
+<p>A map can be implemented using hashing.</p>
+</section><section id="implementing-a-map-using-hashing-2" class="slide level2">
+<h2>Implementing a Map Using Hashing</h2>
+<img data-src="lecture10-diagram6.png" title="fig:" alt="MyMap" class="stretch" />
+</section><section id="implementing-a-map-using-hashing-3" class="slide level2">
+<h2>Implementing a Map Using Hashing</h2>
+<img data-src="lecture10-diagram7.png" title="fig:" alt="MyHashMap" class="stretch" />
+</section><section id="implementing-a-map-using-hashing-4" class="slide level2">
+<h2>Implementing a Map Using Hashing</h2>
+<img data-src="lecture10-diagram8.png" title="fig:" alt="Interface and Concrete Class" class="stretch" />
+</section></section>
+<section><section id="implementing-set-using-hashing" class="title-slide slide level1"><h1>27.8 Implementing Set Using Hashing</h1></section><section id="implementing-set-using-hashing-1" class="slide level2">
+<h2>Implementing Set Using Hashing</h2>
+<p>A hash set can be implemented using a hash map.</p>
+</section><section id="implementing-set-using-hashing-2" class="slide level2">
+<h2>Implementing Set Using Hashing</h2>
+<img data-src="lecture10-diagram9.png" title="fig:" alt="MyHashSet" class="stretch" />
+</section></section>
+<section><section id="summary" class="title-slide slide level1"><h1>Summary</h1></section><section id="summary-1" class="slide level2">
+<h2>Summary</h2>
+<ol type="1">
+<li>A <strong>map</strong> is a data structure that stores entries. Each entry contains two parts: a <strong>key</strong> and a <strong>value</strong>. The key is also called a search key, which is used to search for the corresponding value. <strong>You can implement a map to obtain O(1) time complexity on searching, retrieval, insertion, and deletion using the hashing technique.</strong></li>
+<li>A <strong>set</strong> is a data structure that stores elements. <strong>You can use the hashing technique to implement a set to achieve O(1) time complexity on searching, insertion, and deletion for a set.</strong></li>
+</ol>
+</section><section id="summary-2" class="slide level2">
+<h2>Summary</h2>
+<ol start="3" type="1">
+<li><strong>Hashing</strong> is a technique that retrieves the value using the index obtained from a key without performing a search. A typical hash function first converts a search key to an integer value called a hash code, then compresses the hash code into an index to the hash table.</li>
+<li>A <strong>collision</strong> occurs when two keys are mapped to the same index in a hashtable. Generally, there are two ways for handling collisions: open addressing and separate chaining.</li>
+</ol>
+</section><section id="summary-3" class="slide level2">
+<h2>Summary</h2>
+<ol start="5" type="1">
+<li><strong>Open addressing</strong> is the process of finding an open location in the hashtable in the event of collision. Open addressing has several variations: linear probing, quadratic probing, and double hashing.</li>
+<li>The <strong>separate chaining</strong> scheme places all entries with the same hash index into the same location, rather than finding new locations. Each location in the separate chaining scheme is called a bucket. A bucket is a container that holds multiple entries.</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
