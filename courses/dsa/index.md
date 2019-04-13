@@ -7,7 +7,11 @@
 
 | Topic                                                          | Reading Assignment |
 |----------------------------------------------------------------|--------------------|
-| 10. Hashing [Notes](lectures/lecture10) - [Slides](lectures/lecture10-slides)  | Chapter 25  |
+| 14. Red-Black Trees  |   |
+| 13. 2-4 Trees  |  |
+| 12. Weighted Graphs and Applications  | Chapter 29  |
+| 11. Graphs and Applications [Notes] - [Slides], [Alt Slides](https://www3.cs.stonybrook.edu/~pfodor/courses/CSE260/L28_Graphs.pdf) | Chapter 28  |
+| 10. Hashing [Notes](lectures/lecture10) - [Slides](lectures/lecture10-slides)  | Chapter 27  |
 | 9. AVL Trees [Notes](lectures/lecture9) - [Slides](lectures/lecture9-slides) [Alt Slides](https://www3.cs.stonybrook.edu/~pfodor/courses/CSE260/L26_AVL.pdf)  | Chapter 26  |
 | 8. Binary Search Trees [Notes](lectures/lecture8) - [Slides](lectures/lecture8-slides)  | Chapter 25  |
 | 7. Implementing Lists, Stacks, etc. (No slides)  | Chapter 24  |
@@ -19,6 +23,10 @@
 | 1. Recursion [Notes](lectures/lecture1) - [Slides](lectures/lecture1-slides)   | Chapter 18            |
 
 ## Updates
+
+### Update 13-Apr
+
+Quiz tomorrow on Sunday, April 14
 
 ### Update 10-Apr
 
