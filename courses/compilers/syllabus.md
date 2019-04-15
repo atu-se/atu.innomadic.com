@@ -65,8 +65,9 @@ Students should have an understanding of material from Formal Languages and Auto
 ## Grading Procedures
 
 * 10% Attendance
+* 10% Class Participation
 * 50% Final
-* 40% Other Assessments 
+* 30% Other Assessments 
 
 Late assignments will be received reduced credit at the teacher's discretion.
 
