@@ -9,6 +9,7 @@
 |----------------------------------------------------------------|--------------------|-|
 |  [1a. Overview](lectures/A-overview.pptx), [1b. Formal Languages & Scanners](lectures/B-regexp.pptx) | EAC2e Chapter 1, Chapter2 | [Lecture 1](https://www.youtube.com/watch?v=Kk22pqxy_VI)
 | [2a. Parsing & Context-Free Grammars](lectures/C-grammars.pptx), [2b. LR Parsing](lectures/D-lr-parsing.pptx)   |  EAC2e 3  | [Lecture 2](https://www.youtube.com/watch?v=DwK5EAC3kDI)  |
+| [3a. LL and Recursive Descent Parsing](lectures/F-ll-parsing.pptx) |  EAC2e 3  | [Lecture 3](https://youtu.be/8xiEkS9fpjE?t=5579)  |
 
 
 ## Compiler Project Info
@@ -18,6 +19,16 @@
 
 
 ## Updates
+
+### 22-April
+
+* Quiz 3 on LR parsers
+* Github Repo updated with Example 2 and Exercise 2 on Parsing
+
+### 15-April
+
+* Quiz 2 on Wednesday
+  - Grammars & Parsing
 
 ### 1-April
 
