@@ -9,7 +9,7 @@
 |----------------------------------------------------------------|--------------------|
 | 14. Red-Black Trees  |   |
 | 13. 2-4 Trees  [Video Series](https://www.youtube.com/watch?v=C3SsdUqasD4&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6&index=3&t=333s)|  |
-| 12. Weighted Graphs and Applications  | Chapter 29  |
+| 12. Weighted Graphs and Applications  [Notes](lectures/lecture12) - [Slides](lectures/lecture12-slides)| Chapter 29  |
 | 11. Graphs and Applications [Notes] - [Slides], [Alt Slides](https://www3.cs.stonybrook.edu/~pfodor/courses/CSE260/L28_Graphs.pdf) | Chapter 28  |
 | 10. Hashing [Notes](lectures/lecture10) - [Slides](lectures/lecture10-slides)  | Chapter 27  |
 | 9. AVL Trees [Notes](lectures/lecture9) - [Slides](lectures/lecture9-slides) [Alt Slides](https://www3.cs.stonybrook.edu/~pfodor/courses/CSE260/L26_AVL.pdf)  | Chapter 26  |
