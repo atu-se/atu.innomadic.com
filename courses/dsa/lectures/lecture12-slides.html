@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-04-10">
+  <title>DSA Lecture</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">DSA Lecture</h1>
+  <p class="subtitle">12. Weighted Graphs</p>
+  <p class="date">April 10, 2019</p>
+</section>
+
+<section><section id="objectives" class="title-slide slide level1"><h1>Objectives</h1></section><section id="objectives-1" class="slide level2">
+<h2>Objectives</h2>
+<ol type="1">
+<li>To represent weighted edges using adjacency matrices and adjacency lists (§29.2).</li>
+<li>To model weighted graphs using the WeightedGraph class that extends the AbstractGraph class (§29.3).</li>
+<li>To design and implement the algorithm for finding a minimum spanning tree (§29.4).</li>
+<li>To define the MST class that extends the Tree class (§29.4).</li>
+</ol>
+</section><section id="objectives-2" class="slide level2">
+<h2>Objectives</h2>
+<ol start="5" type="1">
+<li>To design and implement the algorithm for finding single-source shortest paths (§29.5).</li>
+<li>To define the ShortestPathTree class that extends the Tree class (§29.5).</li>
+<li>To solve the weighted nine tails problem using the shortest-path algorithm (§29.6).</li>
+</ol>
+</section><section id="key-term-weighted-graph" class="slide level2">
+<h2>Key Term: Weighted Graph</h2>
+<p>A graph is a weighted graph if each edge is assigned a weight. Weighted graphs have many practical applications.</p>
+</section><section id="weighted-graph" class="slide level2">
+<h2>Weighted Graph</h2>
+<img data-src="lecture12-diagram1.png" title="fig:" alt="Weighted Graph" class="stretch" />
+</section><section id="questions" class="slide level2">
+<h2>Questions</h2>
+<ol type="1">
+<li>How do you find the minimal total distances for connecting all cities?</li>
+<li>How do you find the shortest path between two cities?</li>
+</ol>
+<p>This chapter addresses these questions.</p>
+</section><section id="questions-1" class="slide level2">
+<h2>Questions</h2>
+<ol type="1">
+<li>How do you find the minimal total distances for connecting all cities? – <strong>Minimal Spanning Tree (MST)</strong> problem</li>
+<li>How do you find the shortest path between two cities? – <strong>Shortest Path Problem</strong></li>
+</ol>
+</section><section id="edge-weighted-vs-vertex-weighted" class="slide level2">
+<h2>Edge-Weighted vs. Vertex-Weighted</h2>
+<ul>
+<li>There are two types of weighted graphs: vertex weighted and edge weighted.</li>
+<li>In a vertex-weighted graph, each vertex is assigned a weight.</li>
+<li>In an edge-weighted graph, each edge is assigned a weight.</li>
+<li>Of the two types, edge-weighted graphs have more applications.</li>
+</ul>
+</section></section>
+<section><section id="representing-weighted-graphs" class="title-slide slide level1"><h1>Representing Weighted Graphs</h1></section><section id="representing-weighted-graphs-1" class="slide level2">
+<h2>Representing Weighted Graphs</h2>
+<ul>
+<li>Weighted graphs can be represented in the same way as unweighted graphs, except that you have to represent the weights on the edges.</li>
+<li>As with unweighted graphs, the vertices in weighted graphs can be stored in an array.</li>
+<li>This section introduces three representations for the edges in weighted graphs.</li>
+</ul>
+</section><section id="edge-array" class="slide level2">
+<h2>Edge Array</h2>
+<img data-src="lecture12-diagram2.png" class="stretch" />
+</section><section id="weighted-adjacency-matrix" class="slide level2">
+<h2>Weighted Adjacency Matrix</h2>
+<img data-src="lecture12-diagram3.png" class="stretch" />
+</section><section id="adjacency-lists" class="slide level2">
+<h2>Adjacency Lists</h2>
+<ul>
+<li>Another way to represent the edges is to define edges as objects</li>
+</ul>
+</section><section id="adjacency-lists-1" class="slide level2">
+<h2>Adjacency Lists</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">public</span> <span class="kw">class</span> WeightedEdge <span class="kw">extends</span> AbstractGraph.<span class="fu">Edge</span></a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="kw">implements</span> <span class="bu">Comparable</span>&lt;WeightedEdge&gt; {</a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="kw">public</span> <span class="dt">double</span> weight; <span class="co">// The weight on edge (u, v)</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  </a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="co">/**</span> Create a weighted edge on <span class="co">(</span>u<span class="co">,</span> v<span class="co">)</span> <span class="co">*/</span></a>
+<a class="sourceLine" id="cb1-6" title="6">  <span class="kw">public</span> <span class="fu">WeightedEdge</span>(<span class="dt">int</span> u, <span class="dt">int</span> v, <span class="dt">double</span> weight) {</a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="kw">super</span>(u, v);</a>
+<a class="sourceLine" id="cb1-8" title="8">    <span class="kw">this</span>.<span class="fu">weight</span> = weight;</a>
+<a class="sourceLine" id="cb1-9" title="9">  }</a></code></pre></div>
+<p>…</p>
+</section><section id="adjacency-lists-2" class="slide level2">
+<h2>Adjacency Lists</h2>
+<p>…</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1">  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compareTo</span>(WeightedEdge edge) {</a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="kw">if</span> (weight &gt; edge.<span class="fu">weight</span>) {</a>
+<a class="sourceLine" id="cb2-3" title="3">      <span class="kw">return</span> <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb2-4" title="4">    }</a>
+<a class="sourceLine" id="cb2-5" title="5">    <span class="kw">else</span> <span class="kw">if</span> (weight == edge.<span class="fu">weight</span>) {</a>
+<a class="sourceLine" id="cb2-6" title="6">      <span class="kw">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb2-7" title="7">    }</a>
+<a class="sourceLine" id="cb2-8" title="8">    <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb2-9" title="9">      <span class="kw">return</span> -<span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb2-10" title="10">    }</a>
+<a class="sourceLine" id="cb2-11" title="11">  }</a>
+<a class="sourceLine" id="cb2-12" title="12">}</a></code></pre></div>
+</section><section id="adjacency-lists-3" class="slide level2">
+<h2>Adjacency Lists</h2>
+<ul>
+<li>These objects are then stored in some sort of list, like this:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1">java.<span class="fu">util</span>.<span class="fu">List</span>&lt;WeightedEdge&gt;[] list = <span class="kw">new</span> java.<span class="fu">util</span>.<span class="fu">List</span>[<span class="dv">5</span>];</a></code></pre></div>
+</section><section id="adjacency-lists-4" class="slide level2">
+<h2>Adjacency Lists</h2>
+<img data-src="lecture12-diagram4.png" class="stretch" />
+</section></section>
+<section><section id="the-weightedgraph-class" class="title-slide slide level1"><h1>The WeightedGraph Class</h1></section><section id="weightedgraph-class" class="slide level2">
+<h2>WeightedGraph Class</h2>
+<img data-src="lecture12-diagram5.png" class="stretch" />
+</section></section>
+<section><section id="minimum-spanning-trees" class="title-slide slide level1"><h1>Minimum Spanning Trees</h1></section><section id="key-term-minimum-spanning-tree" class="slide level2">
+<h2>Key Term: Minimum Spanning Tree</h2>
+<blockquote>
+<p>A minimum spanning tree of a graph is a spanning tree with the minimum total weights.</p>
+</blockquote>
+</section><section id="minimum-spanning-trees-1" class="slide level2">
+<h2>Minimum Spanning Trees</h2>
+<ul>
+<li>A graph may have many spanning trees.</li>
+<li>Suppose that the edges are weighted.</li>
+<li>A minimum spanning tree has the minimum total weights.</li>
+</ul>
+</section><section id="minimum-spanning-trees-2" class="slide level2">
+<h2>Minimum Spanning Trees</h2>
+<img data-src="lecture12-diagram6.png" class="stretch" />
+</section><section id="prims-algorithm" class="slide level2">
+<h2>Prim’s Algorithm</h2>
+<ul>
+<li>How do you find a minimum spanning tree?</li>
+<li>There are several well-known algorithms for doing so.</li>
+<li>This section introduces Prim’s algorithm.</li>
+</ul>
+</section><section id="prims-algorithm-1" class="slide level2">
+<h2>Prim’s Algorithm</h2>
+<ul>
+<li>Prim’s algorithm starts with a spanning tree T that contains an arbitrary vertex.</li>
+<li>The algorithm expands the tree by repeatedly adding a vertex with the lowest-cost edge incident to a vertex already in the tree.</li>
+<li>Prim’s algorithm is a <em>greedy algorithm</em>.</li>
+</ul>
+</section><section id="prims-mst" class="slide level2">
+<h2>Prim’s MST</h2>
+<ul>
+<li>Input: A connected undirected weighted G = (V, E) with non-negative weights</li>
+<li>Output: MST (a minimum spanning tree)</li>
+</ul>
+<pre><code>MST minimumSpanningTree() {
+  Let T be a set for the vertices in the spanning tree;
+  Initially, add the starting vertex to T;
+  while (size of T &lt; n) {
+    Find u in T and v in V – T with the smallest weight on the edge (u, v)
+    Add v to T and set parent[v] = u;</code></pre>
+</section><section id="prims-mst-1" class="slide level2">
+<h2>Prim’s MST</h2>
+<ul>
+<li>Input: A connected undirected weighted G = (V, E) with non-negative weights</li>
+<li>Output: MST (a minimum spanning tree)</li>
+</ul>
+<pre><code>MST minimumSpanningTree() {
+  Let T be a set for the vertices in the spanning tree;
+  Initially, add the starting vertex to T;
+  while (size of T &lt; n) {
+    Find u in T and v in V – T with the smallest weight on the edge (u, v)
+    Add v to T and set parent[v] = u;</code></pre>
+</section><section id="prims-mst-2" class="slide level2">
+<h2>Prim’s MST</h2>
+<img data-src="lecture12-diagram7.png" class="stretch" />
+</section><section id="prims-mst-3" class="slide level2">
+<h2>Prim’s MST</h2>
+<img data-src="lecture12-diagram8.png" class="stretch" />
+</section><section id="prims-mst-4" class="slide level2">
+<h2>Prim’s MST</h2>
+<img data-src="lecture12-diagram9.png" class="stretch" />
+</section><section id="prims-mst-5" class="slide level2">
+<h2>Prim’s MST</h2>
+<img data-src="lecture12-diagram10.png" class="stretch" />
+</section><section id="prims-mst-6" class="slide level2">
+<h2>Prim’s MST</h2>
+<img data-src="lecture12-diagram11.png" class="stretch" />
+</section></section>
+<section><section id="shortest-path" class="title-slide slide level1"><h1>Shortest Path</h1></section><section id="key-term-shortest-path" class="slide level2">
+<h2>Key Term: Shortest Path</h2>
+<blockquote>
+<p>The shortest path between two vertices is a path with the minimum total weights.</p>
+</blockquote>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

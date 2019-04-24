@@ -24,6 +24,26 @@
 
 ## Updates
 
+### Update 24-Apr
+
+#### Final Exam Information
+
+The final exam covers Chapter 25-29.
+
+1. Read all chapters
+2. Pay special attention to key terms and objectives
+3. Review quiz
+4. Review lecture notes
+
+####
+
+Assignment 2:
+
+1. Read through source code page 972 to 977,  LISTING 26.3 AVLTree.java in our textbook, and then write summary what that program does, and how AVL implementation is used (2.5marks).
+2. Read through  source code page 997 to 1001,  LISTING 27.2 MyHashMap.java  in our textbook, and then write summary what that program does and how hash implementation is used (2.5marks).
+
+Due via email May 1.
+
 ### Update 13-Apr
 
 Quiz tomorrow on Sunday, April 14
