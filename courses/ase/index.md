@@ -4,9 +4,12 @@
 
 | Week | Lecture |
 |------|---------|
-| 1. 18-Jun   | 15. [Software Re-use](lectures/Ch15 Software reuse.pptx)   |
+| 1. 15-Jun   | 15. [Software Re-use](lectures/Ch15 Software reuse.pptx)   |
+| 2. 22-Jun   | 17. [Distributed Software Engineering](lectures/Ch17 Distributed software engineering.pptx)   |
 
 ## Assignments
+
+*Note: most chapters will have assigned videos for viewing.  Find these in the Update section for each week.*
 
 | Assignment | Due Date |
 |------------|----------|
@@ -15,22 +18,29 @@
 
 ## Reading
 
-| Assignment | Due Date |
-|------------|----------|
-| 15. Software Re-use | 26-Jun |
-
-## Videos
-
-| Assignment | Due Date |
-|------------|----------|
-| 15. Software Re-use videos linked in 15-Jun update below | 26-Jun |
+| Assignment                           | Due Date |
+|--------------------------------------|----------|
+| 15. Software Re-use                  | 26-June  |
+| 17. Distributed Software Engineering | 3-Jul    |
 
 
 ## Updates
 
-###  Week of 16-Jun
+###  Week of 22-Jun
 
-By 26-June, carefully watch the following videos:
+By 3-Jul, carefully watch the following *Distribute Software Engineering* videos:
+
+* [Introduction to Distributed Systems ](https://www.youtube.com/watch?v=F_4BCNl0iVk)
+Explains what is meant by a distributed systems and introduces some systems characteristics and issues in distributed systems engineering.
+* [Client-server architecture](https://www.youtube.com/watch?v=eRhxxFefAeA)
+A good general overview of the client-server architectural model
+* [Software as a service](https://www.youtube.com/watch?v=3DCqdY3yyDE)
+A high-level introduction to SaaS and its business advantages
+
+
+###  Week of 15-Jun
+
+By 26-June, carefully watch the following *Software Re-use* videos:
 
 * [The reuse landscape](https://www.youtube.com/watch?v=feAZV7Ofov4)
 * [Introduction to Web Application Frameworks](https://www.youtube.com/watch?v=b3p4rBZAwwE)
