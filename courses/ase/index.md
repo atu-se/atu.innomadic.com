@@ -6,6 +6,7 @@
 |------|---------|
 | 1. 15-Jun   | 15. [Software Re-use](lectures/Ch15 Software reuse.pptx)   |
 | 2. 22-Jun   | 17. [Distributed Software Engineering](lectures/Ch17 Distributed software engineering.pptx)   |
+| 3. 11-Jul   | 10. [Dependable Systems](lectures/Ch10 Dependable systems.pptx)  |
 
 ## Assignments
 
@@ -25,6 +26,14 @@
 
 
 ## Updates
+
+### Week of 6-Jul
+
+* Lecture Notes for Chapter 10 on Dependable Systems are posted above.
+* There will be a quiz on Sunday, July 14 covering Chapter 17 on Distributed Software Engineering.  Review lecture, textbook, and linked videos.
+* By 16-Jul, carefully watch the following videos on Dependable Systems:
+  - [Dependability](https://www.youtube.com/watch?v=Oa27Xej1KdY)
+  - [Introduction to Socio-technical Systems](https://www.youtube.com/watch?v=xdFftbIToV0)
 
 ###  Week of 22-Jun
 
