@@ -6,7 +6,8 @@
 |------|---------|
 | 1. 15-Jun   | 15. [Software Re-use](lectures/Ch15 Software reuse.pptx)   |
 | 2. 22-Jun   | 17. [Distributed Software Engineering](lectures/Ch17 Distributed software engineering.pptx)   |
-| 3. 11-Jul   | 10. [Dependable Systems](lectures/Ch10 Dependable systems.pptx)  |
+| 3. 6-Jul   | 10. [Dependable Systems](lectures/Ch10 Dependable systems.pptx)  |
+| 4. 13-Jul   | 11. [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)  |
 
 ## Assignments
 
@@ -23,9 +24,17 @@
 |--------------------------------------|----------|
 | 15. Software Re-use                  | 26-June  |
 | 17. Distributed Software Engineering | 3-Jul    |
+| 10. Dependable Systems               | 16-Jul   |
+| 11. Reliability Engineering   |  21-Jul |
 
 
 ## Updates
+
+### Week of 13-Jul
+
+* Lecture notes for Chapter 11 on Reliability Engineering have been posted above
+* By 16-Jul, carefully watch the following videos on Reliability Engineering:
+  - [Airbus FCS Software and Hardware Redundancy](https://www.youtube.com/watch?v=EOexjozpBdI)
 
 ### Week of 6-Jul
 
@@ -37,20 +46,19 @@
 
 ###  Week of 22-Jun
 
-By 3-Jul, carefully watch the following *Distributed Software Engineering* videos:
+* By 3-Jul, carefully watch the following *Distributed Software Engineering* videos:
 
-* [Introduction to Distributed Systems ](https://www.youtube.com/watch?v=F_4BCNl0iVk)
-Explains what is meant by a distributed systems and introduces some systems characteristics and issues in distributed systems engineering.
-* [Software as a service](https://www.youtube.com/watch?v=3DCqdY3yyDE)
-A high-level introduction to SaaS and its business advantages
-
+  * [Introduction to Distributed Systems ](https://www.youtube.com/watch?v=F_4BCNl0iVk)
+  * [Software as a service](https://www.youtube.com/watch?v=3DCqdY3yyDE)
+  A high-level introduction to SaaS and its business advantages
+  * [Moving Products to the Cloud](https://www.youtube.com/watch?v=vHtaOGwzZ3k)
 
 ###  Week of 15-Jun
 
-By 26-June, carefully watch the following *Software Re-use* videos:
+* By 26-June, carefully watch the following *Software Re-use* videos:
 
-* [The reuse landscape](https://www.youtube.com/watch?v=feAZV7Ofov4)
-* [Introduction to Web Application Frameworks](https://www.youtube.com/watch?v=b3p4rBZAwwE)
-* [Software Product Line Engineering](https://www.youtube.com/watch?v=R1gybFwAy10)
-* [What is ERP?](https://www.youtube.com/watch?v=E0tgKVOxihI)
-* [The Ariane 5 launch failure](https://www.youtube.com/watch?v=W3YJeoYgozw)
+  * [The reuse landscape](https://www.youtube.com/watch?v=feAZV7Ofov4)
+  * [Introduction to Web Application Frameworks](https://www.youtube.com/watch?v=b3p4rBZAwwE)
+  * [Software Product Line Engineering](https://www.youtube.com/watch?v=R1gybFwAy10)
+  * [What is ERP?](https://www.youtube.com/watch?v=E0tgKVOxihI)
+  * [The Ariane 5 launch failure](https://www.youtube.com/watch?v=W3YJeoYgozw)
