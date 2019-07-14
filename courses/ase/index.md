@@ -25,7 +25,7 @@
 | 15. Software Re-use                  | 26-June  |
 | 17. Distributed Software Engineering | 3-Jul    |
 | 10. Dependable Systems               | 16-Jul   |
-| 11. Reliability Engineering   |  21-Jul |
+| 11. Reliability Engineering          |  21-Jul |
 
 
 ## Updates
@@ -35,6 +35,13 @@
 * Lecture notes for Chapter 11 on Reliability Engineering have been posted above
 * By 16-Jul, carefully watch the following videos on Reliability Engineering:
   - [Airbus FCS Software and Hardware Redundancy](https://www.youtube.com/watch?v=EOexjozpBdI)
+  * [Availability and Reliability](https://www.youtube.com/watch?v=C94_arCm-Mw)
+  * [System success and failure (11:43)](https://www.youtube.com/watch?v=VkW7Dr3SXkg)
+
+* Optionally, watch these extra videos to enhance your learning:
+  * [Reliability 6 - Software reliability](https://www.youtube.com/watch?v=wv51aF_qODA)
+  * [PostOps: A Non-Surgical Tale of Software, Fragility, and Reliability](https://www.youtube.com/watch?v=txyvjt_E8z4)
+
 
 ### Week of 6-Jul
 

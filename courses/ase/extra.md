@@ -7,7 +7,6 @@
 
 * [Introduction to Web APIs](https://zapier.com/learn/apis/)
 
-
 ## Articles
 
 * [Introduction to ReST](https://www.infoq.com/articles/rest-introduction/)
@@ -33,6 +32,8 @@
 * [Airbus FCS Software and Hardware Redundancy](https://www.youtube.com/watch?v=EOexjozpBdI)
 * [Availability and Reliability](https://www.youtube.com/watch?v=C94_arCm-Mw)
 * [System success and failure (11:43)](https://www.youtube.com/watch?v=VkW7Dr3SXkg)
+* [Reliability 6 - Software reliability](https://www.youtube.com/watch?v=wv51aF_qODA)
+* [PostOps: A Non-Surgical Tale of Software, Fragility, and Reliability](https://www.youtube.com/watch?v=txyvjt_E8z4)
 
 # 12 Safety
 
@@ -40,6 +41,9 @@
 * [Stuxnet](https://www.youtube.com/watch?v=RilxHjt5yRE)
 * [Infrastructure Dependability](https://www.youtube.com/watch?v=w209SCYioUo)
 * [Warsaw Bus Accident 1993](https://www.youtube.com/watch?v=wzoxek74RTs)
+* [Challenges in Safety Critical Systems Design and Development](https://www.youtube.com/watch?v=UKR214ma-yU)
+* [Software Development for Safety-critical Environments](http://www.programmingresearch.com/resources/webinars/software-development-for-safety-critical-environments-webinar/)
+* [Fatal Logic - Warsaw Case Study](https://www.youtube.com/watch?v=FZ5Ht_mhdrI)
 
 # 13 Security
 
@@ -47,7 +51,8 @@
 * [Security is a Sociotechnical Issue](https://www.youtube.com/watch?v=8bLwJy2BwKs)
 * [Cybersecurity](https://www.youtube.com/watch?v=YPxlwsxEW48)
 * [Cybersecurity Costs and Causes](https://www.youtube.com/watch?v=73E2tzQl_nY)
-
+* [What Every Engineer Needs to Know About Security and Where to Learn It (50 minutes)](https://www.youtube.com/watch?v=LL_n7dlBgfY)
+* [Testing Fundamentals (90 minutes)](https://www.youtube.com/watch?v=PYwqyVlH8lQ)
 
 # 14 Resilience
 
