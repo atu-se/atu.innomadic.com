@@ -8,6 +8,7 @@
 | 2. 22-Jun   | 17. [Distributed Software Engineering](lectures/Ch17 Distributed software engineering.pptx)   |
 | 3. 6-Jul   | 10. [Dependable Systems](lectures/Ch10 Dependable systems.pptx)  |
 | 4. 13-Jul   | 11. [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)  |
+| 5. 13-Jul   | 12 [Safety Engineering](lectures/Ch12 Safety engineering.pptx)   |
 
 ## Assignments
 
@@ -26,12 +27,23 @@
 | 17. Distributed Software Engineering | 3-Jul    |
 | 10. Dependable Systems               | 16-Jul   |
 | 11. Reliability Engineering          |  21-Jul |
+| 12. Safety Engineering   | 21-Jul     |
 
 
 ## Updates
 
 ### Week of 13-Jul
 
+* Lecture notes have been added for Chapter 12 on Safety Engineering have been posted above.
+
+* Videos for Safety Engineering:
+  * [Sommerville on Safety](https://www.youtube.com/watch?v=IITymheitxw)
+  * [Stuxnet](https://www.youtube.com/watch?v=RilxHjt5yRE)
+  * [Infrastructure Dependability](https://www.youtube.com/watch?v=w209SCYioUo)
+  * [Warsaw Bus Accident 1993](https://www.youtube.com/watch?v=wzoxek74RTs)
+  * [Challenges in Safety Critical Systems Design and Development](https://www.youtube.com/watch?v=UKR214ma-yU)
+  * [Software Development for Safety-critical Environments](http://www.programmingresearch.com/resources/webinars/software-development-for-safety-critical-environments-webinar/)
+  * [Fatal Logic - Warsaw Case Study](https://www.youtube.com/watch?v=FZ5Ht_mhdrI)
 * Lecture notes for Chapter 11 on Reliability Engineering have been posted above
 * By 16-Jul, carefully watch the following videos on Reliability Engineering:
   - [Airbus FCS Software and Hardware Redundancy](https://www.youtube.com/watch?v=EOexjozpBdI)
