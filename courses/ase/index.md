@@ -35,12 +35,12 @@
 ### Week of 13-Jul
 
 * Lecture notes have been added for Chapter 12 on Safety Engineering have been posted above.
-
-* Videos for Safety Engineering:
+* By 23-Jul, carefully watch the following videos on Safety Engineering:
   * [Sommerville on Safety](https://www.youtube.com/watch?v=IITymheitxw)
   * [Stuxnet](https://www.youtube.com/watch?v=RilxHjt5yRE)
-  * [Infrastructure Dependability](https://www.youtube.com/watch?v=w209SCYioUo)
   * [Warsaw Bus Accident 1993](https://www.youtube.com/watch?v=wzoxek74RTs)
+  * [Infrastructure Dependability](https://www.youtube.com/watch?v=w209SCYioUo)
+* You may also find these videos on Safety Engineering helpful:
   * [Challenges in Safety Critical Systems Design and Development](https://www.youtube.com/watch?v=UKR214ma-yU)
   * [Software Development for Safety-critical Environments](http://www.programmingresearch.com/resources/webinars/software-development-for-safety-critical-environments-webinar/)
   * [Fatal Logic - Warsaw Case Study](https://www.youtube.com/watch?v=FZ5Ht_mhdrI)
