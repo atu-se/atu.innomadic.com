@@ -42,7 +42,6 @@
   * [Infrastructure Dependability](https://www.youtube.com/watch?v=w209SCYioUo)
 * You may also find these videos on Safety Engineering helpful:
   * [Challenges in Safety Critical Systems Design and Development](https://www.youtube.com/watch?v=UKR214ma-yU)
-  * [Software Development for Safety-critical Environments](http://www.programmingresearch.com/resources/webinars/software-development-for-safety-critical-environments-webinar/)
   * [Fatal Logic - Warsaw Case Study](https://www.youtube.com/watch?v=FZ5Ht_mhdrI)
 * Lecture notes for Chapter 11 on Reliability Engineering have been posted above
 * By 16-Jul, carefully watch the following videos on Reliability Engineering:
