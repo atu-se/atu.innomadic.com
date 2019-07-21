@@ -8,7 +8,8 @@
 | 2. 22-Jun   | 17. [Distributed Software Engineering](lectures/Ch17 Distributed software engineering.pptx)   |
 | 3. 6-Jul   | 10. [Dependable Systems](lectures/Ch10 Dependable systems.pptx)  |
 | 4. 13-Jul   | 11. [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)  |
-| 5. 13-Jul   | 12 [Safety Engineering](lectures/Ch12 Safety engineering.pptx)   |
+| 5. 17-Jul   | 12. [Safety Engineering](lectures/Ch12 Safety engineering.pptx)   |
+| 6. 21-Jul   | 13.  [Security Engineering](lectures/Ch13 Security engineering.pptx) |
 
 ## Assignments
 
@@ -18,6 +19,7 @@
 |------------|----------|
 | 1. Create a [Github](http://github.com) account. Email link to professor | 26-Jun |
 | 2. Complete [Github Hello World Tutorial](https://guides.github.com/activities/hello-world/). Email link to your instructor | 26-Jun |
+| 3. Choose one partner and an open source [static analysis tool](https://www.owasp.org/index.php/Source_Code_Analysis_Tools).  Each team should choose a different tool.  You will inform your instructor of your choice on 23-Jul, and any conflicting choices will be resolved.  Prepare a 5-10 minutes group presentation, including a demo that you will show to the class. |  |
 
 ## Reading
 
@@ -27,10 +29,17 @@
 | 17. Distributed Software Engineering | 3-Jul    |
 | 10. Dependable Systems               | 16-Jul   |
 | 11. Reliability Engineering          |  21-Jul |
-| 12. Safety Engineering   | 21-Jul     |
+| 12. Safety Engineering               | 21-Jul     |
+| 13. Security Engineering             | 28-Jul   |
 
 
 ## Updates
+
+### Week of 20-Jul
+
+* By 23-Jul, watch the following videos:
+  - [Reverse Proxy vs. Load Balancer](https://www.youtube.com/watch?v=S8J2fkN2FeI)
+
 
 ### Week of 13-Jul
 
