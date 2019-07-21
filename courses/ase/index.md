@@ -39,6 +39,7 @@
 
 * By 23-Jul, watch the following videos:
   - [Reverse Proxy vs. Load Balancer](https://www.youtube.com/watch?v=S8J2fkN2FeI)
+  - [Bug Hunting with Static Code Analysis](https://www.youtube.com/watch?v=Sb011qfbMkQ)
 
 
 ### Week of 13-Jul
