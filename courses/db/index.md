@@ -3,6 +3,7 @@
 # Textbooks
 
 * [Database System Concepts, 6th Edition](https://www.amazon.com/Database-Concepts-Abraham-Silberschatz-Professor/dp/0073523321/ref=sr_1_1)
+* [TutorialsPoint Access Site](https://www.tutorialspoint.com/ms_access/)
 
 # Supplemental Reading
 
@@ -22,6 +23,20 @@
 
 
 # Course Updates
+
+### 22-Jul
+
+* The final exam will be next week.  It will be a practical exam focused on the Microsoft Access skills you have studied since the midterm exam.
+* You should come with a laptop to the final exam, and you should be prepared to demonstrate the following competencies:
+  - Table design according to a specification
+    - Including correct field types
+    - Foreign Key relationships
+    - Lookup Wizard relationships
+  - Default form design
+  - Default report design
+  - Query design with criteria
+* [These Microsoft Access tutorials](https://www.tutorialspoint.com/ms_access/) may assist you in studying for the exam.
+
 
 ### 9-April
 

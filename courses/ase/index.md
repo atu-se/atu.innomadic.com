@@ -9,7 +9,7 @@
 | 3. 6-Jul   | 10. [Dependable Systems](lectures/Ch10 Dependable systems.pptx)  |
 | 4. 13-Jul   | 11. [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)  |
 | 5. 17-Jul   | 12. [Safety Engineering](lectures/Ch12 Safety engineering.pptx)   |
-| 6. 21-Jul   | 13.  [Security Engineering](lectures/Ch13 Security engineering.pptx) |
+| 6. 4-Aug   | 13.  [Security Engineering](lectures/Ch13 Security engineering.pptx) |
 
 ## Assignments
 
@@ -19,7 +19,7 @@
 |------------|----------|
 | 1. Create a [Github](http://github.com) account. Email link to professor | 26-Jun |
 | 2. Complete [Github Hello World Tutorial](https://guides.github.com/activities/hello-world/). Email link to your instructor | 26-Jun |
-| 3. Choose one partner and an open source [static analysis tool](https://www.owasp.org/index.php/Source_Code_Analysis_Tools).  Each team should choose a different tool.  You will inform your instructor of your choice on 23-Jul, and any conflicting choices will be resolved.  Prepare a 5-10 minutes group presentation, including a demo that you will show to the class. |  |
+| 3. Choose one partner and an open source [static analysis tool](https://www.owasp.org/index.php/Source_Code_Analysis_Tools).  Each team should choose a different tool.  You will inform your instructor of your choice on 23-Jul, and any conflicting choices will be resolved.  Download and install the static analysis tool you chose.  Study its documentation.  Download the source code of any open source project written in an language that your static analysis tool works with, and run it against the source code.  Create a 5-10 minutes presentation for the class in which you teach them about the tool and what you learned.  Then provide a 5-10 minute demonstration for the class showing the capabilities of the software and any possible vulnerabilities you identified. |  4-Aug |
 
 ## Reading
 
@@ -28,17 +28,22 @@
 | 15. Software Re-use                  | 26-June  |
 | 17. Distributed Software Engineering | 3-Jul    |
 | 10. Dependable Systems               | 16-Jul   |
-| 11. Reliability Engineering          |  21-Jul |
-| 12. Safety Engineering               | 21-Jul     |
-| 13. Security Engineering             | 28-Jul   |
+| 11. Reliability Engineering          |  21-Jul  |
+| 12. Safety Engineering               | 21-Jul   |
+| 13. Security Engineering             | 4-Aug    |
 
 
 ## Updates
 
 ### Week of 20-Jul
 
-* By 23-Jul, watch the following videos:
+* A [midterm exam study guide](midterm_exam_review.md) has been posted.
+* Assignment #3 has been announced and posted above.
+* Announcement: there will be a quiz on Chapters 10 and 11 on Tuesday, July 23.
+* The midterm exam will cover chapters 15, 17, 10, 11, and 12 and will be administered during the week following July 27.
+* By 4-Aug, watch the following videos on Security Engineering:
   - [Reverse Proxy vs. Load Balancer](https://www.youtube.com/watch?v=S8J2fkN2FeI)
+* You may also found these videos helpful:
   - [Bug Hunting with Static Code Analysis](https://www.youtube.com/watch?v=Sb011qfbMkQ)
 
 
