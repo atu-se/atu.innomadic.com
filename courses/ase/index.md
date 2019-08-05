@@ -35,6 +35,19 @@
 
 ## Updates
 
+### Week of 3-Aug
+
+* Lecture notes have been added for Chapter 13 on Security
+* By 10-Aug, carefully watch the following videos on Security Engineering:
+  * [Sommerville on Security](https://www.youtube.com/watch?v=GTxPzKfriOU)
+  * [Security is a Sociotechnical Issue](https://www.youtube.com/watch?v=8bLwJy2BwKs)
+  * [Cybersecurity](https://www.youtube.com/watch?v=YPxlwsxEW48)
+  * [Cybersecurity Costs and Causes](https://www.youtube.com/watch?v=73E2tzQl_nY)
+
+* You may also find these videos on Safety Engineering helpful:
+  * [What Every Engineer Needs to Know About Security and Where to Learn It (50 minutes)](https://www.youtube.com/watch?v=LL_n7dlBgfY)
+  * [Security Testing Fundamentals (90 minutes)](https://www.youtube.com/watch?v=PYwqyVlH8lQ)
+
 ### Week of 20-Jul
 
 * A [midterm exam study guide](midterm_exam_review.md) has been posted.
