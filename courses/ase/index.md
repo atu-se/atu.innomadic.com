@@ -10,6 +10,7 @@
 | 4. 13-Jul   | 11. [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)  |
 | 5. 17-Jul   | 12. [Safety Engineering](lectures/Ch12 Safety engineering.pptx)   |
 | 6. 4-Aug   | 13.  [Security Engineering](lectures/Ch13 Security engineering.pptx) |
+| 7. 20-Aug  | 14. [Resilience engineering](lectures/Ch14 Resilience engineering.pptx)  |
 
 ## Assignments
 

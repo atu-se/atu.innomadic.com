@@ -1,4 +1,20 @@
-[Availability and Reliability](https://www.youtube.com/watch?v=C94_arCm-Mw)
+# Devops
+
+https://alexbilbie.com/2013/12/vagrant-ansible-courses/
+
+# Load Balancing
+
+[HAProxy and Docker](https://medium.com/@nirgn/load-balancing-applications-with-haproxy-and-docker-d719b7c5b231)
+
+https://www.inlab.net/articles/free-and-open-source-load-balancing-software-and-projects/
+
+https://codeburst.io/scaling-out-with-docker-and-nginx-8eda9fb1654c
+
+https://levelup.gitconnected.com/load-balance-and-scale-node-js-containers-with-nginx-and-docker-swarm-9fc97c3cff81
+
+https://geekflare.com/open-source-load-balancer/
+
+
 
 
 # 18-ish Web APIs
