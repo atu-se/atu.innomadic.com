@@ -10,7 +10,8 @@
 | 4. 13-Jul   | 11. [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)  |
 | 5. 17-Jul   | 12. [Safety Engineering](lectures/Ch12 Safety engineering.pptx)   |
 | 6. 4-Aug   | 13.  [Security Engineering](lectures/Ch13 Security engineering.pptx) |
-| 7. 20-Aug  | 14. [Resilience engineering](lectures/Ch14 Resilience engineering.pptx)  |
+| 7. 17-Aug  | 14. [Resilience engineering](lectures/Ch14 Resilience engineering.pptx)  |
+| 7. 31-Aug  | 21. [Realtime Software Engineering](lectures/Ch21 Real-time software engineering.pptx  |
 
 ## Assignments
 
@@ -32,9 +33,23 @@
 | 11. Reliability Engineering          |  21-Jul  |
 | 12. Safety Engineering               | 21-Jul   |
 | 13. Security Engineering             | 4-Aug    |
-
+| 14. Resilience Engineering           | 27-Aug   |
+| 21. Real-time Software Engineering   | 3-Sep    |
 
 ## Updates
+
+### Week of 24-Aug
+
+* Lecture notes have been added for Chapter 14 on resilience
+* By 1-Sep, carefully watch the following videos on Reslience Engineering
+  * [Sommerville on Cyber Attacks](https://www.youtube.com/watch?v=zTiOoojSqO4)
+  * [Sommerville on Improving Cybersecurity](https://www.youtube.com/watch?v=lIKqqMJ_hYY)
+  * [Sommerville Case Study on Maroochy Water Breach](https://www.youtube.com/watch?v=C_PRhTXp6VQ)
+
+
+### Week of 17-Aug
+
+* There will be a quiz next week over Chapter 13 Security
 
 ### Week of 3-Aug
 
