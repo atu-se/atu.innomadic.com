@@ -11,7 +11,7 @@
 | 5. 17-Jul   | 12. [Safety Engineering](lectures/Ch12 Safety engineering.pptx)   |
 | 6. 4-Aug   | 13.  [Security Engineering](lectures/Ch13 Security engineering.pptx) |
 | 7. 17-Aug  | 14. [Resilience engineering](lectures/Ch14 Resilience engineering.pptx)  |
-| 7. 31-Aug  | 21. [Realtime Software Engineering](lectures/Ch21 Real-time software engineering.pptx  |
+| 7. 31-Aug  | 21. [Realtime Software Engineering](lectures/Ch21 Real-time software engineering.pptx)  |
 
 ## Assignments
 
@@ -38,10 +38,15 @@
 
 ## Updates
 
+### Week of 31-Aug
+
+* Next week there will be a quiz over Resilience Engineering, Chapter 14
+* [Load Balancing with HAProxy and Docker](https://medium.com/@nirgn/load-balancing-applications-with-haproxy-and-docker-d719b7c5b231)
+* Install [Docker](https://www.docker.com/) and bring your laptop to class
 ### Week of 24-Aug
 
 * Lecture notes have been added for Chapter 14 on resilience
-* By 1-Sep, carefully watch the following videos on Reslience Engineering
+* By 1-Sep, carefully watch the following videos on Resilience Engineering
   * [Sommerville on Cyber Attacks](https://www.youtube.com/watch?v=zTiOoojSqO4)
   * [Sommerville on Improving Cybersecurity](https://www.youtube.com/watch?v=lIKqqMJ_hYY)
   * [Sommerville Case Study on Maroochy Water Breach](https://www.youtube.com/watch?v=C_PRhTXp6VQ)

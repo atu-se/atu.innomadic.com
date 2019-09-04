@@ -45,9 +45,9 @@ Supplemental reading and other materials will be linked on the [course website](
 ## Grading Procedures
 
 * 10% Attendance
-* 40% Project
-* 40% Mid-Term
-* 10% Assignments: Quizzes, Homework, etc.
+* 40% Final
+* 30% Mid-Term
+* 20% Assignments: Labs, Quizzes, Homework, etc.
 
 Late assignments will be received reduced credit at the teacher's discretion.
 
