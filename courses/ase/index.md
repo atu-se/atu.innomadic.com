@@ -34,15 +34,20 @@
 | 12. Safety Engineering               | 21-Jul   |
 | 13. Security Engineering             | 4-Aug    |
 | 14. Resilience Engineering           | 27-Aug   |
-| 21. Real-time Software Engineering   | 3-Sep    |
 
 ## Updates
+
+### Week of 7-Sep
+
+* Next week will the the final exam.  It will cover chapters 13 (Security), 14 (Resilience), and you should also be familiar with the concepts behind static source code analysis and Docker.
+
 
 ### Week of 31-Aug
 
 * Next week there will be a quiz over Resilience Engineering, Chapter 14
 * [Load Balancing with HAProxy and Docker](https://medium.com/@nirgn/load-balancing-applications-with-haproxy-and-docker-d719b7c5b231)
 * Install [Docker](https://www.docker.com/) and bring your laptop to class
+
 ### Week of 24-Aug
 
 * Lecture notes have been added for Chapter 14 on resilience
