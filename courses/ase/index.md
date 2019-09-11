@@ -40,7 +40,7 @@
 ### Week of 7-Sep
 
 * Next week will the the final exam.  It will cover chapters 13 (Security), 14 (Resilience), and you should also be familiar with the concepts behind static source code analysis and Docker.
-* For older editions of Windows or Windows Home, use the [legacy Docker Toolbox](https://docs.docker.com/toolbox/overview/) instead of Docker Desktop
+* For older editions of Windows or Windows Home, use the [legacy Docker Toolbox](https://docs.docker.com/toolbox/overview/) ([click here for a direct link to the releases page](https://github.com/docker/toolbox/releases)) instead of Docker Desktop
 
 
 ### Week of 31-Aug
