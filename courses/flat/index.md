@@ -24,17 +24,25 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Lectures
 
-| Topic                                                          | Reading     | Practice |
-|----------------------------------------------------------------|--------------------|---|
-|  |  | 
+| Topic                   | Reading   | Practice |
+| ----------------------- | --------- | -------- |
+| 0. Discrete Math Review | Chapter 0 | n/a      |
 
 ## Assignments
 
-| Assignment                            | Due Date                       |
-|---------------------------------------|--------------------------------|
-|                                       |                                |
+| Assignment | Due Date |
+| ---------- | -------- |
+|            |          |
 
 ## Reading 
 
+| Assignment | Due Date    |
+| ---------- | ----------- |
+| Chapter 0  | 24-Sep-2019 |
+
 ## Updates
 
+### 22-Sep-2018
+
+* Today we will review topics from Discrete Mathematics
+* Read Chapter 0 of Sipser before our next lecture
