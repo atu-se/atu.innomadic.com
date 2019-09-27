@@ -1,7 +1,7 @@
 ---
 title: FLAT Lecture 1
 subtitle: 1. Introduction
-date: February 2, 2019
+date: September 28, 2019
 export_on_save:
   pandoc: true
 output:
