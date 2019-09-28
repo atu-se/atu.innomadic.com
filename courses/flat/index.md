@@ -32,15 +32,19 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 | Assignment | Due Date |
 | ---------- | -------- |
-|            |          |
+|  1. Exercises 0.1-0.3          |  29-Sep        |
 
 ## Reading 
 
 | Assignment | Due Date    |
 | ---------- | ----------- |
-| Chapter 0  | 24-Sep-2019 |
+| Chapter 0  | 24-Sep |
 
 ## Updates
+
+### 28-Sep-2018
+
+*  Assignment 1 given.
 
 ### 22-Sep-2018
 

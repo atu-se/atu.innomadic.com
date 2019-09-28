@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-09-28">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">1. Finite Automata and Regular Langauges</p>
+  <p class="date">September 28, 2019</p>
+</section>
+
+<section><section id="course-information" class="title-slide slide level1"><h1>Course Information</h1></section><section id="essentials" class="slide level2">
+<h2>Essentials</h2>
+<ul>
+<li>Formal Language &amp; Automata Theory (FLAT)</li>
+<li>Course Website - <a href="https://atu-se.github.io/courses/flat/">atu-se.github.io/courses/flat</a></li>
+<li>Primary Textbook - Introduction to the Theory of Computation, 3rd Edition (Sipser)]</li>
+<li>Lectures built around <a href="https://cseweb.ucsd.edu/classes/fa08/cse105">UC San Diego Lectures</a></li>
+</ul>
+</section><section id="meeting-times" class="slide level2">
+<h2>Meeting Times</h2>
+</section><section id="how-to-succeed" class="slide level2">
+<h2>How to Succeed</h2>
+<ul>
+<li>Attend all lectures</li>
+<li>Take notes (not all materials will be distributed as slides)</li>
+<li>Ready and study your textbook</li>
+<li>Do all assignments</li>
+<li>Ask questions</li>
+<li>Work many practice problems</li>
+</ul>
+</section><section id="academic-integrity" class="slide level2">
+<h2>Academic Integrity</h2>
+<ul>
+<li>Read the academic integrity policy in the syllabus</li>
+<li>You are encouraged to discuss the topics among yourselves.</li>
+<li>Unless otherwise noted, your work should be your own and you should not share your work with others</li>
+<li>Copying or cheating on homework, exams, etc. may result in failing grades</li>
+</ul>
+</section></section>
+<section><section id="finite-automata-and-regular-languages" class="title-slide slide level1"><h1>Finite Automata and Regular Languages</h1></section><section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<p>Computer Science stems from two starting points:</p>
+<ul>
+<li>Mathematics – What can be be computed? (And what <em>cannot</em> be computed?)</li>
+<li>Electrical Engineering – How can we build computers?</li>
+</ul>
+<p>This course focuses on the first question</p>
+</section><section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li>Computability Theory deals with the mathematical basis for Computer Science, yet it has some interesting practical ramifications that I will try to point out sometimes.</li>
+<li>The questions we will try to answer in this course are:
+<ul>
+<li>What can be computed?</li>
+<li>What cannot be computed</li>
+<li>Where is the line between the two?”</li>
+</ul></li>
+</ul>
+</section><section id="computational-models" class="slide level2">
+<h2>Computational Models</h2>
+<ul>
+<li>A Computational Model is a mathematical object (defined on paper) that enables us to reason about computation and to study the properties and limitations of computing.</li>
+<li>We will deal with three principal computational models in increasing order of Computational Power.</li>
+</ul>
+</section><section id="computational-models-1" class="slide level2">
+<h2>Computational Models</h2>
+<p>We will deal with three principal models of computations: 1. Finite Automaton (in short FA) – recognizes Regular Languages 2. Push-down or Stack Automaton – recognizes Context Free Languages 3. Turing Machine (in short TM) – recognizes Computable Languages</p>
+</section><section id="alan-turing-a-short-detour" class="slide level2">
+<h2>Alan Turing - A Short Detour</h2>
+<p>Dr. Alan Turing is one of the founders of Computer Science (he was an English Mathematician)</p>
+<ol type="1">
+<li>“Invented” Turing machines.</li>
+<li>“Invented” the Turing Test.</li>
+<li>Broke the German submarine transmission coding machine “Enigma”.</li>
+<li>The movie Imitation Game is loosely based on his life.</li>
+</ol>
+</section></section>
+<section><section id="finite-automaton-example" class="title-slide slide level1"><h1>Finite Automaton Example</h1></section><section id="washing-machine" class="slide level2">
+<h2>Washing Machine</h2>
+<ul>
+<li>The control of a washing machine is a very simple example of a finite automaton.</li>
+<li>The most simple washing machine accepts quarters and operation does not start until at least 3 quarters were inserted.</li>
+<li>Credit: Vadim Lyubasehvsky</li>
+</ul>
+</section><section id="coins" class="slide level2">
+<h2>Coins</h2>
+<p>Washing machines take coins. Our machine costs $0.75 to operate. We will use this notation:</p>
+<ul>
+<li>Q = Quarter (0.25)</li>
+<li>H = Half-dollar (0.50)</li>
+<li>D = Dollar (1)</li>
+</ul>
+</section><section id="washing-machine-1" class="slide level2">
+<h2>Washing Machine 1</h2>
+<ul>
+<li>Accepts Three Quarters</li>
+<li>Put in three (or more quarters) – it begins operation</li>
+<li>Put in less – it does nothing</li>
+</ul>
+</section><section id="washing-machine-1-1" class="slide level2">
+<h2>Washing Machine 1</h2>
+<p><img data-src="../../../../assets/bd60cac0a8b6ac65e10d9779bece99cc0.png?0.7419398574227016" /></p>
+</section><section id="washing-machine-2" class="slide level2">
+<h2>Washing Machine 2</h2>
+<ul>
+<li>Now imagine we have a more advanced machine which can accept both quarters (Q) and half-dollars (D).<br />
+</li>
+<li>How does the automata change?</li>
+</ul>
+</section><section id="washing-machine-2-1" class="slide level2">
+<h2>Washing Machine 2</h2>
+</section><section id="washing-machine-2-2" class="slide level2">
+<h2>Washing Machine 2</h2>
+<p><img data-src="../../../../assets/bd60cac0a8b6ac65e10d9779bece99cc1.png?0.7430634481621985" /></p>
+</section><section id="washing-machine-3" class="slide level2">
+<h2>Washing Machine 3</h2>
+<p><img data-src="../../../../assets/bd60cac0a8b6ac65e10d9779bece99cc2.png?0.0813320779019786" /></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -8,7 +8,7 @@ Formal Languages and Automata Theory
 
 ## Course
 
-Year 3 / Semester 8
+Year 2 / Semester 6
 
 ## Class Meeting Times
 
@@ -51,10 +51,9 @@ Students should have an understanding of material from Discrete Mathematics cour
 
 ## Course Requirements
 
-### Required reading
+### Textbook
 
-* [*Introduction to the Theory of Computation **3rd Edition** * (Sipser)](https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X)
-
+* *[Introduction to the Theory of Computation -- 3rd Edition (Sipser)](https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X)*
 
 ### Video Lectures
 
@@ -64,7 +63,6 @@ Students should have an understanding of material from Discrete Mathematics cour
 
 * [*Book of Proof*](https://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf)
 * [*Introduction to Theory of Computation* (Maheshwari/Smid)](http://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf)
-*Supplemental reading and other materials will be linked on the [course website](https://atu-se.github.io/courses/flat/).  Students are responsible for regularly checking the course website for updates.
 
 
 ## Grading Procedures
@@ -100,10 +98,3 @@ Lecture | Topic                             | Assigned Reading |
 8       | Turing Machines                   | 3.1              |
 9       | Variants of Turing Machines       | 3.2              |
         | Review                            |                  |
-
-Depending upon time, we may cover:
-
-* 10 Decidable Languages (4.1)
-* 11 The Halting Problem 5.1
-* 12 Reductions (5.1-5.2)
-* 13 Mapping Reductions (5.3)
