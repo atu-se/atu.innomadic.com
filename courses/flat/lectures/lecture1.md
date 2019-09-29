@@ -303,3 +303,10 @@ $$ L(M_2) = \{w | w\ ends\ with\ a\ 1\} $$
 4. Draw transitions that preserve the states' "memory"
 5. Validate or correct
 6. Write a correctness argument
+
+# Exercises
+
+1. $M_3$ accepts all words (strings) ending with 1.
+    $L(M_3) = \{w | w\ ends\ with\ 1\}$
+2. $M_4$ accepts all words ending with 0.
+3. $M_5$ accepts all words not ending with 0, incudling $\epsilon$
