@@ -10,6 +10,15 @@ output:
     pandoc_args: ["-t", "revealjs", "-V",  "theme=white", "-V", "revealjs-url=../../../presentation/reveal.js", "--slide-level=2", "--standalone"]
 ---
 
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+
 # Course Information
 
 
@@ -106,6 +115,7 @@ Washing machines take coins.  Our machine costs $0.75 to operate.  We will use t
 
 ```dot 
 digraph G{
+    rankdir="LR"
     null [label= "", shape=none]
     null -> 0.00
     0.00 -> 0.25 [label="Q"]
@@ -127,6 +137,7 @@ digraph G{
 
 ```dot 
 digraph G{
+    rankdir="LR"
     null [label= "", shape=none]
     null -> 0.00
     0.00 -> 0.25 [label="Q"]
@@ -142,6 +153,7 @@ digraph G{
 
 ```dot 
 digraph G{
+    rankdir="LR"
     null [label= "", shape=none]
     null -> 0.00
     0.00 -> 0.25 [label="Q"]
@@ -153,3 +165,141 @@ digraph G{
     0.00 -> 0.75 [label="D"]
 }
 ```
+
+##
+
+# Finite Automaton Example
+
+
+<div class="container">
+
+<div class="col" data-markdown>
+
+
+* States:  $\{ q_s, q_0, q_1\}$
+* Initial State: $q_s$
+* Final/Final States: $\{q_0\}$
+
+</div>
+
+<div class="col" data-markdown>
+
+```dot 
+digraph G{
+    rankdir="LR"
+    null [label= "", shape=none]
+    q0[label=<q<sub>0</sub>> shape=doublecircle]
+    qs[label=<q<sub>s</sub>>]
+    q1[label=<q<sub>1</sub>>]
+    null -> qs
+    qs -> q0 [label="0"]
+    qs -> q1 [label="1"]
+    q0 -> q0 [label="0,1"]
+    q1 -> q1 [label="0,1"]
+}
+```
+
+</div>
+</div>
+
+
+# Finite Automaton Example
+
+
+<div class="container">
+
+<div class="col" data-markdown>
+
+
+* Transition Function: 
+    * $\delta(q_s, 0) = q_0$
+    * $\delta(q_s, 1) = q_1$
+    * $\delta(q_0, 0) = \delta(q_0, 1) = q_0$
+    * $\delta(q_1, 0) = \delta(q_1, 1) = q_1$
+
+</div>
+
+<div class="col" data-markdown>
+
+```dot 
+digraph G{
+    rankdir="LR"
+    null [label= "", shape=none]
+    q0[label=<q<sub>0</sub>> shape=doublecircle]
+    qs[label=<q<sub>s</sub>>]
+    q1[label=<q<sub>1</sub>>]
+    null -> qs
+    qs -> q0 [label="0"]
+    qs -> q1 [label="1"]
+    q0 -> q0 [label="0,1"]
+    q1 -> q1 [label="0,1"]
+}
+```
+
+</div>
+</div>
+
+# Finite Automaton Example
+
+
+<div class="container">
+
+<div class="col" data-markdown>
+
+* Alphabet: $\{ 0, 1\}$
+* Accepted Words: $\{0, 00, 01, 000, 001, ...\}$
+
+</div>
+
+<div class="col" data-markdown>
+
+```dot 
+digraph G{
+    rankdir="LR"
+    null [label= "", shape=none]
+    q0[label=<q<sub>0</sub>> shape=doublecircle]
+    qs[label=<q<sub>s</sub>>]
+    q1[label=<q<sub>1</sub>>]
+    null -> qs
+    qs -> q0 [label="0"]
+    qs -> q1 [label="1"]
+    q0 -> q0 [label="0,1"]
+    q1 -> q1 [label="0,1"]
+}
+```
+
+</div>
+</div>
+
+
+# FA - Formal Definition
+
+A finite automaton is a 5-tuple $(Q,\Sigma,\delta,q)0 ,F)$
+
+1. Q is a finite set called the *states*.
+2. $\Sigma$ is a finite set called the *alphabet*.
+3. $\delta: Q \times \Sigma \rightarrow Q$ is the *transition function*.
+4. $q_0 \in Q$ is the *start state*, and
+5. $F \subseteq Q$ ,is the set of *accept states*.
+
+# Observations
+
+1. Each state has *a single transition* for each symbol in the alphabet
+2. Every FA has a computation for *every finite string* over the alphabet
+
+# Examples
+
+$M_2$ accepts all words (strings) ending with 1 over the alphabet $\{0,1\}$.
+
+The language recognized by $M_2$ called $L(M_2)$ satisfies:
+$$ L(M_2) = \{w | w\ ends\ with\ a\ 1\} $$
+
+
+# How to Do It
+
+1. Find some simple examples (short accepted and rejected words)
+2. Think what each state should "remember" or represent
+3. Draw the states with a meaningful name
+4. Draw transitions that preserve the states' "memory"
+5. Validate or correct
+6. Write a correctness argument

@@ -39,6 +39,17 @@
   <p class="date">September 28, 2019</p>
 </section>
 
+<section class="slide level2">
+
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
 <section><section id="course-information" class="title-slide slide level1"><h1>Course Information</h1></section><section id="essentials" class="slide level2">
 <h2>Essentials</h2>
 <ul>
@@ -130,7 +141,7 @@
 </ul>
 </section><section id="washing-machine-1-1" class="slide level2">
 <h2>Washing Machine 1</h2>
-<p><img data-src="../../../../assets/bd60cac0a8b6ac65e10d9779bece99cc0.png?0.7419398574227016" /></p>
+<p><img data-src="../../../assets/bd60cac0a8b6ac65e10d9779bece99cc0.png?0.9725230860395637" /></p>
 </section><section id="washing-machine-2" class="slide level2">
 <h2>Washing Machine 2</h2>
 <ul>
@@ -142,11 +153,74 @@
 <h2>Washing Machine 2</h2>
 </section><section id="washing-machine-2-2" class="slide level2">
 <h2>Washing Machine 2</h2>
-<p><img data-src="../../../../assets/bd60cac0a8b6ac65e10d9779bece99cc1.png?0.7430634481621985" /></p>
+<p><img data-src="../../../assets/bd60cac0a8b6ac65e10d9779bece99cc1.png?0.0792351660012629" /></p>
 </section><section id="washing-machine-3" class="slide level2">
 <h2>Washing Machine 3</h2>
-<p><img data-src="../../../../assets/bd60cac0a8b6ac65e10d9779bece99cc2.png?0.0813320779019786" /></p>
+<p><img data-src="../../../assets/bd60cac0a8b6ac65e10d9779bece99cc2.png?0.8453705765515576" /></p>
+</section><section id="section" class="slide level2">
+<h2></h2>
 </section></section>
+<section id="finite-automaton-example-1" class="title-slide slide level1"><h1>Finite Automaton Example</h1><div class="container">
+<div class="col" data-markdown="">
+<ul>
+<li>States: <span class="math inline">{<em>q</em><sub><em>s</em></sub>, <em>q</em><sub>0</sub>, <em>q</em><sub>1</sub>}</span></li>
+<li>Initial State: <span class="math inline"><em>q</em><sub><em>s</em></sub></span></li>
+<li>Final/Final States: <span class="math inline">{<em>q</em><sub>0</sub>}</span></li>
+</ul>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/bd60cac0a8b6ac65e10d9779bece99cc3.png?0.20830780122591164" /></p>
+</div>
+</div></section>
+<section id="finite-automaton-example-2" class="title-slide slide level1"><h1>Finite Automaton Example</h1><div class="container">
+<div class="col" data-markdown="">
+<ul>
+<li>Transition Function:
+<ul>
+<li><span class="math inline"><em>δ</em>(<em>q</em><sub><em>s</em></sub>, 0) = <em>q</em><sub>0</sub></span></li>
+<li><span class="math inline"><em>δ</em>(<em>q</em><sub><em>s</em></sub>, 1) = <em>q</em><sub>1</sub></span></li>
+<li><span class="math inline"><em>δ</em>(<em>q</em><sub>0</sub>, 0) = <em>δ</em>(<em>q</em><sub>0</sub>, 1) = <em>q</em><sub>0</sub></span></li>
+<li><span class="math inline"><em>δ</em>(<em>q</em><sub>1</sub>, 0) = <em>δ</em>(<em>q</em><sub>1</sub>, 1) = <em>q</em><sub>1</sub></span></li>
+</ul></li>
+</ul>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/bd60cac0a8b6ac65e10d9779bece99cc4.png?0.5460735068739053" /></p>
+</div>
+</div></section>
+<section id="finite-automaton-example-3" class="title-slide slide level1"><h1>Finite Automaton Example</h1><div class="container">
+<div class="col" data-markdown="">
+<ul>
+<li>Alphabet: <span class="math inline">{0, 1}</span></li>
+<li>Accepted Words: <span class="math inline">{0, 00, 01, 000, 001, ...}</span></li>
+</ul>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/bd60cac0a8b6ac65e10d9779bece99cc5.png?0.10976633878591824" /></p>
+</div>
+</div></section>
+<section id="fa-formal-definition" class="title-slide slide level1"><h1>FA - Formal Definition</h1><p>A finite automaton is a 5-tuple <span class="math inline">(<em>Q</em>, <em>Σ</em>, <em>δ</em>, <em>q</em>)0, <em>F</em>)</span></p>
+<ol type="1">
+<li>Q is a finite set called the <em>states</em>.</li>
+<li><span class="math inline"><em>Σ</em></span> is a finite set called the <em>alphabet</em>.</li>
+<li><span class="math inline"><em>δ</em> : <em>Q</em> × <em>Σ</em> → <em>Q</em></span> is the <em>transition function</em>.</li>
+<li><span class="math inline"><em>q</em><sub>0</sub> ∈ <em>Q</em></span> is the <em>start state</em>, and</li>
+<li><span class="math inline"><em>F</em> ⊆ <em>Q</em></span> ,is the set of <em>accept states</em>.</li>
+</ol></section>
+<section id="observations" class="title-slide slide level1"><h1>Observations</h1><ol type="1">
+<li>Each state has <em>a single transition</em> for each symbol in the alphabet</li>
+<li>Every FA has a computation for <em>every finite string</em> over the alphabet</li>
+</ol></section>
+<section id="examples" class="title-slide slide level1"><h1>Examples</h1><p><span class="math inline"><em>M</em><sub>2</sub></span> accepts all words (strings) ending with 1 over the alphabet <span class="math inline">{0, 1}</span>.</p>
+<p>The language recognized by <span class="math inline"><em>M</em><sub>2</sub></span> called <span class="math inline"><em>L</em>(<em>M</em><sub>2</sub>)</span> satisfies: <br /><span class="math display"><em>L</em>(<em>M</em><sub>2</sub>) = {<em>w</em>|<em>w</em> <em>e</em><em>n</em><em>d</em><em>s</em> <em>w</em><em>i</em><em>t</em><em>h</em> <em>a</em> 1}</span><br /></p></section>
+<section id="how-to-do-it" class="title-slide slide level1"><h1>How to Do It</h1><ol type="1">
+<li>Find some simple examples (short accepted and rejected words)</li>
+<li>Think what each state should “remember” or represent</li>
+<li>Draw the states with a meaningful name</li>
+<li>Draw transitions that preserve the states’ “memory”</li>
+<li>Validate or correct</li>
+<li>Write a correctness argument</li>
+</ol></section>
     </div>
   </div>
 
