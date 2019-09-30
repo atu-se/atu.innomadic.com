@@ -1,4 +1,8 @@
 # 2019
 
-* [Introduction to Databases](courses/db)
-* [Advanced Software Engineering](courses/ase)
+* [Formal Languages and Automata Theory](courses/flat)
+* Advanced Software Engineering
+* Introduction to Databases
+* Data Structures and Algorithms
+* Compiler Design
+
