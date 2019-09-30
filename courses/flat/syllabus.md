@@ -12,8 +12,7 @@ Year 2 / Semester 6
 
 ## Class Meeting Times
 
-
-
+* See university schedule
 
 ## Instructor Contact Information
 

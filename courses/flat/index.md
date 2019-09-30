@@ -24,29 +24,31 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Lectures
 
-| Topic                   | Reading   | Practice |
-| ----------------------- | --------- | -------- |
-| 0. Discrete Math Review | Chapter 0 | n/a      |
+| Topic                                                 | Reading |
+|-------------------------------------------------------|---------|
+| 0. Discrete Math Review                               | 0       |
+| 1. [Finite Automata](lectures/lecture1-slides.html)   | 1.1     |
+| 2. [Regular Languages](lectures/lecture2-slides.html) | 1.1     |
 
 ## Assignments
 
-| Assignment | Due Date |
-| ---------- | -------- |
-|  1. Exercises 0.1-0.3          |  29-Sep        |
-
-## Reading 
-
-| Assignment | Due Date    |
-| ---------- | ----------- |
-| Chapter 0  | 24-Sep |
+| Assignment           | Due Date  |
+|----------------------|-----------|
+| 1. Exercises 0.1-0.3 | 29-Sep    |
+| 2. Exercise 1.1      | 6-October |
 
 ## Updates
 
-### 28-Sep-2018
+### 29-Sep
+
+* Assignment 2 given
+* Read Section 1.1 
+
+### 28-Sep
 
 *  Assignment 1 given.
 
-### 22-Sep-2018
+### 22-Sep
 
 * Today we will review topics from Discrete Mathematics
 * Read Chapter 0 of Sipser before our next lecture
