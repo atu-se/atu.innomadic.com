@@ -44,11 +44,11 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 * Assignment 2 given
 * Read Section 1.1 
 
-### 28-Sep
+### 28-Sep (Week 2)
 
 *  Assignment 1 given.
 
-### 22-Sep
+### 22-Sep (Week 1)
 
 * Today we will review topics from Discrete Mathematics
 * Read Chapter 0 of Sipser before our next lecture
