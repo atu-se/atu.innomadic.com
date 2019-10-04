@@ -379,3 +379,15 @@ $$ L(M_2) = \{w | w\ ends\ with\ a\ 1\} $$
 4. $M_6$ accepts all string *over alphabet* $\{a, b\}$ that _start and end_ with the same *symbol*.
 5. $M_7$ accepts words of the form $0^m1^n$ where $m, n$ are integers and $m, n > 0$
 6. $M_8$ accepts all words in $\{0, 1, 00, 01, 10\}$
+
+# Wrap Up
+
+* During this lecture we:
+    * Gave some motivation for the course
+    * Introduced the idea of computational models
+    * Introduced and defined the first computational model, the finite automaton
+
+# References, Resources
+
+* [ADUni.org Lectures](https://www.youtube.com/playlist?list=PL601FC994BDD963E4)
+* [UC San Diego Lecture Slides](https://cseweb.ucsd.edu/classes/fa08/cse105/)

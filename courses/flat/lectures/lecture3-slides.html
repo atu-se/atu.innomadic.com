@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-10-05">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">3. Nondeterministic Finite Automata</p>
+  <p class="date">October 5, 2019</p>
+</section>
+
+<section class="slide level1">
+
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
+<section id="roadmap-for-lecture" class="slide level1">
+<h1>Roadmap for Lecture</h1>
+<ul>
+<li>Present the three regular operations.</li>
+<li>Present Non-Deterministic Finite Automata (NFA)</li>
+<li>Prove that NFAs and DFAs are equivalent.</li>
+<li>Use NFAs to show that when each of the regular operation is applied on regular languages it yields yet another regular language.</li>
+</ul>
+</section>
+<section id="regular-operations" class="slide level1">
+<h1>Regular Operations</h1>
+<ul>
+<li>Let A and B be 2 regular languages over the same alphabet, <span class="math inline"><em>Σ</em></span>. We define the 3 regular operations:
+<ul>
+<li>Union: <span class="math inline"><em>A</em> ∪ <em>B</em> = {<em>x</em>|<em>x</em> ∈ <em>A</em> <em>o</em><em>r</em> <em>x</em> ∈ <em>B</em>}</span></li>
+<li>Concatenation: <span class="math inline"><em>A</em> ∘ <em>B</em> = {<em>x</em><em>y</em>|<em>x</em> ∈ <em>A</em> <em>a</em><em>n</em><em>d</em> <em>y</em> ∈ <em>B</em>}</span></li>
+<li>Star: <span class="math inline"><em>A</em><sup>*</sup> = {<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ..., <em>x</em><sub><em>k</em></sub>|<em>k</em> ≥ 0 <em>a</em><em>n</em><em>d</em> <em>x</em><sub><em>k</em></sub> ∈ <em>A</em>}</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="elaboration" class="slide level1">
+<h1>Elaboration</h1>
+<ul>
+<li>Union is straight forward.</li>
+<li>Concatenation is the operation in which each word in A is concatenated with every word in B.</li>
+<li>Star is a unary operation in which each word in A is concatenated with every other word in A and this happens any finite number of times.</li>
+</ul>
+</section>
+<section id="regular-operations-1" class="slide level1">
+<h1>Regular Operations</h1>
+<ul>
+<li><span class="math inline"><em>A</em> = {<em>g</em><em>o</em><em>o</em><em>d</em>, <em>b</em><em>a</em><em>d</em>}</span></li>
+<li><span class="math inline"><em>B</em> = {<em>g</em><em>i</em><em>r</em><em>l</em>, <em>b</em><em>o</em><em>y</em>}</span></li>
+<li><span class="math inline"><em>A</em> ∪ <em>B</em> = {<em>g</em><em>o</em><em>o</em><em>d</em>, <em>b</em><em>a</em><em>d</em>, <em>g</em><em>i</em><em>r</em><em>l</em>, <em>b</em><em>o</em><em>y</em>}</span></li>
+<li><span class="math inline"><em>A</em> ∘ <em>B</em> = {<em>g</em><em>o</em><em>o</em><em>d</em><em>g</em><em>i</em><em>r</em><em>l</em>, <em>g</em><em>o</em><em>o</em><em>d</em><em>b</em><em>o</em><em>y</em>, <em>b</em><em>a</em><em>d</em><em>g</em><em>i</em><em>r</em><em>l</em>, <em>b</em><em>a</em><em>d</em><em>b</em><em>o</em><em>y</em>}</span></li>
+<li><span class="math inline"><em>A</em><sup>*</sup> = {<em>ϵ</em>, <em>g</em><em>o</em><em>o</em><em>d</em>, <em>b</em><em>a</em><em>d</em>, <em>g</em><em>o</em><em>o</em><em>d</em><em>g</em><em>o</em><em>o</em><em>d</em>, <em>g</em><em>o</em><em>o</em><em>d</em><em>b</em><em>a</em><em>d</em>, <em>g</em><em>o</em><em>o</em><em>d</em><em>g</em><em>o</em><em>o</em><em>d</em><em>g</em><em>o</em><em>o</em><em>d</em><em>b</em><em>a</em><em>d</em>, <em>b</em><em>a</em><em>d</em><em>b</em><em>a</em><em>d</em><em>g</em><em>o</em><em>o</em><em>d</em><em>b</em><em>a</em><em>d</em>, ...}</span></li>
+</ul>
+</section>
+<section id="motivation-for-nondeterminism" class="slide level1">
+<h1>Motivation for Nondeterminism</h1>
+<ul>
+<li>The Regular Operations give us a way to construct all regular languages systematically.</li>
+<li>In the previous lecture, we showed that the union operation preserves regularity:
+<ul>
+<li>Given two regular languages L<sub>1</sub> and L<sub>2</sub> and their recognizing automata, M<sub>1</sub> and M<sub>2</sub>, we constructed an automaton that recognizes</li>
+</ul></li>
+</ul>
+</section>
+<section id="motivation-for-nondeterminism-1" class="slide level1">
+<h1>Motivation for Nondeterminism</h1>
+<ul>
+<li>This approach fails when trying to prove that <strong>concatenation</strong> and <strong>star</strong> preserve regularity.</li>
+<li>To overcome this problem we introduce <strong>nondeterminism</strong>.</li>
+</ul>
+</section>
+<section id="example-of-an-nfa" class="slide level1">
+<h1>Example of an NFA</h1>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab50.png?0.956532800177132" /></p>
+<ol type="1">
+<li>A state may have 0 to many transitions labeled with the same symbol.</li>
+<li><span class="math inline"><em>ϵ</em></span> transitions are possible.</li>
+</ol>
+</section>
+<section id="nfa-computation" class="slide level1">
+<h1>NFA Computation</h1>
+<ul>
+<li>When several transitions with the same label exist, an input word may induce <strong>several</strong> paths.</li>
+<li>When 0 transitions are possible a computation may get “stuck”.</li>
+<li>Q: Which words are accepted and which are not?</li>
+<li>A: <strong>If word w induces (at least) a single accepting computation, the automaton “chooses” this accepting path and w is accepted.</strong></li>
+</ul>
+</section>
+<section id="nfa-computation-1" class="slide level1">
+<h1>NFA Computation</h1>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab51.png?0.558909966185321" /></p>
+<ul>
+<li class="fragment">On the input word w=010110 there exist an accepting path and w is accepted.</li>
+<li class="fragment">Can we characterize (find) the language recognized by this automaton?</li>
+<li class="fragment">Words containing 101 or 11 as substrings</li>
+</ul>
+</section>
+<section id="why-nfas" class="slide level1">
+<h1>Why NFAs?</h1>
+<ul>
+<li>NFAs and DFAs are equivalent</li>
+<li>Meaning: They recognize the same set of languages</li>
+<li>In other words: Each NFA recognizing language L has an equivalent DFA recognizing L.</li>
+<li>But usually, the NFA is much simpler.</li>
+<li>Enables the proof of theorems. (e.g. about regular operations)</li>
+</ul>
+</section>
+<section id="nfa-example-1" class="slide level1">
+<h1>NFA Example 1</h1>
+<ul>
+<li>An automaton over unary alphabet accepting words whose length is divided either by 2 or by 3.</li>
+</ul>
+</section>
+<section id="section" class="slide level1">
+<h1></h1>
+</section>
+<section id="nfa-example-1-1" class="slide level1">
+<h1>NFA Example 1</h1>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab52.png?0.20185407278733836" /></p>
+</section>
+<section id="note-about-states" class="slide level1">
+<h1>Note about States</h1>
+<ul>
+<li>Don’t forget, node labels don’t affect the operation of the machine – we can use any name for the nodes.</li>
+<li>These two machines are equivalent</li>
+</ul>
+<div class="container">
+<div class="col" data-markdown="">
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab53.png?0.2697026799811837" /></p>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab54.png?0.26010838879253617" /></p>
+</div>
+</div>
+</section>
+<section id="a-complicated-dfa" class="slide level1">
+<h1>A Complicated DFA</h1>
+<p>What is the language of this DFA?</p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab55.png?0.5475189815550832" /></p>
+</section>
+<section id="an-equivalent-nfa" class="slide level1">
+<h1>An Equivalent NFA</h1>
+<p>What is the language of this NFA?</p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab56.png?0.9459360029350947" /></p>
+</section>
+<section id="an-equivalent-nfa-1" class="slide level1">
+<h1>An Equivalent NFA</h1>
+<p><span class="math inline"><em>L</em> = {w | w is a bit string with a 1 in the third position from the end}</span></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab57.png?0.18481777696501056" /></p>
+</section>
+<section id="a-complicated-dfa-1" class="slide level1">
+<h1>A Complicated DFA</h1>
+<p>Can you verify the language now?</p>
+<p><span class="math inline"><em>L</em> = {w | w is a bit string with a 1 in the third position from the end}</span></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab58.png?0.7818593669992395" /></p>
+</section>
+<section id="equivalent-fa" class="slide level1">
+<h1>Equivalent FA</h1>
+<ul>
+<li>These two finite automata are equivalent</li>
+<li>The NFA is much simpler to design and understand</li>
+</ul>
+<div class="container">
+<div class="col" data-markdown="">
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab59.png?0.43284558882192914" /></p>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab510.png?0.12145237920836283" /></p>
+</div>
+</div>
+</section>
+<section id="dfa-definition" class="slide level1">
+<h1>DFA Definition</h1>
+<p>A DFA is a 5-tuple <span class="math inline">(<em>Q</em>, <em>Σ</em>, <em>δ</em>, <em>q</em><sub>0</sub>, <em>F</em>)</span></p>
+<ol type="1">
+<li>Q is a finite set called the <em>states</em>.</li>
+<li><span class="math inline"><em>Σ</em></span> is a finite set called the <em>alphabet</em>.</li>
+<li><span class="math inline"><em>δ</em> : <em>Q</em> × <em>Σ</em> → <em>Q</em></span> is the <em>transition function</em>.</li>
+<li><span class="math inline"><em>q</em><sub>0</sub> ∈ <em>Q</em></span> is the <em>start state</em>, and</li>
+<li><span class="math inline"><em>F</em> ⊆ <em>Q</em></span> ,is the set of <em>accept states</em>.</li>
+</ol>
+</section>
+<section id="nfa-definition" class="slide level1">
+<h1>NFA Definition</h1>
+<p>A non-deterministic finite automaton is a 5-tuple <span class="math inline">(<em>Q</em>, <em>Σ</em>, <em>δ</em>, <em>q</em><sub>0</sub>, <em>F</em>)</span></p>
+<ol type="1">
+<li>Q is a finite set called the <em>states</em>.</li>
+<li><span class="math inline"><em>Σ</em></span> is a finite set called the <em>alphabet</em>.</li>
+<li><span class="math inline"><em>δ</em> : <em>Q</em> × <em>Σ</em><sub><em>ϵ</em></sub><sup>*</sup> → <em>Q</em></span> is the <em>transition function</em>.</li>
+<li><span class="math inline"><em>q</em><sub>0</sub> ∈ <em>Q</em></span> is the <em>start state</em>, and</li>
+<li><span class="math inline"><em>F</em> ⊆ <em>Q</em></span> ,is the set of <em>accept states</em>.</li>
+</ol>
+<p><span class="math inline"><em></em><sup>*</sup><em>Σ</em><sub><em>ϵ</em></sub> = <em>Σ</em> ∪ {<em>ϵ</em>}</span></p>
+</section>
+<section id="differences-between-nfas-and-dfas" class="slide level1">
+<h1>Differences Between NFAs and DFAs</h1>
+<ol type="1">
+<li>The range of the transition function <span class="math inline"><em>δ</em></span> is now <span class="math inline"><em>P</em>(<em>Q</em>)</span>.</li>
+<li>The transition function allows <span class="math inline"><em>ϵ</em></span> transitions</li>
+</ol>
+</section>
+<section id="possible-computations" class="slide level1">
+<h1>Possible Computations</h1>
+<p>At each step of the computation…</p>
+<ul>
+<li>DFA: a single state is occupied</li>
+<li>NFA: Several states may be occupied</li>
+</ul>
+</section>
+<section id="references-resources" class="slide level1">
+<h1>References, Resources</h1>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">ADUni.org Lectures</a></li>
+<li><a href="https://cseweb.ucsd.edu/classes/fa08/cse105/">UC San Diego Lecture Slides</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

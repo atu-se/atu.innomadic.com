@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-10-05">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">1. Regular Languages</p>
+  <p class="date">October 5, 2019</p>
+</section>
+
+<section class="slide level2">
+
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
+<section id="languages" class="title-slide slide level1"><h1>Languages</h1></section>
+<section id="languages-1" class="title-slide slide level1"><h1>Languages</h1><ul>
+<li>Definition: A <em>language</em> is a set of strings over some alphabet</li>
+<li>Examples:
+<ul>
+<li><span class="math inline"><em>L</em><sub>1</sub> = {0, 1, 10, 1110001}</span></li>
+<li><span class="math inline"><em>L</em><sub>2</sub> = {0<sup><em>m</em></sup>1<sup><em>n</em></sup>|<em>n</em>, <em>m</em> <em>a</em><em>r</em><em>e</em> <em>p</em><em>o</em><em>s</em><em>i</em><em>t</em><em>i</em><em>v</em><em>e</em> <em>i</em><em>n</em><em>t</em><em>e</em><em>g</em><em>e</em><em>r</em><em>s</em>}</span></li>
+<li><span class="math inline"><em>L</em><sub>3</sub> = {bit strings whose binary value is a multiple of 4}</span></li>
+</ul></li>
+</ul></section>
+<section id="languages-2" class="title-slide slide level1"><h1>Languages</h1><ul>
+<li>A language of an FA, <span class="math inline"><em>M</em>, <em>L</em>(<em>M</em>)</span>, is the set of words (strings) that <span class="math inline"><em>M</em></span> <em>accepts</em></li>
+<li>If <span class="math inline"><em>L</em><sub><em>a</em></sub> = <em>L</em>(<em>M</em>)</span> we say that M <em>recognizes</em> <span class="math inline"><em>L</em><sub><em>a</em></sub></span></li>
+<li><em>If <span class="math inline"><em>L</em><sub><em>a</em></sub></span> is recognized by some finite automaton A, <span class="math inline"><em>L</em><sub><em>a</em></sub></span> is a regular language</em></li>
+</ul></section>
+<section id="questions" class="title-slide slide level1"><h1>Questions</h1><ul>
+<li>Q1: How do you prove that a language <span class="math inline"><em>L</em><sub><em>a</em></sub></span> is regular?</li>
+<li>A1: By presenting an FA, <span class="math inline"><em>M</em></span>, satisfying <span class="math inline"><em>L</em><sub><em>a</em></sub> = <em>L</em>(<em>M</em>)</span></li>
+<li>Q2: How do you prove that a language <span class="math inline"><em>L</em><sub><em>a</em></sub></span> is not regular?</li>
+<li>A2: Hard! to be answered on later in the course.</li>
+<li>Q3: Why is it important?</li>
+<li>A3: Recognition of a regular language requires a controller with bounded memory.</li>
+</ul></section>
+<section id="regular-operations" class="title-slide slide level1"><h1>Regular Operations</h1><ul>
+<li>Just as we have arithmetical operations and set operations, regular languages also have operations.
+<ul>
+<li>Union</li>
+<li>Concatenation</li>
+<li>Star</li>
+</ul></li>
+</ul></section>
+<section id="regular-operations-1" class="title-slide slide level1"><h1>Regular Operations</h1><ul>
+<li>Let A and B be 2 regular languages over the same alphabet, <span class="math inline"><em>Σ</em></span>. We define the 3 regular operations:
+<ul>
+<li>Union: <span class="math inline"><em>A</em> ∪ <em>B</em> = {<em>x</em>|<em>x</em> ∈ <em>A</em> <em>o</em><em>r</em> <em>x</em> ∈ <em>B</em>}</span></li>
+<li>Concatenation: <span class="math inline"><em>A</em> ∘ <em>B</em> = {<em>x</em><em>y</em>|<em>x</em> ∈ <em>A</em> <em>a</em><em>n</em><em>d</em> <em>y</em> ∈ <em>B</em>}</span></li>
+<li>Star: <span class="math inline"><em>A</em><sup>*</sup> = {<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ..., <em>x</em><sub><em>k</em></sub>|<em>k</em> ≥ 0 <em>a</em><em>n</em><em>d</em> <em>x</em><sub><em>k</em></sub> ∈ <em>A</em>}</span></li>
+</ul></li>
+</ul></section>
+<section id="regular-operations-2" class="title-slide slide level1"><h1>Regular Operations</h1><ul>
+<li>Given a language one can verify it is regular by presenting an FA that accept the language.</li>
+<li>Regular operations give us a systematic way of constructing languages that are known to be regular. No verification is required.</li>
+</ul></section>
+<section id="regular-operations-3" class="title-slide slide level1"><h1>Regular Operations</h1><ul>
+<li><span class="math inline"><em>A</em> = {<em>g</em><em>o</em><em>o</em><em>d</em>, <em>b</em><em>a</em><em>d</em>}</span></li>
+<li><span class="math inline"><em>B</em> = {<em>g</em><em>i</em><em>r</em><em>l</em>, <em>b</em><em>o</em><em>y</em>}</span></li>
+<li><span class="math inline"><em>A</em> ∪ <em>B</em> = {<em>g</em><em>o</em><em>o</em><em>d</em>, <em>b</em><em>a</em><em>d</em>, <em>g</em><em>i</em><em>r</em><em>l</em>, <em>b</em><em>o</em><em>y</em>}</span></li>
+<li><span class="math inline"><em>A</em> ∘ <em>B</em> = {<em>g</em><em>o</em><em>o</em><em>d</em><em>g</em><em>i</em><em>r</em><em>l</em>, <em>g</em><em>o</em><em>o</em><em>d</em><em>b</em><em>o</em><em>y</em>, <em>b</em><em>a</em><em>d</em><em>g</em><em>i</em><em>r</em><em>l</em>, <em>b</em><em>a</em><em>d</em><em>b</em><em>o</em><em>y</em>}</span></li>
+<li><span class="math inline"><em>A</em><sup>*</sup> = {<em>ϵ</em>, <em>g</em><em>o</em><em>o</em><em>d</em>, <em>b</em><em>a</em><em>d</em>, <em>g</em><em>o</em><em>o</em><em>d</em><em>g</em><em>o</em><em>o</em><em>d</em>, <em>g</em><em>o</em><em>o</em><em>d</em><em>b</em><em>a</em><em>d</em>, <em>g</em><em>o</em><em>o</em><em>d</em><em>g</em><em>o</em><em>o</em><em>d</em><em>g</em><em>o</em><em>o</em><em>d</em><em>b</em><em>a</em><em>d</em>, <em>b</em><em>a</em><em>d</em><em>b</em><em>a</em><em>d</em><em>g</em><em>o</em><em>o</em><em>d</em><em>b</em><em>a</em><em>d</em>, ...}</span></li>
+</ul></section>
+<section id="theorem" class="title-slide slide level1"><h1>Theorem</h1><ul>
+<li>The class of Regular languages, above the same alphabet, is closed under the union operation.</li>
+<li>Meaning: The union of two regular languages is Regular.</li>
+</ul></section>
+<section id="example" class="title-slide slide level1"><h1>Example</h1><ul>
+<li>Consider: <br /><span class="math display"><em>L</em><sub>1</sub> = {<em>w</em>|w starts with 1}, <em>L</em><sub>2</sub> = {<em>w</em>|w ends with 0}</span><br /></li>
+<li>The union set is the set of all bit strings that either start with 1, or end with 0.</li>
+<li>Each of these sets can be recognized by an FA with 3 states.</li>
+<li>Can you construct an FA that recognizes the union set?</li>
+</ul></section>
+<section id="proof-idea" class="title-slide slide level1"><h1>Proof idea</h1><ul>
+<li>If <span class="math inline"><em>A</em><sub>1</sub></span> and <span class="math inline"><em>A</em><sub>2</sub></span> are regular, each has its own recognizing automaton <span class="math inline"><em>N</em><sub>1</sub></span> and <span class="math inline"><em>N</em><sub>2</sub></span> , respectively.</li>
+<li>In order to prove that the language <span class="math inline"><em>A</em><sub>1</sub> ∪ <em>A</em><sub>2</sub></span> is regular we have to construct an FA that accepts exactly the words in <span class="math inline"><em>A</em><sub>1</sub> ∪ <em>A</em><sub>2</sub></span> .</li>
+<li>Note: <span class="math inline"><em>N</em><sub>1</sub></span> followed by <span class="math inline"><em>N</em><sub>2</sub></span> doesn’t work.</li>
+</ul></section>
+<section id="proof-idea-1" class="title-slide slide level1"><h1>Proof idea</h1><ul>
+<li>We construct an FA that <em>simulates</em> the computations of, N<sub>1</sub> and N<sub>2</sub> simultaneously.</li>
+<li>Each state of the simulating FA represents a pair of states of N<sub>1</sub> and of N<sub>2</sub> respectively.</li>
+<li>Can you define the transition function and the final state(s) of the simulating FA?</li>
+</ul></section>
+<section id="wrap-up" class="title-slide slide level1"><h1>Wrap-Up</h1><ul>
+<li>We introduced the idea of <em>regular languages</em></li>
+<li>We taught the three <em>regular operations</em>
+<ul>
+<li>Union</li>
+<li>Concatenation</li>
+<li>Star</li>
+</ul></li>
+<li>We showed how to prove that a language is regular</li>
+<li>We taught that regular languages are <em>closed</em> under <em>union</em></li>
+</ul></section>
+<section id="references-resources" class="title-slide slide level1"><h1>References, Resources</h1><ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">ADUni.org Lectures</a></li>
+<li><a href="https://cseweb.ucsd.edu/classes/fa08/cse105/">UC San Diego Lecture Slides</a></li>
+</ul></section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
