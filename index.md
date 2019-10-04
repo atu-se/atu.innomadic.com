@@ -4,5 +4,11 @@
 * Advanced Software Engineering
 * Introduction to Databases
 * Data Structures and Algorithms
-* Compiler Design
 
+# 2019
+
+* Formal Languages and Automata Theory
+* Advanced Software Engineering
+* Introduction to Databases
+* Systems Analysis and Design
+* Compiler Design
