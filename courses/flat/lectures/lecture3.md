@@ -52,7 +52,7 @@ output:
 
 * The Regular Operations give us a way to construct all regular languages systematically.
 * In the previous lecture, we showed that the union operation preserves regularity:
-    * Given two regular languages L~1~ and L~2~ and their recognizing automata, M~1~ and M~2~, we constructed an automaton that recognizes
+* Given two regular languages L~1~ and L~2~ and their recognizing automata, M~1~ and M~2~, we constructed an automaton that recognizes $L_1 \cup L_2$
 
 
 # Motivation for Nondeterminism

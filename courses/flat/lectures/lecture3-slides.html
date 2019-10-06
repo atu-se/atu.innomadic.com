@@ -92,10 +92,8 @@
 <h1>Motivation for Nondeterminism</h1>
 <ul>
 <li>The Regular Operations give us a way to construct all regular languages systematically.</li>
-<li>In the previous lecture, we showed that the union operation preserves regularity:
-<ul>
-<li>Given two regular languages L<sub>1</sub> and L<sub>2</sub> and their recognizing automata, M<sub>1</sub> and M<sub>2</sub>, we constructed an automaton that recognizes</li>
-</ul></li>
+<li>In the previous lecture, we showed that the union operation preserves regularity:</li>
+<li>Given two regular languages L<sub>1</sub> and L<sub>2</sub> and their recognizing automata, M<sub>1</sub> and M<sub>2</sub>, we constructed an automaton that recognizes <span class="math inline"><em>L</em><sub>1</sub> ∪ <em>L</em><sub>2</sub></span></li>
 </ul>
 </section>
 <section id="motivation-for-nondeterminism-1" class="slide level1">
@@ -109,7 +107,7 @@
 </section>
 <section id="example-of-an-nfa" class="slide level1">
 <h1>Example of an NFA</h1>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab50.png?0.9309241132840322" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab50.png?0.8835254223975497" /></p>
 <ol type="1">
 <li>A state may have 0 to many transitions labeled with the same symbol.</li>
 <li><span class="math inline"><em>ϵ</em></span> transitions are possible.</li>
@@ -126,7 +124,7 @@
 </section>
 <section id="nfa-computation-1" class="slide level1">
 <h1>NFA Computation</h1>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab51.png?0.756762109306033" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab51.png?0.6695239938514919" /></p>
 <ul>
 <li class="fragment">On the input word w=010110 there exist an accepting path and w is accepted.</li>
 <li class="fragment">Can we characterize (find) the language recognized by this automaton?</li>
@@ -154,7 +152,7 @@
 </section>
 <section id="nfa-example-1-1" class="slide level1">
 <h1>NFA Example 1</h1>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab52.png?0.5335787434290942" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab52.png?0.6950309467892719" /></p>
 </section>
 <section id="note-about-states" class="slide level1">
 <h1>Note about States</h1>
@@ -164,33 +162,33 @@
 </ul>
 <div class="container">
 <div class="col" data-markdown="">
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab53.png?0.7140723879794186" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab53.png?0.7329124684829087" /></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab54.png?0.916730221787249" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab54.png?0.2344280185472285" /></p>
 </div>
 </div>
 </section>
 <section id="a-complicated-dfa" class="slide level1">
 <h1>A Complicated DFA</h1>
 <p>What is the language of this DFA?</p>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab55.png?0.3003727422582052" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab55.png?0.10571234992336342" /></p>
 </section>
 <section id="an-equivalent-nfa" class="slide level1">
 <h1>An Equivalent NFA</h1>
 <p>What is the language of this NFA?</p>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab56.png?0.36190226088752087" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab56.png?0.7496824950021848" /></p>
 </section>
 <section id="an-equivalent-nfa-1" class="slide level1">
 <h1>An Equivalent NFA</h1>
 <p><span class="math inline"><em>L</em> = {w | w is a bit string with a 1 in the third position from the end}</span></p>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab57.png?0.31097906946746434" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab57.png?0.5108027681560956" /></p>
 </section>
 <section id="a-complicated-dfa-1" class="slide level1">
 <h1>A Complicated DFA</h1>
 <p>Can you verify the language now?</p>
 <p><span class="math inline"><em>L</em> = {w | w is a bit string with a 1 in the third position from the end}</span></p>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab58.png?0.4763948665531661" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab58.png?0.79280560989371" /></p>
 </section>
 <section id="equivalent-fa" class="slide level1">
 <h1>Equivalent FA</h1>
@@ -200,10 +198,10 @@
 </ul>
 <div class="container">
 <div class="col" data-markdown="">
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab59.png?0.23629483172016363" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab59.png?0.0915897437082398" /></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab510.png?0.42145714887864294" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab510.png?0.6044687746028041" /></p>
 </div>
 </div>
 </section>
