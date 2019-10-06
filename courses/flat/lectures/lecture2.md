@@ -101,6 +101,12 @@ computations of, N~1~ and N~2~ simultaneously.
 respectively.
 * Can you define the transition function and the final state(s) of the simulating FA?
  
+ # Union Example 
+
+ $$L_1 =\{w | \text{w starts with 1}\}, L_2 =\{w | \text{w ends with 0}\}$$
+
+ What is $L_1 \cup L_2$?
+
 # Wrap-Up
 
 * We introduced the idea of *regular languages*

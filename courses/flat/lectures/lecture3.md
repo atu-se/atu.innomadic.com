@@ -77,7 +77,7 @@ digraph G{
     q0 -> q0  [label="0, 1"]
     q0  -> q1 [label="1"]
     q1 -> q2 [label="E, 0"]
-    q2 -> q3 [label="0, 1"]
+    q2 -> q3 [label="1"]
     q3 -> q3 [label="0, 1"]
 }
 ```
@@ -107,7 +107,7 @@ digraph G{
     q0 -> q0  [label="0, 1"]
     q0  -> q1 [label="1"]
     q1 -> q2 [label="E, 0"]
-    q2 -> q3 [label="0, 1"]
+    q2 -> q3 [label="1"]
     q3 -> q3 [label="0, 1"]
 }
 ```
