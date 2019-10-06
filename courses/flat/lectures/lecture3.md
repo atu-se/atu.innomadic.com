@@ -385,7 +385,7 @@ digraph G{
 </div>
 
 
-# DFA Definition
+# DFA Definition 
 
 A DFA is a 5-tuple $(Q,\Sigma,\delta,q_0 ,F)$
 

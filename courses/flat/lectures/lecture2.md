@@ -10,7 +10,7 @@ output:
     pandoc_args: ["-t", "revealjs", "-V",  "theme=white", "-V", "revealjs-url=../../../presentation/reveal.js", "--slide-level=2", "--standalone"]
 ---
 
-<style>
+<style> 
 .container{
     display: flex;
 }
