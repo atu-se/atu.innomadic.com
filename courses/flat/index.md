@@ -30,14 +30,23 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 1. [Finite Automata](lectures/lecture1-slides.html)   | 1.1     |
 | 2. [Regular Languages](lectures/lecture2-slides.html) | 1.1     |
 
+
 ## Assignments
 
-| Assignment           | Due Date  |
-|----------------------|-----------|
-| 1. Exercises 0.1-0.3 | 29-Sep    |
-| 2. Exercise 1.1      | 6-October |
+| Assignment                             | Due Date |
+|----------------------------------------|----------|
+| 1. Exercises 0.1-0.3                   | 29-Sep   |
+| 2. Exercise 1.1                        | 6-Oct    |
+| 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b | 12-Oct   |
+
 
 ## Updates
+
+### 5-Oct
+
+* Assignment 2 is due tomorrow
+* Continuing Lecture 1
+* Tomorrow we will have an extra class 
 
 ### 29-Sep
 

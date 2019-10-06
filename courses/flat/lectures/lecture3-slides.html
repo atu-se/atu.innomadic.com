@@ -103,11 +103,13 @@
 <ul>
 <li>This approach fails when trying to prove that <strong>concatenation</strong> and <strong>star</strong> preserve regularity.</li>
 <li>To overcome this problem we introduce <strong>nondeterminism</strong>.</li>
+<li>All of the FAs that we have discussed so far have been deterministic finite automata (DFAs)</li>
+<li>We now introduce the idea of a non-deterministic finite automaton (NFA)</li>
 </ul>
 </section>
 <section id="example-of-an-nfa" class="slide level1">
 <h1>Example of an NFA</h1>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab50.png?0.956532800177132" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab50.png?0.9309241132840322" /></p>
 <ol type="1">
 <li>A state may have 0 to many transitions labeled with the same symbol.</li>
 <li><span class="math inline"><em>ϵ</em></span> transitions are possible.</li>
@@ -124,7 +126,7 @@
 </section>
 <section id="nfa-computation-1" class="slide level1">
 <h1>NFA Computation</h1>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab51.png?0.558909966185321" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab51.png?0.756762109306033" /></p>
 <ul>
 <li class="fragment">On the input word w=010110 there exist an accepting path and w is accepted.</li>
 <li class="fragment">Can we characterize (find) the language recognized by this automaton?</li>
@@ -152,7 +154,7 @@
 </section>
 <section id="nfa-example-1-1" class="slide level1">
 <h1>NFA Example 1</h1>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab52.png?0.20185407278733836" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab52.png?0.5335787434290942" /></p>
 </section>
 <section id="note-about-states" class="slide level1">
 <h1>Note about States</h1>
@@ -162,33 +164,33 @@
 </ul>
 <div class="container">
 <div class="col" data-markdown="">
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab53.png?0.2697026799811837" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab53.png?0.7140723879794186" /></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab54.png?0.26010838879253617" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab54.png?0.916730221787249" /></p>
 </div>
 </div>
 </section>
 <section id="a-complicated-dfa" class="slide level1">
 <h1>A Complicated DFA</h1>
 <p>What is the language of this DFA?</p>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab55.png?0.5475189815550832" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab55.png?0.3003727422582052" /></p>
 </section>
 <section id="an-equivalent-nfa" class="slide level1">
 <h1>An Equivalent NFA</h1>
 <p>What is the language of this NFA?</p>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab56.png?0.9459360029350947" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab56.png?0.36190226088752087" /></p>
 </section>
 <section id="an-equivalent-nfa-1" class="slide level1">
 <h1>An Equivalent NFA</h1>
 <p><span class="math inline"><em>L</em> = {w | w is a bit string with a 1 in the third position from the end}</span></p>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab57.png?0.18481777696501056" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab57.png?0.31097906946746434" /></p>
 </section>
 <section id="a-complicated-dfa-1" class="slide level1">
 <h1>A Complicated DFA</h1>
 <p>Can you verify the language now?</p>
 <p><span class="math inline"><em>L</em> = {w | w is a bit string with a 1 in the third position from the end}</span></p>
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab58.png?0.7818593669992395" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab58.png?0.4763948665531661" /></p>
 </section>
 <section id="equivalent-fa" class="slide level1">
 <h1>Equivalent FA</h1>
@@ -198,10 +200,10 @@
 </ul>
 <div class="container">
 <div class="col" data-markdown="">
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab59.png?0.43284558882192914" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab59.png?0.23629483172016363" /></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab510.png?0.12145237920836283" /></p>
+<p><img data-src="../../../../assets/2f98d66de1f1e38813442044e326bab510.png?0.42145714887864294" /></p>
 </div>
 </div>
 </section>
@@ -241,6 +243,14 @@
 <ul>
 <li>DFA: a single state is occupied</li>
 <li>NFA: Several states may be occupied</li>
+</ul>
+</section>
+<section id="nfa-computation-2" class="slide level1">
+<h1>NFA Computation</h1>
+<ul>
+<li>In general a coputation of an NFA <span class="math inline"><em>N</em></span>, on input <span class="math inline"><em>w</em></span>, induces a <strong>computation tree</strong></li>
+<li>Each path of the computation tree represents a possible computation of <span class="math inline"><em>N</em></span>.</li>
+<li>The NFA <span class="math inline"><em>N</em></span> accepts <span class="math inline"><em>w</em></span>, if its computation tree includes <strong>at least</strong> one path ending with an accepting state</li>
 </ul>
 </section>
 <section id="references-resources" class="slide level1">

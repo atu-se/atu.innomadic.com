@@ -59,6 +59,8 @@ output:
 
 * This approach fails when trying to prove that **concatenation**  and **star** preserve regularity.
 * To overcome this problem we introduce **nondeterminism**.
+* All of the FAs that we have discussed so far have been deterministic finite automata (DFAs)
+* We now introduce the idea of a non-deterministic finite automaton (NFA)
 
 # Example of an NFA
 
@@ -137,6 +139,11 @@ digraph G{
     rankdir="LR"
     null [label= "", shape=none]
     qs [label=<q<SUB>s</SUB>>]
+
+    q1a [label=<q<SUB>1a</SUB>>]
+    q1b [label=<q<SUB>1b</SUB>>]
+    q11b [label=<q<SUB>11b</SUB>>]
+    
     q11a [label=<q<SUB>11a</SUB>>, shape=doublecircle]
     q111 [label=<q<SUB>111</SUB>>, shape=doublecircle]
 
@@ -163,6 +170,10 @@ digraph G{
     rankdir="LR"
     null [label= "", shape=none]
     qs [label=<q<SUB>s</SUB>>]
+    q1a [label=<q<SUB>1a</SUB>>]
+    q1b [label=<q<SUB>1b</SUB>>]
+    q11b [label=<q<SUB>11b</SUB>>]
+
     q11a [label=<q<SUB>11a</SUB>>, shape=doublecircle]
     q111 [label=<q<SUB>111</SUB>>, shape=doublecircle]
 
@@ -184,6 +195,10 @@ digraph G{
     rankdir="LR"
     null [label= "", shape=none]
     qs [label=A]
+    q1a [label=<q<SUB>1a</SUB>>]
+    q1b [label=<q<SUB>1b</SUB>>]
+    q11b [label=<q<SUB>11b</SUB>>]
+
     q11a [label=C, shape=doublecircle]
     q111 [label=F, shape=doublecircle]
     q1a [label=B]
@@ -404,8 +419,11 @@ At each step of the computation...
 * DFA: a single state is occupied
 * NFA: Several states may be occupied
 
+# NFA Computation
 
-
+* In general a coputation of an NFA $N$, on input $w$, induces a **computation tree**
+* Each path of the computation tree represents a possible computation of $N$.
+* The NFA $N$ accepts $w$, if its computation tree includes **at least** one path ending with an accepting state
 
 # References, Resources
 
