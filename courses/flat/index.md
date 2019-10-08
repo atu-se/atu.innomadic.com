@@ -24,11 +24,12 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Lectures
 
-| Topic                                                 | Reading |
-|-------------------------------------------------------|---------|
-| 0. Discrete Math Review                               | 0       |
-| 1. [Finite Automata](lectures/lecture1-slides.html)   | 1.1     |
-| 2. [Regular Languages](lectures/lecture2-slides.html) | 1.1     |
+| Topic                                                                 | Reading |
+|-----------------------------------------------------------------------|---------|
+| 0. Discrete Math Review                                               | 0       |
+| 1. [Finite Automata](lectures/lecture1-slides.html)                   | 1.1     |
+| 2. [Regular Languages](lectures/lecture2-slides.html)                 | 1.1     |
+| 3. [Non-deterministic Finite Automata](lectures/lecture3-slides.html) | 1.2     |
 
 
 ## Assignments
@@ -37,10 +38,16 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 |----------------------------------------|----------|
 | 1. Exercises 0.1-0.3                   | 29-Sep   |
 | 2. Exercise 1.1                        | 6-Oct    |
-| 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b | 12-Oct   |
+| 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b | 13-Oct   |
 
 
 ## Updates
+
+### 6-Oct 
+
+* Lecture 2 and 3 posted
+* Assignment 3 Posted 
+* Prepare for a quiz on Saturday, 12-Oct over Finite Automata (particularly DFAs) and Regular Languages
 
 ### 5-Oct
 

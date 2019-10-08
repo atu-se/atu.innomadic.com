@@ -22,7 +22,7 @@ output:
 
 # Roadmap for Lecture 
 
-* Present the three regular operations.
+* Review the three regular operations.
 * Present Non-Deterministic Finite Automata (NFA)
 * Prove that NFAs and DFAs are equivalent.
 * Use NFAs to show that when each of the regular operation is applied on regular languages it yields yet another regular language.
@@ -48,14 +48,14 @@ output:
 * $A \circ B = \{goodgirl, goodboy,badgirl,badboy\}$
 * $A^* = \{ \epsilon , good , bad , goodgood , goodbad, goodgoodgoodbad, badbadgoodbad,...\}$
 
-# Motivation for Nondeterminism
+# Motivation
 
 * The Regular Operations give us a way to construct all regular languages systematically.
 * In the previous lecture, we showed that the union operation preserves regularity:
 * Given two regular languages L~1~ and L~2~ and their recognizing automata, M~1~ and M~2~, we constructed an automaton that recognizes $L_1 \cup L_2$
 
 
-# Motivation for Nondeterminism
+# Motivation
 
 * This approach fails when trying to prove that **concatenation**  and **star** preserve regularity.
 * To overcome this problem we introduce **nondeterminism**.
@@ -139,6 +139,8 @@ digraph G{
     rankdir="LR"
     null [label= "", shape=none]
     qs [label=<q<SUB>s</SUB>>]
+    qa [label=<q<SUB>a</SUB>>]
+    qb [label=<q<SUB>b</SUB>>]
 
     q1a [label=<q<SUB>1a</SUB>>]
     q1b [label=<q<SUB>1b</SUB>>]
@@ -148,11 +150,15 @@ digraph G{
     q111 [label=<q<SUB>111</SUB>>, shape=doublecircle]
 
     null -> qs
-    qs -> q1a [label="1"]
-    qs -> q1b [label="1"]
+    qs -> qa [label="E"]
+    qs -> qb [label="E"]
+    qa -> q1a [label="1"]
+    qb -> q1b [label="1"]
     q1a -> q11a [label="1"]
     q1b -> q11b [label="1"]
     q11b -> q111 [label="1"]
+    q11a -> qa [label="E"]
+    q111 -> qb [label="E"]
 }
 ```
 
@@ -228,7 +234,7 @@ digraph G{
     100 [shape=doublecircle]
     110 [shape=doublecircle]
     101 [shape=doublecircle]
-    100 [shape=doublecircle]
+    111 [shape=doublecircle]
 
     null -> 000
     000 -> 000 [label=0]
@@ -302,7 +308,7 @@ digraph G{
     100 [shape=doublecircle]
     110 [shape=doublecircle]
     101 [shape=doublecircle]
-    100 [shape=doublecircle]
+    111 [shape=doublecircle]
 
     null -> 000
     000 -> 000 [label=0]
@@ -340,7 +346,7 @@ digraph G{
     100 [shape=doublecircle]
     110 [shape=doublecircle]
     101 [shape=doublecircle]
-    100 [shape=doublecircle]
+    111 [shape=doublecircle]
 
     null -> 000
     000 -> 000 [label=0]
