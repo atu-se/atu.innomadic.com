@@ -30,6 +30,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 1. [Finite Automata](lectures/lecture1-slides.html)                   | 1.1     |
 | 2. [Regular Languages](lectures/lecture2-slides.html)                 | 1.1     |
 | 3. [Non-deterministic Finite Automata](lectures/lecture3-slides.html) | 1.2     |
+| 4. [NFA Proofs](lectures/lecture4-slides.html)                        | 1.2     |
 
 
 ## Assignments
@@ -39,6 +40,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 1. Exercises 0.1-0.3                   | 29-Sep   |
 | 2. Exercise 1.1                        | 6-Oct    |
 | 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b | 13-Oct   |
+| 4. Exercise 1.7 aceg, 1.8a             | 20-Oct
 
 
 ## Updates

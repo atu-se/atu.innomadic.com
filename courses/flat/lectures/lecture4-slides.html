@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-10-12">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">4. NFA Proofs</p>
+  <p class="date">October 12, 2019</p>
+</section>
+
+<section class="slide level1">
+
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
+<section id="roadmap-for-lecture" class="slide level1">
+<h1>Roadmap for Lecture</h1>
+<ul>
+<li>Review NFAs</li>
+<li>Prove that NFAs and DFAs are equivalent.</li>
+<li>Use NFAs to show that when each of the regular operation is applied on regular languages it yields yet another regular language.</li>
+</ul>
+</section>
+<section id="review" class="slide level1">
+<h1>Review</h1>
+</section>
+<section id="nfa-definition" class="slide level1">
+<h1>NFA Definition</h1>
+<p>A non-deterministic finite automaton is a 5-tuple <span class="math inline">(Q,\Sigma,\delta,q_0 ,F)</span></p>
+<ol type="1">
+<li>Q is a finite set called the <em>states</em>.</li>
+<li><span class="math inline">\Sigma</span> is a finite set called the <em>alphabet</em>.</li>
+<li><span class="math inline">\delta: Q \times \Sigma_\epsilon^* \rightarrow P(Q)</span> is the <em>transition function</em>.</li>
+<li><span class="math inline">q_0 \in Q</span> is the <em>start state</em>, and</li>
+<li><span class="math inline">F \subseteq Q</span> ,is the set of <em>accept states</em>.</li>
+</ol>
+<p><span class="math inline">^* \Sigma_\epsilon = \Sigma \cup \{\epsilon\}</span></p>
+</section>
+<section id="differences-between-nfas-and-dfas" class="slide level1">
+<h1>Differences Between NFAs and DFAs</h1>
+<ol type="1">
+<li>The range of the transition function <span class="math inline">\delta</span> is now <span class="math inline">P(Q)</span>.</li>
+<li>The transition function allows <span class="math inline">\epsilon</span> transitions</li>
+</ol>
+</section>
+<section id="equivalent-fa" class="slide level1">
+<h1>Equivalent FA</h1>
+<ul>
+<li>These two finite automata are equivalent</li>
+<li>The NFA is much simpler to design and understand</li>
+</ul>
+<div class="container">
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025230.png?0.7053900851194286" /></p>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025231.png?0.9572269213476456" /></p>
+</div>
+</div>
+</section>
+<section id="nfa-equivalence" class="slide level1">
+<h1>NFA Equivalence</h1>
+<ul>
+<li>Now we prove that the class of NFAs is Equivalent to the class of DFA:</li>
+<li>Theorem: For every NFA N, there exists a DFA <span class="math inline">M = M(N)</span> such that</li>
+</ul>
+<p><span class="math display">L(N)=L(M(N))</span></p>
+</section>
+<section id="proof" class="slide level1">
+<h1>Proof</h1>
+<ul>
+<li>One technique of proving a theorem is called <em>proof by construction</em></li>
+<li>Many theorems state that a particular type of object exists.</li>
+<li>One way to prove such a theorem is by demonstrating how to construct the object.</li>
+</ul>
+</section>
+<section id="proof-idea" class="slide level1">
+<h1>Proof Idea</h1>
+<ul>
+<li>We show how to build a DFA M that satisifes <span class="math inline">L(N) = L(M(N))</span></li>
+<li>Assume that we know N, construct a DFA that simulates M.</li>
+</ul>
+</section>
+<section id="proof-1" class="slide level1">
+<h1>Proof</h1>
+<ul>
+<li>Let <span class="math inline">N =(Q, \Sigma , \delta ,q_0,F)</span>, recognizing some language A.</li>
+<li>The state set of the simulating DFA M, should reflect the fact that at each step of the computation, N may occupy several ssates.</li>
+<li>Thus we define the state set of M as P(Q) the power-set of the state set of N.</li>
+</ul>
+</section>
+<section id="proof-2" class="slide level1">
+<h1>Proof</h1>
+<ul>
+<li>Let <span class="math inline">N =(Q, \Sigma , \delta ,q_0,F)</span>, recognizing some language A.</li>
+<li>First we assume that N has no <span class="math inline">\epsilon</span>-transitions.</li>
+<li>Define <span class="math inline">N =(Q&#39;, \Sigma , \delta &#39; ,q_0&#39;,F)</span> where</li>
+</ul>
+<p><span class="math display">Q&#39;=P(Q)</span></p>
+</section>
+<section id="proof-3" class="slide level1">
+<h1>Proof</h1>
+<ul>
+<li>Our next task is to define M’s transition function, <span class="math inline">\delta &#39;</span>:</li>
+<li>For any <span class="math inline">R \in Q&#39;</span> and <span class="math inline">a \in \Sigma</span> define</li>
+</ul>
+<p><span class="math display">\delta &#39;(R,a) = \{ q \in Q | q \in \delta (r,a) \text{ for some r} \in R\}</span></p>
+<ul>
+<li>If R is a state of M, then it is a set of states of N.</li>
+<li>When M in state R processes an input symbol a, M goes to the set of states to which N will go in any of the branches of its computation.</li>
+</ul>
+</section>
+<section id="proof-4" class="slide level1">
+<h1>Proof</h1>
+<ul>
+<li>An alternative way to write the definition of M’s transition function, <span class="math inline">\delta &#39;</span> is:
+<ul>
+<li>For any <span class="math inline">R \in Q&#39;</span> and <span class="math inline">a \in \Sigma</span>, define:</li>
+<li><span class="math inline">\delta &#39;(R, a) = \bigcup_{r \in R} \delta (r,a)</span></li>
+</ul></li>
+<li>And the explanation is just the same</li>
+<li>Note: if <span class="math inline">\bigcup_{r \in R} \delta (r,a) = \emptyset</span> then <span class="math inline">\delta &#39;(R, a) = \emptyset</span>
+<ul>
+<li>Which is okay because <span class="math inline">\emptyset \in P(Q)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="proof-5" class="slide level1">
+<h1>Proof</h1>
+<ul>
+<li>The initial state of M is <span class="math inline">q_0&#39; = \{q_0\}</span></li>
+<li>The final state of M is:</li>
+</ul>
+<p><span class="math display">F&#39; = \{ R \in Q&#39;\ |\ R \text{ contains a final state of } N\}\}</span></p>
+<ul>
+<li>Because M accepts if N reaches <strong>at least one</strong> accepting state</li>
+<li>Thus, M simulates N</li>
+</ul>
+</section>
+<section id="proof-6" class="slide level1">
+<h1>Proof</h1>
+<ul>
+<li>It remains to consider <span class="math inline">\epsilon</span>-transitions</li>
+<li>For any state R of M defined <span class="math inline">E(R)</span> to be the collection of states of R unified with the states reachable from R by <span class="math inline">\epsilon</span>-transitions</li>
+</ul>
+</section>
+<section id="epsilon-transitions" class="slide level1">
+<h1><span class="math inline">\epsilon</span>-transitions</h1>
+<ul>
+<li>The old definition of <span class="math inline">\delta &#39;(R,a)</span> is: <span class="math display">\delta &#39;(R,a) = \{ q \in Q | q \in \delta (r,a) \text{ for some r} \in R\}</span></li>
+<li>The new definition is: <span class="math display">\delta &#39;(R,a) = \{ q \in Q | q \in E(\delta (r,a)) \text{ for some r} \in R\}</span></li>
+</ul>
+</section>
+<section id="proof-7" class="slide level1">
+<h1>Proof</h1>
+<ul>
+<li>In addition, we have to change the definition of <span class="math inline">q_0&#39;</span>, the initial state of M.</li>
+<li>The previous definition,</li>
+</ul>
+<p><span class="math inline">q_0&#39; = \{q_0\}</span> is replaced with <span class="math inline">q_0&#39; = E(\{q_0\})</span></p>
+<ul>
+<li>Once again the reader can verify that the new definition of M satisfies all requirements.</li>
+</ul>
+</section>
+<section id="corollary" class="slide level1">
+<h1>Corollary</h1>
+<ul>
+<li>A language L is <strong>regular</strong> if and only if there exists and NFA recognizing L.</li>
+</ul>
+</section>
+<section id="reg-operations" class="slide level1">
+<h1>Reg. Operations</h1>
+<ul>
+<li>Let A and B be 2 regular languages over the same alphabet, <span class="math inline">\Sigma</span>. We define the 3 regular operations:
+<ul>
+<li>Union: <span class="math inline">A \cup B = \{ x | x \in A\ or\ x \in B\}</span></li>
+<li>Concatenation: <span class="math inline">A \circ B = \{ xy | x \in A\ and\ y \in B\}</span></li>
+<li>Star: <span class="math inline">A^* = \{ x_1, x_2, ..., x_k | k \geq 0\ and\ x_k \in A\}</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="reg-operations-1" class="slide level1">
+<h1>Reg. Operations</h1>
+<p><span class="math display">
+\begin{aligned}
+A &amp; = \{good, bad \} \\
+B &amp; = \{girl, boy\} \\
+A \cup B &amp; =\{good, bad, girl, boy\} \\ 
+A \circ B &amp; = \{goodgirl, goodboy,badgirl,badboy\} \\
+A^* &amp; = \{ \epsilon, good , bad , goodgood , goodbad, \\
+&amp; goodgoodgoodbad, badbadgoodbad, ...\}
+\end{aligned}
+</span></p>
+</section>
+<section id="theorem-review" class="slide level1">
+<h1>Theorem Review</h1>
+<ul>
+<li>The class of regular languages is <strong>closed</strong> under all three <strong>regular operations</strong>.</li>
+</ul>
+</section>
+<section id="union-proof" class="slide level1">
+<h1>Union Proof</h1>
+<ul>
+<li>If A<sub>1</sub> and A<sub>2</sub> are regular, each has its own recognizing automaton N<sub>1</sub> and N<sub>2</sub>, respectively.</li>
+<li>In order to prove that the language <span class="math inline">A_1 \cup A_2</span> is regular, we have to construct an NFA that accepts exactly the words in <span class="math inline">A_1 \cup A_2</span></li>
+</ul>
+</section>
+<section id="a-pictorial-proof" class="slide level1">
+<h1>A Pictorial Proof</h1>
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025232.png?0.859066587167834" /></p>
+</section>
+<section id="union-proof-1" class="slide level1">
+<h1>Union Proof</h1>
+<ul>
+<li>Let <span class="math inline">N_1 = (Q_1, \Sigma,\delta_1,q_1,F_1)</span> recognizing <span class="math inline">A_1</span></li>
+<li>Let <span class="math inline">N_1 = (Q_2, \Sigma,\delta_2,q_2,F_2)</span> recognizing <span class="math inline">A_2</span></li>
+<li>Construct <span class="math inline">N = (Q, \Sigma,\delta,q_0,F)</span> to recognize <span class="math inline">A_1 \cup A_2</span>,</li>
+<li>Where <span class="math inline">Q=\{q_0\} \cup Q_1 \cup Q_2</span></li>
+<li>and <span class="math inline">F = F_1 \cup F_2</span>,</li>
+<li><span class="math inline">q_0</span> is a newly created start state and…</li>
+</ul>
+</section>
+<section id="union-proof-2" class="slide level1">
+<h1>Union Proof</h1>
+<p><span class="math display">\delta (q, a) = \begin{cases}
+    \delta_1 (q, a), &amp; q \in Q_1\\
+    \delta_2 (q, a), &amp; q \in Q_2\\
+    \{q_1, q_2\} &amp; q = q_0 \text{ and } a = \epsilon\\
+    \emptyset &amp; q = q_0 \text{ and } a \notin \epsilon
+  \end{cases}</span></p>
+</section>
+<section id="union-proof-overview" class="slide level1">
+<h1>Union Proof Overview</h1>
+<ul>
+<li>By adding in a new start state with <span class="math inline">\epsilon</span>-transitions to each of the other machines start states, we can recognize a union of two languages</li>
+</ul>
+</section>
+<section id="theorem-126" class="slide level1">
+<h1>Theorem 1.26</h1>
+<p>The class of regular languages is closed under the concatenation operation</p>
+</section>
+<section id="concatenation-proof" class="slide level1">
+<h1>Concatenation Proof</h1>
+<ul>
+<li>Given an input word to be checked whether it belongs to <span class="math inline">A_1 \circ A_2</span>, we may run <span class="math inline">N_1</span> until it reaches an accepting state and then to move to <span class="math inline">N_2</span></li>
+</ul>
+</section>
+<section id="concatenation-proof-1" class="slide level1">
+<h1>Concatenation Proof</h1>
+<ul>
+<li>The problem: whenever an accepting state is reached, we cannot be sure whether the word of <span class="math inline">A_1</span> is finished yet</li>
+<li>The idea: use non-determinism to choose the right point in which the word of <span class="math inline">A_1</span> is finished and the word of <span class="math inline">A_2</span> starts</li>
+</ul>
+</section>
+<section id="a-pictorial-proof-1" class="slide level1">
+<h1>A Pictorial Proof</h1>
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025233.png?0.6397936882342123" /></p>
+</section>
+<section id="concatenation-proof-2" class="slide level1">
+<h1>Concatenation Proof</h1>
+<ul>
+<li>By adding <span class="math inline">\epsilon</span>-transitions from the final states of the first machine to the start state of the second machine, we can match the concatenation of the two languages</li>
+</ul>
+</section>
+<section id="theorem" class="slide level1">
+<h1>Theorem</h1>
+<p>The class of regular languages is closed under the star operation</p>
+</section>
+<section id="pictorial-proof" class="slide level1">
+<h1>Pictorial Proof</h1>
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025234.png?0.6596501860996664" /></p>
+</section>
+<section id="star-proof" class="slide level1">
+<h1>Star Proof</h1>
+<ul>
+<li>Let <span class="math inline">N_1 = (Q_1, \Sigma,\delta_1,q_1,F_1)</span> recognizing <span class="math inline">A_1</span></li>
+<li>Construct <span class="math inline">N = (Q, \Sigma,\delta,q,F)</span> to recognize <span class="math inline">A_1^*</span></li>
+<li>Where <span class="math inline">Q=\{q_0\} \cup Q_1 \cup Q_2</span></li>
+<li>and <span class="math inline">F = F_1 \cup q_0</span>,</li>
+<li>…</li>
+</ul>
+</section>
+<section id="pstar-proof" class="slide level1">
+<h1>PStar Proof</h1>
+<p><span class="math display">\delta (q, a) = \begin{cases}
+    \delta_1 (q, a), &amp; q \in Q_1 \text{ and } q \notin F_1\\
+    \delta_1 (q, a), &amp; q \in F_1 \text{ and } a \neq \epsilon\\
+    \delta_1 (q, a) \cup \{q_1\}     &amp; q \in F_1 \text{ and } a = \epsilon\\
+    q_1        &amp; q = q_0 \text{ and } a = \epsilon\\
+    \emptyset        &amp; q = q_0 \text{ and } a \neq \epsilon
+  \end{cases}</span></p>
+</section>
+<section id="star-proof-1" class="slide level1">
+<h1>Star Proof</h1>
+<ul>
+<li>By adding a new, accepting start state with an <span class="math inline">\epsilon</span> transition to the previous FAs start state and then adding <span class="math inline">\epsilon</span> transitions between the final states back to the previous FA’s start state, we can always construct an NFA that recognizes <span class="math inline">N^*</span></li>
+</ul>
+</section>
+<section id="wrap-up" class="slide level1">
+<h1>Wrap Up</h1>
+<ul>
+<li>Proved equivalence between DFAs and NFAs</li>
+<li>Proved that the regular operations preserve regularity</li>
+</ul>
+</section>
+<section id="references-resources" class="slide level1">
+<h1>References, Resources</h1>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">ADUni.org Lectures</a></li>
+<li><a href="https://cseweb.ucsd.edu/classes/fa08/cse105/">UC San Diego Lecture Slides</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

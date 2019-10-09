@@ -24,8 +24,6 @@ output:
 
 * Review the three regular operations.
 * Present Non-Deterministic Finite Automata (NFA)
-* Prove that NFAs and DFAs are equivalent.
-* Use NFAs to show that when each of the regular operation is applied on regular languages it yields yet another regular language.
 
 # Regular Operations 
 
@@ -407,7 +405,7 @@ A non-deterministic finite automaton is a 5-tuple $(Q,\Sigma,\delta,q_0 ,F)$
 
 1. Q is a finite set called the *states*.
 2. $\Sigma$ is a finite set called the *alphabet*.
-3. $\delta: Q \times \Sigma_\epsilon^* \rightarrow Q$ is the *transition function*.
+3. $\delta: Q \times \Sigma_\epsilon^* \rightarrow P(Q)$ is the *transition function*.
 4. $q_0 \in Q$ is the *start state*, and
 5. $F \subseteq Q$ ,is the set of *accept states*.
 
@@ -427,9 +425,22 @@ At each step of the computation...
 
 # NFA Computation
 
-* In general a coputation of an NFA $N$, on input $w$, induces a **computation tree**
+* In general a computation of an NFA $N$, on input $w$, induces a **computation tree**
 * Each path of the computation tree represents a possible computation of $N$.
 * The NFA $N$ accepts $w$, if its computation tree includes **at least** one path ending with an accepting state
+
+# NFA Computation
+
+* There are two ways to look at computations of an NFA:
+    1. The first is to say that the NFA N “chooses” the right path on its tree of possible computations.
+    2. The second is to say that the NFA N traverses its computation tree “in parallel”
+
+# Review
+
+* NFA Concept
+* NFA Definition
+* NFA Usefulness
+
 
 # References, Resources
 

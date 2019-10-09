@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="dcterms.date" content="2019-10-04">
+  <meta name="dcterms.date" content="2019-10-12">
   <title>Formal Languages &amp; Automata Theory</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,6 +28,14 @@
   <!--[if lt IE 9]>
   <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
 </head>
 <body>
   <div class="reveal">
@@ -35,25 +43,53 @@
 
 <section id="title-slide">
   <h1 class="title">Formal Languages &amp; Automata Theory</h1>
-  <p class="subtitle">NFA Practice</p>
-  <p class="date">October 4, 2019</p>
+  <p class="subtitle">NFA Proof Practice</p>
+  <p class="date">October 12, 2019</p>
 </section>
 
 <section id="nfa-practice" class="slide level1">
 <h1>NFA Practice</h1>
-<p>Design an NFA for each of the languages below. For each language, <span class="math inline"><em>Σ</em></span> = {a, b}.</p>
-<p>Given two NFAs:</p>
-<p>A = { w | w ends in ab } B = { w | w contains a substring <em>aba</em>} C = { w | w has an odd number of a’s }</p>
+<p><span class="math display">
+\begin{aligned}
+  A &amp;= \{ w | w \text{ ends in ab }\} \\
+  B &amp;= \{ w | w \text{ contains a substring } aba\} \\ 
+  C &amp;= \{ w | w \text{  as an odd number of } a’s \} \\ 
+\end{aligned}
+</span></p>
 <ol type="1">
-<li>Construct an NFA that will recognize <span class="math inline"><em>A</em> ∪ <em>B</em></span></li>
-<li>Construct an NFA that will recognize <span class="math inline"><em>A</em> ∪ <em>C</em></span></li>
-<li>Construct an NFA that will recognize <span class="math inline"><em>B</em> ∪ <em>C</em></span></li>
-<li>Construct an NFA that will recognize <span class="math inline"><em>A</em> ∘ <em>B</em></span></li>
-<li>Construct an NFA that will recognize <span class="math inline"><em>A</em> ∘ <em>C</em></span></li>
-<li>Construct an NFA that will recognize <span class="math inline"><em>B</em> ∘ <em>C</em></span></li>
-<li>Construct an NFA that will recognize <span class="math inline"><em>A</em><sup>*</sup></span></li>
-<li>Construct an NFA that will recognize <span class="math inline"><em>B</em><sup>*</sup></span></li>
-<li>Construct an NFA that will recognize <span class="math inline"><em>C</em><sup>*</sup></span></li>
+<li>Construct an NFA that will recognize <span class="math inline">A \cup B</span></li>
+<li>Construct an NFA that will recognize <span class="math inline">A \cup C</span></li>
+<li>Construct an NFA that will recognize <span class="math inline">B \cup C</span></li>
+</ol>
+</section>
+<section id="nfa-practice-1" class="slide level1">
+<h1>NFA Practice</h1>
+<p><span class="math display">
+\begin{aligned}
+  A &amp;= \{ w | w \text{ ends in ab }\} \\
+  B &amp;= \{ w | w \text{ contains a substring } aba\} \\ 
+  C &amp;= \{ w | w \text{  as an odd number of } a’s \} \\ 
+\end{aligned}
+</span></p>
+<ol type="1">
+<li>Construct an NFA that will recognize <span class="math inline">A \circ B</span></li>
+<li>Construct an NFA that will recognize <span class="math inline">B \circ A</span></li>
+<li>Construct an NFA that will recognize <span class="math inline">A \circ C</span></li>
+</ol>
+</section>
+<section id="nfa-practice-2" class="slide level1">
+<h1>NFA Practice</h1>
+<p><span class="math display">
+\begin{aligned}
+  A &amp;= \{ w | w \text{ ends in ab }\} \\
+  B &amp;= \{ w | w \text{ contains a substring } aba\} \\ 
+  C &amp;= \{ w | w \text{  as an odd number of } a’s \} \\ 
+\end{aligned}
+</span></p>
+<ol type="1">
+<li>Construct an NFA that will recognize <span class="math inline">A^*</span></li>
+<li>Construct an NFA that will recognize <span class="math inline">B^*</span></li>
+<li>Construct an NFA that will recognize <span class="math inline">C^*</span></li>
 </ol>
 </section>
     </div>
