@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-10-13">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">5. Regular Expressions</p>
+  <p class="date">October 13, 2019</p>
+</section>
+
+<section class="slide level1">
+
+<style>
+.ninety {
+   font-size: 90%;
+}
+  
+.eighty {
+   font-size: 80%;
+}
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
+<section id="roadmap-for-lecture" class="slide level1">
+<h1>Roadmap for Lecture</h1>
+<ul>
+<li>Review NFAs</li>
+<li>Prove that NFAs and DFAs are equivalent.</li>
+<li>Use NFAs to show that when each of the regular operation is applied on regular languages it yields yet another regular language.</li>
+</ul>
+</section>
+<section id="review" class="slide level1">
+<h1>Review</h1>
+<ul>
+<li><strong>Theorem 1.45</strong> The class of regular languages is closed under the union operation.</li>
+<li><strong>Theorem 1.47</strong> The class of regular languages is closed under the concatenation operation.</li>
+<li><strong>Theorem 1.49</strong> The class of regular languages is closed under the star operation.</li>
+</ul>
+</section>
+<section id="regular-expressions" class="slide level1">
+<h1>Regular Expressions</h1>
+</section>
+<section id="introduction" class="slide level1">
+<h1>Introduction</h1>
+<ul>
+<li>Regular languages are defined and described by use of <strong>finite automata</strong>.</li>
+<li>In this lecture, we introduce <strong>Regular Expressions</strong> as an equivalent way, yet more elegant, to describe regular languages.</li>
+</ul>
+</section>
+<section id="motivation" class="slide level1">
+<h1>Motivation</h1>
+<ul>
+<li>If one wants to describe a regular language, <span class="math inline">L_a</span> they can use the a DFA, D or an NFA N , such that that <span class="math inline">L ( D ) = L_a</span></li>
+<li>This is not always very convenient.</li>
+<li>Consider for example the regular expression <span class="math inline">0^*10^*</span> describing the language of binary strings containing a single 1.</li>
+</ul>
+</section>
+<section id="basic-regular-expressions" class="slide level1">
+<h1>Basic Regular Expressions</h1>
+<ul>
+<li>A <strong>Regular Expression</strong> (RE in short) is a string of symbols that describes a <strong>regular Language</strong>.</li>
+<li>Let be an alphabet. For each <span class="math inline">\sigma \in \Sigma</span>, the symbol <span class="math inline">\sigma</span> is an RE representing the set <span class="math inline">\{\sigma\}</span></li>
+<li>The symbol <span class="math inline">\epsilon</span> is an RE representing the set <span class="math inline">\{\epsilon\}</span> (The set containing the empty string).</li>
+<li>The symbol <span class="math inline">\emptyset</span> is an RE representing the empty set.</li>
+</ul>
+</section>
+<section id="ind-construction" class="slide level1">
+<h1>Ind. Construction</h1>
+<ul>
+<li>Let <span class="math inline">R_1</span> and <span class="math inline">R_2</span> be two regular expressions representing languages <span class="math inline">L_1</span> and <span class="math inline">L_2</span>, respectively</li>
+<li>The string <span class="math inline">(R_1 \cup R_2)</span> is a regular expression representing the set <span class="math inline">L_1 \cup L_2</span></li>
+<li>The string <span class="math inline">(R_1 R_2)</span> is a regular expression representing the set <span class="math inline">L_1 \circ L_2</span>.</li>
+<li>The string <span class="math inline">(R_1)^*</span> is a regular expression representing the set <span class="math inline">L_1^*</span>.</li>
+</ul>
+</section>
+<section id="ind-construction-1" class="slide level1">
+<h1>Ind. Construction</h1>
+<ul>
+<li>Note that in the inductive part of the definition larger REs are defined by smaller ones. This ensures that the definition is not <strong>circular.</strong></li>
+<li>This inductive definition also dictates the way we will prove theorems:
+<ul>
+<li><strong>Stage 1:</strong> Prove <span class="math inline">T_e</span> correct for all base cases.</li>
+<li><strong>Stage 2:</strong> Assume <span class="math inline">T_ e</span> is correct for and and prove its correctness for <span class="math inline">(R_1 \cup R_2) (R_1 R_2) (R_1)^*</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="useful-notation" class="slide level1">
+<h1>Useful Notation</h1>
+<ul>
+<li>Let R be a regular expression</li>
+<li>The string <span class="math inline">R^+</span> represents <span class="math inline">RR^*</span>, and it also holds that <span class="math inline">R^+ \cup \{ \epsilon \} = R^*</span></li>
+<li>The string <span class="math inline">R^K</span> represents <span class="math inline">\underbrace{RR...R}_{k \text{ times}}</span></li>
+<li>The string <span class="math inline">\Sigma</span> represents <span class="math inline">\{ \sigma_1, \sigma_2, ..., \sigma_k\}</span></li>
+<li>The Language represented by <em>R</em> is denoted by <span class="math inline">L(R)</span></li>
+</ul>
+</section>
+<section id="precedence-rules" class="slide level1">
+<h1>Precedence Rules</h1>
+<ul>
+<li>The star (<span class="math inline">^*</span>) operation has the highest precedence.</li>
+<li>The concatenation (<span class="math inline">\circ</span> ) operation is second on the preference order.</li>
+<li>The union (<span class="math inline">\cup</span> ) operation is the least preferred.</li>
+<li>Parentheses can be omitted using these rules.</li>
+</ul>
+</section>
+<section id="examples" class="slide level1">
+<h1>Examples</h1>
+<ul>
+<li><span class="math inline">0^*10*</span> - { w | w contains a single 1 }</li>
+<li><span class="math inline">\Sigma^*1\Sigma^*</span> - { w | w has at least a single 1 }</li>
+<li><span class="math inline">\Sigma^*(str)\Sigma^*</span> - { w | w contains <em>str</em> as a substring}</li>
+<li><span class="math inline">1^*(01^+)^*</span> - { w | every 0 in w is followed by at least a single 1}</li>
+<li><span class="math inline">(\Sigma \Sigma)^*</span> - { w | w is of even length }</li>
+</ul>
+</section>
+<section id="examples-1" class="slide level1">
+<h1>Examples</h1>
+<ul>
+<li><span class="math inline">0 \Sigma^* 0 \cup 1 \Sigma^*1 \cup 0 \cup 1</span> - all words starting and ending with the same letter<strong>.</strong></li>
+<li><span class="math inline">(0 \cup \epsilon)1^* = 01^* \cup 1^*</span> - all strings of forms 1,11, 111… and 0,01,011…<strong>.</strong></li>
+<li><span class="math inline">R \emptyset = \emptyset</span> - A set concatenated with the empty set yields the empty set.</li>
+<li><span class="math inline">\emptyset^*</span> - <span class="math inline">\emptyset^* = \{\epsilon\}</span></li>
+</ul>
+</section>
+<section id="fa-equivalence" class="slide level1">
+<h1>FA Equivalence</h1>
+<ul>
+<li>Regular expressions and finite automata are equivalent in their descriptive power.</li>
+<li>This fact is expressed in the following Theorem:</li>
+<li><strong>Theorem 1.54</strong> A language is regular if and only if some regular expression describes it.</li>
+<li>The proof is by two Lemmata (Lemmas)</li>
+</ul>
+</section>
+<section id="if-and-only-if" class="slide level1">
+<h1>If and Only If</h1>
+<ul>
+<li>To prove this an “if and only if” statement, we must prove it in “both directions”</li>
+<li>We will express these two parts of the theorem as two lemmata (lemmas)</li>
+<li><strong>Theorem 1.54</strong> A language is regular if and only if some regular expression describes it.</li>
+<li>We showed that this theorem must be proved in both directions:
+<ul>
+<li><strong>Lemma 1.55</strong> If a language is described by a regular expression, then it is regular.</li>
+<li><strong>Lemma 1.60</strong> If a language is regular, then it is described by a regular expression.</li>
+</ul></li>
+</ul>
+</section>
+<section id="lemma-155" class="slide level1">
+<h1>Lemma 1.55</h1>
+<ul>
+<li>If a language <em>L</em> can be described by regular expression then <em>L</em> is regular.</li>
+</ul>
+</section>
+<section id="inductive-proofs" class="slide level1">
+<h1>Inductive Proofs</h1>
+<ul>
+<li>This inductive definition of Regular expressions dictates the way we will prove theorems.</li>
+<li>The proof for the Theorem follows the following stages:
+<ul>
+<li><strong>Stage 1:</strong> Prove correctness for all base cases.</li>
+<li><strong>Stage 2:</strong> Assume correctness for <span class="math inline">R_1</span> and <span class="math inline">R_2</span>, and show its correctness for <span class="math display">(R_1 \cup R_2), (R_1 R_2), \text{ and } (R_1)^*</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="induction-basis" class="slide level1">
+<h1>Induction Basis</h1>
+<ul>
+<li>For any <span class="math inline">\sigma \in \Sigma</span>, the expression <span class="math inline">\sigma</span> describes the set <span class="math inline">\{ \sigma \}</span>, recognized by</li>
+</ul>
+<p><img data-src="images/lecture5-image1.svg" /></p>
+</section>
+<section id="induction-basis-1" class="slide level1">
+<h1>Induction Basis</h1>
+<ul>
+<li>The set represented by the expression <span class="math inline">\epsilon</span> is recognized by:</li>
+</ul>
+<p><img data-src="images/lecture5-image2.svg" /></p>
+</section>
+<section id="induction-basis-2" class="slide level1">
+<h1>Induction Basis</h1>
+<ul>
+<li>The set represented by the expression <span class="math inline">\emptyset</span> is recognized by:</li>
+</ul>
+<p><img data-src="images/lecture5-image3.svg" /></p>
+</section>
+<section id="induction-step" class="slide level1">
+<h1>Induction Step</h1>
+<ul>
+<li>Now, we assume that <span class="math inline">R_1</span> and <span class="math inline">R_2</span> represent two regular sets and claim that <span class="math display">R_1 \cup R_2, R_1 \circ R_2 \text{ and } R_1^*</span> represent the corresponding regular sets.</li>
+<li>The proof for this claim is straight forward using the constructions given in the proof for the closure of the three regular operations.</li>
+</ul>
+</section>
+<section id="examples-2" class="slide level1">
+<h1>Examples</h1>
+<p>Show that the following regular expressions represent regular languages:</p>
+<ol type="1">
+<li><span class="math inline">(ab \cup a)^*</span></li>
+<li><span class="math inline">(a \cup b)^*aba</span></li>
+</ol>
+</section>
+<section id="example" class="slide level1">
+<h1>Example</h1>
+<ol type="1">
+<li><span class="math inline">(ab \cup a)^*</span></li>
+</ol>
+<div class="container">
+<div class="col" data-markdown="">
+<!--left hand main column-->
+<div class="container">
+<p><!--first row--></p>
+<div class="col" data-markdown="">
+<p><span class="math inline">a</span></p>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee50.png?0.26388652816223646" /></p>
+</div>
+</div>
+<div class="container">
+<!--row 2-->
+<div class="col" data-markdown="">
+<p><span class="math inline">b</span></p>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee51.png?0.7531092950796423" /></p>
+</div>
+</div>
+<p><!--end row 2--></p>
+<div class="container">
+<!--row 3 -->
+<div class="col" data-markdown="">
+<p><span class="math inline">ab</span></p>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee52.png?0.6705467117917145" /></p>
+</div>
+</div>
+<!--end row 3-->
+</div>
+<p><!-- end left column>
+  
+  
+<div class="col" data-markdown> <!-- begin right main column>
+  
+  
+  
+</div> <!-- end right main column --></p>
+</div>
+<p><!-- end main container --></p>
+</section>
+<section id="example-1" class="slide level1">
+<h1>Example 1</h1>
+<div class="container">
+<!-- L row 1-->
+<div class="col" data-markdown="">
+<p><span class="math inline">ab \cup a</span></p>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee53.png?0.14243560035637226" /></p>
+</div>
+</div>
+</section>
+<section id="example-1-1" class="slide level1">
+<h1>Example 1</h1>
+<div class="container">
+<!-- R row 2-->
+<div class="col" data-markdown="">
+<p><span class="math inline">(ab \cup a)^*</span></p>
+</div>
+<div class="col" data-markdown="">
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee54.png?0.8037952366705774" /></p>
+</div>
+</div>
+<p><!-- end row --></p>
+</section>
+<section id="example-2" class="slide level1">
+<h1>Example 2</h1>
+<ol start="2" type="1">
+<li><span class="math inline">(a \cup b)^*aba</span></li>
+</ol>
+<p>Design the NFA that recognizes the language of this regular expression.</p>
+</section>
+<section id="lemma-160" class="slide level1">
+<h1>Lemma 1.60</h1>
+<p>If a language L is regular then L can be describe by a regular expression</p>
+</section>
+<section id="proof-stages" class="slide level1">
+<h1>Proof Stages</h1>
+<p>The proof follows the following stages:</p>
+<ol type="1">
+<li>Define Generalized Nondeterministic Finite Automaton (GNFA in short).</li>
+<li>Show how to convert any DFA to an equivalent GNFA.</li>
+<li>Show an algorithm to convert any GNFA to an equivalent GNFA with 2 states.</li>
+<li>Convert a 2-state GNFA to an equivalent RE.</li>
+</ol>
+</section>
+<section id="gnfa-properties" class="slide level1">
+<h1>GNFA Properties</h1>
+<ol type="1">
+<li>A GNFA is a finite automaton in which each transition is labeled with a regular expression over the alphabet.</li>
+<li>A single <strong>initial state</strong> with all possible outgoing transitions and no incoming transitions</li>
+<li>A single <strong>final state</strong> without outgoing transitions</li>
+<li>A single transition between every two states, including self loops.</li>
+</ol>
+</section>
+<section id="example-of-a-generalized-nfa" class="slide level1">
+<h1>Example of a Generalized NFA</h1>
+<p><img data-src="images/lecture5-gnfa.svg" /></p>
+</section>
+<section id="gnfa-computation" class="slide level1">
+<h1>GNFA Computation</h1>
+<ul>
+<li>A <strong><em>computation</em></strong> of a GNFA is similar to a computation of an NFA. except:</li>
+<li>In each step, a GNFA consumes <strong><em>a block of symbols</em></strong> that matches the RE on the transition used by the NFA.</li>
+</ul>
+</section>
+<section id="example-of-a-gnfa-computation" class="slide level1">
+<h1>Example of a GNFA Computation</h1>
+<p>Consider <em>abbbaaaaabbbbb</em> or <em>bb</em> or <em>abba</em></p>
+<p><img data-src="images/lecture5-gnfa.svg" /></p>
+</section>
+<section id="dfa-gnfa-conversion" class="slide level1">
+<h1>DFA-&gt;GNFA Conversion</h1>
+<p>Conversion is done by a very simple process:</p>
+<ol type="1">
+<li>Add a new start state with an <span class="math inline">\epsilon</span>-transition from the <strong>new</strong> start state to the <strong>old</strong> start state.</li>
+<li>Add a new accepting state with <span class="math inline">\epsilon</span>-transition from every <strong>old</strong> accepting state to the <strong>new</strong> accepting state.</li>
+</ol>
+</section>
+<section id="dfa-gnfa-conversion-1" class="slide level1">
+<h1>DFA-&gt;GNFA Conversion</h1>
+<ol start="3" type="1">
+<li>Replace any transition with multiple labels by a single transition labeled with the <strong><em>union</em></strong> of all labels.</li>
+<li>Add any missing transition, including self transitions; label the added transition by <span class="math inline">\emptyset</span>.</li>
+</ol>
+</section>
+<section id="dfa-gnfa-conversion-2" class="slide level1">
+<h1>DFA-&gt;GNFA Conversion</h1>
+<ul>
+<li>The final element needed for the proof is a procedure in which for any GFN <em>G</em> , any state of <em>G</em> , not including <span class="math inline">q_{start}</span> and <span class="math inline">q_{accept}</span>, can be <strong>ripped</strong> off <em>G</em> , while preserving the language.</li>
+<li>This is demonstrated in the next slide by considering a general state, denoted by <span class="math inline">q_{rip}</span> , and an arbitrary pair of states, <span class="math inline">q_i</span> and <span class="math inline">q_j</span></li>
+</ul>
+</section>
+<section id="state-removal" class="slide level1">
+<h1>State Removal</h1>
+<div class="container">
+<p><!--first row--></p>
+<div class="col" data-markdown="">
+<h4 id="before-ripping">Before Ripping</h4>
+<p><img data-src="images/lecture5-gnfaripbefore.png" /></p>
+</div>
+<div class="col" data-markdown="">
+<h4 id="after-ripping">After Ripping</h4>
+<p><img data-src="images/lecture5-gnfarip.png" /></p>
+</div>
+</div>
+<p>*Note: this should be done for <strong>every pair</strong> of outgoing and incoming transitions for <span class="math inline">q_{rip}</span></p>
+</section>
+<section id="elaboration" class="slide level1">
+<h1>Elaboration</h1>
+<div class="container">
+<p><!--first row--></p>
+<div class="col" data-markdown="">
+<p><img data-src="images/lecture5-gnfaripbefore.png" /></p>
+</div>
+<div class="col" data-markdown="">
+<ul>
+<li>Consider the RE <span class="math inline">(R_1)(R_2)^*R_3</span>, representing all strings that enable transition from <span class="math inline">q_i</span> via <span class="math inline">q_{rip}</span> to <span class="math inline">q_j</span>.</li>
+</ul>
+</div>
+</div>
+<ul>
+<li>What we want to do is to augment the Regular expression of transition <span class="math inline">(q_i, q_j)</span>, namely <span class="math inline">R_4</span>, so these strings can pass through <span class="math inline">(q_i, q_j)</span></li>
+<li>This is done by setting it to <span class="math inline">R_4 \cup (R_1)(R_2)^*R_3</span></li>
+</ul>
+</section>
+<section id="elaboration-1" class="slide level1">
+<h1>Elaboration</h1>
+<div class="container">
+<p><!--first row--></p>
+<div class="col" data-markdown="">
+<p><img data-src="images/lecture5-gnfaripbefore.png" /></p>
+</div>
+<div class="col" data-markdown="">
+<ul>
+<li>Note that this change does not affect all pairs in which either <span class="math inline">(q_i, q_{rip}</span> or <span class="math inline">(q_j, q_{rip}</span> participate.</li>
+<li>Thus, before is removed all these pairs should be processed in the same way, as demonstrated on the next slide.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="elaboration-2" class="slide level1">
+<h1>Elaboration</h1>
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee55.png?0.09458285760554341" /></p>
+<ul>
+<li>In order to rip , all pairs of incoming and outgoing transitions should be considered in the way showed on the previous slide</li>
+<li>Specifically consider: (t1, t4), (t1, t5), (t2, t4), (t2, t5), (t3, t4), (t3, t5), one after the other</li>
+<li>After that <span class="math inline">q_{rip}</span> can be ripped while preserving <span class="math inline">L(G)</span>.</li>
+</ul>
+</section>
+<section id="partial-proof" class="slide level1">
+<h1>Partial Proof</h1>
+<ul>
+<li>The first step is to formally define a GNFA.</li>
+<li>Each transition should be labeled with an RE.</li>
+<li>Define the transition function as follows:</li>
+</ul>
+<p><span class="math display">\delta : (Q - \{q_{accept}\}) \times (Q - \{q_{start}\})\longrightarrow RE_\Sigma</span></p>
+<ul>
+<li>where <span class="math inline">RE_\Sigma</span> denotes all regular expressions over <span class="math inline">\Sigma</span>.</li>
+</ul>
+</section>
+<section id="changes-in-delta-definition" class="slide level1">
+<h1>Changes in delta Definition</h1>
+<p><span class="math display">\delta : (Q - \{q_{accept}\}) \times (Q - \{q_{start}\})\longrightarrow RE_\Sigma</span></p>
+<ul>
+<li>**Note: this definition is different than the original definitions (For DFA and NFA).</li>
+<li>In this definition we rely on the fact that every 2 states (except and ) are connected in both directions.</li>
+</ul>
+</section>
+<section id="gnfa-definition" class="slide level1">
+<h1>GNFA Definition</h1>
+<p>A Generalized Finite Automaton is a 5-tuple <span class="math inline">(Q,\Sigma,\delta,q_0 ,F)</span></p>
+<ol type="1">
+<li>Q is a finite set called the <em>states</em>.</li>
+<li><span class="math inline">\Sigma</span> is a finite set called the <em>alphabet</em>.</li>
+<li><span class="math inline">\delta : (Q - \{q_{accept}\}) \times (Q - \{q_{start}\})\rightarrow RE_\Sigma</span> is the <em>transition function</em>.</li>
+<li><span class="math inline">q_{start} \in Q</span> is the <em>start state</em>, and</li>
+<li><span class="math inline">q_{accept} \in Q</span> ,is the <em>accept state</em>.</li>
+</ol>
+</section>
+<section id="defining-gnfa-computation" class="slide level1">
+<h1>Defining GNFA Computation</h1>
+<ul>
+<li>A GNFA <strong><em>accepts</em></strong> a string <span class="math inline">w \in \Sigma^*</span> if <span class="math inline">w=w_1w_2...w_k</span> and there exists a sequence of states <span class="math inline">q_{start}q_1q_2...q_{accept}</span>, satisfying:</li>
+<li>For each <span class="math inline">i, 1 \leq i \leq k, w_i \in L(R_i)</span></li>
+<li>where <span class="math inline">R_i = \delta(q_{i-1}, q_i)</span>, or in other words, is the expression on the arrow from <span class="math inline">q_i</span> to <span class="math inline">q_{i+1}</span>.</li>
+</ul>
+</section>
+<section id="convert" class="slide level1">
+<h1>CONVERT</h1>
+<ul>
+<li>Procedure <em>CONVERT</em> takes as input a GNFA <em>G with k</em> states.</li>
+<li>If <span class="math inline">k=2</span> then these 2 states must be <span class="math inline">q_{start}</span> and <span class="math inline">q_{end}</span>, and the algorithm returns <span class="math inline">\delta(q_{start}, q_{end}</span></li>
+<li>If <span class="math inline">k&gt;2</span>, the algorithm converts <em>G</em> to an equivalent <em>G’</em> with <span class="math inline">k-1</span> states by use of the ripping procedure described before.</li>
+</ul>
+</section>
+<section id="convert-1" class="slide level1 eighty">
+<h1>CONVERT</h1>
+<ol type="1">
+<li><span class="math inline">k \longleftarrow|Q_G|;</span></li>
+<li><span class="math inline">if(k=2)</span> return <span class="math inline">\delta(q_{start}, q_{end});</span></li>
+<li><span class="math inline">q_{rip} \longleftarrow GetRandomState(Q_G);</span></li>
+<li><span class="math inline">Q&#39; \longleftarrow Q_G - q_{rip};</span></li>
+<li><span class="math inline">\text{For any }q_i \in Q&#39;-q_{accept} \text{ and any } q_j \in Q&#39;-q_{start}:</span></li>
+</ol>
+<p><span class="math display">
+\delta : (Q - \{q_{accept}\}) \times (Q - \{q_{start}\})\longrightarrow RE_\Sigma \\
+for R_1 = \delta(q_i, q_{rip})  R_2 = \delta(q_{rip}, q_{rip}) R_3=\delta(q_{rip}, q_i) R_4 = \delta(q_i, q_j)
+</span> 6. <span class="math inline">\text{return }G&#39; = (Q&#39;, \Sigma, \delta &#39;, q_{start}, q_{accept});</span></p>
+</section>
+<section id="example-nfa-gnfa-re" class="slide level1">
+<h1>Example: NFA-&gt; GNFA-&gt; RE</h1>
+<p><img data-src="images/lecture5-gnfaexamplea.png" /></p>
+</section>
+<section id="example-nfa-gnfa-re-1" class="slide level1">
+<h1>Example: NFA -&gt; GNFA -&gt; RE</h1>
+<div class="container">
+<div class="col" data-markdown="">
+<p><!--left hand main column--> <img data-src="images/lecture5-gnfaexamplea.png" /></p>
+</div>
+<div class="col" data-markdown="">
+<p><!--right hand main column--> <img data-src="images/lecture5-gnfaexampleb.png" /></p>
+</div>
+</div>
+</section>
+<section id="example-nfa-gnfa-re-2" class="slide level1">
+<h1>Example: NFA -&gt; GNFA -&gt; RE</h1>
+<div class="container">
+<div class="col" data-markdown="">
+<p><!--left hand main column--> <img data-src="images/lecture5-gnfaexampleb.png" /></p>
+</div>
+<div class="col" data-markdown="">
+<p><!--right hand main column--> <img data-src="images/lecture5-gnfaexamplec.png" /></p>
+</div>
+</div>
+</section>
+<section id="example-nfa-gnfa-re-3" class="slide level1">
+<h1>Example: NFA -&gt; GNFA -&gt; RE</h1>
+<div class="container">
+<div class="col" data-markdown="">
+<p><!--left hand main column--> <img data-src="images/lecture5-gnfaexamplec.png" /></p>
+</div>
+<div class="col" data-markdown="">
+<p><!--right hand main column--> <img data-src="images/lecture5-gnfaexampled.png" /></p>
+</div>
+</div>
+</section>
+<section id="review-1" class="slide level1">
+<h1>Review</h1>
+<ul>
+<li>In this lecture we introduced a new theorem:</li>
+<li><strong>Theorem 1.54</strong> A language is regular if and only if some regular expression describes it.</li>
+<li>We showed that this theorem must be proved in both directions:
+<ul>
+<li><strong>Lemma 1.55</strong> If a language is described by a regular expression, then it is regular.</li>
+<li><strong>Lemma 1.60</strong> If a language is regular, then it is described by a regular expression.</li>
+</ul></li>
+</ul>
+</section>
+<section id="review-2" class="slide level1">
+<h1>Review</h1>
+<ol type="1">
+<li>Motivated and defined regular expressions as a more concise and elegant method to represent <strong>Regular Languages</strong>.</li>
+<li>Proved that FAs (Deterministic as well as Nondeterministic) and REs is identical by: 2.1 Defined GNFAs. 2.2 Showed how to convert a DFA to a GNFA. 2.3 Showed an algorithm to converted a GNFA with K states to an equivalent GNFA with K-1 states.</li>
+</ol>
+</section>
+<section id="references-resources" class="slide level1">
+<h1>References, Resources</h1>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">ADUni.org Lectures</a></li>
+<li><a href="https://cseweb.ucsd.edu/classes/fa08/cse105/">UC San Diego Lecture Slides</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

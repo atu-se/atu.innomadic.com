@@ -1,0 +1,20 @@
+digraph G{
+    rankdir="LR"
+    null [label= "", shape=none]
+    null -> qstart;
+    qstart [label=<q<SUB>start</SUB>> ]
+    qaccept [label=<q<SUB>accept</SUB>> shape=doublecircle]
+    q1 [label=""]
+    q2 [label=""]
+
+    qstart -> q1 [label=<&empty;>]
+    qstart -> q2 [label=<ab<SUP>*</SUP>>];
+    qstart -> qaccept [label="b"];
+    q1 -> q1 [label="ab"];
+    q1 -> qaccept [label=<b<SUP>*</SUP>>];
+    q1 -> q2 [label=<(aa)<SUP>*</SUP>>];
+    q2 -> q2 [label="aa"];
+    q2 -> qaccept [label="ab &cup; ba"];
+    q2 -> q1[label=<a<SUP>*</SUP>>];
+
+}

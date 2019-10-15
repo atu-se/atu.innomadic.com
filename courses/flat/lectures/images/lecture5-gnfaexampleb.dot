@@ -1,0 +1,21 @@
+digraph finite_state_machine {
+    rankdir=TB;
+    //size="8,5"
+    start [style="invis"];
+    {rank=same
+        s [group="1"]; 
+        1[ shape="circle" group="2"];
+    }
+    {rank=same
+        2[group="2"];
+        a[shape="doublecircle" group="1"];
+
+    }
+
+    start -> s;
+    s -> 1 [label=<&epsilon;>];
+    1 -> 1 [label="a"];
+    1 -> 2 [label="b"];
+    2 -> 2 [label="a,b"];
+    2 -> a [label=<&epsilon;>];
+}

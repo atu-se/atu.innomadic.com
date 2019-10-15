@@ -31,6 +31,11 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 2. [Regular Languages](lectures/lecture2-slides.html)                 | 1.1     |
 | 3. [Non-deterministic Finite Automata](lectures/lecture3-slides.html) | 1.2     |
 | 4. [NFA Proofs](lectures/lecture4-slides.html)                        | 1.2     |
+| 5. [Regular Expressions](lectures/lecture5-slides.html)               | 1.3     |
+| 6. Non-Regular Languages                                              | 1.4     |
+| 7. Context-Free Grammars                                              | 2.1     |
+| 8. Pushdown Automata                                                  | 2.2     |
+| 9. Non-Context-Free Languages                                         | 2.3     |
 
 
 ## Assignments
@@ -40,10 +45,16 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 1. Exercises 0.1-0.3                   | 29-Sep   |
 | 2. Exercise 1.1                        | 6-Oct    |
 | 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b | 13-Oct   |
-| 4. Exercise 1.7 aceg, 1.8a             | 20-Oct
-
+| 4. Exercise 1.7 aceg, 1.8a             | 20-Oct   |
 
 ## Updates
+
+### 15-Oct (Week 4) 
+
+* This week we finished lecture 3 and began lecture 4
+* Next Sunday (22-Oct) prepare for a quiz over lectures 3 and 4
+* Homework 4 was assigned and is due 22-Oct
+* Homework is due at the beginning of class.  If your homework is late you should expect reduced marks.
 
 ### 6-Oct 
 
@@ -51,7 +62,9 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 * Assignment 3 Posted 
 * Prepare for a quiz on Saturday, 12-Oct over Finite Automata (particularly DFAs) and Regular Languages
 
-### 5-Oct
+
+
+### 5-Oct (Week 3)
 
 * Assignment 2 is due tomorrow
 * Continuing Lecture 1

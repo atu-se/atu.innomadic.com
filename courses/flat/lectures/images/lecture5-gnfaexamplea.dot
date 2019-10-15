@@ -1,0 +1,12 @@
+digraph finite_state_machine {
+    rankdir=TB;
+    //size="8,5"
+    start [style="invis"];
+    1[ shape="circle" ];
+    2[ shape="doublecircle"];
+
+    start -> 1;
+    1 -> 1 [label="a"];
+    1 -> 2 [label="b"];
+    2 -> 2 [label="a,b"];
+}

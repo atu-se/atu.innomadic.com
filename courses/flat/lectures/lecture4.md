@@ -377,7 +377,7 @@ digraph G {
 * and $F = F_1 \cup q_0$,
 * ...
 
-# PStar Proof
+# Star Proof
 
 $$\delta (q, a) = \begin{cases}
     \delta_1 (q, a), & q \in Q_1 \text{ and } q \notin F_1\\

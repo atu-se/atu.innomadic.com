@@ -1,0 +1,10 @@
+digraph finite_state_machine {
+    rankdir=TB;
+    //size="8,5"
+    start [style="invis"];
+    s; 
+    a[shape="doublecircle"];
+
+    start -> s;
+    s -> a [label=<a<SUP>*</SUP>b(a&cup;b)<SUP>*</SUP>>];
+}

@@ -1,0 +1,11 @@
+
+digraph finite_state_machine {
+    rankdir=LR;
+
+
+    qi[label=<q<SUB>i</SUB>>, shape="circle" ]
+    qj[label=<q<SUB>j</SUB>>, shape="circle"]
+
+    qi -> qj [label=<(R<SUB>1</SUB>)(R<SUB>2</SUB>)<SUP>*</SUP>(R<SUB>3</SUB>)&cup;R<SUB>4</SUB>>];
+
+}   
