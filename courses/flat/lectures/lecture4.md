@@ -372,9 +372,9 @@ digraph G {
 # Star Proof
 
 * Let $N_1 = (Q_1, \Sigma,\delta_1,q_1,F_1)$ recognizing $A_1$
-* Construct $N = (Q, \Sigma,\delta,q,F)$ to recognize $A_1^*$ 
+* Construct $N = (Q, \Sigma,\delta,q_0,F)$ to recognize $A_1^*$ 
 * Where $Q=\{q_0\} \cup Q_1 \cup Q_2$
-* and $F = F_1 \cup q_0$,
+* and $F = F_1 \cup \{q_0\}$,
 * ...
 
 # Star Proof
