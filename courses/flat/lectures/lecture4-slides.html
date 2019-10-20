@@ -96,10 +96,10 @@
 </ul>
 <div class="container">
 <div class="col" data-markdown="">
-<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025230.png?0.6557898452710993" /></p>
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025230.png?0.7276637270316908" /></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025231.png?0.9169255954608719" /></p>
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025231.png?0.41081136661236517" /></p>
 </div>
 </div>
 </section>
@@ -252,7 +252,7 @@ A^* &amp; = \{ \epsilon, good , bad , goodgood , goodbad, \\
 </section>
 <section id="a-pictorial-proof" class="slide level1">
 <h1>A Pictorial Proof</h1>
-<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025232.png?0.10865282240521057" /></p>
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025232.png?0.548307278585767" /></p>
 </section>
 <section id="union-proof-1" class="slide level1">
 <h1>Union Proof</h1>
@@ -299,7 +299,7 @@ A^* &amp; = \{ \epsilon, good , bad , goodgood , goodbad, \\
 </section>
 <section id="a-pictorial-proof-1" class="slide level1">
 <h1>A Pictorial Proof</h1>
-<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025233.png?0.5601739909139438" /></p>
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025233.png?0.646932027174163" /></p>
 </section>
 <section id="concatenation-proof-2" class="slide level1">
 <h1>Concatenation Proof</h1>
@@ -307,13 +307,33 @@ A^* &amp; = \{ \epsilon, good , bad , goodgood , goodbad, \\
 <li>By adding <span class="math inline">\epsilon</span>-transitions from the final states of the first machine to the start state of the second machine, we can match the concatenation of the two languages</li>
 </ul>
 </section>
+<section id="concatenation-proof-3" class="slide level1">
+<h1>Concatenation Proof</h1>
+<ul>
+<li>Let <span class="math inline">N_1 = (Q_1, \Sigma,\delta_1,q_1,F_1)</span> recognizing <span class="math inline">A_1</span></li>
+<li>Let <span class="math inline">N_2 = (Q_2, \Sigma,\delta_2,q_2,F_2)</span> recognizing <span class="math inline">A_2</span></li>
+<li>Construct <span class="math inline">N = (Q, \Sigma,\delta,q_1,F)</span> to recognize <span class="math inline">A_1 \circ A_2</span></li>
+<li>Where <span class="math inline">Q= Q_1 \cup Q_2</span></li>
+<li>and <span class="math inline">F = F_2</span></li>
+<li><span class="math inline">\delta = ...</span></li>
+</ul>
+</section>
+<section id="concatenation-proof-4" class="slide level1">
+<h1>Concatenation Proof</h1>
+<p><span class="math display">\delta (q, a) = \begin{cases}
+    \delta_1 (q, a), &amp; q \in Q_1 \text{ and } q \notin F_1\\
+    \delta_1 (q, a), &amp; q \in F_1 \text{ and } a \neq \epsilon\\
+    \delta_1 (q, a) \cup \{q_2\}     &amp; q \in F_1 \text{ and } a = \epsilon\\
+    \delta_2 (q,a)        &amp; q \in Q_2
+  \end{cases}</span></p>
+</section>
 <section id="theorem" class="slide level1">
 <h1>Theorem</h1>
 <p>The class of regular languages is closed under the star operation</p>
 </section>
 <section id="pictorial-proof" class="slide level1">
 <h1>Pictorial Proof</h1>
-<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025234.png?0.13872558073913943" /></p>
+<p><img data-src="../../../assets/de2c0ca0b41de7ed312fbd88f23025234.png?0.16903302948578336" /></p>
 </section>
 <section id="star-proof" class="slide level1">
 <h1>Star Proof</h1>

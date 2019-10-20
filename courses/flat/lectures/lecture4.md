@@ -336,6 +336,24 @@ digraph G {
 
 * By adding $\epsilon$-transitions from the final states of the first machine to the start state of the second machine, we can match the concatenation of the two languages
 
+# Concatenation Proof
+
+* Let $N_1 = (Q_1, \Sigma,\delta_1,q_1,F_1)$ recognizing $A_1$
+* Let $N_2 = (Q_2, \Sigma,\delta_2,q_2,F_2)$ recognizing $A_2$
+* Construct $N = (Q, \Sigma,\delta,q_1,F)$ to recognize $A_1 \circ A_2$ 
+* Where $Q= Q_1 \cup Q_2$
+* and $F = F_2$
+* $\delta = ...$
+
+# Concatenation Proof
+
+$$\delta (q, a) = \begin{cases}
+    \delta_1 (q, a), & q \in Q_1 \text{ and } q \notin F_1\\
+    \delta_1 (q, a), & q \in F_1 \text{ and } a \neq \epsilon\\
+    \delta_1 (q, a) \cup \{q_2\}     & q \in F_1 \text{ and } a = \epsilon\\
+    \delta_2 (q,a)        & q \in Q_2
+  \end{cases}$$
+
 
 # Theorem 
 
