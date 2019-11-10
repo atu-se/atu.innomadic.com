@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-10-22">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">6. Non-Regular Languages</p>
+  <p class="date">October 22, 2019</p>
+</section>
+
+<section class="slide level1">
+
+<style>
+.ninety {
+   font-size: 90%;
+}
+  
+.eighty {
+   font-size: 80%;
+}
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
+<section id="roadmap-for-lecture" class="slide level1">
+<h1>Roadmap for Lecture</h1>
+<ul>
+<li>Review Regular Expressions</li>
+<li>Motivate the Pumping Lemma</li>
+<li>Present and demonstrate the pumping lemma concept</li>
+<li>Present and prove the pumping lemma</li>
+<li>Use the pumping lemma to prove some languages are not regular</li>
+</ul>
+</section>
+<section id="review" class="slide level1">
+<h1>Review</h1>
+<ul>
+<li>In the previous lecture we introduced a new theorem:</li>
+<li><strong>Theorem 1.54</strong> A language is regular if and only if some regular expression describes it.</li>
+<li>We showed that this theorem must be proved in both directions:
+<ul>
+<li><strong>Lemma 1.55</strong> If a language is described by a regular expression, then it is regular.</li>
+<li><strong>Lemma 1.60</strong> If a language is regular, then it is described by a regular expression.</li>
+</ul></li>
+</ul>
+</section>
+<section id="review-1" class="slide level1">
+<h1>Review</h1>
+<ol type="1">
+<li>Motivated and defined regular expressions as a more concise and elegant method to represent <strong>Regular Languages</strong>.</li>
+<li>Proved that FAs (Deterministic as well as Nondeterministic) and REs is identical by:
+<ol type="1">
+<li>Defining GNFAs.</li>
+<li>Showing how to convert a DFA to a GNFA.</li>
+<li>Showing an algorithm to converted a
+<ul>
+<li>GNFA with K states to an equivalent</li>
+<li>GNFA with K-1 states.</li>
+</ul></li>
+</ol></li>
+</ol>
+</section>
+<section id="non-regular-langauges" class="slide level1">
+<h1>Non-Regular Langauges</h1>
+</section>
+<section id="introduction" class="slide level1">
+<h1>Introduction</h1>
+<ul>
+<li>In this lecture we ask: are all languages regular?</li>
+<li>The answer is… no</li>
+<li>The simplest example is the language:</li>
+</ul>
+<p><span class="math display">B = \{a^nb^n | n \geq 0 \}</span></p>
+</section>
+<section id="introduction-1" class="slide level1">
+<h1>Introduction</h1>
+<ul>
+<li>If we try to find a DFA that recognizes the language <span class="math inline">B = \{a^nb^n | n \geq 0 \}</span>, it seems that we need an infinite number of states, to “remember” how many <em>a</em>s we saw so far.</li>
+<li>Note: This is not a proof!</li>
+<li>Perhaps a DFA recognizing B exists, but we are not clever enough to find it?</li>
+</ul>
+</section>
+<section id="introduction-2" class="slide level1">
+<h1>Introduction</h1>
+<ul>
+<li>The Pumping Lemma is the formal tool we use to prove that the language B (as well as many other languages) is not regular.</li>
+</ul>
+</section>
+<section id="what-is-pumping" class="slide level1">
+<h1>What is Pumping?</h1>
+<ul>
+<li>Consider the following NFA N</li>
+<li>It accepts all words of the form <span class="math inline">(0 \cup 1)(10)^*</span></li>
+</ul>
+<p><img data-src="../../../assets/3517691bc9cc3f8cd6c7384e55a2b3d30.png?0.49242867092404174" /></p>
+</section>
+<section id="what-is-pumping-1" class="slide level1">
+<h1>What is Pumping?</h1>
+<ul>
+<li>Consider now the word <span class="math inline">110 \in L(N)</span></li>
+<li>Pumping means the word 110 can be divided into two parts: 1 and 10, such that for any <span class="math inline">i \geq 0</span>, the word <span class="math inline">1(10)^i \in L(n)</span></li>
+<li>We say that the word 110 can be <strong>pumped</strong></li>
+<li>For <span class="math inline">i = 0</span> this is called <strong>down pumping</strong></li>
+<li>For <span class="math inline">i &gt; 1</span> this is called <strong>up pumping</strong></li>
+</ul>
+</section>
+<section id="what-is-pumping-2" class="slide level1">
+<h1>What is Pumping?</h1>
+<ul>
+<li>A more general description would be:</li>
+<li>A word <span class="math inline">w \in L</span>, can be pumped if <span class="math inline">w = xy</span> and for each <span class="math inline">i \geq 0</span>, it holds that <span class="math inline">xy^i \in L</span></li>
+<li>The formal definition is a little more complex than this</li>
+</ul>
+</section>
+<section id="the-pumping-lemma" class="slide level1">
+<h1>The Pumping Lemma</h1>
+<p><span class="math display">
+\text{If A is a regular language and } \\ \exists p = \text{ the number of states in any machine for A }. \\
+\forall w \text{ in L where } |w| \geq p \\ 
+\exists x,y,z \text{ where } w = xyz, |y| &gt; 0, |xy| \leq p \\
+\forall i &gt; 0, xy^iz \in A 
+</span></p>
+</section>
+<section id="negation" class="slide level1">
+<h1>Negation</h1>
+<p><span class="math display">
+\forall p = \text{ the number of states in any machine for A }. \\
+\exists w \text{ in L  where } |w| \geq p \\ 
+\forall x,y,z \text{ where } w = xyz, |y| &gt; 0, |xy| \leq p \\
+\exists i &gt; 0, xy^iz \notin A 
+</span></p>
+</section>
+<section id="proof-of-the-pl" class="slide level1">
+<h1>Proof of the PL</h1>
+<ul>
+<li>Let D be a DFA recognizing A and let p be the number of states of D.</li>
+<li>If A has no words whose length is at least p, the theorem holds vacuously.</li>
+<li>Let <span class="math inline">w \in A</span> be an arbitrary word such that <span class="math inline">| w |\geq p</span></li>
+<li>Denote the symbols of w by <span class="math inline">w=w_1,w_2,...,w_m</span> where <span class="math inline">m=|w| \geq p</span></li>
+</ul>
+</section>
+<section id="proof-of-the-pl-1" class="slide level1">
+<h1>Proof of the PL</h1>
+<ul>
+<li>Assume that <span class="math inline">q_0,q_1,...,q_k</span> is the sequence of states that D goes through while computing with input w.</li>
+<li>For each <span class="math inline">k, 0 \leq k &lt; m, \delta(q_k,w_k)=q_{k+1}</span>, since <span class="math inline">w \in A,q_m \in F_D</span></li>
+<li>Since the sequence <span class="math inline">q_0,q_1,...,q_p</span> contains <span class="math inline">p + 1</span> states and since the number of states of D is <span class="math inline">p</span>, that there exist two indices <span class="math inline">0 \leq i &lt; j \leq p</span>, such that <span class="math inline">q_j =q_i</span> .</li>
+</ul>
+</section>
+<section id="proof-of-the-pl-2" class="slide level1">
+<h1>Proof of the PL</h1>
+<ul>
+<li>Denote <span class="math inline">x=w_1,w_2,...,w_{i-1}, y=w_i,w_{i+1},...,w_{j-1} ..., z=w_j,w_{j+1},...,w_m</span></li>
+<li>Note: Under this definition <span class="math inline">| y |&gt; 0</span> and <span class="math inline">| xy | \leq p</span> .</li>
+<li>By this definition, the computation of D on <span class="math inline">x=w_1,w_2,...,w_{i-1}</span> starting from <span class="math inline">q_0</span>, ends at <span class="math inline">q_i</span>.</li>
+<li>By this definition, the computation of D on <span class="math inline">z=w_j,w_{j+1},...,w_{m}</span> ,starting from <span class="math inline">q_j</span> ,ends at <span class="math inline">q_m</span> which is an accepting state</li>
+</ul>
+</section>
+<section id="proof-of-the-pl-3" class="slide level1">
+<h1>Proof of the PL</h1>
+<ul>
+<li>The computation of D on <span class="math inline">y=w_j,w_{j+1},...,w_{m}</span> starting from <span class="math inline">q_i</span>, ends at <span class="math inline">q_j</span></li>
+<li>Since <span class="math inline">q_i=q_j</span>, this computation starts and ends at the same state.</li>
+<li>Since it is a circular computation, it can repeat itself <em>k</em> times for any <span class="math inline">k \geq 0</span></li>
+<li>In other words: for each <span class="math inline">i \geq 0</span>, <span class="math inline">xy^iz \in A</span></li>
+<li>Q.E.D.</li>
+</ul>
+</section>
+<section id="review-2" class="slide level1">
+<h1>Review</h1>
+<p><img data-src="images/lecture6-pumpinglemma.png" /></p>
+</section>
+<section id="references-resources" class="slide level1">
+<h1>References, Resources</h1>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">ADUni.org Lectures</a></li>
+<li><a href="https://cseweb.ucsd.edu/classes/fa08/cse105/">UC San Diego Lecture Slides</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
