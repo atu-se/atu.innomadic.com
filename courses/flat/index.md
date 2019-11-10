@@ -40,14 +40,35 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Assignments
 
-| Assignment                             | Due Date |
-|----------------------------------------|----------|
-| 1. Exercises 0.1-0.3                   | 29-Sep   |
-| 2. Exercise 1.1                        | 6-Oct    |
-| 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b | 13-Oct   |
-| 4. Exercise 1.7 aceg, 1.8a             | 20-Oct   |
+| Assignment                              | Due Date |
+|-----------------------------------------|----------|
+| 1. Exercises 0.1-0.3                    | 29-Sep   |
+| 2. Exercise 1.1                         | 6-Oct    |
+| 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b  | 13-Oct   |
+| 4. Exercise 1.7 acg, 1.8a               | 20-Oct   |
+
 
 ## Updates
+
+### 9-November (Week 8)
+
+* Lecture 6
+
+### 2-November (Week 7)
+
+* Exam
+
+### 26-Oct (Week 6)
+
+* Lecture 5 on Regular Expressions
+* Mid-term pushed to next week
+
+### 19-Oct (Week 5) 
+
+* This week we will finish lecture 4
+* Next week is mid-term exam week
+* On Tuesday, we will take quiz 2 (covering lectures 3-4)
+* Also on Tuesday, there will be a chance to take Quiz 1 if you missed it the first time
 
 ### 15-Oct (Week 4) 
 

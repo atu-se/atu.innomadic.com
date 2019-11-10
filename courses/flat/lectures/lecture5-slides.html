@@ -179,10 +179,9 @@
 <h1>If and Only If</h1>
 <ul>
 <li>To prove this an “if and only if” statement, we must prove it in “both directions”</li>
-<li>We will express these two parts of the theorem as two lemmata (lemmas)</li>
-<li><strong>Theorem 1.54</strong> A language is regular if and only if some regular expression describes it.</li>
-<li>We showed that this theorem must be proved in both directions:
+<li>We will break the theorem into two parts to prove separately:
 <ul>
+<li><strong>Theorem 1.54</strong> A language is regular if and only if some regular expression describes it… becomes:</li>
 <li><strong>Lemma 1.55</strong> If a language is described by a regular expression, then it is regular.</li>
 <li><strong>Lemma 1.60</strong> If a language is regular, then it is described by a regular expression.</li>
 </ul></li>
@@ -255,7 +254,7 @@
 <p><span class="math inline">a</span></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../assets/470191e9411bba969182fceff904eee50.png?0.26388652816223646" /></p>
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee50.png?0.21263652186912552" /></p>
 </div>
 </div>
 <div class="container">
@@ -264,7 +263,7 @@
 <p><span class="math inline">b</span></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../assets/470191e9411bba969182fceff904eee51.png?0.7531092950796423" /></p>
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee51.png?0.21827302098088341" /></p>
 </div>
 </div>
 <p><!--end row 2--></p>
@@ -274,7 +273,7 @@
 <p><span class="math inline">ab</span></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../assets/470191e9411bba969182fceff904eee52.png?0.6705467117917145" /></p>
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee52.png?0.8841740540368479" /></p>
 </div>
 </div>
 <!--end row 3-->
@@ -298,7 +297,7 @@
 <p><span class="math inline">ab \cup a</span></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../assets/470191e9411bba969182fceff904eee53.png?0.14243560035637226" /></p>
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee53.png?0.3743339599318942" /></p>
 </div>
 </div>
 </section>
@@ -310,7 +309,7 @@
 <p><span class="math inline">(ab \cup a)^*</span></p>
 </div>
 <div class="col" data-markdown="">
-<p><img data-src="../../../assets/470191e9411bba969182fceff904eee54.png?0.8037952366705774" /></p>
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee54.png?0.3518848550715894" /></p>
 </div>
 </div>
 <p><!-- end row --></p>
@@ -425,7 +424,7 @@
 </div>
 <div class="col" data-markdown="">
 <ul>
-<li>Note that this change does not affect all pairs in which either <span class="math inline">(q_i, q_{rip}</span> or <span class="math inline">(q_j, q_{rip}</span> participate.</li>
+<li>Note that this change does not affect all pairs in which either <span class="math inline">(q_i, q_{rip})</span> or <span class="math inline">(q_j, q_{rip})</span> participate.</li>
 <li>Thus, before is removed all these pairs should be processed in the same way, as demonstrated on the next slide.</li>
 </ul>
 </div>
@@ -433,7 +432,7 @@
 </section>
 <section id="elaboration-2" class="slide level1">
 <h1>Elaboration</h1>
-<p><img data-src="../../../assets/470191e9411bba969182fceff904eee55.png?0.09458285760554341" /></p>
+<p><img data-src="../../../assets/470191e9411bba969182fceff904eee55.png?0.5967176396730465" /></p>
 <ul>
 <li>In order to rip , all pairs of incoming and outgoing transitions should be considered in the way showed on the previous slide</li>
 <li>Specifically consider: (t1, t4), (t1, t5), (t2, t4), (t2, t5), (t3, t4), (t3, t5), one after the other</li>
@@ -497,7 +496,7 @@
 <li><span class="math inline">\text{For any }q_i \in Q&#39;-q_{accept} \text{ and any } q_j \in Q&#39;-q_{start}:</span></li>
 </ol>
 <p><span class="math display">
-\delta : (Q - \{q_{accept}\}) \times (Q - \{q_{start}\})\longrightarrow RE_\Sigma \\
+\delta &#39;(q_i, q_j) \longrightarrow (R_1)(R_2)^*(R_3) \cup R_4 \\
 for R_1 = \delta(q_i, q_{rip})  R_2 = \delta(q_{rip}, q_{rip}) R_3=\delta(q_{rip}, q_i) R_4 = \delta(q_i, q_j)
 </span> 6. <span class="math inline">\text{return }G&#39; = (Q&#39;, \Sigma, \delta &#39;, q_{start}, q_{accept});</span></p>
 </section>

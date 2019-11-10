@@ -135,9 +135,8 @@ equivalent in their descriptive power.
 # If and Only If
 
 * To prove this an "if and only if" statement, we must prove it in "both directions"
-* We will express these two parts of the theorem as two lemmata (lemmas)
-* **Theorem 1.54** A language is regular if and only if some regular expression describes it.
-* We showed that this theorem must be proved in both directions:
+* We will break the theorem into two parts to prove separately: 
+    * **Theorem 1.54** A language is regular if and only if some regular expression describes it... becomes:
     * **Lemma 1.55** If a language is described by a regular expression, then it is regular.
     * **Lemma 1.60** If a language is regular, then it is described by a regular expression.
 
@@ -546,7 +545,7 @@ and an arbitrary pair of states, $q_i$ and $q_j$
 
 <div class="col" data-markdown>
 
-* Note that this change does not affect all pairs in which either $(q_i, q_{rip}$ or $(q_j, q_{rip}$ participate.
+* Note that this change does not affect all pairs in which either $(q_i, q_{rip})$ or $(q_j, q_{rip})$ participate.
 * Thus, before is removed all these pairs should be processed in the same way, as demonstrated on the next slide.
 </div>
 </div>
@@ -640,7 +639,7 @@ expression on the arrow from $q_i$ to $q_{i+1}$.
 5. $\text{For any }q_i \in Q'-q_{accept} \text{ and any } q_j \in Q'-q_{start}:$
 
 $$
-\delta : (Q - \{q_{accept}\}) \times (Q - \{q_{start}\})\longrightarrow RE_\Sigma \\
+\delta '(q_i, q_j) \longrightarrow (R_1)(R_2)^*(R_3) \cup R_4 \\
 for R_1 = \delta(q_i, q_{rip})  R_2 = \delta(q_{rip}, q_{rip}) R_3=\delta(q_{rip}, q_i) R_4 = \delta(q_i, q_j)
 $$
 6. $\text{return }G' = (Q', \Sigma, \delta ', q_{start}, q_{accept});$
