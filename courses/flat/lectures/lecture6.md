@@ -126,7 +126,7 @@ $$
 \forall i > 0, xy^iz \in A 
 $$ 
 
-# Negation
+# Contrapositive
 
 $$
 \forall p = \text{ the number of states in any machine for A }. \\
