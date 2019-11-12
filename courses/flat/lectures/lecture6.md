@@ -121,7 +121,7 @@ digraph{
 
 $$
 \text{If A is a regular language and } \\ \exists p = \text{ the number of states in any machine for A }. \\
-\forall w \text{ in L where } |w| \geq p \\ 
+\forall w \text{ in A where } |w| \geq p \\ 
 \exists x,y,z \text{ where } w = xyz, |y| > 0, |xy| \leq p \\
 \forall i > 0, xy^iz \in A 
 $$ 
@@ -130,7 +130,7 @@ $$
 
 $$
 \forall p = \text{ the number of states in any machine for A }. \\
-\exists w \text{ in L  where } |w| \geq p \\ 
+\exists w \text{ in A  where } |w| \geq p \\ 
 \forall x,y,z \text{ where } w = xyz, |y| > 0, |xy| \leq p \\
 \exists i > 0, xy^iz \notin A 
 $$ 
