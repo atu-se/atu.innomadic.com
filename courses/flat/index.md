@@ -46,9 +46,14 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 2. Exercise 1.1                         | 6-Oct    |
 | 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b  | 13-Oct   |
 | 4. Exercise 1.7 acg, 1.8a               | 20-Oct   |
+| 5. Exercise 1.29b                       | 
 
 
 ## Updates
+
+### 16-Nov (Week 9)
+
+* Lecture 7
 
 ### 9-November (Week 8)
 
