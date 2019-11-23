@@ -1,0 +1,6 @@
+digraph G{
+    rankdir="LR"
+    null [label= "", shape=none]
+    null -> q0
+    q0 [label=<q<SUB>0</SUB>> shape=doublecircle]
+}
