@@ -32,8 +32,8 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 3. [Non-deterministic Finite Automata](lectures/lecture3-slides.html) | 1.2     |
 | 4. [NFA Proofs](lectures/lecture4-slides.html)                        | 1.2     |
 | 5. [Regular Expressions](lectures/lecture5-slides.html)               | 1.3     |
-| 6. [Non-Regular Languages](lectures/lecture6-slides.html)                                              | 1.4     |
-| 7. Context-Free Grammars                                              | 2.1     |
+| 6. [Non-Regular Languages](lectures/lecture6-slides.html)             | 1.4     |
+| 7. [Context-Free Grammars](lectures/lecture7-slides.html)             | 2.1     |
 | 8. Pushdown Automata                                                  | 2.2     |
 | 9. Non-Context-Free Languages                                         | 2.3     |
 
@@ -46,10 +46,17 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 2. Exercise 1.1                         | 6-Oct    |
 | 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b  | 13-Oct   |
 | 4. Exercise 1.7 acg, 1.8a               | 20-Oct   |
-| 5. Exercise 1.29b                       | 
+| 5. Exercise 1.29b                       | 20-Nov   |
+
 
 
 ## Updates
+
+
+### 23-Nov (Week 10)
+
+* Finish lecture 7
+* Quiz on Context-Free Grammars
 
 ### 16-Nov (Week 9)
 
