@@ -47,6 +47,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 3. Exercise 1.2, 1.3, 1.4a, 1.5c, 1.6b  | 13-Oct   |
 | 4. Exercise 1.7 acg, 1.8a               | 20-Oct   |
 | 5. Exercise 1.29b                       | 20-Nov   |
+| 6. Exercise 2.1, 2.4bc                  | 3-Dec    |
 
 
 
@@ -56,7 +57,9 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 ### 23-Nov (Week 10)
 
 * Finish lecture 7
-* Quiz on Context-Free Grammars
+* Quiz on Context-Free Grammars (next week)
+* Poste homework #6
+
 
 ### 16-Nov (Week 9)
 
