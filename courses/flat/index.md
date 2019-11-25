@@ -34,7 +34,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 5. [Regular Expressions](lectures/lecture5-slides.html)               | 1.3     |
 | 6. [Non-Regular Languages](lectures/lecture6-slides.html)             | 1.4     |
 | 7. [Context-Free Grammars](lectures/lecture7-slides.html)             | 2.1     |
-| 8. Pushdown Automata                                                  | 2.2     |
+| 8. [Pushdown Automata](lectures/lecture8-slides.html)                 | 2.2     |
 | 9. Non-Context-Free Languages                                         | 2.3     |
 
 
