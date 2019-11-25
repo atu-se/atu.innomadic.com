@@ -58,7 +58,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 * Finish lecture 7
 * Quiz on Context-Free Grammars (next week)
-* Poste homework #6
+* Posted Assignment #6
 
 
 ### 16-Nov (Week 9)
