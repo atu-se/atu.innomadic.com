@@ -246,8 +246,7 @@ $$A = \{a^i b^j c^k \vert i, j, k ≥ 0\ and\ i = j\ or\ i = k\}$$
 
 # Example 2.16
 
-* Solve on Board
-* JFLAP Demo
+* Solve in class
 
 # Example 2.16
 
@@ -257,14 +256,12 @@ $$A = \{a^i b^j c^k \vert i, j, k ≥ 0\ and\ i = j\ or\ i = k\}$$
 
 $$\{ww^R \vert w ∈ \{0,1\}^*\}$$
 
-# Example 2.18
 
 # Informal Description
 
 * As each input symbol is read, push the symbol onto the stack.  
 * Because we can't know when w ends, we should non-deterministically change state to the beginning of w^R^.  
 
-# Example 2.18
 
 # Informal Description
 
@@ -273,39 +270,11 @@ $$\{ww^R \vert w ∈ \{0,1\}^*\}$$
 
 # Example 2.18
 
-# Create State Diagram on Board
+* Solve in class
 
 # Example 2.18
 
 ![Example 2.18](images/lecture8-figure2-19.png){.stretch}
-
-# Review of Properties of PDAs and CFLs
-
-# CFG Equivalence
-
-# Theorem 2.20
-
->A language is context free if and only if some pushdown automaton recognizes it.
-
-# CFG Equivalence
-
-# Lemma 2.21
-
->If a language is context free, then some pushdown automaton recognizes it.
-
-# CFG Equivalence
-
-# Lemma 2.27
-
->If a pushdown automaton recognizes some language, then it is context free.
-
-# Relationship between CFL and Regular Languages
-
-# Corollary 2.32
-
-> Every regular language is context free.
-
-![Diagram 3](images/lecture8-diagram3.png){.stretch}
 
 # Correlations 
 
@@ -313,3 +282,9 @@ $$\{ww^R \vert w ∈ \{0,1\}^*\}$$
 ------------------------|-----------------------------|-----------------------
 **Language Recognizer** | Finite Automaton (NFA, DFA) | Pushdown Automaton
 **Language Generator**  | Regular Expression          | Context-Free Grammar
+
+
+# References, Resources
+
+* [ADUni.org Lectures](https://www.youtube.com/playlist?list=PL601FC994BDD963E4)
+* [UC San Diego Lecture Slides](https://cseweb.ucsd.edu/classes/fa08/cse105/)

@@ -473,3 +473,8 @@ B&→b \end{aligned}$$
 * Some strings may be *ambiguous*
 * CFGs can be convereted to a standard form known as Chomsky Normal Form
 * CFGs are important in their application to compilation
+
+# References, Resources
+
+* [ADUni.org Lectures](https://www.youtube.com/playlist?list=PL601FC994BDD963E4)
+* [UC San Diego Lecture Slides](https://cseweb.ucsd.edu/classes/fa08/cse105/)
