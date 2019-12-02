@@ -55,6 +55,12 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 ## Updates
 
 
+### 1-Dec (Week 11)
+
+* Lecture 8 - Pushdown automata
+* Quiz on CFG this week
+* New assignment #7 posted 
+
 ### 23-Nov (Week 10)
 
 * Finish lecture 7
