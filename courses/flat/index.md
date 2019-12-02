@@ -48,6 +48,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 4. Exercise 1.7 acg, 1.8a               | 20-Oct   |
 | 5. Exercise 1.29b                       | 20-Nov   |
 | 6. Exercise 2.1, 2.4bc                  | 3-Dec    |
+| 7. Exercise 2.11, 2.12                  | 10-Dec   |
 
 
 
