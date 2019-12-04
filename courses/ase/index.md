@@ -44,6 +44,13 @@ One of you asked book recommendations for software engineering.  Here are a few 
 * Working Effectively with Legacy Code (Feathers)
 * Mythical Man-Month (Brooks)
 
+Buy 11-Dec, carefully watch the following *Distributed Systems* videos:
+
+  * [Introduction to Distributed Systems ](https://www.youtube.com/watch?v=F_4BCNl0iVk)
+  * [Software as a service](https://www.youtube.com/watch?v=3DCqdY3yyDE)
+  A high-level introduction to SaaS and its business advantages
+  * [Moving Products to the Cloud](https://www.youtube.com/watch?v=vHtaOGwzZ3k)
+
 ### Week of 23-Nov
 
 * In class we plan to watch [The Ariane 5 launch failure](https://www.youtube.com/watch?v=W3YJeoYgozw)
