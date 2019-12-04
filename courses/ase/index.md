@@ -34,6 +34,15 @@
 
 ## Updates
 
+### Week of 30-Nov
+
+One of you asked book recommendations for software engineering.  Here are a few books I recommend:
+
+* Code Complete 2 (McConnell)
+* Clean Code (Martin)
+* Clean Architecture (Martin)
+* Working Effectively with Legacy Code (Feathers)
+* Mythical Man-Month (Brooks)
 
 ### Week of 23-Nov
 
