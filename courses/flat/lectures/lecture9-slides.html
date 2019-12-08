@@ -11,12 +11,14 @@
   <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
   <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
-  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/white.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
@@ -28,14 +30,20 @@
   <!--[if lt IE 9]>
   <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
-  <script src="../../../presentation/katexkatex.min.js"></script>
+  <script src="../../../presentation/katex/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
-    var mathElements = document.getElementsByClassName("math");
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
-    }}});</script>
-  <link rel="stylesheet" href="../../../presentation/katexkatex.min.css" />
+   var mathElements = document.getElementsByClassName("math");
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
 </head>
 <body>
   <div class="reveal">
@@ -43,10 +51,33 @@
 
 <section id="title-slide">
   <h1 class="title">FLAT</h1>
-  <p class="subtitle">9. The Church-Turing Thesis</p>
+  <p class="subtitle">9. Turing Machines</p>
   <p class="date">December 8, 2019</p>
 </section>
 
+<section class="slide level1">
+
+<style>
+.ninety {
+   font-size: 90%;
+}
+  
+.eighty {
+   font-size: 80%;
+}
+  
+.seventy {
+   font-size: 70%;
+}
+  
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
 <section id="introduction" class="slide level1">
 <h1>Introduction</h1>
 </section>
@@ -101,7 +132,7 @@
 <h1>Turing Machine Schematic</h1>
 <img data-src="images/lecture10-diagram1-tmschematic.png" title="fig:" class="stretch" alt="Turing Machine Schematic" />
 </section>
-<section id="fa-vs.-turing-machines" class="slide level1">
+<section id="fa-vs-turing-machines" class="slide level1">
 <h1>FA vs. Turing Machines</h1>
 <ol type="1">
 <li>A Turing machine can both write on the tape and read from it.</li>
@@ -357,7 +388,7 @@
 <li>Some textbooks also call these languages <em><strong>recursive</strong></em> languages</li>
 </ul>
 </section>
-<section id="decidable-vs.-turing-recognizable" class="slide level1">
+<section id="decidable-vs-turing-recognizable" class="slide level1">
 <h1>Decidable vs. Turing-recognizable</h1>
 <ul>
 <li>Every decidable language is Turing-recognizable</li>
