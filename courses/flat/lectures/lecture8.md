@@ -276,6 +276,24 @@ $$\{ww^R \vert w ∈ \{0,1\}^*\}$$
 
 ![Example 2.18](images/lecture8-figure2-19.png){.stretch}
 
+# Properties of Pushdown Automata
+
+# Theorem 2.20
+
+>A language is context free if and only if some pushdown automaton recognizes it.
+
+# CFG Equivalence
+
+## Lemma 2.21
+
+>If a language is context free, then some pushdown automaton recognizes it.
+
+# CFG Equivalence
+
+## Lemma 2.27
+
+>If a pushdown automaton recognizes some language, then it is context free.
+
 # Correlations 
 
 .                       | Regular Languages           | Context-Free Languages

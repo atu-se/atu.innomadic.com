@@ -24,18 +24,18 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Lectures
 
-| Topic                                                                 | Reading |
-|-----------------------------------------------------------------------|---------|
-| 0. Discrete Math Review                                               | 0       |
-| 1. [Finite Automata](lectures/lecture1-slides.html)                   | 1.1     |
-| 2. [Regular Languages](lectures/lecture2-slides.html)                 | 1.1     |
-| 3. [Non-deterministic Finite Automata](lectures/lecture3-slides.html) | 1.2     |
-| 4. [NFA Proofs](lectures/lecture4-slides.html)                        | 1.2     |
-| 5. [Regular Expressions](lectures/lecture5-slides.html)               | 1.3     |
-| 6. [Non-Regular Languages](lectures/lecture6-slides.html)             | 1.4     |
-| 7. [Context-Free Grammars](lectures/lecture7-slides.html)             | 2.1     |
-| 8. [Pushdown Automata](lectures/lecture8-slides.html)                 | 2.2     |
-| 9. Non-Context-Free Languages                                         | 2.3     |
+| Topic                                                                 | Reading  |
+|-----------------------------------------------------------------------|----------|
+| 0. Discrete Math Review                                               | 0        |
+| 1. [Finite Automata](lectures/lecture1-slides.html)                   | 1.1      |
+| 2. [Regular Languages](lectures/lecture2-slides.html)                 | 1.1      |
+| 3. [Non-deterministic Finite Automata](lectures/lecture3-slides.html) | 1.2      |
+| 4. [NFA Proofs](lectures/lecture4-slides.html)                        | 1.2      |
+| 5. [Regular Expressions](lectures/lecture5-slides.html)               | 1.3      |
+| 6. [Non-Regular Languages](lectures/lecture6-slides.html)             | 1.4      |
+| 7. [Context-Free Grammars](lectures/lecture7-slides.html)             | 2.1      |
+| 8. [Pushdown Automata](lectures/lecture8-slides.html)                 | 2.2      |
+| 9. [Turing Machines](lectures/lecture9-slides.html)                   | 3.1, 3.3 |
 
 
 ## Assignments
@@ -53,6 +53,16 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 
 ## Updates
+
+### 7-Dec (Week 12)
+
+* Lecture 9 - Church Turing Thesis
+* Rememember homeowrk #7 is due this week
+* Final exam should be next week study!
+    * Non-Regular Languages
+    * Context-Free Grammars
+    * Pushdown Automata
+    * Turing Machines and the Church-Turing Thesis
 
 
 ### 1-Dec (Week 11)

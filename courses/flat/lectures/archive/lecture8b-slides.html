@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-11-23">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">8b. PDA Equivalence Properties</p>
+  <p class="date">November 23, 2019</p>
+</section>
+
+<section class="slide level1">
+
+<style>
+.ninety {
+   font-size: 90%;
+}
+  
+.eighty {
+   font-size: 80%;
+}
+  
+.seventy {
+   font-size: 70%;
+}
+  
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
+<section id="review" class="slide level1">
+<h1>Review</h1>
+</section>
+<section id="properties-of-pushdown-automata" class="slide level1">
+<h1>Properties of Pushdown Automata</h1>
+</section>
+<section id="theorem-220" class="slide level1">
+<h1>Theorem 2.20</h1>
+<blockquote>
+<p>A language is context free if and only if some pushdown automaton recognizes it.</p>
+</blockquote>
+</section>
+<section id="cfg-equivalence" class="slide level1">
+<h1>CFG Equivalence</h1>
+<h2 id="lemma-221">Lemma 2.21</h2>
+<blockquote>
+<p>If a language is context free, then some pushdown automaton recognizes it.</p>
+</blockquote>
+</section>
+<section id="cfg-equivalence-1" class="slide level1">
+<h1>CFG Equivalence</h1>
+<h2 id="lemma-227">Lemma 2.27</h2>
+<blockquote>
+<p>If a pushdown automaton recognizes some language, then it is context free.</p>
+</blockquote>
+</section>
+<section id="proof-idea" class="slide level1">
+<h1>Proof Idea</h1>
+<p>Let’s attempt to prove the first half of the theorem, Lemma 2.21:</p>
+<blockquote>
+<p>If a language is context free, then some pushdown automaton recognizes it.</p>
+</blockquote>
+</section>
+<section id="proof-idea-1" class="slide level1">
+<h1>Proof Idea</h1>
+<ul>
+<li>Since L is a CFL there exists a CFG G such that L = L(G).</li>
+<li>We will present a PDA P that recognizes L.</li>
+<li>The PDA P starts with a word <span class="math inline">w \in \Sigma*</span> on its input</li>
+<li>In order to decide whether <span class="math inline">w \in L(G)</span>, P simulates the erivation of w.</li>
+</ul>
+</section>
+<section id="proof-idea-2" class="slide level1">
+<h1>Proof Idea</h1>
+<ul>
+<li>Recall that a derivation is a sequence of strings, where each string contains variables and terminals</li>
+<li>The first string is always the start symbol of G and each string is obtained from the previous one by a single activation of some rule.</li>
+</ul>
+</section>
+<section id="proof-idea-3" class="slide level1">
+<h1>Proof Idea</h1>
+<ul>
+<li>A string may allow activation of several rules and the PDA P non deterministically guesses the next rule to be activated.</li>
+<li>The initial idea for the simulation is to store each intermediate string on the stack.</li>
+<li>Upon each production, the string on the stack is before production is transformed to the string after production.</li>
+</ul>
+</section>
+<section id="proof-idea-4" class="slide level1">
+<h1>Proof Idea</h1>
+<ul>
+<li>Unfortunately, this idea does not quite work since at any given moment, P can only access the top symbol on the stack.</li>
+<li>To overcome this problem, the stack holds only a suffix of each intermediate string where the top symbol is the variable to be substituted during the next production.</li>
+</ul>
+</section>
+<section id="intermediate-string-aasbb" class="slide level1">
+<h1>Intermediate string aaSbb</h1>
+<img data-src="images/lecture8b-diagram1.png" title="fig:" class="stretch" alt="aaSbb" />
+</section>
+<section id="informal-description-of-p" class="slide level1">
+<h1>Informal Description of P</h1>
+<ol type="1">
+<li>Push the marker $ and the start symbol S on the stack</li>
+<li>Repeat:
+<ul>
+<li>If the top symbol is a variable V, replace V by the right hand side of some non-deterministically chosen rule whose left hand side is V</li>
+<li>…</li>
+</ul></li>
+</ol>
+</section>
+<section id="informal-description-of-p-1" class="slide level1">
+<h1>Informal Description of P</h1>
+<ol type="1">
+<li>Push the marker $ and the start symbol S on the stack</li>
+<li>Repeat:
+<ul>
+<li>…</li>
+<li>If the top symbol is a terminal compare it with the next symbol on the input. If equal – advance the input and pop the variable else – reject.</li>
+</ul></li>
+</ol>
+</section>
+<section id="informal-description-of-p-2" class="slide level1">
+<h1>Informal Description of P</h1>
+<ol type="1">
+<li>Push the marker $ and the start symbol S on the stack</li>
+<li>Repeat:
+<ul>
+<li>…</li>
+<li>If the top symbol is $ and the input is finished – accept else – reject</li>
+</ul></li>
+</ol>
+</section>
+<section id="the-proof" class="slide level1">
+<h1>The Proof</h1>
+<ul>
+<li>We start by defining <em>extended transitions</em></li>
+<li>Assume that PDA P is in state q, it reads <span class="math inline">a \in \Sigma</span> from the input and pops <span class="math inline">s \in \Gamma</span> from the stack and then moves to state r while pushing <span class="math inline">u = u_1, u_2, ... u_l</span> onto the stack.</li>
+<li>This is denoted by <span class="math inline">(r,u) \in \delta (q, a, s)</span></li>
+<li>Next, extended transitions are implemented.</li>
+</ul>
+</section>
+<section id="extended-transitions" class="slide level1 ninety">
+<h1>Extended Transitions</h1>
+<ul>
+<li>Add states <span class="math inline">q_1, q_2, ..., q_l-1</span></li>
+<li>Set the transition function <span class="math inline">\delta</span> as follows:
+<ul>
+<li>Add <span class="math inline">(q_1, u_l)</span></li>
+<li>Set <span class="math inline">\delta(q_1, \epsilon, \epsilon) = \{q_2, u_{l-1}\}</span></li>
+<li>Set <span class="math inline">\delta(q_2, \epsilon, \epsilon) = \{q_2, u_{l-2}\}</span></li>
+<li>…</li>
+<li>Set <span class="math inline">\delta(q_{l-1}, \epsilon, \epsilon) = \{r, u_1\}</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="extended-transitions-1" class="slide level1">
+<h1>Extended Transitions</h1>
+<img data-src="images/lecture8b-diagram2.png" title="fig:" class="stretch" alt="(r,xyz) \in \delta(q,a,s)" />
+</section>
+<section id="the-proof-1" class="slide level1">
+<h1>The Proof</h1>
+<ul>
+<li>Let G be an arbitrary CFG. Now we are ready to construct the PDA, P such that that <span class="math display">L(P) = L(G)</span> <br />
+</li>
+<li>The states of P are <span class="math inline">Q = \{q_{start}, q_{loop}, q_{accept}\} \cup E</span>, where E contains all states needed to implement the extended transitions presented in the previous slide</li>
+<li>The PDA P is as follows</li>
+</ul>
+</section>
+<section id="resulting-pda" class="slide level1">
+<h1>Resulting PDA</h1>
+<img data-src="images/lecture8b-diagram3.png" title="fig:" class="stretch" alt="This PDA completes the proof" />
+<ul>
+<li>So, if we have a context-free language L, there is a pushdown automaton P which recognizes it.</li>
+</ul>
+</section>
+<section id="example" class="slide level1">
+<h1>Example</h1>
+<p>Consider the following context-free grammar G:</p>
+<p><span class="math display">S \longrightarrow aTb\ |\ b \\ T \longrightarrow Ta\ |\ \epsilon</span></p>
+<p>Let us use the proof from this lemma to produce an equivalent DFA.</p>
+</section>
+<section id="cfls-and-regular-languages" class="slide level1">
+<h1>CFLs and Regular Languages</h1>
+<blockquote>
+<p>Every regular language is context free.</p>
+</blockquote>
+<img data-src="images/lecture8-diagram3.png" title="fig:" class="stretch" alt="Diagram 3" />
+</section>
+<section id="correlations" class="slide level1">
+<h1>Correlations</h1>
+<table>
+<thead>
+<tr class="header">
+<th>.</th>
+<th>Regular Languages</th>
+<th>Context-Free Languages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Language Recognizer</strong></td>
+<td>Finite Automaton (NFA, DFA)</td>
+<td>Pushdown Automaton</td>
+</tr>
+<tr class="even">
+<td><strong>Language Generator</strong></td>
+<td>Regular Expression</td>
+<td>Context-Free Grammar</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="references-resources" class="slide level1">
+<h1>References, Resources</h1>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">ADUni.org Lectures</a></li>
+<li><a href="https://cseweb.ucsd.edu/classes/fa08/cse105/">UC San Diego Lecture Slides</a></li>
+</ul>
+</section>
+<section id="review-of-properties-of-pdas-and-cfls" class="slide level1">
+<h1>Review of Properties of PDAs and CFLs</h1>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2019-02-13" />
+  <title>Formal Languages &amp; Automata Theory</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Formal Languages &amp; Automata Theory</h1>
+<p class="subtitle">RE Practice</p>
+<p class="date">February 13, 2019</p>
+</header>
+<h1 id="regular-expression-practice">Regular Expression Practice</h1>
+<p><a href="http://www.aduni.org/courses/theory/courseware/handouts/Recitation_03.html">Reference: Aduni</a></p>
+<p><em>Give one string that is in the language and one that is not:</em></p>
+<ol type="1">
+<li>a<em>b</em></li>
+<li>a(ba)*b</li>
+<li>a* <span class="math inline">∪</span> b*</li>
+<li>(b <span class="math inline">∪</span> aaa)*`</li>
+<li>aba <span class="math inline">∪</span> bab</li>
+</ol>
+<p><em>Write a regular expression</em></p>
+<ol start="6" type="1">
+<li><p>That accepts the set of all strings.</p></li>
+<li><p>That accepts the set of all strings not containing 00 as a substring.</p></li>
+</ol>
+<p><em>Convert to regular expressions:</em></p>
+<ol start="8" type="1">
+<li></li>
+</ol>
+<p><img src="../../../assets/9e763a2f8e32c2b3d8232f6e629779250.png?0.9932994645263338" /></p>
+<ol start="9" type="1">
+<li></li>
+</ol>
+<p><img src="../../../assets/9e763a2f8e32c2b3d8232f6e629779251.png?0.6294360069024891" /></p>
+<ol start="10" type="1">
+<li></li>
+</ol>
+<p><img src="../../../assets/9e763a2f8e32c2b3d8232f6e629779252.png?0.38901313950974536" /></p>
+<p><em>Convert to an NFA:</em></p>
+<ol start="11" type="1">
+<li>(001)*(1 <span class="math inline">∪</span> <span class="math inline"><em>ϵ</em></span>)</li>
+<li>(01*0 <span class="math inline">∪</span> <span class="math inline"><em>ϵ</em></span> <span class="math inline">∪</span> 00)</li>
+<li>(001)<em>(1 <span class="math inline">∪</span> <span class="math inline"><em>ϵ</em></span>)( 01</em>0 <span class="math inline">∪</span> <span class="math inline"><em>ϵ</em></span> <span class="math inline">∪</span> 00)</li>
+</ol>
+</body>
+</html>

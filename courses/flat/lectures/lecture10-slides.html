@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-12-08">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="../../../presentation/katexkatex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="../../../presentation/katexkatex.min.css" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">9. The Church-Turing Thesis</p>
+  <p class="date">December 8, 2019</p>
+</section>
+
+<section id="introduction" class="slide level1">
+<h1>Introduction</h1>
+</section>
+<section id="previous-models" class="slide level1">
+<h1>Previous Models</h1>
+<ul>
+<li>So far in our development of the theory of computation, we have presented several models of computing devices.</li>
+<li>Finite automata are good models for devices that have a small amount of memory.</li>
+<li>Pushdown automata are good models for devices that have an unlimited memory that is usable only in the last in, first out manner of a stack.</li>
+</ul>
+</section>
+<section id="general-purpose-computers" class="slide level1">
+<h1>General Purpose Computers?</h1>
+<ul>
+<li>We have shown that some very simple tasks are beyond the capabilities of these models.</li>
+<li>Hence they are too restricted to serve as models of general purpose computers.</li>
+</ul>
+</section>
+<section id="turing-machine" class="slide level1">
+<h1>Turing Machine</h1>
+<ul>
+<li>We turn now to a much more powerful model, first proposed by Alan Turing in 1936, called the Turing machine.</li>
+<li>Similar to a finite automaton but with an unlimited and unrestricted memory, a Turing machine is a much more accurate model of a general purpose computer.</li>
+<li>A Turing machine can do everything that a real computer can do.</li>
+</ul>
+</section>
+<section id="turing-machine-limitations" class="slide level1">
+<h1>Turing Machine Limitations</h1>
+<ul>
+<li>Nonetheless, even a Turing machine cannot solve certain problems.</li>
+<li>In a very real sense, these problems are beyond the theoretical limits of computation.</li>
+</ul>
+</section>
+<section id="turing-machine-1" class="slide level1">
+<h1>Turing Machine</h1>
+<ul>
+<li>The Turing machine model uses an infinite tape as its unlimited memory.</li>
+<li>It has a tape head that can read and write symbols and move around on the tape.</li>
+<li>Initially the tape contains only the input string and is blank everywhere else.</li>
+<li>If the machine needs to store information, it may write this information on the tape.</li>
+</ul>
+</section>
+<section id="turing-machine-2" class="slide level1">
+<h1>Turing Machine</h1>
+<ul>
+<li>To read the information that it has written, the machine can move its head back over it. The machine continues computing until it decides to produce an output.</li>
+<li>The outputs accept and reject are obtained by entering designated accepting and rejecting states.</li>
+<li>If it doesn’t enter an accepting or a rejecting state, it will go on forever, never halting.</li>
+</ul>
+</section>
+<section id="turing-machine-schematic" class="slide level1">
+<h1>Turing Machine Schematic</h1>
+<img data-src="images/lecture10-diagram1-tmschematic.png" title="fig:" class="stretch" alt="Turing Machine Schematic" />
+</section>
+<section id="fa-vs.-turing-machines" class="slide level1">
+<h1>FA vs. Turing Machines</h1>
+<ol type="1">
+<li>A Turing machine can both write on the tape and read from it.</li>
+<li>The read–write head can move both to the left and to the right.</li>
+<li>The tape is infinite.</li>
+<li>The special states for rejecting and accepting take effect immediately.</li>
+</ol>
+</section>
+<section id="example-turing-machine" class="slide level1">
+<h1>Example Turing Machine</h1>
+</section>
+<section id="example-tm" class="slide level1">
+<h1>Example TM</h1>
+<ul>
+<li>Let’s introduce a Turing machine M<sub>1</sub> for testing membership in the language:</li>
+</ul>
+<p><span class="math display">B = \{ w\#w | w \in \{0,1\}^*\} </span></p>
+<ul>
+<li>We want M<sub>1</sub> to accept if its input is a member of B and to reject otherwise.</li>
+</ul>
+</section>
+<section id="imagine-you-are-the-tm" class="slide level1">
+<h1>Imagine you are the TM</h1>
+<ul>
+<li>We want M<sub>1</sub> to accept if its input is a member of B and to reject otherwise.</li>
+<li>To understand M<sub>1</sub> better, put yourself in its place by imagining that you are standing on a mile-long input consisting of millions of characters.</li>
+<li>Your goal is to determine whether the input is a member of B—that is, whether the input comprises two identical strings separated by a # symbol.</li>
+</ul>
+</section>
+<section id="imagine-you-are-the-tm-1" class="slide level1">
+<h1>Imagine You are the TM</h1>
+<ul>
+<li class="fragment">The input is too long for you to remember it all, but you are allowed to move back and forth over the input and make marks on it.</li>
+<li class="fragment">The obvious strategy is to zig-zag to the corresponding places on the two sides of the # and determine whether they match.</li>
+<li class="fragment">Place marks on the tape to keep track of which places correspond.</li>
+</ul>
+</section>
+<section id="operation-of-our-tm" class="slide level1">
+<h1>Operation of our TM</h1>
+<ul>
+<li>We design M<sub>1</sub> to work in that way.</li>
+<li>It makes multiple passes over the input string with the read–write head.</li>
+<li>On each pass it matches one of the characters on each side of the # symbol.</li>
+<li>To keep track of which symbols have been checked already, M<sub>1</sub> crosses off each symbol as it is examined.</li>
+</ul>
+</section>
+<section id="operation-of-our-tm-1" class="slide level1">
+<h1>Operation of our TM</h1>
+<ul>
+<li>If it crosses off all the symbols, that means that everything matched successfully, and M<sub>1</sub> goes into an accept state.</li>
+<li>If it discovers a mismatch, it enters a reject state.</li>
+</ul>
+</section>
+<section id="m1-algorithm" class="slide level1">
+<h1>M1 Algorithm</h1>
+<ul>
+<li>M<sub>1</sub> = "On input string w:</li>
+</ul>
+<ol type="1">
+<li>Zig-zag across the tape to corresponding positions on either side of the # symbol to check whether these positions contain the same symbol. If they do not, or if no # is found, reject. Cross off symbols as they are checked to keep track of which symbols correspond.</li>
+<li>When all symbols to the left of the # have been crossed off, check for any remaining symbols to the right of the #. If any symbols remain, reject; otherwise, accept."</li>
+</ol>
+</section>
+<section id="m1-computation" class="slide level1">
+<h1>M1 Computation</h1>
+<img data-src="images/lecture10-diagram2-m1example.png" title="fig:" class="stretch" alt="M1 Computation" />
+</section>
+<section id="defining-a-tm" class="slide level1">
+<h1>Defining a TM</h1>
+</section>
+<section id="defining-a-tm-1" class="slide level1">
+<h1>Defining a TM</h1>
+<ul>
+<li>The heart of the definition of a Turing machine is the transition function δ because it tells us how the machine gets from one step to the next.</li>
+<li>For a Turing machine, δ takes the form: Q × Γ −→ Q × Γ × {L, R}. That is, when the machine is in a certain state q and the head is over a tape square containing a symbol a, and if δ(q, a) = (r, b, L), the machine writes the symbol b replacing the a, and goes to state r.</li>
+</ul>
+</section>
+<section id="defining-a-tm-2" class="slide level1">
+<h1>Defining a TM</h1>
+<ul>
+<li>The third component is either L or R and indicates whether the head moves to the left or right after writing.</li>
+<li>In this case, the L indicates a move to the left.</li>
+</ul>
+</section>
+<section id="formal-definition" class="slide level1">
+<h1>Formal Definition</h1>
+<p>A Turing machine is a 7-tuple, (Q, Σ, Γ, δ, q0, q<sub>accept</sub>, q<sub>reject</sub>), where Q, Σ, Γ are all finite sets and</p>
+<ol type="1">
+<li>Q is the set of states,</li>
+<li>Σ is the input alphabet not containing the blank symbol ␣ ,</li>
+<li>Γ is the tape alphabet, where␣ ∈ Γ and Σ ⊆ Γ,</li>
+<li><span class="math inline">δ: Q×Γ\longrightarrow Q×Γ×{L,R}</span> is the transition function,</li>
+<li>q<sub>0</sub> ∈ Q is the start state,</li>
+<li>q<sub>accept</sub> ∈ Q is the accept state, and</li>
+<li>q<sub>reject</sub> ∈ Q is the reject state, where q<sub>reject</sub> != q<sub>accept</sub>.</li>
+</ol>
+</section>
+<section id="transition-function-domain" class="slide level1">
+<h1>Transition Function Domain</h1>
+<ul>
+<li>Let M be a Turing machine defined by (Q, Σ, Γ, δ, q0, q<sub>accept</sub>, q<sub>reject</sub>).</li>
+<li>at any given time M is in some state <span class="math inline">q \in Q</span></li>
+<li>and its head is on some tape square containing some tape symbol <span class="math inline">\gamma \in \Gamma</span></li>
+<li>The transition function <span class="math inline">\delta: Q \times \Gamma \longrightarrow Q \times \Gamma \times \{L, R\}</span> depends on the machine state q and on the tape symbol</li>
+</ul>
+</section>
+<section id="transition-function-range" class="slide level1">
+<h1>Transition Function Range</h1>
+<ul>
+<li>The range of the transition function are triples of the type <span class="math inline">(q&#39;, \gamma&#39;, d)</span></li>
+<li>where <span class="math inline">q&#39;</span> is M’s next state,<br />
+</li>
+<li><span class="math inline">\gamma&#39;</span> is the symbol written on the tape cell over which the head was at the beginning of the transition (namely <span class="math inline">\gamma</span> is replaced with <span class="math inline">\gamma&#39;</span>)</li>
+<li>and <span class="math inline">d \in \{ L, R\}</span> is the direction towards which the tape head has made a step.</li>
+</ul>
+</section>
+<section id="computation" class="slide level1">
+<h1>Computation</h1>
+<ul>
+<li>A Turing machine M = (Q, Σ, Γ, δ, q<sub>0</sub>, q<sub>accept</sub>, q<sub>reject</sub>) computes as follows.</li>
+<li>Initially, M receives its input <span class="math inline">w = w_{1}w_{2} . . . w_{n} \in \Sigma ^*</span> on the leftmost n squares of the tape, and the rest of the tape is blank (i.e., filled with blank symbols).</li>
+<li>The head starts on the leftmost square of the tape.</li>
+<li>Note that Σ does not contain the blank symbol, so the first blank appearing on the tape marks the end of the input.</li>
+</ul>
+</section>
+<section id="computation-2" class="slide level1">
+<h1>Computation (2)</h1>
+<ul>
+<li>Once M has started, the computation proceeds according to the rules described by the transition function.</li>
+<li>If M ever tries to move its head to the left off the left-hand end of the tape, the head stays in the same place for that move, even though the transition function indicates L.</li>
+<li>The computation continues until it enters either the accept or reject states, at which point it halts.</li>
+<li>If neither occurs, M goes on forever.</li>
+</ul>
+</section>
+<section id="computation-example-again" class="slide level1">
+<h1>Computation Example (again)</h1>
+<img data-src="images/lecture10-diagram2-m1example.png" title="fig:" class="stretch" alt="M1 Computation" />
+</section>
+<section id="tm-configuration" class="slide level1">
+<h1>TM Configuration</h1>
+<ul>
+<li>As a Turing machine computes, changes occur in the current state, the current tape contents, and the current head location.</li>
+<li>A setting of these three items is called a configuration of the Turing machine.</li>
+<li>Configurations often are represented in a special way.</li>
+</ul>
+</section>
+<section id="tm-configuration-1" class="slide level1">
+<h1>TM Configuration</h1>
+<ul>
+<li>For a state <span class="math inline">q</span> and two strings <span class="math inline">u</span> and <span class="math inline">v</span> over the tape alphabet Γ, we write <span class="math inline">uqv</span> for the configuration where the current state is <span class="math inline">q</span>, the current tape contents is <span class="math inline">uv</span>, and the current head location is the first symbol of <span class="math inline">v</span>.</li>
+<li>The tape contains only blanks following the last symbol of v.</li>
+</ul>
+</section>
+<section id="tm-configuration-2" class="slide level1">
+<h1>TM Configuration</h1>
+<ul>
+<li>For example, <span class="math inline">1011q_701111</span> represents the configuration when the tape is 101101111, the current state is q<sub>7</sub>, and the head is currently on the second 0:</li>
+</ul>
+<img data-src="images/lecture10-diagram3-configuration.png" title="fig:" class="stretch" alt="A TM with configuration 1011q701111" />
+</section>
+<section id="yields" class="slide level1">
+<h1>Yields</h1>
+<ul>
+<li>Say that configuration C1 <em><strong>yields</strong></em> configuration C2 if the Turing machine can legally go from C1 to C2 in a single step.</li>
+</ul>
+</section>
+<section id="yields-1" class="slide level1">
+<h1>Yields</h1>
+<ul>
+<li>We define this notion formally as follows.</li>
+<li>Suppose that we have a,b, and c in Γ, as well as u and v in Γ* and states q<sub>i</sub> and q<sub>j</sub>. In that case, <span class="math inline">ua\ q_{i}\ bv</span> and <span class="math inline">u\ q_{j}\ acv</span> are two configurations.</li>
+<li>Say that: <span class="math inline">ua\ q_{i}\ bv\ \textrm{yields}\ u\ q_{j}\ acv</span> if in the transition function <span class="math inline">δ(q_{i},b) = (q_{j},c,L)</span>.</li>
+<li>That handles the case where the Turing machine moves leftward.</li>
+<li>For a rightward move, say that <span class="math inline">ua\ q_{i}\ bv\ \textrm{yields}\ uac\ q_{j}\ v</span> if <span class="math inline">δ(q_{i},b) = (q_{j},c,R)</span>.</li>
+</ul>
+</section>
+<section id="special-cases" class="slide level1">
+<h1>Special Cases</h1>
+<ul>
+<li>Special cases occur when the head is at one of the ends of the configuration.</li>
+<li>For the left-hand end, the configuration <span class="math inline">q_{i}\ bv \textrm{yields} q_{j}\ cv</span> if the transition is left-moving (because we prevent the machine from going off the left-hand end of the tape), and it yields <span class="math inline">c\ q_{j}\ v</span> for the right-moving transition.</li>
+<li>For the right-hand end, the configuration <span class="math inline">ua\ q_{i}</span> is equivalent to <span class="math inline">ua\ q_{i}\ ␣</span> because we assume that blanks follow the part of the tape represented in the configuration.</li>
+<li>Thus we can handle this case as before, with the head no longer at the right-hand end.</li>
+</ul>
+</section>
+<section id="special-configurations" class="slide level1">
+<h1>Special Configurations</h1>
+<ul>
+<li>The <em><strong>start configuration</strong></em> of M on input w is the configuration q0 w, which indicates that the machine is in the start state q0 with its head at the leftmost position on the tape.</li>
+<li>In an <em><strong>accepting configuration</strong></em>, the state of the configuration is q<sub>accept</sub>.</li>
+<li>In a <em><strong>rejecting configuration</strong></em>, the state of the configuration is q<sub>reject</sub>.</li>
+<li>Accepting and rejecting configurations are <em><strong>halting configurations</strong></em> and do not yield further configurations.</li>
+</ul>
+</section>
+<section id="alternative-transition-function" class="slide level1">
+<h1>Alternative Transition Function</h1>
+<ul>
+<li>Because the machine is defined to halt when in the states q<sub>accept</sub> and q<sub>reject</sub>, we equivalently could have defined the transition function to have the more complicated form δ:Q′×Γ−→Q×Γ×{L,R}, where Q′ is Q without q<sub>accept</sub> and q<sub>reject</sub>.</li>
+</ul>
+</section>
+<section id="alternative-transition-function-1" class="slide level1">
+<h1>Alternative Transition Function</h1>
+<ul>
+<li>A Turing machine M accepts input w if a sequence of configurations C<sub>1</sub>, C<sub>2</sub>, . . . , C<sub>k</sub> exists, where</li>
+</ul>
+<ol type="1">
+<li>C<sub>1</sub> is the start configuration of M on input w,</li>
+<li>each C<sub>i</sub> yields C<sub>i</sub>+1, and</li>
+<li>C<sub>k</sub> is an accepting configuration.</li>
+</ol>
+</section>
+<section id="language-of-a-tm" class="slide level1">
+<h1>Language of a TM</h1>
+<ul>
+<li>The collection of strings that M accepts is the language of M, or the language recognized by M, denoted L(M).</li>
+</ul>
+</section>
+<section id="definition-turing-recognizable" class="slide level1">
+<h1>Definition: Turing-Recognizable</h1>
+<ul>
+<li>Call a language <em><strong>Turing-recognizable</strong></em> if some Turing machine recognizes it.</li>
+<li>Some textbooks call this a <em><strong>recursively enumerable language</strong></em></li>
+</ul>
+</section>
+<section id="outcomes-of-a-tm" class="slide level1">
+<h1>Outcomes of a TM</h1>
+<ul>
+<li>When we start a Turing machine on an input, three outcomes are possible.</li>
+<li>The machine may
+<ul>
+<li>accept,</li>
+<li>reject, or</li>
+<li>loop.</li>
+</ul></li>
+<li>By loop we mean that the machine simply does not halt.</li>
+<li>Looping may entail any simple or complex behavior that never leads to a halting state.</li>
+</ul>
+</section>
+<section id="outcomes-of-a-tm-1" class="slide level1">
+<h1>Outcomes of a TM</h1>
+<ul>
+<li>A Turing machine M can fail to accept an input by entering the q<sub>reject</sub> state and rejecting, or by looping.</li>
+<li>Sometimes distinguishing a machine that is looping from one that is merely taking a long time is difficult.</li>
+<li>For this reason, we prefer Turing machines that halt on all inputs; such machines never loop.</li>
+<li>These machines are called <em><strong>deciders</strong></em> because they always make a decision to accept or reject.</li>
+<li>A decider that recognizes some language also is said to decide that language.</li>
+</ul>
+</section>
+<section id="deciders" class="slide level1">
+<h1>Deciders</h1>
+<ul>
+<li>Call a language <em><strong>Turing-decidable</strong></em> or simply <em><strong>decidable</strong></em> if some Turing machine decides it.</li>
+<li>Some textbooks also call these languages <em><strong>recursive</strong></em> languages</li>
+</ul>
+</section>
+<section id="decidable-vs.-turing-recognizable" class="slide level1">
+<h1>Decidable vs. Turing-recognizable</h1>
+<ul>
+<li>Every decidable language is Turing-recognizable</li>
+<li>Not every Turing-recognizable language is decidable</li>
+</ul>
+</section>
+<section id="example-m2" class="slide level1">
+<h1>Example M2</h1>
+</section>
+<section id="m2" class="slide level1">
+<h1>M2</h1>
+<ul>
+<li>Here we describe a Turing machine (TM) M<sub>2</sub> that decides:</li>
+</ul>
+<p><span class="math display">A = {0^{2^{n}} | n ≥ 0}</span></p>
+<ul>
+<li><em>A</em> is the language consisting of all strings of 0s whose length is a power of 2.</li>
+</ul>
+</section>
+<section id="m2-description" class="slide level1">
+<h1>M2 Description</h1>
+<p>M<sub>2</sub> = “On input string w:</p>
+<ol type="1">
+<li>Sweep left to right across the tape, crossing off every other 0.</li>
+<li>If in stage 1 the tape contained a single 0, accept .</li>
+<li>If in stage 1 the tape contained more than a single 0 and the number of 0s was odd, reject .</li>
+<li>Return the head to the left-hand end of the tape.</li>
+<li>Go to stage 1.”</li>
+</ol>
+</section>
+<section id="m2-analysis" class="slide level1">
+<h1>M2 Analysis</h1>
+<ul>
+<li>Each iteration of stage 1 cuts the number of 0s in half. As the machine sweeps across the tape in stage 1, it keeps track of whether the number of 0s seen is even or odd.</li>
+<li>If that number is odd and greater than 1, the original number of 0s in the input could not have been a power of 2.</li>
+<li>Therefore, the machine rejects in this instance.</li>
+<li>However, if the number of 0s seen is 1, the original number must have been a power of 2.</li>
+<li>So in this case, the machine accepts.</li>
+</ul>
+</section>
+<section id="m2-formal-description" class="slide level1">
+<h1>M2 Formal Description</h1>
+<p>Now we give the formal description of <span class="math inline">M2 = (Q, Σ, Γ, δ, q~1~, q_{accept}, q_{reject})</span>:</p>
+<ul>
+<li>Q= {q<sub>1</sub>, q<sub>2</sub>, q<sub>3</sub>, q<sub>4</sub>, q<sub>5</sub>, q<sub>accept</sub>, q<sub>reject</sub>},</li>
+<li>Σ={0}, and</li>
+<li>Γ={0,x,␣}.</li>
+<li>We describe δ with a state diagram</li>
+<li>The start, accept, and reject states are q<sub>1</sub>, q<sub>accept</sub>,and q<sub>reject</sub>,respectively.</li>
+</ul>
+</section>
+<section id="m2-state-diagram" class="slide level1">
+<h1>M2 State Diagram</h1>
+<img data-src="images/lecture10-diagram4-m2.png" title="fig:" class="stretch" alt="M2" />
+</section>
+<section id="m2-sample-run" class="slide level1">
+<h1>M2 Sample Run</h1>
+<table>
+<tr>
+<td>
+q<sub>1</sub>0000
+</td>
+<td>
+␣q<sub>5</sub>x0x␣
+</td>
+<td>
+␣xq5xx␣
+</td>
+</tr>
+<tr>
+<td>
+␣q<sub>2</sub>000
+</td>
+<td>
+q<sub>5</sub>␣x0x␣
+</td>
+<td>
+␣q5xxx␣
+</td>
+</tr>
+<tr>
+<td>
+␣xq<sub>3</sub>00
+</td>
+<td>
+␣q<sub>2</sub>x0x␣
+</td>
+<td>
+q5␣xxx␣
+</td>
+</tr>
+<tr>
+<td>
+␣x0q<sub>4</sub>0
+</td>
+<td>
+␣xq20x␣
+</td>
+<td>
+␣q2xxx␣
+</td>
+</tr>
+<tr>
+<td>
+␣x0xq<sub>3</sub>␣
+</td>
+<td>
+␣xxq3x␣
+</td>
+<td>
+␣xq2xx␣
+</td>
+</tr>
+<tr>
+<td>
+␣x0q<sub>5</sub>x␣
+</td>
+<td>
+␣xxxq3␣
+</td>
+<td>
+␣xxq2x␣
+</td>
+</tr>
+<tr>
+<td>
+␣xq<sub>5</sub>0x␣
+</td>
+<td>
+␣xxq5x␣
+</td>
+<td>
+␣xxxq2␣
+</td>
+</tr>
+<tr>
+<td/>
+<td/>
+<td>
+␣xxx␣qaccept
+</td>
+</tr>
+</table>
+</section>
+<section id="descriptions-of-turing-machines" class="slide level1">
+<h1>Descriptions of Turing Machines</h1>
+</section>
+<section id="descriptions" class="slide level1">
+<h1>Descriptions</h1>
+<ul>
+<li>As we did for finite and pushdown automata, we can formally describe a particular Turing machine by specifying each of its seven parts.</li>
+<li>However, going to that level of detail can be cumbersome for all but the tiniest Turing machine, so we won’t spend much time giving such descriptions.</li>
+<li>Higher level descriptions are precise enough for our purposes and they are easier to understand</li>
+<li>Nevertheless, it is important to remember that every higher level description is actually just shorthand for its formal counterpart.</li>
+</ul>
+</section>
+<section id="example-m1" class="slide level1">
+<h1>Example M1</h1>
+</section>
+<section id="m1" class="slide level1">
+<h1>M1</h1>
+<p>Let M<sub>1</sub> be a Turing machine that decides lan- guage <span class="math inline">B = \{w\#w| w ∈ \{0,1\}^*\}</span></p>
+<p>M<sub>1</sub> =(Q,Σ,Γ,δ,q<sub>1</sub>,q<sub>accept</sub>,q<sub>reject</sub>)</p>
+</section>
+<section id="m1-1" class="slide level1">
+<h1>M1</h1>
+<ul>
+<li>Q={q<sub>1</sub>,…,q<sub>8</sub>,q<sub>accept</sub>,q<sub>reject</sub>}</li>
+<li>Σ={0,1,#}</li>
+<li>Γ={0,1,#,x,␣}.</li>
+<li>δ is described in the state diagram below</li>
+<li>The start, accept, and reject states are q<sub>1</sub>, q<sub>accept</sub>, and q<sub>reject</sub>, respectively.</li>
+</ul>
+</section>
+<section id="m1-transition-diagram" class="slide level1">
+<h1>M1 Transition Diagram</h1>
+<img data-src="images/lecture10-diagram5-m1.png" title="fig:" class="stretch" alt="M2" />
+<ul>
+<li><em>Note: to simplify the figure, the reject state has been omitted. All states which lack a transition on a particular symbol should reject.</em></li>
+</ul>
+</section>
+<section id="practice-m3" class="slide level1">
+<h1>Practice M3</h1>
+</section>
+<section id="lm3" class="slide level1">
+<h1>L(M3)</h1>
+<p>Here, a TM M<sub>3</sub> is doing some elementary arithmetic. It decides the language</p>
+<p><span class="math display">C = \{a^{i}b^{j}c^{k}\ |\ i × j = k\ and\ i, j, k ≥ 1\}.</span></p>
+<p>M<sub>3</sub> = “On input string w:</p>
+</section>
+<section id="m3-algorithm" class="slide level1">
+<h1>M3 Algorithm</h1>
+<ol type="1">
+<li>Scan the input from left to right to determine whether it is a member of a<sup>+b</sup>+c^+ and reject if it isn’t.</li>
+<li>Return the head to the left-hand end of the tape.</li>
+<li>Cross off an a and scan to the right until a b occurs. Shuttle between the b’s and the c’s, crossing off one of each until all b’s are gone. If all c’s have been crossed off and some b’s remain, reject .</li>
+<li>Restore the crossed off b’s and repeat stage 3 if there is another a to cross off. If all a’s have been crossed off, determine whether all c’s also have been crossed off. If yes, accept; otherwise, reject .”</li>
+</ol>
+</section>
+<section id="example-m4" class="slide level1">
+<h1>Example M4</h1>
+</section>
+<section id="lm4" class="slide level1">
+<h1>L(M4)</h1>
+<p>TM M4 is solving what is called the element distinctness problem. It is given a list of strings over {0,1} separated by #s and its job is to accept if all the strings are different. The language is:</p>
+<p><span class="math display">E = \{\#x_{1}\#x_{2}\#...\#x_{l}|\ each\ x_{i} ∈ \{0,1\}* and\ x_{i} \not=\ x_{j} for\ each\ i \neq j\}.</span></p>
+</section>
+<section id="m4-high-level-description" class="slide level1">
+<h1>M4 High Level Description</h1>
+<p>Machine M<sub>4</sub> works by comparing x<sub>1</sub> with x<sub>2</sub> through x<sub>l</sub>, then by comparing x<sub>2</sub> with x<sub>3</sub> through x<sub>l</sub>, and so on.</p>
+</section>
+<section id="m4-informal-description" class="slide level1">
+<h1>M4 Informal Description</h1>
+<p>M4 = “On input w:</p>
+<ol type="1">
+<li>Place a mark on top of the leftmost tape symbol. If that symbol was a blank, accept . If that symbol was a #, continue with the next stage. Otherwise, reject.</li>
+<li>Scan right to the next # and place a second mark on top of it. If no # is encountered before a blank symbol, only x<sub>1</sub> was present, so accept.</li>
+<li>By zig-zagging, compare the two strings to the right of the marked #s. If they are equal, reject .</li>
+</ol>
+</section>
+<section id="m4-informal-description-1" class="slide level1">
+<h1>M4 Informal Description</h1>
+<ol start="4" type="1">
+<li>Move the rightmost of the two marks to the next # symbol to the right. If no # symbol is encountered before a blank symbol, move the leftmost mark to the next # to its right and the rightmost mark to the # after that. This time, if no # is available for the rightmost mark, all the strings have been compared, so accept .</li>
+<li>Go to stage 3.”</li>
+</ol>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
