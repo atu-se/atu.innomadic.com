@@ -1,10 +1,10 @@
 # 2019-2020
 
 * [Advanced Software Engineering](courses/ase)
+* [Formal Languages and Automata Theory](courses/flat)
 
 # 2018-2019
 
-* [Formal Languages and Automata Theory](courses/flat)
 * Advanced Software Engineering
 * Introduction to Databases
 * Data Structures and Algorithms
