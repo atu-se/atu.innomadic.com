@@ -30,6 +30,20 @@
   <!--[if lt IE 9]>
   <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
+  <script src="../../../presentation/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="../../../presentation/katex/katex.min.css" />
 </head>
 <body>
   <div class="reveal">
@@ -37,7 +51,7 @@
 
 <section id="title-slide">
   <h1 class="title">FLAT</h1>
-  <p class="subtitle">10. Review</p>
+  <p class="subtitle">8. Push-down Automata</p>
   <p class="date">November 23, 2019</p>
 </section>
 
@@ -67,38 +81,323 @@
 <section id="review" class="slide level1">
 <h1>Review</h1>
 </section>
-<section id="machine-overview" class="slide level1">
-<h1>Machine Overview</h1>
+<section id="cfgs" class="slide level1">
+<h1>CFGs</h1>
+<ul>
+<li>In this chapter we present context-free grammars (CFGs), a more powerful method of describing languages.</li>
+<li>Such grammars can describe certain features that have a recursive structure, which makes them useful in a variety of applications.</li>
+</ul>
+</section>
+<section id="cfgs-1" class="slide level1">
+<h1>CFGs</h1>
+<ul>
+<li>Context-free grammars were first used in the study of human languages.</li>
+<li>One way of understanding the relationship of terms such as noun, verb, and preposition and their respective phrases leads to a natural recursion because noun phrases may appear inside verb phrases and vice versa.</li>
+<li>Context-free grammars help us organize and understand these relationships.</li>
+</ul>
+</section>
+<section id="cfgs-2" class="slide level1">
+<h1>CFGS</h1>
+<ul>
+<li>CFGs <em>generate</em> strings</li>
+<li>Strings can be <em>derived</em> from CFGs</li>
+<li>Some strings may be <em>ambiguous</em></li>
+<li>CFGs can be convereted to a standard form known as Chomsky Normal Form</li>
+<li>CFGs are important in their application to compilation</li>
+</ul>
+</section>
+<section id="introduction" class="slide level1">
+<h1>Introduction</h1>
+</section>
+<section id="pda" class="slide level1">
+<h1>PDA</h1>
+<ul>
+<li>In this section we introduce a new type of computational model called <strong>pushdown automata</strong> (PDA).</li>
+<li>These automata are like nondeterministic finite automata but have an extra component called a <strong>stack</strong>.</li>
+<li>The stack provides additional memory beyond the finite amount available in the control.</li>
+<li>The stack allows pushdown automata to recognize some nonregular languages.</li>
+</ul>
+</section>
+<section id="pda-1" class="slide level1">
+<h1>PDA</h1>
+<ul>
+<li>Pushdown automata are equivalent in power to context-free grammars.</li>
+<li>This equivalence is useful because it gives us two options for proving that a language is context free.</li>
+<li>We can give either a context-free grammar generating it or a pushdown automaton recognizing it.</li>
+</ul>
+</section>
+<section id="pda-2" class="slide level1">
+<h1>PDA</h1>
+<ul>
+<li>Certain languages are more easily described in terms of generators, whereas others are more easily described by recognizers.</li>
+<li>PDAs can be deterministic or non-deterministic</li>
+</ul>
+</section>
+<section id="pda-3" class="slide level1">
+<h1>PDA</h1>
 <div class="container">
 <div class="column">
-<h3 id="finite-automaton-schematic">Finite Automaton Schematic</h3>
+<h2 id="finite-automaton-schematic">Finite Automaton Schematic</h2>
 <p><img data-src="images/lecture8-diagram1.png" /></p>
 </div>
 <div class="column">
-<h3 id="pushdown-automaton-schematic">Pushdown Automaton Schematic</h3>
+<h2 id="pushdown-automaton-schematic">Pushdown Automaton Schematic</h2>
 <p><img data-src="images/lecture8-diagram2.png" /></p>
 </div>
-<div class="column">
-<h3 id="turing-machine-schematic">Turing Machine Schematic</h3>
-<p><img data-src="images/lecture10-diagram1-tmschematic.png" /></p>
 </div>
-</div>
+</section>
+<section id="stacks" class="slide level1">
+<h1>Stacks</h1>
+<img data-src="images/lecture8-laxoox.jpg" title="fig:" class="stretch" alt="Laxoox" />
+</section>
+<section id="stacks-1" class="slide level1">
+<h1>Stacks</h1>
+<ul>
+<li>Stacks operate by pushing and popping</li>
+<li>Pushing adds a new element to the top of the stack</li>
+<li>Popping remove the top element of the stack</li>
+<li>Stacks are first-in-last-out (FILO) data structures</li>
+</ul>
+</section>
+<section id="definition-of-a-pda" class="slide level1">
+<h1>Definition of a PDA</h1>
+</section>
+<section id="defining-a-pda" class="slide level1">
+<h1>Defining a PDA</h1>
+<ul>
+<li>The formal definition of a pushdown automaton is similar to that of a finite automaton, except for the stack.</li>
+<li>The stack is a device containing symbols drawn from some alphabet.</li>
+<li>The machine may use different alphabets for its input and its stack, so now we specify both an input alphabet Σ and a stack alphabet Γ.</li>
+</ul>
+</section>
+<section id="pda-state-diagram-example" class="slide level1">
+<h1>PDA State Diagram Example</h1>
+<img data-src="images/lecture8-example1b.png" title="fig:" class="stretch" alt="Example 2.14" />
+</section>
+<section id="pda-transition" class="slide level1">
+<h1>PDA Transition</h1>
+<ul>
+<li>At the heart of any formal definition of an automaton is the transition function, which describes its behavior.</li>
+<li>Recall that Σ<sub>ε</sub> = Σ ∪ {ε} and Γ<sub>ε</sub> = Γ ∪ {ε}.</li>
+<li>The domain of the transition function is Q × Σ<sub>ε</sub> × Γ<sub>ε</sub>.</li>
+<li>Thus the current state, next input symbol read, and top symbol of the stack determine the next move of a pushdown automaton.</li>
+</ul>
+</section>
+<section id="pda-transition-1" class="slide level1">
+<h1 class="ninety">PDA Transition</h1>
+<ul>
+<li>Either symbol may be ε, causing the machine to move without reading a symbol from the input or without reading a symbol from the stack.</li>
+<li>For the range of the transition function we need to consider what to allow the automaton to do when it is in a particular situation.</li>
+<li>It may enter some new state and possibly write a symbol on the top of the stack.</li>
+<li>The function δ can indicate this action by returning a member of Q together with a member of Γ<sub>ε</sub>, that is, a member of Q × Γε.</li>
+</ul>
+</section>
+<section id="pda-transition-2" class="slide level1">
+<h1>PDA Transition</h1>
+<ul>
+<li>Because we allow nondeterminism in this model, a situation may have several legal next moves.</li>
+<li>The transition function incorporates nondeterminism in the usual way, by returning a set of members of Q × Γ<sub>ε</sub>, that is, a member of P(Q × Γε).</li>
+<li>Putting it all together, our transition function δ takes the form δ : Q × Σ<sub>ε</sub> × Γ<sub>ε</sub> → P( Q × Γ<sub>ε</sub> ).</li>
+</ul>
+</section>
+<section id="formal-definition" class="slide level1">
+<h1 class="ninety">Formal Definition</h1>
+<p>A pushdown automaton is a 6-tuple (Q, Σ, Γ, δ, q<sub>0</sub>, F ), where Q, Σ, Γ, and F are all finite sets, and</p>
+<ol type="1">
+<li>Q is the set of states,</li>
+<li>Σ is the input alphabet,</li>
+<li>Γ is the stack alphabet,</li>
+<li>δ: Q × Σ<sub>ε</sub> × Γ<sub>ε</sub>→ <span class="math inline">\mathbb{P}</span>(Q × Γ<sub>ε</sub>) is the transition function,</li>
+<li>q<sub>0</sub> ∈ Q is the start state, and</li>
+<li>F ⊆ Q is the set of accept states.</li>
+</ol>
+</section>
+<section id="determinism-and-pdas" class="slide level1">
+<h1>Determinism and PDAs</h1>
+</section>
+<section id="determinism" class="slide level1">
+<h1>Determinism</h1>
+<ul>
+<li>Pushdown automata may be nondeterministic.</li>
+<li>Deterministic and nondeterministic pushdown automata are not equivalent in power</li>
+<li>Nondeterministic pushdown automata recognize certain languages that no deterministic pushdown automata can recognize</li>
+</ul>
+</section>
+<section id="determinism-1" class="slide level1">
+<h1>Determinism</h1>
+<ul>
+<li>Recall that deterministic and nondeterministic finite automata do recognize the same class of languages, so the pushdown automata situation is different.</li>
+<li>We focus on nondeterministic pushdown automata because these automata are equivalent in power to context-free grammars.</li>
+</ul>
+</section>
+<section id="pda-computation" class="slide level1">
+<h1>PDA Computation</h1>
+</section>
+<section id="pda-computation-1" class="slide level1">
+<h1 class="ninety">PDA Computation</h1>
+<ul>
+<li>A pushdown automaton M = (Q, Σ, Γ, δ, q<sub>0</sub>, F ) computes as follows.</li>
+<li>It accepts input w if w can be written as <span class="math inline">w = w_{1}w_{2} ···w_{m}</span>, where each <span class="math inline">w_{i} ∈ Σ_{ε}</span> and sequences of states <span class="math inline">r_{0},r_{1},...,r_{m} ∈ Q</span> and strings <span class="math inline">s_{0},s_{1},...,s_{m} ∈ Γ^*</span> exist that satisfy the following three conditions.</li>
+<li>The strings s<sub>i</sub> represent the sequence of stack contents that M has on the accepting branch of the computation.</li>
+</ul>
+</section>
+<section id="pda-computation-2" class="slide level1">
+<h1 class="ninety">PDA Computation</h1>
+<ol type="1">
+<li>r<sub>0</sub> = q<sub>0</sub> and s<sub>0</sub> = ε. This condition signifies that M starts out properly, in the start state and with an empty stack.</li>
+<li>For i = 0,…,m − 1, we have (r<sub>i</sub>+1,b) ∈ <span class="math inline">δ(r_{i},w_{i}+1,a)</span>, where s<sub>i</sub> = at and s<sub>i</sub>+1 = bt for some a, b ∈ Γ<sub>ε</sub> and t ∈ Γ*. This condition states that M moves properly according to the state, stack, and next input symbol.</li>
+<li>r<sub>m</sub> ∈ F . This condition states that an accept state occurs at the input</li>
+</ol>
+</section>
+<section id="empty-stack" class="slide level1">
+<h1>Empty Stack</h1>
+<ul>
+<li>The formal definition of a PDA contains no explicit mechanism to allow the PDA to test for an empty stack.</li>
+<li>This PDA is able to get the same effect by initially placing a special symbol $ on the stack.</li>
+<li>Then if it ever sees the $ again, it knows that the stack effectively is empty.</li>
+</ul>
+</section>
+<section id="examples" class="slide level1">
+<h1>Examples</h1>
+</section>
+<section id="example-214" class="slide level1">
+<h1>Example 2.14</h1>
+<p>The following is the formal description of the PDA (page 112) that recognizes the language <span class="math inline">{0^n1^n| n ≥ 0}</span>. Let M<sub>1</sub> be (Q, Σ, Γ, δ, q<sub>1</sub>, F ), where:</p>
+<ul>
+<li><span class="math inline">Q = \{q_{1}, q_{2}, q_{3}, q_{4}\}</span>,</li>
+<li>Σ = {0,1},</li>
+<li>Γ = {0,$},</li>
+<li>F = {q1, q4}, and</li>
+<li>δ is given by the following table, wherein blank entries signify ∅.</li>
+</ul>
+</section>
+<section id="example-214-1" class="slide level1">
+<h1>Example 2.14</h1>
+<img data-src="images/lecture8-example1.png" title="fig:" class="stretch" alt="Example 2.14" />
+</section>
+<section id="example-214-2" class="slide level1">
+<h1>Example 2.14</h1>
+<ul>
+<li>We can also use a state diagram to describe a PDA</li>
+<li>We write “a,b → c” to signify that when the machine is reading an a from the input, it may replace the symbol b on the top of the stack with a c.</li>
+<li>Any of a, b, and c may be ε.</li>
+</ul>
+</section>
+<section id="example-214-3" class="slide level1">
+<h1>Example 2.14</h1>
+<ul>
+<li>If a is ε, the machine may make this transition without reading any symbol from the input.</li>
+<li>If b is ε, the machine may make this transition without reading and popping any symbol from the stack.</li>
+<li>If c is ε, the machine does not write any symbol on the stack when going along this transition.</li>
+</ul>
+</section>
+<section id="example-214-4" class="slide level1">
+<h1>Example 2.14</h1>
+<img data-src="images/lecture8-example1b.png" title="fig:" class="stretch" alt="Example 2.14" />
+</section>
+<section id="example-214-5" class="slide level1">
+<h1>Example 2.14</h1>
+<p><img data-src="images/lecture8-example1.png" width="550" alt="Example 2.14" /> <img data-src="images/lecture8-example1b.png" width="550" alt="Example 2.14" /></p>
+</section>
+<section id="example-216" class="slide level1">
+<h1>Example 2.16</h1>
+<p>This example illustrates a pushdown automaton that recognizes the language:</p>
+<p><span class="math display">A = \{a^i b^j c^k \vert i, j, k ≥ 0\ and\ i = j\ or\ i = k\}</span></p>
+</section>
+<section id="example-216-1" class="slide level1">
+<h1>Example 2.16</h1>
+</section>
+<section id="informal-description" class="slide level1">
+<h1>Informal Description</h1>
+<ul>
+<li>Designing a PDA to recognize A is similar recognizing <span class="math inline">\{0^n1^n\}</span>.<br />
+</li>
+<li>We need to use the stack to remember the size of i.</li>
+<li>The apparent problem is that we don’t know whether i will equal j or k.</li>
+<li>This problem is addressed by using non-determinism – we will test for both.</li>
+</ul>
+</section>
+<section id="example-216-2" class="slide level1">
+<h1>Example 2.16</h1>
+</section>
+<section id="informal-description-1" class="slide level1">
+<h1>Informal Description</h1>
+<ul>
+<li>Using its nondeterminism, the PDA can guess whether to match the a’s with the b’s or with the c’s</li>
+<li>Think of the machine as having two branches of its nondeterminism, one for each possible guess.</li>
+<li>If either of them matches, that branch accepts and the entire machine accepts.</li>
+</ul>
+</section>
+<section id="example-216-3" class="slide level1">
+<h1>Example 2.16</h1>
+<ul>
+<li>Solve in class</li>
+</ul>
+</section>
+<section id="example-216-4" class="slide level1">
+<h1>Example 2.16</h1>
+<img data-src="images/lecture8-figure2-17.png" title="fig:" class="stretch" alt="Example 2.16" />
+</section>
+<section id="example-218" class="slide level1">
+<h1>Example 2.18</h1>
+<p><span class="math display">\{ww^R \vert w ∈ \{0,1\}^*\}</span></p>
+</section>
+<section id="informal-description-2" class="slide level1">
+<h1>Informal Description</h1>
+<ul>
+<li>As each input symbol is read, push the symbol onto the stack.<br />
+</li>
+<li>Because we can’t know when w ends, we should non-deterministically change state to the beginning of w<sup>R</sup>.</li>
+</ul>
+</section>
+<section id="informal-description-3" class="slide level1">
+<h1>Informal Description</h1>
+<ul>
+<li>As we read each symbol of w<sup>R</sup>, we should pop a matching symbol off of the stack.</li>
+<li>When we have finished consuming w<sup>R</sup>, we should also have emptied the stack. If so, we can accept the string.</li>
+</ul>
+</section>
+<section id="example-218-1" class="slide level1">
+<h1>Example 2.18</h1>
+<ul>
+<li>Solve in class</li>
+</ul>
+</section>
+<section id="example-218-2" class="slide level1">
+<h1>Example 2.18</h1>
+<img data-src="images/lecture8-figure2-19.png" title="fig:" class="stretch" alt="Example 2.18" />
+</section>
+<section id="properties-of-pushdown-automata" class="slide level1">
+<h1>Properties of Pushdown Automata</h1>
+</section>
+<section id="theorem-220" class="slide level1">
+<h1>Theorem 2.20</h1>
+<blockquote>
+<p>A language is context free if and only if some pushdown automaton recognizes it.</p>
+</blockquote>
+</section>
+<section id="cfg-equivalence" class="slide level1">
+<h1>CFG Equivalence</h1>
+<h2 id="lemma-221">Lemma 2.21</h2>
+<blockquote>
+<p>If a language is context free, then some pushdown automaton recognizes it.</p>
+</blockquote>
+</section>
+<section id="cfg-equivalence-1" class="slide level1">
+<h1>CFG Equivalence</h1>
+<h2 id="lemma-227">Lemma 2.27</h2>
+<blockquote>
+<p>If a pushdown automaton recognizes some language, then it is context free.</p>
+</blockquote>
 </section>
 <section id="correlations" class="slide level1">
 <h1>Correlations</h1>
 <table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 29%" />
-<col style="width: 24%" />
-<col style="width: 21%" />
-</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th>.</th>
 <th>Regular Languages</th>
 <th>Context-Free Languages</th>
-<th>Turing-Recognizable</th>
 </tr>
 </thead>
 <tbody>
@@ -106,13 +405,11 @@
 <td><strong>Language Recognizer</strong></td>
 <td>Finite Automaton (NFA, DFA)</td>
 <td>Pushdown Automaton</td>
-<td>Turing Machine</td>
 </tr>
 <tr class="even">
 <td><strong>Language Generator</strong></td>
 <td>Regular Expression</td>
 <td>Context-Free Grammar</td>
-<td></td>
 </tr>
 </tbody>
 </table>
