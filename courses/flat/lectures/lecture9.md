@@ -33,7 +33,7 @@ output:
 
 # Introduction
 
-# Previous Models
+# Previous Models {.seventy}
 
 * So far in our development of the theory of computation, we have presented several models of computing devices.
 * Finite automata are good models for devices that have a small amount of memory.
@@ -139,7 +139,7 @@ side of the # symbol to check whether these positions contain the same symbol. I
 * The third component is either L or R and indicates whether the head moves to the left or right after writing.
 * In this case, the L indicates a move to the left.
 
-# Formal Definition
+# Formal Definition {.ninety}
 
 A Turing machine is a 7-tuple, (Q, Σ, Γ, δ, q0, q~accept~, q~reject~), where
 Q, Σ, Γ are all finite sets and
@@ -152,14 +152,14 @@ Q, Σ, Γ are all finite sets and
 6. q~accept~ ∈ Q is the accept state, and
 7. q~reject~ ∈ Q is the reject state, where q~reject~ != q~accept~.
 
-# Transition Function Domain
+# Transition Function Domain {.ninety}
 
 * Let M be a Turing machine defined by (Q, Σ, Γ, δ, q0, q~accept~, q~reject~). 
 * at any given time M is in some state $q \in Q$
 * and its head is on some tape square containing some tape symbol $\gamma \in \Gamma$
 * The transition function $\delta: Q \times \Gamma \longrightarrow Q \times \Gamma \times \{L, R\}$ depends on the machine state q and on the tape symbol 
 
-# Transition Function Range
+# Transition Function Range {.ninety}
 
 * The range of the transition function are triples of the type $(q', \gamma', d)$
 * where $q'$ is M’s next state,   
@@ -168,14 +168,14 @@ Q, Σ, Γ are all finite sets and
 
 
 
-# Computation
+# Computation {.ninety}
 
 * A Turing machine M = (Q, Σ, Γ, δ, q~0~, q~accept~, q~reject~) computes as follows.
 * Initially, M receives its input $w = w_{1}w_{2} . . . w_{n} \in \Sigma ^*$ on the leftmost n squares of the tape, and the rest of the tape is blank (i.e., filled with blank symbols).
 * The head starts on the leftmost square of the tape.
 * Note that Σ does not contain the blank symbol, so the first blank appearing on the tape marks the end of the input.
 
-# Computation (2)
+# Computation (2) {.ninety}
 
 * Once M has started, the computation proceeds according to the rules described by the transition function.
 * If M ever tries to move its head to the left off the left-hand end of the tape, the head stays in the same place for that move, even though the transition function indicates L.
@@ -207,7 +207,7 @@ Q, Σ, Γ are all finite sets and
 
 * Say that configuration C1 _**yields**_ configuration C2 if the Turing machine can legally go from C1 to C2 in a single step.
 
-# Yields
+# Yields {.seventy}
 
 * We define this notion formally as follows.
 * Suppose that we have a,b, and c in Γ, as well as u and v in Γ* and states q~i~ and q~j~. In that case, $ua\ q_{i}\ bv$ and $u\ q_{j}\ acv$ are two configurations.
@@ -216,14 +216,14 @@ Q, Σ, Γ are all finite sets and
 Turing machine moves leftward.
 * For a rightward move, say that $ua\ q_{i}\ bv\ \textrm{yields}\ uac\ q_{j}\ v$ if $δ(q_{i},b) = (q_{j},c,R)$.
 
-# Special Cases
+# Special Cases {.ninety}
 
 * Special cases occur when the head is at one of the ends of the configuration.
 * For the left-hand end, the configuration $q_{i}\ bv \textrm{yields} q_{j}\ cv$ if the transition is left-moving (because we prevent the machine from going off the left-hand end of the tape), and it yields $c\ q_{j}\ v$ for the right-moving transition.
 * For the right-hand end, the configuration $ua\ q_{i}$ is equivalent to $ua\ q_{i}\ ␣$ because we assume that blanks follow the part of the tape represented in the configuration.
 * Thus we can handle this case as before, with the head no longer at the right-hand end.
 
-# Special Configurations
+# Special Configurations {.ninety}
 
 * The _**start configuration**_ of M on input w is the configuration q0 w, which indicates that the machine is in the start state q0 with its head at the leftmost position on the tape.
 * In an _**accepting configuration**_, the state of the configuration is q~accept~.
@@ -260,7 +260,7 @@ Turing machine moves leftward.
 * By loop we mean that the machine simply does not halt.
 * Looping may entail any simple or complex behavior that never leads to a halting state.
 
-# Outcomes of a TM
+# Outcomes of a TM {.ninety}
 
 * A Turing machine M can fail to accept an input by entering the q~reject~ state and rejecting, or by looping.
 * Sometimes distinguishing a machine that is looping from one that is merely taking a long time is difficult.
@@ -307,7 +307,7 @@ number of 0s was odd, reject .
 * However, if the number of 0s seen is 1, the original number must have been a power of 2.
 * So in this case, the machine accepts.
 
-# M2 Formal Description
+# M2 Formal Description {.ninety}
 
 Now we give the formal description of $M2 = (Q, Σ, Γ, δ, q~1~, q_{accept}, q_{reject})$:
 
@@ -337,7 +337,7 @@ Now we give the formal description of $M2 = (Q, Σ, Γ, δ, q~1~, q_{accept}, q_
 
 # Descriptions of Turing Machines
 
-# Descriptions
+# Descriptions {.eighty}
 
 * As we did for finite and pushdown automata, we can formally describe a particular Turing machine by specifying each of its seven parts.
 * However, going to that level of detail can be cumbersome for all but the tiniest Turing machine, so we won’t spend much time giving such descriptions.
@@ -361,7 +361,7 @@ M~1~ =(Q,Σ,Γ,δ,q~1~,q~accept~,q~reject~)
 * δ is described in the state diagram below
 * The start, accept, and reject states are q~1~, q~accept~, and q~reject~, respectively.
 
-# M1 Transition Diagram
+# M1 Transition Diagram {.ninety}
 
 ![M2](images/lecture10-diagram5-m1.png){.stretch}
 
@@ -381,10 +381,14 @@ M~3~ = “On input string w:
 # M3 Algorithm
 
 1. Scan the input from left to right to determine whether it is a
-member of a^+b^+c^+ and reject if it isn’t.
+member of $\{a^+b^+c^+\}$ and reject if it isn’t.
 2. Return the head to the left-hand end of the tape.
-3. Cross off an a and scan to the right until a b occurs. Shuttle between the b’s and the c’s, crossing off one of each until all b’s are gone. If all c’s have been crossed off and some b’s remain, reject .
-4. Restore the crossed off b’s and repeat stage 3 if there is another a to cross off. If all a’s have been crossed off, determine whether all c’s also have been crossed off. If yes, accept; otherwise, reject .”
+3. Cross off an a and scan to the right until a b occurs. Shuttle between the b’s and the c’s, crossing off one of each until all b’s are gone. If all c’s have been crossed off and some b’s remain, reject.
+
+# M3 Algorithm
+
+4. Restore the crossed off b’s and repeat stage 3 if there is another a to cross off. 
+5. If all a’s have been crossed off, determine whether all c’s also have been crossed off. If yes, accept; otherwise, reject .”
 
 # Example M4
 
@@ -392,13 +396,13 @@ member of a^+b^+c^+ and reject if it isn’t.
 
 TM M4 is solving what is called the element distinctness problem. It is given a list of strings over {0,1} separated by #s and its job is to accept if all the strings are different. The language is:
 
-$$E = \{\#x_{1}\#x_{2}\#...\#x_{l}|\ each\ x_{i} ∈ \{0,1\}* and\ x_{i} \not=\ x_{j} for\ each\ i \neq j\}.$$
+$$E = \{\#x_{1}\#x_{2}\#...\#x_{l}|\ each\ x_{i} ∈ \{0,1\}* \\ and\ x_{i} \not=\ x_{j} for\ each\ i \neq j\}.$$
 
 # M4 High Level Description
 
 Machine M~4~ works by comparing x~1~ with x~2~ through x~l~, then by comparing x~2~ with x~3~ through x~l~, and so on.
 
-# M4 Informal Description
+# M4 Informal Description {.eighty}
 
 M4 = “On input w:
 
@@ -408,11 +412,15 @@ next stage. Otherwise, reject.
 2. Scan right to the next # and place a second mark on top of it. If
 no # is encountered before a blank symbol, only x~1~ was present,
 so accept.
-3. By zig-zagging, compare the two strings to the right of the
-marked #s. If they are equal, reject .
 
 # M4 Informal Description
 
+3. By zig-zagging, compare the two strings to the right of the
+marked #s. If they are equal, reject .
 4. Move the rightmost of the two marks to the next # symbol to
-the right. If no # symbol is encountered before a blank symbol, move the leftmost mark to the next # to its right and the rightmost mark to the # after that. This time, if no # is available for the rightmost mark, all the strings have been compared, so accept .
-5. Go to stage 3.”
+the right. If no # symbol is encountered before a blank symbol, move the leftmost mark to the next # to its right and the rightmost mark to the # after that. 
+
+# M4 Informal Description
+
+5. This time, if no # is available for the rightmost mark, all the strings have been compared, so accept .
+6. Go to stage 3.”
