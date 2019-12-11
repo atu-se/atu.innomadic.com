@@ -34,6 +34,13 @@
 
 ## Updates
 
+
+### Week of 7-Dec
+
+* By 17-Dec, carefully watch the following videos on Dependable Systems:
+  - [Dependability](https://www.youtube.com/watch?v=Oa27Xej1KdY)
+  - [Introduction to Socio-technical Systems](https://www.youtube.com/watch?v=xdFftbIToV0)
+
 ### Week of 30-Nov
 
 One of you asked book recommendations for software engineering.  Here are a few books I recommend:
@@ -44,7 +51,7 @@ One of you asked book recommendations for software engineering.  Here are a few 
 * Working Effectively with Legacy Code (Feathers)
 * Mythical Man-Month (Brooks)
 
-Buy 11-Dec, carefully watch the following *Distributed Systems* videos:
+By 11-Dec, carefully watch the following *Distributed Systems* videos:
 
   * [Introduction to Distributed Systems ](https://www.youtube.com/watch?v=F_4BCNl0iVk)
   * [Software as a service](https://www.youtube.com/watch?v=3DCqdY3yyDE)
