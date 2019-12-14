@@ -90,20 +90,20 @@ $$B = \{ w\#w | w \in \{0,1\}^*\} $$
 * We want M~1~ to accept if its input is a member of B and to reject otherwise.
 
 
-# Imagine you are the TM
+# Imagine you are the TM {.ninety}
 
 * We want M~1~ to accept if its input is a member of B and to reject otherwise.
 * To understand M~1~ better, put yourself in its place by imagining that you are standing on a mile-long input consisting of millions of characters.
 * Your goal is to determine whether the input is a member of B—that is, whether the input comprises two identical strings separated by a # symbol.
 
-# Imagine You are the TM
+# Imagine You are the TM {.ninety}
 
 > * The input is too long for you to remember it all, but you are allowed to move back and forth over the input and make marks on it.
 > * The obvious strategy is to zig-zag to the corresponding places on the two sides of the # and determine whether they match.
 > * Place marks on the tape to keep track of which places correspond.
 
 
-# Operation of our TM
+# Operation of our TM {.ninety}
 
 * We design M~1~ to work in that way.
 * It makes multiple passes over the input string with the read–write head.
@@ -115,7 +115,7 @@ $$B = \{ w\#w | w \in \{0,1\}^*\} $$
 * If it crosses off all the symbols, that means that everything matched successfully, and M~1~ goes into an accept state.
 * If it discovers a mismatch, it enters a reject state.
 
-# M1 Algorithm
+# M1 Algorithm {.ninety}
 
 * M~1~ = "On input string w:
 1. Zig-zag across the tape to corresponding positions on either
@@ -139,7 +139,7 @@ side of the # symbol to check whether these positions contain the same symbol. I
 * The third component is either L or R and indicates whether the head moves to the left or right after writing.
 * In this case, the L indicates a move to the left.
 
-# Formal Definition {.ninety}
+# Formal Definition {.eighty}
 
 A Turing machine is a 7-tuple, (Q, Σ, Γ, δ, q0, q~accept~, q~reject~), where
 Q, Σ, Γ are all finite sets and
@@ -159,7 +159,7 @@ Q, Σ, Γ are all finite sets and
 * and its head is on some tape square containing some tape symbol $\gamma \in \Gamma$
 * The transition function $\delta: Q \times \Gamma \longrightarrow Q \times \Gamma \times \{L, R\}$ depends on the machine state q and on the tape symbol 
 
-# Transition Function Range {.ninety}
+# Transition Function Range {.eighty}
 
 * The range of the transition function are triples of the type $(q', \gamma', d)$
 * where $q'$ is M’s next state,   
@@ -207,7 +207,7 @@ Q, Σ, Γ are all finite sets and
 
 * Say that configuration C1 _**yields**_ configuration C2 if the Turing machine can legally go from C1 to C2 in a single step.
 
-# Yields {.seventy}
+# Yields {.eighty}
 
 * We define this notion formally as follows.
 * Suppose that we have a,b, and c in Γ, as well as u and v in Γ* and states q~i~ and q~j~. In that case, $ua\ q_{i}\ bv$ and $u\ q_{j}\ acv$ are two configurations.
@@ -216,14 +216,14 @@ Q, Σ, Γ are all finite sets and
 Turing machine moves leftward.
 * For a rightward move, say that $ua\ q_{i}\ bv\ \textrm{yields}\ uac\ q_{j}\ v$ if $δ(q_{i},b) = (q_{j},c,R)$.
 
-# Special Cases {.ninety}
+# Special Cases {.eighty}
 
 * Special cases occur when the head is at one of the ends of the configuration.
 * For the left-hand end, the configuration $q_{i}\ bv \textrm{yields} q_{j}\ cv$ if the transition is left-moving (because we prevent the machine from going off the left-hand end of the tape), and it yields $c\ q_{j}\ v$ for the right-moving transition.
 * For the right-hand end, the configuration $ua\ q_{i}$ is equivalent to $ua\ q_{i}\ ␣$ because we assume that blanks follow the part of the tape represented in the configuration.
 * Thus we can handle this case as before, with the head no longer at the right-hand end.
 
-# Special Configurations {.ninety}
+# Special Configurations {.eighty}
 
 * The _**start configuration**_ of M on input w is the configuration q0 w, which indicates that the machine is in the start state q0 with its head at the leftmost position on the tape.
 * In an _**accepting configuration**_, the state of the configuration is q~accept~.
@@ -315,7 +315,7 @@ Now we give the formal description of $M2 = (Q, Σ, Γ, δ, q~1~, q_{accept}, q_
 * Σ={0}, and
 * Γ={0,x,␣}.
 * We describe δ with a state diagram
-* The start, accept, and reject states are q~1~, q~accept~,and q~reject~,respectively.
+* The start, accept, and reject states are q~1~, q~accept~,and q~reject~, respectively.
 
 # M2 State Diagram
 
@@ -424,3 +424,49 @@ the right. If no # symbol is encountered before a blank symbol, move the leftmos
 
 5. This time, if no # is available for the rightmost mark, all the strings have been compared, so accept .
 6. Go to stage 3.”
+
+
+
+# The Definition of Algorithm
+
+# The Definition of Algorithm {.ninety}
+
+* Informally speaking, an algorithm is a collection of simple instructions for carrying out some task.
+* Commonplace in everyday life, algorithms sometimes are called procedures or recipes. 
+* Algorithms also play an important role in mathematics. Ancient mathematical literature contains descriptions of algorithms for a variety of tasks, such as finding prime numbers and greatest common divisors. In contemporary mathematics, algorithms abound.
+
+# The Church-Turing Thesis {.ninety}
+
+* A formal definition of an algorithm came in the 1936 papers of Alonzo Church and Alan Turing.
+* Church used a notational system called the λ-calculus to define algorithms.
+* Turing did it with his “machines.”
+* These two definitions were shown to be equivalent.
+* This connection between the informal notion of algorithm and the precise definition has come to be called the Church–Turing thesis.
+
+# The Church-Turing Thesis
+
+>**The Church-Turing Thesis tells us that the intuitive notion of algorithms is equivalent to Turing machine algorithms**
+
+# Terminology for Describing Turing Machines {.seventy}
+
+* We continue to speak of Turing machines, but our real focus from now on is on algorithms.
+* That is, the Turing machine merely serves as a precise model for the definition of algorithm.
+* We may skip over the extensive theory of Turing machines themselves and not spend much time on the low-level programming of Turing machines.
+* We need only to be comfortable enough with Turing machines to believe that they capture all algorithms.
+
+# Terminology for Describing Turing Machines {.seventy}
+
+There are three possibilities for how to describe Turing machines:
+
+1. The first is the formal description that spells out in full the Turing machine’s states, transition function, and so on. It is the lowest, most detailed level of description.
+2. The second is a higher level of description, called the implementation description, in which we use English prose to describe the way that the Turing machine moves its head and the way that it stores data on its tape. At this level we do not give details of states or transition function.
+3. ...
+
+# Terminology for Describing Turing Machines {.seventy}
+
+There are three possibilities for how to describe Turing machines:
+
+...
+
+3. The third is the high-level description, wherein we use English prose to describe an algorithm, ignoring the implementation details. At this level we do not need to mention how the machine manages its tape or head.
+

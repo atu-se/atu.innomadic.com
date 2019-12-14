@@ -1,12 +1,12 @@
 ---
 title: FLAT
 subtitle: 10. Review
-date: November 23, 2019
+date: December 14, 2019
 export_on_save:
   pandoc: true
 output:
   custom_document:
-    path: lecture8-slides.html
+    path: lecture10-slides.html
     pandoc_args: ["-t", "revealjs", "-V",  "theme=white", "-V", "revealjs-url=../../../presentation/reveal.js", "--slide-level=1", "--standalone", "--katex=../../../presentation/katex/"]
 ---
 
@@ -39,14 +39,16 @@ output:
 
 <div class="container">
 <div class="column">
+
 ### Finite Automaton Schematic
 
-![](images/lecture8-diagram1.png){}
+![](images/lecture8-diagram1.png)
 </div>
 <div class="column">
+
 ### Pushdown Automaton Schematic
 
-![](images/lecture8-diagram2.png){}
+![](images/lecture8-diagram2.png)
 
 </div>
 
@@ -54,7 +56,7 @@ output:
 
 ### Turing Machine Schematic
 
-![](images/lecture10-diagram1-tmschematic.png){}
+![](images/lecture10-diagram1-tmschematic.png)
 
 </div>
 

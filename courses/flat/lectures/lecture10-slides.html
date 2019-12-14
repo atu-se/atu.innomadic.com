@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-12-14">
+  <title>FLAT</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../presentation/reveal.js/css/print/pdf.css' : '../../../presentation/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../presentation/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">FLAT</h1>
+  <p class="subtitle">10. Review</p>
+  <p class="date">December 14, 2019</p>
+</section>
+
+<section class="slide level1">
+
+<style>
+.ninety {
+   font-size: 90%;
+}
+  
+.eighty {
+   font-size: 80%;
+}
+  
+.seventy {
+   font-size: 70%;
+}
+  
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
+<section id="review" class="slide level1">
+<h1>Review</h1>
+</section>
+<section id="machine-overview" class="slide level1">
+<h1>Machine Overview</h1>
+<div class="container">
+<div class="column">
+<h3 id="finite-automaton-schematic">Finite Automaton Schematic</h3>
+<p><img data-src="images/lecture8-diagram1.png" /></p>
+</div>
+<div class="column">
+<h3 id="pushdown-automaton-schematic">Pushdown Automaton Schematic</h3>
+<p><img data-src="images/lecture8-diagram2.png" /></p>
+</div>
+<div class="column">
+<h3 id="turing-machine-schematic">Turing Machine Schematic</h3>
+<p><img data-src="images/lecture10-diagram1-tmschematic.png" /></p>
+</div>
+</div>
+</section>
+<section id="correlations" class="slide level1">
+<h1>Correlations</h1>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 29%" />
+<col style="width: 24%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Regular Languages</th>
+<th>Context-Free Languages</th>
+<th>Turing-Recognizable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Language Recognizer</strong></td>
+<td>Finite Automaton (NFA, DFA)</td>
+<td>Pushdown Automaton</td>
+<td>Turing Machine</td>
+</tr>
+<tr class="even">
+<td><strong>Language Generator</strong></td>
+<td>Regular Expression</td>
+<td>Context-Free Grammar</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="references-resources" class="slide level1">
+<h1>References, Resources</h1>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">ADUni.org Lectures</a></li>
+<li><a href="https://cseweb.ucsd.edu/classes/fa08/cse105/">UC San Diego Lecture Slides</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../presentation/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../presentation/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../presentation/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
