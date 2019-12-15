@@ -36,6 +36,7 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 | 7. [Context-Free Grammars](lectures/lecture7-slides.html)             | 2.1      |
 | 8. [Pushdown Automata](lectures/lecture8-slides.html)                 | 2.2      |
 | 9. [Turing Machines](lectures/lecture9-slides.html)                   | 3.1, 3.3 |
+| 10. [Review](lectures/lecture10-slides.html)                          | 3.1, 3.3 |
 
 
 ## Assignments
@@ -54,10 +55,16 @@ I have created a [summary page of important definitions, theorems, etc.](definit
 
 ## Updates
 
+### 14-Dec (Week 13)
+
+* Lecture 10 - Review
+* Prepare for exam next week
+* Turing machien lectures covered 3.1 and part of 3.3 in textbook
+
 ### 7-Dec (Week 12)
 
 * Lecture 9 - Church Turing Thesis
-* Rememember homeowrk #7 is due this week
+* Rememember homework #7 is due this week
 * Final exam should be next week study!
     * Non-Regular Languages
     * Context-Free Grammars
