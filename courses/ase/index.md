@@ -22,17 +22,31 @@
 
 ## Reading
 
-| Assignment                           | 
+| Assignment                           |
 |--------------------------------------|
-| 15. Software Re-use                  | 
-| 17. Distributed Software Engineering | 
-| 10. Dependable Systems               | 
-| 11. Reliability Engineering          | 
-| 12. Safety Engineering               | 
-| 13. Security Engineering             | 
-| 14. Resilience Engineering           | 
+| 15. Software Re-use                  |
+| 17. Distributed Software Engineering |
+| 10. Dependable Systems               |
+| 11. Reliability Engineering          |
+| 12. Safety Engineering               |
+| 13. Security Engineering             |
+| 14. Resilience Engineering           |
 
 ## Updates
+
+
+
+### Week of 14-Dec
+
+* By 28-Dec, carefully watch the following videos on Reliable Systems
+  *   [Airbus FCS Software and Hardware Redundancy](https://www.youtube.com/watch?v=EOexjozpBdI)
+  *  [Availability and Reliability](https://www.youtube.com/watch?v=C94_arCm-Mw)
+  *  [System success and failure (11:43)](https://www.youtube.com/watch?v=VkW7Dr3SXkg)
+* Prepare for your mid-term exam next week, covering:
+  * Software re-use
+  * Distributed systems
+  * Dependable systems engineering
+
 
 
 ### Week of 7-Dec
@@ -55,7 +69,7 @@ By 11-Dec, carefully watch the following *Distributed Systems* videos:
 
   * [Introduction to Distributed Systems ](https://www.youtube.com/watch?v=F_4BCNl0iVk)
   * [Software as a service](https://www.youtube.com/watch?v=3DCqdY3yyDE)
-  A high-level introduction to SaaS and its business advantages
+    A high-level introduction to SaaS and its business advantages
   * [Moving Products to the Cloud](https://www.youtube.com/watch?v=vHtaOGwzZ3k)
 
 ### Week of 23-Nov
