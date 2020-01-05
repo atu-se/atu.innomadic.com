@@ -15,8 +15,15 @@
 | [5. LL and Recursive Descent Parsing](lectures/F-ll-parsing.pptx) | EAC2e 3            | [Video 3](https://youtu.be/8xiEkS9fpjE?t=5579) |
 | [6. Intermediate Representations](lectures/G-IRs.pptx)             | EAC2e 5            |                                                  |
 
+## Resources
 
-## Compiler Project Info
+* Engineering a Compiler - 2nd Edition
+* [Crafting Interpreters](http://craftinginterpreters.com/)
+* [Compilers Student Repository](https://github.com/innomadic/compilers_student_2019)
 
-This class will include in-class labs 
+## Course Resources
+
+* [Github Repository](https://github.com/innomadic/compilers_student_2019)
+
+## News
 
