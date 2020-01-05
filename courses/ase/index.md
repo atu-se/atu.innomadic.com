@@ -34,8 +34,6 @@
 
 ## Updates
 
-
-
 ### Week of 14-Dec
 
 * By 28-Dec, carefully watch the following videos on Reliable Systems

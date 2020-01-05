@@ -21,7 +21,7 @@ Provided in Lecture
 
 ## Course Description
 
-The course  builds on the student's core knowledge of languages, grammars and programming and provides an opportunity to see how these core areas can come together to form an application area.
+The course builds on the student's core knowledge of languages, grammars and programming and provides an opportunity to see how these core areas can come together to form an application area.
 Also it imparts the knowledge about the following:
 
 *	To learn basic techniques used in compiler construction such as lexical analysis, top-down and bottom-up parsing, context-sensitive analysis, and intermediate code generation.
@@ -30,8 +30,8 @@ Also it imparts the knowledge about the following:
 
 ## Course Aims
 
-*	Implementing a small compiler using modern compiler writing tools.
-*	Providing the student with skills and knowledge (such as lexical analysis and parsing) which are applicable to a broad range of computer science application areas (such as text editors, information retrieval, etc...).
+* Providing the student with skills and knowledge (such as lexical analysis and parsing) which are applicable to a broad range of computer science application areas (such as text editors, information retrieval, etc...).
+* Implement portions of a compiler or interpreter
 
 
 ## Format and Procedures
@@ -54,8 +54,8 @@ Students should have an understanding of material from Formal Languages and Auto
 
 * 10% Attendance
 * 20% Assignments, Homework, Quizes, Labs
-* 30% Final
-* 40% Other Assessments 
+* 30% Mid-term
+* 40% Final
 
 Late assignments will be received reduced credit at the teacher's discretion.
 

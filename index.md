@@ -2,6 +2,7 @@
 
 * [Advanced Software Engineering](courses/ase)
 * [Formal Languages and Automata Theory](courses/flat)
+* [Compiler Design](courses/compilers)
 
 # 2018-2019
 
