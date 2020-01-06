@@ -21,9 +21,8 @@
 * [Crafting Interpreters](http://craftinginterpreters.com/)
 * [Compilers Student Repository](https://github.com/innomadic/compilers_student_2019)
 
-## Course Resources
-
-* [Github Repository](https://github.com/innomadic/compilers_student_2019)
-
 ## News
 
+### 5-Jan
+
+* Overview

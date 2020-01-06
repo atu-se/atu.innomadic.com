@@ -34,6 +34,17 @@
 
 ## Updates
 
+### Week of 4-Jan
+
+* By 15-Jan, carefully watch the following videos on Safety Engineering:
+  * [Sommerville on Safety](https://www.youtube.com/watch?v=IITymheitxw)
+  * [Stuxnet](https://www.youtube.com/watch?v=RilxHjt5yRE)
+  * [Warsaw Bus Accident 1993](https://www.youtube.com/watch?v=wzoxek74RTs)
+  * [Infrastructure Dependability](https://www.youtube.com/watch?v=w209SCYioUo)
+* You may also find these videos on Safety Engineering helpful:
+  * [Challenges in Safety Critical Systems Design and Development](https://www.youtube.com/watch?v=UKR214ma-yU)
+  * [Fatal Logic - Warsaw Case Study](https://www.youtube.com/watch?v=FZ5Ht_mhdrI)
+
 ### Week of 14-Dec
 
 * By 28-Dec, carefully watch the following videos on Reliable Systems
