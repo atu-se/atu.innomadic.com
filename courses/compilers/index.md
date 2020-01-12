@@ -23,6 +23,20 @@
 
 ## News
 
+### 12-Jan
+
+* [Lab 2](https://classroom.github.com/a/--4Gk314)
+    * Given the fact that many students missed lab 1 and we learned some lessons about how to handle private repos, we will try this again.
+    * Follow the link above and create a repository from it.
+    * Use VSCode or the your command promt to clone the repository to your computer
+    * Edit README.md to add your name
+    * Push the repository to Github
+    * Tell your instructor when you are finished
+
+    
 ### 5-Jan
 
 * Overview
+* Check out [Mozilla's page for Web Assembly](https://developer.mozilla.org/en-US/docs/WebAssembly)
+* Note that Assignment 1 is due 12-Jan
+
