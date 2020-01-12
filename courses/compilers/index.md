@@ -26,13 +26,9 @@
 ### 12-Jan
 
 * [Assignment 1 Repeat](https://classroom.github.com/a/fddYkAWl)
-* [Lab 2](https://classroom.github.com/a/JvWy2MI4)
-
-
     
 ### 5-Jan
 
 * Overview
 * Check out [Mozilla's page for Web Assembly](https://developer.mozilla.org/en-US/docs/WebAssembly)
 * Note that Assignment 1 is due 12-Jan
-
