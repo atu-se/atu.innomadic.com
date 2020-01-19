@@ -22,6 +22,12 @@
 
 ## News
 
+
+### 19-Jan 
+
+* [Lab 2](https://classroom.github.com/a/y-jgJC66) *Note: upload to Github by the end of class to receive credit*
+* [Assignment 2](https://classroom.github.com/a/KYaM6G7g) Due 25-Jan.
+
 ### 12-Jan
 
 * [Assignment 1 Repeat](https://classroom.github.com/a/fddYkAWl)
