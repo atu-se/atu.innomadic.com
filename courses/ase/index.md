@@ -34,6 +34,20 @@
 
 ## Updates
 
+### Week of 25-Jan
+
+* Watch the following video on Security Engineering:
+  - [Reverse Proxy vs. Load Balancer](https://www.youtube.com/watch?v=S8J2fkN2FeI)
+* You may also found these videos helpful:
+  - [Bug Hunting with Static Code Analysis](https://www.youtube.com/watch?v=Sb011qfbMkQ)
+
+
+### Week of 18-Jan
+
+* [OWASP Static Source Code Analysis Tools](https://owasp.org/www-community/Source_Code_Analysis_Tools)
+* Prepare for a quiz over Safety Engineering
+* Begin reading Chapter 13, Security Engineering
+
 ### Week of 4-Jan
 
 * By 15-Jan, carefully watch the following videos on Safety Engineering:
