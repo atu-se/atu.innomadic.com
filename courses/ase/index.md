@@ -40,6 +40,7 @@
   - [Reverse Proxy vs. Load Balancer](https://www.youtube.com/watch?v=S8J2fkN2FeI)
 * You may also found these videos helpful:
   - [Bug Hunting with Static Code Analysis](https://www.youtube.com/watch?v=Sb011qfbMkQ)
+* [Recent Windows Crypto Vulnerability](https://nakedsecurity.sophos.com/2020/01/14/serious-microsoft-crypto-vulnerability-patch-right-now/)
 
 
 ### Week of 18-Jan
