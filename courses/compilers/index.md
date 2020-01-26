@@ -25,6 +25,7 @@
 ### 25-Jan
 
 * Quiz next week over Lecture 1 and 2
+* Assignment 2 has been extended.  Check the link below for another opportunity to submit.
 
 ### 19-Jan 
 
