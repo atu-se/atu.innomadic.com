@@ -22,6 +22,10 @@
 
 ## News
 
+### 25-Jan
+
+* Quiz next week over Lecture 1 and 2
+
 ### 19-Jan 
 
 * [Lab 2](https://classroom.github.com/a/y-jgJC66) *Note: upload to Github by the end of class to receive credit*
