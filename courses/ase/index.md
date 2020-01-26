@@ -36,6 +36,7 @@
 
 ### Week of 25-Jan
 
+* [Join this Slack group for discussion](https://join.slack.com/t/abaarsotechu/shared_invite/enQtOTA5MTg5NTU4NzIyLTdiMGY4YWE1NzhiODQ2YzNlZWVhOTQwZTc1MWFlODc5MDFjNjk2YWU5ZjZiNDQzYmNhZmZiNWJhYjdmODUyZjE)
 * Watch the following video on Security Engineering:
   * [Reverse Proxy vs. Load Balancer](https://www.youtube.com/watch?v=S8J2fkN2FeI)
   * [Sommerville on Security](https://www.youtube.com/watch?v=GTxPzKfriOU)
