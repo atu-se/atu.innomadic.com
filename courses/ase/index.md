@@ -37,10 +37,20 @@
 ### Week of 25-Jan
 
 * Watch the following video on Security Engineering:
-  - [Reverse Proxy vs. Load Balancer](https://www.youtube.com/watch?v=S8J2fkN2FeI)
+  * [Reverse Proxy vs. Load Balancer](https://www.youtube.com/watch?v=S8J2fkN2FeI)
+  * [Sommerville on Security](https://www.youtube.com/watch?v=GTxPzKfriOU)
+  * [Security is a Sociotechnical Issue](https://www.youtube.com/watch?v=8bLwJy2BwKs)
+  * [Cybersecurity](https://www.youtube.com/watch?v=YPxlwsxEW48)
+  * [Cybersecurity Costs and Causes](https://www.youtube.com/watch?v=73E2tzQl_nY)  
 * You may also found these videos helpful:
-  - [Bug Hunting with Static Code Analysis](https://www.youtube.com/watch?v=Sb011qfbMkQ)
+  * [Bug Hunting with Static Code Analysis](https://www.youtube.com/watch?v=Sb011qfbMkQ)
+  * [What Every Engineer Needs to Know About Security and Where to Learn It (50 minutes)](https://www.youtube.com/watch?v=LL_n7dlBgfY)
+  * [Security Testing Fundamentals (90 minutes)](https://www.youtube.com/watch?v=PYwqyVlH8lQ)  
 * [Recent Windows Crypto Vulnerability](https://nakedsecurity.sophos.com/2020/01/14/serious-microsoft-crypto-vulnerability-patch-right-now/)
+
+
+
+
 
 
 ### Week of 18-Jan
