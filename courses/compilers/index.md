@@ -26,7 +26,7 @@
 
 * Quiz today
 * [Lab 3](https://classroom.github.com/a/I7ggYp6d)
-* [Assignment 3]()
+* [Assignment 3](https://classroom.github.com/a/SZbwzujd)
 
 ### 25-Jan
 
