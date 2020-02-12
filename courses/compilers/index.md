@@ -22,6 +22,10 @@
 
 ## News
 
+### 8-Feb
+
+* Midterm exam will cover Topics 1, 2, 3, and 5  (Note: Topic 4 on LR parsing will not be on the exam.  This also means you can skip studying sections 3.4 and 3.6 in the EAC textbook 
+
 ### 2-Feb
 
 * Quiz today

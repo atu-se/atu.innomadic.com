@@ -34,6 +34,13 @@
 
 ## Updates
 
+
+### Week of 8-Feb
+
+* Exam will cover chapters 11-13
+* There will be more emphasis on security
+* Material unique to Resilence Engineering will not be on the exam (though there is overlap with security topics)
+
 ### Week of 25-Jan
 
 * [Join this Slack group for discussion](https://join.slack.com/t/abaarsotechu/shared_invite/enQtOTA5MTg5NTU4NzIyLTdiMGY4YWE1NzhiODQ2YzNlZWVhOTQwZTc1MWFlODc5MDFjNjk2YWU5ZjZiNDQzYmNhZmZiNWJhYjdmODUyZjE)
@@ -48,8 +55,6 @@
   * [What Every Engineer Needs to Know About Security and Where to Learn It (50 minutes)](https://www.youtube.com/watch?v=LL_n7dlBgfY)
   * [Security Testing Fundamentals (90 minutes)](https://www.youtube.com/watch?v=PYwqyVlH8lQ)  
 * [Recent Windows Crypto Vulnerability](https://nakedsecurity.sophos.com/2020/01/14/serious-microsoft-crypto-vulnerability-patch-right-now/)
-
-
 
 
 
