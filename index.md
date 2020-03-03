@@ -1,8 +1,9 @@
 # 2019-2020
 
-* [Advanced Software Engineering](courses/ase)
-* [Formal Languages and Automata Theory](courses/flat)
+* Advanced Software Engineering
+* Formal Languages and Automata Theory
 * [Compiler Design](courses/compilers)
+* [Operating Systems](courses/os)
 
 # 2018-2019
 
