@@ -17,3 +17,4 @@
 
 * Read chapter 1 in your textbook
 * Prepare for quiz next week over chapter 1
+* [Java Thread Demo](https://www.javaworld.com/article/2074217/java-101--understanding-java-threads--part-1--introducing-threads-and-runnables.html)
