@@ -5,7 +5,7 @@
 | Lecture                              |
 |--------------------------------------|
 | [1. Introduction](lectures/ch1.pptx) |
-| [2. Operating System Structures]() | 
+| [2. Operating System Structures](lectures/ch2.pptx) | 
 | [3. Processes]() | 
 | [4. Threads and Concurrency]() | 
 | [5. CPU Scheduling]() | 
