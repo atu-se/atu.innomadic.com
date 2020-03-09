@@ -6,14 +6,14 @@
 
 ## Tentative Schedule
 
-| Topic                                                             | Reading Assignment                                                                                                                                   | Video Lecture                                  |
-|-------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
-| [1. Overview](lectures/A-overview.pptx)                           | EAC2e  1, 2 [CI 1](https://www.craftinginterpreters.com/introduction.html), [CI 2](https://www.craftinginterpreters.com/a-map-of-the-territory.html) | [Video 1](https://www.youtube.com/watch?v=Kk22pqxy_VI) |
-| [2. Formal Languages & Scanners](lectures/B-regexp.pptx)          | [CI 3](https://www.craftinginterpreters.com/the-lox-language.html)  [CI 4](https://www.craftinginterpreters.com/scanning.html)                       |
-| [3. Parsing & Context-Free Grammars](lectures/C-grammars.pptx)    | EAC2e 3 [CI 5](https://www.craftinginterpreters.com/representing-code.html)        [CI 6](https://www.craftinginterpreters.com/parsing-expressions.html)                                                                                                                                      | [Video 2](https://www.youtube.com/watch?v=DwK5EAC3kDI) |
-| [4. LR Parsing](lectures/D-lr-parsing.pptx)                       |                                                                                                                                                      |
-| [5. LL and Recursive Descent Parsing](lectures/F-ll-parsing.pptx) | EAC2e 3                                                                                                                                              | [Video 3](https://youtu.be/8xiEkS9fpjE?t=5579) |
-| [6. Intermediate Representations](lectures/G-IRs.pptx)            | EAC2e 5                                                                                                                                              |                                                |
+| Topic                                                             | Reading Assignment                                                                                                                                       | Video Lecture                                  |
+|-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| [1. Overview](lectures/A-overview.pptx)                           | EAC2e  1, 2 [CI 1](https://www.craftinginterpreters.com/introduction.html), [CI 2](https://www.craftinginterpreters.com/a-map-of-the-territory.html)     | [Video 1](https://www.youtube.com/watch?v=Kk22pqxy_VI) |
+| [2. Formal Languages & Scanners](lectures/B-regexp.pptx)          | [CI 3](https://www.craftinginterpreters.com/the-lox-language.html)  [CI 4](https://www.craftinginterpreters.com/scanning.html)                           |
+| [3. Parsing & Context-Free Grammars](lectures/C-grammars.pptx)    | EAC2e 3 [CI 5](https://www.craftinginterpreters.com/representing-code.html)        [CI 6](https://www.craftinginterpreters.com/parsing-expressions.html) | [Video 2](https://www.youtube.com/watch?v=DwK5EAC3kDI) |
+| [4. LR Parsing](lectures/D-lr-parsing.pptx)                       |                                                                                                                                                          |
+| [5. LL and Recursive Descent Parsing](lectures/F-ll-parsing.pptx) | EAC2e 3                                                                                                                                                  | [Video 3](https://youtu.be/8xiEkS9fpjE?t=5579) |
+| [6. Intermediate Representations](lectures/G-IRs.pptx)            | EAC2e 5      [CI 7](https://www.craftinginterpreters.com/evaluating-expressions.html)                                                                    |                                                |
 
 ## Resources
 
@@ -21,6 +21,10 @@
 * [Crafting Interpreters](http://craftinginterpreters.com/)
 
 ## News
+
+### 9-Mar
+
+* Quiz next week over parsing (LL parsing and LR Parsing)
 
 ### 8-Feb
 
