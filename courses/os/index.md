@@ -13,6 +13,12 @@
 
 ## Updates
 
+### Week of 14-March
+
+* Planned demos
+    * Sysinternals
+    * Debugging tools
+
 ### Week of 7-March
 
 * Read chapter 2 in your textbook
@@ -24,8 +30,12 @@
     * [_Hidden Figures_ Movie Trailer](https://www.youtube.com/watch?v=RK8xHq6dfAo)
     * [Margaret Hamilton, Apollo Lead Software Engineer](https://qeprize.org/news/margaret-hamilton-apollos-code/)
     * [Margaret Hamilton (Video)](https://www.youtube.com/watch?v=kTn56jJW4zY)
+    * [Margaret Hamilton Bio](https://en.wikipedia.org/wiki/File:Margaret_Hamilton.gif)
+    * [Origin of Debugging](https://en.wikipedia.org/wiki/Debugging#Origin_of_the_term)
 
-[![Margaret Hamilton beside Apollo guidance system software on punch-cards](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Margaret_Hamilton.gif/385px-Margaret_Hamilton.gif)](https://en.wikipedia.org/wiki/File:Margaret_Hamilton.gif)
+![Margaret Hamilton beside Apollo guidance system software on punch-cards](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Margaret_Hamilton.gif/385px-Margaret_Hamilton.gif)
+
+![The first computer bug](https://en.wikipedia.org/wiki/Debugging#/media/File:H96566k.jpg)
 
 ### Week of 29-Feb
 
