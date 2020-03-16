@@ -19,6 +19,8 @@
     * Sysinternals
     * Debugging tools
 * [Download SysInternals Tools here](https://download.sysinternals.com/files/SysinternalsSuite.zip)
+* [Endianness](https://en.wikipedia.org/wiki/Endianness)
+
 
 ### Week of 7-March
 
