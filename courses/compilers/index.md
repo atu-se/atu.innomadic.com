@@ -22,6 +22,10 @@
 
 ## News
 
+### 14-March
+
+* [Web Assembly Intro](https://www.youtube.com/watch?v=qDTpLKJ6e4M)
+
 ### 9-Mar
 
 * Quiz next week over parsing (LL parsing and LR Parsing)
