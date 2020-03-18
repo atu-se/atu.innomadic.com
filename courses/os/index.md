@@ -20,6 +20,7 @@
     * Debugging tools
 * [Download SysInternals Tools here](https://download.sysinternals.com/files/SysinternalsSuite.zip)
 * [Endianness](https://en.wikipedia.org/wiki/Endianness)
+* [Process Explorer Overview Video](https://channel9.msdn.com/shows/defrag-tools/defrag-tools-2-process-explorer)
 
 
 ### Week of 7-March
