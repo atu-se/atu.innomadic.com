@@ -13,6 +13,14 @@
 
 ## Updates
 
+### 25-March
+
+* With the shutdowns due to Coronavirus, we will be modifying how we manage this class
+* All students are now *required* to join the Slack community and check it regularly
+* I will be assigning required video lectures
+* Your first required lecture is on the SysInternal Tool [Process Monitor](https://channel9.msdn.com/shows/defrag-tools/defrag-tools-3-process-monitor).  You should also download the [SysInternals Tools Suite](https://download.sysinternals.com/files/SysinternalsSuite.zip) You should complete watching this video by Sunday, 29-March.
+
+
 ### Week of 14-March
 
 * Planned demos
