@@ -22,6 +22,14 @@
 
 ## News
 
+### 25-March
+
+* With the shutdowns due to Coronavirus, we will be modifying how we manage this class
+* All students are now *required* to join the Slack community and check it regularly
+* I will be assigning required video lectures
+* Your first required lecture is on [Abstract Syntax Trees](https://youtu.be/LyI5bmHgIgw?t=7744)  (Note that the video is set to begin at the 2 hour 9 minute mark.  This is my intention.  If you want to review LL and LR parsing you may watch the entire video.)  You should complete watching this video by Sunday, 29-March.
+
+
 ### 14-March
 
 * [Web Assembly Intro](https://www.youtube.com/watch?v=qDTpLKJ6e4M)
