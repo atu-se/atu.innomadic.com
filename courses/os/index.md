@@ -2,24 +2,31 @@
 
 ## Lectures
 
-| Lecture                                             |
-|-----------------------------------------------------|
-| [1. Introduction](lectures/ch1.pptx)                |
-| [2. Operating System Structures](lectures/ch2.pptx) |
-| [3. Processes](lectures/ch3.pptx)                   |
-| [4. Threads and Concurrency]()                      |
-| [5. CPU Scheduling]()                               |
+| Lecture                                             | Video | 
+|-----------------------------------------------------|-------|
+| [1. Introduction](lectures/ch1.pptx)                ||
+| [2. Operating System Structures](lectures/ch2.pptx) ||
+| [3. Processes](lectures/ch3.pptx)                   | [UMass 4](https://www.youtube.com/watch?v=SfG_BefeGT4&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=4)|
+| [4. Threads and Concurrency]()                      ||
+| [5. CPU Scheduling]()                               ||
 
 
 ## Updates
 
-### 25-March
+
+### Week of 28-March 
+
+* By the end of the week you should watch [this lecture on processes](https://www.youtube.com/watch?v=SfG_BefeGT4&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=4)
+* All students are require to check the Slack channel at least each school day (Sat-Wed).
+
+### Week of 21-March 
 
 * With the shutdowns due to Coronavirus, we will be modifying how we manage this class
 * All students are now *required* to join the Slack community and check it regularly
 * I will be assigning required video lectures
 * Your first required lecture is on the SysInternal Tool [Process Monitor](https://channel9.msdn.com/shows/defrag-tools/defrag-tools-3-process-monitor).  You should also download the [SysInternals Tools Suite](https://download.sysinternals.com/files/SysinternalsSuite.zip) You should complete watching this video by Sunday, 29-March.
-* All students are require to check the Slack channel at least each school day (Sat-Wed).
+
+
 
 
 ### Week of 14-March
