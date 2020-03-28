@@ -30,6 +30,7 @@
 * All students are now *required* to join the Slack community and check it regularly
 * I will be assigning required video lectures
 * Your first required lecture is on [Abstract Syntax Trees](https://youtu.be/LyI5bmHgIgw?t=7744)  (Note that the video is set to begin at the 2 hour 9 minute mark.  This is my intention.  If you want to review LL and LR parsing you may watch the entire video.)  You should complete watching this video by Sunday, 29-March.
+* All students are require to check the Slack channel at least each school day (Sat-Wed).
 
 
 ### 14-March
