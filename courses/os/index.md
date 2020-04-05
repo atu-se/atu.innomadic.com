@@ -2,17 +2,20 @@
 
 ## Lectures
 
-| Lecture                                             | Video | 
+| Lecture                                             | Supplemental Video | 
 |-----------------------------------------------------|-------|
-| [1. Introduction](lectures/ch1.pptx)                ||
-| [2. Operating System Structures](lectures/ch2.pptx) ||
+| [1. Introduction](lectures/ch1.pptx)                | [UMass 1](https://youtu.be/dv4mXBsv6TI?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k) [UMass 2](https://youtu.be/Nc6KKSv_Ljc?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k)|
+| [2. Operating System Structures](lectures/ch2.pptx) | [UMass 3](https://youtu.be/UxCiuctkKYo?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k)|
 | [3. Processes](lectures/ch3.pptx)                   | [UMass 4](https://www.youtube.com/watch?v=SfG_BefeGT4&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=4)|
-| [4. Threads and Concurrency]()                      ||
-| [5. CPU Scheduling]()                               ||
+| [4. Threads and Concurrency]()                      | [UMass 6b](https://youtu.be/KhjqKZr3fdM?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&t=1633) |
+| [5. CPU Scheduling]()                               | [UMass 5](https://www.youtube.com/watch?v=Q_tycyhNkgA&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=5) [UMass 6a](https://youtu.be/KhjqKZr3fdM?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k)|
 
 
 ## Updates
 
+## Week of 4-April
+
+* This week we are covering Threads.  Check Slack for the links to my lectures.  I have also added supplemental videos in the Lectures table above.  You should have read through chapter 4 now, and you should begin reading chapter 5.
 
 ### Week of 28-March 
 
