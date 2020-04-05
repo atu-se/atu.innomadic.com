@@ -25,6 +25,11 @@
 
 ## News
 
+### 4-March 
+
+* The topic for this week is Semantic Analysis
+* I have added the lecture slides and a link to a a supplemental video in the lectures table above
+
 ### 25-March
 
 * With the shutdowns due to Coronavirus, we will be modifying how we manage this class
