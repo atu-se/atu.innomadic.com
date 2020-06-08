@@ -14,7 +14,7 @@
 | [4. LR Parsing](lectures/D-lr-parsing.pptx)                       |                                                                                                                                                          |
 | [5. LL and Recursive Descent Parsing](lectures/F-ll-parsing.pptx) | EAC2e 3                                                                                                                                                  | [Video 3](https://youtu.be/8xiEkS9fpjE?t=5579) |
 | [6. Intermediate Representations](lectures/G-IRs.pptx)            | EAC2e 5      [CI 7](https://www.craftinginterpreters.com/evaluating-expressions.html)                                                                    |       See video 3 above                                         |
-| [7. Abstract Syntax Trees](H-ASTs.pptx) | | See video 3 above |
+| [7. Abstract Syntax Trees](lectures/H-ASTs.pptx) | | See video 3 above |
 | [8. Semantic Analysis](lectures/I-semantics.pptx) | | [Video 4](https://www.youtube.com/watch?v=U2E2FLY_MWI&t=0m42s)
 
 
