@@ -9,9 +9,16 @@
 | [3. Processes](lectures/ch3.pptx)                   | [UMass 4](https://www.youtube.com/watch?v=SfG_BefeGT4&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=4)|
 | [4. Threads and Concurrency](lectures/ch4.pptx)                      | [UMass 6b](https://youtu.be/KhjqKZr3fdM?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&t=1633) |
 | [5. CPU Scheduling](lectures/ch5.pptx)                               | [UMass 5](https://www.youtube.com/watch?v=Q_tycyhNkgA&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=5) [UMass 6a](https://youtu.be/KhjqKZr3fdM?list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k)|
+| [6. Synchronization Tools](lectures/ch6.pptx) | [Umass 7](https://www.youtube.com/watch?v=sYBfnDUsvrc&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=7), [Umass 8](https://www.youtube.com/watch?v=o5cXttjjBVs&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=8) |
+| [7. Synchronization Example](lectures/ch7.pptx) | [Umass 9](https://www.youtube.com/watch?v=Kj8bL_L9Ah8&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=9) | 
 
 
 ## Updates
+
+## Week of 4-Aug 
+
+* Lecture notes through chapter 7 have been posted.
+* Video lectures should come via Dean
 
 ## Week of 4-April
 
