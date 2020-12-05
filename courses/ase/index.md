@@ -2,7 +2,7 @@
 
 ## Lectures
 
-| Lecture | Reading | Slides                                                                                     |
+| Lecture | Assigned Reading | Slides                                                                                     |
 |------|------------|---------------------------------------------------------------------------------|
 | 1.   | 15 | [Software Re-use](lectures/Ch15 Software reuse.pptx)                                    |
 | 2.   | 17| [Distributed Software Engineering](lectures/Ch17 Distributed software engineering.pptx) |
@@ -28,6 +28,11 @@
 
 * Reminder:  quiz over chapter on is on Wednesday, December 9
 * Reminder:  watch all of the videos linked in 21-Nov
+* Begin reading chapter 17
+* By 16-Dec, carefully watch:
+  * [Introduction to Distributed Systems ](https://www.youtube.com/watch?v=F_4BCNl0iVk)
+  * [Software as a service](https://www.youtube.com/watch?v=3DCqdY3yyDE)
+  * [Moving Products to the Cloud](https://www.youtube.com/watch?v=vHtaOGwzZ3k)
 
 ###  Week of 21-Nov
 
