@@ -33,6 +33,13 @@
   * [Introduction to Distributed Systems ](https://www.youtube.com/watch?v=F_4BCNl0iVk)
   * [Software as a service](https://www.youtube.com/watch?v=3DCqdY3yyDE)
   * [Moving Products to the Cloud](https://www.youtube.com/watch?v=vHtaOGwzZ3k)
+* This week we did a practical demonstration of the Git source code versioning system, which is very common in engineering teams today.  
+* I encourage to work through this [Git tutorial](https://git-scm.com/docs/gittutorial)
+
+### Week of 28-Nov
+
+* This week we did a practical demonstration of using an application framework:  the [Django Web framework for Python](https://www.djangoproject.com/)
+* I encourage you to try out the [Django introductory tutorial](https://docs.djangoproject.com/en/3.1/intro/) at home
 
 ###  Week of 21-Nov
 
