@@ -24,6 +24,11 @@
 
 ## Updates
 
+### Week of 5-Dec
+
+* Reminder:  quiz over chapter on is on Wednesday, December 9
+* Reminder:  watch all of the videos linked in 21-Nov
+
 ###  Week of 21-Nov
 
 * Read Chapter 15
