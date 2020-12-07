@@ -55,53 +55,27 @@
 
       {{ content }}
 
-      {%- comment -%}
-      Updated for boostrap 4
-      -- https://getbootstrap.com/docs/4.0/components/breadcrumb/ --
-      and does not create a link for the last (active) item
-      {%- endcomment -%}
-      {%- assign url_parts = page.url | split: '/' -%}
-      {%- capture loop_max -%}{{ url_parts.size | minus: 1 }}{%- endcapture -%}
-      {%- assign j = loop_max | plus: 0 -%}
-      {%- assign bc_path = "/" -%}
-      {%- comment -%}
-      the result of following assignment (if successful) will be an array,
-      so bc_page[0] is used to get the page corresponding to the path
-      {%- endcomment -%}
-      {%- assign bc_page = site.pages | where: "url", bc_path -%}
-      <div class="card-header">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb card-header lightcthru">
-            <li class="breadcrumb-item">
-              <a href="{{ bc_path | relative_url }}">
-                {{ bc_page[0].breadcrumb }}
-              </a>
-            </li>
-            {%- for i in (1..loop_max) -%}
-            {%- capture bc_path -%}{{bc_path}}{{url_parts[i]}}{%- endcapture -%}
-            {%- unless bc_path contains ".html" -%}
-            {%- capture bc_path -%}{{bc_path}}/{%- endcapture -%}
-            {%- endunless -%}
-            {%- comment -%}
-            the result of following assignment (if successful) will be an array,
-            so bc_page[0] is used to get the page corresponding to the path
-            {%- endcomment -%}
-            {%- assign bc_page = site.pages | where: "url", bc_path -%}
-            {% if bc_page and i < j %}
-            <li class="breadcrumb-item">
-              <a href="{{ bc_path | relative_url }}">
-                {{ bc_page[0].breadcrumb }}
-              </a>
-            </li>
-            {% elsif bc_page and i == j %}
-            <li class="breadcrumb-item active">
-              {{ bc_page[0].breadcrumb }}
-            </li>
-            {% endif %}
-            {%- endfor -%}
-          </ol>
-        </nav>
-      </div>
+      <ol class="breadcrumb">
+        <li><a href="{{ site.baseurl }}/">Home</a></li>
+        {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
+        {% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
+        {% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
+        {% for i in (1..forLoopMaxInt) %}
+        {% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/index.html{% endcapture %}
+        {% capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
+        {% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
+        {% for breadcrumb_page in site.pages %}
+        {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url == breadcrumb_page.url  %}
+        {% assign j = forLoopMaxInt | plus: 0 %}
+        <li {% if i == j %}class="active" {% endif %}>
+          {% capture breadcrumb_page_page_url_without_index_html %}{{ breadcrumb_page.url | remove: "index.html" }}{% endcapture %}
+          <a
+            href="{{ site.baseurl }}{{breadcrumb_page_page_url_without_index_html}}">{{breadcrumb_page_page_url_without_index_html}}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+      </ol>
 
     </section>
     <footer>
