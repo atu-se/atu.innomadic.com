@@ -2,27 +2,48 @@
 
 ## Lectures
 
-| Lecture | Assigned Reading | Slides                                                                                     |
-|------|------------|---------------------------------------------------------------------------------|
-| 1.   | 15 | [Software Re-use](lectures/Ch15 Software reuse.pptx)                                    |
-| 2.   | 17| [Distributed Software Engineering](lectures/Ch17 Distributed software engineering.pptx) |
-| 3.   | 10| [Dependable Systems](lectures/Ch10 Dependable systems.pptx)                             |
-| 4.   | 11| [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)                   |
-| 5.   | 12| [Safety Engineering](lectures/Ch12 Safety engineering.pptx)                             |
-| 6.   | 13| [Security Engineering](lectures/Ch13 Security engineering.pptx)                         |
-| 7.   | 14| [Resilience engineering](lectures/Ch14 Resilience engineering.pptx)                     |
+| Lecture | Assigned Reading | Slides                                                                                  |
+|---------|------------------|-----------------------------------------------------------------------------------------|
+| 1.      | 15               | [Software Re-use](lectures/Ch15 Software reuse.pptx)                                    |
+| 2.      | 17               | [Distributed Software Engineering](lectures/Ch17 Distributed software engineering.pptx) |
+| 3.      | 10               | [Dependable Systems](lectures/Ch10 Dependable systems.pptx)                             |
+| 4.      | 11               | [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)                   |
+| 5.      | 12               | [Safety Engineering](lectures/Ch12 Safety engineering.pptx)                             |
+| 6.      | 13               | [Security Engineering](lectures/Ch13 Security engineering.pptx)                         |
+| 7.      | 14               | [Resilience engineering](lectures/Ch14 Resilience engineering.pptx)                     |
+
+## Grades
+
+The tentative plan for grades is as follows
+
+* Attendance - 10%
+* Midterm Exam - 35%
+* Final Exam - 40%
+* Quizzes and Assignments - 15%
 
 ## Assignments
 
 *Note: most chapters will have assigned videos for viewing.  Find these in the Update section for each week.*
 
-| Assignment                                                                                                                  | Due Date |
-|-----------------------------------------------------------------------------------------------------------------------------|----------|
-| |  |
+| Assignment               | Due Date |
+|--------------------------|----------|
+| 1. Create GitHub account | 23-Dec   |
 
+*Note: assignments and quizzes will be averaged together, tentatively for 15% of your final grade.*
 
 
 ## Updates
+
+### Week of 12-Dec
+
+* Be prepared for a quiz over chapter 17 on December 23
+* Assignment 1 is posted above and is due on December 23
+* A tentative grading plan has been posted above
+* We mentioned the following traditional games during the lecture:
+  * [Shax](http://www.jamamusse.com/2018/11/03/shax-a-somali-game/)
+  * [Layli](https://sourceforge.net/projects/layli/)
+  * *Note: SourceForge is a source code/application sharing site that was popular long before GitHub existed.*
+* You are invited to join an [ATU Slack workspace](https://join.slack.com/t/abaarsotechu/shared_invite/zt-kg78k2bk-XwH4mdKYY~XSAgvbyI~U6g).  I encourage you to join, use it as a collaboration tool.  It is a common communication tool on software engineering teams.
 
 ### Week of 5-Dec
 
