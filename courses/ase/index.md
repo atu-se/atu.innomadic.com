@@ -34,6 +34,12 @@ The tentative plan for grades is as follows
 
 ## Updates
 
+### Week of 19-Dec
+
+* Be prepared for a quiz over chapter 17 this week
+* Remember to send send me your GitHub username by 23-Dec, via email or Slack. Also, please identify yourself by name when you contact me.  :-)  Note that this will be treated as a quiz grade.
+* Please go through the Github [Hello World tutorial](https://guides.github.com/activities/hello-world/) in your account.
+
 ### Week of 12-Dec
 
 * Be prepared for a quiz over chapter 17 on December 23
