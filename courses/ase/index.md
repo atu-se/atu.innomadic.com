@@ -34,6 +34,11 @@ The tentative plan for grades is as follows
 
 ## Updates
 
+### Week of 26-Dec
+
+* Check out [Reverse Proxy vs. Load Balancer](https://www.youtube.com/watch?v=S8J2fkN2FeI)
+* This week we plan to watch [The Ariane 5 launch failure](https://www.youtube.com/watch?v=W3YJeoYgozw)
+
 ### Week of 19-Dec
 
 * Be prepared for a quiz over chapter 17 this week
