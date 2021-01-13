@@ -25,14 +25,23 @@ The tentative plan for grades is as follows
 
 *Note: most chapters will have assigned videos for viewing.  Find these in the Update section for each week.*
 
-| Assignment               | Due Date |
-|--------------------------|----------|
-| 1. Create GitHub account | 23-Dec   |
+| Assignment                                                 | Due Date |
+|------------------------------------------------------------|----------|
+| 1. Create GitHub account                                   | 23-Dec   |
+| 2. [Unit testing](https://classroom.github.com/a/8vRP5O2f) | 20-Jan   |
 
 *Note: assignments and quizzes will be averaged together, tentatively for 15% of your final grade.*
 
 
 ## Updates
+
+### Week of 9-Jan
+
+* [Assignment 2](https://classroom.github.com/a/8vRP5O2f) has been released.  Please read the instructions carefully, including the README.  You will clone the repository and then push your changes to Github to submit your work.  Begin the assignment early, and you are encouraged to submit multiple times -- don't wait until the deadline to learn how to push changes.  
+* By 19-Jan, carefully watch the following videos on Reliable Systems
+  *  [Airbus FCS Software and Hardware Redundancy](https://www.youtube.com/watch?v=EOexjozpBdI)
+  *  [Availability and Reliability](https://www.youtube.com/watch?v=C94_arCm-Mw)
+  *  [System success and failure (11:43)](https://www.youtube.com/watch?v=VkW7Dr3SXkg)
 
 ### Week of 26-Dec
 
