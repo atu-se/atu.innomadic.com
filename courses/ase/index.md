@@ -35,6 +35,8 @@ The tentative plan for grades is as follows
 
 ## Updates
 
+* [Lab 1](https://classroom.github.com/a/NotuurQy)
+
 ### Week of 9-Jan
 
 * [Assignment 2](https://classroom.github.com/a/8vRP5O2f) has been released.  Please read the instructions carefully, including the README.  You will clone the repository and then push your changes to Github to submit your work.  Begin the assignment early, and you are encouraged to submit multiple times -- don't wait until the deadline to learn how to push changes.  
