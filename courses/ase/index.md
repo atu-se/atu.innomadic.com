@@ -35,7 +35,22 @@ The tentative plan for grades is as follows
 
 ## Updates
 
+### Week of 30-Jan 
+
 * [Lab 1](https://classroom.github.com/a/NotuurQy)
+* This week we will begin the lectures on Security Engineering.  Please read chapter 13.
+* Watch the following video on Security Engineering:
+  * [Stuxnet](https://www.youtube.com/watch?v=RilxHjt5yRE)
+  * [Sommerville on Security](https://www.youtube.com/watch?v=GTxPzKfriOU)
+  * [Security is a Sociotechnical Issue](https://www.youtube.com/watch?v=8bLwJy2BwKs)
+  * [Cybersecurity](https://www.youtube.com/watch?v=YPxlwsxEW48)
+  * [Cybersecurity Costs and Causes](https://www.youtube.com/watch?v=73E2tzQl_nY)  
+* You may also found these videos helpful:
+  * [Bug Hunting with Static Code Analysis](https://www.youtube.com/watch?v=Sb011qfbMkQ)
+  * [What Every Engineer Needs to Know About Security and Where to Learn It (50 minutes)](https://www.youtube.com/watch?v=LL_n7dlBgfY)
+  * [Security Testing Fundamentals (90 minutes)](https://www.youtube.com/watch?v=PYwqyVlH8lQ)  
+  * [Recent Windows Crypto Vulnerability](https://nakedsecurity.sophos.com/2020/01/14/serious-microsoft-crypto-vulnerability-patch-right-now/)
+
 
 ### Week of 9-Jan
 
