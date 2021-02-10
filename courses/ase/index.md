@@ -29,7 +29,7 @@ The tentative plan for grades is as follows
 |------------------------------------------------------------|----------|
 | 1. Create GitHub account                                   | 23-Dec   |
 | 2. [Unit testing](https://classroom.github.com/a/8vRP5O2f) | 20-Jan   |
-| 3. [Threat and Control Analysis](https://classroom.github.com/a/DX4S5QSt) | 17-Feb|
+| 3. [Threat and Control Analysis](https://classroom.github.com/a/OD3icHgU) | 17-Feb|
 
 *Note: assignments and quizzes will be averaged together, tentatively for 15% of your final grade.*
 
@@ -38,7 +38,7 @@ The tentative plan for grades is as follows
 
 ### Week of 6-Feb
 
-* [Assignment 3](https://classroom.github.com/a/DX4S5QSt) has been released; it is due 17-Feb.
+* [Assignment 3](https://classroom.github.com/a/OD3icHgU) has been released; it is due 17-Feb.
 
 ### Week of 30-Jan 
 
