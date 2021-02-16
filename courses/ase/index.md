@@ -8,9 +8,9 @@
 | 2.      | 17               | [Distributed Software Engineering](lectures/Ch17 Distributed software engineering.pptx) |
 | 3.      | 10               | [Dependable Systems](lectures/Ch10 Dependable systems.pptx)                             |
 | 4.      | 11               | [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)                   |
-| 5.      | 12               | [Safety Engineering](lectures/Ch12 Safety engineering.pptx)                             |
-| 6.      | 13               | [Security Engineering](lectures/Ch13 Security engineering.pptx)                         |
-| 7.      | 14               | [Resilience engineering](lectures/Ch14 Resilience engineering.pptx)                     |
+| 5.      | 13               | [Security Engineering](lectures/Ch13 Security engineering.pptx)                         |
+| 6.      | 12               | [Safety Engineering](lectures/Ch12 Safety engineering-abbreviated.pptx)                 |
+
 
 ## Grades
 
@@ -25,16 +25,20 @@ The tentative plan for grades is as follows
 
 *Note: most chapters will have assigned videos for viewing.  Find these in the Update section for each week.*
 
-| Assignment                                                 | Due Date |
-|------------------------------------------------------------|----------|
-| 1. Create GitHub account                                   | 23-Dec   |
-| 2. [Unit testing](https://classroom.github.com/a/8vRP5O2f) | 20-Jan   |
-| 3. [Threat and Control Analysis](https://classroom.github.com/a/OD3icHgU) | 17-Feb|
+| Assignment                                                                | Due Date |
+|---------------------------------------------------------------------------|----------|
+| 1. Create GitHub account                                                  | 23-Dec   |
+| 2. [Unit testing](https://classroom.github.com/a/8vRP5O2f)                | 20-Jan   |
+| 3. [Threat and Control Analysis](https://classroom.github.com/a/OD3icHgU) | 17-Feb   |
 
 *Note: assignments and quizzes will be averaged together, tentatively for 15% of your final grade.*
 
 
 ## Updates
+
+### Week of 13-Feb
+
+* Lecture slides for Safety Engineering have been updated
 
 ### Week of 6-Feb
 
