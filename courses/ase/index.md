@@ -9,7 +9,7 @@
 | 3.      | 10               | [Dependable Systems](lectures/Ch10 Dependable systems.pptx)                             |
 | 4.      | 11               | [Reliability Engineering](lectures/Ch11 Reliability Engineering.pptx)                   |
 | 5.      | 13               | [Security Engineering](lectures/Ch13 Security engineering.pptx)                         |
-| 6.      | 12               | [Safety Engineering](lectures/Ch12 Safety engineering-abbreviated.pptx)                 |
+| 6.      | 12               | [Safety Engineering](lectures/Ch12 Safety Engineering-abbreviated.pptx)                 |
 
 
 ## Grades
