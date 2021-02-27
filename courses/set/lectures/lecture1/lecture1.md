@@ -7,7 +7,7 @@ export_on_save:
 output:
   custom_document:
     path: lecture1-slides.html
-    pandoc_args: ["-t", "revealjs", "-V",  "theme=white", "-V", "revealjs-url=../../../presentation/reveal.js-4.1.js", "--slide-level=2", "--standalone"]
+    pandoc_args: ["-t", "revealjs", "-V",  "theme=white", "-V", "revealjs-url=../../../../presentation/reveal.js-4.1.js", "--slide-level=2", "--standalone"]
 ---
 
 <style>
