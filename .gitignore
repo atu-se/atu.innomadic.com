@@ -1,3 +1,4 @@
 courses/db/venv
 .ipynb_checkpoints
 .DS_Store
+node_modules
