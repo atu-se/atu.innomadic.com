@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Software Engineering Tools</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js-4.1.js/dist/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js-4.1.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js-4.1.js/dist/theme/white.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Software Engineering Tools</h1>
+  <p class="subtitle">1. Introduction</p>
+  <p class="date">March 2020</p>
+</section>
+
+<section class="slide level2">
+
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
+<section id="course-summary" class="title-slide slide level1">
+<h1>Course Summary</h1>
+<p>This highly practical course will focus on introducing students to the daily tools of the trade in collaborative software engineering. Examples include development environments, design tools, virtualization, re-using software packages, source code control, and testing tools. This course should accelerate students’ ability to be productive in software development.</p>
+</section>
+
+<section id="course-information" class="title-slide slide level1">
+<h1>Course Information</h1>
+<ul>
+<li>New course for our degree</li>
+<li>Modeled after MIT’s <a href="https://missing.csail.mit.edu/">Missing Semester of your CS Education</a></li>
+<li>Highly practical</li>
+</ul>
+</section>
+
+<section id="grading" class="title-slide slide level1">
+<h1>Grading</h1>
+<ul>
+<li>Tentative grading plan</li>
+<li>Task-oriented</li>
+<li>Labs based on participation and meeting pre-requisites</li>
+</ul>
+</section>
+
+<section id="lecture-1-editors" class="title-slide slide level1">
+<h1>Lecture 1: Editors</h1>
+
+</section>
+
+<section id="introduction" class="title-slide slide level1">
+<h1>Introduction</h1>
+<ul>
+<li>Text-based/command-line editors: vim, emacs, nano</li>
+</ul>
+</section>
+
+<section id="vi" class="title-slide slide level1">
+<h1>vi</h1>
+<ul>
+<li>Modal system (command, edit)</li>
+<li><code>vi filename.txt</code> to open/create</li>
+<li><code>i</code> (insert) to switch to edit mode</li>
+<li>Escape to switch to command mode</li>
+<li><code>:q</code> to exit</li>
+<li><code>:w</code> to save</li>
+<li><code>:q!</code> to exit without saving</li>
+</ul>
+</section>
+
+<section id="text-based-demos" class="title-slide slide level1">
+<h1>Text-based Demos</h1>
+
+</section>
+
+<section id="vscode" class="title-slide slide level1">
+<h1>VSCode</h1>
+<ul>
+<li>Microsoft</li>
+<li>Highly extensible</li>
+<li>Competes with more complete integraded development environments (IDEs)</li>
+<li>Workspaces allow one to quickly load settings and target folders</li>
+</ul>
+</section>
+
+<section id="vscode-demos" class="title-slide slide level1">
+<h1>VSCode Demos</h1>
+<ol type="1">
+<li>Creating a file</li>
+<li>Workspaces</li>
+<li>Managing Extensions</li>
+</ol>
+</section>
+
+<section id="markdown" class="title-slide slide level1">
+<h1>Markdown</h1>
+<ul>
+<li>Why Markdown?</li>
+<li><a href="https://commonmark.org/help/">Learn the syntax</a></li>
+</ul>
+</section>
+
+<section id="markdown-demonstration" class="title-slide slide level1">
+<h1>Markdown Demonstration</h1>
+<ol type="1">
+<li>Generating HTML files</li>
+<li>Code blocks</li>
+<li>Autoformatting</li>
+</ol>
+</section>
+
+<section id="flowcharts" class="title-slide slide level1">
+<h1>Flowcharts</h1>
+<ol type="1">
+<li>Prerequisite <a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">Markdown Preview Enhanced</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart">Flowcharts using mermaid-js</a></li>
+</ol>
+<p><img data-src="../../../../assets/200c6dce678c3d8cb8c7efd29914401c0.png?0.007030244658037033" /></p>
+<p>Place the following in a mermaid code block:</p>
+<pre><code>graph TD
+    Start --&gt; Stop</code></pre>
+</section>
+
+<section id="coding" class="title-slide slide level1">
+<h1>Coding</h1>
+
+</section>
+
+<section id="lab-1-prerequisites" class="title-slide slide level1">
+<h1>Lab 1 Prerequisites</h1>
+<ul>
+<li>Install <a href="https://code.visualstudio.com/">VSCode</a></li>
+<li>Install VSCode Python Extension</li>
+<li>Install VSCode’s <a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">Markdown Preview Enhanced</a> Extension</li>
+</ul>
+</section>
+
+<section id="looking-ahead" class="title-slide slide level1">
+<h1>Looking ahead</h1>
+<ul>
+<li>Below are some some software requirements for future lectures</li>
+<li>Install <a href="https://www.virtualbox.org/">VirtualBox</a></li>
+<li>Install <a href="https://www.vagrantup.com/">Vagrant</a></li>
+</ul>
+</section>
+
+<section id="demos" class="title-slide slide level1">
+<h1>Demos</h1>
+<ul>
+<li><a href="./html.md">HTML</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js-4.1.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="../../../presentation/reveal.js-4.1.js/plugin/notes/notes.js"></script>
+  <script src="../../../presentation/reveal.js-4.1.js/plugin/search/search.js"></script>
+  <script src="../../../presentation/reveal.js-4.1.js/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
