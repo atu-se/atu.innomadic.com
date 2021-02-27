@@ -10,4 +10,4 @@ This highly practical course will focus on introducing students to the daily too
 
 | Lecture | Topic
 |---------|------------------|-----------------------------------------------------------------------------------------|
-| 1.      | [Course Overview and Editors](lectures/lecture1/index.md) |
+| 1.      | [Course Overview and Editors](lectures/lecture1/lecture1-slides.html) |
