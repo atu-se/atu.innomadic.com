@@ -1,6 +1,8 @@
 # 2020-2021
 
-* [Advanced Software Engineering](courses/ase)
+* Advanced Software Engineering
+* [Advanced Python](courses/ap)
+* [Software Engineering Tools](courses/set)
 
 # 2019-2020
 
