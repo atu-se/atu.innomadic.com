@@ -39,7 +39,16 @@ This highly practical course will focus on introducing students to the daily too
 
 # Introduction
 
+* Types of Editors
+* vi introduction
+* VS Code Introduction
+* Markdown 
+* Other tools
+
+# Editor Types
+
 * Text-based/command-line editors: vim, emacs, nano
+* Graphical interface-based editors:  
 
 # vi 
 
