@@ -66,7 +66,7 @@ This highly practical course will focus on introducing students to the daily too
 
 * Microsoft
 * Highly extensible
-* Competes with more complete integraded development environments (IDEs)
+* Competes with more complete integrated development environments (IDEs)
 * Workspaces allow one to quickly load settings and target folders
 
 # VSCode Demos
@@ -102,12 +102,9 @@ graph TD
     Start --> Stop
 ```
 
-# Coding
-
-# Lab 1 Prerequisites
+# Lecture 1 Prerequisites
 
 * Install [VSCode](https://code.visualstudio.com/)
-* Install VSCode Python Extension
 * Install VSCode's [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced) Extension
 
 # Looking ahead
@@ -118,4 +115,9 @@ graph TD
 
 # Demos
 
-* [HTML](./html.md)
+# Put in the work 
+
+* Become familiar with the Markdown. Check out [the examples here](./html.md)
+* Review the [Markdown Documentation](https://commonmark.org/help/)
+* Review the [Mermaid Documentation](https://mermaid-js.github.io/mermaid/#/)
+* Set up your computer with the software mentioned previously
