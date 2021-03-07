@@ -15,3 +15,7 @@ This highly practical course will focus on introducing students to the daily too
 | Lecture | Topic
 |---------|------------------|-----------------------------------------------------------------------------------------|
 | 1.      | [Course Overview and Editors](lectures/lecture1/lecture1-slides.html) |
+
+# Week of March 6
+
+Create a sequence diagram using Markdown Preview Enhanced and Mermaid-JS.  The sequence diagram should model the process to purchase $1 of internet data using the short code interface for Zaad.
