@@ -16,10 +16,12 @@
 
 ## Lectures
 
-| Lecture | Topic                                          |
-|---------|------------------------------------------------|
-| 1.      | Course Overview and Python Packages            |
-| 2.      | [Python Review](lecture2/lecture2-slides.html) |
+| Lecture | Topic                                                                     |
+|---------|---------------------------------------------------------------------------|
+| 1.      | Course Overview and Python Packages                                       |
+| 2.      | [Python Review](lecture2/lecture2-slides.html)                            |
+| 3.      | [Python Review Continued](Lecture 3 - Python Basics Review.html)          |
+| 4.      | [Object Oriented Programming](Lecture 4 - Object Oriented Programming.md) |
 
 # Advanced Python
 
