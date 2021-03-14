@@ -26,7 +26,7 @@ python -m venv venv
 6. Activate the environment
 .\venv\Scripts\activate
 7. pip install Flask
-8. Create hello.py [https://flask.palletsprojects.com/en/1.1.x/tutorial/layout/]
+8. Create hello.py [As in the Flask docs](https://flask.palletsprojects.com/en/1.1.x/tutorial/layout/)
 9. Create environment variables
 set FLASK_APP=hello.py
 set FLASK_ENV=development
