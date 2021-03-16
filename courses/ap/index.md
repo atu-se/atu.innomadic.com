@@ -22,14 +22,13 @@
 | 2.      | [Python Review](lecture2/lecture2-slides.html)                            |
 | 3.      | [Python Review Continued](Lecture 3 - Python Basics Review.html)          |
 | 4.      | [Object Oriented Programming](Lecture 4 - Object Oriented Programming.md) |
-| 5.      | Web Frameworks                                                            |
+| 5.      | [Web Frameworks: Flask Setup(flask_setup_steps.md)                        |
 
 ## Updates
 
 ### Week of 13-March
 
-# Set Up for Flask app
+* Instructions for [setting up Flask app here](flask_setup_steps.md)
+* [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/layout/)
+* [SQLAlchemy](https://www.sqlalchemy.org/library.html#tutorials)
 
-Instructions for [setting up Flask app here](flask_setup_steps.md)
-
-*Note: if you cannot run `python` from the command prompt. try reinstalling Python with "Change environment variables" checked.*
