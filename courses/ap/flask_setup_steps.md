@@ -12,6 +12,7 @@ You will need to choose whether you use Powershell or the Command Prompt.
 6. Activate the environment `.\venv\Scripts\activate`
 7. pip install Flask
 8. Create hello.py:
+
 ```python
 from flask import Flask
 
@@ -22,11 +23,14 @@ app = Flask(__name__)
 def hello():
     return 'Hello, World!'
 ```
+
 9. Create environment variables
+
 ```
 env:FLASK_APP = "hello.py"
 $env:FLASK_ENV = "development"
 ```
+
 10. `flask run`
 
 ## Option 2 - Command Prompt
@@ -39,6 +43,7 @@ $env:FLASK_ENV = "development"
 6. Activate the environment `.\venv\Scripts\activate`
 7. pip install Flask
 8. Create hello.py:
+
 ```python
 from flask import Flask
 
@@ -49,6 +54,7 @@ app = Flask(__name__)
 def hello():
     return 'Hello, World!'
 ```
+
 9. Create environment variables
 ```
 set FLASK_APP=hello.py
