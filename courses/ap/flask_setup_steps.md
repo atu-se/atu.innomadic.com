@@ -9,7 +9,7 @@ You will need to choose whether you use Powershell or the Command Prompt.
 3. Open VScode and create a new folder
 4. Open the terminal (set it to Powershell if it is not already)
 5. `python -m venv venv`
-6. Activate the environment `.\venv\Scripts\activate`
+6. Activate the environment `.\venv\Scripts\Activate.ps1`
 7. pip install Flask
 8. Create hello.py:
 
@@ -36,13 +36,12 @@ $env:FLASK_ENV = "development"
 ## Option 2 - Command Prompt
 
 1. Install Python with "Change environment variables" option
-
-3. Open VScode and create a new folder
-4. Open the terminal and set the shell to Command Prompt
-5. `python -m venv venv`
-6. Activate the environment `.\venv\Scripts\activate`
-7. pip install Flask
-8. Create hello.py:
+2. Open VScode and create a new folder
+3. Open the terminal and set the shell to Command Prompt
+4. `python -m venv venv`
+5. Activate the environment `.\venv\Scripts\activate`
+6. pip install Flask
+7. Create hello.py:
 
 ```python
 from flask import Flask
@@ -55,9 +54,9 @@ def hello():
     return 'Hello, World!'
 ```
 
-9. Create environment variables
+8. Create environment variables
 ```
 set FLASK_APP=hello.py
 set FLASK_ENV=development
 ```
-10. `flask run`
+9. `flask run`
