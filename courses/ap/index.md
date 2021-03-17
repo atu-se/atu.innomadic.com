@@ -33,5 +33,6 @@
 * [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/layout/)
 * [SQLAlchemy](https://www.sqlalchemy.org/library.html#tutorials)
 * [Flask Setup Demo Repository](https://github.com/innomadic/flask_demo)
-* [Flask SQLAlchemy Demo repository](https://github.com/innomadic/flask_sqlalchemy_demo)
+* [Flask SQLAlchemy Demo Repository](https://github.com/innomadic/flask_sqlalchemy_demo)
+* [Flask Template Demo Repository](https://github.com/innomadic/flask_template_demo)
 
