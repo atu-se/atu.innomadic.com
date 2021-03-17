@@ -23,6 +23,7 @@
 | 3.      | [Python Review Continued](Lecture 3 - Python Basics Review.html)          |
 | 4.      | [Object Oriented Programming](Lecture 4 - Object Oriented Programming.md) |
 | 5.      | [Web Frameworks: Flask Setup(flask_setup_steps.md)                        |
+| 6.      | [Web Frameworks: Flask and Database Integration]
 
 ## Updates
 
@@ -31,4 +32,6 @@
 * Instructions for [setting up Flask app here](flask_setup_steps.md)
 * [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/layout/)
 * [SQLAlchemy](https://www.sqlalchemy.org/library.html#tutorials)
+* [Flask Setup Demo Repository](https://github.com/innomadic/flask_demo)
+* [Flask SQLAlchemy Demo repository](https://github.com/innomadic/flask_sqlalchemy_demo)
 
