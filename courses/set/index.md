@@ -12,9 +12,20 @@ This highly practical course will focus on introducing students to the daily too
 
 ## Lectures
 
-| Lecture | Topic
-|---------|------------------|-----------------------------------------------------------------------------------------|
+| Lecture | Topic                                                                 |
+|---------|-----------------------------------------------------------------------|
 | 1.      | [Course Overview and Editors](lectures/lecture1/lecture1-slides.html) |
+| 2.      | Vagrant, Shared Folders, Remote SSH                                   |
+| 3.      | Docker                                                                |
+| 4.      | Source Control                                                        |
+
+## Links
+
+### Vim
+
+* [Vim Cheatsheet](http://vimsheet.com/)
+* [Vim Game Tutorial](https://vim-adventures.com)
+
 
 # Week of March 6
 
