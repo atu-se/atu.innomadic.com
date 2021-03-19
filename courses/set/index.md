@@ -26,7 +26,12 @@ This highly practical course will focus on introducing students to the daily too
 * [Vim Cheatsheet](http://vimsheet.com/)
 * [Vim Game Tutorial](https://vim-adventures.com)
 
+## Updates
 
-# Week of March 6
+### Week of March 20
+
+* [Flask Docker Demo](https://github.com/innomadic/flask_docker_demo)
+
+### Week of March 6
 
 Create a sequence diagram using Markdown Preview Enhanced and Mermaid-JS.  The sequence diagram should model the process to purchase $1 of internet data using the short code interface for Zaad.
