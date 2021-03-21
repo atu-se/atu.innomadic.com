@@ -31,6 +31,9 @@ This highly practical course will focus on introducing students to the daily too
 ### Week of March 20
 
 * [Flask Docker Demo](https://github.com/innomadic/flask_docker_demo)
+* [Git Notes](https://github.com/innomadic/git_lecture)
+* [Git tutorial](https://git-scm.com/docs/gittutorial)
+* [Atlassian Git tutorial](https://www.atlassian.com/git/tutorials/saving-changes)
 
 ### Week of March 6
 
