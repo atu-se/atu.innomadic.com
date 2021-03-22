@@ -35,7 +35,7 @@ This highly practical course will focus on introducing students to the daily too
 * [Git tutorial](https://git-scm.com/docs/gittutorial)
 * [Atlassian Git tutorial](https://www.atlassian.com/git/tutorials/saving-changes)
 
-* [Git Lab](https://classroom.github.com/a/LcX6LbZR)
+* [Homework Assignemnt 2: Git Lab due March 29 11:59 PM](https://classroom.github.com/a/LcX6LbZR)
 
 ### Week of March 6
 
