@@ -35,6 +35,8 @@ This highly practical course will focus on introducing students to the daily too
 * [Git tutorial](https://git-scm.com/docs/gittutorial)
 * [Atlassian Git tutorial](https://www.atlassian.com/git/tutorials/saving-changes)
 
+* [Git Lab](https://classroom.github.com/a/LcX6LbZR)
+
 ### Week of March 6
 
 Create a sequence diagram using Markdown Preview Enhanced and Mermaid-JS.  The sequence diagram should model the process to purchase $1 of internet data using the short code interface for Zaad.
