@@ -23,7 +23,8 @@
 | 3.      | [Python Review Continued](Lecture 3 - Python Basics Review.html)          |
 | 4.      | [Object Oriented Programming](Lecture 4 - Object Oriented Programming.md) |
 | 5.      | [Web Frameworks: Flask Setup(flask_setup_steps.md)                        |
-| 6.      | [Web Frameworks: Flask and Database Integration]
+| 6.      | Web Frameworks: Flask and Database Integration                            |
+| 7.      | Flask Templates and Bootstrap                                             |
 
 ## Updates
 
@@ -35,4 +36,7 @@
 * [Flask Setup Demo Repository](https://github.com/innomadic/flask_demo)
 * [Flask SQLAlchemy Demo Repository](https://github.com/innomadic/flask_sqlalchemy_demo)
 * [Flask Template Demo Repository](https://github.com/innomadic/flask_template_demo)
-
+* [Bootstrap Starter Template](https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template)
+* [Bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/)
+* [Bootstrap Accordion](https://getbootstrap.com/docs/5.0/components/accordion/)
+* [Flask Bootstrap Demo Repository](https://github.com/innomadic/flask_bootstrap_demo)
