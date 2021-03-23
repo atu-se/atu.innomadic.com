@@ -36,6 +36,10 @@
 * [Flask Setup Demo Repository](https://github.com/innomadic/flask_demo)
 * [Flask SQLAlchemy Demo Repository](https://github.com/innomadic/flask_sqlalchemy_demo)
 * [Flask Template Demo Repository](https://github.com/innomadic/flask_template_demo)
+
+### Week of 20-March 
+
+* [Miguel Grinberg's Flask Megatutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 * [Bootstrap Starter Template](https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template)
 * [Bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/)
 * [Bootstrap Accordion](https://getbootstrap.com/docs/5.0/components/accordion/)
