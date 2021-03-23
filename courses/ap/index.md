@@ -40,3 +40,4 @@
 * [Bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/)
 * [Bootstrap Accordion](https://getbootstrap.com/docs/5.0/components/accordion/)
 * [Flask Bootstrap Demo Repository](https://github.com/innomadic/flask_bootstrap_demo)
+* [Flask Forms Demo Repository](https://github.com/innomadic/flask_form_demo)
