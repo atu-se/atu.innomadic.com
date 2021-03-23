@@ -22,7 +22,7 @@
 | 2.      | [Python Review](lecture2/lecture2-slides.html)                            |
 | 3.      | [Python Review Continued](Lecture 3 - Python Basics Review.html)          |
 | 4.      | [Object Oriented Programming](Lecture 4 - Object Oriented Programming.md) |
-| 5.      | [Web Frameworks: Flask Setup(flask_setup_steps.md)                        |
+| 5.      | [Web Frameworks: Flask Setup](flask_setup_steps.md)                       |
 | 6.      | Web Frameworks: Flask and Database Integration                            |
 | 7.      | Flask Templates and Bootstrap                                             |
 
