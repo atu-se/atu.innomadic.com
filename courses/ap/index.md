@@ -25,6 +25,7 @@
 | 5.      | [Web Frameworks: Flask Setup](flask_setup_steps.md)                       |
 | 6.      | Web Frameworks: Flask and Database Integration                            |
 | 7.      | Flask Templates and Bootstrap                                             |
+| 8. | Flask Forms |
 
 ## Updates
 
@@ -46,3 +47,7 @@
 * [Flask Bootstrap Demo Repository](https://github.com/innomadic/flask_bootstrap_demo)
 * [Flask Forms Demo Repository](https://github.com/innomadic/flask_form_demo)
 * [Flask WTF Forms Documentation](https://flask-wtf.readthedocs.io/en/stable/)
+
+### Week of 27-March 
+
+* [Flask Create User Demo Repository](https://github.com/innomadic/flask_create_user_demo)
