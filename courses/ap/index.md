@@ -51,3 +51,4 @@
 ### Week of 27-March 
 
 * [Flask Create User Demo Repository](https://github.com/innomadic/flask_create_user_demo)
+* [Flask Authentication Demo Repository](https://github.com/innomadic/flask_authentication_demo)
