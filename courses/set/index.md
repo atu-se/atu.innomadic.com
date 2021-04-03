@@ -28,6 +28,22 @@ This highly practical course will focus on introducing students to the daily too
 
 ## Updates
 
+### Week of April 3
+
+For the mid-term exam, you should have an understanding of the concepts and practical aspects of:
+
+* Text Editors, (vi, VSCode)
+* Markdown
+* Sequence Diagrams (e.g. Mermaid sequence Diagrams)
+* Virtual Machines (Vagrant, Virtualbox)
+* Containers (Docker)
+* Version Control Software 
+    * Git and Git workflows
+    * Github and Github workflows
+
+You should be prepared to answer both practical "how-to" questions regarding these tools, in addition to answering conceptual questions about the benefits of these tools.
+
+
 ### Week of March 20
 
 * [Flask Docker Demo](https://github.com/innomadic/flask_docker_demo)
