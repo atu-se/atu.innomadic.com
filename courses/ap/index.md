@@ -25,18 +25,28 @@
 | 5.      | [Web Frameworks: Flask Setup](flask_setup_steps.md)                       |
 | 6.      | Web Frameworks: Flask and Database Integration                            |
 | 7.      | Flask Templates and Bootstrap                                             |
-| 8. | Flask Forms |
+| 8.      | Flask Forms                                                               |
+| 9.      | Flask Authentication                                                      |
 
 ## Updates
 
-### Week of 13-March
+### Week of 3-April
 
-* Instructions for [setting up Flask app here](flask_setup_steps.md)
-* [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/layout/)
-* [SQLAlchemy](https://www.sqlalchemy.org/library.html#tutorials)
-* [Flask Setup Demo Repository](https://github.com/innomadic/flask_demo)
-* [Flask SQLAlchemy Demo Repository](https://github.com/innomadic/flask_sqlalchemy_demo)
-* [Flask Template Demo Repository](https://github.com/innomadic/flask_template_demo)
+#### Midterm Exam topics
+
+* Python basics: variables, loops, conditionals, etc.
+* Python maps and list comprehensions
+* Object-oriented programming in Python
+* Python virtual environments (how to use them and why they are important)
+* Flask routes
+* Flask templates
+
+
+### Week of 27-March 
+
+* [Flask Create User Demo Repository](https://github.com/innomadic/flask_create_user_demo)
+* [Flask Authentication Demo Repository](https://github.com/innomadic/flask_authentication_demo)
+
 
 ### Week of 20-March 
 
@@ -48,7 +58,11 @@
 * [Flask Forms Demo Repository](https://github.com/innomadic/flask_form_demo)
 * [Flask WTF Forms Documentation](https://flask-wtf.readthedocs.io/en/stable/)
 
-### Week of 27-March 
+### Week of 13-March
 
-* [Flask Create User Demo Repository](https://github.com/innomadic/flask_create_user_demo)
-* [Flask Authentication Demo Repository](https://github.com/innomadic/flask_authentication_demo)
+* Instructions for [setting up Flask app here](flask_setup_steps.md)
+* [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/layout/)
+* [SQLAlchemy](https://www.sqlalchemy.org/library.html#tutorials)
+* [Flask Setup Demo Repository](https://github.com/innomadic/flask_demo)
+* [Flask SQLAlchemy Demo Repository](https://github.com/innomadic/flask_sqlalchemy_demo)
+* [Flask Template Demo Repository](https://github.com/innomadic/flask_template_demo)
