@@ -27,6 +27,7 @@ output:
 
 ## Package Managers
 
+* NodeJS - NPM
 * .Net - NuGet
 * Python - PIP
 * Perl - CPAN
