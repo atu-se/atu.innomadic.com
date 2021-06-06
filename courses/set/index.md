@@ -18,6 +18,8 @@ This highly practical course will focus on introducing students to the daily too
 | 2.      | Vagrant, Shared Folders, Remote SSH                                   |
 | 3.      | Docker                                                                |
 | 4.      | Source Control                                                        |
+| 5.      | [Package Management](lectures/packages-slides.html) |
+
 
 ## Links
 
@@ -27,6 +29,10 @@ This highly practical course will focus on introducing students to the daily too
 * [Vim Game Tutorial](https://vim-adventures.com)
 
 ## Updates
+
+### Week of June 5
+
+* This week we will be looking at package management and we will use the Python ecosystem as an example
 
 ### Week of April 3
 

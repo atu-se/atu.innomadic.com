@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Software Engineering Tools</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../presentation/reveal.js-4.1.js/dist/reset.css">
+  <link rel="stylesheet" href="../../../presentation/reveal.js-4.1.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../../presentation/reveal.js-4.1.js/dist/theme/white.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Software Engineering Tools</h1>
+  <p class="subtitle">Package Management</p>
+  <p class="date">June 2021</p>
+</section>
+
+<section class="slide level2">
+
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+</section>
+<section id="package-management" class="slide level2">
+<h2>Package Management</h2>
+<ul>
+<li>Re-use is a pillar of software engineering (we covered this in detail in ASE)</li>
+<li>Different ecosystems have different means for acquiring and managing source code libraries, frameworks, etc.</li>
+<li>While source code is often shared via a code sharing site like Github, the best way to install and use it may be by using a package manager in your development environment</li>
+</ul>
+</section>
+<section id="package-managers" class="slide level2">
+<h2>Package Managers</h2>
+<ul>
+<li>.Net - NuGet</li>
+<li>Python - PIP</li>
+<li>Perl - CPAN</li>
+<li>Java - no direct parallel, but automation tools like <a href="https://softwarerecs.stackexchange.com/questions/36017/install-java-packages-and-their-dependancies-like-pip-for-python">Maven</a> can automatically download dependencies</li>
+</ul>
+</section>
+<section id="package-management-in-python" class="slide level2">
+<h2>Package Management in Python</h2>
+<ul>
+<li><code>pip</code> is installed with Python (usually) and is used for installing packages</li>
+<li>An index of packages is available at <a href="https://pypi.org/">PyPI.org</a></li>
+<li>Some packages are actually installable applications, while others provide libraries or frameworks which can be used from a Python application by importing a module</li>
+</ul>
+</section>
+<section id="demo" class="slide level2">
+<h2>Demo</h2>
+</section>
+<section id="challenge" class="slide level2">
+<h2>Challenge</h2>
+<ul>
+<li>Install the <code>youtube-dl</code> package</li>
+<li>Use youtube-dl to download this youtube video: https://www.youtube.com/watch?v=Pi4QapbHFms</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../presentation/reveal.js-4.1.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../../../presentation/reveal.js-4.1.js/plugin/notes/notes.js"></script>
+  <script src="../../../presentation/reveal.js-4.1.js/plugin/search/search.js"></script>
+  <script src="../../../presentation/reveal.js-4.1.js/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+      
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
