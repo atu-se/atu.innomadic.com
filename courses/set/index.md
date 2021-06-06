@@ -34,6 +34,14 @@ This highly practical course will focus on introducing students to the daily too
 
 * This week we will be looking at package management and we will use the Python ecosystem as an example
 
+Instructions for setting up Python virtual environment:
+
+1. Open Powershell as administrator and run `Set-ExecutionPolicy Unrestricted`
+2. Open a terminal to the folder you want to use 
+3. python -m venv .venv
+4. Activate the environment .venv\Scripts\Activate.ps1
+
+
 ### Week of April 3
 
 For the mid-term exam, you should have an understanding of the concepts and practical aspects of:
