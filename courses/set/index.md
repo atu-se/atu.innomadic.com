@@ -18,7 +18,7 @@ This highly practical course will focus on introducing students to the daily too
 | 2.      | Vagrant, Shared Folders, Remote SSH                                   |
 | 3.      | Docker                                                                |
 | 4.      | Source Control                                                        |
-| 5.      | [Package Management](lectures/packages-slides.html) |
+| 5.      | [Package Management](lectures/package_management-slides.html) |
 
 
 ## Links
