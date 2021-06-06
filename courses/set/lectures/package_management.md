@@ -38,9 +38,50 @@ output:
 * An index of packages is available at [PyPI.org](https://pypi.org/)
 * Some packages are actually installable applications, while others provide libraries or frameworks which can be used from a Python application by importing a module
 
-## Demo
+## Example: Videos
+
+* youtube-dl is a software package available on PyPI
+* It provides an application which can be run from the command line to download videos
+* Packages are installed using `pip install`, `python -m pip install`, or, on some Windows installations `py -m pip install`
+* To install youtube-dl, you would issue a command like: `pip install youtube-dl`
 
 ## Challenge
 
 * Install the `youtube-dl` package
-* Use youtube-dl to download this youtube video: https://www.youtube.com/watch?v=Pi4QapbHFms
+* Use youtube-dl to download this youtube video: [https://www.youtube.com/watch?v=Pi4QapbHFms](https://www.youtube.com/watch?v=Pi4QapbHFms)
+
+## Example: PDFs
+
+* Imagine we want to programmatically work with a PDF:
+  * Collected metadata
+  * Extract text
+* Package: PyPDF2
+
+## Installation
+
+* Install PyPDF2 with this command:
+
+`pip install PyPDF2`
+
+## Using PyPDF2
+
+```python
+from PyPDF2 import PdfFileReader
+from pathlib import Path
+# Prerequisite: have a PDF called textbook.pdf in the current working directory
+pdf_path = (Path.cwd() / 'textbook.pdf')
+pdf  = PdfFileReader(str(pdf_path))
+print(f'Document Information:\n {pdf.documentInfo}\n')
+print(f'Total number of pages is {pdf.getNumPages()}\n')
+text = pdf.getPage(1).extractText()
+print(f'Text on page 1 is:\n\n {text}')
+```
+
+
+
+
+# References
+
+* [Tutorial on creating and modifying PDFs](https://realpython.com/creating-modifying-pdf)
+* [PyPDF2]()
+* [youtube-dl]()
