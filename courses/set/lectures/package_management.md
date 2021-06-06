@@ -84,5 +84,5 @@ print(f'Text on page 1 is:\n\n {text}')
 # References
 
 * [Tutorial on creating and modifying PDFs](https://realpython.com/creating-modifying-pdf)
-* [PyPDF2]()
-* [youtube-dl]()
+* [PyPDF2](https://pythonhosted.org/PyPDF2/)
+* [youtube-dl](https://pypi.org/project/youtube_dl/)
