@@ -31,10 +31,15 @@
 
 ## Updates
 
-### 5-June
+### Week of 5-June
 
 * This week we are looking at the use of external APIs, and we introduce the requests library
 * Here is a [sample project using the News API and the Request library](https://github.com/innomadic/flask_api_example)
+* Some simple APIs requests:
+    * https://affirmations.dev
+    * https://jservice.io/api/random
+    * https://numbersapi.com/6/8/date
+    * https://newsapi.org/v2/everything?q=Apple&from=2021-06-08&sortBy=popularity&apiKey=yourapikey (requires key)
 
 ### Week of 3-April
 
