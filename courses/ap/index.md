@@ -38,7 +38,7 @@
 * Some simple APIs requests:
     * https://affirmations.dev
     * https://jservice.io/api/random
-    * https://numbersapi.com/6/8/date
+    * http://numbersapi.com/6/8/date
     * https://newsapi.org/v2/everything?q=Apple&from=2021-06-08&sortBy=popularity&apiKey=yourapikey (requires key)
 
 ### Week of 3-April
