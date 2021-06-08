@@ -27,8 +27,14 @@
 | 7.      | Flask Templates and Bootstrap                                             |
 | 8.      | Flask Forms                                                               |
 | 9.      | Flask Authentication                                                      |
+| 10.     | Using external APIs |
 
 ## Updates
+
+### 5-June
+
+* This week we are looking at the use of external APIs, and we introduce the requests library
+* Here is a [sample project using the News API and the Request library](https://github.com/innomadic/flask_api_example)
 
 ### Week of 3-April
 
