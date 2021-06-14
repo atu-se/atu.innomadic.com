@@ -36,7 +36,7 @@ This highly practical course will focus on introducing students to the daily too
 
 Instructions for setting up Python virtual environment:
 
-1. Open Powershell as administrator and run `Set-ExecutionPolicy Unrestricted`
+1. Open Powershell as administrator and run `set-executionpolicy remotesigned`
 2. Open a terminal to the folder you want to use 
 3. python -m venv .venv
 4. Activate the environment .venv\Scripts\Activate.ps1

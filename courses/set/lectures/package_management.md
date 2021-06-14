@@ -86,3 +86,34 @@ print(f'Text on page 1 is:\n\n {text}')
 * [Tutorial on creating and modifying PDFs](https://realpython.com/creating-modifying-pdf)
 * [PyPDF2](https://pythonhosted.org/PyPDF2/)
 * [youtube-dl](https://pypi.org/project/youtube_dl/)
+
+# Virtual Environments
+
+# Benefits
+
+* Isolation
+* Reproducibility
+
+# Steps
+
+1. Prepare your computer
+2. Create a new folder
+3. Create a virtual environment
+4. Activate the virtual environment
+5. Repeat step 4 each time you work on your project
+
+# VENV: Preparation
+
+1. Install Python.  In the installer, choose to Install the Launcher and set the Path.
+2. Open Powershell as administrator. Enter this command:
+  `set-executionpolicy remotesigned`
+
+# VENV Creation
+
+1. Create a new folder (in command prompt, powershell, or in your IDE)
+2. At a terminal, run `py -m venv .venv`
+
+# VENV Activation
+
+1. From your project folder, run `.\Scripts\activate.ps1`
+2. In the future, VScode may detect your venv when you open the workspace or open a new terminal.
