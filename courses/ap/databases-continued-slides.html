@@ -152,10 +152,107 @@
 
 </section>
 
+<section id="object-relational-mappers" class="title-slide slide level1">
+<h1>Object-Relational Mappers</h1>
+
+</section>
+
+<section id="orm-imports" class="title-slide slide level1">
+<h1>ORM Imports</h1>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlalchemy <span class="im">import</span> create_engine</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlalchemy <span class="im">import</span> Integer, ForeignKey, String, Column</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlalchemy.ext.declarative <span class="im">import</span> declarative_base</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlalchemy.orm <span class="im">import</span> relationship, sessionmaker</span></code></pre></div>
+</section>
+
+<section id="orm-setup" class="title-slide slide level1">
+<h1>ORM Setup</h1>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the DB (in memory)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>engine <span class="op">=</span> create_engine(<span class="st">&quot;sqlite:///:memory:&quot;</span>, echo<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the Base object for our models to inherit from</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>Base <span class="op">=</span> declarative_base()</span></code></pre></div>
+</section>
+
+<section id="example-class" class="title-slide slide level1">
+<h1>Example Class</h1>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Parent(Base):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    __tablename__ <span class="op">=</span> <span class="st">&quot;parent&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">id</span> <span class="op">=</span> Column(Integer, primary_key<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> Column(String)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f&quot;&lt;Parent(id=&#39;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">&#39; name=&#39;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">&#39;)&gt;&quot;</span></span></code></pre></div>
+</section>
+
+<section id="example-class-1" class="title-slide slide level1">
+<h1>Example Class</h1>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Child(Base):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    __tablename__ <span class="op">=</span> <span class="st">&quot;child&quot;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">id</span> <span class="op">=</span> Column(Integer, primary_key<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    parent_id <span class="op">=</span> Column(Integer, ForeignKey(<span class="st">&quot;parent.id&quot;</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f&quot;&lt;Child(id=&#39;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">&#39;, parent_id=&#39;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>parent_id<span class="sc">}</span><span class="ss">&#39;&gt;&quot;</span></span></code></pre></div>
+</section>
+
+<section id="more-setup" class="title-slide slide level1">
+<h1>More Setup</h1>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create tables using the classes defined before</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Base.metadata.create_all(engine)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a session object to manage our connections</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>Session <span class="op">=</span> sessionmaker(bind<span class="op">=</span>engine)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>session <span class="op">=</span> Session()</span></code></pre></div>
+</section>
+
+<section id="add-new-records" class="title-slide slide level1">
+<h1>Add New Records</h1>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>parent1 <span class="op">=</span> Parent(name<span class="op">=</span><span class="st">&quot;Susan&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>parent2 <span class="op">=</span> Parent(name<span class="op">=</span><span class="st">&quot;Mary&quot;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>session.add(parent1)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>session.add(parent2)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>session.commit()</span></code></pre></div>
+</section>
+
+<section id="view-records" class="title-slide slide level1">
+<h1>View Records</h1>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>parents <span class="op">=</span> session.query(Parent).<span class="bu">all</span>()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(parents)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(parents[<span class="dv">0</span>].<span class="bu">id</span>)</span></code></pre></div>
+</section>
+
+<section id="add-new-records-1" class="title-slide slide level1">
+<h1>Add New Records</h1>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>child1 <span class="op">=</span> Child(parent_id <span class="op">=</span> parents[<span class="dv">0</span>].<span class="bu">id</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>child2 <span class="op">=</span> Child(parent_id <span class="op">=</span> parents[<span class="dv">1</span>].<span class="bu">id</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>session.add_all(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    [child1, child2]</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>session.commit()</span></code></pre></div>
+</section>
+
+<section id="view-records-1" class="title-slide slide level1">
+<h1>View Records</h1>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>children <span class="op">=</span> session.query(Child, Parent).join(Parent).<span class="bu">all</span>()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> child <span class="kw">in</span> children:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(child)</span></code></pre></div>
+</section>
+
+<section id="join-records" class="title-slide slide level1">
+<h1>Join Records</h1>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>child, parent <span class="op">=</span> session.query(Child, Parent).join(Parent).first()</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (parent.name)</span></code></pre></div>
+</section>
+
+<section id="filter-records" class="title-slide slide level1">
+<h1>Filter Records</h1>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>child <span class="op">=</span> session.query(Child, Parent).join(Parent).<span class="bu">filter</span>(Parent.name<span class="op">==</span><span class="st">&#39;Mary&#39;</span>).<span class="bu">all</span>()</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="ss">f&#39;here we have filtered for parents named mary: </span><span class="sc">{</span>child<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+</section>
+
 <section id="sources" class="title-slide slide level1">
 <h1>Sources</h1>
 <ul>
-<li><a href="SQLAlchemy%20Tutorial">https://docs.sqlalchemy.org/en/14/tutorial/engine.html</a></li>
+<li><a href="https://docs.sqlalchemy.org/en/14/tutorial/engine.html">SQLAlchemy Tutorial</a></li>
 </ul>
 </section>
     </div>
