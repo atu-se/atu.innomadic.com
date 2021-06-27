@@ -32,7 +32,7 @@ This highly practical course will focus on introducing students to the daily too
 
 ### Week of June 26
 
-* [Assignment #3](https://classroom.github.com/classrooms/35489611-atu-set-2020-21/assignments/set-documentation) has been posted.  It is due July 4 at 11:59 p.m.  You will submit via Github.
+* [Assignment #3](https://classroom.github.com/a/3ue65c4H) has been posted.  It is due July 4 at 11:59 p.m.  You will submit via Github.
 
 ### Week of June 5
 
