@@ -30,6 +30,10 @@ This highly practical course will focus on introducing students to the daily too
 
 ## Updates
 
+### Week of June 26
+
+* [Assignment #3](https://classroom.github.com/classrooms/35489611-atu-set-2020-21/assignments/set-documentation) has been posted.  It is due July 4 at 11:59 p.m.  You will submit via Github.
+
 ### Week of June 5
 
 * This week we will be looking at package management and we will use the Python ecosystem as an example
