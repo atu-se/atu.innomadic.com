@@ -48,6 +48,18 @@ This highly practical course will focus on introducing students to the daily too
 7. Enjoy!
 ```
 
+* Instructions for building Sphinx documentation
+
+```
+1. py -m pip install -U sphinx
+2. Create a project folder with a `docs` subfolder.  
+3. Open the `docs` folder in a terminal
+4. Run `sphinx-quickstart` (You can choose the defauls for almost everything: add your own project name and name.)
+5. Run `.\make.bat html` to generate the HTML documentation
+```
+
+* Note: to run sphinx-quickstart, you will need to have the Python Scripts folder in your Windows PATH environment variable.
+
 ### Week of June 5
 
 * This week we will be looking at package management and we will use the Python ecosystem as an example
