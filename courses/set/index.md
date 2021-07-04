@@ -20,7 +20,8 @@ This highly practical course will focus on introducing students to the daily too
 | 4.      | Source Control                                                        |
 | 5.      | [Package Management](lectures/package_management-slides.html)         |
 | 6.      | [Documentation with Sphinx](lectures/documentation_with_sphinx)       |
-
+| 7.      | Publishing Sphinx Documention to ReadTheDocs                          |
+| 8.      | Deployment with Heroku                                                |
 
 ## Links
 
@@ -31,9 +32,32 @@ This highly practical course will focus on introducing students to the daily too
 
 ## Updates
 
+### Week of July 3
+
+
+#### Code Quality
+
+- Style
+- for readability and not making mistakes
+
+#### Guide
+
+PEP 8
+
+#### Linters
+
+* flake8 - warns us about the problems
+* black - helps us solve the problems !! :-)
+
 ### Week of June 26
 
+
+#### Assignment
+
 * [Assignment #3](https://classroom.github.com/a/3ue65c4H) has been posted.  It is due July 4 at 11:59 p.m.  You will submit via Github.
+
+#### ReadTheDocs
+
 * Instructions for integrating Sphinx with ReadTheDocs:
 
 ```
@@ -60,6 +84,7 @@ This highly practical course will focus on introducing students to the daily too
 ```
 
 * Note: to run sphinx-quickstart, you will need to have the Python Scripts folder in your Windows PATH environment variable.
+
 
 ### Week of June 5
 
