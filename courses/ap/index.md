@@ -32,6 +32,12 @@
 
 ## Updates
 
+### Week of 3-Jul
+
+* [Final Project has been posted](https://classroom.github.com/a/aZd30iE1). 
+    * This will take the place of a final exam.   
+    * Read the instructions carefully
+    * This is an individual assignment.  If you copy work from another student you may fail the project and the course.
 ### Week of 5-June
 
 * This week we are looking at the use of external APIs, and we introduce the requests library

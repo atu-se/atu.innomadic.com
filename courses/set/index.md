@@ -18,7 +18,8 @@ This highly practical course will focus on introducing students to the daily too
 | 2.      | Vagrant, Shared Folders, Remote SSH                                   |
 | 3.      | Docker                                                                |
 | 4.      | Source Control                                                        |
-| 5.      | [Package Management](lectures/package_management-slides.html) |
+| 5.      | [Package Management](lectures/package_management-slides.html)         |
+| 6.      | [Documentation with Sphinx](lectures/documentation_with_sphinx)       |
 
 
 ## Links
@@ -54,7 +55,7 @@ This highly practical course will focus on introducing students to the daily too
 1. py -m pip install -U sphinx
 2. Create a project folder with a `docs` subfolder.  
 3. Open the `docs` folder in a terminal
-4. Run `sphinx-quickstart` (You can choose the defauls for almost everything: add your own project name and name.)
+4. Run `sphinx-quickstart` (You can choose the defaults for almost everything: add your own project name and name.)
 5. Run `.\make.bat html` to generate the HTML documentation
 ```
 
