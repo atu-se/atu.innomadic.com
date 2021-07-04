@@ -35,6 +35,23 @@ This highly practical course will focus on introducing students to the daily too
 
 ### Week of July 3
 
+### Final Exam Topics
+
+* Package Management
+    * Python packages
+    * pip
+    * Python virtual environments
+* Documentation
+    * Sphinx
+    * sphinx-autoapi
+* Code Quality
+    * pep 8
+    * flake8
+    * black
+    * git hooks
+* Continous/Automated Deployment
+    * Heroku/Git/Github
+
 
 #### Code Quality
 
