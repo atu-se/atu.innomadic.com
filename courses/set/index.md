@@ -21,7 +21,8 @@ This highly practical course will focus on introducing students to the daily too
 | 5.      | [Package Management](lectures/package_management-slides.html)         |
 | 6.      | [Documentation with Sphinx](lectures/documentation_with_sphinx)       |
 | 7.      | Publishing Sphinx Documention to ReadTheDocs                          |
-| 8.      | Deployment with Heroku                                                |
+| 8.      | Code Quality Tools                                                    |
+| 9.      | Deployment with Heroku                                                |
 
 ## Links
 
