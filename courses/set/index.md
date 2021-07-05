@@ -44,6 +44,7 @@ This highly practical course will focus on introducing students to the daily too
 * Documentation
     * Sphinx
     * sphinx-autoapi
+    * ReadTheDocs
 * Code Quality
     * pep 8
     * flake8
