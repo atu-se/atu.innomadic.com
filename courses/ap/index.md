@@ -38,6 +38,8 @@
     * This will take the place of a final exam.   
     * Read the instructions carefully
     * This is an individual assignment.  If you copy work from another student you may fail the project and the course.
+    * The instructions are in the repository.  You will click the link to create the repository in your Github account, and then clone it to your computer using Git or VSCode and Git.
+    
 ### Week of 5-June
 
 * This week we are looking at the use of external APIs, and we introduce the requests library
