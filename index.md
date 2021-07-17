@@ -3,6 +3,8 @@
 * Advanced Software Engineering
 * [Advanced Python](courses/ap)
 * [Software Engineering Tools](courses/set)
+* [Operating Systems](courses/os)
+
 
 # 2019-2020
 
