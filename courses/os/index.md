@@ -12,6 +12,10 @@
 | [6. Synchronization Tools](lectures/ch6.pptx) | [Umass 7](https://www.youtube.com/watch?v=sYBfnDUsvrc&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=7), [Umass 8](https://www.youtube.com/watch?v=o5cXttjjBVs&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=8) |
 | [7. Synchronization Example](lectures/ch7.pptx) | [Umass 9](https://www.youtube.com/watch?v=Kj8bL_L9Ah8&list=PLacuG5pysFbDQU8kKxbUh4K5c1iL5_k7k&index=9) | 
 
+## Assignments
 
+Join [Github classroom](https://classroom.github.com/classrooms/35489611-atu-operatingsystems-2020-21)
+
+1. [Process ID Manager](https://classroom.github.com/a/XHdtHa23)
 ## Updates
 
