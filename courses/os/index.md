@@ -14,8 +14,15 @@
 
 ## Assignments
 
-Join [Github classroom](https://classroom.github.com/classrooms/35489611-atu-operatingsystems-2020-21)
-
 1. [Process ID Manager](https://classroom.github.com/a/XHdtHa23)
+2. Shell Warmup
 ## Updates
+
+* Assignment 1 - Process ID Manager has been posted above.  There is one mistake in the provided code:
+
+```    def release_process_id(self, int) -> None:```
+
+Should have a different name for the second parameter, like:
+
+```    def release_process_id(self, id) -> None:```
 
