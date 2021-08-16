@@ -15,7 +15,8 @@
 ## Assignments
 
 1. [Process ID Manager](https://classroom.github.com/a/XHdtHa23)
-2. Shell Warmup
+2. [Shell Warmup](https://classroom.github.com/a/qG_trOIZ)
+
 ## Updates
 
 * Assignment 1 - Process ID Manager has been posted above.  There is one mistake in the provided code:
