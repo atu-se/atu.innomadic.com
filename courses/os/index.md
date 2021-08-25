@@ -19,6 +19,25 @@
 
 ## Updates
 
+### Week of 21-Aug
+
+* Links
+    * [Hand-made tech from Apollo 11](https://history.com/news/moon-landing-technology-inventions-computers-heat-shield-rovers)
+    * [Hidden Figures Movie](https://en.wikipedia.org/wiki/Hidden_Figures)
+    * [Article about early NASA "computers"](https://www.popularmechanics.com/space/rockets/a24429/hidden-figures-real-story-nasa-women-computers/)
+    * [_Hidden Figures_ Movie Trailer](https://www.youtube.com/watch?v=RK8xHq6dfAo)
+    * [Margaret Hamilton, Apollo Lead Software Engineer](https://qeprize.org/news/margaret-hamilton-apollos-code/)
+    * [Margaret Hamilton (Video)](https://www.youtube.com/watch?v=kTn56jJW4zY)
+    * [Margaret Hamilton Bio](https://en.wikipedia.org/wiki/File:Margaret_Hamilton.gif)
+    * [Origin of Debugging](https://en.wikipedia.org/wiki/Debugging#Origin_of_the_term)
+    * [Grace Hopper Article](https://tophat.com/blog/grace-hopper-yale-computer-science/)
+
+![Margaret Hamilton beside Apollo guidance system software on punch-cards](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Margaret_Hamilton.gif/385px-Margaret_Hamilton.gif)
+
+![The first computer bug](https://upload.wikimedia.org/wikipedia/commons/f/ff/First_Computer_Bug%2C_1945.jpg)
+
+### Week 1
+
 * Assignment 1 - Process ID Manager has been posted above.  There is one mistake in the provided code:
 
 ```    def release_process_id(self, int) -> None:```
