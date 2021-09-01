@@ -30,6 +30,11 @@
     * [Margaret Hamilton Bio](https://en.wikipedia.org/wiki/File:Margaret_Hamilton.gif)
     * [Origin of Debugging](https://en.wikipedia.org/wiki/Debugging#Origin_of_the_term)
     * [Grace Hopper Article](https://tophat.com/blog/grace-hopper-yale-computer-science/)
+    * [Punch Card Overview (Video)](https://www.youtube.com/watch?v=kKJxzay85Vk&t=0s)
+    * [1964 IBM 029 Punchcard Demonstration](https://www.youtube.com/watch?v=YnnGbcM-H8c)
+    * [Bubbles Whiting Demonstrates Hollerith Machine](https://www.youtube.com/watch?v=L7jAOcc9kBU)
+    * [Today Show Margaret Hamilton Story](https://www.youtube.com/watch?v=UOUNjytHhNI)
+
 
 ![Margaret Hamilton beside Apollo guidance system software on punch-cards](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Margaret_Hamilton.gif/385px-Margaret_Hamilton.gif)
 
