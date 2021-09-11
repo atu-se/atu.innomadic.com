@@ -15,6 +15,7 @@
 1. [Process ID Manager](https://classroom.github.com/a/XHdtHa23)
 2. [Shell Warmup](https://classroom.github.com/a/qG_trOIZ)
 3. [Shell 2](https://classroom.github.com/a/A_5bFw4I) due Sept 12
+4. [Guuxa](https://classroom.github.com/a/4Pk_mI3T) due Sept 22
 
 ## Updates
 
