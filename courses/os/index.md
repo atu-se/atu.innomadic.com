@@ -16,6 +16,7 @@
 2. [Shell Warmup](https://classroom.github.com/a/qG_trOIZ)
 3. [Shell 2](https://classroom.github.com/a/A_5bFw4I) due Sept 12
 4. [Guuxa](https://classroom.github.com/a/4Pk_mI3T) due Sept 22
+5. [Multiprocessing](https://classroom.github.com/a/6yqEfAWw) due Oct 15 - counts as two assignments
 
 ## Updates
 
