@@ -96,7 +96,9 @@ graph TD
     Start --> Stop
 ```
 
-Place the following in a mermaid code block:
+# Flowcharts
+
+To create that image, place the following in a mermaid code block:
 ```
 graph TD
     Start --> Stop

@@ -3,3 +3,4 @@ courses/db/venv
 .DS_Store
 node_modules
 ~$*.pptx
+yarn-error.log
